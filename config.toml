@@ -1,0 +1,118 @@
+############################ Default configuration #########################
+baseURL = "https://eclipse.org/sumo"
+languageCode = "en-us"
+title = "Eclipse SUMO - Simulation of Urban MObility"
+disableKinds = ["taxonomyTerm"]
+theme = "sumo-theme"
+
+######################### Default Parameters ###########################
+[params]
+favicon = "images/favicon.ico"
+logo = "images/logos/sumo-logo-white.svg"
+docsURL = "https://sumo.dlr.de/docs"
+Version = "1.6.0"
+
+########################### Navigation ###################################
+
+# main menu
+[[menu.main]]
+URL = ""
+name = "About"
+weight = 1
+
+[[menu.main]]
+URL = "https://sumo.dlr.de/download"
+name = "Download"
+weight = 2
+
+[[menu.main]]
+URL = "https://sumo.dlr.de/docs/"
+name = "Documentation"
+weight = 3
+
+[[menu.main]]
+URL = "conference"
+name = "Conference"
+weight = 4
+
+[[menu.main]]
+URL = ""
+name = "References"
+weight = 5
+
+[[menu.main]]
+URL = ""
+name = "Support"
+weight = 6
+
+[[menu.main]]
+URL = "contact"
+name = "Contact"
+weight = 7
+
+# sub menus
+[[menu.main]]
+URL = "about"
+name = "About SUMO"
+parent = "About"
+weight = 1
+
+[[menu.main]]
+URL = "https://projects.eclipse.org/projects/technology.sumo/who"
+name = "Who's involved"
+parent = "About"
+weight = 2
+
+[[menu.main]]
+URL = "https://sumo.dlr.de/daily"
+name = "Status of daily build and tests"
+parent = "About"
+weight = 3
+
+[[menu.main]]
+URL = "https://sumo.dlr.de/docs/Other/Projects.html"
+name = "Projects"
+parent = "References"
+weight = 1
+
+[[menu.main]]
+URL = "https://sumo.dlr.de/docs/Publications.html"
+name = "Publications"
+parent = "References"
+weight = 2
+
+[[menu.main]]
+URL = "https://sumo.dlr.de/docs/Contributed.html"
+name = "Contributed extensions"
+parent = "References"
+weight = 3
+
+[[menu.main]]
+URL = "https://sumo.dlr.de/docs/FAQ.html"
+name = "FAQ"
+parent = "Support"
+weight = 1
+
+[[menu.main]]
+URL = "https://sumo.dlr.de/docs/Tutorials.html"
+name = "Tutorials"
+parent = "Support"
+weight = 2
+
+[[menu.main]]
+URL = "https://github.com/eclipse/sumo/issues"
+name = "Report a Bug / Issue"
+parent = "Support"
+weight = 3
+
+[[menu.main]]
+URL = "https://sumo.dlr.de/daily/doxygen/"
+name = "Doxygen Documentation"
+parent = "Support"
+weight = 4
+
+[[menu.main]]
+URL = "https://sumo.dlr.de/docs/Developer/Main.html"
+name = "Developer Documentation"
+parent = "Support"
+weight = 5

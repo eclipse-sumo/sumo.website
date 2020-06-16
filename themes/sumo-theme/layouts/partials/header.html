@@ -1,0 +1,36 @@
+{{ "<!-- navigation -->" | safeHTML }}
+
+    <!-- navbar -->
+        <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top" style="padding:20px 0;">
+          <div class="container">
+            <a class="navbar-brand" href="{{ .Site.BaseURL }}"><img class="img-fluid" src="{{ .Site.Params.logo | relURL }}" style="pointer-events:none;" alt="SUMO logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-label="menu icon">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="collapsibleNavbar">
+              <ul class="navbar-nav ml-auto">
+                {{ range .Site.Menus.main }}
+                  {{ if .HasChildren }}
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      {{ .Name }}
+                    </a>
+                    <div class="dropdown-menu">
+                      {{ range .Children }}
+                      <a class="dropdown-item" href="{{ .URL | absURL }}">{{ .Name }}</a>
+                      {{ end }}
+                    </div>
+                  </li>
+                  {{ else }}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ .URL | absURL }}">{{ .Name }}</a>
+                  </li>
+                  {{ end }}
+                {{ end }}
+              </ul>
+            </div>
+            </div>
+          </nav>
+
+{{ "<!-- /navigation -->" | safeHTML }}
