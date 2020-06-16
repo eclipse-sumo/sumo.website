@@ -52,7 +52,7 @@ spec:
         dir('www') {
             sshagent(['git.eclipse.org-bot-ssh']) {
                 sh '''
-                    git clone ssh://genie.${PROJECT_NAME}@git.eclipse.org:29418/www.eclipse.org/${PROJECT_NAME}.git .
+                    GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" git clone ssh://genie.${PROJECT_NAME}@git.eclipse.org:29418/www.eclipse.org/${PROJECT_NAME}.git .
                     git checkout ${BRANCH_NAME}
                 '''
             }
