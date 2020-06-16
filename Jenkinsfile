@@ -34,6 +34,7 @@ spec:
   environment {
     PROJECT_NAME = "sumo"
     PROJECT_BOT_NAME = "SUMO Bot"
+    BRANCH_NAME = "master"
   }
  
   triggers { pollSCM('H/10 * * * *') 
