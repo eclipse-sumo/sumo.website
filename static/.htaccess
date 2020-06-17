@@ -1,0 +1,14 @@
+###########################################################
+#
+# Redirects for the Eclipse SUMO Homepage
+#
+###########################################################
+
+RewriteEngine On
+
+RewriteRule    ^changelog$          https://sumo.dlr.de/changelog        [L,R=301]
+RewriteRule    ^doc$                https://sumo.dlr.de/docs             [L,R=301]
+RewriteRule    ^docs$               https://sumo.dlr.de/docs             [L,R=301]
+RewriteRule    ^download$           https://sumo.dlr.de/download         [L,R=301]
+RewriteRule    ^downloads$          https://sumo.dlr.de/download         [L,R=301]
+RewriteRule    ^faq$                https://sumo.dlr.de/faq              [L,R=301]
