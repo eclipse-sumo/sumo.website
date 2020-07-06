@@ -7,7 +7,7 @@ draft: false
 <!-- dismissible alert -->
 <div class="alert alert-info alert-dismissible">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
-    The <strong>SUMO User Conference 2020</strong> takes place October 26-28, 2020. This year's conference is going to be <b>virtual</b>. <a href="conference">More info about the conference</a>
+    The <strong>SUMO User Conference 2020</strong> takes place October 26-28, 2020. This year's conference is going to be <b>virtual</b> and the participation will be <b>free</b> of charge. <a href="conference">More info about the conference</a>
 </div>
 
 <!-- YouTube tutorial -->

@@ -11,8 +11,9 @@ draft: false
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <b>Important notice</b>
     <br>
-    Due to the Coronavirus crisis and the measures imposed, the SUMO User Conference 2020 has been rescheduled and is going to be <strong>virtual</strong>.<br>
-    <b>New date: 26-28 October 2020</b>.
+    Participation at this year’s conference will be <b>free</b> of charge!<br>
+    Due to the Coronavirus crisis and the measures imposed, the SUMO User Conference 2020 is going to be <strong>virtual</strong>.
+    Save the date: <b>26-28 October 2020</b>.
 </div>
 
 <!-- head image -->
@@ -75,8 +76,10 @@ At the moment we see no other option and we are very sorry for any inconvenience
 The conference language is English.
 
 
-<!-- ### Prices
-- Regular Tickets – 495 EUR (One-Day-Ticket – 325 EUR)
+### Prices
+Participation at this year's conference will be free of charge!
+
+<!--- Regular Tickets – 495 EUR (One-Day-Ticket – 325 EUR)
 - Authors and Project Partners – 275 EUR
 - *"limited"* Student Grants - 75 EUR
 
@@ -84,7 +87,7 @@ The conference language is English.
 The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings, and social events in the evening. Accommodation is not included within the registration fee and must be pre-booked separately. The tickets for the conference can be booked on the following website: https://sumo2020.besl-eventservice.de. -->
 
 ### Venue
-Given the extraordinary situation we are facing, this year's SUMO User Conference will be virtual.   
+Given the extraordinary situation we are facing, this year's SUMO User Conference will be **virtual**.   
 **More info coming soon**
 
 <!-- The conference takes place in Berlin Adlershof:
