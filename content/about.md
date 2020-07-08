@@ -65,82 +65,82 @@ The SUMO package contains the following applications:
     
 <div class="row text-center" id="components">
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/SUMO.html">
-      <h6>SUMO</h6><p class="text-muted">command line simulation</p>
+    <div class="application-box"><a href="https://sumo.dlr.de/docs/sumo.html">
+      <h6>sumo</h6><p class="text-muted">command line simulation</p>
     </a></div>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/SUMO-GUI.html">
-      <h6>SUMO-GUI</h6><p class="text-muted">simulation with a graphical user interface</p>
+    <div class="application-box"><a href="https://sumo.dlr.de/docs/sumo-gui.html">
+      <h6>sumo-gui</h6><p class="text-muted">simulation with a graphical user interface</p>
     </a></div>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/NETCONVERT.html">
-      <h6>NETCONVERT</h6><p class="text-muted">network importer</p>
+    <div class="application-box"><a href="https://sumo.dlr.de/docs/netconvert.html">
+      <h6>netconvert</h6><p class="text-muted">network importer</p>
     </a></div>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/NETEDIT.html">
-      <h6>NETEDIT</h6><p class="text-muted">visual editor for network elements</p>
-    </a></div>
-  </div>
-</div>
-
-<div class="row text-center">
-  <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/NETGENERATE.html">
-      <h6>NETGENERATE</h6><p class="text-muted">abstract networks generator</p>
-    </a></div>
-  </div>
-  <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/OD2TRIPS.html">
-      <h6>OD2TRIPS</h6><p class="text-muted">converter from O/D matrices to trips</p>
-    </a></div>
-  </div>
-  <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/DUAROUTER.html">
-      <h6>DUAROUTER</h6><p class="text-muted">routes generator based on a dynamic user assignment</p>
-    </a></div>
-  </div>
-  <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/JTRROUTER.html">
-      <h6>JTRROUTER</h6><p class="text-muted">routes generator based on turning ratios at intersections</p>
+    <div class="application-box"><a href="https://sumo.dlr.de/docs/netedit.html">
+      <h6>netedit</h6><p class="text-muted">visual editor for network elements</p>
     </a></div>
   </div>
 </div>
 
 <div class="row text-center">
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/DFROUTER.html">
-      <h6>DFROUTER</h6><p class="text-muted">route generator with use of detector data</p>
+    <div class="application-box"><a href="https://sumo.dlr.de/docs/netgenerate.html">
+      <h6>netgenerate</h6><p class="text-muted">abstract networks generator</p>
     </a></div>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/MAROUTER.html">
-      <h6>MAROUTER</h6><p class="text-muted">macroscopic user assignment based on capacity functions</p>
+    <div class="application-box"><a href="https://sumo.dlr.de/docs/od2trips.html">
+      <h6>od2trips</h6><p class="text-muted">converter from O/D matrices to trips</p>
     </a></div>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/POLYCONVERT.html">
-      <h6>POLYCONVERT</h6><p class="text-muted">imports geometrical shapes and convert them to be visualized using SUMO-GUI</p>
+    <div class="application-box"><a href="https://sumo.dlr.de/docs/duarouter.html">
+      <h6>duarouter</h6><p class="text-muted">routes generator based on a dynamic user assignment</p>
     </a></div>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/ACTIVITYGEN.html">
-      <h6>ACTIVITYGEN</h6><p class="text-muted">compute mobility wishes based on population</p>
+    <div class="application-box"><a href="https://sumo.dlr.de/docs/jtrrouter.html">
+      <h6>jtrrouter</h6><p class="text-muted">routes generator based on turning ratios at intersections</p>
     </a></div>
   </div>
 </div>
 
 <div class="row text-center">
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/Tools/Emissions.html">
-      <h6>EMISSIONSMAP</h6><p class="text-muted">emission map generator</p>
+    <div class="application-box"><a href="https://sumo.dlr.de/docs/dfrouter.html">
+      <h6>dfrouter</h6><p class="text-muted">route generator with use of detector data</p>
     </a></div>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/Tools/Emissions.html">
-      <h6>EMISSIONSDRIVINGCYCLE</h6><p class="text-muted">calculates emission values based on a given driving cycle</p>
+    <div class="application-box"><a href="https://sumo.dlr.de/docs/marouter.html">
+      <h6>marouter</h6><p class="text-muted">macroscopic user assignment based on capacity functions</p>
+    </a></div>
+  </div>
+  <div class="col-sm-3">
+    <div class="application-box"><a href="https://sumo.dlr.de/docs/polyconvert.html">
+      <h6>polyconvert</h6><p class="text-muted">imports geometrical shapes and convert them to be visualized using SUMO-GUI</p>
+    </a></div>
+  </div>
+  <div class="col-sm-3">
+    <div class="application-box"><a href="https://sumo.dlr.de/docs/activitygen.html">
+      <h6>activitygen</h6><p class="text-muted">compute mobility wishes based on population</p>
+    </a></div>
+  </div>
+</div>
+
+<div class="row text-center">
+  <div class="col-sm-3">
+    <div class="application-box"><a href="https://sumo.dlr.de/docs/Tools/Emissions.html#emissionsmap">
+      <h6>emissionsMap</h6><p class="text-muted">emission map generator</p>
+    </a></div>
+  </div>
+  <div class="col-sm-3">
+    <div class="application-box"><a href="https://sumo.dlr.de/docs/Tools/Emissions.html#emissionsdrivingcycle">
+      <h6>emissionsDrivingCycle</h6><p class="text-muted">calculates emission values based on a given driving cycle</p>
     </a></div>
   </div>
   <div class="col-sm-3">
