@@ -37,9 +37,15 @@ The conference focuses on presenting new and unique results in the field of mobi
 - Vehicular Communication
 - E-Mobility
 
+#### Paper Submission
+
+Please submit your final paper using EasyChair https://easychair.org/ until **14.09.2020** using a template from https://easychair.org/publications/for_authors. We will try to give feedback shortly after.
+
 ### Agenda
 
-Unfortunately, due to the current corona situation we decided to postpone the SUMO user conference. We are very interested in networking with all conference participants therefore we did not want to cancel the conference. Please save the new date for the SUMO conference: **26.-28. October 2020**
+The new Agenda is coming soon...
+
+<!-- Unfortunately, due to the current corona situation we decided to postpone the SUMO user conference. We are very interested in networking with all conference participants therefore we did not want to cancel the conference. Please save the new date for the SUMO conference: **26.-28. October 2020**
 
 At the moment we see no other option and we are very sorry for any inconveniences.
 
@@ -70,7 +76,14 @@ At the moment we see no other option and we are very sorry for any inconvenience
 | 12:30 - 13:30  | Poster Session  |
 | 13:30 - 15:00  | Scientific Session |
 | 15:00 - 15:15  | Closing |
-| 15:15          | openMobility Meeting |
+| 15:15          | openMobility Meeting | -->
+
+<!-- ### Social Event -->
+
+<!-- ### Registration
+
+The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings and social events in the evening. Accommodation is not included within the registration fee and must be pre-booked separately. 
+Register here. -->
 
 ### Language
 The conference language is English.
