@@ -6,6 +6,24 @@ layout: "single"
 draft: false
 ---
 
+<!-- archive - previous years -->
+<div class="text-right">
+<div class="btn-group" style="margin-bottom:10px;">
+    <div class="dropdown">
+    <button type="button" class="btn btn-light btn-sm dropdown-toggle" data-toggle="dropdown">(Archive) Select previous year</button>
+        <div class="dropdown-menu text-center">
+            <a class="dropdown-item" href="https://sumo.dlr.de/2019">2019</a>
+            <a class="dropdown-item" href="https://sumo.dlr.de/2018">2018</a>
+            <a class="dropdown-item" href="https://sumo.dlr.de/2017">2017</a>
+            <a class="dropdown-item" href="https://sumo.dlr.de/2016">2016</a>
+            <a class="dropdown-item" href="https://sumo.dlr.de/2015">2015</a>
+            <a class="dropdown-item" href="https://sumo.dlr.de/2014">2014</a>
+            <a class="dropdown-item" href="https://sumo.dlr.de/2013">2013</a>
+        </div>
+    </div> 
+</div>
+</div>
+
 <!-- dismissible alert -->
 <div class="alert alert-warning alert-dismissible">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
