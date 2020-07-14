@@ -122,7 +122,7 @@ The SUMO package contains the following applications:
   </div>
   <div class="col-sm-3">
     <div class="application-box"><a href="https://sumo.dlr.de/docs/polyconvert.html">
-      <h6>polyconvert</h6><p class="text-muted">imports geometrical shapes and convert them to be visualized using SUMO-GUI</p>
+      <h6>polyconvert</h6><p class="text-muted">imports geometrical shapes and convert them to be visualized using sumo-gui</p>
     </a></div>
   </div>
   <div class="col-sm-3">
