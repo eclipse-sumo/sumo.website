@@ -57,7 +57,7 @@ The conference focuses on presenting new and unique results in the field of mobi
 
 #### Paper Submission
 
-Please submit your final paper using EasyChair https://easychair.org/ until **14.09.2020** using a template from https://easychair.org/publications/for_authors. We will try to give feedback shortly after.
+**Only for invited Authors of scientific papers:** Please submit your final paper using EasyChair https://easychair.org/ until **14.09.2020** using a template from https://easychair.org/publications/for_authors. We will try to give feedback shortly after.
 
 ### Agenda
 
