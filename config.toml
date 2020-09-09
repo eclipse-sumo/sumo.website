@@ -10,7 +10,7 @@ theme = "sumo-theme"
 favicon = "images/favicon.ico"
 logo = "images/logos/sumo-logo-white.svg"
 docsURL = "https://sumo.dlr.de/docs"
-Version = "1.6.0"
+Version = "1.7.0"
 
 ########################### Navigation ###################################
 
