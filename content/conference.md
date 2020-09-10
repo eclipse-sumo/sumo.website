@@ -30,7 +30,7 @@ draft: false
     <b>Important notice</b>
     <br>
     Participation at this year’s conference will be <b>free</b> of charge!<br>
-    Due to the Coronavirus crisis and the measures imposed, the SUMO User Conference 2020 is going to be <strong>virtual</strong>.
+    Due to the Coronavirus crisis and the measures imposed, the SUMO User Conference 2020 is going to be <strong>online</strong>.
     Save the date: <b>26-28 October 2020</b>.
 </div>
 
@@ -61,7 +61,10 @@ The conference focuses on presenting new and unique results in the field of mobi
 
 ### Agenda
 
-The new Agenda is coming soon...
+The new Agenda is coming soon.
+
+
+Please check again later.
 
 <!-- Unfortunately, due to the current corona situation we decided to postpone the SUMO user conference. We are very interested in networking with all conference participants therefore we did not want to cancel the conference. Please save the new date for the SUMO conference: **26.-28. October 2020**
 
@@ -98,17 +101,19 @@ At the moment we see no other option and we are very sorry for any inconvenience
 
 <!-- ### Social Event -->
 
-<!-- ### Registration
-
+### Registration
+<!-- 
 The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings and social events in the evening. Accommodation is not included within the registration fee and must be pre-booked separately. 
 Register here. -->
+
+**More info coming soon**
 
 ### Language
 The conference language is English.
 
 
 ### Prices
-Participation at this year's conference will be free of charge!
+Participation at this year's conference will be **free of charge**!
 
 <!--- Regular Tickets – 495 EUR (One-Day-Ticket – 325 EUR)
 - Authors and Project Partners – 275 EUR
@@ -118,8 +123,7 @@ Participation at this year's conference will be free of charge!
 The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings, and social events in the evening. Accommodation is not included within the registration fee and must be pre-booked separately. The tickets for the conference can be booked on the following website: https://sumo2020.besl-eventservice.de. -->
 
 ### Venue
-Given the extraordinary situation we are facing, this year's SUMO User Conference will be **virtual**.   
-**More info coming soon**
+Given the extraordinary situation we are facing, this year's SUMO User Conference will be **online** via [Zoom](https://zoom.us/download#client_4meeting).   
 
 <!-- The conference takes place in Berlin Adlershof:
 

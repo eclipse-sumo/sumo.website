@@ -399,6 +399,7 @@ font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto
 
 h3 {
 margin-top: 40px;
+scroll-margin-top: 100px;
 }
 
 #car-animation {
