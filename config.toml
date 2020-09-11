@@ -58,22 +58,16 @@ parent = "About"
 weight = 1
 
 [[menu.main]]
-URL = "https://sumo.dlr.de/docs/FAQ.html"
-name = "FAQ"
-parent = "About"
-weight = 2
-
-[[menu.main]]
 URL = "https://projects.eclipse.org/projects/technology.sumo/who"
 name = "Who's involved"
 parent = "About"
-weight = 3
+weight = 2
 
 [[menu.main]]
 URL = "https://sumo.dlr.de/daily"
 name = "Status of daily build and tests"
 parent = "About"
-weight = 4
+weight = 3
 
 [[menu.main]]
 URL = "https://sumo.dlr.de/docs/Other/Projects.html"
