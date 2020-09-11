@@ -5,8 +5,9 @@ draft: false
 ---
 
 <!-- dismissible alert -->
-<div class="alert alert-info alert-dismissible">
+<div class="alert alert-warning alert-dismissible">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <a href="conference#registration"><h4 style="color:#338033";>Registration is now open!</h4></a>
     The <strong>SUMO User Conference 2020</strong> takes place October 26-28, 2020. This year's conference is going to be <b>online</b> and the participation will be <b>free</b> of charge. <a href="conference">More info about the conference</a>
 </div>
 

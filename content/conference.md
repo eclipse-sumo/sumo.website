@@ -29,9 +29,9 @@ draft: false
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <b>Important notice</b>
     <br>
+    <a href="#registration"><h4 style="color:#338033";>Registration is now open!</h4></a>
     Participation at this year’s conference will be <b>free</b> of charge!<br>
     Due to the Coronavirus crisis and the measures imposed, the SUMO User Conference 2020 is going to be <strong>online</strong>.
-    Save the date: <b>26-28 October 2020</b>.
 </div>
 
 <!-- head image -->
@@ -61,52 +61,49 @@ The conference focuses on presenting new and unique results in the field of mobi
 
 ### Agenda
 
-The new Agenda is coming soon.
-
-
-Please check again later.
-
-<!-- Unfortunately, due to the current corona situation we decided to postpone the SUMO user conference. We are very interested in networking with all conference participants therefore we did not want to cancel the conference. Please save the new date for the SUMO conference: **26.-28. October 2020**
-
-At the moment we see no other option and we are very sorry for any inconveniences.
+**More detailed information is coming soon ...**
 
 | Monday         |October 26, 2020|
 |----------------|---|
-| 13:00 - 14:00  | Eclipse Present / Open ADX  |
-| 14:00 - 15:45  | SUMO Tutorial  |
-| 16:00 - 17:45  | Ask us Anything   |
+| 13:00 - 14:00  | Opening & Tutorial  |
+| 14:30 - 15:00  | Ask us anything  |
+| 15:00 - 15:30  | openMobility   |
 
 <br>
 
 | Tuesday        | October 27, 2020 |
 |----------------|---|
-| 09:30 - 10:15  | Welcome  |
-| 10:15 - 11:45  | Scientific Session  |
-| 12:30 - 13:30  | Keynote Jordi Casas (AIMSUN)  |
-| 13:30 - 15:00  | Scientific Session |
-| 15:30 - 16:30  | Technical Session |
-| 16:30 - 17:30  | Poster Session |
-| 18:00          | Evening Program |
+| 09:00 - 10:00  | Session 1  |
+| 10:30 - 11:30  | Session 2  |
+| 13:00 - 14:00  | Session 3  |
+| 14:30 - 15:00  | Poster Session |
+| 15:00 - 15:30  | Poster Session |
+| 15:30 - 16:00  | Poster Session |
+| 16:00 - 16:30  | Poster Session |
+| 17:00          | [Social Event](#social-event) |
 
 <br>
 
 | Wednesday      | October 28, 2020  |
 |----------------|---|
-| 09:00 - 10:30  | Scientific Session  |
-| 10:45 - 11:45  | Technical Session  |
-| 12:30 - 13:30  | Poster Session  |
-| 13:30 - 15:00  | Scientific Session |
-| 15:00 - 15:15  | Closing |
-| 15:15          | openMobility Meeting | -->
+| 09:00 - 10:00  | Session 4  |
+| 10:30 - 11:30  | Keynote  |
+| 13:00 - 14:00  | Session 5  |
+| 14:30 - 15:00  | Session 6 |
 
-<!-- ### Social Event -->
+<br>
+*Schedule given in Central European Time (UTC+1)*
+
+### Social Event
+
+More info coming soon...
 
 ### Registration
 <!-- 
 The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings and social events in the evening. Accommodation is not included within the registration fee and must be pre-booked separately. 
 Register here. -->
 
-**More info coming soon**
+Please [register here](https://zoom.us/webinar/register/WN_9R7MuVewSs6aDGwI4i4big).
 
 ### Language
 The conference language is English.
