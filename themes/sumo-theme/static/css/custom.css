@@ -393,13 +393,13 @@ h3,
 h4,
 h5,
 h6 {
+scroll-margin-top: 100px;
 font-weight: 700;
 font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 h3 {
 margin-top: 40px;
-scroll-margin-top: 100px;
 }
 
 #car-animation {

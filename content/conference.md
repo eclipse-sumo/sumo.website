@@ -29,7 +29,7 @@ draft: false
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <b>Important notice</b>
     <br>
-    <a href="#registration"><h4 style="color:#338033";>Registration is now open!</h4></a>
+    <a href="https://zoom.us/webinar/register/WN_9R7MuVewSs6aDGwI4i4big"><h4 style="color:#338033";>Registration is now open!</h4></a>
     Participation at this year’s conference will be <b>free</b> of charge!<br>
     Due to the Coronavirus crisis and the measures imposed, the SUMO User Conference 2020 is going to be <strong>online</strong>.
 </div>
@@ -61,8 +61,9 @@ The conference focuses on presenting new and unique results in the field of mobi
 
 ### Agenda
 
-**More detailed information is coming soon ...**
+*Schedule given in Central European Time (CET) (UTC+1)*
 
+<!--
 | Monday         |October 26, 2020|
 |----------------|---|
 | 13:00 - 14:00  | Opening & Tutorial  |
@@ -90,9 +91,203 @@ The conference focuses on presenting new and unique results in the field of mobi
 | 10:30 - 11:30  | Keynote  |
 | 13:00 - 14:00  | Session 5  |
 | 14:30 - 15:00  | Session 6 |
+-->
+
+<!-- dismissible alert -->
+<div class="alert alert-warning alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    More detailed information is coming soon
+</div>
+
+<table>
+<thead>
+  <tr>
+    <th colspan="2">Monday - October 26, 2020</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>13:00 - 14:00</td>
+    <td>Opening & Tutorial</td>
+  </tr>
+  <tr>
+    <td>14:30 - 15:00</td>
+    <td>Ask us anything</td>
+  </tr>
+  <tr>
+    <td>15:00 - 15:30</td>
+    <td>openMobility</td>
+  </tr>
+</tbody>
+</table>
 
 <br>
-*Schedule given in Central European Time (UTC+1)*
+
+<table>
+<thead>
+  <tr>
+    <th colspan="2">Tuesday - October 27, 2020</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>09:00 - 10:00</td>
+    <td><h5><a href="#s1"><span class="badge badge-dark">S1</span></a> <a href="#s2"><span class="badge badge-primary">S2</span></a> <a href="#s3"><span class="badge badge-secondary">S3</span></a> <a href="#s4"><span class="badge badge-success">S4</span></a></h5></td>
+  </tr>
+  <tr>
+    <td>10:30 - 11:30</td>
+    <td><h5><a href="#s5"><span class="badge badge-danger">S5</span></a> <a href="#s6"><span class="badge badge-warning">S6</span></a> <a href="#s7"><span class="badge badge-info">S7</span></a></h5></td>
+  </tr>
+  <tr>
+    <td colspan="2"><i>LUNCH BREAK</i></td>
+  </tr>
+  <tr>
+    <td>13:00 - 14:00</td>
+    <td>Keynote</td>
+  </tr>
+    <tr>
+    <td>14:30 - 15:30</td>
+    <td><h5><a href="#s1"><span class="badge badge-dark">S1</span></a> <a href="#s2"><span class="badge badge-primary">S2</span></a> <a href="#s7"><span class="badge badge-info">S7</span></a></h5></td>
+  </tr>
+  <tr>
+    <td>15:30 - 16:00</td>
+    <td>Poster Session</td>
+  </tr>
+  <tr>
+    <td>16:00 - 16:30</td>
+    <td>Poster Session</td>
+  </tr>
+  <tr>
+    <td>17:00</td>
+    <td><a href="#social-event">Social Event</a></td>
+  </tr>
+</tbody>
+</table>
+
+<br>
+
+<table>
+<thead>
+  <tr>
+    <th colspan="2">Wednesday - October 28, 2020</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>09:00 - 10:00</td>
+    <td><h5><a href="#s2"><span class="badge badge-primary">S2</span></a> <a href="#s4"><span class="badge badge-success">S4</span></a> <a href="#s6"><span class="badge badge-warning">S6</span></a></h5></td>
+  </tr>
+    <tr>
+    <td>10:30 - 11:30</td>
+    <td><h5><a href="#s1"><span class="badge badge-dark">S1</span></a> <a href="#s3"><span class="badge badge-secondary">S3</span></a> <a href="#s5"><span class="badge badge-danger">S5</span></a> <a href="#s7"><span class="badge badge-info">S7</span></a></h5></td>
+  </tr>
+    <tr>
+    <td colspan="2"><i>LUNCH BREAK</i></td>
+  </tr>
+  <tr>
+    <td>13:00 - 14:00</td>
+    <td><h5><a href="#s3"><span class="badge badge-secondary">S3</span></a> <a href="#s4"><span class="badge badge-success">S4</span></a> <a href="#s5"><span class="badge badge-danger">S5</span></a> <a href="#s6"><span class="badge badge-warning">S6</span></a></h5></td>
+  </tr>
+  <tr>
+    <td>14:30 - 15:00</td>
+    <td>Poster Session</td>
+  </tr>
+    <tr>
+    <td>15:00 - 15:30</td>
+    <td>Poster Session</td>
+  </tr>
+    <tr>
+    <td>15:30 - 16:00</td>
+    <td>Closing Session & selection of best Presentation</td>
+  </tr>
+</tbody>
+</table>
+
+<br>
+
+<h4 id="s1"><span class="badge badge-dark">S1: Autonomous Vehicles</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 09:00-10:00 and 14:30-15:30, Wednesday 10:30-11:30</small></h4>
+
+- Driver Readiness to Take-Over the Control of Autonomous Vehicles - *Abdurrahman Arslanyilmaz, Salman Al Matouq and Durmus Doner*
+- Modeling autonomous dynamic vanpooling services in SUMO by integrating the dynamic routing scheduler - *Moeid Qurashi, Hai Jiang and Constantinos Antoniou*
+- Simulating demand responsive feeder transit services: A case study of Braunschweig - *Maria Giuliana Armellini and Laura Bieker-Walz*
+
+<!-- Zoom Meeting ID: [123 1234 1234](https://zoom.us/j/12312341234)-->
+
+Session Chair: *coming soon*  
+Zoom Meeting ID: *coming soon*   
+**Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
+
+<br>
+
+<h4 id="s2"><span class="badge badge-primary">S2: AI</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 09:00-10:00 and 14:30-15:30, Wednesday 09:00-10:00</small></h4>
+
+- Computer Simulation Study of Vehicle Type Classification Using Machine Learning Techniques with Mobile Phone Location Data - *Chaninart Eosanurak, Nattida Wongtrakoon, Ei Ei Mon and Chaodit Aswakul*
+- AI-based Disposition using a Reinforcement Learning Approach - *Georg Merz*
+- Concept and first insights of a sequential MATSim-SUMO tool-coupling to deduce representative 24h-velocity-profiles for autonomous vehicles - *Henriette Triebke*
+
+Session Chair: *coming soon*  
+Zoom Meeting ID: *coming soon*   
+**Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
+
+<br>
+
+<h4 id="s3"><span class="badge badge-secondary">S3: Other traffic modes</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 09:00-10:00, Wednesday 10:30-11:30 and 13:00-14:00</small></h4>
+
+- Pedestrian Simulation Methodology of Evacuation in the Area of Cotopaxi’s Lahar Influence with SUMO - *Sebastian Bucheli and Oswaldo Padilla*
+- Hierarchical delay-based signal coordination for bicycles and motor vehicles traffic - *Seyed Abdollah Hosseini, Georgios Grigoropoulos, Andreas Keler, Fritz Busch and Klaus Bogenberger*
+- Towards Truck Parking Lot Occupancy Estimation - *Florian Ziegler, Maurice Freund and Thomas Liebig*
+
+Session Chair: *coming soon*  
+Zoom Meeting ID: *coming soon*   
+**Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
+
+<br>
+
+<h4 id="s4"><span class="badge badge-success">S4: Micro simulation / other</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 09:00-10:00, Wednesday 09:00-10:00 and 13:00-14:00</small></h4>
+
+- ECN-based Mitigation of Congestion in Urban Traffic Networks - *Levente Alekszejenkó and Tadeusz P. Dobrowiecki*
+- Extending the Intelligent Driver Model in SUMO and Verifying the Drive Off Trajectories with Aerial Measurements - *Dominik Salles, Stefan Kaufmann and Hans-Christian Reuss*
+- A Slipstreaming Model for Cooperative Driving Simulations in SUMO - *Andrea Stedile and Michele Segata*
+
+Session Chair: *coming soon*  
+Zoom Meeting ID: *coming soon*   
+**Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
+
+<br>
+
+<h4 id="s5"><span class="badge badge-danger">S5: Real-world Scenarios</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 10:30-11:30, Wednesday 10:30-11:30 and 13:00-14:00</small></h4>
+
+- SAGA: An Activity-based Multi-modal Mobility Scenario Generator for SUMO - *Lara Codeca, Jakob Erdmann, Vinny Cahill and Jérôme Härri*
+- InTAS - The Ingolstadt Traffic Scenario for SUMO - *Silas Lobo, Stefan Neumeier, Evelio Fernandez and Christian Facchi*
+- An application of SUMO in a Drive on the Left country: Challenges and opportunities - *Rubel Das and Masaaki Sakuraba*
+
+Session Chair: *coming soon*  
+Zoom Meeting ID: *coming soon*   
+**Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
+
+<br>
+
+<h4 id="s6"><span class="badge badge-warning">S6: Real-world data</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 10:30-11:30, Wednesday 09:00-10:00 and 13:00-14:00</small></h4>
+
+- Calibration of car-following models by using drone videos of a real-world intersection - *András Zsámboki, Jiao Li and Zoltán Baksa*
+- Generating and calibrating large-scale, mesoscopic SUMO network - *Sasan Amini, Lukas Ambühl, Gabriel Tilg, Klaus Bogenberger and Monica Menendez*
+- Action-points in human driving and in SUMO - *Peter Wagner, Jakob Erdmann and Ronald Nippold*
+
+Session Chair: *coming soon*  
+Zoom Meeting ID: *coming soon*   
+**Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
+
+<br>
+
+<h4 id="s7"><span class="badge badge-info">S7: Emission</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 10:30-11:30 and 14:30-15:30, Wednesday 10:30-11:30</small></h4>
+
+- Generic Series Hybrid Powertrain Device in SUMO - *Jan Prikryl, Jakub Sevcik and Martin Janda*
+- Estimation of Green House Gas and Contaminant Emissions from Traffic by microsimulation and refined Origin-Destination matrices: a methodological approach - *Jorge E. Luzuriaga, Juan A. Moreno, Edgar Lorenzo Sáez, Santiago Mira Prats, Javier Fermín Urchueguía, Lenin Guillermo Lemus Zúñiga, José Vicente Oliver Villanueva and Miguel A. Mateo Pla*
+
+Session Chair: *coming soon*  
+Zoom Meeting ID: *coming soon*   
+**Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
+
 
 ### Social Event
 
@@ -103,7 +298,7 @@ More info coming soon...
 The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings and social events in the evening. Accommodation is not included within the registration fee and must be pre-booked separately. 
 Register here. -->
 
-Please [register here](https://zoom.us/webinar/register/WN_9R7MuVewSs6aDGwI4i4big).
+Please **[register here](https://zoom.us/webinar/register/WN_9R7MuVewSs6aDGwI4i4big)**. No Zoom account is required.
 
 ### Language
 The conference language is English.
