@@ -12,6 +12,12 @@ logo = "images/logos/sumo-logo-white.svg"
 docsURL = "https://sumo.dlr.de/docs"
 Version = "1.7.0"
 
+## Enable inline-HTML in Hugo > v0.60.0
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 ########################### Navigation ###################################
 
 # main menu
