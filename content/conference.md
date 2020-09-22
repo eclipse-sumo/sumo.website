@@ -111,12 +111,18 @@ The conference focuses on presenting new and unique results in the field of mobi
     <td>Opening & Tutorial</td>
   </tr>
   <tr>
-    <td>14:30 - 15:00</td>
+    <td>14:00 - 14:30</td>
     <td>Ask us anything</td>
   </tr>
   <tr>
-    <td>15:00 - 15:30</td>
-    <td>openMobility</td>
+    <td>15:00 - 16:30</td>
+    <td><ul>
+    <li>Eclipse Foundation</li>
+    <li>openADx Working Group</li>
+    <li>Eclipse ADORe</li>
+    <li>openMobility Working Group</li>
+    <li>Eclipse MOSAIC</li>
+    </ul></td>
   </tr>
 </tbody>
 </table>
@@ -151,11 +157,11 @@ The conference focuses on presenting new and unique results in the field of mobi
   </tr>
   <tr>
     <td>15:30 - 16:00</td>
-    <td>Poster Session</td>
+    <td>Poster Session 1</td>
   </tr>
   <tr>
     <td>16:00 - 16:30</td>
-    <td>Poster Session</td>
+    <td>Poster Session 2</td>
   </tr>
   <tr>
     <td>17:00</td>
@@ -190,11 +196,11 @@ The conference focuses on presenting new and unique results in the field of mobi
   </tr>
   <tr>
     <td>14:30 - 15:00</td>
-    <td>Poster Session</td>
+    <td>Poster Session 3</td>
   </tr>
     <tr>
     <td>15:00 - 15:30</td>
-    <td>Poster Session</td>
+    <td>Poster Session 4</td>
   </tr>
     <tr>
     <td>15:30 - 16:00</td>
@@ -213,7 +219,7 @@ The conference focuses on presenting new and unique results in the field of mobi
 
 <!-- Zoom Meeting ID: [123 1234 1234](https://zoom.us/j/12312341234)-->
 
-Session Chair: *coming soon*  
+Session Chair: Matthias Schwamborn  
 Zoom Meeting ID: *coming soon*   
 **Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
@@ -225,7 +231,7 @@ Zoom Meeting ID: *coming soon*
 - AI-based Disposition using a Reinforcement Learning Approach - *Georg Merz*
 - Concept and first insights of a sequential MATSim-SUMO tool-coupling to deduce representative 24h-velocity-profiles for autonomous vehicles - *Henriette Triebke*
 
-Session Chair: *coming soon*  
+Session Chair: Robert Hilbrich  
 Zoom Meeting ID: *coming soon*   
 **Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
@@ -237,7 +243,7 @@ Zoom Meeting ID: *coming soon*
 - Hierarchical delay-based signal coordination for bicycles and motor vehicles traffic - *Seyed Abdollah Hosseini, Georgios Grigoropoulos, Andreas Keler, Fritz Busch and Klaus Bogenberger*
 - Towards Truck Parking Lot Occupancy Estimation - *Florian Ziegler, Maurice Freund and Thomas Liebig*
 
-Session Chair: *coming soon*  
+Session Chair: Michael Behrisch  
 Zoom Meeting ID: *coming soon*   
 **Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
@@ -249,7 +255,7 @@ Zoom Meeting ID: *coming soon*
 - Extending the Intelligent Driver Model in SUMO and Verifying the Drive Off Trajectories with Aerial Measurements - *Dominik Salles, Stefan Kaufmann and Hans-Christian Reuss*
 - A Slipstreaming Model for Cooperative Driving Simulations in SUMO - *Andrea Stedile and Michele Segata*
 
-Session Chair: *coming soon*  
+Session Chair: Peter Wagner  
 Zoom Meeting ID: *coming soon*   
 **Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
@@ -261,7 +267,7 @@ Zoom Meeting ID: *coming soon*
 - InTAS - The Ingolstadt Traffic Scenario for SUMO - *Silas Lobo, Stefan Neumeier, Evelio Fernandez and Christian Facchi*
 - An application of SUMO in a Drive on the Left country: Challenges and opportunities - *Rubel Das and Masaaki Sakuraba*
 
-Session Chair: *coming soon*  
+Session Chair: Ronald Nippold  
 Zoom Meeting ID: *coming soon*   
 **Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
@@ -273,7 +279,7 @@ Zoom Meeting ID: *coming soon*
 - Generating and calibrating large-scale, mesoscopic SUMO network - *Sasan Amini, Lukas Ambühl, Gabriel Tilg, Klaus Bogenberger and Monica Menendez*
 - Action-points in human driving and in SUMO - *Peter Wagner, Jakob Erdmann and Ronald Nippold*
 
-Session Chair: *coming soon*  
+Session Chair: Laura Bieker-Walz  
 Zoom Meeting ID: *coming soon*   
 **Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
@@ -284,7 +290,7 @@ Zoom Meeting ID: *coming soon*
 - Generic Series Hybrid Powertrain Device in SUMO - *Jan Prikryl, Jakub Sevcik and Martin Janda*
 - Estimation of Green House Gas and Contaminant Emissions from Traffic by microsimulation and refined Origin-Destination matrices: a methodological approach - *Jorge E. Luzuriaga, Juan A. Moreno, Edgar Lorenzo Sáez, Santiago Mira Prats, Javier Fermín Urchueguía, Lenin Guillermo Lemus Zúñiga, José Vicente Oliver Villanueva and Miguel A. Mateo Pla*
 
-Session Chair: *coming soon*  
+Session Chair: Yun-Pang Flötteröd   
 Zoom Meeting ID: *coming soon*   
 **Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 

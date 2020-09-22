@@ -5,8 +5,8 @@ color: #403b3b;
 }
 
 html, body {
-position:relative;
-overflow-x:hidden;
+position: relative;
+overflow-x: hidden;
 }
 
 .bg-light {
@@ -19,7 +19,7 @@ width: 12px;
 height: 12px;
 margin-bottom: 0;
 background-color: #17412f;
-border:white;
+border: white;
 }
 
 .carousel-indicators li {
@@ -27,6 +27,7 @@ width: 10px;
 height: 10px;
 border-radius: 100%;
 }
+
 .carousel-indicators {
 bottom: -40px;
 }
@@ -98,8 +99,8 @@ margin-bottom: 15px;
 }
 
 .small-div {
-margin-right:15px; 
-min-height:310px;
+margin-right: 5px;
+min-height: 310px;
 }
 
 .btn-outline-info {
@@ -202,15 +203,13 @@ margin-bottom: auto;
 
 .bg-light {
 background-color: #338033 !important;
-
 }
 
-.navbar-brand{
+.navbar-brand {
 margin-right: 0 !important;
 }
 
 @media (max-width: 768px) {
-
 .navbar-brand {
 margin-left: 15px;
 }
@@ -221,22 +220,25 @@ margin-right: 15px;
 
 table {
 width: 100%;
-border-collapse:collapse;
+border-collapse: collapse;
 }
-table td{ 
-padding:7px; border:#ddd 1px solid;
+
+table td {
+padding: 7px;
+border: #ddd 1px solid;
 }
-/* provide some minimal visual accomodation for IE8 and below */
-table tr{
+
+table tr {
 background: #efefef;
 }
-/*  Define the background color for all the ODD background rows  */
-table tr:nth-child(odd){ 
+
+table tr:nth-child(odd) {
 background: #efefef;
 }
-/*  Define the background color for all the EVEN background rows  */
-table tr:nth-child(even){
-background: #fff;}
+
+table tr:nth-child(even) {
+background: #fff;
+}
 
 thead tr th:first-child,
 tbody tr td:first-child {
@@ -248,7 +250,7 @@ word-break: break-all;
 
 th {
 background-color: #ddd;
-padding:7px; border:#ddd 1px solid;
+padding:7px; border: #ddd 1px solid;
 }
 
 .col-md-4 {
@@ -272,12 +274,11 @@ background-color: transparent !important;
 background-color: #336699;
 }
 
-/* here */
 .dropdown-item:active {
 background-color: #336699 !important;
 }
 
-.dropdown-menu{
+.dropdown-menu {
 background-color: #17412f;
 border-radius: 4px;
 border-color: #eff8ff;
@@ -285,8 +286,7 @@ box-shadow: 0 0 0 1px rgba(0,0,0,.05),0 5px 25px 0 rgba(0,0,0,.15),0 3px 3px 0 r
 }
 
 @media (min-width: 768px) {
-.dropdown-menu{
-
+.dropdown-menu {
 left: 50% !important;
 transform: translateX(-50%) !important;
 top: 100% !important;
@@ -317,7 +317,7 @@ background-color: #555;
 list-style-type: none;
 }
 
-.footer a{
+.footer a {
 color: inherit !important;
 text-decoration: none !important;
 }
@@ -361,7 +361,7 @@ border-color: #0645ad;
 
 .btn-outline-info:hover {
 background-color: #0645ad;
-border-color: #0645ad;;
+border-color: #0645ad;
 }
 
 p {
@@ -387,13 +387,7 @@ pointer-events: none;
 margin-top: 5px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-/* scroll-margin-top: 100px; */
+h1, h2, h3, h4, h5, h6 {
 font-weight: 700;
 font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
