@@ -322,7 +322,6 @@ Poster Session Chair: Melanie Weber
 - An emergency vehicle prioritzation strategy with simulation results of Brunswick
 - I4Port
 - SUMOPy - a simulation suite to create traffic scenarios with SUMO 
-- Pedestrian simulation methodology of evacuation in the area of Cotopaxi’s lahar influence with SUMO
 
 Poster Session Chair: Angelo Banse 
 
