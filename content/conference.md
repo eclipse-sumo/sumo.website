@@ -29,7 +29,7 @@ draft: false
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <b>Important notice</b>
     <br>
-    <a href="https://zoom.us/webinar/register/WN_9R7MuVewSs6aDGwI4i4big"><h4 style="color:#338033";>Registration is now open!</h4></a>
+    <a href="https://zoom.us/webinar/register/WN_9R7MuVewSs6aDGwI4i4big"><h5 style="color:#338033";>Registration is now open!</h5></a>
     Participation at this year’s conference will be <b>free</b> of charge!<br>
     Due to the Coronavirus crisis and the measures imposed, the SUMO User Conference 2020 is going to be <strong>online</strong>.
 </div>
@@ -94,10 +94,10 @@ The conference focuses on presenting new and unique results in the field of mobi
 -->
 
 <!-- dismissible alert -->
-<div class="alert alert-warning alert-dismissible">
+<!-- <div class="alert alert-warning alert-dismissible">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     More detailed information is coming soon
-</div>
+</div> -->
 
 <table>
 <thead>
