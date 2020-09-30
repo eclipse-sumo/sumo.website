@@ -35,7 +35,7 @@ draft: false
 </div>
 
 <!-- head image -->
-<div class="container" style="height:200px; border-radius:0.6rem; background-image:url('../images/conference.JPG');  background-size: cover; filter: grayscale(100%);"></div>
+<div class="container" style="height:200px; border-radius:0.6rem; background-image:url('../images/conference.JPG');  background-size: cover;"></div>
 
 ### Introduction
 Traffic simulations are of immense importance for researchers as well as practitioners in the field of transportation. SUMO has been available since 2001 and provides a wide range of traffic planning and simulation applications. SUMO consists of a suite of tools covering road network imports and enrichment, demand generation and assignment, and a state-of-the-art microscopic traffic simulator capable of simulating private and public transport modes, as well as person-based trip chains. Being open source, SUMO is easily extensible by new behavioral models and can be dynamically controlled via a well-defined programming interface. These and other features make SUMO one of the most often used open source traffic simulators with a large and international user community.
@@ -157,11 +157,11 @@ The conference focuses on presenting new and unique results in the field of mobi
   </tr>
   <tr>
     <td>15:30 - 16:00</td>
-    <td><a href="#p1"><span class="badge badge-light" style="background:#cc99ff99;">Poster Session 1: Tools</span></a></td>
+    <td><a href="#p1"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 1: Tools</span></a></td>
   </tr>
   <tr>
     <td>16:00 - 16:30</td>
-    <td><a href="#p2"><span class="badge badge-light" style="background:#cc99ff99;">Poster Session 2: Modelling connected and intelligent traffic</span></a></td>
+    <td><a href="#p2"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 2: Modelling connected and intelligent traffic</span></a></td>
   </tr>
   <tr>
     <td>17:00</td>
@@ -196,11 +196,11 @@ The conference focuses on presenting new and unique results in the field of mobi
   </tr>
   <tr>
     <td>14:30 - 15:00</td>
-    <td><a href="#p3"><span class="badge badge-light" style="background:#cc99ff99;">Poster Session 3: Simulation Scenarios</span></a></td>
+    <td><a href="#p3"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 3: Simulation Scenarios</span></a></td>
   </tr>
     <tr>
     <td>15:00 - 15:30</td>
-    <td><a href="#p4"><span class="badge badge-light" style="background:#cc99ff99;">Poster Session 4: Routing</span></a></td>
+    <td><a href="#p4"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 4: Routing</span></a></td>
   </tr>
     <tr>
     <td>15:30 - 16:00</td>
@@ -295,7 +295,7 @@ Zoom Meeting ID: *coming soon*
 
 <br>
 
-<h4 id="p1"><span class="badge badge-light" style="background:#cc99ff99;">Poster Session 1: Tools</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 15:30-16:00</small></h4>
+<h4 id="p1"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 1: Tools</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 15:30-16:00</small></h4>
 
 - QarSUMO: An Open-source Parallel Framework for Large Scale Traffic Simulation
 - PaSyMo: Developing and Testing a Participatory Modeling Toolbox for Urban Systems
@@ -306,7 +306,7 @@ Poster Session Chair: Michael Behrisch
 
 <br>
 
-<h4 id="p2"><span class="badge badge-light" style="background:#cc99ff99;">Poster Session 2: Modelling connected and intelligent traffic</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 16:00-16:30</small></h4>
+<h4 id="p2"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 2: Modelling connected and intelligent traffic</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 16:00-16:30</small></h4>
 
 - Calibration based comparison of meso and microscopic modeling methods in SUMO
 - Improving network performance with V2X services of dispatching takeover requests and safe-spot assignments in an urban transition corridor
@@ -317,7 +317,7 @@ Poster Session Chair: Melanie Weber
 
 <br>
 
-<h4 id="p3"><span class="badge badge-light" style="background:#cc99ff99;">Poster Session 3: Simulation Scenarios</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Wednesday 14:30-15:00</small></h4>
+<h4 id="p3"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 3: Simulation Scenarios</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Wednesday 14:30-15:00</small></h4>
 
 - An emergency vehicle prioritzation strategy with simulation results of Brunswick
 - I4Port
@@ -327,7 +327,7 @@ Poster Session Chair: Angelo Banse
 
 <br>
 
-<h4 id="p4"><span class="badge badge-light" style="background:#cc99ff99;">Poster Session 4: Routing</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Wednesday 15:00-15:30</small></h4>
+<h4 id="p4"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 4: Routing</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Wednesday 15:00-15:30</small></h4>
 
 - An Analysis of Traffic Simulations Based on Modifiable OpenStreetMap Data
 - Fare-sensitive Routing with SUMO

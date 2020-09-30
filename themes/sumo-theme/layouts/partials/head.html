@@ -25,6 +25,16 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
+    <script>
+        window.onload = function check_if_ie() {
+            var msie = window.navigator.userAgent.indexOf("MSIE ");
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+                document.getElementById("not_for_ie").style.display = 'none';
+            }
+            return false;
+        }
+    </script>
+
     <!-- Eclipse Cookie Consent Banner -->
     <!-- <link rel="stylesheet" type="text/css" href="//www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css" />
     <script src="//www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script> -->

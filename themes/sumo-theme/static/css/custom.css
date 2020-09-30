@@ -47,7 +47,7 @@ margin-bottom: 30px;
 }
 
 .fa-stack-2x {
-color: #33803399 !important;
+color: rgb(125,174,125) !important;
 }
 
 pre {
@@ -85,7 +85,8 @@ top: -10px;
 }
 
 .member-logo {
-width: 130px;
+/* width: 130px; */
+height: 45px;
 margin: 10px 30px !important;
 }
 
@@ -267,7 +268,7 @@ color: #eff8ff !important;
 }
 
 .dropdown-item:visited {
-background-color: transparent !important;
+background-color: #336699;
 }
 
 .dropdown-item:hover {
