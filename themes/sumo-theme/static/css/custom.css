@@ -258,10 +258,10 @@ padding:7px; border: #ddd 1px solid;
 margin-bottom: 25px;
 }
 
-.dropdown:hover>.dropdown-menu {
+/*dropdown:hover>.dropdown-menu {
 display: block;
 background-color: #17412f;
-}
+}*/
 
 .dropdown-item {
 color: #eff8ff !important;
@@ -286,7 +286,7 @@ border-color: #eff8ff;
 box-shadow: 0 0 0 1px rgba(0,0,0,.05),0 5px 25px 0 rgba(0,0,0,.15),0 3px 3px 0 rgba(0,0,0,.05);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 990px) {
 .dropdown-menu {
 left: 50% !important;
 transform: translateX(-50%) !important;
