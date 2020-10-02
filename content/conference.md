@@ -330,7 +330,6 @@ Poster Session Chair: Angelo Banse
 <h4 id="p4"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 4: Routing</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Wednesday 15:00-15:30</small></h4>
 
 - An Analysis of Traffic Simulations Based on Modifiable OpenStreetMap Data
-- Fare-sensitive Routing with SUMO
 - Building an on-demand routing platform with tight SUMO integration using an event driven architecture
 - Impact of heavy vehicles on road congestion
 
