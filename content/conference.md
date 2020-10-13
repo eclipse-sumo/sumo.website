@@ -319,7 +319,7 @@ Poster Session Chair: Melanie Weber
 
 <h4 id="p3"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 3: Simulation Scenarios</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Wednesday 14:30-15:00</small></h4>
 
-- An emergency vehicle prioritzation strategy with simulation results of Brunswick
+- An emergency vehicle prioritization strategy with simulation results of Brunswick
 - I4Port
 - SUMOPy - a simulation suite to create traffic scenarios with SUMO
 - Impact of heavy vehicles on road congestion
