@@ -321,7 +321,8 @@ Poster Session Chair: Melanie Weber
 
 - An emergency vehicle prioritzation strategy with simulation results of Brunswick
 - I4Port
-- SUMOPy - a simulation suite to create traffic scenarios with SUMO 
+- SUMOPy - a simulation suite to create traffic scenarios with SUMO
+- Impact of heavy vehicles on road congestion
 
 Poster Session Chair: Angelo Banse 
 
@@ -331,7 +332,8 @@ Poster Session Chair: Angelo Banse
 
 - An Analysis of Traffic Simulations Based on Modifiable OpenStreetMap Data
 - Building an on-demand routing platform with tight SUMO integration using an event driven architecture
-- Impact of heavy vehicles on road congestion
+- GeoAware: An R-based Framework for Controlling SUMO and Generating Synthetic Vehicle Datasets
+- Verification of Right-turn Behavior in SUMO at a Signalized Intersection
 
 Poster Session Chair: Johannes Rummel 
 
