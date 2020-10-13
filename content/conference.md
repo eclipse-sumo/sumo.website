@@ -241,6 +241,7 @@ Zoom Meeting ID: *coming soon*
 
 - Pedestrian Simulation Methodology of Evacuation in the Area of Cotopaxi’s Lahar Influence with SUMO - *Sebastian Bucheli and Oswaldo Padilla*
 - Hierarchical delay-based signal coordination for bicycles and motor vehicles traffic - *Seyed Abdollah Hosseini, Georgios Grigoropoulos, Andreas Keler, Fritz Busch and Klaus Bogenberger*
+- A Mathematical Programming Based Approach to Evaluate Ramp Metering Deployment Through Eclipse SUMO - *İsmet Gökşad Erdagi, Sercan Akti, Mehmet Ali Silgu and Hilmi Berk Çelikoğlu*
 
 Session Chair: Michael Behrisch  
 Zoom Meeting ID: *coming soon*   
