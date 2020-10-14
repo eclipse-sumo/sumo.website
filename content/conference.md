@@ -302,6 +302,7 @@ Zoom Meeting ID: *coming soon*
 - PaSyMo: Developing and Testing a Participatory Modeling Toolbox for Urban Systems
 - Hugely Variant Autonomous Driving Training Data Generation Using SUMO and rFpro
 - Introducing SumoNetVis: A Tool for Visualizing SUMO Networks and Trajectory Data
+- Using results of the simulation experiment SUMO models by portable applications
 
 Poster Session Chair: Michael Behrisch   
 
