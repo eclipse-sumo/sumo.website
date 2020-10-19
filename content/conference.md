@@ -25,14 +25,14 @@ draft: false
 </div>
 
 <!-- dismissible alert -->
-<div class="alert alert-warning alert-dismissible">
+<!-- <div class="alert alert-warning alert-dismissible">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <b>Important notice</b>
     <br>
     <a href="https://zoom.us/webinar/register/WN_9R7MuVewSs6aDGwI4i4big"><h5 style="color:#338033";>Registration is now open!</h5></a>
     Participation at this year’s conference will be <b>free</b> of charge!<br>
     Due to the Coronavirus crisis and the measures imposed, the SUMO User Conference 2020 is going to be <strong>online</strong>.
-</div>
+</div> -->
 
 <!-- head image -->
 <div class="container" style="height:200px; border-radius:0.6rem; background-image:url('../images/conference.JPG');  background-size: cover;"></div>
@@ -138,11 +138,22 @@ The conference focuses on presenting new and unique results in the field of mobi
 <tbody>
   <tr>
     <td>09:00 - 10:00</td>
-    <td><h5><a href="#s1"><span class="badge badge-dark">S1</span></a> <a href="#s2"><span class="badge badge-primary">S2</span></a> <a href="#s3"><span class="badge badge-secondary">S3</span></a> <a href="#s4"><span class="badge badge-success">S4</span></a></h5></td>
+    <td>    
+  <h5><ul class="list-group list-group-horizontal">
+  <li class="list-group-item"><a href="#s1"><span class="badge badge-dark">S1</span></a></li>
+  <li class="list-group-item"><a href="#s2"><span class="badge badge-primary">S2</span></a></li>
+  <li class="list-group-item"><a href="#s3"><span class="badge badge-secondary">S3</span></a></li>
+  <li class="list-group-item"><a href="#s4"><span class="badge badge-success">S4</span></a></li>
+</ul></h5></td>
   </tr>
   <tr>
     <td>10:30 - 11:30</td>
-    <td><h5><a href="#s5"><span class="badge badge-danger">S5</span></a> <a href="#s6"><span class="badge badge-warning">S6</span></a> <a href="#s7"><span class="badge badge-info">S7</span></a></h5></td>
+    <td>
+     <h5><ul class="list-group list-group-horizontal">
+  <li class="list-group-item"><a href="#s5"><span class="badge badge-danger">S5</span></a></li>
+  <li class="list-group-item"><a href="#s6"><span class="badge badge-warning">S6</span></a></li>
+  <li class="list-group-item"><a href="#s7"><span class="badge badge-info">S7</span></a></li>
+</ul></h5></td>
   </tr>
   <tr>
     <td colspan="2"><i>LUNCH BREAK</i></td>
@@ -153,7 +164,12 @@ The conference focuses on presenting new and unique results in the field of mobi
   </tr>
     <tr>
     <td>14:30 - 15:30</td>
-    <td><h5><a href="#s1"><span class="badge badge-dark">S1</span></a> <a href="#s2"><span class="badge badge-primary">S2</span></a> <a href="#s7"><span class="badge badge-info">S7</span></a></h5></td>
+    <td><h5>
+    <ul class="list-group list-group-horizontal">
+  <li class="list-group-item"><a href="#s1"><span class="badge badge-dark">S1</span></a></li>
+  <li class="list-group-item"><a href="#s2"><span class="badge badge-primary">S2</span></a></li>
+  <li class="list-group-item"><a href="#s7"><span class="badge badge-info">S7</span></a></li>
+</ul> </h5></td>
   </tr>
   <tr>
     <td>15:30 - 16:00</td>
@@ -181,18 +197,35 @@ The conference focuses on presenting new and unique results in the field of mobi
 <tbody>
   <tr>
     <td>09:00 - 10:00</td>
-    <td><h5><a href="#s2"><span class="badge badge-primary">S2</span></a> <a href="#s4"><span class="badge badge-success">S4</span></a> <a href="#s6"><span class="badge badge-warning">S6</span></a></h5></td>
+    <td><h5>
+     <ul class="list-group list-group-horizontal">
+  <li class="list-group-item"><a href="#s2"><span class="badge badge-primary">S2</span></a></li>
+  <li class="list-group-item"><a href="#s4"><span class="badge badge-success">S4</span></a></li>
+  <li class="list-group-item"><a href="#s6"><span class="badge badge-warning">S6</span></a></li>
+</ul> </h5></td>
   </tr>
     <tr>
     <td>10:30 - 11:30</td>
-    <td><h5><a href="#s1"><span class="badge badge-dark">S1</span></a> <a href="#s3"><span class="badge badge-secondary">S3</span></a> <a href="#s5"><span class="badge badge-danger">S5</span></a> <a href="#s7"><span class="badge badge-info">S7</span></a></h5></td>
+    <td><h5>
+     <ul class="list-group list-group-horizontal">
+  <li class="list-group-item"><a href="#s1"><span class="badge badge-dark">S1</span></a></li>
+  <li class="list-group-item"><a href="#s3"><span class="badge badge-secondary">S3</span></a></li>
+  <li class="list-group-item"><a href="#s5"><span class="badge badge-danger">S5</span></a></li>
+  <li class="list-group-item"><a href="#s7"><span class="badge badge-info">S7</span></a></li>
+</ul> </h5></td>
   </tr>
     <tr>
     <td colspan="2"><i>LUNCH BREAK</i></td>
   </tr>
   <tr>
     <td>13:00 - 14:00</td>
-    <td><h5><a href="#s3"><span class="badge badge-secondary">S3</span></a> <a href="#s4"><span class="badge badge-success">S4</span></a> <a href="#s5"><span class="badge badge-danger">S5</span></a> <a href="#s6"><span class="badge badge-warning">S6</span></a></h5></td>
+    <td><h5>
+     <ul class="list-group list-group-horizontal">
+  <li class="list-group-item"><a href="#s3"><span class="badge badge-secondary">S3</span></a></li>
+  <li class="list-group-item"><a href="#s4"><span class="badge badge-success">S4</span></a></li>
+  <li class="list-group-item"><a href="#s5"><span class="badge badge-danger">S5</span></a></li>
+  <li class="list-group-item"><a href="#s6"><span class="badge badge-warning">S6</span></a></li>
+</ul></h5></td>
   </tr>
   <tr>
     <td>14:30 - 15:00</td>
@@ -342,7 +375,7 @@ Poster Session Chair: Johannes Rummel
 
 ### Social Event
 
-More info coming soon...
+We are going to have a fun SUMO-related quiz using [Menti](https://www.menti.com/). Join our Zoom meeting and have a smartphone/tablet ready at hand. Test your knowledge of SUMO!
 
 ### Registration
 <!-- 
