@@ -320,7 +320,6 @@ Zoom Meeting ID: *coming soon*
 
 <h4 id="s7"><span class="badge badge-info">S7: Emission</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 10:30-11:30 and 14:30-15:30, Wednesday 10:30-11:30</small></h4>
 
-- Generic Series Hybrid Powertrain Device in SUMO - *Jan Prikryl, Jakub Sevcik and Martin Janda*
 - Estimation of Green House Gas and Contaminant Emissions from Traffic by microsimulation and refined Origin-Destination matrices: a methodological approach - *Jorge E. Luzuriaga, Juan A. Moreno, Edgar Lorenzo Sáez, Santiago Mira Prats, Javier Fermín Urchueguía, Lenin Guillermo Lemus Zúñiga, José Vicente Oliver Villanueva and Miguel A. Mateo Pla*
 
 Session Chair: Yun-Pang Flötteröd   
