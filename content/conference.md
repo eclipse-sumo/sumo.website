@@ -160,7 +160,7 @@ The conference focuses on presenting new and unique results in the field of mobi
   </tr>
   <tr>
     <td>13:00 - 14:00</td>
-    <td>Keynote - <i>Jordi Casas (Aimsun)</i></td>
+    <td>Keynote: "Emerging mobility trends and the role of transport simulation models" - <i>Jordi Casas (Aimsun)</i></td>
   </tr>
     <tr>
     <td>14:30 - 15:30</td>
