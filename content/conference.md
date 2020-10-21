@@ -257,7 +257,6 @@ The conference focuses on presenting new and unique results in the field of mobi
 
 <h4 id="s1"><span class="badge badge-dark">S1: Autonomous Vehicles</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 09:00-10:00 and 14:30-15:30, Wednesday 10:30-11:30</small></h4>
 
-- Driver Readiness to Take-Over the Control of Autonomous Vehicles - *Abdurrahman Arslanyilmaz, Salman Al Matouq and Durmus Doner*
 - Modeling autonomous dynamic vanpooling services in SUMO by integrating the dynamic routing scheduler - *Moeid Qurashi, Hai Jiang and Constantinos Antoniou*
 - Simulating demand responsive feeder transit services: A case study of Braunschweig - *Maria Giuliana Armellini and Laura Bieker-Walz*
 
