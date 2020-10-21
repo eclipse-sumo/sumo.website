@@ -85,10 +85,10 @@ top: -10px;
 }
 
 .list-group-item {
-background-color: transparent;
+/* background-color: transparent;
+border: transparent; */
 padding: 5px;
 margin-right: 20px;
-border: transparent;
 }
 
 .member-logo {

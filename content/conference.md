@@ -108,15 +108,17 @@ The conference focuses on presenting new and unique results in the field of mobi
 <tbody>
   <tr>
     <td>13:00 - 14:00</td>
-    <td>Opening & Tutorial</td>
+    <td>Opening & Tutorial <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></td>
   </tr>
   <tr>
     <td>14:00 - 14:30</td>
-    <td>Ask us anything</td>
+    <td>Ask us anything <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></td>
   </tr>
   <tr>
     <td>15:00 - 16:30</td>
-    <td><ul>
+    <td>
+    <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small>
+    <ul>
     <li>Eclipse Foundation</li>
     <li>openADx Working Group</li>
     <li>Eclipse ADORe</li>
@@ -138,50 +140,54 @@ The conference focuses on presenting new and unique results in the field of mobi
 <tbody>
   <tr>
     <td>09:00 - 10:00</td>
-    <td>    
-  <h5><ul class="list-group list-group-horizontal">
-  <li class="list-group-item"><a href="#s1"><span class="badge badge-dark">S1</span></a></li>
-  <li class="list-group-item"><a href="#s2"><span class="badge badge-primary">S2</span></a></li>
-  <li class="list-group-item"><a href="#s3"><span class="badge badge-secondary">S3</span></a></li>
-  <li class="list-group-item"><a href="#s4"><span class="badge badge-success">S4</span></a></li>
-</ul></h5></td>
+    <td>
+  <h5><ul class="list-group list-group-horizontal text-center">
+  <li class="list-group-item"><a href="#s1"><span class="badge badge-dark">S1</span></a><br><small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s2"><span class="badge badge-primary">S2</span></a><br><small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s3"><span class="badge badge-secondary">S3</span></a><br><small><a href="https://zoom.us/j/98945475885"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s4"><span class="badge badge-success">S4</span></a><br><small><a href="https://zoom.us/j/98686801200"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+</ul></h5>
+(Parallel Sessions - up to 100 participants per Session)
+</td>
   </tr>
   <tr>
     <td>10:30 - 11:30</td>
     <td>
-     <h5><ul class="list-group list-group-horizontal">
-  <li class="list-group-item"><a href="#s5"><span class="badge badge-danger">S5</span></a></li>
-  <li class="list-group-item"><a href="#s6"><span class="badge badge-warning">S6</span></a></li>
-  <li class="list-group-item"><a href="#s7"><span class="badge badge-info">S7</span></a></li>
-</ul></h5></td>
+     <h5><ul class="list-group list-group-horizontal text-center">
+  <li class="list-group-item"><a href="#s5"><span class="badge badge-danger">S5</span></a><br><small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s6"><span class="badge badge-warning">S6</span></a><br><small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+</ul></h5>
+(Parallel Sessions - up to 100 participants per Session)
+</td>
   </tr>
   <tr>
     <td colspan="2"><i>LUNCH BREAK</i></td>
   </tr>
   <tr>
     <td>13:00 - 14:00</td>
-    <td>Keynote: "Emerging mobility trends and the role of transport simulation models" - <i>Jordi Casas (Aimsun)</i></td>
+    <td><b>Keynote:</b> "Emerging mobility trends and the role of transport simulation models" - <i>Jordi Casas (Aimsun)</i> <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></td>
   </tr>
     <tr>
     <td>14:30 - 15:30</td>
     <td><h5>
-    <ul class="list-group list-group-horizontal">
-  <li class="list-group-item"><a href="#s1"><span class="badge badge-dark">S1</span></a></li>
-  <li class="list-group-item"><a href="#s2"><span class="badge badge-primary">S2</span></a></li>
-  <li class="list-group-item"><a href="#s7"><span class="badge badge-info">S7</span></a></li>
-</ul> </h5></td>
+    <ul class="list-group list-group-horizontal text-center">
+  <li class="list-group-item"><a href="#s1"><span class="badge badge-dark">S1</span></a><br><small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s2"><span class="badge badge-primary">S2</span></a><br><small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+</ul> </h5>
+(Parallel Sessions - up to 100 participants per Session)
+</td>
   </tr>
   <tr>
     <td>15:30 - 16:00</td>
-    <td><a href="#p1"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 1: Tools</span></a></td>
+    <td><a href="#p1"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 1: Tools</span></a><br><small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></td>
   </tr>
   <tr>
     <td>16:00 - 16:30</td>
-    <td><a href="#p2"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 2: Modelling connected and intelligent traffic</span></a></td>
+    <td><a href="#p2"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 2: Modelling connected and intelligent traffic</span></a><br><small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></td>
   </tr>
   <tr>
     <td>17:00</td>
-    <td><a href="#social-event">Social Event</a></td>
+    <td><a href="#social-event">Social Event</a> <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></td>
   </tr>
 </tbody>
 </table>
@@ -198,21 +204,24 @@ The conference focuses on presenting new and unique results in the field of mobi
   <tr>
     <td>09:00 - 10:00</td>
     <td><h5>
-     <ul class="list-group list-group-horizontal">
-  <li class="list-group-item"><a href="#s2"><span class="badge badge-primary">S2</span></a></li>
-  <li class="list-group-item"><a href="#s4"><span class="badge badge-success">S4</span></a></li>
-  <li class="list-group-item"><a href="#s6"><span class="badge badge-warning">S6</span></a></li>
-</ul> </h5></td>
+     <ul class="list-group list-group-horizontal text-center">
+  <li class="list-group-item"><a href="#s2"><span class="badge badge-primary">S2</span></a><br><small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s4"><span class="badge badge-success">S4</span></a><br><small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s6"><span class="badge badge-warning">S6</span></a><br><small><a href="https://zoom.us/j/98945475885"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+</ul></h5>
+(Parallel Sessions - up to 100 participants per Session)
+</td>
   </tr>
     <tr>
     <td>10:30 - 11:30</td>
     <td><h5>
-     <ul class="list-group list-group-horizontal">
-  <li class="list-group-item"><a href="#s1"><span class="badge badge-dark">S1</span></a></li>
-  <li class="list-group-item"><a href="#s3"><span class="badge badge-secondary">S3</span></a></li>
-  <li class="list-group-item"><a href="#s5"><span class="badge badge-danger">S5</span></a></li>
-  <li class="list-group-item"><a href="#s7"><span class="badge badge-info">S7</span></a></li>
-</ul> </h5></td>
+     <ul class="list-group list-group-horizontal text-center">
+  <li class="list-group-item"><a href="#s1"><span class="badge badge-dark">S1</span></a><br><small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s3"><span class="badge badge-secondary">S3</span></a><br><small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s5"><span class="badge badge-danger">S5</span></a><br><small><a href="https://zoom.us/j/98945475885"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+</ul></h5>
+(Parallel Sessions - up to 100 participants per Session)
+</td>
   </tr>
     <tr>
     <td colspan="2"><i>LUNCH BREAK</i></td>
@@ -220,24 +229,26 @@ The conference focuses on presenting new and unique results in the field of mobi
   <tr>
     <td>13:00 - 14:00</td>
     <td><h5>
-     <ul class="list-group list-group-horizontal">
-  <li class="list-group-item"><a href="#s3"><span class="badge badge-secondary">S3</span></a></li>
-  <li class="list-group-item"><a href="#s4"><span class="badge badge-success">S4</span></a></li>
-  <li class="list-group-item"><a href="#s5"><span class="badge badge-danger">S5</span></a></li>
-  <li class="list-group-item"><a href="#s6"><span class="badge badge-warning">S6</span></a></li>
-</ul></h5></td>
+     <ul class="list-group list-group-horizontal text-center">
+  <li class="list-group-item"><a href="#s3"><span class="badge badge-secondary">S3</span></a><br><small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s4"><span class="badge badge-success">S4</span></a><br><small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s5"><span class="badge badge-danger">S5</span></a><br><small><a href="https://zoom.us/j/98945475885"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s6"><span class="badge badge-warning">S6</span></a><br><small><a href="https://zoom.us/j/98686801200"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+</ul></h5>
+(Parallel Sessions - up to 100 participants per Session)
+</td>
   </tr>
   <tr>
     <td>14:30 - 15:00</td>
-    <td><a href="#p3"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 3: Simulation Scenarios</span></a></td>
+    <td><a href="#p3"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 3: Simulation Scenarios</span></a><br><small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></td>
   </tr>
     <tr>
     <td>15:00 - 15:30</td>
-    <td><a href="#p4"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 4: Routing</span></a></td>
+    <td><a href="#p4"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 4: Routing</span></a><br><small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></td>
   </tr>
     <tr>
     <td>15:30 - 16:00</td>
-    <td>Closing Session & selection of best Presentation</td>
+    <td>Closing Session & selection of best Presentation <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></td>
   </tr>
 </tbody>
 </table>
@@ -250,10 +261,7 @@ The conference focuses on presenting new and unique results in the field of mobi
 - Modeling autonomous dynamic vanpooling services in SUMO by integrating the dynamic routing scheduler - *Moeid Qurashi, Hai Jiang and Constantinos Antoniou*
 - Simulating demand responsive feeder transit services: A case study of Braunschweig - *Maria Giuliana Armellini and Laura Bieker-Walz*
 
-<!-- Zoom Meeting ID: [123 1234 1234](https://zoom.us/j/12312341234)-->
-
-Session Chair: Matthias Schwamborn  
-Zoom Meeting ID: *coming soon*   
+Session Chair: Matthias Schwamborn   
 **Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
 <br>
@@ -265,7 +273,6 @@ Zoom Meeting ID: *coming soon*
 - Concept and first insights of a sequential MATSim-SUMO tool-coupling to deduce representative 24h-velocity-profiles for autonomous vehicles - *Henriette Triebke*
 
 Session Chair: Robert Hilbrich  
-Zoom Meeting ID: *coming soon*   
 **Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
 <br>
@@ -277,7 +284,6 @@ Zoom Meeting ID: *coming soon*
 - A Mathematical Programming Based Approach to Evaluate Ramp Metering Deployment Through Eclipse SUMO - *İsmet Gökşad Erdagi, Sercan Akti, Mehmet Ali Silgu and Hilmi Berk Çelikoğlu*
 
 Session Chair: Michael Behrisch  
-Zoom Meeting ID: *coming soon*   
 **Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
 <br>
@@ -289,7 +295,6 @@ Zoom Meeting ID: *coming soon*
 - A Slipstreaming Model for Cooperative Driving Simulations in SUMO - *Andrea Stedile and Michele Segata*
 
 Session Chair: Peter Wagner  
-Zoom Meeting ID: *coming soon*   
 **Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
 <br>
@@ -299,9 +304,9 @@ Zoom Meeting ID: *coming soon*
 - SAGA: An Activity-based Multi-modal Mobility Scenario Generator for SUMO - *Lara Codeca, Jakob Erdmann, Vinny Cahill and Jérôme Härri*
 - InTAS - The Ingolstadt Traffic Scenario for SUMO - *Silas Lobo, Stefan Neumeier, Evelio Fernandez and Christian Facchi*
 - An application of SUMO in a Drive on the Left country: Challenges and opportunities - *Rubel Das and Masaaki Sakuraba*
+- Estimation of Green House Gas and Contaminant Emissions from Traffic by microsimulation and refined Origin-Destination matrices: a methodological approach - *Jorge E. Luzuriaga, Juan A. Moreno, Edgar Lorenzo Sáez, Santiago Mira Prats, Javier Fermín Urchueguía, Lenin Guillermo Lemus Zúñiga, José Vicente Oliver Villanueva and Miguel A. Mateo Pla*
 
 Session Chair: Ronald Nippold  
-Zoom Meeting ID: *coming soon*   
 **Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
 <br>
@@ -313,17 +318,6 @@ Zoom Meeting ID: *coming soon*
 - Action-points in human driving and in SUMO - *Peter Wagner, Jakob Erdmann and Ronald Nippold*
 
 Session Chair: Laura Bieker-Walz  
-Zoom Meeting ID: *coming soon*   
-**Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
-
-<br>
-
-<h4 id="s7"><span class="badge badge-info">S7: Emission</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 10:30-11:30 and 14:30-15:30, Wednesday 10:30-11:30</small></h4>
-
-- Estimation of Green House Gas and Contaminant Emissions from Traffic by microsimulation and refined Origin-Destination matrices: a methodological approach - *Jorge E. Luzuriaga, Juan A. Moreno, Edgar Lorenzo Sáez, Santiago Mira Prats, Javier Fermín Urchueguía, Lenin Guillermo Lemus Zúñiga, José Vicente Oliver Villanueva and Miguel A. Mateo Pla*
-
-Session Chair: Yun-Pang Flötteröd   
-Zoom Meeting ID: *coming soon*   
 **Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
 <br>
