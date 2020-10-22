@@ -367,7 +367,7 @@ Poster Session Chair: Johannes Rummel
 
 ### Social Event
 
-We are going to have a fun SUMO-related quiz using [Menti](https://www.menti.com/). Join our Zoom meeting and have a smartphone/tablet ready at hand. Test your knowledge of SUMO!
+We are going to have a fun SUMO-related quiz using [Menti](https://www.menti.com/). Join our Zoom meeting and have a smartphone/tablet ready at hand. Test your knowledge of SUMO and win the glorious and prestigious prize of attaching your name to a an easter egg in “sumo-gui”.
 
 ### Registration
 <!-- 
