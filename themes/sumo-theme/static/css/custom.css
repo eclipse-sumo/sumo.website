@@ -85,10 +85,9 @@ top: -10px;
 }
 
 .list-group-item {
-/* background-color: transparent;
-border: transparent; */
+background-color: #e7edf2 !important;
 padding: 5px;
-margin-right: 20px;
+margin: 0 10px;
 }
 
 .member-logo {
@@ -250,8 +249,8 @@ background: #fff;
 
 thead tr th:first-child,
 tbody tr td:first-child {
-width: 8em;
-min-width: 8em;
+width: 7em;
+min-width: 7em;
 max-width: 8em;
 word-break: break-all;
 }
