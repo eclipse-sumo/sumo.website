@@ -90,6 +90,10 @@ padding: 5px;
 margin: 0 10px;
 }
 
+.badge-light {
+border-radius: 0 !important;
+}
+
 .member-logo {
 /* width: 130px; */
 height: 45px;
