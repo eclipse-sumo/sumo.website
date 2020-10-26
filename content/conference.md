@@ -66,8 +66,10 @@ The conference focuses on presenting new and unique results in the field of mobi
 <!-- dismissible alert -->
 <div class="alert alert-warning alert-dismissible">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <ul>
     <li>Each Parallel Session (S1 up to S6) will take place on three separate occasions.</li>
     <li>The Keynote, Social Event and closing session do not have a 100-person limit.</li>
+    </ul>
 </div>
 
 <!--
