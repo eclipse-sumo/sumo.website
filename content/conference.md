@@ -321,7 +321,7 @@ Session Chair: Laura Bieker-Walz
 
 <br>
 
-<h4 id="p1"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 1:</span><span class="badge badge-light" style="background:rgb(224,194,255);">Tools</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 15:30-16:00</small></h4>
+<h4 id="p1"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 1:</span> Tools <a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 15:30-16:00</small></h4>
 
 - QarSUMO: An Open-source Parallel Framework for Large Scale Traffic Simulation
 - PaSyMo: Developing and Testing a Participatory Modeling Toolbox for Urban Systems
@@ -333,7 +333,7 @@ Poster Session Chair: Michael Behrisch
 
 <br>
 
-<h4 id="p2"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 2:</span><span class="badge badge-light" style="background:rgb(224,194,255);">Modelling connected and intelligent traffic</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 16:00-16:30</small></h4>
+<h4 id="p2"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 2:</span> Modelling connected and intelligent traffic <a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 16:00-16:30</small></h4>
 
 - Calibration based comparison of meso and microscopic modeling methods in SUMO
 - Improving network performance with V2X services of dispatching takeover requests and safe-spot assignments in an urban transition corridor
@@ -344,7 +344,7 @@ Poster Session Chair: Melanie Weber
 
 <br>
 
-<h4 id="p3"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 3:</span><span class="badge badge-light" style="background:rgb(224,194,255);">Simulation Scenarios</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Wednesday 14:30-15:00</small></h4>
+<h4 id="p3"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 3:</span> Simulation Scenarios <a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Wednesday 14:30-15:00</small></h4>
 
 - An emergency vehicle prioritization strategy with simulation results of Brunswick
 - I4Port
@@ -355,7 +355,7 @@ Poster Session Chair: Angelo Banse
 
 <br>
 
-<h4 id="p4"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 4:</span><span class="badge badge-light" style="background:rgb(224,194,255);">Routing</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Wednesday 15:00-15:30</small></h4>
+<h4 id="p4"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 4:</span> Routing <a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Wednesday 15:00-15:30</small></h4>
 
 - An Analysis of Traffic Simulations Based on Modifiable OpenStreetMap Data
 - Building an on-demand routing platform with tight SUMO integration using an event driven architecture
