@@ -295,7 +295,7 @@ The conference focuses on presenting new and unique results in the field of mobi
 - Modeling autonomous dynamic vanpooling services in SUMO by integrating the dynamic routing scheduler - *Moeid Qurashi, Hai Jiang and Constantinos Antoniou*
 - Simulating demand responsive feeder transit services: A case study of Braunschweig - *Maria Giuliana Armellini and Laura Bieker-Walz*
 
-Session Chair: Yun-Pang Flötteröd <s>Matthias Schwamborn</s>   
+Session Chair: Yun-Pang Floetteroed <s>Matthias Schwamborn</s>   
 **Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
 <br>
