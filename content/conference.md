@@ -119,7 +119,7 @@ The conference focuses on presenting new and unique results in the field of mobi
   </tr>
   <tr>
     <td>14:00 - 14:30</td>
-    <td>Ask us anything • <a href="../docs/chat_QA.txt" target="_blank"><i class="far fa-file-alt"></i> chat Q&A</a><sup><span class="badge badge-warning">New!</span></sup></td>
+    <td>Ask us anything<!-- • <a href="../docs/chat_QA.txt" target="_blank"><i class="far fa-file-alt"></i> chat Q&A</a><sup><span class="badge badge-warning">New!</span></sup> --></td>
   </tr>
   <tr>
     <td>15:00 - 16:30</td>
