@@ -201,10 +201,8 @@ The conference focuses on presenting new and unique results in the field of mobi
     <td>16:00 - 16:30</td>
     <td><a href="#p2"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 2</span></a> <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a> enter this Meeting first, before joining a Poster Presentation!</small><br><br>
     <ul>
-<li>Calibration based comparison of meso and microscopic modeling methods in SUMO <small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
 <li>Improving network performance with V2X services of dispatching takeover requests and safe-spot assignments in an urban transition corridor <small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
 <li>Simulation of automated and connecting driving traffic in the test field Hamburg <small><a href="https://zoom.us/j/98945475885"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-<li>Traffic signal control method system using Reinforcement Learning with Advantage Actor-Critic <small><a href="https://zoom.us/j/98686801200"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
 <ul>
     </td>
   </tr>
