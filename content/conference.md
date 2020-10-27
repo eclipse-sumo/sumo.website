@@ -150,10 +150,10 @@ The conference focuses on presenting new and unique results in the field of mobi
     <td>09:00 - 10:00</td>
     <td>
   <h5><ul class="list-group flex-column flex-sm-row text-center">
-  <li class="list-group-item"><a href="#s1"><span class="badge badge-dark">S1</span></a><br><small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-  <li class="list-group-item"><a href="#s2"><span class="badge badge-primary">S2</span></a><br><small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-  <li class="list-group-item"><a href="#s3"><span class="badge badge-secondary">S3</span></a><br><small><a href="https://zoom.us/j/98945475885"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-  <li class="list-group-item"><a href="#s4"><span class="badge badge-success">S4</span></a><br><small><a href="https://zoom.us/j/98686801200"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s1"><span class="badge badge-dark">S1</span></a></li>
+  <li class="list-group-item"><a href="#s2"><span class="badge badge-primary">S2</span></a></li>
+  <li class="list-group-item"><a href="#s3"><span class="badge badge-secondary">S3</span></a></li>
+  <li class="list-group-item"><a href="#s4"><span class="badge badge-success">S4</span></a></li>
 </ul></h5>
 (Parallel Sessions - up to 100 participants per Session)
 </td>
@@ -162,8 +162,8 @@ The conference focuses on presenting new and unique results in the field of mobi
     <td>10:30 - 11:30</td>
     <td>
      <h5><ul class="list-group flex-column flex-sm-row text-center">
-  <li class="list-group-item"><a href="#s5"><span class="badge badge-danger">S5</span></a><br><small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-  <li class="list-group-item"><a href="#s6"><span class="badge badge-warning">S6</span></a><br><small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s5"><span class="badge badge-danger">S5</span></a></li>
+  <li class="list-group-item"><a href="#s6"><span class="badge badge-warning">S6</span></a></li>
 </ul></h5>
 (Parallel Sessions - up to 100 participants per Session)
 </td>
@@ -173,42 +173,42 @@ The conference focuses on presenting new and unique results in the field of mobi
   </tr>
   <tr>
     <td>13:00 - 14:00</td>
-    <td><b>Keynote:</b> "Emerging mobility trends and the role of transport simulation models" - <i>Jordi Casas (Aimsun)</i> <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></td>
+    <td><b>Keynote:</b> "Emerging mobility trends and the role of transport simulation models" - <i>Jordi Casas (Aimsun)</i></td>
   </tr>
     <tr>
     <td>14:30 - 15:30</td>
     <td><h5>
     <ul class="list-group flex-column flex-sm-row text-center">
-  <li class="list-group-item"><a href="#s1"><span class="badge badge-dark">S1</span></a><br><small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-  <li class="list-group-item"><a href="#s2"><span class="badge badge-primary">S2</span></a><br><small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s1"><span class="badge badge-dark">S1</span></a></li>
+  <li class="list-group-item"><a href="#s2"><span class="badge badge-primary">S2</span></a></li>
 </ul> </h5>
 (Parallel Sessions - up to 100 participants per Session)
 </td>
   </tr>
   <tr>
     <td>15:30 - 16:00</td>
-    <td><a href="#p1"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 1</span></a> <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a> enter this Meeting first, before joining a Poster Presentation!</small><br><br>
+    <td><a href="#p1"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 1</span></a><br><br>
 <ul>
-<li>QarSUMO: An Open-source Parallel Framework for Large Scale Traffic Simulation <small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-<li>PaSyMo: Developing and Testing a Participatory Modeling Toolbox for Urban Systems <small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-<li>Hugely Variant Autonomous Driving Training Data Generation Using SUMO and rFpro <small><a href="https://zoom.us/j/98945475885"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-<li>Introducing SumoNetVis: A Tool for Visualizing SUMO Networks and Trajectory Data <small><a href="https://zoom.us/j/98686801200"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-<li>Using results of the simulation experiment SUMO models by portable applications <small><a href="https://zoom.us/j/94641659630"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+<li>QarSUMO: An Open-source Parallel Framework for Large Scale Traffic Simulation</li>
+<li>PaSyMo: Developing and Testing a Participatory Modeling Toolbox for Urban Systems</li>
+<li>Hugely Variant Autonomous Driving Training Data Generation Using SUMO and rFpro</li>
+<li>Introducing SumoNetVis: A Tool for Visualizing SUMO Networks and Trajectory Data</li>
+<li>Using results of the simulation experiment SUMO models by portable applications</li>
 <ul>
     </td>
   </tr>
   <tr>
     <td>16:00 - 16:30</td>
-    <td><a href="#p2"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 2</span></a> <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a> enter this Meeting first, before joining a Poster Presentation!</small><br><br>
+    <td><a href="#p2"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 2</span></a><br><br>
     <ul>
-<li>Improving network performance with V2X services of dispatching takeover requests and safe-spot assignments in an urban transition corridor <small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-<li>Simulation of automated and connecting driving traffic in the test field Hamburg <small><a href="https://zoom.us/j/98945475885"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+<li>Improving network performance with V2X services of dispatching takeover requests and safe-spot assignments in an urban transition corridor</li>
+<li>Simulation of automated and connecting driving traffic in the test field Hamburg</li>
 <ul>
     </td>
   </tr>
   <tr>
     <td>17:00</td>
-    <td><a href="#social-event">Social Event</a> <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></td>
+    <td><a href="#social-event">Social Event</a></td>
   </tr>
 </tbody>
 </table>
