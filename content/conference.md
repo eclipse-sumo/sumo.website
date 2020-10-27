@@ -127,11 +127,11 @@ The conference focuses on presenting new and unique results in the field of mobi
     <td>15:00 - 16:30</td>
     <td>
     <ul>
-    <li>Eclipse Foundation</li>
-    <li>openADx Working Group</li>
-    <li>Eclipse ADORe</li>
-    <li>openMobility Working Group</li>
-    <li>Eclipse MOSAIC</li>
+    <li>Eclipse Foundation • <a href="../docs/Eclipse Foundation - Gael Blondelle.pdf" target="_blank"><i class="far fa-file-pdf"></i> presentation (PDF)</a><sup><span class="badge badge-warning">New!</span></sup></li>
+    <li>openADx Working Group • <a href="../docs/openADx - Andreas Riexinger.pdf" target="_blank"><i class="far fa-file-pdf"></i> presentation (PDF)</a><sup><span class="badge badge-warning">New!</span></sup></li>
+    <li>Eclipse ADORe • <a href="../docs/Eclipse ADORe - Daniel Hess.pdf" target="_blank"><i class="far fa-file-pdf"></i> presentation (PDF)</a><sup><span class="badge badge-warning">New!</span></sup></li>
+    <li>openMobility Working Group • <a href="../docs/openMobility - Robert Hilbrich.pdf" target="_blank"><i class="far fa-file-pdf"></i> presentation (PDF)</a><sup><span class="badge badge-warning">New!</span></sup></li>
+    <li>Eclipse MOSAIC • <a href="../docs/Eclipse MOSAIC - Robert Protzmann.pdf" target="_blank"><i class="far fa-file-pdf"></i> presentation (PDF)</a><sup><span class="badge badge-warning">New!</span></sup></li>
     </ul></td>
   </tr>
 </tbody>
