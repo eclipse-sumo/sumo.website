@@ -266,7 +266,6 @@ The conference focuses on presenting new and unique results in the field of mobi
 <li>An emergency vehicle prioritization strategy with simulation results of Brunswick <small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
 <li>I4Port <small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
 <li>SUMOPy - a simulation suite to create traffic scenarios with SUMO <small><a href="https://zoom.us/j/98945475885"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-<li>Impact of heavy vehicles on road congestion <small><a href="https://zoom.us/j/98686801200"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
 <ul>
     </td>
   </tr>
