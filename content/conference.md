@@ -370,10 +370,8 @@ Poster Session Chair: Michael Behrisch
 
 <h4 id="p2"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 2:</span> Modelling connected and intelligent traffic <a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 16:00-16:30</small></h4>
 
-- Calibration based comparison of meso and microscopic modeling methods in SUMO
 - Improving network performance with V2X services of dispatching takeover requests and safe-spot assignments in an urban transition corridor
 - Simulation of automated and connecting driving traffic in the test field Hamburg
-- Traffic signal control method system using Reinforcement Learning with Advantage Actor-Critic
 
 Poster Session Chair: Melanie Weber 
 
