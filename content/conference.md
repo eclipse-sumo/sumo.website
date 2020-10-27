@@ -411,7 +411,7 @@ We are going to have a fun SUMO-related quiz using [Menti](https://www.menti.com
 The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings and social events in the evening. Accommodation is not included within the registration fee and must be pre-booked separately. 
 Register here. -->
 
-Please **[register here](https://zoom.us/webinar/register/WN_9R7MuVewSs6aDGwI4i4big)**. No Zoom account is required.
+Please **[register here](https://zoom.us/webinar/register/WN_9R7MuVewSs6aDGwI4i4big)**.
 
 ### Language
 The conference language is English.
