@@ -261,7 +261,7 @@ The conference focuses on presenting new and unique results in the field of mobi
   </tr>
   <tr>
     <td>14:30 - 15:00</td>
-    <td><a href="#p3"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 3</span></a> <small><a href="https://zoom.us/j/94641659630"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a> enter this Meeting first, before joining a Poster Presentation!</small><br><br>
+    <td><a href="#p3"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 3</span></a> <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a> enter this Meeting first, before joining a Poster Presentation!</small><br><br>
         <ul>
 <li>An emergency vehicle prioritization strategy with simulation results of Brunswick <small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
 <li>I4Port <small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
@@ -271,7 +271,7 @@ The conference focuses on presenting new and unique results in the field of mobi
   </tr>
     <tr>
     <td>15:00 - 15:30</td>
-    <td><a href="#p4"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 4</span></a> <small><a href="https://zoom.us/j/94641659630"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a> enter this Meeting first, before joining a Poster Presentation!</small><br><br>
+    <td><a href="#p4"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 4</span></a> <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a> enter this Meeting first, before joining a Poster Presentation!</small><br><br>
         <ul>
 <li>An Analysis of Traffic Simulations Based on Modifiable OpenStreetMap Data <small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
 <li>Building an on-demand routing platform with tight SUMO integration using an event driven architecture <small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
@@ -282,7 +282,7 @@ The conference focuses on presenting new and unique results in the field of mobi
   </tr>
     <tr>
     <td>15:30 - 16:00</td>
-    <td>Closing Session & selection of best Presentation <small><a href="https://zoom.us/j/94641659630"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></td>
+    <td>Closing Session & selection of best Presentation <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></td>
   </tr>
 </tbody>
 </table>
