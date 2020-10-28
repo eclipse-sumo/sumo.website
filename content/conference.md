@@ -63,15 +63,6 @@ The conference focuses on presenting new and unique results in the field of mobi
 
 *Schedule given in Central European Time (CET) (UTC+1)*
 
-<!-- dismissible alert -->
-<div class="alert alert-warning alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <ul>
-    <li>Each Parallel Session (S1 up to S6) will take place on three separate occasions.</li>
-    <li>The Keynote, Social Event and closing session do not have a 100-person limit.</li>
-    </ul>
-</div>
-
 <!--
 | Monday         |October 26, 2020|
 |----------------|---|
@@ -121,17 +112,17 @@ The conference focuses on presenting new and unique results in the field of mobi
   </tr>
   <tr>
     <td>14:00 - 14:30</td>
-    <td>Ask us anything • <a href="../docs/chat_QA.txt" target="_blank"><i class="far fa-file-alt"></i> chat Q&A</a><sup><span class="badge badge-warning">New!</span></sup></td>
+    <td>Ask us anything • <a href="../docs/chat_QA.txt" target="_blank"><i class="far fa-file-alt"></i> chat Q&A</a></td>
   </tr>
   <tr>
     <td>15:00 - 16:30</td>
     <td>
     <ul>
-    <li>Eclipse Foundation • <a href="../docs/Eclipse Foundation - Gael Blondelle.pdf" target="_blank"><i class="far fa-file-pdf"></i> presentation (PDF)</a><sup><span class="badge badge-warning">New!</span></sup></li>
-    <li>openADx Working Group • <a href="../docs/openADx - Andreas Riexinger.pdf" target="_blank"><i class="far fa-file-pdf"></i> presentation (PDF)</a><sup><span class="badge badge-warning">New!</span></sup></li>
-    <li>Eclipse ADORe • <a href="../docs/Eclipse ADORe - Daniel Hess.pdf" target="_blank"><i class="far fa-file-pdf"></i> presentation (PDF)</a><sup><span class="badge badge-warning">New!</span></sup></li>
-    <li>openMobility Working Group • <a href="../docs/openMobility - Robert Hilbrich.pdf" target="_blank"><i class="far fa-file-pdf"></i> presentation (PDF)</a><sup><span class="badge badge-warning">New!</span></sup></li>
-    <li>Eclipse MOSAIC • <a href="../docs/Eclipse MOSAIC - Robert Protzmann.pdf" target="_blank"><i class="far fa-file-pdf"></i> presentation (PDF)</a><sup><span class="badge badge-warning">New!</span></sup></li>
+    <li>Eclipse Foundation • <a href="../docs/Eclipse Foundation - Gael Blondelle.pdf" target="_blank"><i class="far fa-file-pdf"></i> presentation (PDF)</a></li>
+    <li>openADx Working Group • <a href="../docs/openADx - Andreas Riexinger.pdf" target="_blank"><i class="far fa-file-pdf"></i> presentation (PDF)</a></li>
+    <li>Eclipse ADORe • <a href="../docs/Eclipse ADORe - Daniel Hess.pdf" target="_blank"><i class="far fa-file-pdf"></i> presentation (PDF)</a></li>
+    <li>openMobility Working Group • <a href="../docs/openMobility - Robert Hilbrich.pdf" target="_blank"><i class="far fa-file-pdf"></i> presentation (PDF)</a></li>
+    <li>Eclipse MOSAIC • <a href="../docs/Eclipse MOSAIC - Robert Protzmann.pdf" target="_blank"><i class="far fa-file-pdf"></i> presentation (PDF)</a></li>
     </ul></td>
   </tr>
 </tbody>
@@ -187,23 +178,12 @@ The conference focuses on presenting new and unique results in the field of mobi
   </tr>
   <tr>
     <td>15:30 - 16:00</td>
-    <td><a href="#p1"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 1</span></a><br><br>
-<ul>
-<li>QarSUMO: An Open-source Parallel Framework for Large Scale Traffic Simulation</li>
-<li>PaSyMo: Developing and Testing a Participatory Modeling Toolbox for Urban Systems</li>
-<li>Hugely Variant Autonomous Driving Training Data Generation Using SUMO and rFpro</li>
-<li>Introducing SumoNetVis: A Tool for Visualizing SUMO Networks and Trajectory Data</li>
-<li>Using results of the simulation experiment SUMO models by portable applications</li>
-<ul>
+    <td><a href="#p1"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 1</span></a>
     </td>
   </tr>
   <tr>
     <td>16:00 - 16:30</td>
-    <td><a href="#p2"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 2</span></a><br><br>
-    <ul>
-<li>Improving network performance with V2X services of dispatching takeover requests and safe-spot assignments in an urban transition corridor</li>
-<li>Simulation of automated and connecting driving traffic in the test field Hamburg</li>
-<ul>
+    <td><a href="#p2"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 2</span></a>
     </td>
   </tr>
   <tr>
@@ -226,9 +206,9 @@ The conference focuses on presenting new and unique results in the field of mobi
     <td>09:00 - 10:00</td>
     <td><h5>
      <ul class="list-group flex-column flex-sm-row text-center">
-  <li class="list-group-item"><a href="#s2"><span class="badge badge-primary">S2</span></a><br><small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-  <li class="list-group-item"><a href="#s4"><span class="badge badge-success">S4</span></a><br><small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-  <li class="list-group-item"><a href="#s6"><span class="badge badge-warning">S6</span></a><br><small><a href="https://zoom.us/j/98945475885"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s2"><span class="badge badge-primary">S2</span></a><br></li>
+  <li class="list-group-item"><a href="#s4"><span class="badge badge-success">S4</span></a><br></li>
+  <li class="list-group-item"><a href="#s6"><span class="badge badge-warning">S6</span></a><br></li>
 </ul></h5>
 (Parallel Sessions - up to 100 participants per Session)
 </td>
@@ -237,9 +217,9 @@ The conference focuses on presenting new and unique results in the field of mobi
     <td>10:30 - 11:30</td>
     <td><h5>
      <ul class="list-group flex-column flex-sm-row text-center">
-  <li class="list-group-item"><a href="#s1"><span class="badge badge-dark">S1</span></a><br><small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-  <li class="list-group-item"><a href="#s3"><span class="badge badge-secondary">S3</span></a><br><small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-  <li class="list-group-item"><a href="#s5"><span class="badge badge-danger">S5</span></a><br><small><a href="https://zoom.us/j/98945475885"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s1"><span class="badge badge-dark">S1</span></a><br></li>
+  <li class="list-group-item"><a href="#s3"><span class="badge badge-secondary">S3</span></a><br></li>
+  <li class="list-group-item"><a href="#s5"><span class="badge badge-danger">S5</span></a><br></li>
 </ul></h5>
 (Parallel Sessions - up to 100 participants per Session)
 </td>
@@ -251,88 +231,73 @@ The conference focuses on presenting new and unique results in the field of mobi
     <td>13:00 - 14:00</td>
     <td><h5>
      <ul class="list-group flex-column flex-sm-row text-center">
-  <li class="list-group-item"><a href="#s3"><span class="badge badge-secondary">S3</span></a><br><small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-  <li class="list-group-item"><a href="#s4"><span class="badge badge-success">S4</span></a><br><small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-  <li class="list-group-item"><a href="#s5"><span class="badge badge-danger">S5</span></a><br><small><a href="https://zoom.us/j/98945475885"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-  <li class="list-group-item"><a href="#s6"><span class="badge badge-warning">S6</span></a><br><small><a href="https://zoom.us/j/98686801200"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
+  <li class="list-group-item"><a href="#s3"><span class="badge badge-secondary">S3</span></a><br></li>
+  <li class="list-group-item"><a href="#s4"><span class="badge badge-success">S4</span></a><br></li>
+  <li class="list-group-item"><a href="#s5"><span class="badge badge-danger">S5</span></a><br></li>
+  <li class="list-group-item"><a href="#s6"><span class="badge badge-warning">S6</span></a><br></li>
 </ul></h5>
 (Parallel Sessions - up to 100 participants per Session)
 </td>
   </tr>
   <tr>
     <td>14:30 - 15:00</td>
-    <td><a href="#p3"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 3</span></a> <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a> enter this Meeting first, before joining a Poster Presentation!</small><br><br>
-        <ul>
-<li>An emergency vehicle prioritization strategy with simulation results of Brunswick <small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-<li>I4Port <small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-<li>SUMOPy - a simulation suite to create traffic scenarios with SUMO <small><a href="https://zoom.us/j/98945475885"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-<ul>
+    <td><a href="#p3"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 3</span></a>
     </td>
   </tr>
     <tr>
     <td>15:00 - 15:30</td>
-    <td><a href="#p4"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 4</span></a> <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a> enter this Meeting first, before joining a Poster Presentation!</small><br><br>
-        <ul>
-<li>An Analysis of Traffic Simulations Based on Modifiable OpenStreetMap Data <small><a href="https://zoom.us/j/92592031296"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-<li>Building an on-demand routing platform with tight SUMO integration using an event driven architecture <small><a href="https://zoom.us/j/94933037530"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-<li>GeoAware: An R-based Framework for Controlling SUMO and Generating Synthetic Vehicle Datasets <small><a href="https://zoom.us/j/98945475885"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-<li>Verification of Right-turn Behavior in SUMO at a Signalized Intersection <small><a href="https://zoom.us/j/98686801200"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></li>
-<ul>
+    <td><a href="#p4"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 4</span></a>
     </td>
   </tr>
     <tr>
     <td>15:30 - 16:00</td>
-    <td>Closing Session & selection of best Presentation <small><a href="https://zoom.us/j/92376414517"><span class="badge badge-pill badge-primary" style="margin-top: 10px;"><i class="fas fa-video"></i> Join</span></a></small></td>
+    <td>Closing Session & selection of best Presentation</td>
   </tr>
 </tbody>
 </table>
 
 <br>
 
-<h4 id="s1"><span class="badge badge-dark">S1: Autonomous Vehicles</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 09:00-10:00 and 14:30-15:30, Wednesday 10:30-11:30</small></h4>
+<h4 id="s1"><span class="badge badge-dark">S1: Autonomous Vehicles</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a></h4>
 
 - Modeling autonomous dynamic vanpooling services in SUMO by integrating the dynamic routing scheduler - *Moeid Qurashi, Hai Jiang and Constantinos Antoniou*
 - Simulating demand responsive feeder transit services: A case study of Braunschweig - *Maria Giuliana Armellini and Laura Bieker-Walz*
 
 Session Chair: Yun-Pang Floetteroed <s>Matthias Schwamborn</s>   
-**Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
 <br>
 
-<h4 id="s2"><span class="badge badge-primary">S2: AI</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 09:00-10:00 and 14:30-15:30, Wednesday 09:00-10:00</small></h4>
+<h4 id="s2"><span class="badge badge-primary">S2: AI</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a></h4>
 
 - Computer Simulation Study of Vehicle Type Classification Using Machine Learning Techniques with Mobile Phone Location Data - *Chaninart Eosanurak, Nattida Wongtrakoon, Ei Ei Mon and Chaodit Aswakul*
 - AI-based Disposition using a Reinforcement Learning Approach - *Georg Merz*
 - Concept and first insights of a sequential MATSim-SUMO tool-coupling to deduce representative 24h-velocity-profiles for autonomous vehicles - *Henriette Triebke*
 
 Session Chair: Robert Hilbrich  
-**Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
 <br>
 
-<h4 id="s3"><span class="badge badge-secondary">S3: Other traffic modes</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 09:00-10:00, Wednesday 10:30-11:30 and 13:00-14:00</small></h4>
+<h4 id="s3"><span class="badge badge-secondary">S3: Other traffic modes</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a></h4>
 
 - Pedestrian Simulation Methodology of Evacuation in the Area of Cotopaxi’s Lahar Influence with SUMO - *Sebastian Bucheli and Oswaldo Padilla*
 - Hierarchical delay-based signal coordination for bicycles and motor vehicles traffic - *Seyed Abdollah Hosseini, Georgios Grigoropoulos, Andreas Keler, Fritz Busch and Klaus Bogenberger*
 - A Mathematical Programming Based Approach to Evaluate Ramp Metering Deployment Through Eclipse SUMO - *İsmet Gökşad Erdagi, Sercan Akti, Mehmet Ali Silgu and Hilmi Berk Çelikoğlu*
 
 Session Chair: Michael Behrisch  
-**Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
 <br>
 
-<h4 id="s4"><span class="badge badge-success">S4: Micro simulation / other</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 09:00-10:00, Wednesday 09:00-10:00 and 13:00-14:00</small></h4>
+<h4 id="s4"><span class="badge badge-success">S4: Micro simulation / other</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a></h4>
 
 - ECN-based Mitigation of Congestion in Urban Traffic Networks - *Levente Alekszejenkó and Tadeusz P. Dobrowiecki*
 - Extending the Intelligent Driver Model in SUMO and Verifying the Drive Off Trajectories with Aerial Measurements - *Dominik Salles, Stefan Kaufmann and Hans-Christian Reuss*
 - A Slipstreaming Model for Cooperative Driving Simulations in SUMO - *Andrea Stedile and Michele Segata*
 
 Session Chair: Peter Wagner  
-**Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
 <br>
 
-<h4 id="s5"><span class="badge badge-danger">S5: Real-world Scenarios</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 10:30-11:30, Wednesday 10:30-11:30 and 13:00-14:00</small></h4>
+<h4 id="s5"><span class="badge badge-danger">S5: Real-world Scenarios</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a></h4>
 
 - SAGA: An Activity-based Multi-modal Mobility Scenario Generator for SUMO - *Lara Codeca, Jakob Erdmann, Vinny Cahill and Jérôme Härri*
 - InTAS - The Ingolstadt Traffic Scenario for SUMO - *Silas Lobo, Stefan Neumeier, Evelio Fernandez and Christian Facchi*
@@ -340,59 +305,56 @@ Session Chair: Peter Wagner
 - Estimation of Green House Gas and Contaminant Emissions from Traffic by microsimulation and refined Origin-Destination matrices: a methodological approach - *Jorge E. Luzuriaga, Juan A. Moreno, Edgar Lorenzo Sáez, Santiago Mira Prats, Javier Fermín Urchueguía, Lenin Guillermo Lemus Zúñiga, José Vicente Oliver Villanueva and Miguel A. Mateo Pla*
 
 Session Chair: Ronald Nippold  
-**Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
 <br>
 
-<h4 id="s6"><span class="badge badge-warning">S6: Real-world data</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 10:30-11:30, Wednesday 09:00-10:00 and 13:00-14:00</small></h4>
+<h4 id="s6"><span class="badge badge-warning">S6: Real-world data</span><a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a></h4>
 
 - Calibration of car-following models by using drone videos of a real-world intersection - *András Zsámboki, Jiao Li and Zoltán Baksa*
 - Generating and calibrating large-scale, mesoscopic SUMO network - *Sasan Amini, Lukas Ambühl, Gabriel Tilg, Klaus Bogenberger and Monica Menendez*
 - Action-points in human driving and in SUMO - *Peter Wagner, Jakob Erdmann and Ronald Nippold*
 
 Session Chair: Laura Bieker-Walz  
-**Passcode is the same as in all other Meetings / Rooms.** *Find it on your registration confirmation email*.
 
 <br>
 
-<h4 id="p1"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 1:</span> Tools <a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 15:30-16:00</small></h4>
+<h4 id="p1"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 1:</span> Tools <a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a></h4>
 
-- QarSUMO: An Open-source Parallel Framework for Large Scale Traffic Simulation
-- PaSyMo: Developing and Testing a Participatory Modeling Toolbox for Urban Systems
-- Hugely Variant Autonomous Driving Training Data Generation Using SUMO and rFpro
-- Introducing SumoNetVis: A Tool for Visualizing SUMO Networks and Trajectory Data
-- Using results of the simulation experiment SUMO models by portable applications
+- QarSUMO: An Open-source Parallel Framework for Large Scale Traffic Simulation - *Ke Yang, Hao Chen, Phillip Taylor, Anuhya Vellore, Giovanna Vantini, Stefano Giovanni Rizzo, Xiaosong Ma and Sanjay Chawla*
+- PaSyMo: Developing and Testing a Participatory Modeling Toolbox for Urban Systems - *Leonard Higi, Tobias Schröder, Antje Michel and Anne Tauch*
+- Hugely Variant Autonomous Driving Training Data Generation Using SUMO and rFpro - *Matt Daley*
+- Introducing SumoNetVis: A Tool for Visualizing SUMO Networks and Trajectory Data - *Patrick Malcolm, Georgios Grigoropoulos, Andreas Keler, Heather Kaths and Klaus Bogenberger*
+- Using results of the simulation experiment SUMO models by portable applications - *Alexander Manyashin*
 
 Poster Session Chair: Michael Behrisch   
 
 <br>
 
-<h4 id="p2"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 2:</span> Modelling connected and intelligent traffic <a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Tuesday 16:00-16:30</small></h4>
+<h4 id="p2"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 2:</span> Modelling connected and intelligent traffic <a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a></h4>
 
-- Improving network performance with V2X services of dispatching takeover requests and safe-spot assignments in an urban transition corridor
-- Simulation of automated and connecting driving traffic in the test field Hamburg
+- Improving network performance with V2X services of dispatching takeover requests and safe-spot assignments in an urban transition corridor - *Robert Alms and Yun-Pang Flötteröd*
+- Simulation of automated and connecting driving traffic in the test field Hamburg - *Benedikt Scheier*
 
 Poster Session Chair: Melanie Weber 
 
 <br>
 
-<h4 id="p3"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 3:</span> Simulation Scenarios <a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Wednesday 14:30-15:00</small></h4>
+<h4 id="p3"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 3:</span> Simulation Scenarios <a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a></h4>
 
-- An emergency vehicle prioritization strategy with simulation results of Brunswick
-- I4Port
-- SUMOPy - a simulation suite to create traffic scenarios with SUMO
-- Impact of heavy vehicles on road congestion
+- An emergency vehicle prioritization strategy with simulation results of Brunswick - *Laura Bieker-Walz, Sten Ruppe, Ronald Nippold and Daniel Wesemeyer*
+- I4Port - *Melanie Weber and Johannes Rummel*
+- SUMOPy - a simulation suite to create traffic scenarios with SUMO - *Joerg Schweizer*
 
 Poster Session Chair: Angelo Banse 
 
 <br>
 
-<h4 id="p4"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 4:</span> Routing <a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a> <small>Wednesday 15:00-15:30</small></h4>
+<h4 id="p4"><span class="badge badge-light" style="background:rgb(224,194,255);">Poster Session 4:</span> Routing <a href="#agenda" style="text-decoration:none;"> <i class="fas fa-sort-up"></i></a></h4>
 
-- An Analysis of Traffic Simulations Based on Modifiable OpenStreetMap Data
-- Building an on-demand routing platform with tight SUMO integration using an event driven architecture
-- GeoAware: An R-based Framework for Controlling SUMO and Generating Synthetic Vehicle Datasets
-- Verification of Right-turn Behavior in SUMO at a Signalized Intersection
+- An Analysis of Traffic Simulations Based on Modifiable OpenStreetMap Data - *Jakob Smretschnig*
+- Building an on-demand routing platform with tight SUMO integration using an event driven architecture - *Adrian Plani, Timothy Hudson, Chen Cai and Hanna Grzybowska*
+- GeoAware: An R-based Framework for Controlling SUMO and Generating Synthetic Vehicle Datasets - *Jameson Morgan and Derek Doran*
+- Verification of Right-turn Behavior in SUMO at a Signalized Intersection - *Ken Shirahata, Masaki Ito, Azusa Toriumi and Takashi Oguchi*
 
 Poster Session Chair: Johannes Rummel 
 
@@ -401,12 +363,11 @@ Poster Session Chair: Johannes Rummel
 
 We are going to have a fun SUMO-related quiz using [Menti](https://www.menti.com/). Join our Zoom meeting and have a smartphone/tablet ready at hand. Test your knowledge of SUMO and win the glorious and prestigious prize of attaching your name to an easter egg in “sumo-gui”.
 
+<!--
 ### Registration
-<!-- 
+ 
 The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings and social events in the evening. Accommodation is not included within the registration fee and must be pre-booked separately. 
 Register here. -->
-
-Please **[register here](https://zoom.us/webinar/register/WN_9R7MuVewSs6aDGwI4i4big)**.
 
 ### Language
 The conference language is English.
