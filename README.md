@@ -1,5 +1,3 @@
-![Repo Size](https://img.shields.io/github/repo-size/eclipse/sumo.website.svg)
-
 # Eclipse SUMO website
 
 This repository contains the source files for the [Eclipse SUMO website](https://eclipse.org/sumo).
