@@ -36,7 +36,7 @@ draft: false
 
 <!-- head image -->
 <div class="container-fluid" style="padding:0 !important;">
-      <img src="../images/conference2020.png" style="width:100%;" alt="placeholder 960" class="img-responsive" />
+  <img src="../images/conference2020.png" style="width:100%;" alt="Conference participants" class="img-responsive" />
 </div>
 
 ### Introduction
