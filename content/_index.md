@@ -4,12 +4,10 @@ description : "Open source, microscopic and continuous multi-modal traffic simul
 draft: false
 ---
 
-<!-- dismissible alert -->
-<!-- <div class="alert alert-warning alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <a href="conference"><h5 style="color:#338033";>Registration is now open!</h5></a>
-    The <strong>SUMO User Conference 2020</strong> takes place October 26-28, 2020. This year's conference is going to be <b>online</b> and the participation will be <b>free</b> of charge. <a href="conference">More info about the conference</a>
-</div> -->
+<!-- alert -->
+<div class="alert alert-warning">
+    Watch the <strong>SUMO User Conference 2020</strong> videos here: <a href="https://www.youtube.com/playlist?list=PLy7t4z5SYNaSbneWArP9heFSFI2ARNZrM"><i class="fab fa-youtube"></i> YouTube playlist</a>
+</div>
 
 <!-- YouTube tutorial -->
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/aiOQbaB-pWo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

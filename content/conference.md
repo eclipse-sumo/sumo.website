@@ -164,6 +164,10 @@ The conference focuses on presenting new and unique results in the field of mobi
 - GeoAware: An R-based Framework for Controlling SUMO and Generating Synthetic Vehicle Datasets - *Jameson Morgan and Derek Doran* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=TxDkCr4qANU)
 - Verification of Right-turn Behavior in SUMO at a Signalized Intersection - *Ken Shirahata, Masaki Ito, Azusa Toriumi and Takashi Oguchi* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=ghlT5NvLYHw)
 
+---
+
+You can find all videos here: <a href="https://www.youtube.com/playlist?list=PLy7t4z5SYNaSbneWArP9heFSFI2ARNZrM"><button type="button" class="btn btn-danger btn-sm"><i class="fab fa-youtube"></i> YouTube playlist</button></a>
+
 
 <!-- ### Agenda
 
