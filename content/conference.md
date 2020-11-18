@@ -66,7 +66,7 @@ The conference focuses on presenting new and unique results in the field of mobi
 ### Sessions and Presentations
 - Tutorial • [<i class="fab fa-youtube"></i> Video](https://youtu.be/aiOQbaB-pWo)
 - Ask us anything • [<i class="far fa-file-alt"></i> Chat Q&A](../docs/2020/chat_QA.txt)
-- **Keynote:** Emerging mobility trends and the role of transport simulation models - *Jordi Casas*
+- **Keynote:** Emerging mobility trends and the role of transport simulation models - *Jordi Casas* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=vJe-2T73UOg)
 
 ---
 
@@ -126,8 +126,8 @@ The conference focuses on presenting new and unique results in the field of mobi
 
 **Session 6: Real-world data**
 
-- Calibration of car-following models by using drone videos of a real-world intersection - *András Zsámboki, Jiao Li and Zoltán Baksa*
-- Generating and calibrating large-scale, mesoscopic SUMO network - *Sasan Amini, Lukas Ambühl, Gabriel Tilg, Klaus Bogenberger and Monica Menendez*
+- Calibration of car-following models by using drone videos of a real-world intersection - *András Zsámboki, Jiao Li and Zoltán Baksa* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=n-vpGqCq-6k)
+- Generating and calibrating large-scale, mesoscopic SUMO network - *Sasan Amini, Lukas Ambühl, Gabriel Tilg, Klaus Bogenberger and Monica Menendez* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=ODMVjgf-Lrw)
 - Action-points in human driving and in SUMO - *Peter Wagner, Jakob Erdmann and Ronald Nippold* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=fc_GuHvoOxo)
 
 ---
@@ -145,7 +145,7 @@ The conference focuses on presenting new and unique results in the field of mobi
 **Poster Session 2: Modelling connected and intelligent traffic**
 
 - Improving network performance with V2X services of dispatching takeover requests and safe-spot assignments in an urban transition corridor - *Robert Alms and Yun-Pang Flötteröd* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=Uw3fKKp5P3A)
-- Simulation of automated and connecting driving traffic in the test field Hamburg - *Benedikt Scheier*
+- Simulation of automated and connecting driving traffic in the test field Hamburg - *Benedikt Scheier* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=1FW7GUu84ws)
 
 ---
 
@@ -153,7 +153,7 @@ The conference focuses on presenting new and unique results in the field of mobi
 
 - An emergency vehicle prioritization strategy with simulation results of Brunswick - *Laura Bieker-Walz, Sten Ruppe, Ronald Nippold and Daniel Wesemeyer* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=Mmp6oBaNUY0)
 - I4Port - *Melanie Weber and Johannes Rummel* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=Gs2rM6NXElo)
-- SUMOPy - a simulation suite to create traffic scenarios with SUMO - *Joerg Schweizer*
+- SUMOPy - a simulation suite to create traffic scenarios with SUMO - *Joerg Schweizer* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=0iD2qnjIJsQ)
 
 ---
 
