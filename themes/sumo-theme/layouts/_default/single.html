@@ -8,11 +8,17 @@
   
     {{ if isset .Params "subtitle" }}
     <h4 style="text-align: center; color: #6d846e;">{{ index .Params "subtitle" }}</h4>
+    {{ if isset .Params "conferencedate" }}
+    <h5 style="text-align: center; color: #6d846e;"><i class="fas fa-calendar-alt"></i> {{ index .Params "conferencedate" }} {{ if isset .Params "conferencelocation" }} | <i class="fas fa-map-marker-alt"></i> {{ index .Params "conferencelocation" }}{{ end }}</h5>
+    {{ end }}
     {{ end }}
   </div>
 
   <div class="container">
     {{ .Content }}
+    {{ if isset .Site.Params "githubediturl" }}
+    <div class="d-flex justify-content-end"><a href="{{ $.Site.Params.githubEditURL }}{{ .File.Path }}"><button type="button" class="btn btn-light btn-sm" title="Edit this page on GitHub"><i class="fas fa-pencil-alt"></i> Edit</button></a></div>
+    {{ end }}
   </div>
 </section>
 {{ end }}
