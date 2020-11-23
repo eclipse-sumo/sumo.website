@@ -1,42 +1,17 @@
 ---
 title: "SUMO User Conference 2020"
-subtitle: "October 26-28 | From Traffic Flow to Mobility Modeling"
+subtitle: "From Traffic Flow to Mobility Modeling"
+conferenceDate: "October 26-28"
+conferenceLocation: "Online"
 description : "Get in touch with our international user community"
 layout: "single"
+conference-page: true
 draft: false
 ---
 
-<!-- archive - previous years -->
-<div class="text-right">
-<div class="btn-group" style="margin-bottom:10px;">
-    <div class="dropdown">
-    <button type="button" class="btn btn-light btn-sm dropdown-toggle" data-toggle="dropdown">(Archive) Select previous year</button>
-        <div class="dropdown-menu text-center">
-            <a class="dropdown-item" href="https://sumo.dlr.de/2019">2019</a>
-            <a class="dropdown-item" href="https://sumo.dlr.de/2018">2018</a>
-            <a class="dropdown-item" href="https://sumo.dlr.de/2017">2017</a>
-            <a class="dropdown-item" href="https://sumo.dlr.de/2016">2016</a>
-            <a class="dropdown-item" href="https://sumo.dlr.de/2015">2015</a>
-            <a class="dropdown-item" href="https://sumo.dlr.de/2014">2014</a>
-            <a class="dropdown-item" href="https://sumo.dlr.de/2013">2013</a>
-        </div>
-    </div> 
-</div>
-</div>
-
-<!-- dismissible alert -->
-<!-- <div class="alert alert-warning alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <b>Important notice</b>
-    <br>
-    <a href="https://zoom.us/webinar/register/WN_9R7MuVewSs6aDGwI4i4big"><h5 style="color:#338033";>Registration is now open!</h5></a>
-    Participation at this year’s conference will be <b>free</b> of charge!<br>
-    Due to the Coronavirus crisis and the measures imposed, the SUMO User Conference 2020 is going to be <strong>online</strong>.
-</div> -->
-
 <!-- head image -->
 <div class="container-fluid" style="padding:0 !important;">
-  <img src="../images/conference2020.png" style="width:100%;" alt="Conference participants" class="img-responsive" />
+  <img src="../images/conference_2020.png" style="width:100%;" alt="Conference participants" class="img-responsive" />
 </div>
 
 ### Introduction

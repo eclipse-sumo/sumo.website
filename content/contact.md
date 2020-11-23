@@ -53,7 +53,7 @@ Archive: <a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/">Eclipse Archi
 
 </div>
 
-To **unsubscribe**, please visit the same link(s) as given above for subscription. You will find a field there that allows you to unsubscribe. An easy way to subscribe (or unsubscribe) is to write an email to [mailto:sumo-user-join@eclipse.org](mailto:sumo-user-join@eclipse.org) (or [mailto:sumo-user-leave@eclipse.org](mailto:sumo-user-leave@eclipse.org) for unsubscribing). Make sure to use the right sender address (subject and body can be empty). This works of course for the dev and the announce list as well.
+To **unsubscribe**, please visit the same link(s) as given above for subscription. You will find a field there that allows you to unsubscribe. An easy way to subscribe (or unsubscribe) is to write an email to [sumo-user-join@eclipse.org](mailto:sumo-user-join@eclipse.org) (or [sumo-user-leave@eclipse.org](mailto:sumo-user-leave@eclipse.org) for unsubscribing). Make sure to use the right sender address (subject and body can be empty). This works of course for the dev and the announce list as well.
 
 <div class="container alert alert-info alert-dismissible" style="margin-bottom:0;">
     There is also a <a href="http://sumo-user.90755.n8.nabble.com/">forum available</a> to access the <b>sumo-user</b> mailing list. Please be aware that every message to the forum also goes to all sumo-user subscribers and vice versa. You need to register for the forum, but you only need a valid email, not an Eclipse account.

@@ -32,4 +32,4 @@ This should create the *public* directory, containing all the necessary HTML and
 
 ## Other links
 - [SUMO repository](https://github.com/eclipse/sumo)
-- [Documentation](https://sumo.dlr.de/docs)
+- [SUMO Documentation](https://sumo.dlr.de/docs)
