@@ -113,7 +113,7 @@ The conference focuses on presenting new and unique results in the field of mobi
 - PaSyMo: Developing and Testing a Participatory Modeling Toolbox for Urban Systems - *Leonard Higi, Tobias Schröder, Antje Michel and Anne Tauch* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=W1OVhEECDYY)
 - Hugely Variant Autonomous Driving Training Data Generation Using SUMO and rFpro - *Matt Daley* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=Lu0FbXCnEzM)
 - Introducing SumoNetVis: A Tool for Visualizing SUMO Networks and Trajectory Data - *Patrick Malcolm, Georgios Grigoropoulos, Andreas Keler, Heather Kaths and Klaus Bogenberger*
-- Using results of the simulation experiment SUMO models by portable applications - *Alexander Manyashin*
+- Using results of the simulation experiment SUMO models by portable applications - *Alexander Manyashin* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=p9So7T7wYTI)
 
 ---
 
