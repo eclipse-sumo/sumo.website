@@ -94,7 +94,6 @@ The conference focuses on presenting new and unique results in the field of mobi
 
 - SAGA: An Activity-based Multi-modal Mobility Scenario Generator for SUMO - *Lara Codeca, Jakob Erdmann, Vinny Cahill and Jérôme Härri* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=b-ZvQ0XbVvM)
 - InTAS - The Ingolstadt Traffic Scenario for SUMO - *Silas Lobo, Stefan Neumeier, Evelio Fernandez and Christian Facchi* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=UgPeBxXzDHc)
-- An application of SUMO in a Drive on the Left country: Challenges and opportunities - *Rubel Das and Masaaki Sakuraba*
 - Estimation of Green House Gas and Contaminant Emissions from Traffic by microsimulation and refined Origin-Destination matrices: a methodological approach - *Jorge E. Luzuriaga, Juan A. Moreno, Edgar Lorenzo Sáez, Santiago Mira Prats, Javier Fermín Urchueguía, Lenin Guillermo Lemus Zúñiga, José Vicente Oliver Villanueva and Miguel A. Mateo Pla* • [<i class="fab fa-youtube"></i> Video](https://www.youtube.com/watch?v=YsLTs8KcFF4)
 
 ---
