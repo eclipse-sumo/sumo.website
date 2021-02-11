@@ -101,7 +101,7 @@ parent = "Support"
 weight = 1
 
 [[menu.main]]
-URL = "https://sumo.dlr.de/docs/Tutorials.html"
+URL = "https://sumo.dlr.de/docs/Tutorials/index.html"
 name = "Tutorials"
 parent = "Support"
 weight = 2
