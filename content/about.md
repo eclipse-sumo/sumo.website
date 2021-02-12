@@ -80,7 +80,7 @@ The SUMO package contains the following applications:
     </a></div>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/netedit.html">
+    <div class="application-box"><a href="https://sumo.dlr.de/docs/Netedit/index.html">
       <h6>netedit</h6><p class="text-muted">visual editor for network elements</p>
     </a></div>
   </div>
@@ -149,7 +149,7 @@ The SUMO package contains the following applications:
     </a></div>
   </div>
   <div class="col-sm-3">
-    <div class="application-box" style="background-color:#dedede !important;"><a href="https://sumo.dlr.de/docs/Tools.html">
+    <div class="application-box" style="background-color:#dedede !important;"><a href="https://sumo.dlr.de/docs/Tools/index.html">
       <br><h6>And many other Tools!</h6>
     </a></div>
   </div>

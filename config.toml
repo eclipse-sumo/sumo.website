@@ -89,7 +89,7 @@ parent = "References"
 weight = 2
 
 [[menu.main]]
-URL = "https://sumo.dlr.de/docs/Contributed.html"
+URL = "https://sumo.dlr.de/docs/Contributed/index.html"
 name = "Contributed extensions"
 parent = "References"
 weight = 3
@@ -119,7 +119,7 @@ parent = "Support"
 weight = 4
 
 [[menu.main]]
-URL = "https://sumo.dlr.de/docs/Developer/Main.html"
+URL = "https://sumo.dlr.de/docs/Developer/index.html"
 name = "Developer Documentation"
 parent = "Support"
 weight = 5
