@@ -5,9 +5,10 @@ draft: false
 ---
 
 <!-- alert -->
-<!-- <div class="alert alert-warning">
-    Watch the <strong>SUMO User Conference 2020</strong> videos here: <a href="https://www.youtube.com/playlist?list=PLy7t4z5SYNaSbneWArP9heFSFI2ARNZrM"><i class="fab fa-youtube"></i> YouTube playlist</a>
-</div> -->
+<div class="alert alert-info">
+    <b>SUMO User Conference 2021</b>: September 13-15, 2021.<br>
+    Check out the <b>Call for Papers </b><a href="conference">here</a>.
+</div>
 
 <!-- YouTube tutorial -->
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/aiOQbaB-pWo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

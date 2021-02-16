@@ -14,9 +14,8 @@ draft: false
   <img src="../images/conference_2020.png" style="width:100%;" alt="Conference participants" class="img-responsive" />
 </div> -->
 
-# More info coming soon!
+**Save the Date: September 13-15, 2021**
 
-<!--
 ### Introduction
 Traffic simulations are of immense importance for researchers as well as practitioners in the field of transportation. SUMO has been available since 2001 and provides a wide range of traffic planning and simulation applications. SUMO consists of a suite of tools covering road network imports and enrichment, demand generation and assignment, and a state-of-the-art microscopic traffic simulator capable of simulating private and public transport modes, as well as person-based trip chains. Being open source, SUMO is easily extensible by new behavioral models and can be dynamically controlled via a well-defined programming interface. These and other features make SUMO one of the most often used open source traffic simulators with a large and international user community.
 
@@ -35,13 +34,36 @@ The conference focuses on presenting new and unique results in the field of mobi
 - Logistics Simulation
 - Vehicular Communication
 - E-Mobility
+- Reinforcement learning / Machine Learning
 
-#### Paper Submission
+### Paper Submission
+***Attention***: We changed our paper submission process. We are now offering two submission types:
 
-**Only for invited Authors of scientific papers:** Please submit your final paper using EasyChair https://easychair.org/ until **14.09.2020** using a template from https://easychair.org/publications/for_authors. We will try to give feedback shortly after.
--->
+1) Scientific Papers:
+
+- All accepted scientific papers must be presented at the conference.
+- Scientific papers will be reviewed by at least 2 reviewers.
+- All accepted scientific papers will be published in the SUMO proceedings.
+- Scientific papers must be submitted in LaTeX or Word format before midnight, **Monday, May 3rd, 2021**.
+- Scientific papers should be between 5 and 20 pages long.
+
+2) Technical Presentations:
+
+- The SUMO conference gives the opportunity to present your topic during the poster session or an oral short presentation.
+- There is no need to write a scientific paper.
+- Possible technical presentations can be:
+  - Results of Bachelor or Master theses
+  - Live Demos
+  - SUMO Use Cases
+  - Project Presentations
+  - Work in Progress which would benefit from the feedback of other SUMO users
+- Title and a short abstract (300 words) must be submitted until **Monday, May 3rd, 2021**.
 
 
+### Important Dates
+- Paper and Abstract Submission Deadline: **Monday, May 3rd, 2021**.
+- Notification of Acceptance:  **End of June, 2021**.
+- Camera Ready version due: **Monday, July 15, 2020**.
 
 <!-- ### Agenda
 
@@ -94,8 +116,6 @@ We are going to have a fun SUMO-related quiz using [Menti](https://www.menti.com
 The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings and social events in the evening. Accommodation is not included within the registration fee and must be pre-booked separately. 
 Register here. 
 
-### Language
-The conference language is English.
 
 
 ### Prices
@@ -108,8 +128,6 @@ Participation at this year's conference will be **free of charge**!
 
 The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings, and social events in the evening. Accommodation is not included within the registration fee and must be pre-booked separately. The tickets for the conference can be booked on the following website: https://sumo2020.besl-eventservice.de.
 
-### Venue
-Given the extraordinary situation we are facing, this year's SUMO User Conference will be **online** via [Zoom](https://zoom.us/download#client_4meeting).   
 
 <!-- The conference takes place in Berlin Adlershof:
 
@@ -132,6 +150,11 @@ Fax 67 822-1000
 https://hotel-berlin-adlershof.dorint.com/en/  
 (5-minute walk from S-Bahn station “Adlershof” to the hotel, another 7-minute walk from the hotel to DLR) -->
 
-### Contact
+### Language
+The conference language is English.
 
+### Venue
+Given the extraordinary situation we are facing, this year's SUMO User Conference will be **online**.   
+
+### Contact
 Please contact the conference team via mail at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de)
