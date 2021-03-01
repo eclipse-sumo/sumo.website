@@ -63,7 +63,7 @@ The conference focuses on presenting new and unique results in the field of mobi
 ### Important Dates
 - Paper and Abstract Submission Deadline: **Monday, May 3rd, 2021**.
 - Notification of Acceptance:  **End of June, 2021**.
-- Camera Ready version due: **Monday, July 15, 2020**.
+- Camera Ready version due: **Monday, July 19th, 2021**.
 
 <!-- ### Agenda
 
