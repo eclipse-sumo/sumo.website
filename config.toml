@@ -65,7 +65,7 @@ parent = "About"
 weight = 1
 
 [[menu.main]]
-URL = "https://projects.eclipse.org/projects/technology.sumo/who"
+URL = "https://projects.eclipse.org/projects/automotive.sumo/who"
 name = "Who's involved"
 parent = "About"
 weight = 2
