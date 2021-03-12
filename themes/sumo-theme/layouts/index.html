@@ -1,11 +1,11 @@
 {{ define "main" }}
 <div class="container-fluid header bg-gradient">
-    <div class="container" style="margin-top: 100px;">
+    <div class="container" style="margin-top: 100px; margin-bottom: 20px;">
       <div class="row">
         <div class="col-md-6"> <!-- first col -->
         <h1 style="color: #17412f;">Simulation of Urban MObility</h1>
         <br>    
-        <p>Welcome to Eclipse SUMO (Simulation of Urban MObility), an open source, highly portable, microscopic and continuous multi-modal traffic simulation package designed to handle large networks.</p>
+        <p>Welcome to Eclipse <b>SUMO</b> (Simulation of Urban MObility), an open source, highly portable, microscopic and continuous multi-modal traffic simulation package designed to handle large networks.</p>
 
       <p><div class="btn-group">
         <a href="https://sumo.dlr.de/releases/{{ $.Site.Params.Version }}/sumo-win64-{{ $.Site.Params.Version }}.msi" id="download-button" type="button" class="btn btn-success" style="-webkit-appearance: none; box-shadow: 0 8px 36px -3px rgba(20,45,100,.35);">SUMO {{ $.Site.Params.Version }} for Windows 64bits</a>
@@ -102,37 +102,32 @@
   
 
 <!-- Content -->
-<div class="container">
+<div class="container" style="margin-top: 60px; margin-bottom: 60px;">
 
   <div class="row">
-
-    <div class="col-md-8" style="padding: 0;">
-      <div class="container text-justify">
+    <div class="col-md-8 text-justify" >
         {{ .Content }}
-      </div>
     </div>
 
     <div class="col-md-4">
-      <div class="btn-group btn-group-lg" style="width: 100%;">
+      <div class="d-md-none" style="margin-top: 14px;"></div>
+      <div class="btn-group btn-group-lg" style="width: 100%; margin-bottom: 30px;">
         <a class="btn btn-light" href="https://github.com/eclipse/sumo" aria-label="GitHub"><span class="fab fa-github"></span></a>
         <a class="btn btn-light" href="https://twitter.com/eclipsesumo" aria-label="Twitter"><span class="fab fa-twitter"></span></a>
         <a class="btn btn-light" href="https://facebook.com/simulationofurbanmobility" aria-label="Facebook"><span class="fab fa-facebook"></span></a>
         <a class="btn btn-light" href="https://instagram.com/eclipse.sumo" aria-label="Instagram"><span class="fab fa-instagram"></span></a>
         <a class="btn btn-light" href="https://mattermost.eclipse.org/eclipse/channels/sumo" aria-label="Mattermost"><span class="fas fa-comments"></span></a>
         <a class="btn btn-light" href="{{ `contact` | absURL }}" aria-label="contact"><span class="fas fa-envelope"></span></a>
-      </div> 
-      <br><br>
-      <a class="twitter-timeline" data-height="85%" data-theme="light" href="https://twitter.com/EclipseSUMO?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+      </div>
+      <div style="height: 100%;">
+        <a class="twitter-timeline" data-height="90%" data-theme="light" href="https://twitter.com/EclipseSUMO?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+      </div>
     </div>
 
   </div>
 
 </div>
-
-  <br>
-  <!-- /content -->
-
-  
+<!-- /Content -->
 
 
   <!-- Features -->
@@ -206,7 +201,7 @@
         <div class="col-md-4">
           <span class="fa-stack fa-2x">
             <i class="fas fa-circle fa-stack-2x text-secondary"></i>
-            <i class="fas fa-file-download fa-stack-1x fa-inverse"></i>
+            <i class="fas fa-file-import fa-stack-1x fa-inverse"></i>
           </span>
           <h4 class="feature-heading">Network Import</h4>
           <p class="text-muted">Import road networks from common network formats such as OpenStreetMap, VISUM, VISSIM, NavTeq, MATsim and OpenDRIVE</p>
@@ -253,7 +248,7 @@
         <div class="col-md-4">
           <span class="fa-stack fa-2x">
             <i class="fas fa-circle fa-stack-2x text-secondary"></i>
-            <i class="fas fa-hands-helping fa-stack-1x fa-inverse"></i>
+            <i class="fas fa-users fa-stack-1x fa-inverse"></i>
           </span>
           <h4 class="feature-heading">Open Source</h4>
           <p class="text-muted">Use and modify SUMO according to your needs as it is available under Eclipse Public License v2.0 and GNU General Public License v2.0</p>
@@ -263,18 +258,21 @@
     </div>
     </div>
   </section>
+  <!-- /Features -->
 
 
+
+<!-- openMobility -->
 <div class="container-fluid text-center text-muted" style="margin-top: 60px;">
 
   
 <div class="container">
   <div class="row">
     <div class="col-md-3" style="margin-top: auto; margin-bottom: auto;">
-      <a href="https://openmobility.eclipse.org"><image src="{{ `images/logos/openMobility-logo.svg` | absURL }}" alt="openMobility logo" style="max-width: 200px; margin: 0 30px;"></image></a>
+      <a href="https://openmobility.eclipse.org"><image src="{{ `images/logos/openMobility-logo.svg` | absURL }}" alt="openMobility logo" style="max-width: 250px;"></image></a>
     </div>
     <div class="col-md-9" style="color: #403b3b;">
-      The future development and roadmap of SUMO is shaped and fostered by the <b>openMobility Working Group</b> at the Eclipse Foundation. 
+      The future development and roadmap of SUMO is shaped and fostered by the <a href="https://openmobility.eclipse.org"><b>openMobility Working Group</b></a> at the Eclipse Foundation. 
         Several partners from industry and academia are working together towards a common mobility simulation platform for industrial applications and academic research.
     </div>
   </div> 
@@ -290,5 +288,6 @@
 </div>
      
 </div>
+<!-- /openMobility -->
 
 {{ end }}

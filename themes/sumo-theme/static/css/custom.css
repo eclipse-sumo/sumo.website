@@ -181,6 +181,7 @@ width: 100%;
 
 .navbar {
 padding: 10px 0 !important;
+box-shadow: 0 0 1px 1px rgb(29 17 51 / 4%), 0 0 3px 2px rgb(9 32 77 / 12%), 0 0 2px -3px rgb(29 17 51 / 12%);
 }
 
 .nav-item {
@@ -196,7 +197,7 @@ border-radius: 5px;
 
 .nav-link {
 color: #eff8ff !important;
-text-transform: uppercase;
+/*text-transform: uppercase;*/
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -439,4 +440,32 @@ margin-bottom: auto;
 list-style: none;
 list-style-position: inside;
 padding-left: 0;
+}
+
+.btn-light {
+color: #17412f !important;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+padding: .5rem .5rem;
+}
+
+.card {
+border-radius: .6rem !important;
+box-shadow: 0 8px 12px 1px rgb(29 17 51 / 4%), 0 3px 16px 2px rgb(9 32 77 / 12%), 0 5px 10px -3px rgb(29 17 51 / 12%);
+/*box-shadow: 0 1rem 1rem rgba(0,0,0,.05) !important;*/
+border: none !important;
+}
+
+.card-header {
+background-color:rgb(221,226,231) !important;
+padding: 10px 20px !important;
+}
+
+.card-header:first-child {
+border-radius: calc(.6rem - 1px) calc(.6rem - 1px) 0 0 !important;
+}
+
+.card-body {
+padding: 10px 20px !important;
 }
