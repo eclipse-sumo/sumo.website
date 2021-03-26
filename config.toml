@@ -71,10 +71,16 @@ parent = "About"
 weight = 2
 
 [[menu.main]]
+URL = "https://sumo.dlr.de/docs/ChangeLog.html"
+name = "ChangeLog"
+parent = "About"
+weight = 3
+
+[[menu.main]]
 URL = "https://sumo.dlr.de/daily"
 name = "Status of daily build and tests"
 parent = "About"
-weight = 3
+weight = 4
 
 [[menu.main]]
 URL = "https://sumo.dlr.de/docs/Other/Projects.html"
