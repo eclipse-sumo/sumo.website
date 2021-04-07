@@ -1,9 +1,9 @@
 {{ "<!-- navigation -->" | safeHTML }}
 
     <!-- navbar -->
-        <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top" style="padding:20px 0;">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
           <div class="container">
-            <a class="navbar-brand" href="{{ .Site.BaseURL }}"><img class="img-fluid" src="{{ .Site.Params.logo | relURL }}" style="pointer-events:none;" alt="SUMO logo"></a>
+            <a class="navbar-brand" href="{{ .Site.BaseURL }}"><img class="img-fluid" src="{{ .Site.Params.logo | relURL }}" id="navbar-logo" style="pointer-events:none;" alt="SUMO logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-label="menu icon">
               <span class="navbar-toggler-icon"></span>
             </button>

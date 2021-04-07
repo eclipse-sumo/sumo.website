@@ -95,8 +95,10 @@
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         document.getElementById("goToTop").style.display = "block";
+        document.getElementById("navbar-logo").style.maxWidth = "60%";
       } else {
         document.getElementById("goToTop").style.display = "none";
+        document.getElementById("navbar-logo").style.maxWidth = "100%";
       }
     }
   
