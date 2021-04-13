@@ -59,6 +59,10 @@ The conference focuses on presenting new and unique results in the field of mobi
   - Work in Progress which would benefit from the feedback of other SUMO users
 - Title and a short abstract (300 words) must be submitted until **Monday, May 3rd, 2021**.
 
+#### Submission Link
+
+Please submit your papers via EasyChair:
+https://easychair.org/conferences/?conf=sumo2021
 
 ### Important Dates
 - Paper and Abstract Submission Deadline: **Monday, May 3rd, 2021**.
