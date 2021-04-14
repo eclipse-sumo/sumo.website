@@ -9,7 +9,7 @@ draft: false
 
 <!-- mailing lists -->
 <div class="col-md-12 contact-div">
-<h4 style="color:#17412f;"><i class="fas fa-envelope-open-text"></i><br>
+<h4 style="color:#17412f;" id="mailing-lists"><i class="fas fa-envelope-open-text"></i><br>
 Mailing lists</h4>
 <br>
 If you have any questions about SUMO, please post them into one of our mailing lists. You may need to <a href="https://accounts.eclipse.org/user/register">create an Eclipse account</a> first.
@@ -62,7 +62,7 @@ To **unsubscribe**, please visit the same link(s) as given above for subscriptio
 
 <!-- project leads -->
 <div class="col-md-12 contact-div">
-<h4 style="color:#17412f;"><i class="fas fa-user-friends"></i><br>
+<h4 style="color:#17412f;" id="project-leads"><i class="fas fa-user-friends"></i><br>
 Project Leads</h4><br>
 
 
@@ -92,7 +92,7 @@ SUMO team lead at the German Aerospace Center (DLR) in Berlin, responsible for b
 
 <!-- report a bug -->
 <div class="col-sm-4 contact-div small-div">
-<h4 style="color:#17412f;"><i class="fas fa-bug"></i><br>
+<h4 style="color:#17412f;" id="report-a-bug"><i class="fas fa-bug"></i><br>
 Report a Bug</h4><br>
 If you have found a bug within one of the applications, please let us know.
 This is also the way to notify us if you find any typos or errors in our Documentation.
@@ -102,7 +102,7 @@ This is also the way to notify us if you find any typos or errors in our Documen
 
 <!-- social media -->
 <div class="col-sm-4 contact-div small-div">
-<h4 style="color:#17412f;"><i class="fas fa-bullhorn"></i><br>
+<h4 style="color:#17412f;" id="social-media"><i class="fas fa-bullhorn"></i><br>
 Social media</h4><br>
 Occasional development updates are posted on our social media channels. Follow us and stay informed!
 <br><br>
@@ -113,7 +113,7 @@ Occasional development updates are posted on our social media channels. Follow u
 
 <!-- chat -->
 <div class="col-sm contact-div" style="min-height:310px;">
-<h4 style="color:#17412f;"><i class="fas fa-comments"></i><br>
+<h4 style="color:#17412f;" id="chat"><i class="fas fa-comments"></i><br>
 Chat</h4><br>
 There is a public channel available in the Eclipse's Mattermost instance, to facilitate occasional discussions.
 <br><br>
@@ -123,7 +123,7 @@ There is a public channel available in the Eclipse's Mattermost instance, to fac
 
 <!-- commit rss -->
 <div class="col-md-12 contact-div">
-<h4 style="color:#17412f;"><i class="fas fa-rss"></i><br>
+<h4 style="color:#17412f;" id="commit-rss"><i class="fas fa-rss"></i><br>
 Commit RSS</h4><br>
 If you want to receive regular updates on commits, you can subscribe to <a href="https://github.com/eclipse/sumo/commits/master.atom">this feed</a> or set up an <a href="https://ifttt.com/applets/147561p-rss-feed-to-email">IFTTT link</a> or use <a href="https://hubnotify.com/">https://hubnotify.com/</a> to send you an email.
 </div>

@@ -42,7 +42,7 @@ SUMO is a free and open source traffic simulation suite. It is available since 2
 
 </div></center>
 
-### Application Areas
+# Application Areas
 
 SUMO has been used within several projects for answering a large variety of research questions:
 
@@ -59,7 +59,7 @@ SUMO has been used within several projects for answering a large variety of rese
 - Traffic safety and risk analysis.
 - Calculation of emissions (noise and pollutants).
 
-### Components
+# Components
 
 The SUMO package contains the following applications:
     
@@ -157,7 +157,7 @@ The SUMO package contains the following applications:
 
 SUMO is [licensed](https://sumo.dlr.de/docs/Libraries_Licenses.html) under the [Eclipse Public License V2](https://www.eclipse.org/legal/epl-v20.html). "Eclipse SUMO" is a trademark of the [Eclipse Foundation](https://eclipse.org). If you use SUMO, please support its development by telling us about your projects, products and [publications](https://sumo.dlr.de/docs/Publications.html).
 
-### Citing SUMO
+# Citing SUMO
 
 When citing SUMO in general, please use our current reference publication: ["Microscopic Traffic Simulation using SUMO"](https://ieeexplore.ieee.org/document/8569938) ; Pablo Alvarez Lopez, Michael Behrisch, Laura Bieker-Walz, Jakob Erdmann, Yun-Pang Flötteröd, Robert Hilbrich, Leonhard Lücken, Johannes Rummel, Peter Wagner, and Evamarie Wießner. IEEE Intelligent Transportation Systems Conference (ITSC), 2018.
 
