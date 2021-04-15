@@ -5,11 +5,16 @@ layout: "single"
 draft: false
 ---
 
+<div class="container"><div class="row"><div class="col-md-12 contact-div">
+
 SUMO is a free and open source traffic simulation suite. It is available since 2001 and allows modelling of intermodal traffic systems - including road vehicles, public transport and pedestrians. Included with SUMO is a wealth of supporting tools which automate core tasks for the creation, the execution and evaluation of traffic simulations, such as network import, route calculations, visualization and emission calculation. SUMO can be enhanced with custom models and provides various APIs to remotely control the simulation.
+
+<br><br>
 
 <!-- Computer vector-image and screenshots -->
 <center><div id="not_for_ie" class="col-sm-8 device-laptop">
-<svg class="computer-container" viewBox="0 0 707.42 398.84"><defs id="defs66"><linearGradient id="q" x1="359.08" x2="359.08" y1="465.67" y2="472.52" gradientTransform="matrix(.99992 0 0 .86395 1.2423 49.596)" gradientUnits="userSpaceOnUse"><stop stop-opacity=".70085" offset="0" id="stop2"/><stop stop-color="#4b5151" stop-opacity="0" offset="1" id="stop4"/></linearGradient><linearGradient id="p"><stop stop-color="#b3b3b3" offset="0" id="stop7"/><stop stop-color="#e9e9e9" offset=".02" id="stop9"/><stop stop-color="#d4d4d7" offset=".04" id="stop11"/><stop stop-color="#e4e4e6" offset=".96" id="stop13"/><stop stop-color="#f4f4f4" offset=".98" id="stop15"/><stop stop-color="#b3b3b3" offset="1" id="stop17"/></linearGradient><linearGradient id="o"><stop stop-color="#fff" offset="0" id="stop20"/><stop stop-color="#fff" stop-opacity=".8547" offset="1" id="stop22"/></linearGradient><radialGradient id="ab" cx="368.78" cy="101.43" r="3.4688" gradientTransform="matrix(1.2563,0,0,1.193485,-112.702,-103.27702)" gradientUnits="userSpaceOnUse" xlink:href="#o"/><linearGradient id="r" x1="19.123" x2="724.58" y1="438.17" y2="438.17" gradientTransform="matrix(1.0024,0,0,0.73748,-19.2353,49.311)" gradientUnits="userSpaceOnUse" xlink:href="#p"/><linearGradient id="s" x1="423.08" x2="468.94" y1="35.017" y2="414.62" gradientTransform="matrix(1.0295,0,0,1.0095,-29.15,-87.1725)" gradientUnits="userSpaceOnUse"><stop stop-color="#91404b" offset="0" id="stop27"/><stop stop-color="#a3466f" offset=".40632" id="stop29"/><stop stop-color="#915378" offset=".69016" id="stop31"/><stop stop-color="#7d4984" offset="1" id="stop33"/></linearGradient><linearGradient id="t" x1="359.08" x2="359.08" y1="465.67" y2="472.52" gradientTransform="matrix(0.99992,0,0,0.86395,-16.8997,-34.053)" gradientUnits="userSpaceOnUse"><stop stop-color="#c6c6c6" offset="0" id="stop36"/><stop stop-color="#f2f2f2" offset="1" id="stop38"/></linearGradient><linearGradient id="u" x1="334.45" x2="334.45" y1="470.3" y2="485.04" gradientTransform="matrix(1.0083,0,0,0.76407,-21.24,20.861)" gradientUnits="userSpaceOnUse"><stop stop-color="#d1d4d6" offset="0" id="stop41"/><stop stop-color="#a1a5a6" offset=".5" id="stop43"/><stop offset="1" id="stop45"/></linearGradient><linearGradient id="v" x1="310.54" x2="317.67" y1="467.8" y2="467.14" gradientTransform="matrix(-1.0006,0,0,0.84879,718.068,-26.836)" gradientUnits="userSpaceOnUse" xlink:href="#q"/><linearGradient id="w" x1="310.54" x2="317.67" y1="467.8" y2="467.14" gradientTransform="matrix(0.99992,0,0,0.86395,-16.8276,-34.066)" gradientUnits="userSpaceOnUse" xlink:href="#q"/><linearGradient id="x" x1="18.2" x2="725.5" y1="455.96" y2="455.96" gradientTransform="matrix(0.99957,0,0,1,-18.191558,-83.51254)" gradientUnits="userSpaceOnUse" xlink:href="#p"/><linearGradient id="y" x1="18.142" x2="725.14" y1="464.07" y2="464.07" gradientTransform="matrix(1,0,0,2.3955,-18.142,-731.839)" gradientUnits="userSpaceOnUse"><stop stop-color="#cfcfcf" stop-opacity="0" offset="0" id="stop51"/><stop stop-color="#fff" stop-opacity=".84615" offset=".5" id="stop53"/><stop stop-color="#cfcfcf" stop-opacity="0" offset="1" id="stop55"/></linearGradient><linearGradient id="z" x1="350.38" x2="350.38" y1="439.86" y2="450.9" gradientTransform="matrix(1.4772,0,0,0.89908,-204.002,-39.26)" gradientUnits="userSpaceOnUse"><stop offset="0" id="stop58"/><stop stop-color="#4e4e4e" offset=".5" id="stop60"/><stop stop-color="#212121" offset="1" id="stop62"/></linearGradient><linearGradient id="aa" x1="525.28" x2="656.6" y1="97.768" y2="423.04" gradientTransform="matrix(1.3271,0,0,1.0058,-232.552,-81.4975)" gradientUnits="userSpaceOnUse" xlink:href="#o"/></defs><g id="g150" transform="matrix(1.0000038,0,0,0.92444944,0.20664141,20.152395)"><rect x="82.888" y="1.000002" width="542.42999" height="377.98999" rx="19.999001" ry="20.788" id="rect68" style="fill:#d0d0d2;stroke:#b3b7b7;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"/><rect x="85.768005" y="4.6169987" width="535.76001" height="368.17001" rx="17" ry="17" id="rect70" style="stroke:#000000;stroke-width:1.00880003;stroke-linecap:round;stroke-linejoin:bevel"/><path d="m 354.95567,16.930536 a 4.359361,4.1414432 0 1 1 -8.71872,0 4.359361,4.1414432 0 1 1 8.71872,0 z" id="path76" style="opacity:0.16418002;fill:url(#ab);stroke-width:1.25629997" inkscape:connector-curvature="0"/><rect x="0.40200064" y="364.47101" width="706.20001" height="15.965" id="rect78" style="fill:url(#r);stroke:url(#x);stroke-width:0.80483001;stroke-linecap:round;stroke-linejoin:bevel"/><path d="m 297.028,364.011 v 1.5366 c 0,4.788 4.46,8.6421 10,8.6421 h 86.93 c 5.54,0 10,-3.8541 10,-8.6421 v -1.5366 z" id="path80" style="opacity:0.87064999;fill:url(#t)" inkscape:connector-curvature="0"/><rect x="1.9836426e-07" y="378.841" width="707" height="2" id="rect82" style="fill:url(#y)"/><path d="m 403.938,364.241 v 1.5096 c 0,4.7039 -4.4629,8.4904 -10.007,8.4904 h -86.987 c -5.5436,0 -10.007,-3.7865 -10.007,-8.4904 v -1.5096 h 107 z" id="path84" style="opacity:0.87064999;fill:url(#v)" inkscape:connector-curvature="0"/><path d="m 297.098,364.001 v 1.5366 c 0,4.788 4.46,8.6421 10,8.6421 h 86.93 c 5.54,0 10,-3.8541 10,-8.6421 v -1.5366 z" id="path86" style="opacity:0.87064999;fill:url(#w)" inkscape:connector-curvature="0"/><path d="m 0.4,380.821 c 6.2184,4.8804 30.22,6.9503 39.6,7 216.02,0.0348 620,0 620,0 7.65,9.4e-4 43.32,-3.2917 46.6,-7 z" id="path88" style="fill:url(#u)" inkscape:connector-curvature="0"/><rect x="86.828003" y="5.1540012" width="533.56" height="349.35001" rx="16.93" ry="16.131001" id="rect90" style="opacity:0.27917002;fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:bevel"/><rect x="129.748" y="356.211" width="443.17001" height="7.1926999" id="rect92" style="fill:url(#z)"/></g></svg>
+<svg viewBox="0 0 707.42 398.84" class="computer-container transparent"> <defs id="defs66"> <linearGradient gradientUnits="userSpaceOnUse" gradientTransform="matrix(.99992 0 0 .86395 1.2423 49.596)" y2="472.52" y1="465.67" x2="359.08" x1="359.08" id="q"> <stop id="stop2" offset="0" stop-opacity=".70085" /> <stop id="stop4" offset="1" stop-opacity="0" stop-color="#4b5151" /> </linearGradient> <linearGradient id="p"> <stop id="stop7" offset="0" stop-color="#b3b3b3" /> <stop id="stop9" offset=".02" stop-color="#e9e9e9" /> <stop id="stop11" offset=".04" stop-color="#d4d4d7" /> <stop id="stop13" offset=".96" stop-color="#e4e4e6" /> <stop id="stop15" offset=".98" stop-color="#f4f4f4" /> <stop id="stop17" offset="1" stop-color="#b3b3b3" /> </linearGradient> <linearGradient id="o"> <stop id="stop20" offset="0" stop-color="#fff" /> <stop id="stop22" offset="1" stop-opacity=".8547" stop-color="#fff" /> </linearGradient> <radialGradient xlink:href="#o" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.2563,0,0,1.193485,-112.702,-103.27702)" r="3.4688" cy="101.43" cx="368.78" id="ab" /> <linearGradient xlink:href="#p" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.0024,0,0,0.73748,-19.2353,49.311)" y2="438.17" y1="438.17" x2="724.58" x1="19.123" id="r" /> <linearGradient gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.0295,0,0,1.0095,-29.15,-87.1725)" y2="414.62" y1="35.017" x2="468.94" x1="423.08" id="s"> <stop id="stop27" offset="0" stop-color="#91404b" /> <stop id="stop29" offset=".40632" stop-color="#a3466f" /> <stop id="stop31" offset=".69016" stop-color="#915378" /> <stop id="stop33" offset="1" stop-color="#7d4984" /> </linearGradient> <linearGradient gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.99992,0,0,0.86395,-16.8997,-34.053)" y2="472.52" y1="465.67" x2="359.08" x1="359.08" id="t"> <stop id="stop36" offset="0" stop-color="#c6c6c6" /> <stop id="stop38" offset="1" stop-color="#f2f2f2" /> </linearGradient> <linearGradient gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.0083,0,0,0.76407,-21.24,20.861)" y2="485.04" y1="470.3" x2="334.45" x1="334.45" id="u"> <stop id="stop41" offset="0" stop-color="#d1d4d6" /> <stop id="stop43" offset=".5" stop-color="#a1a5a6" /> <stop id="stop45" offset="1" /> </linearGradient> <linearGradient xlink:href="#q" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-1.0006,0,0,0.84879,718.068,-26.836)" y2="467.14" y1="467.8" x2="317.67" x1="310.54" id="v" /> <linearGradient xlink:href="#q" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.99992,0,0,0.86395,-16.8276,-34.066)" y2="467.14" y1="467.8" x2="317.67" x1="310.54" id="w" /> <linearGradient xlink:href="#p" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.99957,0,0,1,-18.191558,-83.51254)" y2="455.96" y1="455.96" x2="725.5" x1="18.2" id="x" /> <linearGradient gradientUnits="userSpaceOnUse" gradientTransform="matrix(1,0,0,2.3955,-18.142,-731.839)" y2="464.07" y1="464.07" x2="725.14" x1="18.142" id="y"> <stop id="stop51" offset="0" stop-opacity="0" stop-color="#cfcfcf" /> <stop id="stop53" offset=".5" stop-opacity=".84615" stop-color="#fff" /> <stop id="stop55" offset="1" stop-opacity="0" stop-color="#cfcfcf" /> </linearGradient> <linearGradient gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.4772,0,0,0.89908,-204.002,-39.26)" y2="450.9" y1="439.86" x2="350.38" x1="350.38" id="z"> <stop id="stop58" offset="0" /> <stop id="stop60" offset=".5" stop-color="#4e4e4e" /> <stop id="stop62" offset="1" stop-color="#212121" /> </linearGradient> <linearGradient xlink:href="#o" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.3271,0,0,1.0058,-232.552,-81.4975)" y2="423.04" y1="97.768" x2="656.6" x1="525.28" id="aa" /> </defs> <g transform="matrix(1.0058955,0,0,0.8856864,-1.8760864,27.669255)" id="g150"> <rect style="fill:#d0d0d2;stroke:#b3b7b7;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" id="rect68" ry="20.788" rx="19.999001" height="377.98999" width="542.42999" y="1.000002" x="82.888" /> <rect style="stroke:#000000;stroke-width:1.0088;stroke-linecap:round;stroke-linejoin:bevel" id="rect70" ry="17" rx="17" height="368.17001" width="535.76001" y="4.6169987" x="85.768005" /> <path inkscape:connector-curvature="0" style="opacity:0.16418;fill:url(#ab);stroke-width:1.2563" id="path76" d="m 354.95567,16.930536 a 4.359361,4.1414432 0 1 1 -8.71872,0 4.359361,4.1414432 0 1 1 8.71872,0 z" /> <rect style="fill:url(#r);stroke:url(#x);stroke-width:0.80483;stroke-linecap:round;stroke-linejoin:bevel" id="rect78" height="15.965" width="706.20001" y="364.47101" x="0.40200064" /> <path inkscape:connector-curvature="0" style="opacity:0.87065;fill:url(#t)" id="path80" d="m 297.028,364.011 v 1.5366 c 0,4.788 4.46,8.6421 10,8.6421 h 86.93 c 5.54,0 10,-3.8541 10,-8.6421 v -1.5366 z" /> <rect style="fill:url(#y)" id="rect82" height="2" width="707" y="378.841" x="1.9836426e-07" /> <path inkscape:connector-curvature="0" style="opacity:0.87065;fill:url(#v)" id="path84" d="m 403.938,364.241 v 1.5096 c 0,4.7039 -4.4629,8.4904 -10.007,8.4904 h -86.987 c -5.5436,0 -10.007,-3.7865 -10.007,-8.4904 v -1.5096 h 107 z" /> <path inkscape:connector-curvature="0" style="opacity:0.87065;fill:url(#w)" id="path86" d="m 297.098,364.001 v 1.5366 c 0,4.788 4.46,8.6421 10,8.6421 h 86.93 c 5.54,0 10,-3.8541 10,-8.6421 v -1.5366 z" /> <path inkscape:connector-curvature="0" style="fill:url(#u)" id="path88" d="m 0.4,380.821 c 6.2184,4.8804 30.22,6.9503 39.6,7 216.02,0.0348 620,0 620,0 7.65,9.4e-4 43.32,-3.2917 46.6,-7 z" /> <rect style="opacity:0.27917;fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:bevel" id="rect90" ry="16.131001" rx="16.93" height="349.35001" width="533.56" y="5.1540012" x="86.828003" /> <rect style="fill:url(#z)" id="rect92" height="7.1926999" width="443.17001" y="356.211" x="129.748" /> </g> </svg>
+
 
 <div id="sumoScreenshots" class="carousel computer-screenshot" data-ride="carousel">
   <div class="carousel-inner">
@@ -64,22 +69,22 @@ SUMO has been used within several projects for answering a large variety of rese
 The SUMO package contains the following applications:
     
 <div class="row text-center" id="components">
-  <div class="col-sm-3">
+  <div class="col-md-3 margin-b">
     <a href="https://sumo.dlr.de/docs/sumo.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>sumo</h6><p class="text-muted">command line simulation</p>
     </div></a>
   </div>
-  <div class="col-sm-3">
+  <div class="col-md-3 margin-b">
     <a href="https://sumo.dlr.de/docs/sumo-gui.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>sumo-gui</h6><p class="text-muted">simulation with a graphical user interface</p>
     </div></a>
   </div>
-  <div class="col-sm-3">
+  <div class="col-md-3 margin-b">
     <a href="https://sumo.dlr.de/docs/netconvert.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>netconvert</h6><p class="text-muted">network importer</p>
     </div></a>
   </div>
-  <div class="col-sm-3">
+  <div class="col-md-3 margin-b">
     <a href="https://sumo.dlr.de/docs/Netedit/index.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>netedit</h6><p class="text-muted">visual editor for network elements</p>
     </div></a>
@@ -87,22 +92,22 @@ The SUMO package contains the following applications:
 </div>
 
 <div class="row text-center">
-  <div class="col-sm-3">
+  <div class="col-md-3 margin-b">
     <a href="https://sumo.dlr.de/docs/netgenerate.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>netgenerate</h6><p class="text-muted">abstract networks generator</p>
     </div></a>
   </div>
-  <div class="col-sm-3">
+  <div class="col-md-3 margin-b">
     <a href="https://sumo.dlr.de/docs/od2trips.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>od2trips</h6><p class="text-muted">converter from O/D matrices to trips</p>
     </div></a>
   </div>
-  <div class="col-sm-3">
+  <div class="col-md-3 margin-b">
     <a href="https://sumo.dlr.de/docs/duarouter.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>duarouter</h6><p class="text-muted">routes generator based on a dynamic user assignment</p>
     </div></a>
   </div>
-  <div class="col-sm-3">
+  <div class="col-md-3 margin-b">
     <a href="https://sumo.dlr.de/docs/jtrrouter.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>jtrrouter</h6><p class="text-muted">routes generator based on turning ratios at intersections</p>
     </div></a>
@@ -110,22 +115,22 @@ The SUMO package contains the following applications:
 </div>
 
 <div class="row text-center">
-  <div class="col-sm-3">
+  <div class="col-md-3 margin-b">
     <a href="https://sumo.dlr.de/docs/dfrouter.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>dfrouter</h6><p class="text-muted">route generator with use of detector data</p>
     </div></a>
   </div>
-  <div class="col-sm-3">
+  <div class="col-md-3 margin-b">
     <a href="https://sumo.dlr.de/docs/marouter.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>marouter</h6><p class="text-muted">macroscopic user assignment based on capacity functions</p>
     </div></a>
   </div>
-  <div class="col-sm-3">
+  <div class="col-md-3 margin-b">
     <a href="https://sumo.dlr.de/docs/polyconvert.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>polyconvert</h6><p class="text-muted">imports geometrical shapes and convert them to be visualized using sumo-gui</p>
     </div></a>
   </div>
-  <div class="col-sm-3">
+  <div class="col-md-3 margin-b">
     <a href="https://sumo.dlr.de/docs/activitygen.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>activitygen</h6><p class="text-muted">compute mobility wishes based on population</p>
     </div></a>
@@ -133,22 +138,22 @@ The SUMO package contains the following applications:
 </div>
 
 <div class="row text-center">
-  <div class="col-sm-3">
+  <div class="col-md-3 margin-b">
     <a href="https://sumo.dlr.de/docs/Tools/Emissions.html#emissionsmap" style="text-decoration:none !important;"><div class="application-box">
       <h6>emissionsMap</h6><p class="text-muted">emission map generator</p>
     </div></a>
   </div>
-  <div class="col-sm-3">
+  <div class="col-md-3 margin-b">
     <a href="https://sumo.dlr.de/docs/Tools/Emissions.html#emissionsdrivingcycle" style="text-decoration:none !important;"><div class="application-box">
       <h6>emissionsDrivingCycle</h6><p class="text-muted">calculates emission values based on a given driving cycle</p>
     </div></a>
   </div>
-  <div class="col-sm-3">
+  <div class="col-md-3 margin-b">
     <a href="https://sumo.dlr.de/docs/Tools/Import/OSM.html#osmwebwizardpy" style="text-decoration:none !important;"><div class="application-box">
       <h6>osmWebWizard</h6><p class="text-muted">generate a SUMO scenario with just a few clicks</p>
     </div></a>
   </div>
-  <div class="col-sm-3">
+  <div class="col-md-3 margin-b">
     <a href="https://sumo.dlr.de/docs/Tools/index.html" style="text-decoration:none !important;"><div class="application-box" style="background-color:#dedede !important;">
       <br><h6>And many other Tools!</h6>
     </div></a>
@@ -174,3 +179,6 @@ When citing SUMO in general, please use our current reference publication: ["Mic
             url = {https://elib.dlr.de/124092/}
  }
  ```
+
+
+</div></div></div>

@@ -9,11 +9,6 @@ conference-page: true
 draft: false
 ---
 
-<!-- head image -->
-<!--<div class="container-fluid" style="padding:0 !important;">
-  <img src="../images/conference_2021.png" style="width:100%;" alt="Conference 2021" class="img-responsive" />
-</div>-->
-
 # Introduction
 Traffic simulations are of immense importance for researchers as well as practitioners in the field of transportation. SUMO has been available since 2001 and provides a wide range of traffic planning and simulation applications. SUMO consists of a suite of tools covering road network imports and enrichment, demand generation and assignment, and a state-of-the-art microscopic traffic simulator capable of simulating private and public transport modes, as well as person-based trip chains. Being open source, SUMO is easily extensible by new behavioral models and can be dynamically controlled via a well-defined programming interface. These and other features make SUMO one of the most often used open source traffic simulators with a large and international user community.
 

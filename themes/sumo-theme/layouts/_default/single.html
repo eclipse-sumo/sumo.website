@@ -16,10 +16,12 @@
 
   <div class="container">
     {{ if isset .Params "conference-page" }}
-    <div class="row">
-    <div class="col-md-10">{{ .Content }}</div>
+    <div class="container"><div class="row">
+    <div class="col-md-10 contact-div">
+      {{ if isset .Params "image" }}<img src="../images/{{ $.Params.image }}" style="border-radius: .6rem .6rem 0 0; margin-top:-30px; margin-left: -30px; width: calc(100% + 60px); margin-bottom: 40px;" class="img-responsive" alt="Conference image"/>{{ end }}
+      {{ .Content }}</div>
     <div class="col-md-2"><div style="border-left: 1px solid #d4d4d4; padding-left: 10px;">{{- partial "conference_archive.html" . -}}<br><br>{{- partial "toc.html" . -}}</div></div>
-    </div>
+    </div></div>
     {{ else }}
     {{ .Content }}
     {{ end }}

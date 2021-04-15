@@ -69,6 +69,7 @@ box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15);
 position: relative;
 top: 0;
 transition: top ease 0.5s;
+word-break: break-word;
 }
 
 .application-box a {
@@ -99,28 +100,33 @@ margin: 10px 30px !important;
 .contact-div {
 border-radius: .6rem;
 padding: 30px;
-height: 100%;
 background-color: #fff;
 border: 1px solid #ddd;
 margin-bottom: 15px;
 }
 
 .small-div {
-margin-right: 5px;
-min-height: 310px;
+margin-right: 15px;
 }
 
 .btn-outline-info {
 margin-bottom: 4px;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 768px) {
 .small-div {
 margin-right: 0;
+min-height: 150px;
+}
+.contact-div {
+min-height: 150px !important;
+}
+.transparent {
+opacity: 0 !important;
 }
 }
 
-.col-sm-3 {
+.margin-b {
 margin-bottom: 20px;
 }
 
@@ -265,7 +271,7 @@ padding:7px; border: #ddd 1px solid;
 }
 
 .col-md-4 {
-margin-bottom: 25px;
+margin-bottom: 15px;
 }
 
 .btn-padding {
@@ -410,6 +416,10 @@ margin-top: 40px;
 font-size: 1.75rem;
 }
 
+h1:first-of-type {
+margin-top: 0;
+}
+
 h2 {
 font-size: 1.5rem;
 }
@@ -467,7 +477,7 @@ font-size: 0.9rem;
 
 .card {
 border-radius: .6rem !important;
-box-shadow: 0 8px 12px 1px rgb(29 17 51 / 4%), 0 3px 16px 2px rgb(9 32 77 / 12%), 0 5px 10px -3px rgb(29 17 51 / 12%);
+box-shadow: 0 8px 12px 1px rgb(29 17 51 / 6%), 0 3px 16px 2px rgb(9 32 77 / 6%), 0 5px 10px -3px rgb(29 17 51 / 6%);
 border: none !important;
 }
 

@@ -5,17 +5,7 @@ draft: false
 ---
 
 <!-- Info Card -->
-<div class="card" style="margin-bottom:20px;">
-  <div class="card-header" style="font-weight:bold; background-color: rgb(104,184,155) !important;">New SUMO release!</div>
-  <div class="card-body">
-  <small>13.04.2021</small>
-  We are happy to announce the release of SUMO 1.9.0<br>
-  <a href="https://sumo.dlr.de/docs/Downloads.php#sumo_-_latest_release_version_190"><b>Downloads</b></a> - <a href="https://sumo.dlr.de/docs/ChangeLog.html#version_190_13042021"><b>ChangeLog</b></a>
-  </div>
-</div>
-
-<!-- Info Card -->
-<div class="card">
+<div class="card" style="border: 1px solid rgba(0,0,0,.25) !important;">
   <div class="card-header" style="font-weight:bold;">SUMO User Conference 2021</div>
   <div class="card-body">
   Submit your papers via EasyChair <a href="https://easychair.org/conferences/?conf=sumo2021"><b>here</b></a>
