@@ -65,93 +65,93 @@ The SUMO package contains the following applications:
     
 <div class="row text-center" id="components">
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/sumo.html">
+    <a href="https://sumo.dlr.de/docs/sumo.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>sumo</h6><p class="text-muted">command line simulation</p>
-    </a></div>
+    </div></a>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/sumo-gui.html">
+    <a href="https://sumo.dlr.de/docs/sumo-gui.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>sumo-gui</h6><p class="text-muted">simulation with a graphical user interface</p>
-    </a></div>
+    </div></a>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/netconvert.html">
+    <a href="https://sumo.dlr.de/docs/netconvert.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>netconvert</h6><p class="text-muted">network importer</p>
-    </a></div>
+    </div></a>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/Netedit/index.html">
+    <a href="https://sumo.dlr.de/docs/Netedit/index.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>netedit</h6><p class="text-muted">visual editor for network elements</p>
-    </a></div>
+    </div></a>
   </div>
 </div>
 
 <div class="row text-center">
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/netgenerate.html">
+    <a href="https://sumo.dlr.de/docs/netgenerate.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>netgenerate</h6><p class="text-muted">abstract networks generator</p>
-    </a></div>
+    </div></a>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/od2trips.html">
+    <a href="https://sumo.dlr.de/docs/od2trips.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>od2trips</h6><p class="text-muted">converter from O/D matrices to trips</p>
-    </a></div>
+    </div></a>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/duarouter.html">
+    <a href="https://sumo.dlr.de/docs/duarouter.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>duarouter</h6><p class="text-muted">routes generator based on a dynamic user assignment</p>
-    </a></div>
+    </div></a>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/jtrrouter.html">
+    <a href="https://sumo.dlr.de/docs/jtrrouter.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>jtrrouter</h6><p class="text-muted">routes generator based on turning ratios at intersections</p>
-    </a></div>
+    </div></a>
   </div>
 </div>
 
 <div class="row text-center">
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/dfrouter.html">
+    <a href="https://sumo.dlr.de/docs/dfrouter.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>dfrouter</h6><p class="text-muted">route generator with use of detector data</p>
-    </a></div>
+    </div></a>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/marouter.html">
+    <a href="https://sumo.dlr.de/docs/marouter.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>marouter</h6><p class="text-muted">macroscopic user assignment based on capacity functions</p>
-    </a></div>
+    </div></a>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/polyconvert.html">
+    <a href="https://sumo.dlr.de/docs/polyconvert.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>polyconvert</h6><p class="text-muted">imports geometrical shapes and convert them to be visualized using sumo-gui</p>
-    </a></div>
+    </div></a>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/activitygen.html">
+    <a href="https://sumo.dlr.de/docs/activitygen.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>activitygen</h6><p class="text-muted">compute mobility wishes based on population</p>
-    </a></div>
+    </div></a>
   </div>
 </div>
 
 <div class="row text-center">
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/Tools/Emissions.html#emissionsmap">
+    <a href="https://sumo.dlr.de/docs/Tools/Emissions.html#emissionsmap" style="text-decoration:none !important;"><div class="application-box">
       <h6>emissionsMap</h6><p class="text-muted">emission map generator</p>
-    </a></div>
+    </div></a>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/Tools/Emissions.html#emissionsdrivingcycle">
+    <a href="https://sumo.dlr.de/docs/Tools/Emissions.html#emissionsdrivingcycle" style="text-decoration:none !important;"><div class="application-box">
       <h6>emissionsDrivingCycle</h6><p class="text-muted">calculates emission values based on a given driving cycle</p>
-    </a></div>
+    </div></a>
   </div>
   <div class="col-sm-3">
-    <div class="application-box"><a href="https://sumo.dlr.de/docs/Tools/Import/OSM.html#osmwebwizardpy">
+    <a href="https://sumo.dlr.de/docs/Tools/Import/OSM.html#osmwebwizardpy" style="text-decoration:none !important;"><div class="application-box">
       <h6>osmWebWizard</h6><p class="text-muted">generate a SUMO scenario with just a few clicks</p>
-    </a></div>
+    </div></a>
   </div>
   <div class="col-sm-3">
-    <div class="application-box" style="background-color:#dedede !important;"><a href="https://sumo.dlr.de/docs/Tools/index.html">
+    <a href="https://sumo.dlr.de/docs/Tools/index.html" style="text-decoration:none !important;"><div class="application-box" style="background-color:#dedede !important;">
       <br><h6>And many other Tools!</h6>
-    </a></div>
+    </div></a>
   </div>
 </div>
 
