@@ -7,7 +7,20 @@ color: #403b3b;
 html, body {
 position: relative;
 overflow-x: hidden;
-scroll-padding-top: 80px;
+scroll-padding-top: 80px; /* see below */
+}
+
+/* scroll-padding-top doesn't work on Safari. This is a fix: */
+@media not all and (min-resolution:.001dpcm) {
+@media {
+h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
+display: block;
+content: " ";
+height: 80px;
+margin-top: -80px;
+visibility: hidden;
+}
+}
 }
 
 .carousel-indicators li {
