@@ -52,7 +52,8 @@ The conference focuses on presenting new and unique results in the field of mobi
   - Work in Progress which would benefit from the feedback of other SUMO users
 - Title and a short abstract (300 words) must be submitted until **Monday, May 3rd, 2021**.
 
-Templates and instructions for authors can be found here: https://easychair.org/publications/for_authors
+**Templates and instructions for authors** can be found here: https://easychair.org/publications/for_authors   
+Technical Presentations do not require following a template, feel free to use your own style.
 
 ## Submission Link
 
