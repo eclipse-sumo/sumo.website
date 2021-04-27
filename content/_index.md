@@ -8,7 +8,7 @@ draft: false
 <div class="card" style="border: 1px solid rgba(0,0,0,.25) !important;">
   <div class="card-header" style="font-weight:bold;">SUMO User Conference 2021</div>
   <div class="card-body">
-  Submit your papers via EasyChair <a href="https://easychair.org/conferences/?conf=sumo2021"><b>here</b></a>
+  Submit your papers via EasyChair <a href="https://easychair.org/conferences/?conf=sumo2021"><b>here</b></a> - Paper and Abstract Submission Deadline is now <b>Monday, May 17th, 2021</b>.
   </div>
 </div>
 

@@ -9,6 +9,11 @@ conference-page: true
 draft: false
 ---
 
+<div class="alert alert-warning alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    Paper and Abstract Submission Deadline is now <b>Monday, May 17th, 2021</b>.
+</div>
+
 # Introduction
 Traffic simulations are of immense importance for researchers as well as practitioners in the field of transportation. SUMO has been available since 2001 and provides a wide range of traffic planning and simulation applications. SUMO consists of a suite of tools covering road network imports and enrichment, demand generation and assignment, and a state-of-the-art microscopic traffic simulator capable of simulating private and public transport modes, as well as person-based trip chains. Being open source, SUMO is easily extensible by new behavioral models and can be dynamically controlled via a well-defined programming interface. These and other features make SUMO one of the most often used open source traffic simulators with a large and international user community.
 
@@ -37,7 +42,7 @@ The conference focuses on presenting new and unique results in the field of mobi
 - All accepted scientific papers must be presented at the conference.
 - Scientific papers will be reviewed by at least 2 reviewers.
 - All accepted scientific papers will be published in the SUMO proceedings.
-- Scientific papers must be submitted in LaTeX or Word format before midnight, **Monday, May 3rd, 2021**.
+- Scientific papers must be submitted in LaTeX or Word format before midnight, *~~Monday, May 3rd, 2021~~* **Monday, May 17th, 2021**.
 - Scientific papers should be between 5 and 20 pages long.
 
 2) Technical Presentations:
@@ -50,7 +55,7 @@ The conference focuses on presenting new and unique results in the field of mobi
   - SUMO Use Cases
   - Project Presentations
   - Work in Progress which would benefit from the feedback of other SUMO users
-- Title and a short abstract (300 words) must be submitted until **Monday, May 3rd, 2021**.
+- Title and a short abstract (300 words) must be submitted until *~~Monday, May 3rd, 2021~~* **Monday, May 17th, 2021**.
 
 **Templates and instructions for authors** can be found here: https://easychair.org/publications/for_authors   
 Technical Presentations do not require following a template, feel free to use your own style.
@@ -61,7 +66,7 @@ Please submit your papers via EasyChair:
 https://easychair.org/conferences/?conf=sumo2021
 
 # Important Dates
-- Paper and Abstract Submission Deadline: **Monday, May 3rd, 2021**.
+- Paper and Abstract Submission Deadline: *~~Monday, May 3rd, 2021~~* **Monday, May 17th, 2021**.
 - Notification of Acceptance:  **End of June, 2021**.
 - Camera Ready version due: **Monday, July 19th, 2021**.
 
