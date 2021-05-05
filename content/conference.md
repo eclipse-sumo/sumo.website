@@ -4,7 +4,7 @@ subtitle: ""
 conferenceDate: "September 13-15"
 conferenceLocation: "Online"
 description : "Get in touch with our international user community"
-layout: "single"
+layout: "single" 
 conference-page: true
 draft: false
 ---
@@ -70,19 +70,35 @@ https://easychair.org/conferences/?conf=sumo2021
 - Notification of Acceptance:  **End of June, 2021**.
 - Camera Ready version due: **Monday, July 19th, 2021**.
 
+<br><hr>
 
-<!--
-# Keynote: "Super awesome title for a Keynote"
+# Keynote
 
-<div class="col-sm-12">
-<img src="../images/Bogenberger.png" alt="picture of Klaus Bogenberger" style="width:100px; border-radius: 50%; margin-bottom:10px;">
-<h6>Klaus Bogenberger</h6>
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+<h3><i>Ride-hailing and ride-pooling: State of the art, future research directions, and the role of traffic simulation</i></h3>
+
+<img src="../images/prof_bogenberger.jpg" alt="picture of Klaus Bogenberger" style="width:100px; border-radius: 50%; margin-bottom:10px;">
+<h6>Univ.-Prof. Dr.-Ing. Klaus Bogenberger</h6>
+Chair of Traffic Engineering and Control<br>
+TUM Department of Civil, Geo and Environmental Engineering<br>
+Technical University of Munich
 <br>
-<a href="mailto:sumo@dlr.de" class="btn btn-sm btn-outline-info" style="margin-top:10px;">Contact</a>
+<a href="https://www.bgu.tum.de/en/vt/home/" class="btn btn-sm btn-outline-info" style="margin-top:10px;">Website</a>
+<a href="https://www.linkedin.com/school/tum-chair-of-traffic-engineering-and-control" class="btn btn-sm btn-outline-info" style="margin-top:10px;"><i class="fab fa-linkedin"></i></a>
+
+
+Already today, on-demand mobility services such as Uber and Lyft in the USA, and Didi in China have taken over a noticeable share of the modal split. Furthermore, the market value assessment of these companies is now higher than the one of established vehicle producers, as they are considered to have a very high potential despite current losses with regard to autonomous driving. With the elimination of driver costs, it is expected that ride-hailing and ride-pooling can be offered at a substantially lower cost than today, generating a significant increase in demand. To understand the impact of such automated on-demand systems on future transportation systems, simulations are needed to evaluate both fleet efficiency and their interaction with the overall transportation system.
+
+<p><a id="moreinfobutton" style="color:#0645ad; cursor:pointer;" onclick="document.getElementById('moreinfobutton').remove();" data-toggle="collapse" data-target="#moreinfo">Read more <i class="fas fa-angle-right"></i></a></p>
+<div id="moreinfo" class="collapse">
+Studies to date have focused mainly on efficient vehicle-customer assignments and fleet strategies such as proactive repositioning in static networks. For example, a study comparing a current car-sharing operation with an autonomous ride-hailing system was able to show that although 10% empty trips were generated in the ride-hailing operation, it significantly increased fleet utilization. Additionally, it can be observed that system efficiency increases as fleet and demand scale. These positive scaling effects are even more prominent in ride-pooling systems. Larger demand and fleet increase pooling opportunities, which increases the occupancy rate and reduces additional fleet miles per trip request. In a simulation study for Munich, the evaluation of the trajectories of all fleet vehicles showed that these bundling potentials mainly occur on main arterial roads, while additional mileage is induced on secondary roads. These scaling effects in combination with low-cost operation can lead to a fundamental change in the established traffic system. To prevent undesirable effects on the overall system, regulations such as fleet limits, tolling, or public transport integration can help, but their tools still need to be understood in detail.
+<br><br>
+So far, the mutual effects of ride-hailing and ride-pooling as well as traffic flow have only been modeled in a simplified way. The effective coupling to microscopic traffic simulations like SUMO can be of great benefit here. Such simulation models are already valuable tools in studies on traffic control algorithms, up to the analysis of the effects of automated vehicles. In the context of ride-hailing and ride-pooling, these simulation models can additionally help to further understand traffic flow effects arising from the introduction of large-scale on-demand services. Corresponding impacts of such operations onto traffic states can then be modelled dynamically. Vice-versa, dynamic travel time estimations can be beneficial for the modelling of ride-hailing and ride-pooling operation. Furthermore, the impact of required empty trips due to repositioning or bundled passenger flows due to pooling in urban transportation networks is still poorly understood. In addition, microscopic simulations are needed to efficiently organize boarding and loading processes, detect bottlenecks, and identify any needed infrastructure at an early stage.
 </div>
 
+<br><hr>
 
+<!--
 # Agenda
 
 &#128339; *Schedule given in Central European Summer Time (CEST) (UTC+2)*
