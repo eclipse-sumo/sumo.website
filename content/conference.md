@@ -65,6 +65,10 @@ Technical Presentations do not require following a template, feel free to use yo
 Please submit your papers via EasyChair:
 https://easychair.org/conferences/?conf=sumo2021
 
+## Ethics and Malpractice Statement
+
+You can read our *[Publication Ethics and Publication Malpractice Statement](../docs/SUMOPublicationEthics.pdf)*, where we list the responsibilities of editors, reviewers, and authors.
+
 # Important Dates
 - Paper and Abstract Submission Deadline: *~~Monday, May 3rd, 2021~~* **Monday, May 17th, 2021**.
 - Notification of Acceptance:  **End of June, 2021**.
