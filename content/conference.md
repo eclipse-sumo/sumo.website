@@ -9,10 +9,10 @@ conference-page: true
 draft: false
 ---
 
-<div class="alert alert-warning alert-dismissible">
+<!-- <div class="alert alert-warning alert-dismissible">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     The Paper and Abstract Submission Deadline is now <b>Monday, May 17th, 2021</b>.
-</div>
+</div> -->
 
 # Introduction
 Traffic simulations are of immense importance for researchers as well as practitioners in the field of transportation. SUMO has been available since 2001 and provides a wide range of traffic planning and simulation applications. SUMO consists of a suite of tools covering road network imports and enrichment, demand generation and assignment, and a state-of-the-art microscopic traffic simulator capable of simulating private and public transport modes, as well as person-based trip chains. Being open source, SUMO is easily extensible by new behavioral models and can be dynamically controlled via a well-defined programming interface. These and other features make SUMO one of the most often used open source traffic simulators with a large and international user community.
@@ -70,7 +70,7 @@ https://easychair.org/conferences/?conf=sumo2021
 You can read our *[Publication Ethics and Publication Malpractice Statement](../docs/SUMOPublicationEthics.pdf)*, where we list the responsibilities of editors, reviewers, and authors.
 
 # Important Dates
-- Paper and Abstract Submission Deadline: *~~Monday, May 3rd, 2021~~* **Monday, May 17th, 2021**.
+- Paper and Abstract Submission Deadline: *~~Monday, May 3rd, 2021~~* **Monday, May 17th, 2021**. &#x2705;
 - Notification of Acceptance:  **End of June, 2021**.
 - Camera Ready version due: **Monday, July 19th, 2021**.
 
