@@ -5,7 +5,7 @@ title = "Eclipse SUMO - Simulation of Urban MObility"
 disableKinds = ["taxonomyTerm"]
 theme = "sumo-theme"
 
-######################### Default Parameters ###########################
+########################### Default Parameters #############################
 [params]
 favicon = "images/favicon.ico"
 logo = "images/logos/sumo-logo-white.svg"
@@ -19,7 +19,7 @@ Version = "1.9.2"
     [markup.goldmark.renderer]
       unsafe = true
 
-########################### Navigation ###################################
+############################ Navigation ####################################
 
 # main menu
 [[menu.main]]
