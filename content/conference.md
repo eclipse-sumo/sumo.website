@@ -102,9 +102,12 @@ So far, the mutual effects of ride-hailing and ride-pooling as well as traffic f
 
 <br><hr>
 
-<!--
+
 # Agenda
 
+*Coming soon.*
+
+<!--
 &#128339; *Schedule given in Central European Summer Time (CEST) (UTC+2)*
 
 |                | Monday - September 13, 2021 |
