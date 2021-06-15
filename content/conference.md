@@ -4,15 +4,15 @@ subtitle: ""
 conferenceDate: "September 13-15"
 conferenceLocation: "Online"
 description : "Get in touch with our international user community"
-layout: "single" 
+layout: "single"
 conference-page: true
 draft: false
 ---
 
-<!-- <div class="alert alert-warning alert-dismissible">
+<div class="alert alert-warning alert-dismissible">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
-    The Paper and Abstract Submission Deadline is now <b>Monday, May 17th, 2021</b>.
-</div> -->
+    Registration is now open!
+</div>
 
 # Introduction
 Traffic simulations are of immense importance for researchers as well as practitioners in the field of transportation. SUMO has been available since 2001 and provides a wide range of traffic planning and simulation applications. SUMO consists of a suite of tools covering road network imports and enrichment, demand generation and assignment, and a state-of-the-art microscopic traffic simulator capable of simulating private and public transport modes, as well as person-based trip chains. Being open source, SUMO is easily extensible by new behavioral models and can be dynamically controlled via a well-defined programming interface. These and other features make SUMO one of the most often used open source traffic simulators with a large and international user community.
@@ -102,10 +102,20 @@ So far, the mutual effects of ride-hailing and ride-pooling as well as traffic f
 
 <br><hr>
 
-
 # Agenda
 
 *Coming soon.*
+
+
+# Registration
+ 
+Please register [here](https://zoom.us/meeting/register/tJAtfu2uqj0tHdECD120ZaL6zXQo6oO4Mhm_). 
+
+
+
+# Prices
+Participation at this year's conference will be **free of charge**!
+
 
 <!--
 &#128339; *Schedule given in Central European Summer Time (CEST) (UTC+2)*
@@ -194,7 +204,7 @@ https://hotel-berlin-adlershof.dorint.com/en/
 The conference language is English.
 
 # Venue
-Given the extraordinary situation we are facing, this year's SUMO User Conference will be again **online**.   
+Given the extraordinary situation we are facing, this year's SUMO User Conference will be again **online** - via [Zoom](https://zoom.us/download).
 
 # Contact
 Please contact the conference team via mail at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de)
