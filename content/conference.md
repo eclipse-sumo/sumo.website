@@ -9,10 +9,16 @@ conference-page: true
 draft: false
 ---
 
+
 <div class="alert alert-warning alert-dismissible">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
-    Registration is now open!
+    <ul style="margin:0 !important;">
+    <li>The conference <a href="#agenda">agenda</a> is now available</li>
+    <li><a href="#registration">Registration</a> for participation is now open</li>
+    <li>The camera-ready paper submission <a href="#important-dates">deadline</a> is now: Sunday, August 15th, 2021</li>
+    </ul>
 </div>
+
 
 # Introduction
 Traffic simulations are of immense importance for researchers as well as practitioners in the field of transportation. SUMO has been available since 2001 and provides a wide range of traffic planning and simulation applications. SUMO consists of a suite of tools covering road network imports and enrichment, demand generation and assignment, and a state-of-the-art microscopic traffic simulator capable of simulating private and public transport modes, as well as person-based trip chains. Being open source, SUMO is easily extensible by new behavioral models and can be dynamically controlled via a well-defined programming interface. These and other features make SUMO one of the most often used open source traffic simulators with a large and international user community.
@@ -71,10 +77,217 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 
 # Important Dates
 - Paper and Abstract Submission Deadline: *~~Monday, May 3rd, 2021~~* **Monday, May 17th, 2021**. &#x2705;
-- Notification of Acceptance:  **End of June, 2021**.
-- Camera Ready version due: **Monday, July 19th, 2021**.
+- Notification of Acceptance:  **End of June, 2021**. &#x2705;
+- Camera Ready version due: *~~Monday, July 19th, 2021~~* **Sunday, August 15th, 2021**.
 
-<br><hr>
+
+# Agenda
+
+<small>&#128339; <i>Schedule given in Central European Summer Time (CEST) (UTC+2) - This agenda may be subject to change</i></small>
+
+<table style="border: 2px solid #999;">
+<thead>
+  <tr>
+    <th style="text-align:center" colspan="2">Monday, September 13, 2021</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td align="right">13:00 - 14:00</td>
+    <td>
+    <b>Opening & Tutorial</b><br>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">14:30 - 15:30</td>
+    <td>
+    <b>Ask us anything</b><br>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">16:00 -</td>
+    <td>
+   <b>A/B Street Workshop</b><br>
+   Dustin Carlino
+    </td>
+  </tr>
+</tbody>
+</table>
+
+<br>
+
+<table style="border: 2px solid #999;">
+<thead>
+  <tr>
+    <th style="text-align:center" colspan="2">Tuesday, September 14, 2021</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td align="right">09:00 - 10:00</td>
+<td>
+    <b>Cooperative traffic light control - considering cyclists with the aid of V2I</b><br>
+<hr>
+    <b>A Study of Applying Eco-Driving Speed Advisory System on Transit Signal Priority</b><br>
+<hr>
+  <b>Modeling Cellular Network Infrastructure in SUMO</b><br>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">10:30 - 11:30</td>
+<td>
+    <b>The YASE Framework: Holistic Scenario Modeling with Behavior Trees</b><br>
+<hr>
+    <b>The use of SUMO within the Transportation GeoXchange (TGX) platform</b><br>
+<hr>
+  <b>Can SUMO be used to simulate 2+1 roads?</b><br>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center; background-color: #d9f1ff;" colspan="2"><b><i>Lunch break </b></i>&#x2615;</td>
+  </tr>
+  <tr>
+    <td align="right">13:00 - 14:00</td>
+    <td>
+    <b><a href="#keynote">Keynote</a>:
+    Ride-hailing and ride-pooling: State of the art, future research directions, and the role of traffic simulation</b><br>
+    Univ.-Prof. Dr.-Ing. Klaus Bogenberger
+    </td>
+  </tr>
+  <tr>
+    <td align="right">14:30 - 15:30</td>
+<td>
+    <b>Intelligent traffic management for emergency vehicles with a simulation case study</b><br>
+<hr>
+    <b>Traffic Simulation Environment Based on Sumo Software</b><br>
+<hr>
+  <b>Simulation of Demand Responsive Transport using a dynamic scheduling tool with SUMO</b><br>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">16:00 - 17:00</td>
+<td>
+    <b>Scenario Analysis for shared autonomous driving fleets with SUMO</b><br>
+<hr>
+    <b>Traffic Simulation of Automated Shuttles in Linköping University Campus</b><br>
+<hr>
+  <b>Simulating automated vehicles in high capacity networks</b><br>
+<hr>
+  <b>Investigation of the effect of autonomous vehicles (AV) on the capacity of an urban transport network</b><br>
+    </td>
+  </tr>
+  <tr style="background-color: #d0f0c0;">
+    <td align="right">17:00</td>
+    <td><b><i>Social Event</i></b> &#x1F3B2;</td>
+  </tr>
+</tbody>
+</table>
+
+
+<br>
+
+<table style="border: 2px solid #999;">
+<thead>
+  <tr>
+    <th style="text-align:center" colspan="2">Wednesday, September 15, 2021</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td align="right">09:00 - 10:00</td>
+    <td>
+    <b>Online calibration with SUMO for network-wide traffic and emission monitoring – Case study ITS Huainan</b><br>
+<hr>
+    <b>Simulation based method for the analysis of energy-efficient driving algorithms using SUMO</b><br>
+<hr>
+  <b>Optimising Low-Emissions Zone Geofencing Strategy using SUMO with Vehicle Co-Simulation</b><br>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">10:30 - 11:30</td>
+   <td>
+    <b>Validating a parking lot assignment method by Eclipse SUMO</b><br>
+<hr>
+    <b>High-Fidelity Modeling of Curbside Driving Behavior in SUMO</b><br>
+<hr>
+  <b>A comparison of SUMO’s count based and countless demand generation tools</b><br>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center; background-color: #d9f1ff;" colspan="2"><b><i>Lunch break </b></i>&#x2615;</td>
+  </tr>
+  <tr>
+    <td align="right">13:00 - 14:00</td>
+    <td>
+    <b>The impact of heavy vehicles on traffic</b><br>
+<hr>
+    <b>Automated Calibration of Traffic Demand and Traffic Lights in SUMO Using Real-World Observations</b><br>
+<hr>
+  <b>Evaluating time-loss algorithm with SUMO</b><br>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">14:30 - 15:30</td>
+    <td>
+    <b>Augmenting SUMO with Ring-and-Barrier Structured Traffic Signal Controller Module</b><br>
+<hr>
+    <b>Using Deep Reinforcement Learning to Coordinate Multi-Modal Journey Planning with Limited Transportation Capacity</b><br>
+<hr>
+  <b>Last-Mile Logistics Simulation in SUMO</b><br>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">16:00 - 17:00</td>
+    <td>
+    <b>The Development of Pedestrian Gap Acceptance and Midblock Pedestrian Road Crossing Behaviour Utilizing SUMO</b><br>
+<hr>
+    <b>Calibrating spatio-temporal network states in microscopic traffic simulation on a global level</b><br>
+<hr>
+  <b>Investigating the Effect of Enabled Mesoscopic Settings within a Sensitivity Analysis</b><br>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">17:00</td>
+    <td><b><i>Closing Session +  voting for best presentation</i></b></td>
+  </tr>
+</tbody>
+</table>
+
+<small>Last updated: 30.06.2021</small>
+
+<!--
+|                | Monday, September 13, 2021 |
+|---------------:|-----------------------------|
+| 13:00 - 14:00  | Opening & Tutorial  |
+| 14:30 - 15:30  | Ask us anything  |
+| 16:00 -        | Demo of A/B Street (Dustin Carlino)   |
+
+<br>
+
+|                | Tuesday, September 14, 2021 |
+|---------------:|------------------------------|
+| 09:00 - 10:00  | **Title of presentation**<br>Angelo<hr>**Title 2**<br>Presenter 2<hr>**Title 2**<br>Presenter 2 |
+| 10:30 - 11:30  | Session 2  |
+| ***Break*** &#x2615; |   |
+| 13:00 - 14:00  | [Keynote](#keynote): "*Ride-hailing and ride-pooling: State of the art, future research directions, and the role of traffic simulation*" - Klaus Bogenberger|
+| 14:30 - 15:30  | Session |
+| 15:30 - 16:30  | Session |
+| 17:00          | [Social Event](#social-event) |
+
+<br>
+
+|                | Wednesday, September 15, 2021 |
+|---------------:|--------------------------------|
+| 09:00 - 10:00  | Session  |
+| 10:30 - 11:30  | Session  |
+| ***Break*** &#x2615;  |   |
+| 13:00 - 14:00  | Session  |
+| 14:30 - 15:30  | Session |
+| 15:30 - 16:30  | Session |
+Closing Session (Best Presentation)
+
+-->
+
 
 # Keynote
 
@@ -100,11 +313,6 @@ Studies to date have focused mainly on efficient vehicle-customer assignments an
 So far, the mutual effects of ride-hailing and ride-pooling as well as traffic flow have only been modeled in a simplified way. The effective coupling to microscopic traffic simulations like SUMO can be of great benefit here. Such simulation models are already valuable tools in studies on traffic control algorithms, up to the analysis of the effects of automated vehicles. In the context of ride-hailing and ride-pooling, these simulation models can additionally help to further understand traffic flow effects arising from the introduction of large-scale on-demand services. Corresponding impacts of such operations onto traffic states can then be modelled dynamically. Vice-versa, dynamic travel time estimations can be beneficial for the modelling of ride-hailing and ride-pooling operation. Furthermore, the impact of required empty trips due to repositioning or bundled passenger flows due to pooling in urban transportation networks is still poorly understood. In addition, microscopic simulations are needed to efficiently organize boarding and loading processes, detect bottlenecks, and identify any needed infrastructure at an early stage.
 </div>
 
-<br><hr>
-
-# Agenda
-
-*Coming soon.*
 
 
 # Registration
@@ -117,88 +325,12 @@ Please register [here](https://zoom.us/meeting/register/tJAtfu2uqj0tHdECD120ZaL6
 Participation at this year's conference will be **free of charge**!
 
 
-<!--
-&#128339; *Schedule given in Central European Summer Time (CEST) (UTC+2)*
-
-|                | Monday - September 13, 2021 |
-|---------------:|-----------------------------|
-| 13:00 - 14:00  | Opening & Tutorial  |
-| 14:30 - 15:00  | Ask us anything  |
-| 15:00 - 15:30  | openMobility   |
-
-<br>
-
-|                | Tuesday - September 14, 2021 |
-|---------------:|------------------------------|
-| 09:00 - 10:00  | Session 1  |
-| 10:30 - 11:30  | Session 2  |
-| 13:00 - 14:00  | Session 3  |
-| 14:30 - 15:00  | Poster Session |
-| 15:00 - 15:30  | Poster Session |
-| 15:30 - 16:00  | Poster Session |
-| 16:00 - 16:30  | Poster Session |
-| 17:00          | [Social Event](#social-event) |
-
-<br>
-
-|                | Wednesday - September 15, 2021 |
-|---------------:|--------------------------------|
-| 09:00 - 10:00  | Session 4  |
-| 10:30 - 11:30  | Keynote  |
-| 13:00 - 14:00  | Session 5  |
-| 14:30 - 15:00  | Session 6 |
-
-
-<!-- dismissible alert -->
-<!-- <div class="alert alert-warning alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    More detailed information is coming soon
-</div> 
 
 
 # Social Event
 
-We are going to have a fun SUMO-related quiz using [Menti](https://www.menti.com/). Join our Zoom meeting and have a smartphone/tablet ready at hand. Test your knowledge of SUMO and win the glorious and prestigious prize of attaching your name to an easter egg in “sumo-gui”.
+*More info coming soon*
 
-
-# Registration
- 
-The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings and social events in the evening. Accommodation is not included within the registration fee and must be pre-booked separately. 
-Register here. 
-
-
-
-# Prices
-Participation at this year's conference will be **free of charge**!
-
-<!--- Regular Tickets – 495 EUR (One-Day-Ticket – 325 EUR)
-- Authors and Project Partners – 275 EUR
-- *"limited"* Student Grants - 75 EUR
-
-
-The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings, and social events in the evening. Accommodation is not included within the registration fee and must be pre-booked separately. The tickets for the conference can be booked on the following website: https://sumo2020.besl-eventservice.de.
-
-
-<!-- The conference takes place in Berlin Adlershof:
-
-**German Aerospace Center (DLR)**  
-Institute of Transportation Systems  
-Rutherfordstr. 2  
-12489 Berlin  
-Germany
-
-<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=13.525671958923342%2C52.42664800007926%2C13.532752990722656%2C52.42955590906348&amp;layer=mapnik&amp;marker=52.42810361404521%2C13.529212474822998" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=52.42810&amp;mlon=13.52921#map=18/52.42810/13.52921">View in OSM</a>  |  <a href="https://goo.gl/maps/vBLQefwTLVy9x2oU8">View in Google Maps</a></small>
-
-# Hotel
-Our hotel recommendation is:  
-
-**Dorint Berlin-Adlershof**  
-Rudower Chaussee 15  
-12489 Berlin  
-Tel 67822-0  
-Fax 67 822-1000  
-https://hotel-berlin-adlershof.dorint.com/en/  
-(5-minute walk from S-Bahn station “Adlershof” to the hotel, another 7-minute walk from the hotel to DLR) -->
 
 # Language
 The conference language is English.
@@ -208,3 +340,7 @@ Given the extraordinary situation we are facing, this year's SUMO User Conferenc
 
 # Contact
 Please contact the conference team via mail at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de)
+
+---
+
+<div class="text-center"><img src="../images/banner_2021.png" style="width:70%;" alt="Conference artwork" class="img-responsive"/></div>
