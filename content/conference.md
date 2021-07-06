@@ -105,10 +105,17 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
     </td>
   </tr>
   <tr>
-    <td align="right">16:00 -</td>
+    <td align="right">16:00 - 17:30</td>
     <td>
-   <b>A/B Street Workshop</b><br>
+   <b>A/B Street: a public-facing traffic simulator for transportation advocacy</b><br>
    Dustin Carlino
+<p><a id="abmoreinfobutton" style="color:#0645ad; cursor:pointer;" onclick="document.getElementById('abmoreinfobutton').style.display = 'none';" data-toggle="collapse" data-target="#abmoreinfo">Read more <i class="fas fa-angle-down"></i></a></p>
+<div id="abmoreinfo" class="collapse">
+A/B Street (<a href="https://abstreet.org">abstreet.org</a>) is an open source multi-modal traffic simulator designed for the general public to explore low-cost approaches for reducing motor vehicle use. Starting from OpenStreetMap data and a variety of travel demand sources, people using A/B Street can modify roads (like transforming street parking into bike- and bus-only lanes) and intersections (traffic signal timing). Using built-in elevation data, visualizations about individual trips and aggregate groups, and measurements of impact on travel time and risk exposure, interested citizens can present their idea to a city council for consideration.
+<br><br>
+This session will first give an overview of what A/B Street does and how it works. We'll then deep dive into understanding the discrete-event, agent-based simulation, and how to model dynamic lane-changing without compromising runtime performance. The second part of the session will be an interactive workshop where we install A/B Street (Mac, Windows, Linux, or running in your web browser), import somewhere new from OpenStreetMap, initially seed travel demand data, and start exploring adjustments to roads.
+<br><br><a id="abhideinfobutton" style="color:#0645ad; cursor:pointer;" onclick="document.getElementById('abmoreinfobutton').style.display = 'block';" data-toggle="collapse" data-target="#abmoreinfo">Collapse <i class="fas fa-angle-up"></i></a>
+</div>
     </td>
   </tr>
 </tbody>
@@ -253,7 +260,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 </tbody>
 </table>
 
-<small>Last updated: 30.06.2021</small>
+<small>Last updated: 06.07.2021</small>
 
 <!--
 |                | Monday, September 13, 2021 |
