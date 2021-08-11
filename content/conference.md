@@ -145,7 +145,7 @@ This session will first give an overview of what A/B Street does and how it work
 <td>
     <b>The YASE Framework: Holistic Scenario Modeling with Behavior Trees</b><br>
 <hr>
-    <b>The use of SUMO within the Transportation GeoXchange (TGX) platform</b><br>
+   <b>Intelligent traffic management for emergency vehicles with a simulation case study</b><br>
 <hr>
   <b>Can SUMO be used to simulate 2+1 roads?</b><br>
     </td>
@@ -164,7 +164,7 @@ This session will first give an overview of what A/B Street does and how it work
   <tr>
     <td align="right">14:30 - 15:30</td>
 <td>
-    <b>Intelligent traffic management for emergency vehicles with a simulation case study</b><br>
+    <b>The use of SUMO within the Transportation GeoXchange (TGX) platform</b><br>
 <hr>
     <b>Traffic Simulation Environment Based on Sumo Software</b><br>
 <hr>
