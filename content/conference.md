@@ -146,6 +146,7 @@ This session will first give an overview of what A/B Street does and how it work
     <b>The YASE Framework: Holistic Scenario Modeling with Behavior Trees</b><br>
 <hr>
    <b>Intelligent traffic management for emergency vehicles with a simulation case study</b><br>
+   Laura Bieker-Walz (DLR), Michael Behrisch (DLR), Ronald Nippold (DLR)
 <hr>
   <b>Can SUMO be used to simulate 2+1 roads?</b><br>
     </td>
@@ -204,8 +205,10 @@ This session will first give an overview of what A/B Street does and how it work
     <td align="right">09:00 - 10:00</td>
     <td>
     <b>Online calibration with SUMO for network-wide traffic and emission monitoring – Case study ITS Huainan</b><br>
+    Yun-Pang Flötteröd (DLR), Michael Behrisch (DLR)
 <hr>
     <b>Simulation based method for the analysis of energy-efficient driving algorithms using SUMO</b><br>
+    Benedikt Buhk (HAW Hamburg), Rasmus Rettig (HAW Hamburg)
 <hr>
   <b>Optimising Low-Emissions Zone Geofencing Strategy using SUMO with Vehicle Co-Simulation</b><br>
     </td>
@@ -218,6 +221,7 @@ This session will first give an overview of what A/B Street does and how it work
     <b>High-Fidelity Modeling of Curbside Driving Behavior in SUMO</b><br>
 <hr>
   <b>A comparison of SUMO’s count based and countless demand generation tools</b><br>
+  Michael Behrisch (DLR), Pauline Hartwig (TH Wildau)
     </td>
   </tr>
   <tr>
@@ -239,8 +243,10 @@ This session will first give an overview of what A/B Street does and how it work
     <b>Augmenting SUMO with Ring-and-Barrier Structured Traffic Signal Controller Module</b><br>
 <hr>
     <b>Using Deep Reinforcement Learning to Coordinate Multi-Modal Journey Planning with Limited Transportation Capacity</b><br>
+    Lara Codeca (Trinity College Dublin), Vinny Cahill (Trinity College Dublin)
 <hr>
   <b>Last-Mile Logistics Simulation in SUMO</b><br>
+  Fabian Post (Bauhaus-Universität Weimar), El Mehdi Essadki (Bauhaus-Universität Weimar)
     </td>
   </tr>
   <tr>
