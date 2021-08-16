@@ -134,21 +134,26 @@ This session will first give an overview of what A/B Street does and how it work
     <td align="right">09:00 - 10:00</td>
 <td>
     <b>Cooperative traffic light control - considering cyclists with the aid of V2I</b><br>
+    Maik Halbach(DLR), Kim Jannik Eggers (DLR)
 <hr>
     <b>A Study of Applying Eco-Driving Speed Advisory System on Transit Signal Priority</b><br>
+    Hsuan Chih Wang (Cheng Kung University)
 <hr>
   <b>Modeling Cellular Network Infrastructure in SUMO</b><br>
+  Anupama Hegde (TH Ingolstadt), Andreas Festag (TH Ingolstadt)
     </td>
   </tr>
   <tr>
     <td align="right">10:30 - 11:30</td>
 <td>
     <b>The YASE Framework: Holistic Scenario Modeling with Behavior Trees</b><br>
+    Max Paul Bauer (Bosch)
 <hr>
    <b>Intelligent traffic management for emergency vehicles with a simulation case study</b><br>
    Laura Bieker-Walz (DLR), Michael Behrisch (DLR), Ronald Nippold (DLR)
 <hr>
   <b>Can SUMO be used to simulate 2+1 roads?</b><br>
+  Filip Kristofersson (Uppsala University), Ella Calais (Uppsala University), Johan Olstam (Swedish National Road and Transport Research Institute), Viktor Bernhardsson (Swedish National Road and Transport Research Institute)
     </td>
   </tr>
   <tr>
@@ -166,22 +171,29 @@ This session will first give an overview of what A/B Street does and how it work
     <td align="right">14:30 - 15:30</td>
 <td>
     <b>The use of SUMO within the Transportation GeoXchange (TGX) platform</b><br>
+    Jeffrey Kirchner, Arif K. Rafiq, Juliano Kersting and Steven Farber
 <hr>
     <b>Traffic Simulation Environment Based on Sumo Software</b><br>
+    Xuhong Li, Liyong Zheng, Bin Su, Xu Guo, Yonggang Hao, Wenjing Li and Xuhong Li
 <hr>
   <b>Simulation of Demand Responsive Transport using a dynamic scheduling tool with SUMO</b><br>
+  Maria Giuliana Armellini (DLR)
     </td>
   </tr>
   <tr>
     <td align="right">16:00 - 17:00</td>
 <td>
     <b>Scenario Analysis for shared autonomous driving fleets with SUMO</b><br>
+    Emanuel Reichsöllner and Andreas Rößler
 <hr>
     <b>Traffic Simulation of Automated Shuttles in Linköping University Campus</b><br>
+    Rihanna Gebrehiwot, Johan Olstam and Yun-Pang Flötteröd (DLR)
 <hr>
   <b>Simulating automated vehicles in high capacity networks</b><br>
+  Joerg Schweizer, Federico Rupi and Cristian Poliziani
 <hr>
   <b>Investigation of the effect of autonomous vehicles (AV) on the capacity of an urban transport network</b><br>
+  Ronald Nippold (DLR), Peter Wagner (DLR), Olaf Angelo Banse Bueno (DLR) and Christian Rakow (DLR)
     </td>
   </tr>
   <tr style="background-color: #d0f0c0;">
@@ -211,14 +223,17 @@ This session will first give an overview of what A/B Street does and how it work
     Benedikt Buhk (HAW Hamburg), Rasmus Rettig (HAW Hamburg)
 <hr>
   <b>Optimising Low-Emissions Zone Geofencing Strategy using SUMO with Vehicle Co-Simulation</b><br>
+  James Manuelyan, Joshua Dalby and Peter Fussey
     </td>
   </tr>
   <tr>
     <td align="right">10:30 - 11:30</td>
    <td>
     <b>Validating a parking lot assignment method by Eclipse SUMO</b><br>
+    Levente Alekszejenkó and Tadeusz P. Dobrowiecki
 <hr>
     <b>High-Fidelity Modeling of Curbside Driving Behavior in SUMO</b><br>
+    Qichao Wang, Joseph Severino, Juliette Ugirumurera and Caleb Phillips
 <hr>
   <b>A comparison of SUMO’s count based and countless demand generation tools</b><br>
   Michael Behrisch (DLR), Pauline Hartwig (TH Wildau)
@@ -231,16 +246,20 @@ This session will first give an overview of what A/B Street does and how it work
     <td align="right">13:00 - 14:00</td>
     <td>
     <b>The impact of heavy vehicles on traffic</b><br>
+    Francois Vaudrin and Mathieu Vaudrin
 <hr>
     <b>Automated Calibration of Traffic Demand and Traffic Lights in SUMO Using Real-World Observations</b><br>
+    Michael Harth, Marcel Langer and Klaus Bogenberger
 <hr>
   <b>Evaluating time-loss algorithm with SUMO</b><br>
+  Menno van der Woude
     </td>
   </tr>
   <tr>
     <td align="right">14:30 - 15:30</td>
     <td>
     <b>Augmenting SUMO with Ring-and-Barrier Structured Traffic Signal Controller Module</b><br>
+    Qichao Wang, Tianxin Li and Wesley Jones
 <hr>
     <b>Using Deep Reinforcement Learning to Coordinate Multi-Modal Journey Planning with Limited Transportation Capacity</b><br>
     Lara Codeca (Trinity College Dublin), Vinny Cahill (Trinity College Dublin)
@@ -253,10 +272,13 @@ This session will first give an overview of what A/B Street does and how it work
     <td align="right">16:00 - 17:00</td>
     <td>
     <b>The Development of Pedestrian Gap Acceptance and Midblock Pedestrian Road Crossing Behaviour Utilizing SUMO</b><br>
+    Peter Lawrence (University of Greenwich), Veronica Pellacini (University of Greenwich), Darren Blackshields (University of Greenwich), Lazaros Filippidis (University of Greenwich)
 <hr>
     <b>Calibrating spatio-temporal network states in microscopic traffic simulation on a global level</b><br>
+    Henriette Triebke (Bosch, IfV KIT), Markus Kromer (Bosch), Peter Vortisch (IfV KIT)
 <hr>
   <b>Investigating the Effect of Enabled Mesoscopic Settings within a Sensitivity Analysis</b><br>
+  Christina Presinger (FH Upper austria)
     </td>
   </tr>
   <tr>
