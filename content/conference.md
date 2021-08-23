@@ -171,10 +171,10 @@ This session will first give an overview of what A/B Street does and how it work
     <td align="right">14:30 - 15:30</td>
 <td>
     <b>The use of SUMO within the Transportation GeoXchange (TGX) platform</b><br>
-    Jeffrey Kirchner, Arif K. Rafiq, Juliano Kersting and Steven Farber
+    Jeffrey Kirchner (Esri Canada), Arif K. Rafiq (Esri Canada), Juliano Kersting (Esri Canada), Steven Farber (Esri Canada)
 <hr>
     <b>Traffic Simulation Environment Based on Sumo Software</b><br>
-    Xuhong Li, Liyong Zheng, Bin Su, Xu Guo, Yonggang Hao, Wenjing Li and Xuhong Li
+    Xuhong Li (hikvision), Liyong Zheng (hikvision), Bin Su (hikvision), Xu Guo (hikvision), Yonggang Hao (hikvision), Wenjing Li (hikvision), Xuhong Li (hikvision)
 <hr>
   <b>Simulation of Demand Responsive Transport using a dynamic scheduling tool with SUMO</b><br>
   Maria Giuliana Armellini (DLR)
@@ -184,13 +184,13 @@ This session will first give an overview of what A/B Street does and how it work
     <td align="right">16:00 - 17:00</td>
 <td>
     <b>Scenario Analysis for shared autonomous driving fleets with SUMO</b><br>
-    Emanuel Reichsöllner and Andreas Rößler
+    Emanuel Reichsöllner (Hochschule Esslingen), Andreas Rößler (Hochschule Esslingen)
 <hr>
     <b>Traffic Simulation of Automated Shuttles in Linköping University Campus</b><br>
     Rihanna Gebrehiwot, Johan Olstam and Yun-Pang Flötteröd (DLR)
 <hr>
   <b>Simulating automated vehicles in high capacity networks</b><br>
-  Joerg Schweizer, Federico Rupi and Cristian Poliziani
+  Joerg Schweizer (University of Bologna), Federico Rupi (University of Bologna), Cristian Poliziani (University of Bologna)
 <hr>
   <b>Investigation of the effect of autonomous vehicles (AV) on the capacity of an urban transport network</b><br>
   Ronald Nippold (DLR), Peter Wagner (DLR), Olaf Angelo Banse Bueno (DLR) and Christian Rakow (DLR)
@@ -220,7 +220,7 @@ This session will first give an overview of what A/B Street does and how it work
     Yun-Pang Flötteröd (DLR), Michael Behrisch (DLR)
 <hr>
     <b>Simulation based method for the analysis of energy-efficient driving algorithms using SUMO</b><br>
-    Benedikt Buhk (HAW Hamburg), Rasmus Rettig (HAW Hamburg)
+    Benedikt Buhk, Rasmus Rettig (both HAW Hamburg)
 <hr>
   <b>Optimising Low-Emissions Zone Geofencing Strategy using SUMO with Vehicle Co-Simulation</b><br>
   James Manuelyan, Joshua Dalby and Peter Fussey
@@ -230,10 +230,10 @@ This session will first give an overview of what A/B Street does and how it work
     <td align="right">10:30 - 11:30</td>
    <td>
     <b>Validating a parking lot assignment method by Eclipse SUMO</b><br>
-    Levente Alekszejenkó and Tadeusz P. Dobrowiecki
+    Levente Alekszejenkó, Tadeusz P. Dobrowiecki (both Budapest University of Technology and Economics)
 <hr>
     <b>High-Fidelity Modeling of Curbside Driving Behavior in SUMO</b><br>
-    Qichao Wang, Joseph Severino, Juliette Ugirumurera and Caleb Phillips
+    Qichao Wang, Joseph Severino, Juliette Ugirumurera, Caleb Phillips (all US National Renewable Energy Laboratory)
 <hr>
   <b>A comparison of SUMO’s count based and countless demand generation tools</b><br>
   Michael Behrisch (DLR), Pauline Hartwig (TH Wildau)
@@ -252,14 +252,14 @@ This session will first give an overview of what A/B Street does and how it work
     Michael Harth, Marcel Langer and Klaus Bogenberger
 <hr>
   <b>Evaluating time-loss algorithm with SUMO</b><br>
-  Menno van der Woude
+  Menno van der Woude (CodingConnected)
     </td>
   </tr>
   <tr>
     <td align="right">14:30 - 15:30</td>
     <td>
     <b>Augmenting SUMO with Ring-and-Barrier Structured Traffic Signal Controller Module</b><br>
-    Qichao Wang, Tianxin Li and Wesley Jones
+    Qichao Wang (US National Renewable Energy Laboratory), Tianxin Li (Universtiy of Texas), Wesley Jones (US National Renewable Energy Laboratory)
 <hr>
     <b>Using Deep Reinforcement Learning to Coordinate Multi-Modal Journey Planning with Limited Transportation Capacity</b><br>
     Lara Codeca (Trinity College Dublin), Vinny Cahill (Trinity College Dublin)
@@ -272,7 +272,7 @@ This session will first give an overview of what A/B Street does and how it work
     <td align="right">16:00 - 17:00</td>
     <td>
     <b>The Development of Pedestrian Gap Acceptance and Midblock Pedestrian Road Crossing Behaviour Utilizing SUMO</b><br>
-    Peter Lawrence (University of Greenwich), Veronica Pellacini (University of Greenwich), Darren Blackshields (University of Greenwich), Lazaros Filippidis (University of Greenwich)
+    Peter Lawrence, Veronica Pellacini, Darren Blackshields, Lazaros Filippidis (all University of Greenwich)
 <hr>
     <b>Calibrating spatio-temporal network states in microscopic traffic simulation on a global level</b><br>
     Henriette Triebke (Bosch, IfV KIT), Markus Kromer (Bosch), Peter Vortisch (IfV KIT)
