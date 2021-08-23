@@ -134,7 +134,7 @@ This session will first give an overview of what A/B Street does and how it work
     <td align="right">09:00 - 10:00</td>
 <td>
     <b>Cooperative traffic light control - considering cyclists with the aid of V2I</b><br>
-    Maik Halbach(DLR), Kim Jannik Eggers (DLR)
+    Maik Halbach (DLR), Kim Jannik Eggers (DLR)
 <hr>
     <b>A Study of Applying Eco-Driving Speed Advisory System on Transit Signal Priority</b><br>
     Hsuan Chih Wang (Cheng Kung University)
@@ -187,7 +187,7 @@ This session will first give an overview of what A/B Street does and how it work
     Emanuel Reichsöllner (Hochschule Esslingen), Andreas Rößler (Hochschule Esslingen)
 <hr>
     <b>Traffic Simulation of Automated Shuttles in Linköping University Campus</b><br>
-    Rihanna Gebrehiwot, Johan Olstam and Yun-Pang Flötteröd (DLR)
+    Rihanna Gebrehiwot (Linköping University), Johan Olstam (Swedish National Road and Transport Research Institute), Yun-Pang Flötteröd (DLR)
 <hr>
   <b>Simulating automated vehicles in high capacity networks</b><br>
   Joerg Schweizer (University of Bologna), Federico Rupi (University of Bologna), Cristian Poliziani (University of Bologna)
@@ -223,7 +223,7 @@ This session will first give an overview of what A/B Street does and how it work
     Benedikt Buhk, Rasmus Rettig (both HAW Hamburg)
 <hr>
   <b>Optimising Low-Emissions Zone Geofencing Strategy using SUMO with Vehicle Co-Simulation</b><br>
-  James Manuelyan, Joshua Dalby and Peter Fussey
+  James Manuelyan, Joshua Dalby, Peter Fussey (all Ricardo UK)
     </td>
   </tr>
   <tr>
@@ -246,10 +246,10 @@ This session will first give an overview of what A/B Street does and how it work
     <td align="right">13:00 - 14:00</td>
     <td>
     <b>The impact of heavy vehicles on traffic</b><br>
-    Francois Vaudrin and Mathieu Vaudrin
+    Francois Vaudrin (Semaphor CA), and Mathieu Vaudrin (Semaphor CA)
 <hr>
     <b>Automated Calibration of Traffic Demand and Traffic Lights in SUMO Using Real-World Observations</b><br>
-    Michael Harth, Marcel Langer and Klaus Bogenberger
+    Michael Harth (Audi), Marcel Langer (Audi), Klaus Bogenberger (TU München)
 <hr>
   <b>Evaluating time-loss algorithm with SUMO</b><br>
   Menno van der Woude (CodingConnected)
@@ -278,7 +278,7 @@ This session will first give an overview of what A/B Street does and how it work
     Henriette Triebke (Bosch, IfV KIT), Markus Kromer (Bosch), Peter Vortisch (IfV KIT)
 <hr>
   <b>Investigating the Effect of Enabled Mesoscopic Settings within a Sensitivity Analysis</b><br>
-  Christina Presinger (FH Upper austria)
+  Christina Presinger (FH Upper Austria)
     </td>
   </tr>
   <tr>
