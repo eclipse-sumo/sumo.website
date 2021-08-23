@@ -10,14 +10,14 @@ draft: false
 ---
 
 
-<div class="alert alert-warning alert-dismissible">
+<!-- <div class="alert alert-warning alert-dismissible">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <ul style="margin:0 !important;">
     <li>The conference <a href="#agenda">agenda</a> is now available</li>
     <li><a href="#registration">Registration</a> for participation is now open</li>
     <li>The camera-ready paper submission <a href="#important-dates">deadline</a> is now: Sunday, August 15th, 2021</li>
     </ul>
-</div>
+</div> -->
 
 
 # Introduction
@@ -78,7 +78,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 # Important Dates
 - Paper and Abstract Submission Deadline: *~~Monday, May 3rd, 2021~~* **Monday, May 17th, 2021**. &#x2705;
 - Notification of Acceptance:  **End of June, 2021**. &#x2705;
-- Camera Ready version due: *~~Monday, July 19th, 2021~~* **Sunday, August 15th, 2021**.
+- Camera Ready version due: *~~Monday, July 19th, 2021~~* **Sunday, August 15th, 2021**. &#x2705;
 
 
 # Agenda

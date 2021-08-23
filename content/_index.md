@@ -11,7 +11,6 @@ draft: false
   <ul style="margin:0 !important;">
     <li>The conference <a href="conference#agenda">agenda</a> is now available</li>
     <li><a href="conference#registration">Registration</a> for participation is now open</li>
-    <li>The camera-ready paper submission <a href="conference#important-dates">deadline</a> is now: Sunday, August 15th, 2021</li>
     </ul>
   </div>
 </div>
