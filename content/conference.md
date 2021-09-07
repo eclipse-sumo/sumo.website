@@ -20,7 +20,7 @@ draft: false
 </div> -->
 
 
-# Introduction
+<!-- # Introduction
 Traffic simulations are of immense importance for researchers as well as practitioners in the field of transportation. SUMO has been available since 2001 and provides a wide range of traffic planning and simulation applications. SUMO consists of a suite of tools covering road network imports and enrichment, demand generation and assignment, and a state-of-the-art microscopic traffic simulator capable of simulating private and public transport modes, as well as person-based trip chains. Being open source, SUMO is easily extensible by new behavioral models and can be dynamically controlled via a well-defined programming interface. These and other features make SUMO one of the most often used open source traffic simulators with a large and international user community.
 
 
@@ -78,7 +78,14 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 # Important Dates
 - Paper and Abstract Submission Deadline: *~~Monday, May 3rd, 2021~~* **Monday, May 17th, 2021**. &#x2705;
 - Notification of Acceptance:  **End of June, 2021**. &#x2705;
-- Camera Ready version due: *~~Monday, July 19th, 2021~~* **Sunday, August 15th, 2021**. &#x2705;
+- Camera Ready version due: *~~Monday, July 19th, 2021~~* **Sunday, August 15th, 2021**. &#x2705; -->
+
+# Zoom
+The entire conference will take place on the same Zoom Meeting. Click on the Meeting-ID below to join.
+
+
+**Meeting-ID:** [940 9464 6775](https://zoom.us/j/94094646775)    
+**Passcode:** *See your Zoom Confirmation Email (received after [registration](#registration))*
 
 
 # Agenda
@@ -131,7 +138,7 @@ This session will first give an overview of what A/B Street does and how it work
 </thead>
 <tbody>
   <tr>
-    <td align="right">09:00 - 10:00</td>
+    <td align="right">09:00 - 10:00<br><br>Session 1<br><b>V2X</b></td>
 <td>
     <b>Cooperative traffic light control - considering cyclists with the aid of V2I</b><br>
     Maik Halbach (DLR), Kim Jannik Eggers (DLR)
@@ -144,7 +151,7 @@ This session will first give an overview of what A/B Street does and how it work
     </td>
   </tr>
   <tr>
-    <td align="right">10:30 - 11:30</td>
+    <td align="right">10:30 - 11:30<br><br>Session 2<br><b>Tools</b></td>
 <td>
     <b>The YASE Framework: Holistic Scenario Modeling with Behavior Trees</b><br>
     Max Paul Bauer (Bosch)
@@ -168,7 +175,7 @@ This session will first give an overview of what A/B Street does and how it work
     </td>
   </tr>
   <tr>
-    <td align="right">14:30 - 15:30</td>
+    <td align="right">14:30 - 15:30<br><br>Session 3<br><b>ITS</b></td>
 <td>
     <b>The use of SUMO within the Transportation GeoXchange (TGX) platform</b><br>
     Jeffrey Kirchner (Esri Canada), Arif K. Rafiq (Esri Canada), Juliano Kersting (Esri Canada), Steven Farber (Esri Canada)
@@ -181,7 +188,7 @@ This session will first give an overview of what A/B Street does and how it work
     </td>
   </tr>
   <tr>
-    <td align="right">16:00 - 17:00</td>
+    <td align="right">16:00 - 17:00<br><br>Session 4<br><b>Autonomous Vehicles</b></td>
 <td>
     <b>Scenario Analysis for shared autonomous driving fleets with SUMO</b><br>
     Emanuel Reichsöllner (Hochschule Esslingen), Andreas Rößler (Hochschule Esslingen)
@@ -198,7 +205,7 @@ This session will first give an overview of what A/B Street does and how it work
   </tr>
   <tr style="background-color: #d0f0c0;">
     <td align="right">17:00</td>
-    <td><b><i>Social Event</i></b> &#x1F3B2;</td>
+    <td><b><i><a href="#social-event">Social Event</a></i></b> &#x1F3B2;</td>
   </tr>
 </tbody>
 </table>
@@ -214,7 +221,7 @@ This session will first give an overview of what A/B Street does and how it work
 </thead>
 <tbody>
   <tr>
-    <td align="right">09:00 - 10:00</td>
+    <td align="right">09:00 - 10:00<br><br>Session 5<br><b>Emission</b></td>
     <td>
     <b>Online calibration with SUMO for network-wide traffic and emission monitoring – Case study ITS Huainan</b><br>
     Yun-Pang Flötteröd (DLR), Michael Behrisch (DLR)
@@ -227,7 +234,7 @@ This session will first give an overview of what A/B Street does and how it work
     </td>
   </tr>
   <tr>
-    <td align="right">10:30 - 11:30</td>
+    <td align="right">10:30 - 11:30<br><br>Session 6<br><b>Tools</b></td>
    <td>
     <b>Validating a parking lot assignment method by Eclipse SUMO</b><br>
     Levente Alekszejenkó, Tadeusz P. Dobrowiecki (both Budapest University of Technology and Economics)
@@ -243,7 +250,7 @@ This session will first give an overview of what A/B Street does and how it work
     <td style="text-align:center; background-color: #d9f1ff;" colspan="2"><b><i>Lunch break </b></i>&#x2615;</td>
   </tr>
   <tr>
-    <td align="right">13:00 - 14:00</td>
+    <td align="right">13:00 - 14:00<br><br>Session 7<br><b>Scenarios</b></td>
     <td>
     <b>The impact of heavy vehicles on traffic</b><br>
     Francois Vaudrin (Semaphor CA), and Mathieu Vaudrin (Semaphor CA)
@@ -256,7 +263,7 @@ This session will first give an overview of what A/B Street does and how it work
     </td>
   </tr>
   <tr>
-    <td align="right">14:30 - 15:30</td>
+    <td align="right">14:30 - 15:30<br><br>Session 8<br><b>ITS</b></td>
     <td>
     <b>Augmenting SUMO with Ring-and-Barrier Structured Traffic Signal Controller Module</b><br>
     Qichao Wang (US National Renewable Energy Laboratory), Tianxin Li (Universtiy of Texas), Wesley Jones (US National Renewable Energy Laboratory)
@@ -269,7 +276,7 @@ This session will first give an overview of what A/B Street does and how it work
     </td>
   </tr>
   <tr>
-    <td align="right">16:00 - 17:00</td>
+    <td align="right">16:00 - 17:00<br><br>Session 9<br><b>Other traffic modes and models</b></td>
     <td>
     <b>The Development of Pedestrian Gap Acceptance and Midblock Pedestrian Road Crossing Behaviour Utilizing SUMO</b><br>
     Peter Lawrence, Veronica Pellacini, Darren Blackshields, Lazaros Filippidis (all University of Greenwich)
@@ -288,44 +295,8 @@ This session will first give an overview of what A/B Street does and how it work
 </tbody>
 </table>
 
-<small>Last updated: 06.07.2021</small>
-
-<!--
-|                | Monday, September 13, 2021 |
-|---------------:|-----------------------------|
-| 13:00 - 14:00  | Opening & Tutorial  |
-| 14:30 - 15:30  | Ask us anything  |
-| 16:00 -        | Demo of A/B Street (Dustin Carlino)   |
-
-<br>
-
-|                | Tuesday, September 14, 2021 |
-|---------------:|------------------------------|
-| 09:00 - 10:00  | **Title of presentation**<br>Angelo<hr>**Title 2**<br>Presenter 2<hr>**Title 2**<br>Presenter 2 |
-| 10:30 - 11:30  | Session 2  |
-| ***Break*** &#x2615; |   |
-| 13:00 - 14:00  | [Keynote](#keynote): "*Ride-hailing and ride-pooling: State of the art, future research directions, and the role of traffic simulation*" - Klaus Bogenberger|
-| 14:30 - 15:30  | Session |
-| 15:30 - 16:30  | Session |
-| 17:00          | [Social Event](#social-event) |
-
-<br>
-
-|                | Wednesday, September 15, 2021 |
-|---------------:|--------------------------------|
-| 09:00 - 10:00  | Session  |
-| 10:30 - 11:30  | Session  |
-| ***Break*** &#x2615;  |   |
-| 13:00 - 14:00  | Session  |
-| 14:30 - 15:30  | Session |
-| 15:30 - 16:30  | Session |
-Closing Session (Best Presentation)
-
--->
-
 
 # Keynote
-
 
 <h3><i>Ride-hailing and ride-pooling: State of the art, future research directions, and the role of traffic simulation</i></h3>
 
@@ -348,24 +319,24 @@ Studies to date have focused mainly on efficient vehicle-customer assignments an
 So far, the mutual effects of ride-hailing and ride-pooling as well as traffic flow have only been modeled in a simplified way. The effective coupling to microscopic traffic simulations like SUMO can be of great benefit here. Such simulation models are already valuable tools in studies on traffic control algorithms, up to the analysis of the effects of automated vehicles. In the context of ride-hailing and ride-pooling, these simulation models can additionally help to further understand traffic flow effects arising from the introduction of large-scale on-demand services. Corresponding impacts of such operations onto traffic states can then be modelled dynamically. Vice-versa, dynamic travel time estimations can be beneficial for the modelling of ride-hailing and ride-pooling operation. Furthermore, the impact of required empty trips due to repositioning or bundled passenger flows due to pooling in urban transportation networks is still poorly understood. In addition, microscopic simulations are needed to efficiently organize boarding and loading processes, detect bottlenecks, and identify any needed infrastructure at an early stage.
 </div>
 
+# Wonder.me
+During the conference we are going to offer a virtual room to meet and talk. Move your avatar around to meet people, just make sure to have your mic and webcam on!
 
+**Link:** <https://www.wonder.me/r?id=f1mzpf-xdzog>   
+**Guest Password:** *Same as the Zoom-Meeting-Passcode*
+
+# Social Event
+We are going to have a fun SUMO-related quiz using [Menti](https://www.menti.com/). Join our Zoom meeting and have a smartphone/tablet ready at hand. Test your knowledge of SUMO and win the glorious and prestigious prize of attaching your name to an easter egg in “sumo-gui”:
+
+<img src="../images/hall_of_fame.png" alt="Hall of Fame window" style="width:300px;">
+
+(Check out the current SUMO guru, by pressing `Shift` + `F11` in sumo-gui 1.8.0 or newer)
 
 # Registration
- 
 Please register [here](https://zoom.us/meeting/register/tJAtfu2uqj0tHdECD120ZaL6zXQo6oO4Mhm_). 
-
-
 
 # Prices
 Participation at this year's conference will be **free of charge**!
-
-
-
-
-# Social Event
-
-*More info coming soon*
-
 
 # Language
 The conference language is English.

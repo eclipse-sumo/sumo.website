@@ -5,7 +5,7 @@ draft: false
 ---
 
 <!-- Info Card -->
-<div class="card" style="border: 1px solid rgba(0,0,0,.25) !important; margin-bottom: 40px;">
+<!-- <div class="card" style="border: 1px solid rgba(0,0,0,.25) !important; margin-bottom: 40px;">
   <div class="card-header" style="font-weight:bold;">SUMO User Conference 2021</div>
   <div class="card-body">
   <ul style="margin:0 !important;">
@@ -13,7 +13,7 @@ draft: false
     <li><a href="conference#registration">Registration</a> for participation is now open</li>
     </ul>
   </div>
-</div>
+</div> -->
 
 <!-- YouTube Tutorial -->
 <iframe width="100%" height="400" style="margin: 0 0 40px 0;"src="https://www.youtube.com/embed/aiOQbaB-pWo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
