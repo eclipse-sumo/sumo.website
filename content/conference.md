@@ -333,7 +333,8 @@ We are going to have a fun SUMO-related quiz using [Menti](https://www.menti.com
 (Check out the current SUMO guru, by pressing `Shift` + `F11` in sumo-gui 1.8.0 or newer)
 
 # Registration
-Please register [here](https://zoom.us/meeting/register/tJAtfu2uqj0tHdECD120ZaL6zXQo6oO4Mhm_). 
+<!-- Please register [here](https://zoom.us/meeting/register/tJAtfu2uqj0tHdECD120ZaL6zXQo6oO4Mhm_). -->
+If you have problems with your registration, please contact us: [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de)
 
 # Prices
 Participation at this year's conference will be **free of charge**!
