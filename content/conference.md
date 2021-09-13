@@ -102,13 +102,13 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
   <tr>
     <td align="right">13:00 - 14:00</td>
     <td>
-    <b>Opening & Tutorial</b> - <a href="http://sumo.dlr.de/daily/sumo2021_tutorial.zip">Download tutorial ZIP</a><br>
+    <b>Opening & Tutorial</b> • <a href="http://sumo.dlr.de/daily/sumo2021_tutorial.zip"><i class="far fa-file-archive"></i> Download tutorial files</a>
     </td>
   </tr>
   <tr>
     <td align="right">14:30 - 15:30</td>
     <td>
-    <b>Ask us anything</b><br>
+    <b>Ask us anything</b> • <a href="https://sumo.dlr.de/2021/chat_QA.txt"><i class="far fa-file-alt"></i> Q&A Transcript</a>
     </td>
   </tr>
   <tr>
