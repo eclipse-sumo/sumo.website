@@ -102,7 +102,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
   <tr>
     <td align="right">13:00 - 14:00</td>
     <td>
-    <b>Opening & Tutorial</b><br>
+    <b>Opening & Tutorial</b> - <a href="http://sumo.dlr.de/daily/sumo2021_tutorial.zip">Download tutorial ZIP</a><br>
     </td>
   </tr>
   <tr>
