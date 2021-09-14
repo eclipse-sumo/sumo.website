@@ -204,7 +204,7 @@ This session will first give an overview of what A/B Street does and how it work
     </td>
   </tr>
   <tr style="background-color: #d0f0c0;">
-    <td align="right">17:00</td>
+    <td align="right">17:30</td>
     <td><b><i><a href="#social-event">Social Event</a></i></b> &#x1F3B2;</td>
   </tr>
 </tbody>
