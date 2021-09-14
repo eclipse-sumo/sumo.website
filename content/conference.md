@@ -200,7 +200,7 @@ This session will first give an overview of what A/B Street does and how it work
   Joerg Schweizer (University of Bologna), Federico Rupi (University of Bologna), Cristian Poliziani (University of Bologna)
 <hr>
   <b>Investigation of the effect of autonomous vehicles (AV) on the capacity of an urban transport network</b><br>
-  Ronald Nippold (DLR), Peter Wagner (DLR), Olaf Angelo Banse Bueno (DLR) and Christian Rakow (DLR)
+  Ronald Nippold (DLR), Peter Wagner (DLR), Olaf Angelo Banse Bueno (DLR) and Christian Rakow (TU Berlin)
     </td>
   </tr>
   <tr style="background-color: #d0f0c0;">
