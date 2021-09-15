@@ -180,11 +180,11 @@ This session will first give an overview of what A/B Street does and how it work
     <b>The use of SUMO within the Transportation GeoXchange (TGX) platform</b><br>
     Jeffrey Kirchner (Esri Canada), Arif K. Rafiq (Esri Canada), Juliano Kersting (Esri Canada), Steven Farber (Esri Canada)
 <hr>
-    <b>Traffic Simulation Environment Based on Sumo Software</b><br>
-    Xuhong Li (hikvision), Liyong Zheng (hikvision), Bin Su (hikvision), Xu Guo (hikvision), Yonggang Hao (hikvision), Wenjing Li (hikvision), Xuhong Li (hikvision)
-<hr>
   <b>Simulation of Demand Responsive Transport using a dynamic scheduling tool with SUMO</b><br>
   Maria Giuliana Armellini (DLR)
+<hr>
+    <b>Traffic Simulation Environment Based on Sumo Software</b><br>
+    Xuhong Li (hikvision), Liyong Zheng (hikvision), Bin Su (hikvision), Xu Guo (hikvision), Yonggang Hao (hikvision), Wenjing Li (hikvision), Xuhong Li (hikvision)
     </td>
   </tr>
   <tr>
