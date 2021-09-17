@@ -5,6 +5,7 @@ conferenceDate: "September 13-15"
 conferenceLocation: "Online"
 description : "Get in touch with our international user community"
 layout: "single"
+image: "conference_2021.png"
 conference-page: true
 draft: false
 ---
@@ -79,13 +80,6 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 - Paper and Abstract Submission Deadline: *~~Monday, May 3rd, 2021~~* **Monday, May 17th, 2021**. &#x2705;
 - Notification of Acceptance:  **End of June, 2021**. &#x2705;
 - Camera Ready version due: *~~Monday, July 19th, 2021~~* **Sunday, August 15th, 2021**. &#x2705; -->
-
-# Zoom
-The entire conference will take place on the same Zoom Meeting. Click on the Meeting-ID below to join.
-
-
-**Meeting-ID:** [940 9464 6775](https://zoom.us/j/94094646775)    
-**Passcode:** *See your Zoom Confirmation Email (received after [registration](#registration))*
 
 
 # Agenda
@@ -322,19 +316,10 @@ So far, the mutual effects of ride-hailing and ride-pooling as well as traffic f
 # Wonder.me
 During the conference we are going to offer a virtual room to meet and talk. Move your avatar around to meet people, just make sure to have your mic and webcam on!
 
-**Link:** <https://www.wonder.me/r?id=f1mzpf-xdzog>   
-**Guest Password:** *Same as the Zoom-Meeting-Passcode*
-
 # Social Event
-We are going to have a fun SUMO-related quiz using [Menti](https://www.menti.com/). Join our Zoom meeting and have a smartphone/tablet ready at hand. Test your knowledge of SUMO and win the glorious and prestigious prize of attaching your name to an easter egg in “sumo-gui”:
+We are going to have a fun SUMO-related quiz using [Menti](https://www.menti.com/). Join our Zoom meeting and have a smartphone/tablet ready at hand. Test your knowledge of SUMO and win the glorious and prestigious prize of attaching your name to an easter egg in “sumo-gui”.
 
-<img src="../images/hall_of_fame.png" alt="Hall of Fame window" style="width:300px;">
-
-(Check out the current SUMO guru, by pressing `Shift` + `F11` in sumo-gui 1.8.0 or newer)
-
-# Registration
-<!-- Please register [here](https://zoom.us/meeting/register/tJAtfu2uqj0tHdECD120ZaL6zXQo6oO4Mhm_). -->
-<!-- If you have problems with your registration, please contact us: [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de)-->
+(Check out the hall of fame, by pressing `Shift` + `F11` in sumo-gui 1.8.0 or newer)
 
 # Prices
 Participation at this year's conference will be **free of charge**!
