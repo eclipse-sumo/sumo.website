@@ -96,7 +96,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
   <tr>
     <td align="right">13:00 - 14:00</td>
     <td>
-    <b>Opening & Tutorial</b> • <a href="http://sumo.dlr.de/daily/sumo2021_tutorial.zip"><i class="far fa-file-archive"></i> Download tutorial files</a>
+    <b>Opening & Tutorial</b> • <a href="https://youtu.be/tlshWdzFWpY"><i class="fab fa-youtube"></i> Tutorial</a> • <a href="http://sumo.dlr.de/daily/sumo2021_tutorial.zip"><i class="far fa-file-archive"></i> Download tutorial files</a>
     </td>
   </tr>
   <tr>
