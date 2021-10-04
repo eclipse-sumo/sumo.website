@@ -272,7 +272,7 @@ This session will first give an overview of what A/B Street does and how it work
   <tr>
     <td align="right">16:00 - 17:00<br><br>Session 9<br><b>Other traffic modes and models</b></td>
     <td>
-    <b>The Development of Pedestrian Gap Acceptance and Midblock Pedestrian Road Crossing Behaviour Utilizing SUMO</b><br>
+    <b>The Development of Pedestrian Gap Acceptance and Midblock Pedestrian Road Crossing Behavior Utilizing SUMO</b><br>
     Peter Lawrence, Veronica Pellacini, Darren Blackshields, Lazaros Filippidis (all University of Greenwich)
 <hr>
     <b>Calibrating spatio-temporal network states in microscopic traffic simulation on a global level</b><br>
