@@ -10,284 +10,91 @@ conference-page: true
 draft: false
 ---
 
+# Sessions and Presentations
+- Tutorial • [<i class="fab fa-youtube"></i> Video](https://youtu.be/tlshWdzFWpY) • [<i class="far fa-file-archive"></i> Tutorial files](http://sumo.dlr.de/daily/sumo2021_tutorial.zip)
+- Ask us anything • [<i class="far fa-file-alt"></i> Q&A Transcript](https://sumo.dlr.de/2021/chat_QA.txt)
+- **Keynote:** Ride-hailing and ride-pooling: State of the art, future research directions, and the role of traffic simulation - *Klaus Bogenberger* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/kQT_mhexuYw)
 
-<!-- <div class="alert alert-warning alert-dismissible">
+---
+
+**Session 1: V2X**
+
+- Cooperative traffic light control - considering cyclists with the aid of V2I - *Maik Halbach and Kim Jannik Eggers* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/8aC-rL04W68)
+- A Study of Applying Eco-Driving Speed Advisory System on Transit Signal Priority - *Hsuan Chih Wang* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/JInBlui6-N0)
+- Modeling Cellular Network Infrastructure in SUMO - *Anupama Hegde, Ringo Stahl, Silas Lobo and Andreas Festag* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/71R6HURyedc)
+
+---
+
+**Session 2: Tools**
+
+- The YASE Framework: Holistic Scenario Modeling with Behavior Trees - *Max Paul Bauer* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/V0vGpiNdSrc)
+- Intelligent traffic management for emergency vehicles with a simulation case study - *Laura Bieker-Walz, Michael Behrisch and Ronald Nippold* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/7rpXvYsNFIE)
+- Can SUMO be used to simulate 2+1 roads? - *Filip Kristofersson, Ella Calais, Johan Olstam and Viktor Bernhardsson* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/lviG9Bm4hm4)
+
+---
+
+**Session 3: ITS**
+
+- The use of SUMO within the Transportation GeoXchange (TGX) platform - *Arif K. Rafiq, Jeffrey Kirchner, Juliano Kersting, David Stajan and Andrea Zagar* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/y-fvIgjuzj0)
+- Simulation of Demand Responsive Transport using a dynamic scheduling tool with SUMO - *Maria Giuliana Armellini* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/1gG0EwDHtBA)
+- Traffic Simulation Environment Based on Sumo Software - *Xuhong Li, Liyong Zheng, Bin Su, Xu Guo, Yonggang Hao, Wenjing Li and Xuhong Li*
+
+---
+
+**Session 4: Autonomous Vehicles**
+
+- Scenario Analysis for shared autonomous driving fleets with SUMO - *Emanuel Reichsöllner and Andreas Rößler* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/Tut2k8K9J5s)
+- Traffic Simulation of Automated Shuttles in Linköping University Campus - *Rihanna Gebrehiwot, Johan Olstam and Yun-Pang Flötteröd* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/0FEvnc9Bufs)
+- Simulating automated vehicles in high capacity networks - *Joerg Schweizer, Federico Rupi and Cristian Poliziani* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/03LubzFBlIw)
+- Investigation of the effect of autonomous vehicles (AV) on the capacity of an urban transport network - *Ronald Nippold, Peter Wagner, Olaf Angelo Banse Bueno and Christian Rakow* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/64V9T9aXa5I)
+
+---
+
+**Session 5: Emission**
+
+- Online calibration with SUMO for network-wide traffic and emission monitoring – Case study ITS Huainan - *Yun-Pang Flötteröd and Michael Behrisch* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/7o_QwUEX938)
+- Simulation based method for the analysis of energy-efficient driving algorithms using SUMO - *Benedikt Buhk and Rasmus Rettig* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/T7Fh9nQeADI)
+- Optimising Low-Emissions Zone Geofencing Strategy using SUMO with Vehicle Co-Simulation - *James Manuelyan, Joshua Dalby and Peter Fussey* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/cdUP88FEcPU)
+
+---
+
+**Session 6: Tools**
+
+- Validating a parking lot assignment method by Eclipse SUMO - *Levente Alekszejenkó and Tadeusz P. Dobrowiecki* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/FCvHXxkepv8)
+- High-Fidelity Modeling of Curbside Driving Behavior in SUMO - *Qichao Wang, Joseph Severino, Juliette Ugirumurera and Caleb Phillips* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/B6PguGb2EyQ)
+- A comparison of SUMO’s count based and countless demand generation tools - *Pauline Hartwig and Michael Behrisch* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/o8h8dUrqpTM)
+
+---
+
+**Session 7: Scenarios**
+
+- The impact of heavy vehicles on traffic - *Francois Vaudrin and Mathieu Vaudrin* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/P1lyN8RjG98)
+- Automated Calibration of Traffic Demand and Traffic Lights in SUMO Using Real-World Observations - *Michael Harth, Marcel Langer and Klaus Bogenberger* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/v8595gCXqeg)
+- Evaluating time-loss algorithm with SUMO - *Menno van der Woude* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/YANGym2z5vE)
+
+---
+
+**Session 8: ITS**
+
+- Augmenting SUMO with Ring-and-Barrier Structured Traffic Signal Controller Module - *Qichao Wang, Tianxin Li and Wesley Jones* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/o8BGZZG7TLk)
+- Using Deep Reinforcement Learning to Coordinate Multi-Modal Journey Planning with Limited Transportation Capacity - *Lara Codeca and Vinny Cahill* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/OF--8wm81QQ)
+- Last-Mile Logistics Simulation in SUMO - *Fabian Post and El Mehdi Essadki* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/1YYw1-_EF38)
+
+---
+
+**Session 9: Other traffic modes and models**
+
+- The Development of Pedestrian Gap Acceptance and Midblock Pedestrian Road Crossing Behavior Utilizing SUMO - *Peter Lawrence, Veronica Pellacini, Darren Blackshields and Lazaros Filippidis* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/77_s_CcY4Ck)
+<div class="alert alert-warning alert-dismissible">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <ul style="margin:0 !important;">
-    <li>The conference <a href="#agenda">agenda</a> is now available</li>
-    <li><a href="#registration">Registration</a> for participation is now open</li>
-    <li>The camera-ready paper submission <a href="#important-dates">deadline</a> is now: Sunday, August 15th, 2021</li>
-    </ul>
-</div> -->
-
-
-<!-- # Introduction
-Traffic simulations are of immense importance for researchers as well as practitioners in the field of transportation. SUMO has been available since 2001 and provides a wide range of traffic planning and simulation applications. SUMO consists of a suite of tools covering road network imports and enrichment, demand generation and assignment, and a state-of-the-art microscopic traffic simulator capable of simulating private and public transport modes, as well as person-based trip chains. Being open source, SUMO is easily extensible by new behavioral models and can be dynamically controlled via a well-defined programming interface. These and other features make SUMO one of the most often used open source traffic simulators with a large and international user community.
-
-
-# Call for Papers
-The conference focuses on presenting new and unique results in the field of mobility simulation and modeling using openly available tools and data. We expect a large variety of research topics and usage approaches. If you are working on a research project fitting the topics below, you are kindly invited to submit an abstract. Possible areas of interest include (but are not limited to):
-
-- Mobility and Demand Modelling
-- Traffic Simulation
-- Open Tools and Open Data
-- Modelling Urban Mobility
-- Traffic Applications
-- Traffic Management Solutions
-- Intermodal Transport
-- Autonomous Driving
-- Logistics Simulation
-- Vehicular Communication
-- E-Mobility
-- Reinforcement learning / Machine Learning
-
-# Paper Submission
-***Attention***: We changed our paper submission process. We are now offering two submission types:
-
-1) Scientific Papers:
-
-- All accepted scientific papers must be presented at the conference.
-- Scientific papers will be reviewed by at least 2 reviewers.
-- All accepted scientific papers will be published in the SUMO proceedings.
-- Scientific papers must be submitted in LaTeX or Word format before midnight, *~~Monday, May 3rd, 2021~~* **Monday, May 17th, 2021**.
-- Scientific papers should be between 5 and 20 pages long.
-
-2) Technical Presentations:
-
-- The SUMO conference gives the opportunity to present your topic during the poster session or an oral short presentation.
-- There is no need to write a scientific paper.
-- Possible technical presentations can be:
-  - Results of Bachelor or Master theses
-  - Live Demos
-  - SUMO Use Cases
-  - Project Presentations
-  - Work in Progress which would benefit from the feedback of other SUMO users
-- Title and a short abstract (300 words) must be submitted until *~~Monday, May 3rd, 2021~~* **Monday, May 17th, 2021**.
-
-**Templates and instructions for authors** can be found here: https://easychair.org/publications/for_authors   
-Technical Presentations do not require following a template, feel free to use your own style.
-
-## Submission Link
-
-Please submit your papers via EasyChair:
-https://easychair.org/conferences/?conf=sumo2021
-
-## Ethics and Malpractice Statement
-
-You can read our *[Publication Ethics and Publication Malpractice Statement](../docs/SUMOPublicationEthics.pdf)*, where we list the responsibilities of editors, reviewers, and authors.
-
-# Important Dates
-- Paper and Abstract Submission Deadline: *~~Monday, May 3rd, 2021~~* **Monday, May 17th, 2021**. &#x2705;
-- Notification of Acceptance:  **End of June, 2021**. &#x2705;
-- Camera Ready version due: *~~Monday, July 19th, 2021~~* **Sunday, August 15th, 2021**. &#x2705; -->
-
-
-# Agenda
-
-<small>&#128339; <i>Schedule given in Central European Summer Time (CEST) (UTC+2) - This agenda may be subject to change</i></small>
-
-<table style="border: 2px solid #999;">
-<thead>
-  <tr>
-    <th style="text-align:center" colspan="2">Monday, September 13, 2021</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td align="right">13:00 - 14:00</td>
-    <td>
-    <b>Opening & Tutorial</b> • <a href="https://youtu.be/tlshWdzFWpY"><i class="fab fa-youtube"></i> Tutorial</a> • <a href="http://sumo.dlr.de/daily/sumo2021_tutorial.zip"><i class="far fa-file-archive"></i> Download tutorial files</a>
-    </td>
-  </tr>
-  <tr>
-    <td align="right">14:30 - 15:30</td>
-    <td>
-    <b>Ask us anything</b> • <a href="https://sumo.dlr.de/2021/chat_QA.txt"><i class="far fa-file-alt"></i> Q&A Transcript</a>
-    </td>
-  </tr>
-  <tr>
-    <td align="right">16:00 - 17:30</td>
-    <td>
-   <b>A/B Street: a public-facing traffic simulator for transportation advocacy</b><br>
-   Dustin Carlino
-<p><a id="abmoreinfobutton" style="color:#0645ad; cursor:pointer;" onclick="document.getElementById('abmoreinfobutton').style.display = 'none';" data-toggle="collapse" data-target="#abmoreinfo">Read more <i class="fas fa-angle-down"></i></a></p>
-<div id="abmoreinfo" class="collapse">
-A/B Street (<a href="https://abstreet.org">abstreet.org</a>) is an open source multi-modal traffic simulator designed for the general public to explore low-cost approaches for reducing motor vehicle use. Starting from OpenStreetMap data and a variety of travel demand sources, people using A/B Street can modify roads (like transforming street parking into bike- and bus-only lanes) and intersections (traffic signal timing). Using built-in elevation data, visualizations about individual trips and aggregate groups, and measurements of impact on travel time and risk exposure, interested citizens can present their idea to a city council for consideration.
-<br><br>
-This session will first give an overview of what A/B Street does and how it works. We'll then deep dive into understanding the discrete-event, agent-based simulation, and how to model dynamic lane-changing without compromising runtime performance. The second part of the session will be an interactive workshop where we install A/B Street (Mac, Windows, Linux, or running in your web browser), import somewhere new from OpenStreetMap, initially seed travel demand data, and start exploring adjustments to roads.
-<br><br><a id="abhideinfobutton" style="color:#0645ad; cursor:pointer;" onclick="document.getElementById('abmoreinfobutton').style.display = 'block';" data-toggle="collapse" data-target="#abmoreinfo">Collapse <i class="fas fa-angle-up"></i></a>
+    This presentation was voted <b>best presentation</b>, by the conference attendees.
 </div>
-    </td>
-  </tr>
-</tbody>
-</table>
+- Calibrating spatio-temporal network states in microscopic traffic simulation on a global level - *Henriette Triebke, Markus Kromer and Peter Vortisch* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/QzrkIrEllTI)
+- Investigating the Effect of Enabled Mesoscopic Settings within a Sensitivity Analysis - *Christina Presinger* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/3jEh5LZ9NLk)
 
-<br>
+---
 
-<table style="border: 2px solid #999;">
-<thead>
-  <tr>
-    <th style="text-align:center" colspan="2">Tuesday, September 14, 2021</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td align="right">09:00 - 10:00<br><br>Session 1<br><b>V2X</b></td>
-<td>
-    <b>Cooperative traffic light control - considering cyclists with the aid of V2I</b><br>
-    Maik Halbach (DLR), Kim Jannik Eggers (DLR)
-<hr>
-    <b>A Study of Applying Eco-Driving Speed Advisory System on Transit Signal Priority</b><br>
-    Hsuan Chih Wang (Cheng Kung University)
-<hr>
-  <b>Modeling Cellular Network Infrastructure in SUMO</b><br>
-  Anupama Hegde (TH Ingolstadt), Andreas Festag (TH Ingolstadt)
-    </td>
-  </tr>
-  <tr>
-    <td align="right">10:30 - 11:30<br><br>Session 2<br><b>Tools</b></td>
-<td>
-    <b>The YASE Framework: Holistic Scenario Modeling with Behavior Trees</b><br>
-    Max Paul Bauer (Bosch)
-<hr>
-   <b>Intelligent traffic management for emergency vehicles with a simulation case study</b><br>
-   Laura Bieker-Walz (DLR), Michael Behrisch (DLR), Ronald Nippold (DLR)
-<hr>
-  <b>Can SUMO be used to simulate 2+1 roads?</b><br>
-  Filip Kristofersson (Uppsala University), Ella Calais (Uppsala University), Johan Olstam (Swedish National Road and Transport Research Institute), Viktor Bernhardsson (Swedish National Road and Transport Research Institute)
-    </td>
-  </tr>
-  <tr>
-    <td style="text-align:center; background-color: #d9f1ff;" colspan="2"><b><i>Lunch break </b></i>&#x2615;</td>
-  </tr>
-  <tr>
-    <td align="right">13:00 - 14:00</td>
-    <td>
-    <b><a href="#keynote">Keynote</a>:
-    Ride-hailing and ride-pooling: State of the art, future research directions, and the role of traffic simulation</b><br>
-    Univ.-Prof. Dr.-Ing. Klaus Bogenberger
-    </td>
-  </tr>
-  <tr>
-    <td align="right">14:30 - 15:30<br><br>Session 3<br><b>ITS</b></td>
-<td>
-    <b>The use of SUMO within the Transportation GeoXchange (TGX) platform</b><br>
-    Jeffrey Kirchner (Esri Canada), Arif K. Rafiq (Esri Canada), Juliano Kersting (Esri Canada), Steven Farber (Esri Canada)
-<hr>
-  <b>Simulation of Demand Responsive Transport using a dynamic scheduling tool with SUMO</b><br>
-  Maria Giuliana Armellini (DLR)
-<hr>
-    <b>Traffic Simulation Environment Based on Sumo Software</b><br>
-    Xuhong Li (hikvision), Liyong Zheng (hikvision), Bin Su (hikvision), Xu Guo (hikvision), Yonggang Hao (hikvision), Wenjing Li (hikvision), Xuhong Li (hikvision)
-    </td>
-  </tr>
-  <tr>
-    <td align="right">16:00 - 17:00<br><br>Session 4<br><b>Autonomous Vehicles</b></td>
-<td>
-    <b>Scenario Analysis for shared autonomous driving fleets with SUMO</b><br>
-    Emanuel Reichsöllner (Hochschule Esslingen), Andreas Rößler (Hochschule Esslingen)
-<hr>
-    <b>Traffic Simulation of Automated Shuttles in Linköping University Campus</b><br>
-    Rihanna Gebrehiwot (Linköping University), Johan Olstam (Swedish National Road and Transport Research Institute), Yun-Pang Flötteröd (DLR)
-<hr>
-  <b>Simulating automated vehicles in high capacity networks</b><br>
-  Joerg Schweizer (University of Bologna), Federico Rupi (University of Bologna), Cristian Poliziani (University of Bologna)
-<hr>
-  <b>Investigation of the effect of autonomous vehicles (AV) on the capacity of an urban transport network</b><br>
-  Ronald Nippold (DLR), Peter Wagner (DLR), Olaf Angelo Banse Bueno (DLR) and Christian Rakow (TU Berlin)
-    </td>
-  </tr>
-  <tr style="background-color: #d0f0c0;">
-    <td align="right">17:30</td>
-    <td><b><i><a href="#social-event">Social Event</a></i></b> &#x1F3B2;</td>
-  </tr>
-</tbody>
-</table>
-
-
-<br>
-
-<table style="border: 2px solid #999;">
-<thead>
-  <tr>
-    <th style="text-align:center" colspan="2">Wednesday, September 15, 2021</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td align="right">09:00 - 10:00<br><br>Session 5<br><b>Emission</b></td>
-    <td>
-    <b>Online calibration with SUMO for network-wide traffic and emission monitoring – Case study ITS Huainan</b><br>
-    Yun-Pang Flötteröd (DLR), Michael Behrisch (DLR)
-<hr>
-    <b>Simulation based method for the analysis of energy-efficient driving algorithms using SUMO</b><br>
-    Benedikt Buhk, Rasmus Rettig (both HAW Hamburg)
-<hr>
-  <b>Optimising Low-Emissions Zone Geofencing Strategy using SUMO with Vehicle Co-Simulation</b><br>
-  James Manuelyan, Joshua Dalby, Peter Fussey (all Ricardo UK)
-    </td>
-  </tr>
-  <tr>
-    <td align="right">10:30 - 11:30<br><br>Session 6<br><b>Tools</b></td>
-   <td>
-    <b>Validating a parking lot assignment method by Eclipse SUMO</b><br>
-    Levente Alekszejenkó, Tadeusz P. Dobrowiecki (both Budapest University of Technology and Economics)
-<hr>
-    <b>High-Fidelity Modeling of Curbside Driving Behavior in SUMO</b><br>
-    Qichao Wang, Joseph Severino, Juliette Ugirumurera, Caleb Phillips (all US National Renewable Energy Laboratory)
-<hr>
-  <b>A comparison of SUMO’s count based and countless demand generation tools</b><br>
-  Michael Behrisch (DLR), Pauline Hartwig (TH Wildau)
-    </td>
-  </tr>
-  <tr>
-    <td style="text-align:center; background-color: #d9f1ff;" colspan="2"><b><i>Lunch break </b></i>&#x2615;</td>
-  </tr>
-  <tr>
-    <td align="right">13:00 - 14:00<br><br>Session 7<br><b>Scenarios</b></td>
-    <td>
-    <b>The impact of heavy vehicles on traffic</b><br>
-    Francois Vaudrin (Semaphor CA), and Mathieu Vaudrin (Semaphor CA)
-<hr>
-    <b>Automated Calibration of Traffic Demand and Traffic Lights in SUMO Using Real-World Observations</b><br>
-    Michael Harth (Audi), Marcel Langer (Audi), Klaus Bogenberger (TU München)
-<hr>
-  <b>Evaluating time-loss algorithm with SUMO</b><br>
-  Menno van der Woude (CodingConnected)
-    </td>
-  </tr>
-  <tr>
-    <td align="right">14:30 - 15:30<br><br>Session 8<br><b>ITS</b></td>
-    <td>
-    <b>Augmenting SUMO with Ring-and-Barrier Structured Traffic Signal Controller Module</b><br>
-    Qichao Wang (US National Renewable Energy Laboratory), Tianxin Li (Universtiy of Texas), Wesley Jones (US National Renewable Energy Laboratory)
-<hr>
-    <b>Using Deep Reinforcement Learning to Coordinate Multi-Modal Journey Planning with Limited Transportation Capacity</b><br>
-    Lara Codeca (Trinity College Dublin), Vinny Cahill (Trinity College Dublin)
-<hr>
-  <b>Last-Mile Logistics Simulation in SUMO</b><br>
-  Fabian Post (Bauhaus-Universität Weimar), El Mehdi Essadki (Bauhaus-Universität Weimar)
-    </td>
-  </tr>
-  <tr>
-    <td align="right">16:00 - 17:00<br><br>Session 9<br><b>Other traffic modes and models</b></td>
-    <td>
-    <b>The Development of Pedestrian Gap Acceptance and Midblock Pedestrian Road Crossing Behavior Utilizing SUMO</b><br>
-    Peter Lawrence, Veronica Pellacini, Darren Blackshields, Lazaros Filippidis (all University of Greenwich)
-<hr>
-    <b>Calibrating spatio-temporal network states in microscopic traffic simulation on a global level</b><br>
-    Henriette Triebke (Bosch, IfV KIT), Markus Kromer (Bosch), Peter Vortisch (IfV KIT)
-<hr>
-  <b>Investigating the Effect of Enabled Mesoscopic Settings within a Sensitivity Analysis</b><br>
-  Christina Presinger (FH Upper Austria)
-    </td>
-  </tr>
-  <tr>
-    <td align="right">17:00</td>
-    <td><b><i>Closing Session +  voting for best presentation</i></b></td>
-  </tr>
-</tbody>
-</table>
+You can find all videos here: <a href="https://www.youtube.com/playlist?list=PLy7t4z5SYNaRIdaznUrlC8F-Vt3qla1GJ"><button type="button" class="btn btn-danger btn-sm"><i class="fab fa-youtube"></i> YouTube playlist</button></a>
 
 
 # Keynote
@@ -318,6 +125,11 @@ During the conference we are going to offer a virtual room to meet and talk. Mov
 
 # Social Event
 We are going to have a fun SUMO-related quiz using [Menti](https://www.menti.com/). Join our Zoom meeting and have a smartphone/tablet ready at hand. Test your knowledge of SUMO and win the glorious and prestigious prize of attaching your name to an easter egg in “sumo-gui”.
+
+<div class="alert alert-warning alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    SUMO guru of the year 2021: Lara Codeca.
+</div>
 
 (Check out the hall of fame, by pressing `Shift` + `F11` in sumo-gui 1.8.0 or newer)
 
