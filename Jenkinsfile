@@ -53,8 +53,7 @@ spec:
             sshagent(['git.eclipse.org-bot-ssh']) {
                 sh '''
                     GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" git clone ssh://genie.${PROJECT_NAME}@git.eclipse.org:29418/www.eclipse.org/${PROJECT_NAME}.git .
-                    git fetch
-                    git checkout ${BRANCH_NAME}
+                    git checkout -b ${BRANCH_NAME} --track origin/${BRANCH_NAME}
                 '''
             }
         }
