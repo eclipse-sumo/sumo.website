@@ -53,7 +53,7 @@ Archive: <a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/">Eclipse Archi
 
 </div>
 
-To **unsubscribe** visit the same link(s) as given above for subscription. An easy way to subscribe (or unsubscribe) is to write an email to [sumo-user-join@eclipse.org](mailto:sumo-user-join@eclipse.org) or [sumo-user-leave@eclipse.org](mailto:sumo-user-leave@eclipse.org). Make sure to use the right sender address (subject and body can be empty). This works for the dev and the announce list as well.
+To **unsubscribe** visit the same link(s) as given above for subscription.
 
 <div class="container alert alert-success alert-dismissible" style="margin-bottom:0;">
 If you don't like emails or cannot subscribe to the lists but still want to get in contact, please use the <a href="https://mattermost.eclipse.org/eclipse/channels/sumo">Mattermost channel</a>. Please be aware that the messages there are not public and thus not searchable for non-members. To use the channel you need an Eclipse account.
