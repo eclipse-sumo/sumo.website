@@ -11,7 +11,7 @@ favicon = "images/favicon.ico"
 logo = "images/logos/sumo-logo-white.svg"
 docsURL = "https://sumo.dlr.de/docs"
 githubEditURL = "https://github.com/eclipse/sumo.website/edit/main/content/"
-Version = "1.10.0"
+Version = "1.11.0"
 
 ## Enable inline-HTML in Hugo > v0.60.0
 [markup]
