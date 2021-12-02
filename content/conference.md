@@ -1,150 +1,22 @@
 ---
-title: "SUMO User Conference 2021"
+title: "SUMO User Conference 2022"
 subtitle: ""
-conferenceDate: "September 13-15"
+conferenceDate: "May 09-11"
 conferenceLocation: "Online"
 description : "Get in touch with our international user community"
 layout: "single"
-image: "conference_2021.png"
 conference-page: true
 draft: false
 ---
 
-# Sessions and Presentations
-- Tutorial • [<i class="fab fa-youtube"></i> Video](https://youtu.be/tlshWdzFWpY) • [<i class="far fa-file-archive"></i> Tutorial files](http://sumo.dlr.de/daily/sumo2021_tutorial.zip)
-- Ask us anything • [<i class="far fa-file-alt"></i> Q&A Transcript](https://sumo.dlr.de/2021/chat_QA.txt)
-- **Keynote:** Ride-hailing and ride-pooling: State of the art, future research directions, and the role of traffic simulation - *Klaus Bogenberger* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/kQT_mhexuYw)
+<div class="text-center"><img src="../images/banner_2022.png" style="width:70%;" alt="Conference artwork" class="img-responsive"/></div>
 
 ---
 
-**Session 1: V2X**
+# Save the date!
+SUMO User Conference 2022: May 09-11.
 
-- Cooperative traffic light control - considering cyclists with the aid of V2I - *Maik Halbach and Kim Jannik Eggers* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/8aC-rL04W68)
-- A Study of Applying Eco-Driving Speed Advisory System on Transit Signal Priority - *Hsuan Chih Wang* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/JInBlui6-N0)
-- Modeling Cellular Network Infrastructure in SUMO - *Anupama Hegde, Ringo Stahl, Silas Lobo and Andreas Festag* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/71R6HURyedc)
-
----
-
-**Session 2: Tools**
-
-- The YASE Framework: Holistic Scenario Modeling with Behavior Trees - *Max Paul Bauer* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/V0vGpiNdSrc)
-- Intelligent traffic management for emergency vehicles with a simulation case study - *Laura Bieker-Walz, Michael Behrisch and Ronald Nippold* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/7rpXvYsNFIE)
-- Can SUMO be used to simulate 2+1 roads? - *Filip Kristofersson, Ella Calais, Johan Olstam and Viktor Bernhardsson* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/lviG9Bm4hm4)
-
----
-
-**Session 3: ITS**
-
-- The use of SUMO within the Transportation GeoXchange (TGX) platform - *Arif K. Rafiq, Jeffrey Kirchner, Juliano Kersting, David Stajan and Andrea Zagar* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/y-fvIgjuzj0)
-- Simulation of Demand Responsive Transport using a dynamic scheduling tool with SUMO - *Maria Giuliana Armellini* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/1gG0EwDHtBA)
-- Traffic Simulation Environment Based on Sumo Software - *Xuhong Li, Liyong Zheng, Bin Su, Xu Guo, Yonggang Hao, Wenjing Li and Xuhong Li*
-
----
-
-**Session 4: Autonomous Vehicles**
-
-- Scenario Analysis for shared autonomous driving fleets with SUMO - *Emanuel Reichsöllner and Andreas Rößler* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/Tut2k8K9J5s)
-- Traffic Simulation of Automated Shuttles in Linköping University Campus - *Rihanna Gebrehiwot, Johan Olstam and Yun-Pang Flötteröd* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/0FEvnc9Bufs)
-- Simulating automated vehicles in high capacity networks - *Joerg Schweizer, Federico Rupi and Cristian Poliziani* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/03LubzFBlIw)
-- Investigation of the effect of autonomous vehicles (AV) on the capacity of an urban transport network - *Ronald Nippold, Peter Wagner, Olaf Angelo Banse Bueno and Christian Rakow* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/64V9T9aXa5I)
-
----
-
-**Session 5: Emission**
-
-- Online calibration with SUMO for network-wide traffic and emission monitoring – Case study ITS Huainan - *Yun-Pang Flötteröd and Michael Behrisch* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/7o_QwUEX938)
-- Simulation based method for the analysis of energy-efficient driving algorithms using SUMO - *Benedikt Buhk and Rasmus Rettig* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/T7Fh9nQeADI)
-- Optimising Low-Emissions Zone Geofencing Strategy using SUMO with Vehicle Co-Simulation - *James Manuelyan, Joshua Dalby and Peter Fussey* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/cdUP88FEcPU)
-
----
-
-**Session 6: Tools**
-
-- Validating a parking lot assignment method by Eclipse SUMO - *Levente Alekszejenkó and Tadeusz P. Dobrowiecki* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/FCvHXxkepv8)
-- High-Fidelity Modeling of Curbside Driving Behavior in SUMO - *Qichao Wang, Joseph Severino, Juliette Ugirumurera and Caleb Phillips* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/B6PguGb2EyQ)
-- A comparison of SUMO’s count based and countless demand generation tools - *Pauline Hartwig and Michael Behrisch* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/o8h8dUrqpTM)
-
----
-
-**Session 7: Scenarios**
-
-- The impact of heavy vehicles on traffic - *Francois Vaudrin and Mathieu Vaudrin* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/P1lyN8RjG98)
-- Automated Calibration of Traffic Demand and Traffic Lights in SUMO Using Real-World Observations - *Michael Harth, Marcel Langer and Klaus Bogenberger* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/v8595gCXqeg)
-- Evaluating time-loss algorithm with SUMO - *Menno van der Woude* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/YANGym2z5vE)
-
----
-
-**Session 8: ITS**
-
-- Augmenting SUMO with Ring-and-Barrier Structured Traffic Signal Controller Module - *Qichao Wang, Tianxin Li and Wesley Jones* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/o8BGZZG7TLk)
-- Using Deep Reinforcement Learning to Coordinate Multi-Modal Journey Planning with Limited Transportation Capacity - *Lara Codeca and Vinny Cahill* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/OF--8wm81QQ)
-- Last-Mile Logistics Simulation in SUMO - *Fabian Post and El Mehdi Essadki* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/1YYw1-_EF38)
-
----
-
-**Session 9: Other traffic modes and models**
-
-- The Development of Pedestrian Gap Acceptance and Midblock Pedestrian Road Crossing Behavior Utilizing SUMO - *Peter Lawrence, Veronica Pellacini, Darren Blackshields and Lazaros Filippidis* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/77_s_CcY4Ck)
-<div class="alert alert-warning alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    This presentation was voted <b>best presentation</b>, by the conference attendees.
-</div>
-- Calibrating spatio-temporal network states in microscopic traffic simulation on a global level - *Henriette Triebke, Markus Kromer and Peter Vortisch* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/QzrkIrEllTI)
-- Investigating the Effect of Enabled Mesoscopic Settings within a Sensitivity Analysis - *Christina Presinger* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/3jEh5LZ9NLk)
-
----
-
-You can find all videos here: <a href="https://www.youtube.com/playlist?list=PLy7t4z5SYNaRIdaznUrlC8F-Vt3qla1GJ"><button type="button" class="btn btn-danger btn-sm"><i class="fab fa-youtube"></i> YouTube playlist</button></a>
-
-
-# Keynote
-
-<h3><i>Ride-hailing and ride-pooling: State of the art, future research directions, and the role of traffic simulation</i></h3>
-
-<img src="../images/prof_bogenberger.jpg" alt="picture of Klaus Bogenberger" style="width:100px; border-radius: 50%; margin-bottom:10px;">
-<h6>Univ.-Prof. Dr.-Ing. Klaus Bogenberger</h6>
-Chair of Traffic Engineering and Control<br>
-TUM Department of Civil, Geo and Environmental Engineering<br>
-Technical University of Munich
-<br>
-<a href="https://www.bgu.tum.de/en/vt/home/" class="btn btn-sm btn-outline-info" style="margin-top:10px;">Website</a>
-<a href="https://www.linkedin.com/school/tum-chair-of-traffic-engineering-and-control" class="btn btn-sm btn-outline-info" style="margin-top:10px;"><i class="fab fa-linkedin"></i></a>
-
-
-Already today, on-demand mobility services such as Uber and Lyft in the USA, and Didi in China have taken over a noticeable share of the modal split. Furthermore, the market value assessment of these companies is now higher than the one of established vehicle producers, as they are considered to have a very high potential despite current losses with regard to autonomous driving. With the elimination of driver costs, it is expected that ride-hailing and ride-pooling can be offered at a substantially lower cost than today, generating a significant increase in demand. To understand the impact of such automated on-demand systems on future transportation systems, simulations are needed to evaluate both fleet efficiency and their interaction with the overall transportation system.
-
-<p><a id="moreinfobutton" style="color:#0645ad; cursor:pointer;" onclick="document.getElementById('moreinfobutton').remove();" data-toggle="collapse" data-target="#moreinfo">Read more <i class="fas fa-angle-down"></i></a></p>
-<div id="moreinfo" class="collapse">
-Studies to date have focused mainly on efficient vehicle-customer assignments and fleet strategies such as proactive repositioning in static networks. For example, a study comparing a current car-sharing operation with an autonomous ride-hailing system was able to show that although 10% empty trips were generated in the ride-hailing operation, it significantly increased fleet utilization. Additionally, it can be observed that system efficiency increases as fleet and demand scale. These positive scaling effects are even more prominent in ride-pooling systems. Larger demand and fleet increase pooling opportunities, which increases the occupancy rate and reduces additional fleet miles per trip request. In a simulation study for Munich, the evaluation of the trajectories of all fleet vehicles showed that these bundling potentials mainly occur on main arterial roads, while additional mileage is induced on secondary roads. These scaling effects in combination with low-cost operation can lead to a fundamental change in the established traffic system. To prevent undesirable effects on the overall system, regulations such as fleet limits, tolling, or public transport integration can help, but their tools still need to be understood in detail.
-<br><br>
-So far, the mutual effects of ride-hailing and ride-pooling as well as traffic flow have only been modeled in a simplified way. The effective coupling to microscopic traffic simulations like SUMO can be of great benefit here. Such simulation models are already valuable tools in studies on traffic control algorithms, up to the analysis of the effects of automated vehicles. In the context of ride-hailing and ride-pooling, these simulation models can additionally help to further understand traffic flow effects arising from the introduction of large-scale on-demand services. Corresponding impacts of such operations onto traffic states can then be modelled dynamically. Vice-versa, dynamic travel time estimations can be beneficial for the modelling of ride-hailing and ride-pooling operation. Furthermore, the impact of required empty trips due to repositioning or bundled passenger flows due to pooling in urban transportation networks is still poorly understood. In addition, microscopic simulations are needed to efficiently organize boarding and loading processes, detect bottlenecks, and identify any needed infrastructure at an early stage.
-</div>
-
-# Wonder.me
-During the conference we are going to offer a virtual room to meet and talk. Move your avatar around to meet people, just make sure to have your mic and webcam on!
-
-# Social Event
-We are going to have a fun SUMO-related quiz using [Menti](https://www.menti.com/). Join our Zoom meeting and have a smartphone/tablet ready at hand. Test your knowledge of SUMO and win the glorious and prestigious prize of attaching your name to an easter egg in “sumo-gui”.
-
-<div class="alert alert-warning alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    SUMO guru of the year 2021: Lara Codeca.
-</div>
-
-(Check out the hall of fame, by pressing `Shift` + `F11` in sumo-gui 1.8.0 or newer)
-
-# Prices
-Participation at this year's conference will be **free of charge**!
-
-# Language
-The conference language is English.
-
-# Venue
-Given the extraordinary situation we are facing, this year's SUMO User Conference will be again **online** - via [Zoom](https://zoom.us/download).
+More info (and Call for Papers) coming soon.
 
 # Contact
 Please contact the conference team via mail at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de)
-
----
-
-<div class="text-center"><img src="../images/banner_2021.png" style="width:70%;" alt="Conference artwork" class="img-responsive"/></div>
