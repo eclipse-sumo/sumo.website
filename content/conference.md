@@ -57,10 +57,10 @@ The conference focuses on presenting new and unique results in the field of mobi
 **Templates and instructions for authors** can be found here: https://easychair.org/publications/for_authors   
 Technical Presentations do not require following a template, feel free to use your own style!
 
-<!-- ## Submission Link
+## Submission Link
 
 Please submit your papers via EasyChair:
-https://easychair.org/conferences/?conf=sumo2021 -->
+https://easychair.org/conferences/?conf=sumo2022
 
 ## Ethics and Malpractice Statement
 
