@@ -78,6 +78,18 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 # Prices
 Participation at this year's conference will be **free of charge**!
 
+# Keynote
+
+This year's keynote speaker will be **Prof. Dr.-Ing. Heather Kaths** from the University of Wuppertal.   
+[Website](https://radverkehr.uni-wuppertal.de/en/home/associates/prof-dr-ing-heather-kaths.html)
+
+*More info coming soon*
+
+# TAPAS Workshop
+The agent-based  demand model TAPAS is an open source development of DLR’s Institute for Transport Research. TAPAS simulated the mobility patterns of a virtual population of a modelled regions. Both the population as well as the activity places are represented individually. TAPAS distinguishes a large set of person groups, and different modes of transport. The mobility behavior of the population is determined using empirical daily mobility plans. The result is a list of daily activities for each person within the modeled area, including the starting location, the destination location, the begin of the ride and the ride’s duration as well as the chosen mode, among others. The result can be used as an input for the microscopic traffic flow simulation SUMO.
+
+Within the talk, the functioning of TAPAS will be presented as well as different application scenarios, ranging from public transport pricing, installation of demand-responsive transport to air quality measures on city scale.
+
 # Social Event
 *More info coming soon*
 
