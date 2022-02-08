@@ -13,6 +13,10 @@ draft: false
 
 ---
 
+<div class="alert alert-primary" role="alert">
+  New Paper and Abstract Submission Deadline: Monday, <b>February 28th, 2022</b>.
+</div>
+
 # Save the date!
 SUMO User Conference 2022: May 09-11.
 
@@ -39,7 +43,7 @@ The conference focuses on presenting new and unique results in the field of mobi
    - All accepted scientific papers must be presented at the conference.
    - Scientific papers will be reviewed by at least 2 reviewers.
    - All accepted scientific papers will be published in the SUMO proceedings.
-   - Scientific papers must be submitted in LaTeX or Word format before midnight, Monday, **February 14th, 2022**.
+   - Scientific papers must be submitted in LaTeX or Word format before midnight, Monday, ~~*February 14th, 2022*~~ **February 28th, 2022**.
    - Scientific papers should be between 5 and 20 pages long.   
   
 2. Technical Presentations:
@@ -52,7 +56,7 @@ The conference focuses on presenting new and unique results in the field of mobi
         - SUMO Use Cases
         - Project Presentations
         - Work in Progress which would benefit from the feedback of other SUMO users
-    - Title and a short abstract (300 words) must be submitted until Monday, **February 14th, 2022**.
+    - Title and a short abstract (300 words) must be submitted until Monday, ~~*February 14th, 2022*~~ **February 28th, 2022**.
 
 **Templates and instructions for authors** can be found here: https://easychair.org/publications/for_authors   
 Technical Presentations do not require following a template, feel free to use your own style!
@@ -68,7 +72,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 
 # Important Dates
 
-- Paper and Abstract Submission Deadline: **Monday, February 14th, 2022**.
+- Paper and Abstract Submission Deadline: **Monday,** ~~*February 14th, 2022*~~ **February 28th, 2022**.
 - Notification of Acceptance: **End of March, 2022**.
 - Camera Ready version due: **Monday, April 25th, 2022**.
 
