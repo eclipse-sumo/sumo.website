@@ -13,6 +13,10 @@ draft: false
 
 ---
 
+<div class="alert alert-warning" role="alert">
+  Registration is now open.
+</div>
+
 <div class="alert alert-primary" role="alert">
   New Paper and Abstract Submission Deadline: Monday, <b>February 28th, 2022</b>.
 </div>
@@ -84,7 +88,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 - Camera Ready version due: **Monday, April 25th, 2022**.
 
 # Registration
-*Registration link coming soon*
+Please register [here](https://us06web.zoom.us/meeting/register/tZ0sd-Chpj4vH9PmVD8w-2uLqMy8n2Ssv1x_).
 
 # Prices
 Participation at this year's conference will be **free of charge**!
