@@ -17,17 +17,6 @@ draft: false
   Registration is now open.
 </div>
 
-<div class="alert alert-primary" role="alert">
-  New Paper and Abstract Submission Deadline: Monday, <b>February 28th, 2022</b>.
-</div>
-
-<div class="alert alert-info" role="alert">
-  As in previous years, the call for papers is <b>also open for (technical) presentations</b> on current developments and fundamental work that is not yet mature enough for a full paper.
-  <br><br>
-  We encourage interested participants to submit a title for their presentation and a short abstract of maximum 300 words presenting the results of their research and development work, overarching developments and other relevant activities. 
-  Submissions are welcome from individual work, project teams and organizations.
-</div>
-
 # Save the date!
 SUMO User Conference 2022: May 09-11.
 
@@ -83,7 +72,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 
 # Important Dates
 
-- Paper and Abstract Submission Deadline: **Monday,** ~~*February 14th, 2022*~~ **February 28th, 2022**.
+- Paper and Abstract Submission Deadline: **Monday,** ~~*February 14th, 2022*~~ **February 28th, 2022**. &#x2714;
 - Notification of Acceptance: **End of March, 2022**.
 - Camera Ready version due: **Monday, April 25th, 2022**.
 
