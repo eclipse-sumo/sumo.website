@@ -17,13 +17,13 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ .Permalink | absLangURL }}">
     <meta name="keywords" content="SUMO, Eclipse SUMO, Traffic Simulation, Mobility">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ `libraries/bootstrap.min.css` | absURL }}">
+    <script src="{{ `libraries/jquery.min.js` | absURL }}"></script>
+    <script src="{{ `libraries/popper.min.js` | absURL }}"></script>
+    <script src="{{ `libraries/bootstrap.min.js` | absURL }}"></script>
     <link rel="stylesheet" href="{{ `css/custom.css` | absURL }}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <link rel="stylesheet" href="{{ `libraries/all.css` | absURL }}">
+    <script src="{{ `libraries/buttons.js` | absURL }}"></script>
 
     <script>
         window.onload = function check_if_ie() {
