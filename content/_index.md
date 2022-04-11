@@ -15,12 +15,6 @@ draft: false
   </div>
 </div> -->
 
-<div class="alert alert-warning" role="alert">
-  Registration to the SUMO User Conference 2022 is now open.
-  <br>
-  <small><a href="https://us06web.zoom.us/meeting/register/tZ0sd-Chpj4vH9PmVD8w-2uLqMy8n2Ssv1x_">Click here</a></small>
-</div>
-
 <!-- YouTube Tutorial -->
 <iframe width="100%" height="400" style="margin: 0 0 40px 0;"src="https://www.youtube.com/embed/tlshWdzFWpY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
