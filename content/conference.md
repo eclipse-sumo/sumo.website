@@ -156,7 +156,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
   <tr>
     <td align="right">14:30 - 15:30<br><br>Session 3<br><b>Autonomous Vehicles</b></td>
 <td>
-    <b>&#128193; SUMO4AV: An Environment to Simulate Scenarios for Autonomous Vehicles with SUMO Based on OpenStreetMap Data</b><br>
+    <b>&#128193; SUMO4AV: An Environment to Simulate Scenarios for Shared Autonomous Vehicle Fleets with SUMO Based on OpenStreetMap Data</b><br>
     Emanuel Reichsöllner, Andreas Freymann, Mirko Sonntag and Ingo Trautwein
 <hr>
     <b>&#128193; Extending SUMO for Lane-Free Microscopic Simulation of Connected and Automated Vehicles</b><br>
