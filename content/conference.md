@@ -60,6 +60,10 @@ Technical Presentations do not require following a template, feel free to use yo
 - Notification of Acceptance: **End of March, 2022**. &#x2714;
 - Camera Ready version due: **Monday, April 25th, 2022**.
 
+<div class="alert alert-warning" role="alert">
+  Please upload the camera ready version paper as an update to the submission in EasyChair.
+</div>
+
 # Zoom
 The entire conference will take place on the same Zoom Meeting. Click on the Meeting-ID below to join.
 
