@@ -166,9 +166,6 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
 <hr>
     <b>&#128193; Extending SUMO for Lane-Free Microscopic Simulation of Connected and Automated Vehicles</b><br>
     Dimitrios Troullinos, Georgios Chalkiadakis, Diamantis Manolis, Ioannis Papamichail and Markos Papageorgiou
-<hr>
-    <b>&#128193; Simulating platooned connected autonomous vehicle in a large scale urban scenario</b><br>
-    Joerg Schweizer, Cristian Poliziani and Federico Rupi
     </td>
   </tr>
   <tr>
@@ -228,6 +225,9 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
 <hr>
     <b>Combining microtraffic models and complex vehicular simulators</b><br>
     Aron Jazcilevich, Adolfo Hernández-Moreno, Ulises Diego-Ayala and Ivan Hernández-Paniagua
+<hr>
+    <b>&#128193; Simulating platooned connected autonomous vehicle in a large scale urban scenario</b><br>
+    Joerg Schweizer, Cristian Poliziani and Federico Rupi
     </td>
   </tr>
   <tr>
