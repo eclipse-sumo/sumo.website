@@ -152,9 +152,10 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
   <tr>
     <td align="right">13:00 - 14:00</td>
     <td>
-    <b><a href="#keynote">Keynote</a>:
+    <b>Keynote:
     Simulating and modelling traffic: What are we trying to achieve?</b><br>
     Prof. Dr.-Ing. Heather Kaths
+    <p><a style="color:#0645ad; cursor:pointer;" href="#keynote">Read more <i class="fas fa-angle-down"></i></a></p>
     </td>
   </tr>
   <tr>
@@ -185,7 +186,8 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
   </tr>
   <tr style="background-color: #d0f0c0;">
     <td align="right">17:00</td>
-    <td><b><i><a href="#social-event">Social Event</a></i></b> &#x1F3B2;</td>
+    <td><b><i>Social Event</i></b> &#x1F3B2;
+        <p><a style="color:#0645ad; cursor:pointer;" href="#social-event">Read more <i class="fas fa-angle-down"></i></a></p></td>
   </tr>
 </tbody>
 </table>
@@ -301,7 +303,11 @@ Within the talk, the functioning of TAPAS will be presented as well as different
 <a href="https://github.com/DLR-VF/TAPAS" class="btn btn-sm btn-outline-info" style="margin-top:10px;">GitHub repository</a>
 
 # Social Event
-*More info coming soon*
+We are going to have a fun SUMO-related quiz using [Menti](https://www.menti.com/). Join our [Zoom meeting](#zoom) and have a smartphone/tablet ready at hand. Test your knowledge of SUMO and win the glorious and prestigious prize of attaching your name to an easter egg in “sumo-gui”:
+
+<img src="../images/hall_of_fame.png" alt="Hall of Fame window" style="width:600px;">
+
+(Check out the current SUMO guru, by pressing `Shift` + `F11` in sumo-gui 1.8.0 or newer)
 
 # Registration
 Please register [here](https://us06web.zoom.us/meeting/register/tZ0sd-Chpj4vH9PmVD8w-2uLqMy8n2Ssv1x_).
