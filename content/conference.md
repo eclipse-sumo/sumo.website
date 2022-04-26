@@ -54,16 +54,6 @@ The conference focuses on presenting new and unique results in the field of mobi
 **Templates and instructions for authors** can be found here: https://easychair.org/publications/for_authors   
 Technical Presentations do not require following a template, feel free to use your own style! -->
 
-# Important Dates (for Authors)
-
-- Paper and Abstract Submission Deadline: **Monday,** ~~*February 14th, 2022*~~ **February 28th, 2022**. &#x2714;
-- Notification of Acceptance: **End of March, 2022**. &#x2714;
-- Camera Ready version due: **Monday, April 25th, 2022**.
-
-<div class="alert alert-warning" role="alert">
-  Please upload the camera ready version paper as an update to the submission in EasyChair.
-</div>
-
 # Zoom
 The entire conference will take place on the same Zoom Meeting. Click on the Meeting-ID below to join.
 
@@ -115,7 +105,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
 </thead>
 <tbody>
   <tr>
-    <td align="right">09:00 - 10:20<br><br>Session 1<br><b>Traffic lights</b></td>
+    <td align="right">09:00 - 10:20<br><br>Session 1<br><b>Traffic lights</b><p style="font-size: 60%">Session chair: Ronald Nippold</p></td>
 <td>
     <b>&#128193; Extension and Validation of NEMA-Style Dual-Ring Controller in SUMO</b><br>
     Max Schrader, Qichao Wang and Joshua Bittle
@@ -131,7 +121,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
     </td>
   </tr>
   <tr>
-    <td align="right">10:40 - 12:00<br><br>Session 2<br><b>Other modes of transportation</b></td>
+    <td align="right">10:40 - 12:00<br><br>Session 2<br><b>Other modes of transportation</b><p style="font-size: 60%">Session chair: Jakob Erdmann</p></td>
 <td>
     <b>Simulating Digital Rail: From PlanPro railway plannings to SUMO simulations</b><br>
     Arne Boockmeyer, Robert Schmid and Andreas Polze
@@ -159,7 +149,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
     </td>
   </tr>
   <tr>
-    <td align="right">14:30 - 15:30<br><br>Session 3<br><b>Autonomous Vehicles</b></td>
+    <td align="right">14:30 - 15:30<br><br>Session 3<br><b>Autonomous Vehicles</b><p style="font-size: 60%">Session chair: Michael Behrisch</p></td>
 <td>
     <b>&#128193; SUMO4AV: An Environment to Simulate Scenarios for Shared Autonomous Vehicle Fleets with SUMO Based on OpenStreetMap Data</b><br>
     Emanuel Reichsöllner, Andreas Freymann, Mirko Sonntag and Ingo Trautwein
@@ -169,7 +159,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
     </td>
   </tr>
   <tr>
-    <td align="right">16:00 - 17:00<br><br>Session 4<br><b>ITS</b></td>
+    <td align="right">16:00 - 17:00<br><br>Session 4<br><b>ITS</b><p style="font-size: 60%">Session chair: Angelo Banse</p></td>
 <td>
     <b>Utilizing Vehicle Trajectory Data (Probe Data) from Connected Vehicles (CV) to Characterize Performance Measures of a Highway Corridor with Incidents</b><br>
     Norris Novat, Emmanuel Kidando and Jacqueline Jenkins
@@ -199,7 +189,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
 </thead>
 <tbody>
   <tr>
-    <td align="right">09:00 - 10:20<br><br>Session 5<br><b>Routing / Efficiency / Logistics</b></td>
+    <td align="right">09:00 - 10:20<br><br>Session 5<br><b>Routing / Efficiency / Logistics</b><p style="font-size: 60%">Session chair: Yun-Pang Flötteröd</p></td>
 <td>
     <b>&#128193; Proposing a Simulation-Based Dynamic System Optimal Traffic Assignment Algorithm for SUMO: An Approximation of Marginal Travel Time</b><br>
     Behzad Bamdad Mehrabani, Jakob Erdmann, Luca Sgambi and Maaike Snelder
@@ -215,7 +205,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
     </td>
   </tr>
   <tr>
-    <td align="right">10:40 - 12:00<br><br>Session 6<br><b>Micro simulation / other</b></td>
+    <td align="right">10:40 - 12:00<br><br>Session 6<br><b>Micro simulation / other</b><p style="font-size: 60%">Session chair: Peter Wagner</p></td>
 <td>
     <b>&#128193; Signal priority for improving fluidity and decreasing fuel consumption</b><br>
     Jacques Renaud, Leandro Coelho, Khaled Belhassine and Vincent Turgeon
@@ -234,7 +224,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
     <td style="text-align:center; background-color: #d9f1ff;" colspan="2"><b><i>Lunch break </b></i>&#x2615;</td>
   </tr>
   <tr>
-    <td align="right">13:00 - 14:00<br><br>Session 7<br><b>Tools / other</b></td>
+    <td align="right">13:00 - 14:00<br><br>Session 7<br><b>Tools / other</b><p style="font-size: 60%">Session chair: Matthias Schwamborn</p></td>
 <td>
     <b>Simulation of Urban Air Mobility: Progress from the HorizonUAM Project</b><br>
     Nabih Naeem, Patrick Ratei, Nazlican Cigal, Prajwal Shiva Prakasha, Thomas Zill and Björn Nagel
@@ -247,7 +237,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
     </td>
   </tr>
   <tr>
-    <td align="right">14:30 - 15:30<br><br>Session 8<br><b>Tools / Co-simulation</b></td>
+    <td align="right">14:30 - 15:30<br><br>Session 8<br><b>Tools / Co-simulation</b><p style="font-size: 60%">Session chair: Robert Hilbrich</p></td>
 <td>
     <b>strazoon Planning Solutions - building generic traffic models for SUMO</b><br>
     Martin Reuß and Tobias Lukowitz
@@ -260,7 +250,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
     </td>
   </tr>
   <tr>
-    <td align="right">16:00 - 17:00<br><br>Session 9<br><b>Scenarios</b></td>
+    <td align="right">16:00 - 17:00<br><br>Session 9<br><b>Scenarios</b><p style="font-size: 60%">Session chair: Angelo Banse</p></td>
 <td>
     <b>Evaluating measures for prioritising urban public transport using SUMO – A case study of a corridor in Münster, Germany</b><br>
     Marcus Herbrecht, Moritz Berghaus and Philipp-Armand Klee
