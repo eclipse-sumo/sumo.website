@@ -156,6 +156,9 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
 <hr>
     <b>&#128193; Extending SUMO for Lane-Free Microscopic Simulation of Connected and Automated Vehicles</b><br>
     Dimitrios Troullinos, Georgios Chalkiadakis, Diamantis Manolis, Ioannis Papamichail and Markos Papageorgiou
+<hr>
+    <b>SESAM: First Steps Towards SUMO in the Cloud</b><br>
+    Robert Hilbrich and Angelo Banse
     </td>
   </tr>
   <tr>
