@@ -63,7 +63,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
 
 # Agenda
 
-<small>&#128339; <i>Schedule given in Central European Summer Time (CEST) (UTC+2) - This agenda may be subject to change</i></small>
+<small>&#128339; <i>Schedule given in Central European Summer Time (CEST) (UTC+2) - This agenda may be subject to change</i></small></i>
 
 <table style="border: 2px solid #999;">
 <thead>
@@ -88,7 +88,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
     <td align="right">16:00 - 17:00</td>
     <td>
    <b>TAPAS Workshop</b><br>
-   Matthias Heinrichs / Daniel Krajzewicz
+   Matthias Heinrichs <i><small>(DLR)</small></i>
 <p><a style="color:#0645ad; cursor:pointer;" href="#tapas-workshop">Read more <i class="fas fa-angle-down"></i></a></p>
     </td>
   </tr>
@@ -108,32 +108,32 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
     <td align="right">09:00 - 10:20<br><br>Session 1<br><b>Traffic lights</b><p style="font-size: 60%">Session chair: Ronald Nippold</p></td>
 <td>
     <b>&#128193; Extension and Validation of NEMA-Style Dual-Ring Controller in SUMO</b><br>
-    Max Schrader, Qichao Wang and Joshua Bittle
+    Max Schrader <i><small>(University of Alabama)</small></i>, Qichao Wang <i><small>(National Renewable Energy Laboratory)</small></i> and Joshua Bittle <i><small>(University of Alabama)</small></i>
 <hr>
     <b>&#128193; A Comparison of Reinforcement Learning Agents Applied to Traffic Signal Optimisation</b><br>
-    Cobus Louw, Louwrens Labuschange and Tiffany Woodley
+    Cobus Louw, Louwrens Labuschange and Tiffany Woodley <i><small>(all Bytefuse)</small></i>
 <hr>
     <b>&#128193; High fidelity modelling of traffic light control with xml logic representation</b><br>
-    Maik Halbach and Jakob Erdmann
+    Maik Halbach and Jakob Erdmann <i><small>(all DLR)</small></i>
 <hr>
     <b>Evaluating traffic performance of transit signal priority using SUMO simulation: A real-world case</b><br>
-    Chun-Cheng Liang, Hsuan-Chih Wang, Wei-Hsun Lee and Ming-Te Wang
+    Chun-Cheng Liang <i><small>(National Cheng Kung University)</small></i>, Hsuan-Chih Wang <i><small>(National Cheng Kung University)</small></i>, Wei-Hsun Lee <i><small>(National Cheng Kung University)</small></i> and Ming-Te Wang <i><small>(Bureau of Transportation, Tainan City Government)</small></i>
     </td>
   </tr>
   <tr>
     <td align="right">10:40 - 12:00<br><br>Session 2<br><b>Other modes of transportation</b><p style="font-size: 60%">Session chair: Jakob Erdmann</p></td>
 <td>
     <b>Simulating Digital Rail: From PlanPro railway plannings to SUMO simulations</b><br>
-    Arne Boockmeyer, Robert Schmid and Andreas Polze
+    Arne Boockmeyer, Robert Schmid and Andreas Polze <i><small>(all Hasso Plattner Institute, University of Potsdam)</small></i>
 <hr>
     <b>&#128193; A dynamic model for ride-matching problem in multi-hop ride-sharing system</b><br>
-    Linyang Wang and Jianping Wu
+    Linyang Wang and Jianping Wu <i><small>(all Tsinghua University)</small></i>
 <hr>
     <b>&#128193; Investigating the behaviors of cyclists and pedestrians under automated shuttle operation</b><br>
-    Yun-Pang Flötteröd, Iman Pereira, Johan Olstam and Laura Bieker-Walz
+    Yun-Pang Flötteröd <i><small>(DLR)</small></i>, Iman Pereira <i><small>(The Swedish National Road and Transport Research Institute)</small></i>, Johan Olstam <i><small>(The Swedish National Road and Transport Research Institute)</small></i> and Laura Bieker-Walz <i><small>(Dataport)</small></i>
 <hr>
     <b>Simulating Personal Rapid Transit in SUMO</b><br>
-    Felix Gotzler and Franziska Neumann
+    Felix Gotzler and Franziska Neumann <i><small>(all TU München)</small></i>
     </td>
   </tr>
   <tr>
@@ -144,7 +144,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
     <td>
     <b>Keynote:
     Simulating and modelling traffic: What are we trying to achieve?</b><br>
-    Prof. Dr.-Ing. Heather Kaths
+    Prof. Dr.-Ing. Heather Kaths <i><small>(University of Wuppertal)</small></i>
     <p><a style="color:#0645ad; cursor:pointer;" href="#keynote">Read more <i class="fas fa-angle-down"></i></a></p>
     </td>
   </tr>
@@ -152,26 +152,26 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
     <td align="right">14:30 - 15:30<br><br>Session 3<br><b>Autonomous Vehicles</b><p style="font-size: 60%">Session chair: Michael Behrisch</p></td>
 <td>
     <b>&#128193; SUMO4AV: An Environment to Simulate Scenarios for Shared Autonomous Vehicle Fleets with SUMO Based on OpenStreetMap Data</b><br>
-    Emanuel Reichsöllner, Andreas Freymann, Mirko Sonntag and Ingo Trautwein
+    Emanuel Reichsöllner <i><small>(Hochschule Esslingen)</small></i>, Andreas Freymann <i><small>(Fraunhofer-Institut für Arbeitswirtschaft und Organisation IAO)</small></i>, Mirko Sonntag <i><small>(Hochschule Esslingen)</small></i> and Ingo Trautwein <i><small>(Fraunhofer-Institut für Arbeitswirtschaft und Organisation IAO)</small></i>
 <hr>
     <b>&#128193; Extending SUMO for Lane-Free Microscopic Simulation of Connected and Automated Vehicles</b><br>
-    Dimitrios Troullinos, Georgios Chalkiadakis, Diamantis Manolis, Ioannis Papamichail and Markos Papageorgiou
+    Dimitrios Troullinos, Georgios Chalkiadakis, Diamantis Manolis, Ioannis Papamichail and Markos Papageorgiou <i><small>(all Technical University of Crete)</small></i>
 <hr>
     <b>SESAM: First Steps Towards SUMO in the Cloud</b><br>
-    Robert Hilbrich and Angelo Banse
+    Robert Hilbrich and Angelo Banse <i><small>(all DLR)</small></i>
     </td>
   </tr>
   <tr>
     <td align="right">16:00 - 17:00<br><br>Session 4<br><b>ITS</b><p style="font-size: 60%">Session chair: Angelo Banse</p></td>
 <td>
     <b>Utilizing Vehicle Trajectory Data (Probe Data) from Connected Vehicles (CV) to Characterize Performance Measures of a Highway Corridor with Incidents</b><br>
-    Norris Novat, Emmanuel Kidando and Jacqueline Jenkins
+    Norris Novat, Emmanuel Kidando and Jacqueline Jenkins <i><small>(all Cleveland State University)</small></i>
 <hr>
     <b>&#128193; Multi-Modal Traffic Simulation Calibration and Integration with Real-Time Hardware in Loop Simulator</b><br>
-    Vikhyat Kalra, Punit Tulpule and Jacob Isaman
+    Vikhyat Kalra, Punit Tulpule and Jacob Isaman <i><small>(all The Ohio State University)</small></i>
 <hr>
     <b>Simulation of surrounding traffic in a driving simulator – Coupling Sumo, RoadRunner and Unity</b><br>
-    Richard Schulte Holthausen, Moritz Berghaus and Philipp-Armand Klee
+    Richard Schulte Holthausen, Moritz Berghaus and Philipp-Armand Klee <i><small>(all Institute of Highway Engineering, RWTH Aachen University)</small></i>
     </td>
   </tr>
   <tr style="background-color: #d0f0c0;">
@@ -195,32 +195,32 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
     <td align="right">09:00 - 10:20<br><br>Session 5<br><b>Routing / Efficiency / Logistics</b><p style="font-size: 60%">Session chair: Yun-Pang Flötteröd</p></td>
 <td>
     <b>&#128193; Proposing a Simulation-Based Dynamic System Optimal Traffic Assignment Algorithm for SUMO: An Approximation of Marginal Travel Time</b><br>
-    Behzad Bamdad Mehrabani, Jakob Erdmann, Luca Sgambi and Maaike Snelder
+    Behzad Bamdad Mehrabani <i><small>(UC louvain)</small></i>, Jakob Erdmann <i><small>(DLR)</small></i>, Luca Sgambi <i><small>(UC louvain)</small></i> and Maaike Snelder <i><small>(TU Delft)</small></i>
 <hr>
     <b>&#128193; Combining operative train simulation with logistics simulation in SUMO</b><br>
-    Jakob Geischberger and Norman Weik
+    Jakob Geischberger and Norman Weik <i><small>(all DLR)</small></i>
 <hr>
     <b>A Virtual Testbed for the Development of AI Solutions to Boost Operational Efficiency in Road Transportation Networks</b><br>
-    Arun Sathanur, Arif Khan, Milan Jain and Ashutosh Dutta
+    Arun Sathanur, Arif Khan, Milan Jain and Ashutosh Dutta <i><small>(all Pacific Northwest National Laboratory)</small></i>
 <hr>
     <b>i4Port: Simulation of drayage operations based on vehicle communication technologies at port terminals</b><br>
-    Victor Madrigal
+    Victor Madrigal <i><small>(DLR)</small></i>
     </td>
   </tr>
   <tr>
     <td align="right">10:40 - 12:00<br><br>Session 6<br><b>Micro simulation / other</b><p style="font-size: 60%">Session chair: Peter Wagner</p></td>
 <td>
     <b>&#128193; Signal priority for improving fluidity and decreasing fuel consumption</b><br>
-    Jacques Renaud, Leandro Coelho, Khaled Belhassine and Vincent Turgeon
+    Jacques Renaud <i><small>(Laval University)</small></i>, Leandro Coelho <i><small>(Laval University)</small></i>, Khaled Belhassine <i><small>(Laval University)</small></i> and Vincent Turgeon <i><small>(Ville de Trois-Rivières)</small></i>
 <hr>
     <b>Statistics and Visualizations of SUMO Scenario Runs</b><br>
-    Mark Cowan
+    Mark Cowan <i><small>(DoD USACE ERDC ITL CAB)</small></i>
 <hr>
     <b>Combining microtraffic models and complex vehicular simulators</b><br>
-    Aron Jazcilevich, Adolfo Hernández-Moreno, Ulises Diego-Ayala and Ivan Hernández-Paniagua
+    Aron Jazcilevich <i><small>(Universidad Nacional Autonoma de Mexico)</small></i>, Adolfo Hernández-Moreno <i><small>(Universidad Autónoma Metropolitana)</small></i>, Ulises Diego-Ayala <i><small>(Escola Universitària Salesiana de Sarrià)</small></i> and Ivan Hernández-Paniagua <i><small>(Universidad Nacional Autónoma de México)</small></i>
 <hr>
     <b>&#128193; Simulating platooned connected autonomous vehicle in a large scale urban scenario</b><br>
-    Joerg Schweizer, Cristian Poliziani and Federico Rupi
+    Joerg Schweizer, Cristian Poliziani and Federico Rupi <i><small>(all University of Bologna)</small></i>
     </td>
   </tr>
   <tr>
@@ -230,39 +230,39 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
     <td align="right">13:00 - 14:00<br><br>Session 7<br><b>Tools / other</b><p style="font-size: 60%">Session chair: Matthias Schwamborn</p></td>
 <td>
     <b>Simulation of Urban Air Mobility: Progress from the HorizonUAM Project</b><br>
-    Nabih Naeem, Patrick Ratei, Nazlican Cigal, Prajwal Shiva Prakasha, Thomas Zill and Björn Nagel
+    Nabih Naeem, Patrick Ratei, Nazlican Cigal, Prajwal Shiva Prakasha, Thomas Zill and Björn Nagel <i><small>(all DLR)</small></i>
 <hr>
     <b>&#128193; Topology-Preserving Simplification of OpenStreetMap Network Data for Large-scale Simulation in SUMO</b><br>
-    Zhuoxiao Meng, Xiaorui Du, Paolo Sottovia, Daniele Foroni, Cristian Axenie, Alexander Wieder, David Eckhoff, Stefano Bortoli, Alois Knoll and Christoph Sommer
+    Zhuoxiao Meng <i><small>(TU Munich and HMRC)</small></i>, Xiaorui Du <i><small>(TU Munich and HMRC)</small></i>, Paolo Sottovia <i><small>(HMRC)</small></i>, Daniele Foroni <i><small>(HMRC)</small></i>, Cristian Axenie <i><small>(HMRC)</small></i>, Alexander Wieder <i><small>(HMRC)</small></i>, David Eckhoff <i><small>(TU Munich and TUMCREATE)</small></i>, Stefano Bortoli <i><small>(HMRC)</small></i>, Alois Knoll <i><small>(TU Munich and Nanyang Technological University)</small></i> and Christoph Sommer <i><small>(TU Dresden)</small></i>
 <hr>
     <b>SUMO for parking studies: Challenges and opportunities</b><br>
-    Prashant Chauhan, Salil Goel and Stephan Winter
+    Prashant Chauhan <i><small>(Indian Institute of Technology Kanpur)</small></i>, Salil Goel <i><small>(Indian Institute of Technology Kanpur)</small></i> and Stephan Winter <i><small>(University of Melbourne)</small></i>
     </td>
   </tr>
   <tr>
     <td align="right">14:30 - 15:30<br><br>Session 8<br><b>Tools / Co-simulation</b><p style="font-size: 60%">Session chair: Robert Hilbrich</p></td>
 <td>
     <b>strazoon Planning Solutions - building generic traffic models for SUMO</b><br>
-    Martin Reuß and Tobias Lukowitz
+    Martin Reuß, Tobias Lukowitz and Martin Lächele <i><small>(all Seven Principles Mobility GmbH)</small></i>
 <hr>
     <b>&#128193; Implementation of a Perception Module for Smart Mobility Applications in Eclipse MOSAIC</b><br>
-    Robert Protzmann, Karl Schrab, Moritz Schweppenhäuser and Ilja Radusch
+    Robert Protzmann <i><small>(Fraunhofer Institute FOKUS)</small></i>, Karl Schrab <i><small>(Daimler Center for Automotive IT Innovations, Technical University of Berlin)</small></i>, Moritz Schweppenhäuser <i><small>(Fraunhofer Institute FOKUS)</small></i> and Ilja Radusch <i><small>(Daimler Center for Automotive IT Innovations, Technical University of Berlin)</small></i>
 <hr>
     <b>A Co-Simulation Middleware: Virtual Testing of Automotive Applications with Multiple Simulators</b><br>
-    Dominik Salles, Lukas Lang, Martin Kehrer and Hans-Christian Reuss
+    Dominik Salles <i><small>(Research Institute of Automotive Engineering and Vehicle Engines Stuttgart (FKFS))</small></i>, Lukas Lang <i><small>(Institute of Automotive Engineering (IFS))</small></i>, Martin Kehrer <i><small>(Research Institute of Automotive Engineering and Vehicle Engines Stuttgart (FKFS))</small></i> and Hans-Christian Reuss <i><small>(Institute of Automotive Engineering (IFS))</small></i>
     </td>
   </tr>
   <tr>
     <td align="right">16:00 - 17:00<br><br>Session 9<br><b>Scenarios</b><p style="font-size: 60%">Session chair: Angelo Banse</p></td>
 <td>
     <b>Evaluating measures for prioritising urban public transport using SUMO – A case study of a corridor in Münster, Germany</b><br>
-    Marcus Herbrecht, Moritz Berghaus and Philipp-Armand Klee
+    Marcus Herbrecht, Moritz Berghaus and Philipp-Armand Klee <i><small>(all Institute of Highway Engineering, RWTH Aachen University)</small></i>
 <hr>
     <b>Simulation of traffic scenarios using SUMO</b><br>
-    Siva Jagadesh M., Vignesh Bondugula, Vijay Jaisankar, Jayati Deshmukh and Srinath Srinivasa
+    Siva Jagadesh M., Vignesh Bondugula, Vijay Jaisankar, Jayati Deshmukh and Srinath Srinivasa <i><small>(all International Institute of Information Technology, Bangalore)</small></i>
 <hr>
     <b>&#128193; Building a real-world traffic micro-simulation scenario from scratch with SUMO</b><br>
-    Maria Laura Clemente
+    Maria Laura Clemente <i><small>(CRS4)</small></i>
     </td>
   </tr>
   <tr>
@@ -278,7 +278,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
 <h3><i>Simulating and modelling traffic: What are we trying to achieve?</i></h3>
 
 <img src="../images/heather_kaths.png" alt="picture of Heather Kaths" style="width:100px; border-radius: 50%; margin-bottom:10px;">
-<br><small style="color: lightgray">© Friederike von Heyden/Bergische Universität Wuppertal</small>
+<br><small style="color: lightgray">© Friederike von Heyden/Bergische Universität Wuppertal</small></i>
 <h6>Prof. Dr.-Ing. Heather Kaths</h6>
 Head of the Department for Bicycle Traffic Planning<br>
 University of Wuppertal<br>
