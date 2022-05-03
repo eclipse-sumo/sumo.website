@@ -158,7 +158,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
     Dimitrios Troullinos, Georgios Chalkiadakis, Diamantis Manolis, Ioannis Papamichail and Markos Papageorgiou <i><small>(all Technical University of Crete)</small></i>
 <hr>
     <b>SESAM: First Steps Towards SUMO in the Cloud</b><br>
-    Robert Hilbrich and Angelo Banse <i><small>(all DLR)</small></i>
+    Robert Hilbrich and Angelo Banse <i><small>(all co4e GmbH)</small></i>
     </td>
   </tr>
   <tr>
