@@ -61,6 +61,13 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
 **Meeting-ID:** [891 0998 5557](https://zoom.us/j/89109985557)   
 **Passcode:** *See your Zoom Confirmation Email (received after [registration](#registration))*
 
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+<b><p class="alert-heading">Annex rooms</p></b>
+  During the conference there will be available 2 additional Zoom-Meeting-Rooms (so-called <i>"Annex rooms"</i>) to facilitate discussions and exchange between participants. Feel free to enter those rooms during breaks.
+  <li>Annex 1 &rarr;  Meeting-ID: <a href="https://zoom.us/j/81509842783">815 0984 2783</a> (same Passcode as for the conference)</li>
+  <li>Annex 2 &rarr; Meeting-ID: <a href="https://zoom.us/j/84058668977">840 5866 8977</a> (same Passcode as for the conference)</li>
+</div>
+
 # Agenda
 
 <small>&#128339; <i>Schedule given in Central European Summer Time (CEST) (UTC+2) - This agenda may be subject to change</i></small></i>
@@ -76,6 +83,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
     <td align="right">13:00 - 14:00</td>
     <td>
     <b>Opening & Tutorial</b><br>
+    <a href="http://sumo.dlr.de/daily/sumo2022_tutorial.zip"><i class="fas fa-file-archive"></i> Tutorial files</a>
     </td>
   </tr>
   <tr>
