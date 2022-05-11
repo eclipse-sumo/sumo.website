@@ -89,7 +89,7 @@ The entire conference will take place on the same Zoom Meeting. Click on the Mee
   <tr>
     <td align="right">14:30 - 15:30</td>
     <td>
-    <b>Ask us anything</b><br>
+    <b>Ask us anything</b> • <a href="https://sumo.dlr.de/2022/chat_QA.txt"><i class="far fa-file-alt"></i> Q&A Transcript</a><br>
     </td>
   </tr>
   <tr>
