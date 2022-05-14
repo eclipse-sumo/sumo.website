@@ -3,10 +3,12 @@
 This repository contains the source files for the [Eclipse SUMO website](https://eclipse.org/sumo).
 The SUMO website is generated using [Hugo](https://gohugo.io/).
 
+---
 ## Getting started
 
 ### Prerequisites
 - [Hugo](https://gohugo.io/getting-started/installing/)
+---
 
 ### Installation
 
@@ -29,6 +31,27 @@ To generate the final static html files, run:
 hugo
 ```
 This should create the *public* directory, containing all the necessary HTML and CSS files.
+
+---
+
+### Docker
+You can also run the project locally through [Docker](https://www.docker.com/)   
+
+First, build the image: 
+```
+sudo docker build -t <NAME_OF_IMAGE> github.com/eclipse/sumo.website#main
+``` 
+  
+Then, run the website:
+```
+sudo docker run -p <PORT_NUMBER>:80 <NAME_OF_IMAGE>
+```
+You can remove the created image as follows:
+```
+sudo docker image rm -f <NAME_OF_IMAGE>
+```
+
+---
 
 ## Other links
 - [SUMO repository](https://github.com/eclipse/sumo)
