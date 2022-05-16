@@ -54,20 +54,6 @@ The conference focuses on presenting new and unique results in the field of mobi
 **Templates and instructions for authors** can be found here: https://easychair.org/publications/for_authors   
 Technical Presentations do not require following a template, feel free to use your own style! -->
 
-# Zoom
-The entire conference will take place on the same Zoom Meeting. Click on the Meeting-ID below to join.
-
-
-**Meeting-ID:** [891 0998 5557](https://zoom.us/j/89109985557)   
-**Passcode:** *See your Zoom Confirmation Email (received after [registration](#registration))*
-
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-<b><p class="alert-heading">Annex rooms</p></b>
-  During the conference there will be available 2 additional Zoom-Meeting-Rooms (so-called <i>"Annex rooms"</i>) to facilitate discussions and exchange between participants. Feel free to enter those rooms during breaks.
-  <li>Annex 1 &rarr;  Meeting-ID: <a href="https://zoom.us/j/81509842783">815 0984 2783</a> (same Passcode as for the conference)</li>
-  <li>Annex 2 &rarr; Meeting-ID: <a href="https://zoom.us/j/84058668977">840 5866 8977</a> (same Passcode as for the conference)</li>
-</div>
-
 # Agenda
 
 <small>&#128339; <i>Schedule given in Central European Summer Time (CEST) (UTC+2) - This agenda may be subject to change</i></small></i>
