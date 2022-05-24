@@ -10,6 +10,11 @@ conference-page: true
 draft: false
 ---
 
+<div class="alert alert-warning alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    We are working on publishing the Conference Proceedings as soon as possible. In the meantime, if you would like to get a certain Preprint contact us at sumo-conference@dlr.de
+</div>
+
 # Sessions and Presentations
 - Tutorial • [<i class="fab fa-youtube"></i> Video](https://youtu.be/urKtJj87X5M) • [<i class="far fa-file-archive"></i> Tutorial files](http://sumo.dlr.de/daily/sumo2022_tutorial.zip)
 - Ask us anything • [<i class="far fa-file-alt"></i> Q&A Transcript](https://sumo.dlr.de/2022/chat_QA.txt)
