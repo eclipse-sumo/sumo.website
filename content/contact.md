@@ -129,7 +129,7 @@ There is a public channel available in the Eclipse's Mattermost instance, to fac
 <div class="col-md-12 contact-div">
 <h4 style="color:#17412f;" id="commit-rss"><i class="fas fa-rss"></i><br>
 Commit RSS</h4><br>
-If you want to receive regular updates on commits, you can subscribe to <a href="https://github.com/eclipse/sumo/commits/master.atom">this feed</a> or set up an <a href="https://ifttt.com/applets/147561p-rss-feed-to-email">IFTTT link</a> or use <a href="https://hubnotify.com/">https://hubnotify.com/</a> to send you an email.
+If you want to receive regular updates on commits, you can subscribe to <a href="https://github.com/eclipse/sumo/commits/main.atom">this feed</a> or set up an <a href="https://ifttt.com/applets/147561p-rss-feed-to-email">IFTTT link</a> or use <a href="https://hubnotify.com/">https://hubnotify.com/</a> to send you an email.
 </div>
 
 </div></div>
