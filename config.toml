@@ -1,4 +1,5 @@
 ############################ Default configuration #########################
+
 baseURL = "https://eclipse.org/sumo"
 languageCode = "en-us"
 title = "Eclipse SUMO - Simulation of Urban MObility"
@@ -6,6 +7,7 @@ disableKinds = ["taxonomyTerm"]
 theme = "sumo-theme"
 
 ########################### Default Parameters #############################
+
 [params]
 favicon = "images/favicon.ico"
 logo = "images/logos/sumo-logo-white.svg"
@@ -13,11 +15,14 @@ docsURL = "https://sumo.dlr.de/docs"
 githubEditURL = "https://github.com/eclipse/sumo.website/edit/main/content/"
 Version = "1.14.0"
 
-## Enable inline-HTML in Hugo > v0.60.0
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.tableOfContents]
+    endLevel = 2
+    ordered = false
+    startLevel = 1
 
 ############################ Navigation ####################################
 
@@ -57,7 +62,7 @@ URL = "contact"
 name = "Contact"
 weight = 7
 
-# sub menus
+# submenus
 [[menu.main]]
 URL = "about"
 name = "About SUMO"

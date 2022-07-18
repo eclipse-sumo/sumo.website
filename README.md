@@ -20,7 +20,7 @@ To run the built-in development server, use:
 hugo serve
 ```
 
-`hugo serve` re-builds the entire site everytime it detects a change.
+`hugo serve` re-builds the entire site every time it detects a change.
 
 **To preview edition you should run the built-in development server and access the website from the localhost address (which by default should be http://localhost:1313/sumo/).**
 

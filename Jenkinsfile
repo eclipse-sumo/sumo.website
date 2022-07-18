@@ -19,7 +19,7 @@ spec:
       - name: "HOME"
         value: "/home/jenkins/agent"
     - name: hugo
-      image: eclipsecbi/hugo:0.42.1
+      image: eclipsecbi/hugo:0.81.0
       command:
       - cat
       tty: true
