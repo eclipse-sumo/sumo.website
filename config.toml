@@ -13,7 +13,7 @@ favicon = "images/favicon.ico"
 logo = "images/logos/sumo-logo-white.svg"
 docsURL = "https://sumo.dlr.de/docs"
 githubEditURL = "https://github.com/eclipse/sumo.website/edit/main/content/"
-Version = "1.14.0"
+Version = "1.14.1"
 
 [markup]
   [markup.goldmark]
