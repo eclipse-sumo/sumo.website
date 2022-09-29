@@ -10,10 +10,10 @@ conference-page: true
 draft: false
 ---
 
-<div class="alert alert-warning alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    We are working on publishing the Conference Proceedings as soon as possible. In the meantime, if you would like to get a certain Preprint contact us at sumo-conference@dlr.de
-</div>
+# Proceedings
+
+Conference Proceedings: https://www.tib-op.org/ojs/index.php/scp/issue/view/8   
+DOI: https://doi.org/10.52825/scp.v3i
 
 # Sessions and Presentations
 - Tutorial • [<i class="fab fa-youtube"></i> Video](https://youtu.be/urKtJj87X5M) • [<i class="far fa-file-archive"></i> Tutorial files](http://sumo.dlr.de/daily/sumo2022_tutorial.zip)
