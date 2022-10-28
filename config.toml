@@ -11,7 +11,7 @@ theme = "sumo-theme"
 [params]
 favicon = "images/favicon.ico"
 logo = "images/logos/sumo-logo-white.svg"
-docsURL = "https://sumo.dlr.de/docs"
+docsURL = "https://sumo.sourceforge.net/docs"
 githubEditURL = "https://github.com/eclipse/sumo.website/edit/main/content/"
 Version = "1.14.1"
 
@@ -33,12 +33,12 @@ name = "About"
 weight = 1
 
 [[menu.main]]
-URL = "https://sumo.dlr.de/download"
+URL = "https://sumo.sourceforge.net/download"
 name = "Downloads"
 weight = 2
 
 [[menu.main]]
-URL = "https://sumo.dlr.de/docs/"
+URL = "https://sumo.sourceforge.net/docs/"
 name = "Documentation"
 weight = 3
 
@@ -76,43 +76,43 @@ parent = "About"
 weight = 2
 
 [[menu.main]]
-URL = "https://sumo.dlr.de/docs/ChangeLog.html"
+URL = "https://sumo.sourceforge.net/docs/ChangeLog.html"
 name = "ChangeLog"
 parent = "About"
 weight = 3
 
 [[menu.main]]
-URL = "https://sumo.dlr.de/daily"
+URL = "https://sumo.sourceforge.net/daily"
 name = "Status of daily build and tests"
 parent = "About"
 weight = 4
 
 [[menu.main]]
-URL = "https://sumo.dlr.de/docs/Other/Projects.html"
+URL = "https://sumo.sourceforge.net/docs/Other/Projects.html"
 name = "Projects"
 parent = "References"
 weight = 1
 
 [[menu.main]]
-URL = "https://sumo.dlr.de/docs/Publications.html"
+URL = "https://sumo.sourceforge.net/docs/Publications.html"
 name = "Publications"
 parent = "References"
 weight = 2
 
 [[menu.main]]
-URL = "https://sumo.dlr.de/docs/Contributed/index.html"
+URL = "https://sumo.sourceforge.net/docs/Contributed/index.html"
 name = "Contributed extensions"
 parent = "References"
 weight = 3
 
 [[menu.main]]
-URL = "https://sumo.dlr.de/docs/FAQ.html"
+URL = "https://sumo.sourceforge.net/docs/FAQ.html"
 name = "FAQ"
 parent = "Support"
 weight = 1
 
 [[menu.main]]
-URL = "https://sumo.dlr.de/docs/Tutorials/index.html"
+URL = "https://sumo.sourceforge.net/docs/Tutorials/index.html"
 name = "Tutorials"
 parent = "Support"
 weight = 2
@@ -124,13 +124,13 @@ parent = "Support"
 weight = 3
 
 [[menu.main]]
-URL = "https://sumo.dlr.de/daily/doxygen/"
+URL = "https://sumo.sourceforge.net/daily/doxygen/"
 name = "Doxygen Documentation"
 parent = "Support"
 weight = 4
 
 [[menu.main]]
-URL = "https://sumo.dlr.de/docs/Developer/index.html"
+URL = "https://sumo.sourceforge.net/docs/Developer/index.html"
 name = "Developer Documentation"
 parent = "Support"
 weight = 5
