@@ -33,7 +33,7 @@ name = "About"
 weight = 1
 
 [[menu.main]]
-URL = "https://sumo.sourceforge.net/download"
+URL = "https://sumo.sourceforge.net/docs/Downloads.php"
 name = "Downloads"
 weight = 2
 
