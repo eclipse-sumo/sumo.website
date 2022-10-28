@@ -8,7 +8,7 @@
         <p>Welcome to Eclipse <b>SUMO</b> (Simulation of Urban MObility), an open source, highly portable, microscopic and continuous multi-modal traffic simulation package designed to handle large networks.</p>
 
       <p><div class="btn-group">
-        <a href="https://sumo.sourceforge.net/releases/{{ $.Site.Params.Version }}/sumo-win64-{{ $.Site.Params.Version }}.msi" id="download-button" type="button" class="btn btn-success" style="-webkit-appearance: none; box-shadow: 0 8px 36px -3px rgba(20,45,100,.35);">SUMO {{ $.Site.Params.Version }} for Windows 64-bit</a>
+        <a href="https://sumo.dlr.de/releases/{{ $.Site.Params.Version }}/sumo-win64-{{ $.Site.Params.Version }}.msi" id="download-button" type="button" class="btn btn-success" style="-webkit-appearance: none; box-shadow: 0 8px 36px -3px rgba(20,45,100,.35);">SUMO {{ $.Site.Params.Version }} for Windows 64-bit</a>
         <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"><span class="caret"></span></button>
         <div class="dropdown-menu download-menu">
           <a class="dropdown-item" href="{{ $.Site.Params.docsURL }}/Downloads.php#sources"><i class="fas fa-file-code"></i> Sources</a>
@@ -28,10 +28,10 @@
 
 <script>
   var Name = "Download SUMO";
-  var DownloadLink = "https://sumo.dlr.de/download";
+  var DownloadLink = "{{ $.Site.Params.docsURL }}/Downloads.php";
   if (navigator.appVersion.indexOf("Win") != -1) {
     Name = "SUMO {{ $.Site.Params.Version }} for Windows 64-bit";
-    DownloadLink = "https://sumo.sourceforge.net/releases/{{ $.Site.Params.Version }}/sumo-win64-{{ $.Site.Params.Version }}.msi";
+    DownloadLink = "https://sumo.dlr.de/releases/{{ $.Site.Params.Version }}/sumo-win64-{{ $.Site.Params.Version }}.msi";
     }
   if (navigator.appVersion.indexOf("Mac") != -1) {
     Name =  "SUMO {{ $.Site.Params.Version }} for macOS";
