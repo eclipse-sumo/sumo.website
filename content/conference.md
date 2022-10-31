@@ -1,149 +1,24 @@
 ---
-title: "SUMO User Conference 2022"
+title: "SUMO User Conference 2023"
 subtitle: ""
-conferenceDate: "May 09-11"
-conferenceLocation: "Online"
+conferenceDate: "May 02-04"
+conferenceLocation: "to be announced"
 description : "Get in touch with our international user community"
 layout: "single"
-image: "conference_2022.png"
 conference-page: true
 draft: false
 ---
 
-# Proceedings
-
-Conference Proceedings: https://www.tib-op.org/ojs/index.php/scp/issue/view/8   
-DOI: https://doi.org/10.52825/scp.v3i
-
-# Sessions and Presentations
-- Tutorial • [<i class="fab fa-youtube"></i> Video](https://youtu.be/urKtJj87X5M) • [<i class="far fa-file-archive"></i> Tutorial files](http://sumo.dlr.de/daily/sumo2022_tutorial.zip)
-- Ask us anything • [<i class="far fa-file-alt"></i> Q&A Transcript](https://sumo.dlr.de/2022/chat_QA.txt)
-- **Keynote:** Simulating and modelling traffic: What are we trying to achieve? - *Heather Kaths* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/HBvuTjUy_kY)
-- TAPAS Workshop - *Matthias Heinrichs* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/twLLWBKRlbg)
+<div class="text-center"><img src="../images/banner_2023.png" style="width:70%;" alt="Conference artwork" class="img-responsive"/></div>
 
 ---
 
-**Session 1: Traffic lights**
+# Save the date!
+SUMO User Conference 2023: May 02-04.
 
-- Extension and Validation of NEMA-Style Dual-Ring Controller in SUMO - *Max Schrader, Qichao Wang and Joshua Bittle* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/MzsVO5Q3sP4)
-- A Comparison of Reinforcement Learning Agents Applied to Traffic Signal Optimisation - *Cobus Louw, Louwrens Labuschange and Tiffany Woodley* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/WCAsaNf_Z_Q)
-- High fidelity modelling of traffic light control with xml logic representation - *Maik Halbach and Jakob Erdmann* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/RvwSXXDwrZI)
-- Evaluating traffic performance of transit signal priority using SUMO simulation: A real-world case - *Chun-Cheng Liang, Hsuan-Chih Wang, Wei-Hsun Lee and Ming-Te Wang* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/orrKpgA8jCw)
-
----
-
-**Session 2: Other modes of transportation**
-
-- Simulating Digital Rail: From PlanPro railway plannings to SUMO simulations - *Arne Boockmeyer, Robert Schmid and Andreas Polze* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/WEOlktfQRkc)
-- A dynamic model for ride-matching problem in multi-hop ride-sharing system - *Linyang Wang and Jianping Wu* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/_1pyR96HRl0)
-- Investigating the behaviors of cyclists and pedestrians under automated shuttle operation - *Yun-Pang Flötteröd, Iman Pereira, Johan Olstam and Laura Bieker-Walz* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/Awc_MfEqwFc)
-- Simulating Personal Rapid Transit in SUMO - *Felix Gotzler and Franziska Neumann* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/z_-_7tE8paE)
-
----
-
-**Session 3: Autonomous Vehicles**
-
-- SUMO4AV: An Environment to Simulate Scenarios for Shared Autonomous Vehicle Fleets with SUMO Based on OpenStreetMap Data - *Emanuel Reichsöllner, Andreas Freymann, Mirko Sonntag and Ingo Trautwein* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/YUcfahIY2iU)
-- Extending SUMO for Lane-Free Microscopic Simulation of Connected and Automated Vehicles - *Dimitrios Troullinos, Georgios Chalkiadakis, Diamantis Manolis, Ioannis Papamichail and Markos Papageorgiou* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/XI47xWDMRTE)
-- SESAM: First Steps Towards SUMO in the Cloud - *Robert Hilbrich and Angelo Banse* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/oLjXi7ePfsc)
-
----
-
-**Session 4: ITS**
-
-- Utilizing Vehicle Trajectory Data (Probe Data) from Connected Vehicles (CV) to Characterize Performance Measures of a Highway Corridor with Incidents - *Norris Novat, Emmanuel Kidando and Jacqueline Jenkins* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/-TfURKTosDc)
-- Multi-Modal Traffic Simulation Calibration and Integration with Real-Time Hardware in Loop Simulator - *Vikhyat Kalra, Punit Tulpule and Jacob Isaman* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/VBLqbJOl2FU)
-- Simulation of surrounding traffic in a driving simulator – Coupling Sumo, RoadRunner and Unity - *Richard Schulte Holthausen, Moritz Berghaus and Philipp-Armand Klee* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/oyorlr4EkoY)
-
----
-
-**Session 5: Routing / Efficiency / Logistics**
-
-- Proposing a Simulation-Based Dynamic System Optimal Traffic Assignment Algorithm for SUMO: An Approximation of Marginal Travel Time - *Behzad Bamdad Mehrabani, Jakob Erdmann, Luca Sgambi and Maaike Snelder* • [<i class="fab fa-youtube"></i> Video]( https://youtu.be/bJ5nqqXTQ6c)
-- Combining operative train simulation with logistics simulation in SUMO - *Jakob Geischberger and Norman Weik* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/n23IJODSIUE)
-- A Virtual Testbed for the Development of AI Solutions to Boost Operational Efficiency in Road Transportation Networks - *Arun Sathanur, Arif Khan, Milan Jain and Ashutosh Dutta* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/WNVfauGpz0Q)
-- i4Port: Simulation of drayage operations based on vehicle communication technologies at port terminals - *Victor Madrigal* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/nlhQmlrzpV4)
-
----
-
-**Session 6: Micro simulation / other**
-
-- Signal priority for improving fluidity and decreasing fuel consumption - *Jacques Renaud, Leandro Coelho, Khaled Belhassine and Vincent Turgeon* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/JurcCBzjCyw)
-- Statistics and Visualizations of SUMO Scenario Runs - *Mark Cowan*
-- Combining microtraffic models and complex vehicular simulators - *Aron Jazcilevich, Adolfo Hernández-Moreno, Ulises Diego-Ayala and Ivan Hernández-Paniagua* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/fpRFbcpEza8)
-- Simulating platooned connected autonomous vehicle in a large scale urban scenario - *Joerg Schweizer, Cristian Poliziani and Federico Rupi* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/LCoDSC0PO08)
-
----
-
-**Session 7: Tools / other**
-
-- Simulation of Urban Air Mobility: Progress from the HorizonUAM Project - *Nabih Naeem, Patrick Ratei, Nazlican Cigal, Prajwal Shiva Prakasha, Thomas Zill and Björn Nagel*
-- Topology-Preserving Simplification of OpenStreetMap Network Data for Large-scale Simulation in SUMO - *Zhuoxiao Meng, Xiaorui Du, Paolo Sottovia, Daniele Foroni, Cristian Axenie, Alexander Wieder, David Eckhoff, Stefano Bortoli, Alois Knoll and Christoph Sommer* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/Z-YLPoKm0Mk)
-- SUMO for parking studies: Challenges and opportunities - *Prashant Chauhan, Salil Goel and Stephan Winter* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/LsGBNhcjHLU)
-
----
-
-**Session 8: Tools / Co-simulation**
-
-- strazoon Planning Solutions - building generic traffic models for SUMO - *Martin Reuß, Tobias Lukowitz and Martin Lächele* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/7V6OE_5V9rU)
-- Implementation of a Perception Module for Smart Mobility Applications in Eclipse MOSAIC - *Robert Protzmann, Karl Schrab, Moritz Schweppenhäuser and Ilja Radusch* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/aoA53CQBlCQ)
-- A Co-Simulation Middleware: Virtual Testing of Automotive Applications with Multiple Simulators - *Dominik Salles, Lukas Lang, Martin Kehrer and Hans-Christian Reuss* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/MYwoIXLTkio)
-
----
-
-**Session 9: Scenarios**
-
-- Evaluating measures for prioritising urban public transport using SUMO – A case study of a corridor in Münster, Germany - *Marcus Herbrecht, Moritz Berghaus and Philipp-Armand Klee* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/BvWZTjySD10)
-- Simulation of traffic scenarios using SUMO - *Siva Jagadesh M., Vignesh Bondugula, Vijay Jaisankar, Jayati Deshmukh and Srinath Srinivasa* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/LSdFq8M1Y4I)
-- Building a real-world traffic micro-simulation scenario from scratch with SUMO - *Maria Laura Clemente* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/cw0ffYA2fmY)
-
----
-
-You can find all videos here: <a href="https://www.youtube.com/playlist?list=PLy7t4z5SYNaQw8vgnOmNKzxLvSe7cIAPw"><button type="button" class="btn btn-danger btn-sm"><i class="fab fa-youtube"></i> YouTube playlist</button></a>
-
-
-# Keynote
-
-<h3><i>Simulating and modelling traffic: What are we trying to achieve?</i></h3>
-
-<h6>Prof. Dr.-Ing. Heather Kaths</h6>
-Head of the Department for Bicycle Traffic Planning<br>
-University of Wuppertal<br>
-<a href="https://radverkehr.uni-wuppertal.de/en/home/associates/prof-dr-ing-heather-kaths.html" class="btn btn-sm btn-outline-info" style="margin-top:10px;">Website</a>
-
-
-Our ability to virtually recreate infrastructure and traffic flow at many different scales, from the very detailed simulation of systems used to drive and control vehicles to the depiction of congestion in country-wide highway networks, has improved drastically over the last decades. The data needed to develop, calibrate and validate simulation models is increasingly at our fingertips. An active and growing community of academics and industry personnel dedicate time and expert knowledge to improving and optimizing traffic simulation tools and workflows. At the same time, issues such as air pollution, traffic injuries and fatalities, noise and disconnected urban space persist. In this keynote, I want to explore how tools for creating virtual, simulated worlds are helping to solve actual problems in our real world: what is done today, and what opportunities are there for tomorrow?
-
-# TAPAS Workshop
-The agent-based  demand model TAPAS is an open source development of DLR’s Institute for Transport Research. TAPAS simulated the mobility patterns of a virtual population of a modelled regions. Both the population as well as the activity places are represented individually. TAPAS distinguishes a large set of person groups, and different modes of transport. The mobility behavior of the population is determined using empirical daily mobility plans. The result is a list of daily activities for each person within the modeled area, including the starting location, the destination location, the begin of the ride and the ride’s duration as well as the chosen mode, among others. The result can be used as an input for the microscopic traffic flow simulation SUMO.
-
-Within the talk, the functioning of TAPAS will be presented as well as different application scenarios, ranging from public transport pricing, installation of demand-responsive transport to air quality measures on city scale.
-
-<a href="https://www.dlr.de/vf/en/desktopdefault.aspx/tabid-12751/22270_read-29381/" class="btn btn-sm btn-outline-info" style="margin-top:10px;">About TAPAS</a>
-<a href="https://github.com/DLR-VF/TAPAS" class="btn btn-sm btn-outline-info" style="margin-top:10px;">GitHub repository</a>
-
-# Social Event
-We are going to have a fun SUMO-related quiz using [Menti](https://www.menti.com/). Join our [Zoom meeting](#zoom) and have a smartphone/tablet ready at hand. Test your knowledge of SUMO and win the glorious and prestigious prize of attaching your name to an easter egg in “sumo-gui”:
-
-<div class="alert alert-warning alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    SUMO guru of the year 2022: Dennis Harmann.
+<div style="background-color: #E2F3E3; padding: 20px; border-radius: 10px;">
+<center><i style="font-size: 3rem; font-weight: 700;">More info coming soon ...</i></center>
 </div>
-
-(Check out the current SUMO guru, by pressing `Shift` + `F11` in sumo-gui 1.8.0 or newer)
-
-# Prices
-Participation at this year's conference will be **free of charge**!
-
-# Language
-The conference language is English.
-
-# Venue
-Given the extraordinary situation we are facing, this year's SUMO User Conference will be again **online** - via [Zoom](#zoom).
 
 # Contact
 Please contact the conference team via mail at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de)
-
----
-
-<div class="text-center"><img src="../images/banner_2022.png" style="width:70%;" alt="Conference artwork" class="img-responsive"/></div>
