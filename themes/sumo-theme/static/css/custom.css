@@ -492,3 +492,29 @@ border-radius: calc(.6rem - 1px) calc(.6rem - 1px) 0 0 !important;
 .card-body {
 padding: 10px 20px !important;
 }
+
+/* ---- */
+
+.tutorial-video {
+width: 100%;
+}
+
+.video-container {
+position: relative;
+text-decoration: none;
+display: inline-block;
+text-align: center;
+}
+
+.centered {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.video-text {
+background-color:rgba(0, 0, 0, 0.5);
+color: #fff;
+padding: 3px;
+}
