@@ -1,0 +1,75 @@
+main:
+    - name: "About"
+      url: ""
+      weight: 1
+    - name: "Downloads"
+      url: "https://sumo.dlr.de/docs/Downloads.php"
+      weight: 2
+    - name: "Documentation"
+      url: "https://sumo.dlr.de/docs/"
+      weight: 3
+    - name: "Conference"
+      url: "conference"
+      weight: 4
+    - name: "References"
+      url: ""
+      weight: 5
+    - name: "Support"
+      url: ""
+      weight: 6
+    - name: "Contact"
+      url: "contact"
+      weight: 7
+    # submenus
+    - name: "About SUMO"
+      parent: "About"
+      url: "about"
+      weight: 1
+    - name: "Who's involved"
+      parent: "About"
+      url: "https://projects.eclipse.org/projects/automotive.sumo/who"
+      weight: 2
+    - name: "ChangeLog"
+      parent: "About"
+      url: "https://sumo.dlr.de/docs/ChangeLog.html"
+      weight: 3
+    - name: "Status of daily build and tests"
+      parent: "About"
+      url: "https://sumo.dlr.de/daily"
+      weight: 4
+    - name: "Projects"
+      parent: "References"
+      url: "https://sumo.dlr.de/docs/Other/Projects.html"
+      weight: 1
+    - name: "Publications"
+      parent: "References"
+      url: "https://sumo.dlr.de/docs/Publications.html"
+      weight: 2
+    - name: "Contributed extensions"
+      parent: "References"
+      url: "https://sumo.dlr.de/docs/Contributed/index.html"
+      weight: 3
+    - name: "FAQ"
+      parent: "Support"
+      url: "https://sumo.dlr.de/docs/FAQ.html"
+      weight: 1
+    - name: "Tutorials"
+      parent: "Support"
+      url: "https://sumo.dlr.de/docs/Tutorials/index.html"
+      weight: 2
+    - name: "Report a Bug / Issue"
+      parent: "Support"
+      url: "https://github.com/eclipse/sumo/issues"
+      weight: 3
+    - name: "Pydoc Documentation"
+      parent: "Support"
+      url: "https://sumo.dlr.de/pydoc/"
+      weight: 4
+    - name: "Doxygen Documentation"
+      parent: "Support"
+      url: "https://sumo.dlr.de/daily/doxygen/"
+      weight: 5
+    - name: "Developer Documentation"
+      parent: "Support"
+      url: "https://sumo.dlr.de/docs/Developer/index.html"
+      weight: 6
