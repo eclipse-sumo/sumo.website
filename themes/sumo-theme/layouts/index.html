@@ -122,6 +122,25 @@
         <a class="btn btn-light" href="https://mattermost.eclipse.org/eclipse/channels/sumo" aria-label="Mattermost"><span class="fas fa-comments"></span></a>
         <a class="btn btn-light" href="{{ `contact` | absURL }}" aria-label="contact"><span class="fas fa-envelope"></span></a>
       </div>
+
+      <a href="{{ `conference` | absURL }}" class="text-decoration-none" style="color: inherit">
+        <div class="card">
+          <div class="card-header">
+            <img src="{{ `images/banner_2023.png` | absURL }}" style="width: 100%">
+          </div>
+          <div class="card-body text-center">
+            <strong id="remaining-days"></strong> days remaining
+          </div>
+        </div>
+      </a>
+
+      <script>
+        let conference_date = new Date('05/02/2023');
+        let current_date = new Date();
+        var remainingDays = Math.ceil((conference_date.getTime() - current_date.getTime()) / (1000 * 3600 * 24));
+        document.getElementById("remaining-days").innerHTML = remainingDays;
+      </script>
+
     </div>
   </div>
 
@@ -309,7 +328,7 @@ for (let video of videos) {
 
 	// Add a thumbnail
 	video.innerHTML =
-		`${video.textContent}<br><div class="video-container">
+		`${video.textContent}<div class="video-container">
         <img alt="" class="tutorial-video" src="https://img.youtube.com/vi/${id}/maxresdefault.jpg">
         <div class="centered video-text">Click to load external resources from YouTube.</div>
         </div>`;
