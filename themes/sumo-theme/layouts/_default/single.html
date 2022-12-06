@@ -26,9 +26,9 @@
     {{ .Content }}
     {{ end }}
     
-    {{ if isset .Params "conference-page" }}
+    <!-- {{ if isset .Params "conference-page" }}
     <small><i>This page was last edited on: {{ .Lastmod.Format "January 2, 2006" }}</i></small>
-    {{ end }}
+    {{ end }} -->
     
     {{ if isset .Site.Params "githubediturl" }}
     <div class="d-flex justify-content-end"><a href="{{ $.Site.Params.githubEditURL }}{{ .File.Path }}"><button type="button" class="btn btn-light btn-sm" title="Edit this page on GitHub"><i class="fas fa-pencil-alt"></i> Edit</button></a></div>
