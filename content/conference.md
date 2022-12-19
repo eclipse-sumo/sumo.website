@@ -84,6 +84,15 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 
 
 # Keynote
+
+<img src="../images/kw-axhausen.jpg" alt="picture of Kay Axhausen" style="width:100px; border-radius: 50%; margin-bottom:10px;">
+<br><small style="color: lightgray">© Eidgenössische Technische Hochschule Zürich</small>
+<h6>Prof. Dr. Kay W. Axhausen</h6>
+Dep. of Civil, Env. and Geomatic Eng.<br>
+ETH Zürich<br>
+
+[Website](https://www.ivt.ethz.ch/en/)
+
 *More info coming soon*
 
 # Prices
