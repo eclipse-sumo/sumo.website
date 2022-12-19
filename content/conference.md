@@ -88,6 +88,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 <img src="../images/kw-axhausen.jpg" alt="picture of Kay Axhausen" style="width:100px; border-radius: 50%; margin-bottom:10px;">
 <br><small style="color: lightgray">© Eidgenössische Technische Hochschule Zürich</small>
 <h6>Prof. Dr. Kay W. Axhausen</h6>
+Institute for Transport Planning and Systems<br>
 Dep. of Civil, Env. and Geomatic Eng.<br>
 ETH Zürich<br>
 
