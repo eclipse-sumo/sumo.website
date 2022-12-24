@@ -13,6 +13,10 @@ draft: false
 
 ---
 
+<div class="alert alert-warning" role="alert">
+  The <a href="#submission-link" class="alert-link">EasyChair submission link</a> is now available.
+</div>
+
 # Save the date!
 SUMO User Conference 2023: May 02-04 in Berlin.
 
@@ -65,12 +69,13 @@ There are two submission types:
 
 ## Submission Link
 
-*Will be available soon.*
+Please submit your papers via EasyChair:
+https://easychair.org/conferences/?conf=sumo2023
 
 
 ## Ethics and Malpractice Statement
 
-You can read our *[Publication Ethics and Publication Malpractice Statement](../docs/SUMOPublicationEthics.pdf)*, where we list the responsibilities of editors, reviewers, and authors.
+You can read our *[Publication Ethics and Publication Malpractice Statement](../documents/SUMOPublicationEthics.pdf)*, where we list the responsibilities of editors, reviewers, and authors.
 
 # Important Dates
 
