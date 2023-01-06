@@ -15,6 +15,11 @@ draft: false
   </div>
 </div> -->
 
+<div class="alert alert-primary" role="alert">
+<b>SUMO User Conference 2023:</b><br>
+  New Title and Abstract submission deadline: Monday, <b>January 16th, 2023 - 23:59 CET</b>. 
+</div>
+
 <!-- YouTube Tutorial -->
 <a data-youtube href="https://www.youtube.com/watch?v=urKtJj87X5M"></a>
 

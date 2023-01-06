@@ -13,6 +13,10 @@ draft: false
 
 ---
 
+<div class="alert alert-primary" role="alert">
+  New Title and Abstract submission deadline: Monday, <b>January 16th, 2023 - 23:59 CET</b>.
+</div>
+
 <div class="alert alert-warning" role="alert">
   The <a href="#submission-link" class="alert-link">EasyChair submission link</a> is now available.
 </div>
@@ -45,7 +49,7 @@ There are two submission types:
    - All accepted scientific papers must be presented at the conference.
    - Scientific papers will be reviewed by at least 2 reviewers.
    - All accepted scientific papers will be published in the SUMO proceedings.
-   - Title and a short abstract (300 words) must be submitted until Monday, **January 09th, 2023**.
+   - Title and a short abstract (300 words) must be submitted until Monday, ~~January 09th, 2023~~ **January 16th, 2023**.
    - Paper must be submitted in LaTeX or Word format before midnight, Monday, **February 13th, 2023**.
    - Scientific papers should be between 5 and 20 pages long.
 <div class="alert alert-info" role="alert">
@@ -63,7 +67,7 @@ There are two submission types:
         - SUMO Use Cases
         - Project Presentations
         - Work in Progress which would benefit from the feedback of other SUMO users
-    - Title and a short abstract (300 words) must be submitted until Monday, **January 09th, 2023**.
+    - Title and a short abstract (300 words) must be submitted until Monday, ~~January 09th, 2023~~ **January 16th, 2023**.
     - Final Poster / Technical Presentation must be submitted before midnight, Monday, **April 10th, 2023**. 
     - Technical Presentations / Posters do not require following a specific template.
 
@@ -79,10 +83,10 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 
 # Important Dates
 
-- Title and Abstract submission deadline: **Monday, January 09th, 2023**.
-- Paper submission deadline: **Monday, February 13th, 2023**.
+- Title and Abstract submission deadline: ~~Monday, January 09th, 2023~~ **Monday, January 16th, 2023** 23:59 CET.
+- Paper submission deadline: **Monday, February 13th, 2023** 23:59 CET.
 - Notification of acceptance/rejection: **End of March, 2023**.
-- Camera Ready Paper deadline: **Monday, April 10th, 2023**.
+- Camera Ready Paper deadline: **Monday, April 10th, 2023** 23:59 CET.
 
 # Agenda
 *Available on March 2023*
