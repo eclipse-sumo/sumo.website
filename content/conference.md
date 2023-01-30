@@ -13,14 +13,14 @@ draft: false
 
 ---
 
-<div class="alert alert-primary" role="alert">
+<!-- <div class="alert alert-primary" role="alert">
   New Title and Abstract submission deadline: Monday, <b>January 16th, 2023 - 23:59 CET</b>.
-</div>
+</div> -->
 
-<div class="alert alert-warning" role="alert">
+<!-- <div class="alert alert-warning" role="alert">
   The <a href="#submission-link" class="alert-link">EasyChair submission link</a> is now available.
 </div>
-
+ -->
 # Save the date!
 SUMO User Conference 2023: May 02-04 in Berlin.
 
