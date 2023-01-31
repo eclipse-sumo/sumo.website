@@ -20,13 +20,6 @@ draft: false
   New Title and Abstract submission deadline: Monday, <b>January 16th, 2023 - 23:59 CET</b>. 
 </div> -->
 
-<div class="alert alert-warning" role="alert">
-<b>Scheduled maintenance</b><br>
-  Our <b>sumo.dlr.de</b> server (which hosts the documentation and download files) is on a scheduled maintenance, and will be back soon. In the meantime, please make use of our documentation backup, located here: <a href="https://sumo.sourceforge.net/docs/">https://sumo.sourceforge.net/docs/</a>. For downloads, use the alternative download location: <a href="https://sourceforge.net/projects/sumo/files/sumo/">https://sourceforge.net/projects/sumo/files/sumo/</a>.
-  <br>
-  We are sorry for the inconvenience!
-</div>
-
 <!-- YouTube Tutorial -->
 <a data-youtube href="https://www.youtube.com/watch?v=urKtJj87X5M"></a>
 
