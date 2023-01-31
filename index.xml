@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eclipse SUMO - Simulation of Urban MObility</title>
+    <link>https://www.eclipse.org/sumo/</link>
+    <description>Recent content on Eclipse SUMO - Simulation of Urban MObility</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://www.eclipse.org/sumo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Eclipse SUMO</title>
+      <link>https://www.eclipse.org/sumo/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/sumo/about/</guid>
+      <description>SUMO is a free and open source traffic simulation suite. It is available since 2001 and allows modelling of intermodal traffic systems - including road vehicles, public transport and pedestrians. Included with SUMO is a wealth of supporting tools which automate core tasks for the creation, the execution and evaluation of traffic simulations, such as network import, route calculations, visualization and emission calculation. SUMO can be enhanced with custom models and provides various APIs to remotely control the simulation.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://www.eclipse.org/sumo/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/sumo/contact/</guid>
+      <description>Mailing listsIf you have any questions about SUMO, please post them into one of our mailing lists. You may need to create an Eclipse account first.Before you post on a list, please check the FAQ for already answered questions. sumo-userThis is the first place you should ask your questions. If you have a novel question, here is some general advice before asking. If you wish to report an error please follow these suggestions.</description>
+    </item>
+    
+    <item>
+      <title>SUMO User Conference 2013</title>
+      <link>https://www.eclipse.org/sumo/2013/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/sumo/2013/</guid>
+      <description>Introduction The first SUMO User Conference &amp;ldquo;SUMO2013&amp;rdquo; was attended by 30 participants from throughout Europe which presented three days of simulation results but also technical enhancements and new usage scenarios of the open source microscopic traffic simulation. The highlights were two keynote speakers, Christoph Sommer (Universitaet Innsbruck) and Kai Nagel (TU Berlin), which talked about the current developments in the simulation of vehicle communication, one of the main applications of SUMO, as well as experience with the development of MatSim.</description>
+    </item>
+    
+    <item>
+      <title>SUMO User Conference 2014</title>
+      <link>https://www.eclipse.org/sumo/2014/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/sumo/2014/</guid>
+      <description>Introduction The SUMO2014 Conference was attended by over 50 participants from throughout Europe and America which presented two days of simulation results but also technical enhancements and new usage scenarios of the open source microscopic traffic simulation (Here you can find the conference proceedings). A highlight was the keynote speaker Mario Krumnow (Technical University Dresden), who talked about &amp;ldquo;Modeling Mobility with Open Data&amp;rdquo; (here you can find his presentation and simulation).</description>
+    </item>
+    
+    <item>
+      <title>SUMO User Conference 2015</title>
+      <link>https://www.eclipse.org/sumo/2015/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/sumo/2015/</guid>
+      <description>SUMO 2015 Proceedings (17.07 MB) SUMO 2015 Flyer (1.42 MB)Introduction The SUMO2015 Conference was attended by over 40 participants from throughout Europe and America which presented two days of simulation results but also technical enhancements and new usage scenarios of the open source microscopic traffic simulation (Here you can find the conference proceedings). A highlight were the keynote speakers Fritz Busch (Technische Universität München) and Hans van Lint (Delft University of Technology).</description>
+    </item>
+    
+    <item>
+      <title>SUMO User Conference 2016</title>
+      <link>https://www.eclipse.org/sumo/2016/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/sumo/2016/</guid>
+      <description>SUMO 2016 Proceedings (23.48 MB) SUMO 2016 Program (0.77 MB)Introduction This year, the SUMO User Conference focused on traffic, mobility and logistics. It was attended by almost 50 international participants from industry and academia. In addition to the excellent keynote given by Prof. Dr. Björn Scheuermann (Humboldt-Universität Berlin), the conference program allowed for intensive discussions on recent research advancements and developments in SUMO. A highlight was the poster session with a PARCOURS demo in which the attendants were able experience a live 3D traffic simulator with VR googles.</description>
+    </item>
+    
+    <item>
+      <title>SUMO User Conference 2017</title>
+      <link>https://www.eclipse.org/sumo/2017/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/sumo/2017/</guid>
+      <description>SUMO 2017 Proceedings (21.07 MB) SUMO 2017 Flyer (5.06 MB)Introduction This year, the SUMO User Conference focused on traffic simulation and simulator coupling for autonomous mobility. It was attended by more than 70 international participants from industry and academia. In addition to the joint keynote given by Johan Magnusson and Christer Lindström from 4Dialog AB, the conference program allowed for intensive discussions on recent research advancements and developments in SUMO.</description>
+    </item>
+    
+    <item>
+      <title>SUMO User Conference 2018</title>
+      <link>https://www.eclipse.org/sumo/2018/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/sumo/2018/</guid>
+      <description>Introduction Traffic simulations are of immense importance for researchers as well as practitioners in the field of transportation. SUMO has been available since 2001 and provides a wide range of traffic planning and simulation applications. SUMO consists of a suite of tools covering road network imports and enrichment, demand generation and assignment and a state-of-the-art microscopic traffic simulation capable to simulate private and public transport modes, as well as person-based trip chains.</description>
+    </item>
+    
+    <item>
+      <title>SUMO User Conference 2019</title>
+      <link>https://www.eclipse.org/sumo/2019/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/sumo/2019/</guid>
+      <description>Introduction Traffic simulations are of immense importance for researchers as well as practitioners in the field of transportation. Eclipse SUMO provides a wide range of traffic planning and simulation applications. Eclipse SUMO is a toolsuite covering road network imports and enrichment, demand generation and assignment and a state-of-the-art microscopic traffic simulation capable to simulate private and public transport modes, as well as person-based trip chains. Being open source, Eclipse SUMO is ready to implement new behavioral models or to control the simulation remotely using various programming environments.</description>
+    </item>
+    
+    <item>
+      <title>SUMO User Conference 2020</title>
+      <link>https://www.eclipse.org/sumo/2020/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/sumo/2020/</guid>
+      <description>Proceedings Conference Proceedings: https://www.tib-op.org/ojs/index.php/scp/issue/view/4
+DOI: https://doi.org/10.52825/scp.v1i
+Sessions and Presentations  Tutorial •  Video •  Tutorial files Ask us anything •  Q&amp;amp;A Transcript Keynote: Emerging mobility trends and the role of transport simulation models - Jordi Casas •  Video   Eclipse Session
+ Eclipse Foundation • [ Slides](https://sumo.dlr.de/2020/Eclipse Foundation - Gael Blondelle.pdf) openADx Working Group • [ Slides](https://sumo.dlr.de/2020/openADx - Andreas Riexinger.pdf) Eclipse ADORe • [ Slides](https://sumo.dlr.de/2020/Eclipse ADORe - Daniel Hess.</description>
+    </item>
+    
+    <item>
+      <title>SUMO User Conference 2021</title>
+      <link>https://www.eclipse.org/sumo/2021/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/sumo/2021/</guid>
+      <description>Proceedings Conference Proceedings: https://www.tib-op.org/ojs/index.php/scp/issue/view/5
+DOI: https://doi.org/10.52825/scp.v2i
+Sessions and Presentations  Tutorial •  Video •  Tutorial files Ask us anything •  Q&amp;amp;A Transcript Keynote: Ride-hailing and ride-pooling: State of the art, future research directions, and the role of traffic simulation - Klaus Bogenberger •  Video   Session 1: V2X
+ Cooperative traffic light control - considering cyclists with the aid of V2I - Maik Halbach and Kim Jannik Eggers •  Video A Study of Applying Eco-Driving Speed Advisory System on Transit Signal Priority - Hsuan Chih Wang •  Video -  Paper Modeling Cellular Network Infrastructure in SUMO - Anupama Hegde, Ringo Stahl, Silas Lobo and Andreas Festag •  Video -  Paper   Session 2: Tools</description>
+    </item>
+    
+    <item>
+      <title>SUMO User Conference 2022</title>
+      <link>https://www.eclipse.org/sumo/2022/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/sumo/2022/</guid>
+      <description>Proceedings Conference Proceedings: https://www.tib-op.org/ojs/index.php/scp/issue/view/8
+DOI: https://doi.org/10.52825/scp.v3i
+Sessions and Presentations  Tutorial •  Video •  Tutorial files Ask us anything •  Q&amp;amp;A Transcript Keynote: Simulating and modelling traffic: What are we trying to achieve? - Heather Kaths •  Video TAPAS Workshop - Matthias Heinrichs •  Video   Session 1: Traffic lights
+ Extension and Validation of NEMA-Style Dual-Ring Controller in SUMO - Max Schrader, Qichao Wang and Joshua Bittle •  Video A Comparison of Reinforcement Learning Agents Applied to Traffic Signal Optimisation - Cobus Louw, Louwrens Labuschange and Tiffany Woodley •  Video High fidelity modelling of traffic light control with xml logic representation - Maik Halbach and Jakob Erdmann •  Video Evaluating traffic performance of transit signal priority using SUMO simulation: A real-world case - Chun-Cheng Liang, Hsuan-Chih Wang, Wei-Hsun Lee and Ming-Te Wang •  Video   Session 2: Other modes of transportation</description>
+    </item>
+    
+    <item>
+      <title>SUMO User Conference 2023</title>
+      <link>https://www.eclipse.org/sumo/conference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/sumo/conference/</guid>
+      <description>New Title and Abstract submission deadline: Monday, January 16th, 2023 - 23:59 CET. --The EasyChair submission link is now available.--Save the date! SUMO User Conference 2023: May 02-04 in Berlin.
+Call for Papers The conference focuses on presenting new and unique results in the field of mobility simulation and modelling using openly available tools and data. We expect a large variety of research topics and usage approaches.</description>
+    </item>
+    
+  </channel>
+</rss>

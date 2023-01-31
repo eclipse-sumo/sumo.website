@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>SUMO User Conference 2018 | Eclipse SUMO - Simulation of Urban MObility</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://www.eclipse.org/sumo/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://www.eclipse.org/sumo/images/sumo_twitter.jpg">
+    <meta name="description" content="Get in touch with our international user community">
+    <meta name="theme-color" content="#338033">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://www.eclipse.org/sumo/images/sumo_twitter.jpg">
+    <meta name="twitter:site" content="@eclipsesumo">
+    <meta property="og:title" content="SUMO User Conference 2018 | Eclipse SUMO - Simulation of Urban MObility">
+    <meta property="og:description" content="Get in touch with our international user community">
+    <meta property="og:site_name" content="Eclipse SUMO - Simulation of Urban MObility">
+    <meta property="og:image" content="https://www.eclipse.org/sumo/images/sumo_share.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.eclipse.org/sumo/2018/">
+    <meta name="keywords" content="SUMO, Eclipse SUMO, Traffic Simulation, Mobility">
+    <link rel="stylesheet" href="https://www.eclipse.org/sumo/libraries/bootstrap.min.css">
+    <script src="https://www.eclipse.org/sumo/libraries/jquery.min.js"></script>
+    <script src="https://www.eclipse.org/sumo/libraries/popper.min.js"></script>
+    <script src="https://www.eclipse.org/sumo/libraries/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.eclipse.org/sumo/css/custom.css">
+    <link rel="stylesheet" href="https://www.eclipse.org/sumo/libraries/fontawesome/css/all.min.css">
+    <script src="https://www.eclipse.org/sumo/libraries/buttons.js"></script>
+
+    <script>
+        window.onload = function check_if_ie() {
+            var msie = window.navigator.userAgent.indexOf("MSIE ");
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+                document.getElementById("not_for_ie").style.display = 'none';
+            }
+            return false;
+        }
+    </script>
+
+    
+    
+
+    
+
+</head><body id="page-top"><!-- navigation -->
+
+    
+        <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
+          <div class="container">
+            <a class="navbar-brand" href="https://www.eclipse.org/sumo"><img class="img-fluid" src="/sumo/images/logos/sumo-logo-white.svg" id="navbar-logo" style="pointer-events:none;" alt="SUMO logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-label="menu icon">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="collapsibleNavbar">
+              <ul class="navbar-nav ml-auto">
+                
+                  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      About
+                    </a>
+                    <div class="dropdown-menu">
+                      
+                      <a class="dropdown-item" href="https://www.eclipse.org/sumo/about">About SUMO</a>
+                      
+                      <a class="dropdown-item" href="https://projects.eclipse.org/projects/automotive.sumo/who">Who&#39;s involved</a>
+                      
+                      <a class="dropdown-item" href="https://sumo.dlr.de/docs/ChangeLog.html">ChangeLog</a>
+                      
+                      <a class="dropdown-item" href="https://sumo.dlr.de/daily">Status of daily build and tests</a>
+                      
+                    </div>
+                  </li>
+                  
+                
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://sumo.dlr.de/docs/Downloads.php">Downloads</a>
+                  </li>
+                  
+                
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://sumo.dlr.de/docs/">Documentation</a>
+                  </li>
+                  
+                
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.eclipse.org/sumo/conference">Conference</a>
+                  </li>
+                  
+                
+                  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      References
+                    </a>
+                    <div class="dropdown-menu">
+                      
+                      <a class="dropdown-item" href="https://sumo.dlr.de/docs/Other/Projects.html">Projects</a>
+                      
+                      <a class="dropdown-item" href="https://sumo.dlr.de/docs/Publications.html">Publications</a>
+                      
+                      <a class="dropdown-item" href="https://sumo.dlr.de/docs/Contributed/index.html">Contributed extensions</a>
+                      
+                    </div>
+                  </li>
+                  
+                
+                  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      Support
+                    </a>
+                    <div class="dropdown-menu">
+                      
+                      <a class="dropdown-item" href="https://sumo.dlr.de/docs/FAQ.html">FAQ</a>
+                      
+                      <a class="dropdown-item" href="https://sumo.dlr.de/docs/Tutorials/index.html">Tutorials</a>
+                      
+                      <a class="dropdown-item" href="https://github.com/eclipse/sumo/issues">Report a Bug / Issue</a>
+                      
+                      <a class="dropdown-item" href="https://sumo.dlr.de/pydoc/">Pydoc Documentation</a>
+                      
+                      <a class="dropdown-item" href="https://sumo.dlr.de/daily/doxygen/">Doxygen Documentation</a>
+                      
+                      <a class="dropdown-item" href="https://sumo.dlr.de/docs/Developer/index.html">Developer Documentation</a>
+                      
+                    </div>
+                  </li>
+                  
+                
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.eclipse.org/sumo/contact">Contact</a>
+                  </li>
+                  
+                
+              </ul>
+            </div>
+            </div>
+          </nav>
+
+<!-- /navigation --><div id="content">
+<section class="section">
+  <div class="container-fluid header bg-gradient" style="padding: 40px 0 40px 0;">
+    <div class="svg-rounded">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="#f8f8f8"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+    </div>
+    <div class="text-center page-title" style="margin-top: 80px; color:#17412f;">SUMO User Conference 2018</div>
+  
+    
+    <h4 style="text-align: center; color: #6d846e;">Simulating Autonomous and Intermodal Transport</h4>
+    
+    <p style="text-align: center; color: #6d846e;"><i class="fas fa-calendar-alt"></i> May 14-16  &nbsp;&nbsp;•&nbsp;&nbsp; <i class="fas fa-map-marker-alt"></i> Berlin-Adlershof, Germany</p>
+    
+    
+  </div>
+
+  <div class="container">
+    
+    <div class="container"><div class="row">
+    <div class="col-md-10 contact-div">
+      <img src="../images/conference_2018.jpg" style="border-radius: .6rem .6rem 0 0; margin-top:-30px; margin-left: -30px; width: calc(100% + 60px); margin-bottom: 40px;" class="img-responsive" alt="Conference image"/>
+      <h1 id="introduction">Introduction</h1>
+<p>Traffic simulations are of immense importance for researchers as well as practitioners in the field of transportation. SUMO has been available since 2001 and provides a wide range of traffic planning and simulation applications. SUMO consists of a suite of tools covering road network imports and enrichment, demand generation and assignment and a state-of-the-art microscopic traffic simulation capable to simulate private and public transport modes, as well as person-based trip chains. Being open source, SUMO is ready to implement new behavioral models or to control the simulation remotely using various programming environments. These and other features make SUMO one of the most often used open source traffic simulations with a large and international user community.</p>
+<p>The conference was a great success! So many people have contributed in many ways to turn this event into a well-organized meeting with very interesting presentations and lively discussions.</p>
+<p>All those who contributed to the SUMO User Conference 2018:<br>
+Thank you for your excellent work!</p>
+<h1 id="contact">Contact</h1>
+<p>Please contact the conference team via mail at <a href="mailto:sumo-conference@dlr.de">sumo-conference@dlr.de</a><br>
+You can find more information about SUMO at <a href="https://sumo.dlr.de">https://sumo.dlr.de</a></p>
+</div>
+    <div class="col-md-2"><div style="border-left: 1px solid #d4d4d4; padding-left: 10px;">
+<p class="sidebar-title"><b>Archive</b></p>
+<div class="btn-group">
+    <div class="dropdown">
+    <button type="button" class="btn btn-light btn-archive btn-sm dropdown-toggle" data-toggle="dropdown" title="Explore previous conferences">Select year </button>
+        <div class="dropdown-menu text-center">
+            <a class="dropdown-item" href="https://www.eclipse.org/sumo/conference">Current conference <i class="fas fa-angle-double-right"></i></a>
+            <a class="dropdown-item" href="https://www.eclipse.org/sumo/2022">2022</a>
+            <a class="dropdown-item" href="https://www.eclipse.org/sumo/2021">2021</a>
+            <a class="dropdown-item" href="https://www.eclipse.org/sumo/2020">2020</a>
+            <a class="dropdown-item" href="https://www.eclipse.org/sumo/2019">2019</a>
+            <a class="dropdown-item" href="https://www.eclipse.org/sumo/2018">2018</a>
+            <a class="dropdown-item" href="https://www.eclipse.org/sumo/2017">2017</a>
+            <a class="dropdown-item" href="https://www.eclipse.org/sumo/2016">2016</a>
+            <a class="dropdown-item" href="https://www.eclipse.org/sumo/2015">2015</a>
+            <a class="dropdown-item" href="https://www.eclipse.org/sumo/2014">2014</a>
+            <a class="dropdown-item" href="https://www.eclipse.org/sumo/2013">2013</a>
+            <a class="dropdown-item" href="https://sumo.dlr.de/docs/SumoWorkshop2010.html">Workshop 2010</a>
+        </div>
+    </div> 
+</div>
+<br><br><div class="d-none d-md-block"><p class="sidebar-title"><b>What's on this Page</b></p>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+</div></div></div>
+    </div></div>
+    
+    
+    
+    
+    
+    <div class="d-flex justify-content-end"><a href="https://github.com/eclipse/sumo.website/edit/main/content/2018.md"><button type="button" class="btn btn-light btn-sm" title="Edit this page on GitHub"><i class="fas fa-pencil-alt"></i> Edit</button></a></div>
+    
+  </div>
+</section>
+
+        </div>
+<button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+
+  
+  <div style="margin-top: 20px; font-size: 0;">
+    <svg class="wave d-none d-md-block" style="display: block; pointer-events: none; height:100px; width: 100%;" fill="#ddd" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 75">
+        <defs>
+            <style>.a {fill: none;} .b {clip-path: url(#a);} .d {opacity: 0.5; isolation: isolate;}</style>
+            <clipPath id="a"><rect class="a" width="1920" height="75"></rect></clipPath>
+        </defs>
+        <title>wave</title>
+        <g class="b"><path class="c" d="M1963,327H-105V65A2647.49,2647.49,0,0,1,431,19c217.7,3.5,239.6,30.8,470,36,297.3,6.7,367.5-36.2,642-28a2511.41,2511.41,0,0,1,420,48"></path></g>
+        <g class="b"><path class="d" d="M-127,404H1963V44c-140.1-28-343.3-46.7-566,22-75.5,23.3-118.5,45.9-162,64-48.6,20.2-404.7,128-784,0C355.2,97.7,341.6,78.3,235,50,86.6,10.6-41.8,6.9-127,10"></path></g>
+        <g class="b"><path class="d" d="M1979,462-155,446V106C251.8,20.2,576.6,15.9,805,30c167.4,10.3,322.3,32.9,680,56,207,13.4,378,20.3,494,24"></path></g>
+        <g class="b"><path class="d" d="M1998,484H-243V100c445.8,26.8,794.2-4.1,1035-39,141-20.4,231.1-40.1,378-45,349.6-11.6,636.7,73.8,828,150"></path></g>
+    </svg>
+  </div>
+
+<div class="d-block d-md-none" style="margin-top:20px;"></div>
+  <footer class="footer" style="background: #ddd; margin-top: 0px; padding-top: 20px;">
+          <div class="container">
+            <div class="row" style="margin-bottom: 16px;">
+              <div class="col-md-12">
+          <div class="container-fluid">
+          <div class="row" style="font-size: small;">
+                  <div class="col-md text-left"><b>SUMO</b>
+                  <ul class="ul-no-bullet">
+                  <li><a href="https://www.eclipse.org/sumo/about">About</a></li>
+                  <li><a href="https://sumo.dlr.de/docs/Downloads.html">Downloads</a></li>
+                  <li><a href="https://sumo.dlr.de/docs/ChangeLog.html">ChangeLog</a></li>
+                  <li><a href="https://sumo.dlr.de/docs/Libraries_Licenses.html">License</a></li>
+                  <li><a href="https://sumo.dlr.de/docs/Other/Projects.html">Projects using SUMO</a></li>
+                  <li><a href="https://sumo.dlr.de/docs/Publications.html">Publications</a></li>
+                  </ul>
+                  </div>
+                  <div class="col-md text-left"><b>Project</b>
+                    <ul class="ul-no-bullet">
+                      <li><a href="https://projects.eclipse.org/projects/automotive.sumo/who">Who's involved</a></li>
+                      <li><a href="https://sumo.dlr.de/daily/">Status of daily build and tests</a></li>
+                      <li><a href="https://www.github.com/eclipse/sumo">GitHub repository</a></li>
+                      <li><a href="https://www.github.com/eclipse/sumo.website">Website GitHub repository</a></li>
+                      <li><a href="https://sourceforge.net/projects/sumo/">SourceForge</a></li>
+                      <li><a href="https://dlr.de/ts/en/sumo">SUMO @ DLR</a></li>
+                      <li><a href="https://projects.eclipse.org/projects/automotive.sumo">SUMO @ Eclipse</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-md text-left"><b>Community</b>
+                    <ul class="ul-no-bullet">
+                      <li><a href="https://www.eclipse.org/sumo/contact">Mailing lists</a></li>
+                      <li><a href="https://mattermost.eclipse.org/eclipse/channels/sumo">Mattermost channel</a></li>
+                      <li><a href="https://www.eclipse.org/sumo/conference">SUMO User Conference</a></li>
+                      <li><a href="https://openmobility.eclipse.org/">openMobility Working Group</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-md text-left"><b>Support & Training</b>
+                    <ul class="ul-no-bullet">
+                    <li><a href="https://www.eclipse.org/sumo/contact">Contact us</a></li>
+                    <li><a href="https://sumo.dlr.de/docs/FAQ.html">FAQ</a></li>
+                    <li><a href="https://sumo.dlr.de/docs/index.html">Documentation</a></li>
+                    <li><a href="https://sumo.dlr.de/docs/Developer/index.html">Developer Documentation</a></li>
+                    <li><a href="https://sumo.dlr.de/daily/doxygen/">Doxygen Documentation</a></li>
+                    <li><a href="https://sumo.dlr.de/docs/Tutorials/index.html">Tutorials</a></li>
+                    <li><a href="https://github.com/eclipse/sumo/issues">Issue Tracking</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-md text-left"><b>Eclipse Foundation</b>
+                    <br>
+                    <a href="https://www.eclipse.org/"><img class="img-fluid" src="https://www.eclipse.org/sumo/images/logos/eclipse-logo.png" alt="Eclipse Foundation logo" style="margin:10px 0; width: 100px;"></a>
+                    <ul class="ul-no-bullet">
+                    <li><a href="https://www.eclipse.org/legal/privacy.php">Privacy Policy</a></li>
+                    <li><a href="https://www.eclipse.org/legal/termsofuse.php">Website terms of use</a></li>
+                    <li><a href="https://www.eclipse.org/legal/copyright.php">Copyright</a></li>
+                    <li><a href="https://www.eclipse.org/legal">Legal</a></li>
+                    </ul>
+                  </div>
+          </div>
+          </div>
+    
+              </div>
+              
+              
+            </div>
+            <hr>
+            <div class="text-center">Made with <i class="fas fa-heart" style="color: red;"></i> in Berlin</div>
+
+                <br>
+             
+          </div>
+  </footer>
+  
+  <script>
+ 
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("goToTop").style.display = "block";
+        document.getElementById("navbar-logo").style.maxWidth = "60%";
+      } else {
+        document.getElementById("goToTop").style.display = "none";
+        document.getElementById("navbar-logo").style.maxWidth = "100%";
+      }
+    }
+  
+    function goTopFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+</html>

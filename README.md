@@ -1,6 +1,6 @@
 # Eclipse SUMO website
 
-This repository contains the source files for the [Eclipse SUMO website](https://eclipse.org/sumo).
+This repository contains generated static files (on the `main` branch) and markdown source files (on the `source` branch) for the [Eclipse SUMO website](https://eclipse.org/sumo).
 The SUMO website is generated using [Hugo](https://gohugo.io/).
 
 ## Getting started
