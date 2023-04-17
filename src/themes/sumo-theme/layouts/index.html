@@ -1,0 +1,366 @@
+{{ define "main" }}
+<div class="container-fluid header bg-gradient">
+    <div class="container" style="margin-top: 100px; margin-bottom: 20px;">
+      <div class="row">
+        <div class="col-md-6"> <!-- first col -->
+        <div class="page-title" style="color: #17412f;">Simulation of Urban MObility</div>
+        <br>    
+        <p>Welcome to Eclipse <b>SUMO</b> (Simulation of Urban MObility), an open source, highly portable, microscopic and continuous multi-modal traffic simulation package designed to handle large networks.</p>
+
+      <p><div class="btn-group">
+        <a href="https://sumo.dlr.de/releases/{{ $.Site.Params.Version }}/sumo-win64-{{ $.Site.Params.Version }}.msi" id="download-button" type="button" class="btn btn-success" style="-webkit-appearance: none; box-shadow: 0 8px 36px -3px rgba(20,45,100,.35);">SUMO {{ $.Site.Params.Version }} for Windows 64-bit</a>
+        <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"><span class="caret"></span></button>
+        <div class="dropdown-menu download-menu">
+          <a class="dropdown-item" href="{{ $.Site.Params.docsURL }}/Downloads.php#sources"><i class="fas fa-file-code"></i> Sources</a>
+          <a class="dropdown-item" href="{{ $.Site.Params.docsURL }}/Downloads.php#windows"><i class="fab fa-windows"></i> Windows</a>
+          <a class="dropdown-item" href="{{ $.Site.Params.docsURL }}/Downloads.php#linux"><i class="fab fa-linux"></i> Linux</a>
+          <a class="dropdown-item" href="{{ $.Site.Params.docsURL }}/Downloads.php#macos"><i class="fab fa-apple"></i> macOS</a>
+        </div>
+      </div>
+    <br><a href="{{ $.Site.Params.docsURL }}/Downloads.php#sumo_-_latest_development_version" class="green-text"><small>Latest Development Version (Nightly Snapshots) <i class="fas fa-angle-right"></i></small></a>
+    <br><a href="https://sourceforge.net/projects/sumo/files/sumo/" class="green-text"><small>Older releases <i class="fas fa-angle-right"></i></small></a></p>
+
+    <a class="github-button" href="https://github.com/eclipse/sumo" data-size="large" class="btn btn-social-icon btn-lg btn-github"><span class="fab fa-github"> View on GitHub</span></a>
+    <a class="github-button" href="https://github.com/eclipse/sumo" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star eclipse/sumo on GitHub">Star</a>    
+    <a class="github-button" href="https://github.com/eclipse/sumo/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork eclipse/sumo on GitHub">Fork</a>
+<div class="d-md-none" style="margin-top:30px;"></div> <!-- to separate text from screenshots-->
+</div><!-- end first col -->
+
+<script>
+  var Name = "Download SUMO";
+  var DownloadLink = "{{ $.Site.Params.docsURL }}/Downloads.php";
+  if (navigator.appVersion.indexOf("Win") != -1) {
+    Name = "SUMO {{ $.Site.Params.Version }} for Windows 64-bit";
+    DownloadLink = "https://sumo.dlr.de/releases/{{ $.Site.Params.Version }}/sumo-win64-{{ $.Site.Params.Version }}.msi";
+    }
+  if (navigator.appVersion.indexOf("Mac") != -1) {
+    Name =  "SUMO {{ $.Site.Params.Version }} for macOS";
+    DownloadLink = "{{ $.Site.Params.docsURL }}/Downloads.php#macos";
+    }
+  if (navigator.appVersion.indexOf("X11") != -1) {
+  Name = "SUMO {{ $.Site.Params.Version }} for Linux";
+  DownloadLink = "{{ $.Site.Params.docsURL }}/Downloads.php#linux_binaries";
+  }
+  if (navigator.appVersion.indexOf("Linux") != -1) {
+  Name = "SUMO {{ $.Site.Params.Version }} for Linux";
+  DownloadLink = "{{ $.Site.Params.docsURL }}/Downloads.php#linux_binaries";
+  }
+  var link = document.getElementById("download-button");
+    link.setAttribute("href", DownloadLink);
+    link.innerHTML = Name;
+</script> 
+
+
+
+  <div class="col-md-6 vertical-center"> <!-- second col -->
+    <div id="sumoScreenshots" class="carousel slide" style="box-shadow: 0 1rem 3rem rgba(0,0,0,.5) !important;" data-ride="carousel">
+
+      <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{ `images/screenshots/screenshot1.png` | absURL }}" alt="screenshot #1">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ `images/screenshots/screenshot2.png` | absURL }}" alt="screenshot #2">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ `images/screenshots/screenshot3.png` | absURL }}" alt="screenshot #3">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ `images/screenshots/screenshot7.png` | absURL }}" alt="screenshot #7">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ `images/screenshots/screenshot4.png` | absURL }}" alt="screenshot #4">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ `images/screenshots/screenshot5.png` | absURL }}" alt="screenshot #5">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ `images/screenshots/screenshot6.png` | absURL }}" alt="screenshot #6">
+      </div>
+      <a class="carousel-control-prev" href="#sumoScreenshots" aria-label="previous image" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#sumoScreenshots" aria-label="next image" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  <ul class="carousel-indicators">
+    <li data-target="#sumoScreenshots" data-slide-to="0" class="active"></li>
+    <li data-target="#sumoScreenshots" data-slide-to="1"></li>
+    <li data-target="#sumoScreenshots" data-slide-to="2"></li>
+    <li data-target="#sumoScreenshots" data-slide-to="3"></li>
+    <li data-target="#sumoScreenshots" data-slide-to="4"></li>
+    <li data-target="#sumoScreenshots" data-slide-to="5"></li>
+    <li data-target="#sumoScreenshots" data-slide-to="6"></li>
+  </ul>
+        </div>
+        
+        </div><!-- end second col -->
+      </div><!-- end row -->
+      <div class="svg-rounded" style="display: block; font-size: 0;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="#f8f8f8"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+      </div>
+    </div>
+  </div>
+  
+
+<!-- Content -->
+<div class="container" style="margin-top: 60px; margin-bottom: 60px;">
+
+  <div class="row">
+    <div class="col-md-8 text-justify" >
+        {{ .Content }}
+    </div>
+
+    <div class="col-md-4">
+      <div class="d-md-none" style="margin-top: 14px;"></div>
+      <div class="btn-group btn-group-lg" style="width: 100%; margin-bottom: 10px;">
+        <a class="btn btn-light" href="https://github.com/eclipse/sumo" aria-label="GitHub"><span class="fab fa-github"></span></a>
+        <a class="btn btn-light" href="https://twitter.com/eclipsesumo" aria-label="Twitter"><span class="fab fa-twitter"></span></a>
+        <a class="btn btn-light" href="https://facebook.com/simulationofurbanmobility" aria-label="Facebook"><span class="fab fa-facebook"></span></a>
+        <a class="btn btn-light" href="https://instagram.com/eclipse.sumo" aria-label="Instagram"><span class="fab fa-instagram"></span></a>
+        <a class="btn btn-light" href="https://mattermost.eclipse.org/eclipse/channels/sumo" aria-label="Mattermost"><span class="fas fa-comments"></span></a>
+        <a class="btn btn-light" href="{{ `contact` | absURL }}" aria-label="contact"><span class="fas fa-envelope"></span></a>
+      </div>
+
+      <a href="{{ `conference` | absURL }}" class="text-decoration-none" style="color: inherit">
+        <div class="card">
+          <div class="card-header">
+            <img src="{{ `images/banner_2023.png` | absURL }}" style="width: 100%">
+          </div>
+          <div class="card-body text-center">
+            <strong id="remaining-days"></strong> days remaining
+          </div>
+        </div>
+      </a>
+
+      <script>
+        let conference_date = new Date('05/02/2023');
+        let current_date = new Date();
+        var remainingDays = Math.ceil((conference_date.getTime() - current_date.getTime()) / (1000 * 3600 * 24));
+        document.getElementById("remaining-days").innerHTML = remainingDays;
+      </script>
+
+    </div>
+  </div>
+
+</div>
+<!-- /Content -->
+
+
+  <!-- Features -->
+  <section class="page-section" id="features" style="background: rgba(235,243,235,1);">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Features</h2>
+        </div>
+      </div>
+      
+      <div class="row text-center"> <!-- 1 row -->
+        <div class="col-md-4">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x text-secondary"></i>
+            <i class="fas fa-car fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="feature-heading">Automated Driving</h4>
+          <p class="text-muted">Integrate automated vehicles in your traffic simulations and equip your vehicles with a transition of control (ToC) device</p>
+        </div>
+
+        <div class="col-md-4">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x text-secondary"></i>
+            <i class="fas fa-satellite-dish fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="feature-heading">Vehicle Communication</h4>
+          <p class="text-muted">Implement and evaluate C2X communication technologies by coupling to a communication network simulator (OMNeT++ or ns-3)</p>
+        </div>
+
+        <div class="col-md-4">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x text-secondary"></i>
+            <i class="fas fa-tasks fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="feature-heading">Traffic Management</h4>
+          <p class="text-muted">Model video detectors and induction loops to manage traffic interactively by controlling speed limits, traffic lights and vehicle behavior</p>
+        </div>
+      </div> <!-- end 1 row -->
+
+      <div class="row text-center"> <!-- 2 row -->
+        <div class="col-md-4">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x text-secondary"></i>
+            <i class="fas fa-compress-arrows-alt fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="feature-heading">Microscopic Simulation</h4>
+          <p class="text-muted">Simulate the movement of every individual object by modeling all vehicles, pedestrians and public transport explicitly</p>
+        </div>
+
+        <div class="col-md-4">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x text-secondary"></i>
+            <i class="fas fa-bus fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="feature-heading">Multimodal Traffic</h4>
+          <p class="text-muted">Combine different modes of transportation and simulate cars, buses, trains, bicycles, pedestrians, public transport and more</p>
+        </div>
+
+        <div class="col-md-4">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x text-secondary"></i>
+            <i class="fas fa-sliders-h fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="feature-heading">Online Interaction</h4>
+          <p class="text-muted">Control the behavior of all simulation objects during a live simulation with the Traffic Control Interface (TraCI)</p>
+        </div>
+      </div> <!-- end 2 row -->
+
+      <div class="row text-center"> <!-- 3 row -->
+        <div class="col-md-4">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x text-secondary"></i>
+            <i class="fas fa-file-import fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="feature-heading">Network Import</h4>
+          <p class="text-muted">Import road networks from common network formats such as OpenStreetMap, VISUM, VISSIM, NavTeq, MATsim and OpenDRIVE</p>
+        </div>
+
+        <div class="col-md-4">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x text-secondary"></i>
+            <i class="fas fa-route fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="feature-heading">Demand Generation</h4>
+          <p class="text-muted">Use traffic counts on streets and junctions, origin-destination-matrices or virtual population models to generate realistic demand profiles</p>
+        </div>
+
+        <div class="col-md-4">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x text-secondary"></i>
+            <i class="fas fa-traffic-light fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="feature-heading">Traffic Lights</h4>
+          <p class="text-muted">Modify traffic light schedules visually with netedit, import schedules from external data sources or generate schedules automatically</p>
+        </div>
+      </div> <!-- end 3 row -->
+
+      <div class="row text-center"> <!-- 4 row -->
+        <div class="col-md-4">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x text-secondary"></i>
+            <i class="fas fa-tachometer-alt fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="feature-heading">Performance</h4>
+          <p class="text-muted">Boost your simulation with an unlimited network size, an unlimited amount of simulated vehicles and an unlimited simulation time<a href="https://sumo.dlr.de/docs/FAQ.html#are_there_any_limits_in_regard_to_the_size_of_a_simulation_scenario">*</a></p>
+        </div>
+
+        <div class="col-md-4">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x text-secondary"></i>
+            <i class="fas fa-arrows-alt-h fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="feature-heading">Portability</h4>
+          <p class="text-muted">Use SUMO on a variety of platforms (Windows, Linux or macOS) as it is implemented in C++ and Python and uses portable libraries</p>
+        </div>
+
+        <div class="col-md-4">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x text-secondary"></i>
+            <i class="fas fa-users fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="feature-heading">Open Source</h4>
+          <p class="text-muted">Use and modify SUMO according to your needs as it is available under Eclipse Public License v2.0 and GNU General Public License v2.0</p>
+        </div>
+      </div> <!-- end 4 row -->
+
+    </div>
+    </div>
+  </section>
+  <!-- /Features -->
+
+
+
+<!-- openMobility -->
+<div class="container-fluid text-center text-muted" style="margin-top: 60px;">
+
+  
+<div class="container">
+  <div class="row">
+    <div class="col-md-3" style="margin-top: auto; margin-bottom: auto;">
+      <a href="https://openmobility.eclipse.org"><image src="{{ `images/logos/openMobility-logo.svg` | absURL }}" alt="openMobility logo" style="max-width: 250px;"></image></a>
+    </div>
+    <div class="col-md-9" style="color: #403b3b;">
+      The future development and roadmap of SUMO is shaped and fostered by the <a href="https://openmobility.eclipse.org"><b>openMobility Working Group</b></a> at the Eclipse Foundation. 
+        Several partners from industry and academia are working together towards a common mobility simulation platform for industrial applications and academic research.
+    </div>
+  </div> 
+</div>
+
+<div style="margin: 46px 0;">
+  <a href="https://www.eclipse.org/membership/showMember.php?member_id=1352"><image src="{{ `images/logos/avl-logo.png` | absURL }}" alt="AVL logo" class="member-logo"></image></a>
+  <a href="https://www.eclipse.org/membership/showMember.php?member_id=979"><image src="{{ `images/logos/bosch-logo.png` | absURL }}" alt="Bosch logo" class="member-logo"></image></a>
+  <a href="https://www.eclipse.org/membership/showMember.php?member_id=1235"><image src="{{ `images/logos/dlr-logo.png` | absURL }}" alt="DLR logo" class="member-logo"></image></a>
+  <a href="https://www.eclipse.org/membership/showMember.php?member_id=758"><image src="{{ `images/logos/fraunhofer-logo.png` | absURL }}" alt="Fraunhofer logo" class="member-logo"></image></a>
+  <a href="https://www.eclipse.org/membership/showMember.php?member_id=817"><image src="{{ `images/logos/itemis-logo.png` | absURL }}" alt="Itemis logo" class="member-logo"></image></a>
+  <a href="https://www.eclipse.org/membership/showMember.php?member_id=816"><image src="{{ `images/logos/vector-logo.png` | absURL }}" alt="Vector logo" class="member-logo"></image></a>
+</div>
+     
+</div>
+<!-- /openMobility -->
+
+<script>
+////////////////////////////////////////////////////
+// https://gomakethings.com/how-to-lazy-load-youtube-videos-with-vanilla-javascript/
+////////////////////////////////////////////////////
+
+// Get all of the videos
+let videos = document.querySelectorAll('[data-youtube]');
+
+for (let video of videos) {
+	// Get the video ID
+	let id = new URL(video.href).searchParams.get('v');
+
+    // Add the ID to the data-youtube attribute
+	video.setAttribute('data-youtube', id);
+
+	// Add a role of button
+	video.setAttribute('role', 'button');
+
+	// Add a thumbnail
+	video.innerHTML =
+		`${video.textContent}<div class="video-container">
+        <img alt="" class="tutorial-video" src="https://img.youtube.com/vi/${id}/maxresdefault.jpg">
+        <div class="centered video-text">Click to load external resources from YouTube.</div>
+        </div>`;
+}
+
+/**
+ * Handle click events on the video thumbnails
+ * @param  {Event} event The event object
+ */
+function clickHandler (event) {
+
+	// Get the video link
+	let link = event.target.closest('[data-youtube]');
+	if (!link) return;
+
+	// Prevent the URL from redirecting users
+	event.preventDefault();
+
+	// Get the video ID
+	let id = link.getAttribute('data-youtube');
+
+	// Create the player
+	let player = document.createElement('div');
+	player.innerHTML = `<iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+
+	// Inject the player into the UI
+	link.replaceWith(player);
+
+}
+
+// Detect clicks on the video thumbnails
+document.addEventListener('click', clickHandler);
+</script>
+
+{{ end }}

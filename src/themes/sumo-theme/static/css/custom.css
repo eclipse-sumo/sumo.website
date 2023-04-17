@@ -1,0 +1,520 @@
+body {
+margin: 0;
+background-color: #f8f8f8;
+color: #403b3b;
+}
+
+html, body {
+position: relative;
+overflow-x: hidden;
+scroll-padding-top: 80px; /* see below */
+}
+
+/* scroll-padding-top doesn't work on Safari. This is a fix: */
+@media not all and (min-resolution:.001dpcm) {
+@media {
+h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
+display: block;
+content: " ";
+height: 80px;
+margin-top: -80px;
+visibility: hidden;
+}
+}
+}
+
+.carousel-indicators li {
+border-radius: 12px;
+width: 12px;
+height: 12px;
+margin-bottom: 0;
+background-color: #17412f;
+border: white;
+}
+
+.carousel-indicators li {
+width: 10px;
+height: 10px;
+border-radius: 100%;
+}
+
+.carousel-indicators {
+bottom: -40px;
+}
+
+.download-menu {
+width: 100%;
+left: 50% !important;
+transform: translateX(-50%) !important;
+top: 100% !important;
+}
+
+.header {
+position: relative;
+background-color: rgba(235,243,235,1);
+padding: 40px 0 60px 0;
+margin-bottom: 30px;
+}
+
+.fa-stack-2x {
+color: rgb(125,174,125) !important;
+}
+
+pre {
+background: #eff0f1;
+border-radius: 3px;
+border: 1px solid #ddd !important;
+padding: 12px 8px;
+display: block;
+overflow-x: auto;
+padding: 0.5em;
+color: #333;
+font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+
+.application-box {
+border-radius: .6rem;
+padding: 15px 5px;
+height: 100%;
+background-color: rgb(190,228,192);
+border: 1px solid transparent;
+box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15);
+position: relative;
+top: 0;
+transition: top ease 0.5s;
+word-break: break-word;
+}
+
+.application-box a {
+color: #403b3b;
+text-decoration: none;
+}
+
+.application-box:hover {
+border: 1px solid #338033;
+top: -10px;
+}
+
+.list-group-item {
+background-color: #e7edf2 !important;
+padding: 5px;
+margin: 0 10px;
+}
+
+.badge-light {
+border-radius: 0 !important;
+}
+
+.member-logo {
+height: 45px;
+margin: 10px 30px !important;
+}
+
+.contact-div {
+border-radius: .6rem;
+padding: 30px;
+background-color: #fff;
+border: 1px solid #ddd;
+margin-bottom: 15px;
+}
+
+.small-div {
+margin-right: 15px;
+}
+
+.btn-outline-info {
+margin-bottom: 4px;
+}
+
+@media (max-width: 768px) {
+.small-div {
+margin-right: 0;
+min-height: 150px;
+}
+.contact-div {
+min-height: 150px !important;
+}
+.transparent {
+opacity: 0 !important;
+}
+}
+
+.margin-b {
+margin-bottom: 20px;
+}
+
+.bg-gradient {
+background-color: rgb(190,228,192);
+}
+
+.intro-content {
+border-radius: .6rem;
+padding: 20px;
+color: #333;
+background-color: white;
+border: 1px solid transparent;
+box-shadow: rgba(0,0,0,0.05) 0px 1px 4px 0px,rgba(0,0,0,0.025) 0px 15px 20px -1px;
+}
+
+.device-laptop .computer-container {
+display: block;
+height: auto;
+width: 100%;
+position: relative;
+z-index: 1;
+}
+
+.device-laptop .computer-screenshot {
+display: block;
+position: absolute;
+top: 13%;
+left: 15%;
+height: auto;
+width: 70%;
+z-index: 2;
+}
+
+.svg-rounded svg {
+position: absolute;
+bottom: 0;
+left: 0;
+height: 3rem;
+width: 100%;
+}
+
+.navbar {
+padding: 10px 0 !important;
+box-shadow: 0 0 1px 1px rgb(29 17 51 / 4%), 0 0 3px 2px rgb(9 32 77 / 12%), 0 0 2px -3px rgb(29 17 51 / 12%);
+}
+
+.nav-item {
+margin: 0 5px;
+font-size: 14px;
+}
+
+.nav-link:hover {
+background-color: #17412f;
+border-radius: 5px;
+}
+
+.nav-link {
+color: #eff8ff !important;
+}
+
+.navbar-light .navbar-toggler-icon {
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-light .navbar-toggler {
+border-color: rgba(255,255,255,0);
+}
+
+.vertical-center {
+margin-top: auto;
+margin-bottom: auto;
+}
+
+.bg-light {
+background-color: #338033 !important;
+}
+
+.navbar-brand {
+margin-right: 0 !important;
+}
+
+#navbar-logo {
+transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+.navbar-brand {
+margin-left: 15px;
+}
+.navbar-toggler {
+margin-right: 15px;
+}
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+}
+
+table td {
+padding: 7px;
+border: #ddd 1px solid;
+}
+
+table tr {
+background: #efefef;
+}
+
+table tr:nth-child(odd) {
+background: #efefef;
+}
+
+table tr:nth-child(even) {
+background: #fff;
+}
+
+thead tr th:first-child,
+tbody tr td:first-child {
+width: 8em;
+min-width: 8em;
+max-width: 8em;
+}
+
+th {
+background-color: #ddd;
+padding:7px; border: #ddd 1px solid;
+}
+
+.col-md-4 {
+margin-bottom: 15px;
+}
+
+.btn-padding {
+padding: 2px 14px !important;
+}
+
+.dropdown-item {
+color: #eff8ff !important;
+}
+
+.dropdown-item:visited {
+background-color: #336699;
+}
+
+.dropdown-item:hover {
+background-color: #336699;
+}
+
+.dropdown-item:active {
+background-color: #336699 !important;
+}
+
+.dropdown-menu {
+background-color: #17412f;
+border-radius: 4px;
+border-color: #eff8ff;
+box-shadow: 0 0 0 1px rgba(0,0,0,.05),0 5px 25px 0 rgba(0,0,0,.15),0 3px 3px 0 rgba(0,0,0,.05);
+}
+
+@media (min-width: 990px) {
+.dropdown-menu {
+left: 50% !important;
+transform: translateX(-50%) !important;
+top: 100% !important;
+}
+}
+
+#goToTop {
+display: none;
+position: fixed;
+bottom: 20px;
+right: 20px;
+z-index: 99;
+font-size: 18px;
+border: none;
+outline: none;
+background-color: rgba(85,85,85,0.5);
+color: white;
+cursor: pointer;
+padding: 15px;
+border-radius: 8px;
+}
+
+#goToTop:hover {
+background-color: #555;
+}
+
+.footer {
+list-style-type: none;
+}
+
+.footer a {
+color: inherit !important;
+text-decoration: none !important;
+}
+
+.btn-success {
+background-color: #338033;
+border-color: transparent !important;
+}
+
+.wave-design {
+position: absolute;
+top: 0;
+z-index: -2;
+overflow: hidden;
+background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgb(235,243,235) 20%);
+}
+
+.page-title {
+color: #241c15;
+font-size: 2.5rem;
+font-weight: 700;
+margin-bottom: .5rem;
+line-height: 1.2;
+font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.page-section {
+padding: 60px;
+}
+
+.sidebar-title {
+margin-bottom: 1.3em;
+font-size: .875rem;
+}
+
+.green-text {
+color: #338033 !important;
+}
+
+a {
+color: #0645ad;
+}
+
+.btn-outline-info {
+color: #0645ad;
+border-color: #0645ad;
+}
+
+.btn-outline-info:hover {
+background-color: #0645ad;
+border-color: #0645ad;
+}
+
+p {
+line-height: 1.5;
+}
+
+.text-left {
+margin-bottom: 15px;
+}
+
+.section-heading {
+font-size: 30px;
+margin-top: 0;
+color: #17412f;
+margin-bottom: 60px;
+}
+
+.feature-heading {
+margin-top: 5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-weight: 700;
+font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+h1 {
+margin-top: 40px;
+font-size: 1.75rem;
+}
+
+h1:first-of-type {
+margin-top: 0;
+}
+
+h2 {
+font-size: 1.5rem;
+}
+
+h3 {
+margin-top: 40px;
+font-size: 1.25rem;
+}
+
+.carousel-inner img {
+width: 100%;
+height: 100%;
+}
+
+.carousel-item img {
+border: solid 1px; border-color: rgba(160,160,160,0.5) !important;
+box-shadow: 0 40px 50px rgba(7,30,87,.2) !important;
+pointer-events: none;
+}
+
+.shadow-img {
+box-shadow: 0 40px 50px rgba(7,30,87,.2) !important;
+}
+
+.vertical-center {
+margin-top: auto;
+margin-bottom: auto;
+}
+
+.ul-no-bullet {
+list-style: none;
+list-style-position: inside;
+padding-left: 0;
+}
+
+.btn-light {
+color: #17412f !important;
+}
+
+.btn-archive {
+background-color: rgb(240, 240, 240);
+}
+
+.btn-group-lg>.btn, .btn-lg {
+padding: .5rem .5rem;
+}
+
+#TableOfContents ul {
+padding-left: 20px;
+}
+
+#TableOfContents {
+font-size: 0.9rem;
+}
+
+.card {
+border-radius: .6rem !important;
+box-shadow: 0 8px 12px 1px rgb(29 17 51 / 6%), 0 3px 16px 2px rgb(9 32 77 / 6%), 0 5px 10px -3px rgb(29 17 51 / 6%);
+border: none !important;
+}
+
+.card-header {
+background-color:rgb(221,226,231) !important;
+padding: 10px 20px !important;
+}
+
+.card-header:first-child {
+border-radius: calc(.6rem - 1px) calc(.6rem - 1px) 0 0 !important;
+}
+
+.card-body {
+padding: 10px 20px !important;
+}
+
+/* ---- */
+
+.tutorial-video {
+width: 100%;
+}
+
+.video-container {
+position: relative;
+text-decoration: none;
+display: inline-block;
+text-align: center;
+}
+
+.centered {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.video-text {
+background-color:rgba(0, 0, 0, 0.5);
+color: #fff;
+padding: 3px;
+}

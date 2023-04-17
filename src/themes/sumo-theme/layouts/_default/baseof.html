@@ -1,0 +1,14 @@
+<!-- {{ "<!-- Last edit:" | safeHTML }} {{ .Lastmod.Format "January 2, 2006" }} {{ "-->" | safeHTML }} -->
+<!DOCTYPE html>
+<html lang="en">
+    {{- partial "head.html" . -}}
+
+    <body id="page-top">
+        {{- partial "header.html" . -}}
+        <div id="content">
+        {{- block "main" . }}{{- end }}
+        </div>
+        {{- partial "footer.html" . -}}
+
+    </body>
+</html>
