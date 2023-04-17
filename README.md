@@ -1,6 +1,6 @@
 # Eclipse SUMO website
 
-This repository contains generated static files (on the `main` branch) and markdown source files (on the `source` branch) for the [Eclipse SUMO website](https://eclipse.org/sumo).
+This repository contains generated static files and markdown source files (inside the `/src/` directory) for the [Eclipse SUMO website](https://eclipse.org/sumo).
 The SUMO website is generated using [Hugo](https://gohugo.io/).
 
 ## Getting started
@@ -17,11 +17,13 @@ git clone https://github.com/eclipse/sumo.website.git
 
 To run the built-in development server, use:
 ```
+cd src
 hugo serve
 ```
 
 By default, the `config/_default/config.yaml` configuration file will be used. To use the alternative `config/dlr/config.yaml` file to overwrite some parameters, use:
 ```
+cd src
 hugo serve --environment dlr
 ```
 
@@ -31,14 +33,20 @@ hugo serve --environment dlr
 
 To generate the final static html files, run:
 ```
-hugo
+cd src
+hugo -d ../
 ```
 or
 ```
-hugo --environment dlr
+cd src
+hugo -d ../ --environment dlr
 ```
 
-This should create the *public* directory, containing all the necessary HTML and CSS files.
+This should generate all the necessary HTML and CSS files in the root directory.
+
+### Contributing
+
+After making changes to the markdown source files, the command `hugo -d ../` should be executed within the `/src/` directory, to generate the modified static files. A commit can be done after this step.
 
 ## Other links
 - [SUMO repository](https://github.com/eclipse/sumo)
