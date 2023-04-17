@@ -175,7 +175,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 </thead>
 <tbody>
   <tr>
-    <td align="right">09:00 - 10:30</td>
+    <td align="right">09:00 - 10:30<br><br>Session 1<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Yun-Pang Flötteröd</p></td>
 <td>
 Session 1
     </td>
@@ -187,7 +187,7 @@ Session 1
     </td>
   </tr>
   <tr>
-    <td align="right">10:45 - 12:15</td>
+    <td align="right">10:45 - 12:15<br><br>Session 2<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Robert Hilbrich</p></td>
 <td>
 Session 2
     </td>
@@ -211,7 +211,7 @@ Session 2
     </td>
   </tr>
   <tr>
-    <td align="right">14:15 - 15:30</td>
+    <td align="right">14:15 - 15:30<br><br>Session 3<br><b>Poster Session</b><br><br></td>
 <td>
 Session 3 - Poster Session
   </tr>
@@ -222,7 +222,7 @@ Session 3 - Poster Session
     </td>
   </tr>
   <tr>
-    <td align="right">15:45 - 17:00</td>
+    <td align="right">15:45 - 17:00<br><br>Session 4<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Peter Wagner</p></td>
 <td>
 Session 4
     </td>
@@ -245,7 +245,7 @@ Session 4
 </thead>
 <tbody>
   <tr>
-    <td align="right">09:00 - 10:30</td>
+    <td align="right">09:00 - 10:30<br><br>Session 5<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Ronald Nippold</p></td>
 <td>
 Session 5
     </td>
@@ -257,7 +257,7 @@ Session 5
     </td>
   </tr>
   <tr>
-    <td align="right">10:45 - 12:15</td>
+    <td align="right">10:45 - 12:15<br><br>Session 6<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Jakob Erdmann</p></td>
 <td>
 Session 6
     </td>
@@ -266,7 +266,7 @@ Session 6
     <td style="text-align:center; background-color: #d9f1ff;" colspan="2"><b><i>Lunch </b></i>&#x1F957;</td>
   </tr>
   <tr>
-    <td align="right">13:00 - 14:30</td>
+    <td align="right">13:00 - 14:30<br><br>Session 7<br><b>Poster Session</b><br><br></td>
 <td>
 Session 7 - Poster Session
     </td>
@@ -278,7 +278,7 @@ Session 7 - Poster Session
     </td>
   </tr>
   <tr>
-    <td align="right">14:45 - 15:15</td>
+    <td align="right">14:45 - 15:15<br><br>Session 8<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Benjamin Coueraud</p></td>
 <td>
 Session 8
     </td>
@@ -289,7 +289,7 @@ Session 8
   </tr>
 </tbody>
 </table>
-<small>Last update: 17.04.2023 - 16:22 CEST</small>
+<small>Last update: 17.04.2023 - 16:47 CEST</small>
 
 # Keynote
 
