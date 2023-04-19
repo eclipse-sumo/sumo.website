@@ -187,10 +187,10 @@ Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
     <td align="right">09:00 - 10:30<br><br>Session 1<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Yun-Pang Flötteröd</p></td>
 <td>
     <b>Generating and Calibrating a Microscopic Traffic Flow Simulation Network of Kyoto</b><br>
-    Andreas Keler, Wenzhe Sun and Jan-Dirk Schmöcker
+    Andreas Keler <i><small>(Technical University of Munich)</small></i>, Wenzhe Sun <i><small>(Kyoto University)</small></i> and Jan-Dirk Schmöcker <i><small>(Kyoto University)</small></i>
 <hr>
     <b>Simulation-based origin-destination matrix reduction: a case study of Helsinki city area</b><br>
-    Klavdiya Bochenina, Anton Taleiko and Laura Ruotsalainen
+    Klavdiya Bochenina, Anton Taleiko and Laura Ruotsalainen <i><small>(all: University of Helsinki)</small></i>
 </td>
   </tr>
     <tr>
@@ -203,13 +203,13 @@ Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
     <td align="right">10:45 - 12:15<br><br>Session 2<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Robert Hilbrich</p></td>
 <td>
     <b>Calibration of a Microscopic Traffic Simulation in an Urban Scenario Using Loop Detector Data</b><br>
-    Andreas Keler, Andreas Kunz, Sasan Amini and Klaus Bogenberger
+    Andreas Keler, Andreas Kunz, Sasan Amini and Klaus Bogenberger <i><small>(all: Technical University of Munich)</small></i>
 <hr>
     <b>Comparing Measured Driver Behavior Distributions to Results from Car-Following Models using SUMO and Real-World Vehicle Trajectories from Radar</b><br>
-    Maxwell Schrader, Mahdi Al Abdraboh and Joshua Bittle
+    Maxwell Schrader, Mahdi Al Abdraboh and Joshua Bittle <i><small>(all: University of Alabama)</small></i>
 <hr>
     <b>Development, calibration, and validation of a large-scale traffic simulation model: Belgium road network</b><br>
-    Behzad Bamdad Mehrabani, Luca Sgambi, Sven Maerivoet and Maaike Snelder
+    Behzad Bamdad Mehrabani <i><small>(UCLouvain)</small></i>, Luca Sgambi <i><small>(UCLouvain)</small></i>, Sven Maerivoet <i><small>(Transport & Mobility Leuven)</small></i> and Maaike Snelder <i><small>(TU Delft)</small></i>
 </td>
   </tr>
   <tr>
@@ -220,7 +220,7 @@ Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
     <td>
     <b>Keynote:
     e-bike-city: An answer to our transport dead-end?</b><br>
-    Prof. Dr. Kay W. Axhausen
+    Prof. Dr. Kay W. Axhausen <i><small>(ETH Zürich)</small></i>
     <br>
     <a style="color:#0645ad; cursor:pointer;" href="#keynote">Read more <i class="fas fa-angle-down"></i></a>
     </td>
@@ -246,10 +246,10 @@ Session 3 - Poster Session
     <td align="right">15:45 - 17:00<br><br>Session 4<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Ronald Nippold</p></td>
 <td>
     <b>State of Bicycle Modeling in SUMO</b><br>
-    Aboozar Roosta, Heather Kaths, Mirko Barthauer, Jakob Erdmann, Yun-Pang Flötteröd and Michael Behrisch
+    Aboozar Roosta <i><small>(University of Wuppertal)</small></i>, Heather Kaths <i><small>(University of Wuppertal)</small></i>, Mirko Barthauer <i><small>(DLR)</small></i>, Jakob Erdmann <i><small>(DLR)</small></i>, Yun-Pang Flötteröd <i><small>(DLR)</small></i> and Michael Behrisch <i><small>(DLR)</small></i>
 <hr>
     <b>Framework for Simulating Cyclists in SUMO</b><br>
-    Heather Kaths and Aboozar Roosta
+    Heather Kaths and Aboozar Roosta <i><small>(all: University of Wuppertal)</small></i>
 </td>
   </tr>
   <tr>
@@ -273,13 +273,13 @@ Session 3 - Poster Session
     <td align="right">09:00 - 10:30<br><br>Session 5<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Peter Wagner</p></td>
 <td>
     <b>Coping with Randomness in Highly Complex Systems Using the Example of Quantum-Inspired Traffic Flow Optimization</b><br>
-    Maria Haberland and Lars Hohmuth
+    Maria Haberland and Lars Hohmuth <i><small>(all: Fujitsu)</small></i>
 <hr>
     <b>The Effects of Route Randomization on Urban Emissions</b><br>
-    Giuliano Cornacchia, Mirco Nanni, Dino Pedreschi and Luca Pappalardo
+    Giuliano Cornacchia <i><small>(University of Pisa)</small></i>, Mirco Nanni <i><small>(KDD-Lab ISTI-CNR Pisa)</small></i>, Dino Pedreschi <i><small>(University of Pisa)</small></i> and Luca Pappalardo <i><small>(University of Pisa, KDD-Lab ISTI-CNR Pisa)</small></i>
 <hr>
     <b>Challenges in Reward Design for Reinforcement Learning-based Traffic Signal Control: An Investigation using a CO2 Emission Objective</b><br>
-    Max Schumacher, Christian Medeiros Adriano and Holger Giese
+    Max Schumacher <i><small>(University of Potsdam)</small></i>, Christian Medeiros Adriano <i><small>(Hasso-Plattner-Institut)</small></i> and Holger Giese <i><small>(Hasso-Plattner-Institut)</small></i>
 </td>
   </tr>
       <tr>
@@ -292,13 +292,13 @@ Session 3 - Poster Session
     <td align="right">10:45 - 12:15<br><br>Session 6<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Jakob Erdmann</p></td>
 <td>
     <b>A Technical Concept for sensor-based Traffic Flow Optimization on connected real-world intersections via a SUMO Feature Gap Analysis</b><br>
-    Ingo Trautwein, Andreas Freymann, Emanuel Reichsöllner, Mirko Sonntag, Thomas Schrodi and Jessica Kraus Schoeps
+    Ingo Trautwein <i><small>(Fraunhofer IAO)</small></i>, Andreas Freymann <i><small>(Fraunhofer IAO)</small></i>, Emanuel Reichsöllner <i><small>(Hochschule Esslingen)</small></i>, Mirko Sonntag <i><small>(Hochschule Esslingen)</small></i>, Thomas Schrodi <i><small>(Fraunhofer IAO)</small></i> and Jessica Kraus Schoeps <i><small>(Fraunhofer IAO)</small></i>
 <hr>
     <b>SUMO Simulations for Federated Learning in Communicating Autonomous Vehicles</b><br>
-    Levente Alekszejenkó and Tadeusz Dobrowiecki
+    Levente Alekszejenkó and Tadeusz Dobrowiecki <i><small>(all: Budapest University of Technology and Economics)</small></i>
 <hr>
     <b>SUMO Roundabout Simulation with Human in the Loop</b><br>
-    Giorgio Previati and Gianpiero Mastinu
+    Giorgio Previati and Gianpiero Mastinu <i><small>(all: Politecnico di Milano)</small></i>
 </td>
   </tr>
   <tr>
@@ -320,10 +320,10 @@ Session 7 - Poster Session
     <td align="right">14:45 - 15:15<br><br>Session 8<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Benjamin Coueraud</p></td>
 <td>
     <b>Analysis and modelling of road traffic using SUMO to optimize the arrival time of emergency vehicles</b><br>
-    Shamli Soni and Karsten Weronek
+    Shamli Soni and Karsten Weronek <i><small>(all: Frankfurt University of Applied Sciences)</small></i>
 <hr>
     <b>Evaluating the benefits of promoting intermodality and active modes in urban transportation: a microsimulation approach</b><br>
-    Souhir Bennaya and Moez Kilani
+    Souhir Bennaya and Moez Kilani <i><small>(all: Université du Littoral Côte d'Opale, LEM : Lille Economie Management)</small></i>
 </td>
   </tr>
   <tr>
@@ -332,7 +332,7 @@ Session 7 - Poster Session
   </tr>
 </tbody>
 </table>
-<small>Last update: 19.04.2023 - 16:46 CEST</small>
+<small>Last update: 19.04.2023 - 17:19 CEST</small>
 
 # Keynote
 
