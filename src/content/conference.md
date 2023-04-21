@@ -117,7 +117,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 
 <small>&#128339; <i>Schedule given in Central European Summer Time (CEST) (UTC+2) - This agenda may be subject to change</i></small>
 
-<table style="border: 2px solid #999;">
+<table style="border: 2px solid #bbb;">
 <thead>
   <tr>
     <th style="text-align:center" colspan="2">Tuesday, May 02, 2023</th>
@@ -176,7 +176,7 @@ Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
 
 <br>
 
-<table style="border: 2px solid #999;">
+<table style="border: 2px solid #bbb;">
 <thead>
   <tr>
     <th style="text-align:center" colspan="2">Wednesday, May 03, 2023</th>
@@ -242,6 +242,7 @@ Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
 <li>Optimizing Traffic Light Timing in Urban Corridors Using Fuzzy Logic Technology: An Evaluation Using SUMO Simulation - <small>Victor Madrigal</small></li>
 <li>A sandbox virtual environment for simulating highways in a multi-user interactive experience - <small>Cathal Flynn, Ezra Mason, Marco Moroni, Gergely Ferenczi, Andrea Castegnaro, Josh Thompson and Toby Pettinger</small></li>
 <li>The Integration of SUMO within a Data Hub and a Simulation Testbed for the City of Munich – Overview on the project MCube DatSim - <small>Fabian Schuhmann, Fabian Netzler, Johannes Lindner and Andreas Keler</small></li>
+<li>Bidirectional Green Waves for Major Road Axes By Adjusting Separate Left-Turn Phases - <small>Christian Liebchen</small></li>
 <li>SESAM</li>
 </ul>
   </tr>
@@ -271,7 +272,7 @@ Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
 
 <br>
 
-<table style="border: 2px solid #999;">
+<table style="border: 2px solid #bbb;">
 <thead>
   <tr>
     <th style="text-align:center" colspan="2">Thursday, May 04, 2023</th>
@@ -322,7 +323,6 @@ Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
 <li>Exploring ChatGPT as an alternative support tool for SUMO users - <small>Johannes Lindner and Maya Sekeran</small></li>
 <li>Developing an evidenced modelling framework for e-scooters - <small>Hannah Gumble</small></li>
 <li>Connected traffic of vulnerable bicyclists and automated vehicles - Deep learning trajectory generation for realistic simulated bicycle intersection crossings - <small>Christoph M. Schmidt, Jason K. Moore, Azita Dabiri, Riender Happee and Frederik Schulte</small></li>
-<li>Bidirectional Green Waves for Major Road Axes By Adjusting Separate Left-Turn Phases - <small>Christian Liebchen</small></li>
 <li>Demo Presentation: Browser-based Online Parallel SUMO Simulation with Traffik - <small>Mahima Aggarwal, Giovanna Vantini, Xiaosong Ma and Sanjay Chawla</small></li>
 <li>Multicriterial traffic light control focused on optimization goals efficiency, emissions and cyclist safety  –  a SUMO simulation study - <small>Maik Halbach and Robert Markowski</small></li>
 <li>A Co-Simulation Framework for Network Control of Connected Autonomous Vehicles - <small>Raj Tadepalli, Saba Al Rubye and Argyrios Zolotas</small></li>
@@ -351,7 +351,7 @@ Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
   </tr>
 </tbody>
 </table>
-<small>Last update: 20.04.2023 - 11:13 CEST</small>
+<small>Last update: 21.04.2023 - 15:24 CEST</small>
 
 # Keynote
 

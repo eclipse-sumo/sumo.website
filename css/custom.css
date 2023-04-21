@@ -250,7 +250,7 @@ background: #efefef;
 }
 
 table tr:nth-child(odd) {
-background: #efefef;
+background: #f4f4f4;
 }
 
 table tr:nth-child(even) {
