@@ -190,7 +190,7 @@ Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
     Andreas Keler <i><small>(Technical University of Munich)</small></i>, Wenzhe Sun <i><small>(Kyoto University)</small></i> and Jan-Dirk Schmöcker <i><small>(Kyoto University)</small></i>
 <hr>
     <b>Simulation-based origin-destination matrix reduction: a case study of Helsinki city area</b><br>
-    Klavdiya Bochenina, Anton Taleiko and Laura Ruotsalainen <i><small>(all: University of Helsinki)</small></i>
+    Klavdiia Bochenina, Anton Taleiko and Laura Ruotsalainen <i><small>(all: University of Helsinki)</small></i>
 </td>
   </tr>
     <tr>
@@ -351,7 +351,7 @@ Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
   </tr>
 </tbody>
 </table>
-<small>Last update: 21.04.2023 - 15:24 CEST</small>
+<small>Last update: 24.04.2023 - 08:31 CEST</small>
 
 # Keynote
 
