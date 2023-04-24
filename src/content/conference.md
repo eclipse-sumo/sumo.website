@@ -336,7 +336,7 @@ Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
     </td>
   </tr>
   <tr>
-    <td align="right">14:45 - 15:15<br><br>Session 8<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Benjamin Coueraud</p></td>
+    <td align="right">14:45 - 15:15<br><br>Session 8<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Benjamin Couéraud</p></td>
 <td>
     <b>Analysis and modelling of road traffic using SUMO to optimize the arrival time of emergency vehicles</b><br>
     Shamli Soni and Karsten Weronek <i><small>(all: Frankfurt University of Applied Sciences)</small></i>
