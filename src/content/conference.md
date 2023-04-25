@@ -31,8 +31,6 @@ draft: false
 <!-- # Save the date!
 SUMO User Conference 2023: May 02-04 in Berlin. -->
 
-<!-- <div class="disclaimer"></div> -->
-
 <!-- # Call for Papers
 The conference focuses on presenting new and unique results in the field of mobility simulation and modelling using openly available tools and data. We expect a large variety of research topics and usage approaches. If you are working on a research project fitting the topics below, you are kindly invited to submit an abstract. Possible areas of interest include (but are not limited to):
 
@@ -409,21 +407,6 @@ Rutherfordstr. 2
 12489 Berlin   
 Germany
 
-<!-- <div class="disclaimer"></div> -->
 
 # Contact
 Please contact the conference team via mail at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de)
-
-<!-- <script>
-    var disclaimer_HTML = `
-    <div class="alert alert-secondary" role="alert">
-    <h6 class="alert-heading">Disclaimer</h6>
-    <p>We are keeping an eye on the ongoing COVID-19 situation (regarding possible travel restrictions) and given the case would do the conference online (only as a last resort fallback) - keeping the same date (May 02-04, 2023).</p>
-    <hr>
-    <p class="mb-0">We would inform you on time and refund registration fees.</p>
-    </div>`;
-    var elements = document.getElementsByClassName("disclaimer");
-    for(var i = 0; i < elements.length; i++) {
-        elements[i].innerHTML = disclaimer_HTML;
-    }
-</script> -->
