@@ -17,12 +17,6 @@ draft: false
    New Paper submission deadline: Monday, <b>February 20th, 2023 - 23:59 CET</b>.
  </div> -->
 
-<div class="alert alert-success" role="alert">
-  Registration is now open: <a href="https://sumo2023.welcome-manager.de">https://sumo2023.welcome-manager.de</a>
-  <br>
-  <small><b>Please keep in mind that the registration will close on April 25th, 2023.</b></small>
-</div>
-
 
 <!-- <div class="alert alert-warning" role="alert">
   The <a href="#submission-link" class="alert-link">EasyChair submission link</a> is now available.
@@ -367,7 +361,7 @@ ETH Zürich<br>
 The challenge of net-zero shows that the currently preferred options are falling short of the 27 year away targets, as either politically unlikely or not effective enough. The e-bike-city is a project which explores if a city giving e-bikes, bikes and public transport enough room to flourish could be a positive vision mobilizing the necessary, rather fast changes needed.
 The talk will sketch the core dilemma and why a positive vision is needed for change. It will then sketch the e-bike-city and its challenge and show first results. It will introduce the on-going project at the ETH DBAUG department and show the chances for collaboration.
 
-# Prices
+<!-- # Prices
 
 - Regular Ticket: **495 EUR**
 - One-Day-Ticket: **325 EUR**
@@ -385,7 +379,7 @@ The registration fee includes a two and a half day conference program with refre
   Register here: <a href="https://sumo2023.welcome-manager.de">https://sumo2023.welcome-manager.de</a>
 </div>
 
-**Keep in mind that the registration will close on April 25th, 2023.**
+***Registration is now closed.*** -->
 
 # Social Event
 We are going to visit **The Leibniz-Institut für Kristallzüchtung (IKZ)** in Berlin-Adlershof - "*an international state-of-the-art competence center for science & technology as well as service & transfer for innovations in and by crystalline materials.*"
