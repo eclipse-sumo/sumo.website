@@ -112,13 +112,13 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 <table style="border: 2px solid #bbb;">
 <thead>
   <tr>
-    <th style="text-align:center" colspan="2">Tuesday, May 02, 2023</th>
+    <th style="text-align:center" colspan="3">Tuesday, May 02, 2023</th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td align="right">12:30 - 13:00</td>
-    <td>
+    <td colspan="2">
     Registration<br>
     </td>
   </tr>
@@ -126,6 +126,10 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
     <td align="right">13:00 - 13:15</td>
     <td>
     Opening<br>
+    </td>
+    <td align="center" style="width: 30%" rowspan="4">
+    <a href="https://us06web.zoom.us/meeting/register/tZMscOGqqD0oHddSiL7LKfmCMbdHH7bQjGlJ"><img src="../images/Zoom_logo.png" style="max-width:80px; margin-bottom:10px;" alt="Zoom logo" class="img-responsive"/></a><br>
+    These sessions will be transmitted via Zoom. Join us!<br><a href="https://us06web.zoom.us/meeting/register/tZMscOGqqD0oHddSiL7LKfmCMbdHH7bQjGlJ">Register here</a>
     </td>
   </tr>
   <tr>
@@ -148,7 +152,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
   </tr>
   <tr>
     <td align="right">17:00</td>
-    <td>
+    <td colspan="2">
    <b>Evening Program - Social Event</b><br>
 Visit to The Leibniz-Institut für Kristallzüchtung (IKZ)
 <small>(At just 6 min walking distance from our conference venue)</small><br>
@@ -157,7 +161,7 @@ Visit to The Leibniz-Institut für Kristallzüchtung (IKZ)
   </tr>
   <tr>
     <td align="right"></td>
-    <td>
+    <td colspan="2">
    <b>Dinner</b> <i>(self-paid)</i><br>
 Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
 <a style="color:#0645ad; cursor:pointer;" target="_blank" href="https://idueamici.berlin/speisekarte/">View menu <i class="fa-xs fa-solid fa-up-right-from-square"></i></a>
@@ -343,7 +347,7 @@ Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
   </tr>
 </tbody>
 </table>
-<small>Last update: 24.04.2023 - 08:31 CEST</small>
+<small>Last update: 26.04.2023 - 14:56 CEST</small>
 
 # Keynote
 
@@ -381,6 +385,16 @@ The registration fee includes a two and a half day conference program with refre
 
 ***Registration is now closed.*** -->
 
+# Zoom transmission
+To involve those who are unable to attend in person, we will be live-streaming on Tuesday (the first day of the conference) the following sessions:
+- Opening
+- SUMO Tutorial *(will be available later on YouTube)*
+- Ask us anything
+
+Ask your questions during the Q&A session.
+
+[Register for free](https://us06web.zoom.us/meeting/register/tZMscOGqqD0oHddSiL7LKfmCMbdHH7bQjGlJ)
+
 # Social Event
 We are going to visit **The Leibniz-Institut für Kristallzüchtung (IKZ)** in Berlin-Adlershof - "*an international state-of-the-art competence center for science & technology as well as service & transfer for innovations in and by crystalline materials.*"
 
@@ -404,3 +418,5 @@ Germany
 
 # Contact
 Please contact the conference team via mail at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de)
+
+<small style="color: #ddd;">Zoom and the Zoom logo are trademarks of Zoom Video Communications, Inc., registered in the U.S. and other countries.</small>
