@@ -248,7 +248,7 @@ Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
     </td>
   </tr>
   <tr>
-    <td align="right">15:45 - 17:00<br><br>Session 4<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Ronald Nippold</p></td>
+    <td align="right">15:45 - 16:45<br><br>Session 4<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Ronald Nippold</p></td>
 <td>
     <b>State of Bicycle Modeling in SUMO</b><br>
     Aboozar Roosta <i><small>(University of Wuppertal)</small></i>, Heather Kaths <i><small>(University of Wuppertal)</small></i>, Mirko Barthauer <i><small>(DLR)</small></i>, Jakob Erdmann <i><small>(DLR)</small></i>, Yun-Pang Flötteröd <i><small>(DLR)</small></i> and Michael Behrisch <i><small>(DLR)</small></i>
@@ -331,7 +331,7 @@ Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
     </td>
   </tr>
   <tr>
-    <td align="right">14:45 - 15:15<br><br>Session 8<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Benjamin Couéraud</p></td>
+    <td align="right">14:45 - 15:45<br><br>Session 8<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Benjamin Couéraud</p></td>
 <td>
     <b>Analysis and modelling of road traffic using SUMO to optimize the arrival time of emergency vehicles</b><br>
     Shamli Soni and Karsten Weronek <i><small>(all: Frankfurt University of Applied Sciences)</small></i>
@@ -341,12 +341,12 @@ Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
 </td>
   </tr>
   <tr>
-    <td align="right">15:15 - 15:30</td>
+    <td align="right">15:45 - 16:00</td>
     <td><b><i>Closing</i></b></td>
   </tr>
 </tbody>
 </table>
-<small>Last update: 28.04.2023 - 11:32 CEST</small>
+<small>Last update: 28.04.2023 - 12:17 CEST</small>
 
 # Keynote
 
