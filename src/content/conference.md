@@ -5,13 +5,12 @@ conferenceDate: "May 02-04"
 conferenceLocation: "Berlin-Adlershof, Germany"
 description : "Get in touch with our international user community"
 layout: "single"
+image: "conference_2023.jpg"
 conference-page: true
 draft: false
 ---
 
-<div class="text-center"><img src="../images/banner_2023.png" style="width:84%;" alt="Conference artwork" class="img-responsive"/></div>
 
----
 
 <!-- <div class="alert alert-primary" role="alert">
    New Paper submission deadline: Monday, <b>February 20th, 2023 - 23:59 CET</b>.
@@ -419,3 +418,7 @@ Germany
 Please contact the conference team via mail at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de)
 
 <small style="color: #ddd;">Zoom and the Zoom logo are trademarks of Zoom Video Communications, Inc., registered in the U.S. and other countries.</small>
+
+---
+
+<div class="text-center"><img src="../images/banner_2023.png" style="width:84%;" alt="Conference artwork" class="img-responsive"/></div>
