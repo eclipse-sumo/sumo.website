@@ -127,8 +127,8 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
     Opening<br>
     </td>
     <td align="center" style="width: 30%" rowspan="4">
-    <a href="https://us06web.zoom.us/meeting/register/tZMscOGqqD0oHddSiL7LKfmCMbdHH7bQjGlJ"><img src="../images/Zoom_logo.png" style="max-width:80px; margin-bottom:10px;" alt="Zoom logo" class="img-responsive"/></a><br>
-    These sessions will be transmitted via Zoom. Join us!<br><a href="https://us06web.zoom.us/meeting/register/tZMscOGqqD0oHddSiL7LKfmCMbdHH7bQjGlJ">Register here</a>
+    <img src="../images/Zoom_logo.png" style="max-width:80px; margin-bottom:10px;" alt="Zoom logo" class="img-responsive"/><br>
+    These sessions will be transmitted via Zoom. Join us!
     </td>
   </tr>
   <tr>
@@ -163,7 +163,6 @@ Visit to The Leibniz-Institut für Kristallzüchtung (IKZ)
     <td colspan="2">
    <b>Dinner</b> <i>(self-paid)</i><br>
 Ristorante I DUE AMICI <small>(Erich-Thilo-Straße 12, 12489 Berlin)</small><br>
-<a style="color:#0645ad; cursor:pointer;" target="_blank" href="https://idueamici.berlin/speisekarte/">View menu <i class="fa-xs fa-solid fa-up-right-from-square"></i></a>
     </td>
   </tr>
 </tbody>
@@ -391,7 +390,6 @@ To involve those who are unable to attend in person, we will be live-streaming o
 
 Ask your questions during the Q&A session.
 
-[Register for free](https://us06web.zoom.us/meeting/register/tZMscOGqqD0oHddSiL7LKfmCMbdHH7bQjGlJ)
 
 # Social Event
 We are going to visit **The Leibniz-Institut für Kristallzüchtung (IKZ)** in Berlin-Adlershof - "*an international state-of-the-art competence center for science & technology as well as service & transfer for innovations in and by crystalline materials.*"
