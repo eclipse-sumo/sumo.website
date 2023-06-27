@@ -1,6 +1,6 @@
 ############################ Default configuration #########################
 
-baseURL: "https://www.eclipse.org/sumo"
+baseURL: "https://www.eclipse.dev/sumo"
 languageCode: "en-us"
 title: "Eclipse SUMO - Simulation of Urban MObility"
 disableKinds: ["taxonomyTerm"]

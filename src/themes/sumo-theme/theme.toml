@@ -2,7 +2,7 @@ name = "Sumo Theme"
 license = "EPL-2.0"
 licenselink = "https://www.eclipse.org/legal/epl-2.0/"
 description = "Hugo theme for the Eclipse SUMO website"
-homepage = "https://eclipse.org/sumo"
+homepage = "https://eclipse.dev/sumo"
 min_version = "0.41"
 
 [author]
