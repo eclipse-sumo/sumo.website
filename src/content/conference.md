@@ -10,10 +10,10 @@ conference-page: true
 draft: false
 ---
 
-<!-- # Proceedings
+# Proceedings
 
-Conference Proceedings:   
-DOI:  -->
+Conference Proceedings: https://www.tib-op.org/ojs/index.php/scp/issue/view/11    
+DOI: https://doi.org/10.52825/scp.v4i
 
 # Sessions and Presentations
 - Tutorial • [<i class="fab fa-youtube"></i> Video](https://youtu.be/3J5KqOPT2qI) • [<i class="far fa-file-archive"></i> Tutorial files](http://sumo.dlr.de/daily/sumo2023_tutorial.zip)
