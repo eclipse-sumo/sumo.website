@@ -65,7 +65,7 @@ Archive: <a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/">Eclipse Archi
 To **unsubscribe** visit the same link(s) as given above for subscription.
 
 <div class="container alert alert-success alert-dismissible" style="margin-bottom:0;">
-If you don't like emails or cannot subscribe to the lists but still want to get in contact, please use the <a href="https://matrix.to/#/#automotive.sumo:matrix.eclipse.org">Matrix chat room</a>. Please be aware that the messages there are not public and thus not searchable for non-members. To use that room you need an Eclipse or Matrix account.
+If you don't like emails or cannot subscribe to the lists but still want to get in contact, please use the <a href="https://chat.eclipse.org/#/room/#automotive.sumo:matrix.eclipse.org">Matrix chat room</a>. Please be aware that the messages there are not public and thus not searchable for non-members. To use that room you need an Eclipse or Matrix account.
 </div>
 </div>
 
@@ -133,10 +133,10 @@ We have a new public room available at the Eclipse's Matrix chat instance, to fa
 <br>
 Use your Eclipse account to start, or any existing Matrix account.
 <br><br>
-Matrix room-address: <a href="https://matrix.to/#/#automotive.sumo:matrix.eclipse.org">#automotive.sumo:matrix.eclipse.org</a>
+Matrix room-address: <a href="https://chat.eclipse.org/#/room/#automotive.sumo:matrix.eclipse.org">#automotive.sumo:matrix.eclipse.org</a>
 <br><br>
 <a href="https://matrix.eclipse.org"><button class="btn btn-sm btn-outline-info">Chat service homepage</button></a>
-<a href="https://matrix.to/#/#automotive.sumo:matrix.eclipse.org"><button class="btn btn-sm btn-outline-info">Eclipse SUMO room</button></a>
+<a href="https://chat.eclipse.org/#/room/#automotive.sumo:matrix.eclipse.org"><button class="btn btn-sm btn-outline-info">Eclipse SUMO room</button></a>
 </div>
 
 
