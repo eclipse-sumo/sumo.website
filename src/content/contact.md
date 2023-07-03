@@ -65,7 +65,7 @@ Archive: <a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/">Eclipse Archi
 To **unsubscribe** visit the same link(s) as given above for subscription.
 
 <div class="container alert alert-success alert-dismissible" style="margin-bottom:0;">
-If you don't like emails or cannot subscribe to the lists but still want to get in contact, please use the <a href="https://mattermost.eclipse.org/eclipse/channels/sumo">Mattermost channel</a>. Please be aware that the messages there are not public and thus not searchable for non-members. To use the channel you need an Eclipse account.
+If you don't like emails or cannot subscribe to the lists but still want to get in contact, please use the <a href="https://matrix.to/#/#automotive.sumo:matrix.eclipse.org">Matrix chat room</a>. Please be aware that the messages there are not public and thus not searchable for non-members. To use that room you need an Eclipse or Matrix account.
 </div>
 </div>
 
