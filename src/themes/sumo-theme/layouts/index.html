@@ -119,23 +119,24 @@
         <a class="btn btn-light" href="https://twitter.com/eclipsesumo" aria-label="X"><span class="fab fa-x-twitter"></span></a>
         <a class="btn btn-light" href="https://facebook.com/simulationofurbanmobility" aria-label="Facebook"><span class="fab fa-facebook"></span></a>
         <a class="btn btn-light" href="https://instagram.com/eclipse.sumo" aria-label="Instagram"><span class="fab fa-instagram"></span></a>
-        <a class="btn btn-light" href="https://chat.eclipse.org/#/room/#automotive.sumo:matrix.eclipse.org" aria-label="Matrix"><span class="fas fa-comments"></span> <span class="badge badge-pill badge-warning">Updated!</span></a>
+        <a class="btn btn-light" href="https://chat.eclipse.org/#/room/#automotive.sumo:matrix.eclipse.org" aria-label="Matrix"><span class="fas fa-comments"></span></a>
         <a class="btn btn-light" href="{{ `contact` | absURL }}" aria-label="contact"><span class="fas fa-envelope"></span></a>
       </div>
 
-<!--       <a href="{{ `conference` | absURL }}" class="text-decoration-none" style="color: inherit">
+<a href="{{ `conference` | absURL }}" class="text-decoration-none" style="color: inherit">
         <div class="card">
-          <div class="card-header">
-            <img src="{{ `images/banner_2023.png` | absURL }}" style="width: 100%">
+          <div class="card-header" style="background-color: #d1d9db !important;">
+            <img src="{{ `images/banner_2024.png` | absURL }}" style="width: 100%">
           </div>
           <div class="card-body text-center">
-            <strong id="remaining-days"></strong> days remaining
+            <!-- <strong id="remaining-days"></strong> days remaining -->
+            Save the date!
           </div>
         </div>
       </a>
 
-      <script>
-        let conference_date = new Date('05/02/2023');
+      <!-- <script>
+        let conference_date = new Date('05/13/2024');
         let current_date = new Date();
         var remainingDays = Math.ceil((conference_date.getTime() - current_date.getTime()) / (1000 * 3600 * 24));
         document.getElementById("remaining-days").innerHTML = remainingDays;

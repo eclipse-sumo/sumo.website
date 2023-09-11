@@ -1,148 +1,35 @@
 ---
-title: "SUMO User Conference 2023"
+title: "SUMO User Conference 2024"
 subtitle: ""
-conferenceDate: "May 02-04"
+conferenceDate: "May 13-15"
 conferenceLocation: "Berlin-Adlershof, Germany"
 description : "Get in touch with our international user community"
 layout: "single"
-image: "conference_2023.jpg"
 conference-page: true
 draft: false
 ---
 
-# Proceedings
 
-Conference Proceedings: https://www.tib-op.org/ojs/index.php/scp/issue/view/11    
-DOI: https://doi.org/10.52825/scp.v4i
-
-# Sessions and Presentations
-- Tutorial • [<i class="fab fa-youtube"></i> Video](https://youtu.be/3J5KqOPT2qI) • [<i class="far fa-file-archive"></i> Tutorial files](http://sumo.dlr.de/daily/sumo2023_tutorial.zip)
-- **Keynote:** e-bike-city: An answer to our transport dead-end? - *Prof. Dr. Kay W. Axhausen* • [<i class="fab fa-youtube"></i> Video](https://youtu.be/V8eXTufrSnA)
+<div class="text-center"><img src="../images/banner_2024.png" style="width:90%;" alt="Conference artwork" class="img-responsive"/></div>
 
 ---
 
-**Session 1**
+# Save the date!
+SUMO User Conference 2024: **May 13-15**.
 
-- Generating and Calibrating a Microscopic Traffic Flow Simulation Network of Kyoto<br>
-Andreas Keler <i><small>(Technical University of Munich)</small></i>, Wenzhe Sun <i><small>(Kyoto University)</small></i> and Jan-Dirk Schmöcker <i><small>(Kyoto University)</small></i>
-
-- Simulation-based origin-destination matrix reduction: a case study of Helsinki city area<br>
-Klavdiia Bochenina, Anton Taleiko and Laura Ruotsalainen <i><small>(all: University of Helsinki)</small></i> • [<i class="fab fa-youtube"></i> Video](https://youtu.be/bi6XqpasWao)
-
----
-
-**Session 2**
-
-- Calibration of a Microscopic Traffic Simulation in an Urban Scenario Using Loop Detector Data<br>
-Andreas Keler, Andreas Kunz, Sasan Amini and Klaus Bogenberger <i><small>(all: Technical University of Munich)</small></i>
-
-- Comparing Measured Driver Behavior Distributions to Results from Car-Following Models using SUMO and Real-World Vehicle Trajectories from Radar <span class="badge badge-success">Voted <b>best presentation</b> by the conference attendees</span><br>
-Maxwell Schrader, Mahdi Al Abdraboh and Joshua Bittle <i><small>(all: University of Alabama)</small></i> • [<i class="fab fa-youtube"></i> Video](https://youtu.be/f0J7tc6Nioo)
-
-- Development, calibration, and validation of a large-scale traffic simulation model: Belgium road network<br>
-Behzad Bamdad Mehrabani <i><small>(UCLouvain)</small></i>, Luca Sgambi <i><small>(UCLouvain)</small></i>, Sven Maerivoet <i><small>(Transport & Mobility Leuven)</small></i> and Maaike Snelder <i><small>(TU Delft)</small></i> • [<i class="fab fa-youtube"></i> Video](https://youtu.be/Sm3vu-svIiI)
-
----
-
-**Session 3: Poster Session**
-
-- Road Network Throughput Evaluation via Network Calculus - <small>Teodora Mecheva and Nikolay Kakanakov</small>
-- Evaluating Possibilities for Flexible Train Schedules to not Impede High-priority Sporadic Traffic - <small>Antony Kamp, Max Lietze, Luke Ortlam, Anton Persitzky, Christian Raue, Lucas Reisener, Lukas Pirl and Arne Boockmeyer</small>
-- Integration of SUMO and SoSID Advanced Air Mobility Simulation using TRaCI - <small>Menno Berger, Nabih Naeem and Prajwal Shiva Prakasha</small>
-- Integrating SUMO in an urban digital twin - a case study from Munich - <small>Sasan Amini, Christoph Orlich, Christof Beil, Andreas Keler and Klaus Bogenberger</small>
-- Optimizing Traffic Light Timing in Urban Corridors Using Fuzzy Logic Technology: An Evaluation Using SUMO Simulation - <small>Victor Madrigal</small>
-- The Integration of SUMO within a Data Hub and a Simulation Testbed for the City of Munich – Overview on the project MCube DatSim - <small>Fabian Schuhmann, Fabian Netzler, Johannes Lindner and Andreas Keler</small>
-- Bidirectional Green Waves for Major Road Axes By Adjusting Separate Left-Turn Phases - <small>Christian Liebchen</small>
-
----
-
-**Session 4**
-
-- State of Bicycle Modeling in SUMO<br>
-Aboozar Roosta <i><small>(University of Wuppertal)</small></i>, Heather Kaths <i><small>(University of Wuppertal)</small></i>, Mirko Barthauer <i><small>(DLR)</small></i>, Jakob Erdmann <i><small>(DLR)</small></i>, Yun-Pang Flötteröd <i><small>(DLR)</small></i> and Michael Behrisch <i><small>(DLR)</small></i> • [<i class="fab fa-youtube"></i> Video](https://youtu.be/f-r9YE7daNA)
-
-- Framework for Simulating Cyclists in SUMO<br>
-Heather Kaths and Aboozar Roosta <i><small>(all: University of Wuppertal)</small></i> • [<i class="fab fa-youtube"></i> Video](https://youtu.be/QTEmbmDmPSE)
-
----
-
-**Session 5**
-
-- Coping with Randomness in Highly Complex Systems Using the Example of Quantum-Inspired Traffic Flow Optimization<br>
-Maria Haberland and Lars Hohmuth <i><small>(all: Fujitsu)</small></i>
-
-- The Effects of Route Randomization on Urban Emissions<br>
-Giuliano Cornacchia <i><small>(University of Pisa)</small></i>, Mirco Nanni <i><small>(KDD-Lab ISTI-CNR Pisa)</small></i>, Dino Pedreschi <i><small>(University of Pisa)</small></i> and Luca Pappalardo <i><small>(University of Pisa, KDD-Lab ISTI-CNR Pisa)</small></i> • [<i class="fab fa-youtube"></i> Video](https://youtu.be/6zZN-EwuHc4)
-
-- Challenges in Reward Design for Reinforcement Learning-based Traffic Signal Control: An Investigation using a CO2 Emission Objective<br>
-Max Schumacher <i><small>(University of Potsdam)</small></i>, Christian Medeiros Adriano <i><small>(Hasso-Plattner-Institut)</small></i> and Holger Giese <i><small>(Hasso-Plattner-Institut)</small></i> • [<i class="fab fa-youtube"></i> Video](https://youtu.be/33klFWORcWs)
-
----
-
-**Session 6**
-
-- A Technical Concept for sensor-based Traffic Flow Optimization on connected real-world intersections via a SUMO Feature Gap Analysis<br>
-Ingo Trautwein <i><small>(Fraunhofer IAO)</small></i>, Andreas Freymann <i><small>(Fraunhofer IAO)</small></i>, Emanuel Reichsöllner <i><small>(Hochschule Esslingen)</small></i>, Mirko Sonntag <i><small>(Hochschule Esslingen)</small></i>, Thomas Schrodi <i><small>(Fraunhofer IAO)</small></i> and Jessica Kraus Schoeps <i><small>(Fraunhofer IAO)</small></i> • [<i class="fab fa-youtube"></i> Video](https://youtu.be/xrii-nhe8Mo)
-
-- SUMO Simulations for Federated Learning in Communicating Autonomous Vehicles<br>
-Levente Alekszejenkó and Tadeusz Dobrowiecki <i><small>(all: Budapest University of Technology and Economics)</small></i> • [<i class="fab fa-youtube"></i> Video](https://youtu.be/WpjfDCinP14)
-
-- SUMO Roundabout Simulation with Human in the Loop<br>
-Giorgio Previati and Gianpiero Mastinu <i><small>(all: Politecnico di Milano)</small></i>
-
----
-
-**Session 7: Poster Session**
-
-- Open-Source Framework for Modeling Emission Concentrations in Urban Areas - <small>Mario Ilic, Seyed M. Saghaeiannejad, Sasan Amini and Klaus Bogenberger</small> <span class="badge badge-success">Voted <b>best poster</b> by the conference attendees</span>
-- Using SUMO Railway Simulations for Integration Tests of EULYNX Components - <small>Philipp Schmidt, Dirk Friedenberger, Lukas Pirl and Arne Boockmeyer</small>
-- Exploring ChatGPT as an alternative support tool for SUMO users - <small>Johannes Lindner and Maya Sekeran</small>
-- Developing an evidenced modelling framework for e-scooters - <small>Hannah Gumble</small>
-- Connected traffic of vulnerable bicyclists and automated vehicles - Deep learning trajectory generation for realistic simulated bicycle intersection crossings - <small>Christoph M. Schmidt, Jason K. Moore, Azita Dabiri, Riender Happee and Frederik Schulte</small>
-- Demo Presentation: Browser-based Online Parallel SUMO Simulation with Traffik - <small>Mahima Aggarwal, Giovanna Vantini, Xiaosong Ma and Sanjay Chawla</small>
-- Multicriterial traffic light control focused on optimization goals efficiency, emissions and cyclist safety  –  a SUMO simulation study - <small>Maik Halbach and Robert Markowski</small>
-
----
-
-**Session 8**
-
-- Analysis and modelling of road traffic using SUMO to optimize the arrival time of emergency vehicles<br>
-Shamli Soni and Karsten Weronek <i><small>(all: Frankfurt University of Applied Sciences)</small></i> • [<i class="fab fa-youtube"></i> Video](https://youtu.be/GlPf7TmuI9E)
-
-- Evaluating the benefits of promoting intermodality and active modes in urban transportation: a microsimulation approach<br>
-Souhir Bennaya and Moez Kilani <i><small>(all: Université du Littoral Côte d'Opale, LEM : Lille Economie Management)</small></i> • [<i class="fab fa-youtube"></i> Video](https://youtu.be/kc451RvX5Ag)
-
----
-
-You can find all videos here: <a href="https://youtube.com/playlist?list=PLy7t4z5SYNaQVVuKmGVz8ET_oOTXLk6J-"><button type="button" class="btn btn-danger btn-sm"><i class="fab fa-youtube"></i> YouTube playlist</button></a>
-
-# Keynote
-
-<h3><i>e-bike-city: An answer to our transport dead-end?</i></h3>
-
-<h6>Prof. Dr. Kay W. Axhausen</h6>
-Institute for Transport Planning and Systems<br>
-Dep. of Civil, Env. and Geomatic Eng.<br>
-ETH Zürich<br>
-<a href="https://www.ivt.ethz.ch/en/" class="btn btn-sm btn-outline-info" style="margin-top:10px;">Website</a>
-
-The challenge of net-zero shows that the currently preferred options are falling short of the 27 year away targets, as either politically unlikely or not effective enough. The e-bike-city is a project which explores if a city giving e-bikes, bikes and public transport enough room to flourish could be a positive vision mobilizing the necessary, rather fast changes needed.
-The talk will sketch the core dilemma and why a positive vision is needed for change. It will then sketch the e-bike-city and its challenge and show first results. It will introduce the on-going project at the ETH DBAUG department and show the chances for collaboration.
-
-
-# Social Event
-We are going to visit **The Leibniz-Institut für Kristallzüchtung (IKZ)** in Berlin-Adlershof - "*an international state-of-the-art competence center for science & technology as well as service & transfer for innovations in and by crystalline materials.*"
-
-The IKZ is located at just 6 min walking distance from our conference venue.
-
-<a href="https://www.ikz-berlin.de/en/" class="btn btn-sm btn-outline-info" style="margin-top:10px;">Website</a>
+<div style="background-color: #d1d9db; padding: 20px; border-radius: 10px;">
+<center><i style="color: #7fa3a3; font-size: 3rem; font-weight: 700;">More info coming soon ...</i></center>
+</div>
 
 # Language
 The conference language is English.
 
 # Venue
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d885.3359884779654!2d13.528579894031319!3d52.42803848550116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8463af33b64ed%3A0x27c68d8076242481!2sDeutsches%20Zentrum%20f%C3%BCr%20Luft-%20und%20Raumfahrt%20(DLR)!5e0!3m2!1sde!2sde!4v1679408714916!5m2!1sde!2sde" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe width="100%" height="250" src="https://www.openstreetmap.org/export/embed.html?bbox=13.527418076992037%2C52.427174643490474%2C13.530958592891693%2C52.428797058176315&amp;layer=mapnik&amp;marker=52.42798585829789%2C13.529188334941864" style="border: 1px solid black"></iframe>
+<div class="text-right">
+<small>View in: <a target="_blank" href="https://www.openstreetmap.org/?mlat=52.42799&amp;mlon=13.52919#map=19/52.42799/13.52919">OSM <i class="fa-solid fa-square-arrow-up-right"></i></a> - <a target="_blank" href="https://goo.gl/maps/c1mQDkkLF4H3QJjX7">Google Maps <i class="fa-solid fa-square-arrow-up-right"></i></a></small>
+</div>
 
 German Aerospace Center (DLR)   
 Institute of Transportation Systems   
@@ -150,10 +37,5 @@ Rutherfordstr. 2
 12489 Berlin   
 Germany
 
-
 # Contact
 Please contact the conference team via mail at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de)
-
----
-
-<div class="text-center"><img src="../images/banner_2023.png" style="width:84%;" alt="Conference artwork" class="img-responsive"/></div>
