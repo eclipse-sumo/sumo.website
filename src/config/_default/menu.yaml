@@ -59,7 +59,7 @@ main:
       weight: 2
     - name: "Report a Bug / Issue"
       parent: "Support"
-      url: "https://github.com/eclipse/sumo/issues"
+      url: "https://github.com/eclipse-sumo/sumo/issues"
       weight: 3
     - name: "Pydoc Documentation"
       parent: "Support"

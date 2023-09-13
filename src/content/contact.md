@@ -101,7 +101,7 @@ Report a Bug</h4><br>
 If you have found a bug within one of the applications, please let us know.
 This is also the way to notify us if you find any typos or errors in our Documentation.
 <br><br>
-<a href="https://github.com/eclipse/sumo/issues"><button class="btn btn-sm btn-outline-info">Bug tracking service</button></a>
+<a href="https://github.com/eclipse-sumo/sumo/issues"><button class="btn btn-sm btn-outline-info">Bug tracking service</button></a>
 </div>
 
 <!-- social media -->
@@ -135,7 +135,7 @@ Matrix room-address: <a href="https://chat.eclipse.org/#/room/#automotive.sumo:m
 <div class="col-md-12 contact-div">
 <h4 style="color:#17412f;" id="commit-rss"><i class="fas fa-rss"></i><br>
 Commit RSS</h4><br>
-If you want to receive regular updates on commits, you can subscribe to <a href="https://github.com/eclipse/sumo/commits/main.atom">this feed</a> or set up an <a href="https://ifttt.com/applets/147561p-rss-feed-to-email">IFTTT link</a> or use <a href="https://hubnotify.com/">https://hubnotify.com/</a> to send you an email.
+If you want to receive regular updates on commits, you can subscribe to <a href="https://github.com/eclipse-sumo/sumo/commits/main.atom">this feed</a> or set up an <a href="https://ifttt.com/applets/147561p-rss-feed-to-email">IFTTT link</a> or use <a href="https://hubnotify.com/">https://hubnotify.com/</a> to send you an email.
 </div>
 
 </div></div>

@@ -12,7 +12,7 @@ The SUMO website is generated using [Hugo](https://gohugo.io/).
 
 Clone this repository (if not already done):
 ```
-git clone https://github.com/eclipse/sumo.website.git
+git clone https://github.com/eclipse-sumo/sumo.website.git
 ```
 
 To run the built-in development server, use:
@@ -49,5 +49,5 @@ This should generate all the necessary HTML and CSS files in the root directory.
 After making changes to the markdown source files, the command `hugo -d ../` should be executed within the `/src/` directory, to generate the modified static files. A commit can be done after this step.
 
 ## Other links
-- [SUMO repository](https://github.com/eclipse/sumo)
+- [SUMO repository](https://github.com/eclipse-sumo/sumo)
 - [SUMO Documentation](https://sumo.dlr.de/docs)
