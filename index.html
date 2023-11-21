@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.92.2" />
+	<meta name="generator" content="Hugo 0.114.1">
     <title>Eclipse SUMO - Simulation of Urban MObility</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -524,7 +524,7 @@ function clickHandler (event) {
 	let player = document.createElement('div');
 	player.innerHTML = `<iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
-	// Inject the player into the UI
+	
 	link.replaceWith(player);
 
 }
@@ -534,6 +534,22 @@ document.addEventListener('click', clickHandler);
 </script>
 
 
+        <div aria-live="polite" aria-atomic="true" style="position: fixed ; bottom: 0; right: 10px; z-index: 1050; min-height: 250px;">
+            <div id="survey_notice" class="toast" data-autohide="false" >
+              <div class="toast-header">
+                <i class="fa-regular fa-face-smile"></i>
+                <strong class="ml-2 mr-auto">Provide feedback!</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="toast-body">
+                We would love to hear your feedback! Participate in our short survey (only three questions) <a href="https://docs.google.com/forms/d/e/1FAIpQLSfMkTlWJnyF5GbcmIuHxn5xSuwOJSVN1iqzqiOfuLZ1_evW-A/viewform">here</a>.
+                <br><br>
+                Thanks!
+              </div>
+            </div>
+          </div>
         </div>
 <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
@@ -643,5 +659,9 @@ document.addEventListener('click', clickHandler);
       document.documentElement.scrollTop = 0;
     }
   </script>
-</body>
+<script>
+$('#survey_notice').toast('show');
+</script>
+
+    </body>
 </html>

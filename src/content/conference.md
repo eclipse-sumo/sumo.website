@@ -15,11 +15,124 @@ draft: false
 ---
 
 # Save the date!
-SUMO User Conference 2024: **May 13-15**.
+SUMO User Conference 2024: **May 13-15** in Berlin.
 
-<div style="background-color: #d1d9db; padding: 20px; border-radius: 10px;">
-<center><i style="color: #7fa3a3; font-size: 3rem; font-weight: 700;">More info coming soon ...</i></center>
+
+# Call for Papers
+The conference focuses on presenting new and unique results in the field of mobility simulation and modelling using openly available tools and data. We expect a large variety of research topics and usage approaches. If you are working on a research project fitting the topics below, you are kindly invited to submit an abstract. Possible areas of interest include (but are not limited to):
+
+- Mobility and Demand Modelling
+- Traffic Simulation
+- Open Tools and Open Data
+- Modelling Urban Mobility
+- Traffic Applications
+- Traffic Management Solutions
+- Intermodal Transport
+- Autonomous Driving
+- Logistics Simulation
+- Vehicular Communication
+- E-Mobility
+- Reinforcement learning / Machine Learning
+
+# Paper Submission
+There are two submission types:
+
+---
+
+1. Scientific Papers:
+   - All accepted scientific papers must be presented at the conference.
+   - Scientific papers will be reviewed by at least 2 reviewers.
+   - All accepted scientific papers will be published in the [SUMO proceedings](https://www.tib-op.org/ojs/index.php/scp/index).
+   - ***Optional:** A title and short abstract (up to 300 words) can be submitted until Friday, **January 12th, 2024**, to get some first feedback.*
+   - Scientific papers should be between 5 and 20 pages long.
+   - <span style="color:darkorange">The Paper must be submitted in LaTeX or Word format before midnight, Friday, **February 16th, 2024**.</span>
+
+<div class="alert alert-info" role="alert">
+  Authors are required to use the <a href="https://www.tib-op.org/ojs/index.php/scp/libraryFiles/downloadPublic/8">Word</a> or <a href="https://www.tib-op.org/ojs/index.php/scp/libraryFiles/downloadPublic/9">LaTeX</a> template provided by TIB Open Publishing.
 </div>
+
+<div class="text-center"><img src="../images/presentation.jpeg" style="width:60%;" alt="Presentation" class="img-responsive"/></div>
+
+---
+
+<br>
+
+2. Posters:
+    - The SUMO conference gives the opportunity to present your topic during the poster session.
+    - There is no need to write a scientific paper.
+    - Possible contents can be:
+        - Results of Bachelor or Master theses
+        - Live Demos
+        - SUMO Use Cases
+        - Project Presentations
+        - Work in Progress which would benefit from the feedback of other SUMO users
+    - The Posters do not require following a specific template, but should be formatted in the A0 size (841 x 1189 mm / 33.1 x 46.8 in).
+    - We will print the poster for you, provide the display panel, a chair and a table.
+    - While changes to the poster are still possible after the submission deadline, we unfortunately will not be able to reprint it. If you do need to make changes, you would need to bring a printout of the updated version with you.
+    - You are welcome to bring a laptop or other device to show a demo, slides, videos or any material that you deem appropriate to complement the presentation. In this case you will need to provide your own equipment.
+    - <span style="color:darkorange">Title and a short abstract (up to 300 words) **must be** submitted until Friday, **February 09th, 2024**.</span>
+
+<div class="text-center"><img src="../images/poster_session.jpeg" style="width:60%;" alt="Poster session" class="img-responsive"/></div>
+
+---
+
+## Submission Link
+
+*Will be available soon.*
+
+
+## Ethics and Malpractice Statement
+
+You can read our *[Publication Ethics and Publication Malpractice Statement](../docs/SUMOPublicationEthics.pdf)*, where we list the responsibilities of editors, reviewers, and authors.
+
+# Important Dates
+
+For Papers:
+- **Optional** title and abstract submission, until: **Friday, January 12th, 2024**.
+- <span style="color:darkorange">Paper submission deadline: **Friday, February 16th, 2024**.</span>
+- Notification of acceptance/rejection: **End of March, 2024**.
+- Camera Ready Paper deadline: **Friday, April 19th, 2024**.
+
+For Posters:
+- <span style="color:darkorange">**Mandatory** title and abstract submission deadline: **Friday, February 09th, 2024**.</span>
+- Notification of acceptance/rejection: **Mid of March, 2024**.
+- Final Poster upload deadline: **Friday, April 12th, 2024**.
+
+# Agenda
+*Available end of March 2024*
+
+
+# Keynote
+*More info coming soon*
+
+# Prices
+
+- Regular Ticket: **495 EUR**
+- One-Day-Ticket: **325 EUR**
+- Authors and Project Partners: **275 EUR**
+- "Limited" Student Grants: **50 EUR**
+
+All prices are Tax-excluded
+
+# Registration
+The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings and a social event in the evening. Accommodation is not included within the registration fee and must be pre-booked separately.
+
+*Registration link coming soon*
+
+# Social Event
+*More info coming soon*
+
+<!-- # FAQ
+
+<details> <!-- <details open> -->
+<!--
+  <summary>Hello</summary>
+  World
+</details>
+<details>
+  <summary>Foo</summary>
+  Bar
+</details> -->
 
 # Language
 The conference language is English.

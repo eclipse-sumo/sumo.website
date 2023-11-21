@@ -305,7 +305,7 @@
 <h6 id="bibtex">BibTeX</h6>
 <pre tabindex="0"><code>@inproceedings{SUMO2018,
           title = {Microscopic Traffic Simulation using SUMO},
-         author = {Pablo Alvarez Lopez and Michael Behrisch and Laura Bieker-Walz and Jakob Erdmann and Yun-Pang Fl{\&quot;o}tter{\&quot;o}d and Robert Hilbrich and Leonhard L{\&quot;u}cken and Johannes Rummel and Peter Wagner and Evamarie Wie{\ss}ner},
+         author = {Pablo Alvarez Lopez and Michael Behrisch and Laura Bieker-Walz and Jakob Erdmann and Yun-Pang Fl{\&#34;o}tter{\&#34;o}d and Robert Hilbrich and Leonhard L{\&#34;u}cken and Johannes Rummel and Peter Wagner and Evamarie Wie{\ss}ner},
       publisher = {IEEE},
       booktitle = {The 21st IEEE International Conference on Intelligent Transportation Systems},
            year = {2018},
@@ -324,6 +324,22 @@
   </div>
 </section>
 
+        <div aria-live="polite" aria-atomic="true" style="position: fixed ; bottom: 0; right: 10px; z-index: 1050; min-height: 250px;">
+            <div id="survey_notice" class="toast" data-autohide="false" >
+              <div class="toast-header">
+                <i class="fa-regular fa-face-smile"></i>
+                <strong class="ml-2 mr-auto">Provide feedback!</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="toast-body">
+                We would love to hear your feedback! Participate in our short survey (only three questions) <a href="https://docs.google.com/forms/d/e/1FAIpQLSfMkTlWJnyF5GbcmIuHxn5xSuwOJSVN1iqzqiOfuLZ1_evW-A/viewform">here</a>.
+                <br><br>
+                Thanks!
+              </div>
+            </div>
+          </div>
         </div>
 <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
@@ -433,5 +449,9 @@
       document.documentElement.scrollTop = 0;
     }
   </script>
-</body>
+<script>
+$('#survey_notice').toast('show');
+</script>
+
+    </body>
 </html>
