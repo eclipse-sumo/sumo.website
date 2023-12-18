@@ -78,7 +78,15 @@ There are two submission types:
 
 ## Submission Link
 
-*Will be available soon.*
+Submit Papers and Posters here: https://www.tib-op.org/ojs/index.php/scp/about/submissions<br>
+<small>Login or register and then click on <b>"Make a new Conference Proceedings Submission"</b></small>
+<br>
+<div class="alert alert-warning" role="alert">
+  <h6 class="alert-heading">Important notice only for Posters:</h6>
+  Please manually prepend <code>(Poster)</code> to the title, in the submission. (e.g. <code><i>(Poster) My current project with SUMO</i></code>)
+  <br>
+  <img src="../images/poster_sub.png" style="width:100%; margin-top:10px" alt="Example image" class="img-responsive"/>
+</div>
 
 
 ## Ethics and Malpractice Statement
