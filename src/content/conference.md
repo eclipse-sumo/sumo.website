@@ -14,6 +14,23 @@ draft: false
 
 ---
 
+
+<!-- ALERT 1 - Neue paper deadline -->
+<!-- <div class="alert alert-primary" role="alert">
+   New Paper submission deadline: Friday, <b>February 23th, 2024 - 23:59 CET</b>.
+</div> -->
+
+
+
+
+
+<!-- ALERT 2 - Registrierungslink bitte noch einsetzten -->
+<!-- <div class="alert alert-success" role="alert">
+  Registration is now open: <a href="XXX">XXX</a>
+  <br>
+  <small><b>Please keep in mind that the registration will close on April 30th, 2024 (at 23:59 CEST).</b></small>
+</div> -->
+
 # Save the date!
 SUMO User Conference 2024: **May 13-15** in Berlin.
 

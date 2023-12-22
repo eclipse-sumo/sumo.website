@@ -4,32 +4,18 @@ description : "Open source, microscopic and continuous multi-modal traffic simul
 draft: false
 ---
 
-<!-- Info Card -->
-<!-- <div class="card" style="border: 1px solid rgba(0,0,0,.25) !important; margin-bottom: 40px;">
-  <div class="card-header" style="font-weight:bold;">SUMO User Conference 2021</div>
-  <div class="card-body">
-  <ul style="margin:0 !important;">
-    <li>The conference <a href="conference#agenda">agenda</a> is now available</li>
-    <li><a href="conference#registration">Registration</a> for participation is now open</li>
-    </ul>
-  </div>
+<!-- ALERT 1 - Neue paper deadline -->
+<!-- <div class="alert alert-primary" role="alert">
+   New Paper submission deadline: Friday, <b>February 23th, 2024 - 23:59 CET</b>.
 </div> -->
 
-<!-- <div class="alert alert-primary" role="alert">
-<b>SUMO User Conference 2023:</b><br>
-  New Title and Abstract submission deadline: Monday, <b>January 16th, 2023 - 23:59 CET</b>. 
-</div> -->
 
-<!-- <div class="alert alert-primary" role="alert">
- <b>SUMO User Conference 2023:</b><br>
-   New Paper submission deadline: Monday, <b>February 20th, 2023 - 23:59 CET</b>. 
- </div> -->
 
+<!-- ALERT 2 - Registrierungslink bitte noch einsetzten -->
 <!-- <div class="alert alert-success" role="alert">
-<b>SUMO User Conference 2023:</b><br>
-  Registration is now open: <a href="https://sumo2023.welcome-manager.de">https://sumo2023.welcome-manager.de</a>
+  Registration is now open: <a href="XXX">XXX</a>
   <br>
-  <small><b>Please keep in mind that the registration will close on April 25th, 2023.</b></small>
+  <small><b>Please keep in mind that the registration will close on April 30th, 2024 (at 23:59 CEST).</b></small>
 </div> -->
 
 
