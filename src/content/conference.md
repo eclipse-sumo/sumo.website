@@ -60,7 +60,7 @@ There are two submission types:
    - All accepted scientific papers must be presented at the conference.
    - Scientific papers will be reviewed by at least 2 reviewers.
    - All accepted scientific papers will be published in the [SUMO proceedings](https://www.tib-op.org/ojs/index.php/scp/index).
-   - ***Optional:** A title and short abstract (up to 300 words) can be submitted until Friday, **January 12th, 2024**, to get some first feedback.*
+   - ~~Optional: A title and short abstract (up to 300 words) can be submitted until Friday, January 12th, 2024, to get some first feedback.~~
    - Scientific papers should be between 5 and 20 pages long.
    - <span style="color:darkorange">The Paper must be submitted in LaTeX or Word format before midnight, Friday, **February 16th, 2024**.</span>
 
@@ -113,7 +113,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 # Important Dates
 
 For Papers:
-- **Optional** title and abstract submission, until: **Friday, January 12th, 2024**.
+- ~~Optional title and abstract submission, until: Friday, January 12th, 2024.~~
 - <span style="color:darkorange">Paper submission deadline: **Friday, February 16th, 2024**.</span>
 - Notification of acceptance/rejection: **End of March, 2024**.
 - Camera Ready Paper deadline: **Friday, April 19th, 2024**.
