@@ -9,33 +9,27 @@ conference-page: true
 draft: false
 ---
 
-
 <div class="text-center"><img src="../images/banner_2024.png" style="width:90%;" alt="Conference artwork" class="img-responsive"/></div>
 
 ---
-
 
 <!-- ALERT 1 - Neue paper deadline -->
 <!-- <div class="alert alert-primary" role="alert">
    New Paper submission deadline: Friday, <b>February 23th, 2024 - 23:59 CET</b>.
 </div> -->
 
-
-
-
-
-<!-- ALERT 2 - Registrierungslink bitte noch einsetzten -->
-<!-- <div class="alert alert-success" role="alert">
-  Registration is now open: <a href="XXX">XXX</a>
+<div class="alert alert-success" role="alert">
+  Registration is now open: <a href="https://sumo2024.welcome-manager.de/">https://sumo2024.welcome-manager.de/</a>
   <br>
   <small><b>Please keep in mind that the registration will close on April 30th, 2024 (at 23:59 CEST).</b></small>
-</div> -->
+</div>
 
 # Save the date!
+
 SUMO User Conference 2024: **May 13-15** in Berlin.
 
-
 # Call for Papers
+
 The conference focuses on presenting new and unique results in the field of mobility simulation and modelling using openly available tools and data. We expect a large variety of research topics and usage approaches. If you are working on a research project fitting the topics below, you are kindly invited to submit an abstract. Possible areas of interest include (but are not limited to):
 
 - Mobility and Demand Modelling
@@ -52,6 +46,7 @@ The conference focuses on presenting new and unique results in the field of mobi
 - Reinforcement learning / Machine Learning
 
 # Paper Submission
+
 There are two submission types:
 
 ---
@@ -105,7 +100,6 @@ Submit Papers and Posters here: https://www.tib-op.org/ojs/index.php/scp/about/s
   <img src="../images/poster_sub.png" style="width:100%; margin-top:10px" alt="Example image" class="img-responsive"/>
 </div>
 
-
 ## Ethics and Malpractice Statement
 
 You can read our *[Publication Ethics and Publication Malpractice Statement](../documents/SUMOPublicationEthics.pdf)*, where we list the responsibilities of editors, reviewers, and authors.
@@ -124,10 +118,12 @@ For Posters:
 - Final Poster upload deadline: **Friday, April 12th, 2024**.
 
 # Agenda
+
 *Available end of March 2024*
 
 
 # Keynote
+
 *More info coming soon*
 
 # Prices
@@ -140,10 +136,11 @@ For Posters:
 All prices are Tax-excluded
 
 # Registration
+
 The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings and a social event in the evening. Accommodation is not included within the registration fee and must be pre-booked separately.
 
 <div class="alert alert-info" role="alert">
-  <b>Non-EU nationals:</b> Please register well in advance, to facilitate internal procedures - and (if necessary) ensure a smooth visa application process.
+  <b>Non-EU nationals:</b> Please register well in advance to facilitate internal procedures and (if necessary) ensure a smooth visa application process.
 </div>
 
 The registration will be open starting February 1st and close on April 30th at 23:59 CEST
@@ -151,6 +148,7 @@ The registration will be open starting February 1st and close on April 30th at 2
 *Registration link coming soon*
 
 # Social Event
+
 *More info coming soon*
 
 <!-- # FAQ
@@ -166,6 +164,7 @@ The registration will be open starting February 1st and close on April 30th at 2
 </details> -->
 
 # Language
+
 The conference language is English.
 
 # Venue
@@ -175,11 +174,12 @@ The conference language is English.
 <small>View in: <a target="_blank" href="https://www.openstreetmap.org/?mlat=52.42799&amp;mlon=13.52919#map=19/52.42799/13.52919">OSM <i class="fa-solid fa-square-arrow-up-right"></i></a> - <a target="_blank" href="https://goo.gl/maps/c1mQDkkLF4H3QJjX7">Google Maps <i class="fa-solid fa-square-arrow-up-right"></i></a></small>
 </div>
 
-German Aerospace Center (DLR)   
-Institute of Transportation Systems   
-Rutherfordstr. 2   
-12489 Berlin   
+German Aerospace Center (DLR)
+Institute of Transportation Systems
+Rutherfordstr. 2
+12489 Berlin
 Germany
 
 # Contact
+
 Please contact the conference team via mail at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de)
