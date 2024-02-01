@@ -129,23 +129,25 @@ For Posters:
 # Prices
 
 - Regular Ticket: **495 EUR**
-- One-Day-Ticket: **325 EUR**
 - Authors and Project Partners: **275 EUR**
-- "Limited" Student Grants: **50 EUR**
+- Students: **50 EUR** (limited)
 
-All prices are Tax-excluded
+<small>All prices excluding VAT.</small>
+
+Please contact us via email at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de) to request a discount code for student registration.
+The availability is limited.
 
 # Registration
+
+Registration is now open: <a href="https://sumo2024.welcome-manager.de/">https://sumo2024.welcome-manager.de/</a>
+
+<small><b>Please keep in mind that the registration will close on April 30th, 2024 (at 23:59 CEST).</b></small>
 
 The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings and a social event in the evening. Accommodation is not included within the registration fee and must be pre-booked separately.
 
 <div class="alert alert-info" role="alert">
   <b>Non-EU nationals:</b> Please register well in advance to facilitate internal procedures and (if necessary) ensure a smooth visa application process.
 </div>
-
-The registration will be open starting February 1st and close on April 30th at 23:59 CEST
-
-*Registration link coming soon*
 
 # Social Event
 
@@ -182,4 +184,4 @@ Germany
 
 # Contact
 
-Please contact the conference team via mail at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de)
+For questions and comments, the conference team can be reached at the email address [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de).
