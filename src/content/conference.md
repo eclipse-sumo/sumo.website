@@ -13,10 +13,9 @@ draft: false
 
 ---
 
-<!-- ALERT 1 - Neue paper deadline -->
-<!-- <div class="alert alert-primary" role="alert">
-   New Paper submission deadline: Friday, <b>February 23th, 2024 - 23:59 CET</b>.
-</div> -->
+<div class="alert alert-primary" role="alert">
+   New Paper and Poster submission deadline: Friday, <b>February 23rd, 2024 - 23:59 CET</b>.
+</div>
 
 <div class="alert alert-success" role="alert">
   Registration is now open: <a href="https://sumo2024.welcome-manager.de/">https://sumo2024.welcome-manager.de/</a>
@@ -57,7 +56,7 @@ There are two submission types:
    - All accepted scientific papers will be published in the [SUMO proceedings](https://www.tib-op.org/ojs/index.php/scp/index).
    - ~~Optional: A title and short abstract (up to 300 words) can be submitted until Friday, January 12th, 2024, to get some first feedback.~~
    - Scientific papers should be between 5 and 20 pages long.
-   - <span style="color:darkorange">The Paper must be submitted in LaTeX or Word format before midnight, Friday, **February 16th, 2024**.</span>
+   - <span style="color:darkorange">The Paper must be submitted in LaTeX or Word format before midnight, Friday, **February 23rd, 2024**.</span>
 
 <div class="alert alert-info" role="alert">
   Authors are required to use the <a href="https://www.tib-op.org/ojs/index.php/scp/libraryFiles/downloadPublic/8">Word</a> or <a href="https://www.tib-op.org/ojs/index.php/scp/libraryFiles/downloadPublic/9">LaTeX</a> template provided by TIB Open Publishing.
@@ -82,7 +81,7 @@ There are two submission types:
     - We will print the poster for you, provide the display panel, a chair and a table.
     - While changes to the poster are still possible after the submission deadline, we unfortunately will not be able to reprint it. If you do need to make changes, you would need to bring a printout of the updated version with you.
     - You are welcome to bring a laptop or other device to show a demo, slides, videos or any material that you deem appropriate to complement the presentation. In this case you will need to provide your own equipment.
-    - <span style="color:darkorange">Title and a short abstract (up to 300 words) **must be** submitted until Friday, **February 09th, 2024**.</span>
+    - <span style="color:darkorange">Title and a short abstract (up to 300 words) **must be** submitted until Friday, **February 23rd, 2024**.</span>
 
 <div class="text-center"><img src="../images/poster_session.jpeg" style="width:60%;" alt="Poster session" class="img-responsive"/></div>
 
@@ -108,12 +107,12 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 
 For Papers:
 - ~~Optional title and abstract submission, until: Friday, January 12th, 2024.~~
-- <span style="color:darkorange">Paper submission deadline: **Friday, February 16th, 2024**.</span>
+- <span style="color:darkorange">Paper submission deadline: **Friday, February 23rd, 2024**.</span>
 - Notification of acceptance/rejection: **End of March, 2024**.
 - Camera Ready Paper deadline: **Friday, April 19th, 2024**.
 
 For Posters:
-- <span style="color:darkorange">**Mandatory** title and abstract submission deadline: **Friday, February 09th, 2024**.</span>
+- <span style="color:darkorange">**Mandatory** title and abstract submission deadline: **Friday, February 23rd, 2024**.</span>
 - Notification of acceptance/rejection: **Mid of March, 2024**.
 - Final Poster upload deadline: **Friday, April 12th, 2024**.
 
