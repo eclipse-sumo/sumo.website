@@ -1,4 +1,4 @@
-# Eclipse SUMO website
+# Eclipse SUMO website [![linkcheck](https://github.com/eclipse-sumo/sumo.website/actions/workflows/linkcheck.yml/badge.svg)](https://github.com/eclipse-sumo/sumo.website/actions/workflows/linkcheck.yml)
 
 This repository contains generated static files and markdown source files (inside the `/src/` directory) for the [Eclipse SUMO website](https://eclipse.dev/sumo).
 The SUMO website is generated using [Hugo](https://gohugo.io/).
