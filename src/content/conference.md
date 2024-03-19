@@ -118,7 +118,15 @@ For Posters:
 
 # Keynote
 
-*More info coming soon*
+<h3><i>Seeing is believing – Simulation and other Transportation Research at the Alabama Transportation Institute</i></h3>
+
+<h6>Dr. Steven Jones</h6>
+Alabama Transportation Institute<br>
+The University of Alabama<br>
+<a href="https://ati.ua.edu/" class="btn btn-sm btn-outline-info" style="margin-top:10px;">Website</a>
+<br><br>
+
+The talk will begin with a general introduction to the Alabama Transportation Institute (ATI) and its research portfolio. The introduction will provide a historical context for the establishment of ATI and provide an overview of the broad range of human-centered transportation research led and/or facilitated by ATI.  The presentation of ATI research will then focus on the role of simulation in general and eventually touch on recent SUMO-related work. Additionally, the talk will highlight the ATI track record of, and intentions to expand, international collaborations. Ultimately, the talk will provide an understanding of ATI simulation-related and other research priorities going forward as well as provide a case for potential future collaborations.
 
 # Prices
 
