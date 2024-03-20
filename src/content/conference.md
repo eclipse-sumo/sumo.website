@@ -119,7 +119,9 @@ For Posters:
 # Keynote
 
 <h3><i>Seeing is believing – Simulation and other Transportation Research at the Alabama Transportation Institute</i></h3>
-
+<img src="../images/Steven_Jones.jpg" alt="picture of Dr. Steven Jones" style="width:100px; border-radius: 50%; margin-bottom:10px;">
+<br>
+<small style="color: lightgray">© The University of Alabama</small>
 <h6>Dr. Steven Jones</h6>
 Alabama Transportation Institute<br>
 The University of Alabama<br>
