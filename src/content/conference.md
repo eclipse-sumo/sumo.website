@@ -147,6 +147,10 @@ Registration is now open: <a href="https://sumo2024.welcome-manager.de/">https:/
 
 <small><b>Please keep in mind that the registration will close on April 30th, 2024 (at 23:59 CEST).</b></small>
 
+<div class="alert alert-secondary" role="alert">
+  <b>Authors:</b> Paper or poster authors are required to register selecting the “Author & Project Partners” category.
+</div>
+
 The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings and a social event in the evening. Accommodation is not included within the registration fee and must be pre-booked separately.
 
 <div class="alert alert-info" role="alert">
