@@ -104,8 +104,8 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 For Papers:
 - ~~Optional title and abstract submission, until: Friday, January 12th, 2024.~~
 - ~~Paper submission deadline: Friday, February 23rd, 2024.~~
-- Notification of acceptance/rejection: **End of March, 2024**.
-- Camera Ready Paper deadline: **Friday, April 19th, 2024**.
+- ~~Notification of acceptance/rejection: **End of March, 2024**.~~
+- <span class="badge badge-warning">New</span> Camera Ready Paper deadline: **Friday, April 26th, 2024**.
 
 For Posters:
 - ~~Mandatory title and abstract submission deadline: Friday, February 23rd, 2024.~~
