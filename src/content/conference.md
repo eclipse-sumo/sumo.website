@@ -184,10 +184,10 @@ The conference language is English.
 <small>View in: <a target="_blank" href="https://www.openstreetmap.org/?mlat=52.42799&amp;mlon=13.52919#map=19/52.42799/13.52919">OSM <i class="fa-solid fa-square-arrow-up-right"></i></a> - <a target="_blank" href="https://goo.gl/maps/c1mQDkkLF4H3QJjX7">Google Maps <i class="fa-solid fa-square-arrow-up-right"></i></a></small>
 </div>
 
-German Aerospace Center (DLR)
-Institute of Transportation Systems
-Rutherfordstr. 2
-12489 Berlin
+German Aerospace Center (DLR)   
+Institute of Transportation Systems   
+Rutherfordstr. 2   
+12489 Berlin   
 Germany
 
 # Contact
