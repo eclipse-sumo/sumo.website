@@ -4,10 +4,9 @@ description : "Open source, microscopic and continuous multi-modal traffic simul
 draft: false
 ---
 
-<!-- ALERT 1 - Neue paper deadline -->
-<!-- <div class="alert alert-primary" role="alert">
-   New Paper submission deadline: Friday, <b>February 23th, 2024 - 23:59 CET</b>.
-</div> -->
+<div class="alert alert-primary" role="alert">
+   The conference agenda is now available: <a href="https://eclipse.dev/sumo/conference/#agenda">Take a look</a>
+</div>
 
 <div class="alert alert-success" role="alert">
   Registration is now open: <a href="https://sumo2024.welcome-manager.de/">https://sumo2024.welcome-manager.de/</a>
