@@ -110,7 +110,7 @@ For Papers:
 For Posters:
 - ~~Mandatory title and abstract submission deadline: Friday, February 23rd, 2024.~~
 - ~~Notification of acceptance/rejection: **Mid of March, 2024**.~~
-- Final Poster upload deadline: **Friday, April 12th, 2024**.
+- ~~Final Poster upload deadline: **Friday, April 12th, 2024**.~~
 
 # Agenda
 
