@@ -227,7 +227,16 @@ For Posters:
     <td align="right">14:15 - 15:30<br><br>Session 3<br><b>Poster Session</b><br><br></td>
 <td>
 <ul>
-<i>More info coming soon</i>
+<li>Investigation of DRT Services by Coupling Demand Modeling and Traffic Flow Simulation - <small>Dennis Harmann, Lasse Bienzeisler, Ronja Meier and Bernhard Friedrich</small></li>
+<li>CDASim: A Versatile Tool for Realistic Cooperative Driving Automation Simulation and Research - <small>Zhitong Huang, Kyle Rush, Danielle Chou, Pavle Bujanovic and Sudhakar Nallamothu</small></li>
+<li>Ingolstadt SUMO 365 – Generation and Calibration of a Microscopic Urban Model for various Scenarios - <small>Joel Brodersen and Christoph Stadler</small></li>
+<li>PROPOSAL FOR A LOW EMISSIONS ZONE IN THE HISTORIC CENTER OF THE CITY OF SAN LUIS POTOSÍ, MEXICO - <small>Missael Quilantan, Valter Barrera and Andres Ruiz</small></li>
+<li>Development of a 3D Visualization SUMO Tool for Traffic Simulations - <small>Maya Sekeran, Johannes Lindner, Faruk Öztürk, Mathias Pechinger and Klaus Bogenberger</small></li>
+<li>Automated conflict region calculation for intersection control with automated and connected vehicles - <small>Natalie Steinmetz, Tanja Niels and Klaus Bogenberger</small></li>
+<li>Simulation of 'phantom' traffic jams by modeling perception performance in SUMO - <small>Ivan Postigo, Clas Rydergren and Johan Olstam</small></li>
+<li>The Integration of SUMO into a Cluster-wide Simulation Pipeline for Mobility Innovations - <small>Fabian Schuhmann</small></li>
+<li><i>To be announced</i></li>
+<li><i>To be announced</i></li>
 </ul>
   </tr>
     <tr>
@@ -292,7 +301,7 @@ For Posters:
     Arne Boockmeyer, Dirk Friedenberger and Lukas Pirl <i><small>(all: Hasso-Plattner-Institut)</small></i>
 <hr>
     <b>Perspectives on an ALKS model in SUMO</b><br>
-    Robert Alms, Benjamin Couéraud and Peter Wagner<i><small>(all: DLR)</small></i>
+    Robert Alms, Benjamin Couéraud and Peter Wagner <i><small>(all: DLR)</small></i>
 <hr>
     <b>Calibrating Car-Following Models using SUMO-in-the-loop and Vehicle Trajectories from Roadside Radar</b><br>
     Maxwell Schrader, Arya Karnik, Alexander Hainen and Joshua Bittle <i><small>(all: The University of Alabama)</small></i>
@@ -305,7 +314,15 @@ For Posters:
     <td align="right">13:00 - 14:30<br><br>Session 7<br><b>Poster Session</b><br><br></td>
 <td>
 <ul>
-<i>More info coming soon</i>
+<li>Comprehensive simulation by coupling simulators for pedestrian and vehicle dynamics - <small>Ronald Nippold and Jette Schumann</small></li>
+<li>Collaborative, Distributed Testing Using Eclipse SUMO - <small>Danielle Chou, Robin Laqui and Stephen Moyer</small></li>
+<li>Real-time queue estimator for signalised intersections - based on detector data - <small>Maik Halbach and Jan Trumpold</small></li>
+<li>Utilisation of cooperative, automated vehicles with external HMI as part of traffic signal control - <small>Robert Oertel</small></li>
+<li>Machine-learning informed simulation-based dynamic traffic assignment with SUMO - <small>Jonas Jostmann, Gunnar Flötteröd and Zhenliang Ma</small></li>
+<li>MITIGATING URBAN AIR POLLUTION: CASE STUDY OF CALZADA DE GUADALUPE AVENUE IN SAN LUIS POTOSI CITY, MEXICO - <small>Andres Ruiz, Valter Barrera and Missael Quilantan</small></li>
+<li>Advancing Traffic Safety Simulation: Introducing a Modular Threat Response Model for E-Scooters in SUMO - <small>Pascal Brunner, Florian Denk, Felix Fröhling, Werner Huber, Klaus Bogenberger and Ronald Kates</small></li>
+<li>Maximum Capacity versus Safety for Cyclists - <small>Thomas Obst</small></li>
+<li><i>To be announced</i></li>
 </ul>
     </td>
   </tr>
@@ -331,7 +348,7 @@ For Posters:
   </tr>
 </tbody>
 </table>
-<small>Last update: 05.04.2024 - 14:29 CEST</small>
+<small>Last update: 19.04.2024 - 12:50 CEST</small>
 
 # Keynote
 
