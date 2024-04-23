@@ -235,7 +235,7 @@ For Posters:
 <li>Automated conflict region calculation for intersection control with automated and connected vehicles - <small>Natalie Steinmetz, Tanja Niels and Klaus Bogenberger</small></li>
 <li>Simulation of 'phantom' traffic jams by modeling perception performance in SUMO - <small>Ivan Postigo, Clas Rydergren and Johan Olstam</small></li>
 <li>The Integration of SUMO into a Cluster-wide Simulation Pipeline for Mobility Innovations - <small>Fabian Schuhmann</small></li>
-<li><i>To be announced</i></li>
+<li>Interfacing a Traffic Light Controller with SUMO for Hardware-in-the-Loop Testing - <small>Robert Markowski</small></li>
 <li><i>To be announced</i></li>
 </ul>
   </tr>
