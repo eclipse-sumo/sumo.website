@@ -154,9 +154,10 @@ For Posters:
     </td>
   </tr>
   <tr>
-    <td align="right">17:00</td>
+    <td align="right">17:15 - 18:15</td>
     <td colspan="2">
    <b>Evening Program - Social Event</b><br>
+   Guided tour of the Adlershof Science and Technology Park<br>
 <a style="color:#0645ad; cursor:pointer;" href="#social-event">Read more <i class="fas fa-angle-down"></i></a>
     </td>
   </tr>
@@ -348,7 +349,7 @@ For Posters:
   </tr>
 </tbody>
 </table>
-<small>Last update: 19.04.2024 - 12:50 CEST</small>
+<small>Last update: 23.04.2024 - 12:16 CEST</small>
 
 # Keynote
 
@@ -393,7 +394,9 @@ The registration fee includes a two and a half day conference program with refre
 
 # Social Event
 
-*More info coming soon*
+**Guided tour of the Adlershof Science and Technology Park (on May 13, 2024 - 17:15 - 18:15)**   
+
+Guided tour through the Adlershof Science and Technology Park campus, with a focus on the history and development of aviation research at the site, visit to the large wind tunnel, spin tunnel and sound-absorbing engine test stand.
 
 <!-- # FAQ
 
