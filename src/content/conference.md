@@ -7,6 +7,8 @@ description : "Get in touch with our international user community"
 layout: "single"
 conference-page: true
 draft: false
+aliases:
+- /2024
 ---
 <!-- https://raw.githubusercontent.com/eclipse-sumo/sumo.website/88c6241d5dc095b7292c5b6068debd3132c6f86e/src/content/conference.md -->
 <div class="text-center"><img src="../images/banner_2024.png" style="width:90%;" alt="Conference artwork" class="img-responsive"/></div>
