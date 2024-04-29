@@ -21,6 +21,7 @@ aliases:
   <small><b>Please keep in mind that the registration will close on April 30th, 2024 (at 23:59 CEST).</b></small>
 </div>
 
+<!--
 # Save the date!
 
 SUMO User Conference 2024: **May 13-15** in Berlin.
@@ -113,6 +114,8 @@ For Posters:
 - ~~Mandatory title and abstract submission deadline: Friday, February 23rd, 2024.~~
 - ~~Notification of acceptance/rejection: **Mid of March, 2024**.~~
 - ~~Final Poster upload deadline: **Friday, April 12th, 2024**.~~
+
+-->
 
 # Agenda
 
