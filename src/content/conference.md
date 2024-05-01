@@ -14,14 +14,14 @@ aliases:
 <div class="text-center"><img src="../images/banner_2024.png" style="width:90%;" alt="Conference artwork" class="img-responsive"/></div>
 
 ---
-
+<!--
 <div class="alert alert-success" role="alert">
   Registration is now open: <a href="https://sumo2024.welcome-manager.de/">https://sumo2024.welcome-manager.de/</a>
   <br>
   <small><b>Please keep in mind that the registration will close on April 30th, 2024 (at 23:59 CEST).</b></small>
 </div>
 
-<!--
+
 # Save the date!
 
 SUMO User Conference 2024: **May 13-15** in Berlin.
@@ -370,6 +370,7 @@ The University of Alabama<br>
 
 The talk will begin with a general introduction to the Alabama Transportation Institute (ATI) and its research portfolio. The introduction will provide a historical context for the establishment of ATI and provide an overview of the broad range of human-centered transportation research led and/or facilitated by ATI.  The presentation of ATI research will then focus on the role of simulation in general and eventually touch on recent SUMO-related work. Additionally, the talk will highlight the ATI track record of, and intentions to expand, international collaborations. Ultimately, the talk will provide an understanding of ATI simulation-related and other research priorities going forward as well as provide a case for potential future collaborations.
 
+<!--
 # Prices
 
 - Regular Ticket: **495 EUR**
@@ -396,6 +397,8 @@ The registration fee includes a two and a half day conference program with refre
 <div class="alert alert-info" role="alert">
   <b>Non-EU nationals:</b> Please register well in advance to facilitate internal procedures and (if necessary) ensure a smooth visa application process.
 </div>
+
+-->
 
 # Social Event
 
