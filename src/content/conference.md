@@ -257,7 +257,7 @@ For Posters:
     <b>Optimized Design of Low Emission Zones in SUMO: A Dual Focus on Emissions Reduction and Travel Time Improvement</b><br>
     Alvaro Paricio-Garcia, Miguel A. Lopez-Carmona and Pablo Manglano <i><small>(all: Universidad de Alcalá)</small></i>
 <hr>
-    <b>Investigating SUMO’s emission and energy models with real case study</b><br>
+    <b>Comparing and parameterizing the electrical energy consumption models in SUMO</b><br>
     Yun-Pang Flötteröd, Michael Behrisch and Peter Wagner <i><small>(all: DLR)</small></i>
 <hr>
     <b>HybridPy: The Simulation Suite for Mesoscopic and Microscopic Traffic Simulations</b><br>
@@ -354,7 +354,7 @@ For Posters:
   </tr>
 </tbody>
 </table>
-<small>Last update: 24.04.2024 - 15:44 CEST</small>
+<small>Last update: 03.05.2024 - 16:51 CEST</small>
 
 # Keynote
 

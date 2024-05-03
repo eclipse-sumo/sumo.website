@@ -4,6 +4,8 @@
   <url>
     <loc>https://www.eclipse.dev/sumo/about/</loc>
   </url><url>
+    <loc>https://www.eclipse.dev/sumo/categories/</loc>
+  </url><url>
     <loc>https://www.eclipse.dev/sumo/contact/</loc>
   </url><url>
     <loc>https://www.eclipse.dev/sumo/</loc>
@@ -31,5 +33,7 @@
     <loc>https://www.eclipse.dev/sumo/2023/</loc>
   </url><url>
     <loc>https://www.eclipse.dev/sumo/conference/</loc>
+  </url><url>
+    <loc>https://www.eclipse.dev/sumo/tags/</loc>
   </url>
 </urlset>
