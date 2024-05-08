@@ -335,7 +335,7 @@ For Posters:
 <li>Mitigating urban air pollution: Case study of Calzada de Guadalupe Avenue in San Luis Potosí city, Mexico - <small>Andres Ruiz, Valter Barrera and Missael Quilantan</small></li>
 <li>Advancing Traffic Safety Simulation: Introducing a Modular Threat Response Model for E-Scooters in SUMO - <small>Pascal Brunner, Florian Denk, Felix Fröhling, Werner Huber, Klaus Bogenberger and Ronald Kates</small></li>
 <li>Maximum Capacity versus Safety for Cyclists - <small>Thomas Obst</small></li>
-<li><i>To be announced</i></li>
+<li>SESAM = SUMO in the Cloud - <small>Robert Hilbrich and Angelo Banse</small></li>
 </ul>
     </td>
   </tr>
@@ -361,7 +361,7 @@ For Posters:
   </tr>
 </tbody>
 </table>
-<small>Last update: 07.05.2024 - 13:50 CEST</small>
+<small>Last update: 08.05.2024 - 12:39 CEST</small>
 
 # Keynote
 
