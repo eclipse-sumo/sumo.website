@@ -249,7 +249,6 @@ For Posters:
 <li>Simulation of 'phantom' traffic jams by modeling perception performance in SUMO - <small>Ivan Postigo, Clas Rydergren and Johan Olstam</small></li>
 <li>The Integration of SUMO into a Cluster-wide Simulation Pipeline for Mobility Innovations - <small>Fabian Schuhmann</small></li>
 <li>Interfacing a Traffic Light Controller with SUMO for Hardware-in-the-Loop Testing - <small>Robert Markowski</small></li>
-<li><i>To be announced</i></li>
 </ul>
   </tr>
     <tr>
@@ -361,7 +360,7 @@ For Posters:
   </tr>
 </tbody>
 </table>
-<small>Last update: 08.05.2024 - 12:39 CEST</small>
+<small>Last update: 08.05.2024 - 14:59 CEST</small>
 
 # Keynote
 
