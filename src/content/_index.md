@@ -4,11 +4,6 @@ description : "Open source, microscopic and continuous multi-modal traffic simul
 draft: false
 ---
 
-<div class="alert alert-primary" role="alert">
-   The conference agenda is now available: <a href="https://eclipse.dev/sumo/conference/#agenda">Take a look</a>
-</div>
-
-
 
 <!-- YouTube Tutorial -->
 <a data-youtube href="https://www.youtube.com/watch?v=3J5KqOPT2qI"></a>
