@@ -5,15 +5,14 @@ conferenceDate: "May 13-15"
 conferenceLocation: "Berlin-Adlershof, Germany"
 description : "Get in touch with our international user community"
 layout: "single"
+image: "conference_2024.jpg"
 conference-page: true
 draft: false
 aliases:
 - /2024
 ---
 <!-- https://raw.githubusercontent.com/eclipse-sumo/sumo.website/88c6241d5dc095b7292c5b6068debd3132c6f86e/src/content/conference.md -->
-<div class="text-center"><img src="../images/banner_2024.png" style="width:90%;" alt="Conference artwork" class="img-responsive"/></div>
 
----
 <!--
 <div class="alert alert-success" role="alert">
   Registration is now open: <a href="https://sumo2024.welcome-manager.de/">https://sumo2024.welcome-manager.de/</a>
@@ -444,3 +443,7 @@ Germany
 # Contact
 
 For questions and comments, the conference team can be reached at the email address [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de).
+
+---
+
+<div class="text-center"><img src="../images/banner_2024.png" style="width:84%;" alt="Conference artwork" class="img-responsive"/></div>
