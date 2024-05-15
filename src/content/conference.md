@@ -187,13 +187,13 @@ For Posters:
   <tr>
     <td align="right">09:15 - 10:45<br><br>Session 1<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Yun-Pang Flötteröd</p></td>
 <td>
-    <b>Simulating Traffic Networks: Driving SUMO towards digital twins</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/1-1.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> Simulating Traffic Networks: Driving SUMO towards digital twins</b><br>
     Axel Schaffland, Jonas Nelson and Julius Schöning <i><small>(all: Hochschule Osnabrück)</small></i>
 <hr>
-    <b>Leveraging SUMO for Real-World Traffic Optimization: A Comprehensive Approach</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/1-2.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> Leveraging SUMO for Real-World Traffic Optimization: A Comprehensive Approach</b><br>
     Alon Bublil and Olga Dobrilko <i><small>(all: NoTraffic)</small></i>
 <hr>
-    <b>Calibration of Microscopic Traffic Simulation in an Urban Environment Using GPS-Data</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/1-3.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> Calibration of Microscopic Traffic Simulation in an Urban Environment Using GPS-Data</b><br>
     Christopher Stang and Klaus Bogenberger <i><small>(all: Technical University of Munich)</small></i>
 </td>
   </tr>
@@ -206,13 +206,13 @@ For Posters:
   <tr>
     <td align="right">11:00 - 12:30<br><br>Session 2<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Robert Hilbrich</p></td>
 <td>
-    <b>Sumonity: Bridging SUMO and Unity for Enhanced Traffic Simulation Experiences</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/2-1.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> Sumonity: Bridging SUMO and Unity for Enhanced Traffic Simulation Experiences</b><br>
     Mathias Pechinger and Johannes Lindner <i><small>(all: Technical University of Munich)</small></i>
 <hr>
-    <b>Joining SUMO and Unreal Engine to Create a Bespoke 360 Degree Narrow Passage Driving Simulator</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/2-2.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> Joining SUMO and Unreal Engine to Create a Bespoke 360 Degree Narrow Passage Driving Simulator</b><br>
     Peter Youssef, Katherine Plant and Ben Waterson <i><small>(all: University of Southampton)</small></i>
 <hr>
-    <b>Integrating Topographical Map Information in SUMO to Simulate Realistic Micromobility Trips in Hilly and Steep Terrains</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/2-3.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> Integrating Topographical Map Information in SUMO to Simulate Realistic Micromobility Trips in Hilly and Steep Terrains</b><br>
     Andreas Freymann <i><small>(Fraunhofer IAO)</small></i>, Emanuel Reichsöllner <i><small>(Hochschule Esslingen)</small></i>, Damir Ravlija <i><small>(Hochschule Esslingen)</small></i>, Ingo Trautwein <i><small>(Fraunhofer IAO)</small></i> and Mirko Sonntag <i><small>(Hochschule Esslingen)</small></i>
 </td>
   </tr>
@@ -259,13 +259,13 @@ For Posters:
   <tr>
     <td align="right">15:45 - 17:15<br><br>Session 4<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Ronald Nippold</p></td>
 <td>
-    <b>Optimized Design of Low Emission Zones in SUMO: A Dual Focus on Emissions Reduction and Travel Time Improvement</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/4-1.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> Optimized Design of Low Emission Zones in SUMO: A Dual Focus on Emissions Reduction and Travel Time Improvement</b><br>
     Alvaro Paricio-Garcia, Miguel A. Lopez-Carmona and Pablo Manglano <i><small>(all: Universidad de Alcalá)</small></i>
 <hr>
-    <b>Comparing and parameterizing the electrical energy consumption models in SUMO</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/4-2.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> Comparing and parameterizing the electrical energy consumption models in SUMO</b><br>
     Yun-Pang Flötteröd, Michael Behrisch and Peter Wagner <i><small>(all: DLR)</small></i>
 <hr>
-    <b>HybridPy: The Simulation Suite for Mesoscopic and Microscopic Traffic Simulations</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/4-3.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> HybridPy: The Simulation Suite for Mesoscopic and Microscopic Traffic Simulations</b><br>
     Joerg Schweizer <i><small>(University of Bologna)</small></i>, Fabian Schuhmann <i><small>(Technical University of Munich)</small></i> and Cristian Poliziani <i><small>(Lawrence Berkeley National Lab)</small></i>
 </td>
   </tr>
@@ -289,13 +289,13 @@ For Posters:
   <tr>
     <td align="right">09:00 - 10:30<br><br>Session 5<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Peter Wagner</p></td>
 <td>
-    <b>Bus Priority Procedure for Signalized Intersections Based on Bus Occupancy and Delay</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/5-1.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> Bus Priority Procedure for Signalized Intersections Based on Bus Occupancy and Delay</b><br>
     Katia Juliane Schmidt, Natalie Steinmetz and Martin Margreiter <i><small>(all: Technical University of Munich)</small></i>
 <hr>
-    <b>rescuePY: Simulation-based Rescue Response Impact Assessment</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/5-2.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> rescuePY: Simulation-based Rescue Response Impact Assessment</b><br>
     Fabian Schuhmann <i><small>(Technical University of Munich)</small></i>
 <hr>
-    <b>Generalistic Assessments of the Potential of Medical Drones in Urban Environment</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/5-3.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> Generalistic Assessments of the Potential of Medical Drones in Urban Environment</b><br>
     Felix Wachter <i><small>(Hochschule Kempten)</small></i>, Jannik Krivohlavek <i><small>(University Medical Center Groningen)</small></i>, Jonas Rossa <i><small>(Hochschule Kempten)</small></i> and Andreas Rupp <i><small>(Hochschule Kempten)</small></i>
 </td>
   </tr>
@@ -308,13 +308,13 @@ For Posters:
   <tr>
     <td align="right">10:45 - 12:15<br><br>Session 6<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Jakob Erdmann</p></td>
 <td>
-    <b>Using SUMO for Test Automation and Demonstration of Digitalized Railway Concepts</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/6-1.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> Using SUMO for Test Automation and Demonstration of Digitalized Railway Concepts</b><br>
     Arne Boockmeyer, Dirk Friedenberger and Lukas Pirl <i><small>(all: Hasso-Plattner-Institut)</small></i>
 <hr>
-    <b>Perspectives on an ALKS model in SUMO</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/6-2.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> Perspectives on an ALKS model in SUMO</b><br>
     Robert Alms, Benjamin Couéraud and Peter Wagner <i><small>(all: DLR)</small></i>
 <hr>
-    <b>Calibrating Car-Following Models using SUMO-in-the-loop and Vehicle Trajectories from Roadside Radar</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/6-3.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> Calibrating Car-Following Models using SUMO-in-the-loop and Vehicle Trajectories from Roadside Radar</b><br>
     Maxwell Schrader, Arya Karnik, Alexander Hainen and Joshua Bittle <i><small>(all: The University of Alabama)</small></i>
 </td>
   </tr>
@@ -346,10 +346,10 @@ For Posters:
   <tr>
     <td align="right">14:45 - 15:45<br><br>Session 8<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Benjamin Couéraud</p></td>
 <td>
-    <b>Integration Traffic Signal Control From Synchro to SUMO</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/8-1.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> Integration Traffic Signal Control From Synchro to SUMO</b><br>
     Yiran Zhang <i><small>(University of Washington)</small></i>, Mingjian Fu <i><small>(INRIX Inc)</small></i> and Xuegang (Jeff) Ban <i><small>(University of Washington)</small></i>
 <hr>
-    <b>On Vehicular Data Aggregation in Federated Learning: A Case Study of Privacy with Parking Occupancy in Eclipse SUMO</b><br>
+    <b><a target="_blank" href="https://sumo.dlr.de/pdf/2024/8-2.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a> On Vehicular Data Aggregation in Federated Learning: A Case Study of Privacy with Parking Occupancy in Eclipse SUMO</b><br>
     Levente Alekszejenkó and Tadeusz Dobrowiecki <i><small>(all: Budapest University of Technology and Economics)</small></i>
 </td>
   </tr>
