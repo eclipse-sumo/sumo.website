@@ -7,9 +7,9 @@ description : "Get in touch with our international user community"
 layout: "single"
 image: "conference_2024.jpg"
 conference-page: true
-draft: false
+draft: true
 aliases:
-- /2024
+- /2025
 ---
 <!-- https://raw.githubusercontent.com/eclipse-sumo/sumo.website/88c6241d5dc095b7292c5b6068debd3132c6f86e/src/content/conference.md -->
 

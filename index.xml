@@ -139,19 +139,17 @@ Simulation-based origin-destination matrix reduction: a case study of Helsinki c
     
     <item>
       <title>SUMO User Conference 2024</title>
-      <link>https://www.eclipse.dev/sumo/conference/</link>
+      <link>https://www.eclipse.dev/sumo/2024/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.dev/sumo/conference/</guid>
-      <description>Agenda 🕓 Schedule given in Central European Summer Time (CEST) (UTC+2) - This agenda may be subject to change
-Monday, May 13, 202412:30 - 13:00Registration
-13:00 - 13:15Opening
-13:15 - 14:30SUMO Tutorial
-14:30 - 14:45Coffee Break &amp;#x2615;
-14:45 - 16:00Ask us anything
-17:15 - 18:15Evening Program - Social Event
-Guided tour of the Adlershof Science and Technology Park
-Read more Tuesday, May 14, 202409:00 - 09:15Opening AddressRobert Hilbrich SUMO Team Lead09:15 - 10:45</description>
+      <guid>https://www.eclipse.dev/sumo/2024/</guid>
+      <description>Proceedings Conference Proceedings: Coming soon DOI: Coming soon
+Sessions and Presentations Tutorial Tutorial files Video
+Keynote: Seeing is believing – Simulation and other Transportation Research at the Alabama Transportation Institute - Dr. Steven Jones Video
+Session 1
+Simulating Traffic Networks: Driving SUMO towards digital twins
+Axel Schaffland, Jonas Nelson and Julius Schöning (all: Hochschule Osnabrück) Preprint Slides Video Leveraging SUMO for Real-World Traffic Optimization: A Comprehensive Approach
+Alon Bublil and Olga Dobrilko (all: NoTraffic) Preprint Slides Video Calibration of Microscopic Traffic Simulation in an Urban Environment Using GPS-Data</description>
     </item>
     
   </channel>
