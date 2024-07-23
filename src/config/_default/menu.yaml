@@ -2,11 +2,11 @@ main:
     - name: "About"
       url: ""
       weight: 1
-    - name: "Downloads"
-      url: "https://sumo.dlr.de/docs/Downloads.php"
-      weight: 2
     - name: "Documentation"
       url: "https://sumo.dlr.de/docs/"
+      weight: 2
+    - name: "Downloads"
+      url: "https://sumo.dlr.de/docs/Downloads.php"
       weight: 3
     - name: "Conference"
       url: "conference"
