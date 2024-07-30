@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.dev/sumo/about/</guid>
-      <description>Eclipse SUMO is a free and open source traffic simulation suite. It is available since 2001 and allows modelling of intermodal traffic systems - including road vehicles, public transport and pedestrians. Included with SUMO is a wealth of supporting tools which automate core tasks for the creation, the execution and evaluation of traffic simulations, such as network import, route calculations, visualization and emission calculation. SUMO can be enhanced with custom models and provides various APIs to remotely control the simulation.</description>
+      <description>Eclipse SUMO is a free and open source traffic simulation suite. It was started in 2001 by employees of the Institute of Transportation Systems at the German Aerospace Center (DLR). SUMO allows modelling of intermodal traffic systems - including road vehicles, public transport and pedestrians. Included with SUMO is a wealth of supporting tools that automate core tasks for the creation, the execution and evaluation of traffic simulations, such as network import, route calculations, visualization and emission calculation.</description>
     </item>
     
     <item>
@@ -22,6 +22,20 @@
       
       <guid>https://www.eclipse.dev/sumo/contact/</guid>
       <description>Mailing listsIf you have any questions about SUMO, please post them into one of our mailing lists. You may need to create an Eclipse account first.Before you post on a list, please check the FAQ for already answered questions. sumo-userThis is the first place you should ask your questions. If you have a novel question, here is some general advice before asking. If you wish to report an error please follow these suggestions.</description>
+    </item>
+    
+    <item>
+      <title>SUMO Conference Proceedings</title>
+      <link>https://www.eclipse.dev/sumo/proceedings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.dev/sumo/proceedings/</guid>
+      <description>Read more information about the SUMO Conference Proceedings (SCP) Series here.
+Proceedings Current Volume Vol. 5 (2024): SUMO User Conference 2024
+DOI: https://doi.org/10.52825/scp.v5iPublished: July 17, 2024Past Volumes / Proceedings Vol. 4 (2023): SUMO User Conference 2023
+DOI: https://doi.org/10.52825/scp.v4i Published: June 29, 2023 Vol. 3 (2022): SUMO User Conference 2022
+DOI: https://doi.org/10.52825/scp.v3i Published: September 29, 2022 Vol. 2 (2021): SUMO User Conference 2021
+DOI: https://doi.org/10.52825/scp.v2i Published: June 29, 2022 Vol.</description>
     </item>
     
     <item>

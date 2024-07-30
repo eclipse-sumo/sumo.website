@@ -420,6 +420,7 @@ margin-top: 0;
 }
 
 h2 {
+margin-top: 40px;
 font-size: 1.5rem;
 }
 
@@ -466,11 +467,11 @@ background-color: rgb(240, 240, 240);
 padding: .5rem .5rem;
 }
 
-#TableOfContents ul {
+#TableOfContents ul, #RelatedContent ul {
 padding-left: 20px;
 }
 
-#TableOfContents {
+#TableOfContents, #RelatedContent {
 font-size: 0.9rem;
 }
 
@@ -517,4 +518,8 @@ transform: translate(-50%, -50%);
 background-color:rgba(0, 0, 0, 0.5);
 color: #fff;
 padding: 3px;
+}
+
+.cover-image {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.14);
 }

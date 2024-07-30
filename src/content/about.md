@@ -7,9 +7,11 @@ draft: false
 
 <div class="container"><div class="row"><div class="col-md-12 contact-div">
 
-Eclipse SUMO is a free and open source traffic simulation suite. It is available since 2001 and allows modelling of intermodal traffic systems - including road vehicles, public transport and pedestrians. Included with SUMO is a wealth of supporting tools which automate core tasks for the creation, the execution and evaluation of traffic simulations, such as network import, route calculations, visualization and emission calculation. SUMO can be enhanced with custom models and provides various APIs to remotely control the simulation.
+Eclipse SUMO is a free and open source traffic simulation suite. It was started in 2001 by employees of the <a href="https://www.dlr.de/ts">Institute of Transportation Systems</a> at the <a href="https://www.dlr.de/">German Aerospace Center (DLR)</a>. SUMO allows modelling of intermodal traffic systems - including road vehicles, public transport and pedestrians. Included with SUMO is a wealth of supporting tools that automate core tasks for the creation, the execution and evaluation of traffic simulations, such as network import, route calculations, visualization and emission calculation. SUMO can be enhanced with custom models and provides various APIs to remotely control the simulation.
 
-<br><br>
+In 2018 SUMO became <a href="https://projects.eclipse.org/projects/automotive.sumo">a project at the Eclipse Foundation</a>. Today, the main development continues to be driven by employees at the DLR, with contributions from our growing user community!
+
+<br>
 
 <!-- Computer vector-image and screenshots -->
 <center><div id="not_for_ie" class="col-sm-8 device-laptop">
@@ -46,6 +48,8 @@ Eclipse SUMO is a free and open source traffic simulation suite. It is available
 </div>
 
 </div></center>
+
+<br>
 
 # Application Areas
 
