@@ -15,6 +15,7 @@ params:
   docsURL: "https://sumo.dlr.de/docs"
   githubEditURL: "https://github.com/eclipse-sumo/sumo.website/edit/main/content/"
   Version: "1.20.0"
+  DOI: "10.5281/zenodo.11120728"
 
 markup:
   goldmark:

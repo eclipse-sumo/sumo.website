@@ -158,7 +158,7 @@
 
 <!-- /navigation --><div id="content">
 <div class="container-fluid header bg-gradient">
-    <div class="container" style="margin-top: 100px; margin-bottom: 20px;">
+    <div class="container" style="margin-top: 100px;">
       <div class="row">
         <div class="col-md-6"> 
         <div class="page-title" style="color: #17412f;">Simulation of Urban MObility</div>
@@ -254,9 +254,22 @@
         </div>
 
         </div>
-      </div>
-      <div class="svg-rounded" style="display: block; font-size: 0;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="#f8f8f8"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+        <div class="col" style="margin-top: 60px;">
+          <a href="https://github.com/eclipse-sumo/sumo/actions/workflows/build-linux.yml"><img src="https://github.com/eclipse-sumo/sumo/actions/workflows/build-linux.yml/badge.svg" alt="GitHub Linux Workflow build status"></a>
+          <a href="https://github.com/eclipse-sumo/sumo/actions/workflows/build-windows.yml"><img src="https://github.com/eclipse-sumo/sumo/actions/workflows/build-windows.yml/badge.svg" alt="GitHub Windows Workflow build status"></a>
+          <a href="https://github.com/eclipse-sumo/sumo/actions/workflows/build-macos.yml"><img src="https://github.com/eclipse-sumo/sumo/actions/workflows/build-macos.yml/badge.svg" alt="GitHub MacOS Workflow build status"></a>
+          <a href="https://github.com/eclipse-sumo/sumo/actions/workflows/documentation.yml"><img src="https://github.com/eclipse-sumo/sumo/actions/workflows/documentation.yml/badge.svg" alt="GitHub Documentation Workflow build status"></a>
+          <a href="https://github.com/eclipse-sumo/sumo.website/actions/workflows/linkcheck.yml"><img src="https://github.com/eclipse-sumo/sumo.website/actions/workflows/linkcheck.yml/badge.svg" alt="GitHub Website link status"></a>
+          <a href="https://github.com/eclipse-sumo/sumo/actions/workflows/docker.yml"><img src="https://github.com/eclipse-sumo/sumo/actions/workflows/docker.yml/badge.svg" alt="GitHub Docker Workflow build status"></a>
+          <a href="https://github.com/eclipse-sumo/sumo/actions/workflows/wheel-linux.yml"><img src="https://github.com/eclipse-sumo/sumo/actions/workflows/wheel-linux.yml/badge.svg" alt="GitHub Linux Wheels Workflow build status"></a>
+          <a href="https://github.com/eclipse-sumo/sumo/actions/workflows/wheel-windows.yml"><img src="https://github.com/eclipse-sumo/sumo/actions/workflows/wheel-windows.yml/badge.svg" alt="GitHub Windows Wheels Workflow build status"></a>
+          <a href="https://github.com/eclipse-sumo/sumo/actions/workflows/wheel-macos.yml"><img src="https://github.com/eclipse-sumo/sumo/actions/workflows/wheel-macos.yml/badge.svg" alt="GitHub MacOS Wheels Workflow build status"></a>
+          <a href="https://ci.appveyor.com/project/eclipsewebmaster/sumo"><img src="https://ci.appveyor.com/api/projects/status/github/eclipse/sumo?svg=true" alt="Appveyor Windows build status"></a>
+          <a href="https://sonarcloud.io/summary/overall?id=org.eclipse.sumo"><img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.sumo&metric=security_rating" alt="sonarcloud security"></a>
+          <a href="https://hosted.weblate.org/engage/eclipse-sumo/"><img src="https://hosted.weblate.org/widgets/eclipse-sumo/-/svg-badge.svg" alt="Translation status"></a>
+          <br>
+          <a href="https://sumo.dlr.de/daily/" class="green-text"><small>More tests <i class="fas fa-angle-right"></i></small></a>
+        </div>
       </div>
     </div>
   </div>
@@ -285,6 +298,10 @@
         <a class="btn btn-light" href="https://chat.eclipse.org/#/room/#automotive.sumo:matrix.eclipse.org" aria-label="Matrix"><span class="fas fa-comments"></span></a>
         <a class="btn btn-light" href="https://www.eclipse.dev/sumo/contact" aria-label="contact"><span class="fas fa-envelope"></span></a>
       </div>
+      <div>
+        Let us know if your publication mentions SUMO!
+        <a href="/sumo/about#citing-sumo">Citing SUMO</a>
+      </div>
 
 
 
@@ -312,7 +329,7 @@
       </div>
 
       <div class="row text-center"> 
-        <div class="col-md-4">
+        <div class="col-md-4 mb-5">
           <span class="fa-stack fa-2x">
             <i class="fas fa-circle fa-stack-2x text-secondary"></i>
             <i class="fas fa-car fa-stack-1x fa-inverse"></i>
@@ -321,7 +338,7 @@
           <p class="text-muted">Integrate automated vehicles in your traffic simulations and equip your vehicles with a transition of control (ToC) device</p>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 mb-5">
           <span class="fa-stack fa-2x">
             <i class="fas fa-circle fa-stack-2x text-secondary"></i>
             <i class="fas fa-satellite-dish fa-stack-1x fa-inverse"></i>
@@ -330,7 +347,7 @@
           <p class="text-muted">Implement and evaluate C2X communication technologies by coupling to a communication network simulator (OMNeT++ or ns-3)</p>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 mb-5">
           <span class="fa-stack fa-2x">
             <i class="fas fa-circle fa-stack-2x text-secondary"></i>
             <i class="fas fa-tasks fa-stack-1x fa-inverse"></i>
@@ -341,7 +358,7 @@
       </div> 
 
       <div class="row text-center"> 
-        <div class="col-md-4">
+        <div class="col-md-4 mb-5">
           <span class="fa-stack fa-2x">
             <i class="fas fa-circle fa-stack-2x text-secondary"></i>
             <i class="fas fa-compress-arrows-alt fa-stack-1x fa-inverse"></i>
@@ -350,7 +367,7 @@
           <p class="text-muted">Simulate the movement of every individual object by modeling all vehicles, pedestrians and public transport explicitly</p>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 mb-5">
           <span class="fa-stack fa-2x">
             <i class="fas fa-circle fa-stack-2x text-secondary"></i>
             <i class="fas fa-bus fa-stack-1x fa-inverse"></i>
@@ -359,7 +376,7 @@
           <p class="text-muted">Combine different modes of transportation and simulate cars, buses, trains, bicycles, pedestrians, public transport and more</p>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 mb-5">
           <span class="fa-stack fa-2x">
             <i class="fas fa-circle fa-stack-2x text-secondary"></i>
             <i class="fas fa-sliders-h fa-stack-1x fa-inverse"></i>
@@ -370,7 +387,7 @@
       </div> 
 
       <div class="row text-center"> 
-        <div class="col-md-4">
+        <div class="col-md-4 mb-5">
           <span class="fa-stack fa-2x">
             <i class="fas fa-circle fa-stack-2x text-secondary"></i>
             <i class="fas fa-file-import fa-stack-1x fa-inverse"></i>
@@ -379,7 +396,7 @@
           <p class="text-muted">Import road networks from common network formats such as OpenStreetMap, VISUM, VISSIM, NavTeq, MATsim and OpenDRIVE</p>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 mb-5">
           <span class="fa-stack fa-2x">
             <i class="fas fa-circle fa-stack-2x text-secondary"></i>
             <i class="fas fa-route fa-stack-1x fa-inverse"></i>
@@ -388,7 +405,7 @@
           <p class="text-muted">Use traffic counts on streets and junctions, origin-destination-matrices or virtual population models to generate realistic demand profiles</p>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 mb-5">
           <span class="fa-stack fa-2x">
             <i class="fas fa-circle fa-stack-2x text-secondary"></i>
             <i class="fas fa-traffic-light fa-stack-1x fa-inverse"></i>
@@ -399,7 +416,7 @@
       </div> 
 
       <div class="row text-center"> 
-        <div class="col-md-4">
+        <div class="col-md-4 mb-5">
           <span class="fa-stack fa-2x">
             <i class="fas fa-circle fa-stack-2x text-secondary"></i>
             <i class="fas fa-tachometer-alt fa-stack-1x fa-inverse"></i>
@@ -408,7 +425,7 @@
           <p class="text-muted">Boost your simulation with an unlimited network size, an unlimited amount of simulated vehicles and an unlimited simulation time<a href="https://sumo.dlr.de/docs/FAQ.html#are_there_any_limits_in_regard_to_the_size_of_a_simulation_scenario">*</a></p>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 mb-5">
           <span class="fa-stack fa-2x">
             <i class="fas fa-circle fa-stack-2x text-secondary"></i>
             <i class="fas fa-arrows-alt-h fa-stack-1x fa-inverse"></i>
@@ -432,10 +449,31 @@
   </section>
   
 
+  <section class="page-section" id="community" style="background: #EBEBEB;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Conference & Community</h2>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-12">
+          The <a href="https://www.eclipse.dev/sumo/conference">SUMO User Conference</a>, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
+          The conference is a great place to learn about new features, network with fellow enthusiasts, ask the developers, have fruitful discussions, exchange ideas and even start collaborations!
+          <br><br>
+          <img width="80%" style="border: 8px solid rgb(125,174,125); border-radius: 14px" src="https://www.eclipse.dev/sumo/images/conference_2023.jpg" alt="Picture of the 2023 conference attendees">
+          <br><br>
+          <a class="btn btn-sm btn-light" href="https://www.eclipse.dev/sumo/conference" role="button">Conference website</a>
+          <a class="btn btn-sm btn-light" href="https://www.eclipse.dev/sumo/proceedings" role="button">Proceedings</a>
+          <a class="btn btn-sm btn-light" href="/sumo/proceedings#editorial-team" role="button">Editorial Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-
-<div class="container-fluid text-center text-muted" style="margin-top: 60px;">
+<section class="page-section" id="openMobility">
+<div class="container-fluid text-center text-muted">
 
 
 <div class="container">
@@ -460,6 +498,7 @@
 </div>
 
 </div>
+</section>
 
 
 <script>
@@ -521,8 +560,8 @@ document.addEventListener('click', clickHandler);
 <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
   
-  <div style="margin-top: 20px; font-size: 0;">
-    <svg class="wave d-none d-md-block" style="display: block; pointer-events: none; height:100px; width: 100%;" fill="#ddd" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 75">
+  <div>
+    <svg class="wave d-none d-md-block" style="display: block; pointer-events: none; height:70px; width: 100%;" fill="#ddd" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 75">
         <defs>
             <style>.a {fill: none;} .b {clip-path: url(#a);} .d {opacity: 0.5; isolation: isolate;}</style>
             <clipPath id="a"><rect class="a" width="1920" height="75"></rect></clipPath>

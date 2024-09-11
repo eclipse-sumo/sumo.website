@@ -183,6 +183,9 @@ When citing SUMO in general, please use our current reference publication: ["Mic
             url = {https://elib.dlr.de/124092/}
  }
  ```
+###### DOI
+Since SUMO v.1.2.0, every release has had a unique digital object identifier (DOI) for citing set version.
+- Latest release (version {{< param Version >}}): <a href="https://doi.org/{{< param DOI >}}"><img src="https://zenodo.org/badge/DOI/{{< param DOI >}}.svg"></a>
 
 
 </div></div></div>
