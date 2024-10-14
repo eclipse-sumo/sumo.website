@@ -166,5 +166,15 @@ Axel Schaffland, Jonas Nelson and Julius Schöning (all: Hochschule Osnabrück) 
 Alon Bublil and Olga Dobrilko (all: NoTraffic) Slides Video Calibration of Microscopic Traffic Simulation in an Urban Environment Using GPS-Data</description>
     </item>
     
+    <item>
+      <title>SUMO User Conference 2025</title>
+      <link>https://www.eclipse.dev/sumo/conference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.dev/sumo/conference/</guid>
+      <description>The SUMO User Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
+The conference is a great place to learn about new features, network with fellow enthusiasts, ask the developers, have fruitful discussions, exchange ideas and even start collaborations!</description>
+    </item>
+    
   </channel>
 </rss>

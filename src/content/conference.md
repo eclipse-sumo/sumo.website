@@ -1,16 +1,25 @@
 ---
-title: "SUMO User Conference 2024"
+title: "SUMO User Conference 2025"
 subtitle: ""
-conferenceDate: "May 13-15"
+conferenceDate: "May 12-14"
 conferenceLocation: "Berlin-Adlershof, Germany"
 description : "Get in touch with our international user community"
 layout: "single"
-image: "conference_2024.jpg"
 conference-page: true
-draft: true
+draft: false
 aliases:
 - /2025
 ---
+
+The SUMO User Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
+
+The conference is a great place to learn about new features, network with fellow enthusiasts, ask the developers, have fruitful discussions, exchange ideas and even start collaborations!
+
+
+# Save the date!
+
+SUMO User Conference 2025: **May 12-14** in Berlin.
+
 <!-- https://raw.githubusercontent.com/eclipse-sumo/sumo.website/88c6241d5dc095b7292c5b6068debd3132c6f86e/src/content/conference.md -->
 
 <!--
@@ -20,15 +29,7 @@ aliases:
   <small><b>Please keep in mind that the registration will close on April 30th, 2024 (at 23:59 CEST).</b></small>
 </div>
 
-The SUMO User Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
 
-
-
-The conference is a great place to learn about new features, network with fellow enthusiasts, ask the developers, have fruitful discussions, exchange ideas and even start collaborations!
-
-# Save the date!
-
-SUMO User Conference 2024: **May 13-15** in Berlin.
 
 # Call for Papers
 
@@ -119,7 +120,7 @@ For Posters:
 - ~~Notification of acceptance/rejection: **Mid of March, 2024**.~~
 - ~~Final Poster upload deadline: **Friday, April 12th, 2024**.~~
 
--->
+
 
 # Agenda
 
@@ -380,7 +381,7 @@ The University of Alabama<br>
 
 The talk will begin with a general introduction to the Alabama Transportation Institute (ATI) and its research portfolio. The introduction will provide a historical context for the establishment of ATI and provide an overview of the broad range of human-centered transportation research led and/or facilitated by ATI.  The presentation of ATI research will then focus on the role of simulation in general and eventually touch on recent SUMO-related work. Additionally, the talk will highlight the ATI track record of, and intentions to expand, international collaborations. Ultimately, the talk will provide an understanding of ATI simulation-related and other research priorities going forward as well as provide a case for potential future collaborations.
 
-<!--
+
 # Prices
 
 - Regular Ticket: **495 EUR**
@@ -408,7 +409,7 @@ The registration fee includes a two and a half day conference program with refre
   <b>Non-EU nationals:</b> Please register well in advance to facilitate internal procedures and (if necessary) ensure a smooth visa application process.
 </div>
 
--->
+
 
 # Social Event
 
@@ -416,7 +417,7 @@ The registration fee includes a two and a half day conference program with refre
 
 Guided tour through the Adlershof Science and Technology Park campus, with a focus on the history and development of aviation research at the site, visit to the large wind tunnel, spin tunnel and sound-absorbing engine test stand.
 
-<!-- # FAQ
+# FAQ
 
 <details> <!-- <details open> -->
 <!--
@@ -448,7 +449,3 @@ Germany
 # Contact
 
 For questions and comments, the conference team can be reached at the email address [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de).
-
----
-
-<div class="text-center"><img src="../images/banner_2024.png" style="width:84%;" alt="Conference artwork" class="img-responsive"/></div>

@@ -41,7 +41,7 @@ main:
       parent: "Conference"
       url: "proceedings"
       weight: 1
-    - name: "SUMO User Conference 2024"
+    - name: "SUMO User Conference 2025"
       parent: "Conference"
       url: "conference"
       weight: 2
