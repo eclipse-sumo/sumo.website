@@ -5,9 +5,15 @@ languageCode: "en-us"
 title: "Eclipse SUMO - Simulation of Urban MObility"
 disableKinds: ["taxonomyTerm"]
 theme: "sumo-theme"
-#enableGitInfo: true
+enableGitInfo: true
 
 ########################### Default Parameters #############################
+
+frontmatter:
+  lastmod:
+    - lastmod
+    - :git
+    - date
 
 params:
   favicon: "images/favicon.ico"
