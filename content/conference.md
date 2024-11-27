@@ -96,7 +96,7 @@ There are two submission types:
 - Link for Paper submissions: https://www.tib-op.org/ojs/index.php/scp/about/submissions<br>
 <small>Login or register and then click on <b>"Make a new Conference Proceedings Submission"</b></small>
 <br>
-- Link for Poster submissions: *Coming soon*
+- Poster submissions: Send us an E-Mail with the subject **`Poster Submission - SUMO 2025`** to sumo-conference@dlr.de. Include the title and abstract in the body of the E-Mail.
 
 ## Ethics and Malpractice Statement
 
@@ -130,11 +130,13 @@ The availability is limited.
 
 # Registration
 
-<!-- Registration is now open: <a href="https://sumo2024.welcome-manager.de/">https://sumo2024.welcome-manager.de/</a> -->
+Registration will open on February 3, 2025. <!-- remove this line -->
 
-<!-- <small><b>Please keep in mind that the registration will close on April 30, 2025 (at 23:59 CEST).</b></small> -->
-
-Registration will open on February 3, 2025.
+<!--
+Registration is now open: <a href="https://sumo2025.welcome-manager.de/">https://sumo2025.welcome-manager.de/</a>
+<br>
+<small><b>Please keep in mind that the registration will close on April 30, 2025 (at 23:59 CEST).</b></small>
+-->
 
 <div class="alert alert-secondary" role="alert">
   <b>Authors:</b> Paper or poster authors are required to register selecting the “Author & Project Partners” category.
