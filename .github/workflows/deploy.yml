@@ -1,0 +1,84 @@
+name: deploy-static-pages
+
+on:
+  push:
+    branches:
+      - source
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source Branch
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        submodules: true
+
+    - name: Install Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+
+    - name: Build Hugo Site
+      run: |
+        hugo --minify
+        if [ ! -d "public" ] || [ -z "$(ls -A public)" ]; then
+          echo "Error: Hugo did not generate any files."
+          exit 1
+        fi
+
+    - name: Get Commit Message
+      id: commit_message
+      run: |
+        # Extract the commit message from the event payload
+        COMMIT_MSG=$(jq -r '.commits[-1].message' "$GITHUB_EVENT_PATH")
+        echo "commit_message=${COMMIT_MSG}" >> $GITHUB_ENV
+  
+    - name: Backup Generated Files and Copy Other Relevant Files
+      run: |
+        mkdir -p $HOME/temp
+        cp -r public/* $HOME/temp/
+        cp README.md $HOME/temp/
+        cp lychee.toml $HOME/temp/
+
+    - name: List Files
+      run: |
+        echo "Listing files in backup directory:"
+        ls -l $HOME/temp/
+
+    - name: Deploy to main Branch
+      env:
+        ACTIONS_DEPLOY_TOKEN: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
+        COMMIT_MESSAGE: ${{ env.commit_message }}
+      run: |
+        # Switch to main branch
+        git checkout --orphan main
+
+        # Clean up and reset branch
+        git reset --hard
+        git clean -df
+
+        # Restore files from backup
+        rsync -av $HOME/temp/* . --exclude=$HOME/temp/.git
+        rm -rf $HOME/temp
+
+        # Configure Git
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+        # Commit and push changes
+        git add .
+        git commit -m "Deploying: $COMMIT_MESSAGE"
+        git push --force origin main
+
+    - name: Trigger the linkcheck Workflow
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+          curl -X POST \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/linkcheck.yml/dispatches \
+            -d '{"ref":"source"}'
