@@ -1,0 +1,228 @@
+Q: Just have downloaded sumo on my new computer (Mac OS), however I am having trouble with the installation FXApp::openDisplay: unable to open display :0.0 is the error I am receiving - has anyone come across this before?
+A: It looks like XQuartz is missing. You can install it with “brew install --cask xquartz”.
+
+****************
+
+Q:	Does the:sumo -c run.sumocfg --seed 1 --output-prefix 1.
+	sumo -c run.sumocfg --seed 2 --output-prefix 2.
+	sumo -c run.sumocfg --seed 3 --output-prefix 3.
+	randomize also the arrival distribution of vehicles?
+A: Yes, if at least one of the following conditions are met:
+- option --random-depart-offset is set
+- traffic is defined as <flow> with attribute random="x" or period="exp(x)"
+
+****************
+
+Q: I would like to know about map-matching in SUMO. How can it match a sequence of GPS points on the SUMO network? I tried to associate each GPS point with the closest edge, but this led to a noisy trajectory, mainly when the GPS point lies inside a junction.
+A: see https://sumo.dlr.de/docs/FAQ.html#how_do_i_generate_sumo_routes_from_gps_traces
+   Discarding points that map to junction-internal edges (edge id starts with
+':') could also help
+
+****************
+
+Q: may I know, is it SUMO can plan a vehicle from one destination to another destination with several options of the route with estimated time arrival (ETA)
+A: There a several tools that deal with this topic. Good entry point are:
+- https://sumo.dlr.de/docs/Demand/Dynamic_User_Assignment.html
+- https://sumo.dlr.de/docs/Simulation/Routing.html
+
+****************
+
+Q: I am trying to import the Junction connections, but the issue is that a connection or traversal drawn by a single vehicle is acutally separated I also looking for a way to customize the IDs in network if its possible
+A1: Most connections across an intersection consist of a single edge with one or
+more lanes. For some movements (i.e. permissive left turns) there are two edges
+split at the waiting position within the junction (a so-called internal
+junction). See https://sumo.dlr.de/docs/Networks/SUMO_Road_Networks.html#internal_junctions
+A2: Edge and junction ids can be customized freely. Lane ids and internal edge
+ids are always generated based on the former.
+
+
+****************
+
+Q: Is there any way we can export the junction from network as JSON?
+A: The tool net2geojson.py supports option --junctions to export junction
+shapes. See https://sumo.dlr.de/docs/Tools/Net.html#net2geojsonpy
+
+****************
+
+Q: As SUMO is the core of many academic research, I wonder whether there are benchmark scenarios. E.g. highway scenario for platooning, downtown scenario to improve traffic control, etc., with predefined networks, traffic demands, and baseline results. Do you know any of such scenarios? How can we help creating such benchmark cases?
+A: Scenarios that have been made available to the community are collected at
+https://sumo.dlr.de/docs/Data/Scenarios.html Contact us on any channel to have
+your scenarios added there.
+
+****************
+
+Q: I am new to understanding netedit also is there any way to distinct the junction export separated as a polygon ? and separated the vehicle type with IDs? Where and how are the ids generates?
+A: You can export the junction shape with net2geojson.py (see above). The
+vehicle ids can be freely customized. Tools that generated vehicles (i.e.
+randomTrips.py) provide options for setting an ID-prefix and then add a numbered
+suffix.
+
+
+****************
+
+Q: Is there a 3D Mode for the SUMO GUI planned?
+A: The "extra" build already includes a 3D-mode! https://sumo.dlr.de/docs/Downloads.php#note_on_licensing 
+
+****************
+
+Q: I have a question regarding the process of making my own model of the Swiss motorway public as a SUMO Scenario on your web page. Is there a contact to talk about publishing the SUMO model on your webpage? So far, I sent an email to sumo@dlr.de.
+A: We're happy to add your scenario. Please resend your question or open an issue at https://github.com/eclipse/sumo/issues/new
+
+****************
+
+Q: Is there a containerized version of SUMO (e.g. Docker)? We want to support the Simulation part as part of a synthetic data generation toolchain. No GUI and Scenarios are pre configured.
+A: Yes. See https://sumo.dlr.de/docs/Developer/Docker.html
+
+****************
+
+Q: Do you plan to help get from TraCI the name of the lane embedding a detector  like multientryexit detector ?
+A: Version 1.13.0 provides methods to retrieve the lanes and positions of entry
+and exit detectors.
+
+****************
+
+Q: Does Sumo support the import of objects from open drive such as markings, parking spaces, and crossings? Attempts I’ve made so far do not appear to be correctly importing.
+A: Road objects can currently be imported as shapes. Import of parkingArea
+elements and crossings is planned for the future
+
+
+****************
+
+Q: I was wondering if you are planning on incorporating quadrupedal robots (four legged robots) as a vehicle type. I am working on a research project related to them as a sustainable solution for last mile logistics and I am wondering if there is a way to configure them as a vehicle
+A: It should be possible to model them with the current version, either as a special type of pedestrian or a vehicle. The vehicle classes 'custom1' and 'custom2' can employed for this. 
+
+****************
+
+Q: It's a recoming problem in our research that we need to know when a vehicle approaches and leaves an intersection. Is there a way to observe this?
+A: This can be achieved with detectors
+Q2: If we place detectors far out, we also detect vehicles that do not pass this
+intersection. Is there a way to avoid this?
+A2: Yes. We are planning on adding route-based filtering for detectors: https://github.com/eclipse/sumo/issues/9927
+
+****************
+
+Q: Are there any plans for Open Scenario support?
+A: We're generally open to the idea but no work is planned yet. Suggestions for
+specific features (and pull-requests) are welcome. 
+
+****************
+
+Q: Hey, I've been recently trying to extract the positions of traffic Lights on the individual lanes (not the position of the Junction but the stop lines). For now I've been extracting them from vehicles stopped at the TL and adding their minimal heading distance. Is there are more elegant way to do this?
+A: The position of the lights is identical with the end position of the lane
+leading into the intersection. The exact stopping position varies by
+- junction-type  (1m for priority / traffic light)
+- stopOffset element for the lane (may vary by vClass): https://sumo.dlr.de/docs/Networks/PlainXML.html#stop_offsets
+- vType attribute jmStoplineGap
+
+****************
+
+Q: Are you planning to support incident between vehicles and infrastructure? I mean, a crash between a vehicle and the infrastructure.
+A: No. This is not planned at the moment. Feel free to open up a github issue to
+lay out your suggestions/requirements
+
+****************
+
+Q: Another topic… we have a connected vehicle Framework that we want to introduced via the Automotive Grade Linux (AGL and Open Source), SUMO is an element of it (as a module/dependency, therefor our interest to dockerized SUMO)… any licencing thing that we should consider?
+A: You can use SUMO with either the EPL2 or GPL2-or-later so there should be no
+issues
+
+****************
+
+Q: can SUMO integrate with any mapping platform apps or webs such as google maps, Waze or TOM TOM
+A: You can export a network to KML for display with google maps
+(tools/net/net2kml) and you can also export fcd data with tools/traceExporter.py
+--kml-output. Going the other way, SUMO can import backgrounds from a tile
+server using tools/tileGet.py
+
+****************
+
+Q: Hi, I would like to generate an emission map for a city wide scale network using Phemlight.  I use the plot_net_dump.py. However, is there another way to get a better resolution emission map for a large scale network?
+A: You can either increase the spatial resolution by splitting up your network
+into shorter edges (netconvert --geometry.max-segment-length 100
+--geometry.split) or perform your own aggregation based on raw vehicle
+emission data (--emission-output) 
+
+****************
+
+Q: Presently to launch SUMO from a third-party simulation software (e.g OMNeT++)  both softwares must be on the same machine or on a network thru a shared folder...do you plan to to make it possible thru a client-server scheme  ?
+A: TraCI already supports connection to a running sumo simulation on another
+machine.
+
+****************
+
+Q: We have been looking to model real time operation of ambulances using Sumo taking real-time incidents. Is there any available library to model emergency vehicles? The challenge is allowing vehicles to adopt contra-flow as well as disregard red lights and other vehicles to give way to the emergency vehicles
+A: Yes. See https://sumo.dlr.de/docs/Simulation/Emergency.html
+
+****************
+
+Q: Are you planning to collaborate with the OGC community to  consider cityGML (https://www.ogc.org/standards/citygml) for network imports or make 3D visualization in Cesium coupled with Unreal (is it OGC vs. OSG? :D)
+A: We were not aware of the OGC community but are open for ideas. Feel free to
+open an issue on github and lay out your idea
+
+****************
+
+Q: Can you also add weather information in sumo and see how it will affect the traffic?
+A: We are in the process on merging the road friction feature and one
+carFollowmodel that considers this value. This will permit to model a range of
+weather related influences on traffic.
+
+****************
+
+Q: Is SUMO not using TRACI for generating the Simulation at the first time? What is rerouting?
+A: No. TraCI is and advanced feature for coupling SUMO to another process. To
+learn more about rerouting, see https://sumo.dlr.de/docs/Simulation/Routing.html
+
+****************
+
+Q: To what extend is it possible to simulate shared spaces? or the interaction between cars and pedestrians? can pedestrians walk in sub-lane?
+A: Cars and pedestrians can move on the same lanes as well as through shared
+intersections. Pedestrians move freely within these spaces while avoidig the
+cars. Likewise, cars "see" the pedestrians and avoid them.
+	
+****************
+
+Q: Are there any SUMO community groups/forums or mailing groups?
+A: Yes. See https://www.eclipse.org/sumo/contact/
+
+****************
+
+Q: We use TraCI's openGap() function to control a platoon of vehicles, but sometimes instead of closing up a vehicle, it makes it slow down. Do you have any idea what may be the problem here? (Warning states tau cannot be smaller than the original, but I am sure, we have not reduced the tau)
+A: This could be a bug in the openGap function. Please open up a ticket on
+github and provide all input files for reproducing the problem.
+
+****************
+
+Q: Is it possible to make Calibrators sense the few edges (meters) upstream in order to have an approximate picture of traffic volume that will pass on it in the current calibrator interval? 
+   To be able to generate, let's say, an equal amount of vehicles (or some distribution) during the calibration interval. So far, it often happened that Calibrator waits until the end of the interval and then generates a higher amount of vehicles forming the platoon. This is the case for short intervals (in my case, minute resolution).
+A: Thank you for pointing out this problem. We intend to solve it by increasing
+calibrator flexibility: https://github.com/eclipse/sumo/issues/10698
+
+****************
+
+Q: My research in emergency vehicle prioritizes system that needs input from google maps or any mapping platform. How do I integrate the mapping platform to SUMO
+A: There are a range of tools for using geo-referenced data with SUMO. See https://sumo.dlr.de/docs/Geo-Coordinates.html
+
+****************
+
+Q: Is there a way to model or apply car taffic noise file in SUMO thru in a noise reduction project ?
+A: SUMO has a noise emission model that can either provide aggregated data (for
+edges or trips) or raw-data (--emission-output)
+
+****************
+
+Q: Does the integration method have an impact on traffic flow regarding the use of Cars following the model? E.g, can ballistic integration be used with EIDM?
+A: Yes and Yes.
+
+****************
+
+Q: Is it possible to make TL states that apply only to certain traffic modes? In the UK, we have signals which give a green light to cyclists only for a few seconds before the full green (in mixed-traffic lanes, not just for cycle lanes)
+A: Not directly: Each lane-to-lane connection has exactly one signal state. A
+workaround is to distinguish the bicycle connection either by adding a short
+bicycle lane before or after the junction.
+
+****************
+
+Q: Where are the laneid, junction ids given (any script)?
+A: The lane ids are computed based on the edge id (by adding _INDEX). Edge and
+junction ids can be set by the user. When importing data (i.e. from OSM) the
+original ids are kept as closely as possible. See https://sumo.dlr.de/docs/Networks/Import/OpenStreetMap.html#relationship_between_osm_ids_and_sumo-ids

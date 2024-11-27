@@ -1,8 +1,7 @@
 .DS_Store
 .hugo_build.lock
 
-/src/.DS_Store
-/src/node_modules/
-/src/public/
-/src/resources/
-/src/.hugo_build.lock
+
+node_modules/
+public/
+resources/
