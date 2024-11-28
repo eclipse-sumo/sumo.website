@@ -35,9 +35,10 @@ jobs:
     - name: Get Commit Message
       id: commit_message
       run: |
-        # Extract the commit message from the event payload
-        COMMIT_MSG=$(jq -r '.commits[-1].message' "$GITHUB_EVENT_PATH")
-        echo "commit_message=${COMMIT_MSG}" >> $GITHUB_ENV
+        COMMIT_MSG=$(jq -r '.commits[-1].message' "$GITHUB_EVENT_PATH" | sed ':a;N;$!ba;s/\n/ /g')
+        echo "commit_message<<EOF" >> $GITHUB_ENV
+        echo "$COMMIT_MSG" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
   
     - name: Backup Generated Files and Copy Other Relevant Files
       run: |
