@@ -19,7 +19,7 @@ Before you post on a list, please check the <a href="https://sumo.dlr.de/docs/FA
 
 <div class="row">
 <div class="col-sm-4">
-<a href="https://dev.eclipse.org/mailman/listinfo/sumo-user"><h5>sumo-user</h5></a>
+<a href="https://accounts.eclipse.org/mailing-list/sumo-user"><h5>sumo-user</h5></a>
 <small>This is the first place you should ask your questions. If you have a novel question, <a href="https://sumo.dlr.de/docs/FAQ.html#what_should_i_do_to_get_helpful_answers_on_the_mailing_list">here is some general advice before asking</a>. If you wish to report an error <a href="https://sumo.dlr.de/docs/FAQ.html#how_do_i_report_erroneous_behavior_of_a_sumo_application">please follow these suggestions</a>. Subscribe to this list for asking questions, reporting issues and getting information about what other people ask.
 <hr>
 <i>Frequency: about 100 mails per month<br>
@@ -28,7 +28,7 @@ Archive: <a href="https://dev.eclipse.org/mhonarc/lists/sumo-user/">Eclipse Arch
 </div>
 
 <div class="col-sm-4">
-<a href="https://dev.eclipse.org/mailman/listinfo/sumo-announce"><h5>sumo-announce</h5></a>
+<a href="https://accounts.eclipse.org/mailing-list/sumo-announce"><h5>sumo-announce</h5></a>
 <small>Subscribe to this list if you want to get information about new releases or documents. Post to the list if you have to announce something by yourself.
 <hr>
 <i>
@@ -40,7 +40,7 @@ Archive: <a href="https://dev.eclipse.org/mhonarc/lists/sumo-announce/">Eclipse 
 </div>
 
 <div class="col-sm-4">
-<a href="https://dev.eclipse.org/mailman/listinfo/sumo-dev"><h5>sumo-dev</h5></a>
+<a href="https://accounts.eclipse.org/mailing-list/sumo-dev"><h5>sumo-dev</h5></a>
 <small>This list is for topics related to sumo development. If you want to contribute code or ask a question in regard to extending SUMO, this is the right place.
 <hr>
 <i>
