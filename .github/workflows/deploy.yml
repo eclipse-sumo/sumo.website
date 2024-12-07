@@ -1,6 +1,7 @@
 name: deploy-static-pages
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - source
@@ -14,7 +15,7 @@ jobs:
 
     steps:
     - name: Checkout source Branch
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
         submodules: true
@@ -39,7 +40,7 @@ jobs:
         echo "commit_message<<EOF" >> $GITHUB_ENV
         echo "$COMMIT_MSG" >> $GITHUB_ENV
         echo "EOF" >> $GITHUB_ENV
-  
+
     - name: Backup Generated Files and Copy Other Relevant Files
       run: |
         mkdir -p $HOME/temp
@@ -58,10 +59,9 @@ jobs:
         COMMIT_MESSAGE: ${{ env.commit_message }}
       run: |
         # Switch to main branch
-        git checkout --orphan main
+        git checkout main
 
-        # Clean up and reset branch
-        git reset --hard
+        # Clean up branch
         git clean -df
 
         # Restore files from backup
@@ -75,14 +75,4 @@ jobs:
         # Commit and push changes
         git add .
         git commit -m "Deploying: $COMMIT_MESSAGE"
-        git push --force origin main
-
-    - name: Trigger the linkcheck Workflow
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-          curl -X POST \
-            -H "Authorization: Bearer $GITHUB_TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/${{ github.repository }}/actions/workflows/linkcheck.yml/dispatches \
-            -d '{"ref":"source"}'
+        git push origin main
