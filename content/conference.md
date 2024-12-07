@@ -36,7 +36,8 @@ SUMO User Conference 2025: **May 12-14** in Berlin.
 
 # Call for Papers
 
-The conference focuses on presenting new and unique results in the field of mobility simulation and modelling using openly available tools and data. We expect a large variety of research topics and usage approaches. If you are working on a research project fitting the topics below, you are kindly invited to submit an abstract. Possible areas of interest include (but are not limited to):
+The conference focuses on presenting new and unique results in the field of mobility simulation and modelling using openly available tools and data. We expect a large variety of research topics and usage approaches.
+If you are working on a research project fitting the topics below, you are kindly invited to submit a scientific paper or an abstract for a poster. Possible areas of interest include (but are not limited to):
 
 - Mobility and Demand Modelling
 - Traffic Simulation
