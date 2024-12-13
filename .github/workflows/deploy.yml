@@ -3,8 +3,6 @@ name: deploy-static-pages
 on:
   workflow_dispatch:
   push:
-    branches:
-      - source
 
 jobs:
   build-and-deploy:
@@ -76,3 +74,8 @@ jobs:
         git add .
         git commit -m "Deploying: $COMMIT_MESSAGE"
         git push origin main
+
+    - name: Lychee Link Checker
+      uses: lycheeverse/lychee-action@v1
+      with:
+        args: -c lychee.toml -n .
