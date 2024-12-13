@@ -8,4 +8,4 @@ insecure = true
 #remap = ['%7B%7BVersion%7D%7D 1.19.0']
 
 # Exclude URLs and mail addresses from checking (supports regex).
-exclude = ['instagram\.com', 'linkedin\.com', 'twitter\.com']
+exclude = ['instagram\.com', 'linkedin\.com', 'twitter\.com', 'http://localhost:']
