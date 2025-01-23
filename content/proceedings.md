@@ -125,7 +125,7 @@ Read more information about the SUMO Conference Proceedings (SCP) Series [here](
 - **Michael Behrisch**, Institute of Transportation Systems, German Aerospace Center, Germany
   <small>[[ORCID](https://orcid.org/0000-0002-0032-7930)] [[ResearchGate](https://www.researchgate.net/profile/Michael-Behrisch-3)]</small>
 
-- **Josh Bittle**, Institute of Transportation Systems, German Aerospace Center, Germany
+- **Joshua Bittle**, College of Engineering, University of Alabama, United States
   <small>[[ORCID](https://orcid.org/0000-0003-4524-3316)] [[Website](https://sites.ua.edu/jbittle/)] [[ResearchGate](https://www.researchgate.net/profile/Joshua-Bittle)]</small>
 
 - **Benjamin Couéraud**, Institute of Transportation Systems, German Aerospace Center, Germany
