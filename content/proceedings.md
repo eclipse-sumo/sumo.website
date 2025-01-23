@@ -104,41 +104,59 @@ Read more information about the SUMO Conference Proceedings (SCP) Series [here](
 # Editorial Team
 ---
 ## Editor-in-Chief
-**Peter Wagner**, German Aerospace Center, Institute of Transportation Systems, Germany   
+**Peter Wagner**, Institute of Transportation Systems, German Aerospace Center, Germany   
 <small>[[ORCID](https://orcid.org/0000-0001-9097-8026)] [[ResearchGate](https://www.researchgate.net/profile/Peter-Wagner-14)] [[Google Scholar](https://scholar.google.de/citations?user=V5dgMqEAAAAJ&hl=en)]</small>
 
 
 ## Editors
 
-- **Pablo Alvarez Lopez**, German Aerospace Center, Institute of Transportation Systems, Germany   
+- **Robert Alms**, Institute of Transportation Systems, German Aerospace Center, Germany
+  <small>[[ORCID](https://orcid.org/0000-0001-9950-3596)] [[ResearchGate](https://www.researchgate.net/profile/Robert-Alms)]</small>
+
+- **Pablo Alvarez Lopez**, Institute of Transportation Systems, German Aerospace Center, Germany
   <small>[[ORCID](https://orcid.org/0000-0002-0651-6767)] [[ResearchGate](https://www.researchgate.net/profile/Pablo-Alvarez-Lopez)]</small>
 
-- **Olaf Angelo Banse Bueno**, German Aerospace Center, Institute of Transportation Systems, Germany   
+- **Olaf Angelo Banse Bueno**, Institute of Transportation Systems, German Aerospace Center, Germany
   <small>[[ORCID](https://orcid.org/0000-0001-7615-627X)] [[ResearchGate](https://www.researchgate.net/profile/Olaf-Banse-Bueno)]</small>
 
-- **Mirko Barthauer**, German Aerospace Center, Institute of Transportation Systems, Germany   
+- **Mirko Barthauer**, Institute of Transportation Systems, German Aerospace Center, Germany
   <small>[[ORCID](https://orcid.org/0000-0003-3177-3260)] [[ResearchGate](https://www.researchgate.net/profile/Mirko-Barthauer)]</small>
 
-- **Michael Behrisch**, German Aerospace Center, Institute of Transportation Systems, Germany   
+- **Michael Behrisch**, Institute of Transportation Systems, German Aerospace Center, Germany
   <small>[[ORCID](https://orcid.org/0000-0002-0032-7930)] [[ResearchGate](https://www.researchgate.net/profile/Michael-Behrisch-3)]</small>
 
-- **Benjamin Couéraud**, German Aerospace Center, Institute of Transportation Systems, Germany   
-  <small>[[ORCID](https://orcid.org/0009-0001-3739-730X)]</small>
+- **Josh Bittle**, Institute of Transportation Systems, German Aerospace Center, Germany
+  <small>[[ORCID](https://orcid.org/0000-0003-4524-3316)] [[Website](https://sites.ua.edu/jbittle/)] [[ResearchGate](https://www.researchgate.net/profile/Joshua-Bittle)]</small>
 
-- **Jakob Erdmann**, German Aerospace Center, Institute of Transportation Systems, Germany   
+- **Benjamin Couéraud**, Institute of Transportation Systems, German Aerospace Center, Germany
+  <small>[[ORCID](https://orcid.org/0009-0001-3739-730X)] [[ResearchGate](https://www.researchgate.net/profile/Benjamin-Coueraud)]</small>
+
+- **Jakob Erdmann**, Institute of Transportation Systems, German Aerospace Center, Germany
   <small>[[ORCID](https://orcid.org/0000-0002-4195-4535)] [[ResearchGate](https://www.researchgate.net/profile/Jakob-Erdmann-2)]</small>
 
-- **Yun-Pang Flötteröd**, German Aerospace Center, Institute of Transportation Systems, Germany   
+- **Yun-Pang Flötteröd**, Institute of Transportation Systems, German Aerospace Center, Germany
   <small>[[ORCID](https://orcid.org/0000-0003-3620-2715)] [[ResearchGate](https://www.researchgate.net/profile/Yun-Pang-Floetteroed)]</small>
 
-- **Robert Hilbrich**, German Aerospace Center, Institute of Transportation Systems, Germany   
+- **Alex Hainen**, College of Engineering, University of Alabama, United States
+  <small>[[ORCID](https://orcid.org/0000-0003-1138-9739)] [[Website](https://alexhainen.com/)]</small>
+
+- **Robert Hilbrich**, Institute of Transportation Systems, German Aerospace Center, Germany
   <small>[[ORCID](https://orcid.org/0000-0003-3793-3982)] [[ResearchGate](https://www.researchgate.net/profile/Robert-Hilbrich)]</small>
 
-- **Daniel Krajzewicz**, German Aerospace Center, Institute of Transport Research, Germany   
+- **Heather Kaths**, School of architecture and civil engineering, Bergische Universität Wuppertal, Germany
+  <small>[[ORCID](https://orcid.org/0000-0003-2554-8243)] [[Website](https://radverkehr.uni-wuppertal.de/de/team/univ-prof-dr-ing-heather-kaths/)]</small>
+
+- **Daniel Krajzewicz**, Institute of Transport Research, German Aerospace Center, Germany
   <small>[[ORCID](https://orcid.org/0000-0003-1045-8800)] [[ResearchGate](https://www.researchgate.net/profile/Daniel-Krajzewicz)]</small>
 
-- **Ronald Nippold**, German Aerospace Center, Institute of Transportation Systems, Germany   
+- **Duo Li**, School of Engineering, Newcastle University, United Kingdom
+  <small>[[ORCID](https://orcid.org/0000-0003-0142-9290)] [[Website](https://www.ncl.ac.uk/engineering/staff/profile/duoli.html)]</small>
+
+- **Ronald Nippold**, Institute of Transportation Systems, German Aerospace Center, Germany
   <small>[[ORCID](https://orcid.org/0000-0003-4837-8021)] [[ResearchGate](https://www.researchgate.net/profile/Ronald-Nippold)]</small>
+
+- **Joerg Schweizer**, Department of Civil, Chemical, Environmental, and Materials Engineering, Università di Bologna, Italy
+  <small>[[ORCID](https://orcid.org/0000-0003-2289-6111)] [[Website](https://www.unibo.it/sitoweb/joerg.schweizer/cv-en)]</small>
 
 
 # Ethics and Malpractice Statement
