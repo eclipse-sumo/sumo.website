@@ -25,13 +25,11 @@ SUMO User Conference 2025: **May 12-14** in Berlin.
 
 <!-- https://raw.githubusercontent.com/eclipse-sumo/sumo.website/88c6241d5dc095b7292c5b6068debd3132c6f86e/src/content/conference.md -->
 
-<!--
 <div class="alert alert-success" role="alert">
-  Registration is now open: <a href="https://sumo2024.welcome-manager.de/">https://sumo2024.welcome-manager.de/</a>
+  Registration is now open: <a href="https://sumo2025.welcome-manager.de/">https://sumo2025.welcome-manager.de/</a>
   <br>
-  <small><b>Please keep in mind that the registration will close on April 30th, 2024 (at 23:59 CEST).</b></small>
+  <small><b>Please keep in mind that the registration will close on April 30th, 2025 (at 23:59 CEST).</b></small>
 </div>
--->
 
 
 # Call for Papers
