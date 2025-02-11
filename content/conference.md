@@ -61,7 +61,7 @@ There are two submission types:
    - Scientific papers will be reviewed by at least 2 reviewers.
    - All accepted scientific papers will be published in the [SUMO proceedings](https://www.tib-op.org/ojs/index.php/scp/index).
    - Scientific papers should be between 5 and 20 pages long.
-   - **The Paper must be submitted in LaTeX or Word format before Sunday, February 16, 2025, at 11:59 PM (Berlin time)**.
+   - **The Paper must be submitted in LaTeX or Word format before Sunday,** ~~February 16, 2025~~ <span class="badge badge-warning">New</span> **February 23, 2025 at 11:59 PM (Berlin time)**.
 
 <div class="alert alert-info" role="alert">
   Authors are required to use the <a href="https://www.tib-op.org/ojs/index.php/scp/libraryFiles/downloadPublic/8">Word</a> or <a href="https://www.tib-op.org/ojs/index.php/scp/libraryFiles/downloadPublic/9">LaTeX</a> template provided by TIB Open Publishing.<br>
@@ -107,7 +107,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 # Important Dates
 
 For Papers:
-- Paper submission deadline: Sunday, **February 16, 2025**.
+- Paper submission deadline: Sunday, ~~February 16, 2025~~ <span class="badge badge-warning">New</span> **February 23, 2025**.
 - Notification of acceptance/rejection: **End of March, 2025**.
 - Camera Ready Paper deadline: Sunday, **April 20, 2025**.
 <!-- - <span class="badge badge-warning">New</span> Camera Ready Paper deadline: **Friday, April 26th, 2024**. -->
@@ -121,24 +121,20 @@ For Posters:
 # Prices
 
 - Regular Ticket: **495 EUR**
-- One-Day-Ticket: **325 EUR**
 - Authors and Project Partners: **275 EUR**
-- Students: **50 EUR** (limited)
+- Students: **50 EUR** (limited) *
 
 <small>All prices excluding VAT.</small>
 
-Please contact us via email at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de) to request a discount code for student registration.
+*Please contact us via email at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de) to request a discount code for student registration.
 The availability is limited.
 
 # Registration
 
-Registration will open on February 3, 2025. <!-- remove this line -->
 
-<!--
 Registration is now open: <a href="https://sumo2025.welcome-manager.de/">https://sumo2025.welcome-manager.de/</a>
 <br>
 <small><b>Please keep in mind that the registration will close on April 30, 2025 (at 23:59 CEST).</b></small>
--->
 
 <div class="alert alert-secondary" role="alert">
   <b>Authors:</b> Paper or poster authors are required to register selecting the “Author & Project Partners” category.
