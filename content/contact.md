@@ -111,8 +111,9 @@ Social media</h4><br>
 Occasional development updates are posted on our social media channels. Follow us and stay informed!
 <br><br>
 <a href="https://www.facebook.com/simulationofurbanmobility/"><button class="btn btn-sm btn-outline-info">Facebook</button></a>
-<a href="https://twitter.com/EclipseSumo"><button class="btn btn-sm btn-outline-info">X (Twitter)</button></a>
+<a href="https://twitter.com/EclipseSumo"><button class="btn btn-sm btn-outline-info">X</button></a>
 <a href="https://instagram.com/eclipse.sumo"><button class="btn btn-sm btn-outline-info">Instagram</button></a>
+<a href="https://www.threads.net/@eclipse.sumo"><button class="btn btn-sm btn-outline-info">Threads</button></a>
 </div>
 
 <!-- chat -->
