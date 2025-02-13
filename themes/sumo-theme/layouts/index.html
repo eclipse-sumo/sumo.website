@@ -34,8 +34,8 @@
     DownloadLink = "https://sumo.dlr.de/releases/{{ $.Site.Params.Version }}/sumo-win64-{{ $.Site.Params.Version }}.msi";
     }
   if (navigator.appVersion.indexOf("Mac") != -1) {
-    Name =  "SUMO {{ $.Site.Params.Version }} for macOS";
-    DownloadLink = "{{ $.Site.Params.docsURL }}/Downloads.php#macos";
+    Name =  "SUMO {{ $.Site.Params.Version }} pkg installer for macOS";
+    DownloadLink = "https://sumo.dlr.de/releases/{{ $.Site.Params.Version }}/sumo-{{ $.Site.Params.Version }}.pkg";
     }
   if (navigator.appVersion.indexOf("X11") != -1) {
   Name = "SUMO {{ $.Site.Params.Version }} for Linux";
