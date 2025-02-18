@@ -147,7 +147,31 @@ The registration fee includes a two and a half day conference program with refre
 </div>
 
 # Keynote
-*More info soon*
+
+<h3><i>Movement and waiting of crowds – state of the art models and data</i></h3>
+<img src="../images/Armin_Seyfried.jpeg" alt="picture of Prof. Dr. Armin Seyfried" style="width:100px; border-radius: 50%; margin-bottom:10px;">
+<br>
+<small style="color: lightgray">© Forschungszentrum Jülich GmbH</small>
+<h6>Prof. Dr. Armin Seyfried</h6>
+Institute for Advanced Simulation (IAS)<br>
+Civil Safety Research (IAS-7)<br>
+Forschungszentrum Jülich GmbH<br>
+<a href="https://www.fz-juelich.de/en/ias/ias-7/" class="btn btn-sm btn-outline-info" style="margin-top:10px;">Website</a>
+<br><br>
+
+The contribution starts with a historical review of the connection 
+between modelling and technical possibilities of data collection. This 
+is followed by an overview of current approaches to modelling the 
+movement of individual pedestrians in crowds. These include cellular 
+automata, force as well as speed models, and trajectory prediction 
+models based on machine learning methods. A classification of individual 
+movement options and collective phenomena in different density ranges is 
+used to critically discuss current model approaches and their advantages 
+and disadvantages. The last part of the lecture is dedicated to 
+empirical results on waiting behavior and first modelling approaches. 
+The focus is on waiting on platforms and in queueing systems for event 
+venues.
+
 
 # Social Event
 
