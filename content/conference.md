@@ -61,7 +61,7 @@ There are two submission types:
    - Scientific papers will be reviewed by at least 2 reviewers.
    - All accepted scientific papers will be published in the [SUMO proceedings](https://www.tib-op.org/ojs/index.php/scp/index).
    - Scientific papers should be between 5 and 20 pages long.
-   - **The Paper must be submitted in LaTeX or Word format before Sunday,** ~~February 16, 2025~~ <span class="badge badge-warning">New</span> **February 23, 2025 at 11:59 PM (Berlin time)**.
+   <!-- - **The Paper must be submitted in LaTeX or Word format before Sunday,** ~~February 16, 2025~~ <span class="badge badge-warning">New</span> **February 23, 2025 at 11:59 PM (Berlin time)**. -->
 
 <div class="alert alert-info" role="alert">
   Authors are required to use the <a href="https://www.tib-op.org/ojs/index.php/scp/libraryFiles/downloadPublic/8">Word</a> or <a href="https://www.tib-op.org/ojs/index.php/scp/libraryFiles/downloadPublic/9">LaTeX</a> template provided by TIB Open Publishing.<br>
@@ -87,18 +87,18 @@ There are two submission types:
     - We will print the poster for you, provide the display panel, a chair and a table.
     - While changes to the poster are still possible after the submission deadline, we unfortunately will not be able to reprint it. If you do need to make changes, you would need to bring a printout of the updated version with you.
     - You are welcome to bring a laptop or other device to show a demo, slides, videos or any material that you deem appropriate to complement the presentation. In this case you will need to provide your own equipment.
-    - **Title and a short abstract (up to 300 words) must be submitted until Sunday, February 23, 2025, at 11:59 PM (Berlin time)**.
+    <!-- - **Title and a short abstract (up to 300 words) must be submitted until Sunday, February 23, 2025, at 11:59 PM (Berlin time)**. -->
 
 <div class="text-center"><img src="../images/poster_session.jpeg" style="width:60%;" alt="Poster session" class="img-responsive"/></div>
 
 ---
 
-## Submission Link
+<!-- ## Submission Link
 
 - Link for Paper submissions: https://www.tib-op.org/ojs/index.php/scp/about/submissions<br>
 <small>Login or register and then click on <b>"Make a new Conference Proceedings Submission"</b></small>
 <br>
-- Poster submissions: Send us an E-Mail with the subject **`Poster Submission - SUMO 2025`** to sumo-conference@dlr.de. Include the title and abstract in the body of the E-Mail.
+- Poster submissions: Send us an E-Mail with the subject **`Poster Submission - SUMO 2025`** to sumo-conference@dlr.de. Include the title and abstract in the body of the E-Mail. -->
 
 ## Ethics and Malpractice Statement
 
@@ -107,13 +107,13 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 # Important Dates
 
 For Papers:
-- Paper submission deadline: Sunday, ~~February 16, 2025~~ <span class="badge badge-warning">New</span> **February 23, 2025**.
+- ✅ ~~Paper submission deadline: Sunday, **February 23, 2025**~~.
 - Notification of acceptance/rejection: **End of March, 2025**.
 - Camera Ready Paper deadline: Sunday, **April 20, 2025**.
 <!-- - <span class="badge badge-warning">New</span> Camera Ready Paper deadline: **Friday, April 26th, 2024**. -->
 
 For Posters:
-- Mandatory title and abstract submission deadline: Sunday, **February 23, 2025**.
+- ✅ ~~Mandatory title and abstract submission deadline: Sunday, **February 23, 2025**~~.
 - Notification of acceptance/rejection: **Mid-March, 2025**.
 - Final Poster upload deadline: Friday, **April 11, 2025**.
 
