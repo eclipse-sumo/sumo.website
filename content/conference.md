@@ -114,7 +114,7 @@ For Papers:
 
 For Posters:
 - ✅ ~~Mandatory title and abstract submission deadline: Sunday, **February 23, 2025**~~.
-- Notification of acceptance/rejection: **Mid-March, 2025**.
+- ✅ ~~Notification of acceptance/rejection: **March 20, 2025**~~.
 - Final Poster upload deadline: Friday, **April 11, 2025**.
 
 
