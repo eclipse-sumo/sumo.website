@@ -104,7 +104,7 @@ Read more information about the SUMO Conference Proceedings (SCP) Series [here](
 # Editorial Team
 ---
 ## Editor-in-Chief
-**Peter Wagner**, Institute of Transportation Systems, German Aerospace Center, Germany   
+Prof. Dr. **Peter Wagner**, Institute of Transportation Systems, German Aerospace Center, Germany   
 <small>[[ORCID](https://orcid.org/0000-0001-9097-8026)] [[ResearchGate](https://www.researchgate.net/profile/Peter-Wagner-14)] [[Google Scholar](https://scholar.google.de/citations?user=V5dgMqEAAAAJ&hl=en)]</small>
 
 
