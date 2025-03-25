@@ -108,7 +108,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 
 For Papers:
 - ✅ ~~Paper submission deadline: Sunday, **February 23, 2025**~~.
-- Notification of acceptance/rejection: **End of March, 2025**.
+- ✅ ~~Notification of acceptance/rejection: **March 25, 2025**~~.
 - Camera Ready Paper deadline: Sunday, **April 20, 2025**.
 <!-- - <span class="badge badge-warning">New</span> Camera Ready Paper deadline: **Friday, April 26th, 2024**. -->
 
