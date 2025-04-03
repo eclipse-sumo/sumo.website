@@ -260,7 +260,7 @@ background: #fff;
 thead tr th:first-child,
 tbody tr td:first-child {
 width: 8em;
-min-width: 8em;
+/*min-width: 8em;*/
 max-width: 8em;
 }
 
