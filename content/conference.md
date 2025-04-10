@@ -372,9 +372,7 @@ and Emissions of Road Users - <small>Maik Halbach</small></li>
 <ul>
 <li>Urban Rail Assessment in SUMO - <small>Paula von der Heide</small></li>
 <li>Adapting vehicle driving behavior to extreme flood events – A case study in the city of Cologne, Germany - <small>Ana Maria Mager Pozo</small></li>
-<li>Evaluating Emissions of Electric vs. Diesel Buses in Osnabrück City in Relation to Traffic Situations and Passenger Occupancy - <small>	
-
-Sina Anker, Rebecca Kose, Mathias Heiker and Sandra Rosenberger</small></li>
+<li>Dynamic simulation of bus emissions in urban transport - <small>Sina Anker, Rebecca Kose, Mathias Heiker and Sandra Rosenberger</small></li>
 <li>Sumonity Updates 2025: Pedestrian Modeling, and Streamlined Deployment - <small>Mathias Pechinger</small></li>
 <li>TrafficTwin : a Simulation Tool to Assess the Impact of Deviation Plans on Disruptive Events of Urban Traffic - <small>Davide Andrea Guastella, Moisés Silva-Muñoz, Eladio Montero-Porras and Gianluca Bontempi</small></li>
 <li>Aix-Marseille Metropolitan Mobility Digital Twin Development based on Modeling and Simulation of Vehicular Traffic - <small>KIEU Thi Phuong</small></li>
