@@ -375,7 +375,7 @@ and Emissions of Road Users - <small>Maik Halbach</small></li>
 <li>Dynamic simulation of bus emissions in urban transport - <small>Sina Anker, Rebecca Kose, Mathias Heiker and Sandra Rosenberger</small></li>
 <li>Sumonity Updates 2025: Pedestrian Modeling, and Streamlined Deployment - <small>Mathias Pechinger</small></li>
 <li>TrafficTwin : a Simulation Tool to Assess the Impact of Deviation Plans on Disruptive Events of Urban Traffic - <small>Davide Andrea Guastella, Moisés Silva-Muñoz, Eladio Montero-Porras and Gianluca Bontempi</small></li>
-<li>Aix-Marseille Metropolitan Mobility Digital Twin Development based on Modeling and Simulation of Vehicular Traffic - <small>KIEU Thi Phuong</small></li>
+<li>Aix-Marseille Metropolitan Mobility Digital Twin Development based on Modeling and Simulation of Vehicular Traffic - <small>Thi Phuong Kieu, Hassan Haghighi and Maamar El Amine Hamri</small></li>
 <li>Explicit Modeling of Tactical Driving Behavior: Conceptualizing a “Clean Architecture for Microscopic Traffic Flow Simulation” - <small>Marvin Baumann</small></li>
 <li>Charging Activities Simulation of Electric Cars in Urban Areas - <small>Matteo Ferraro, Lorenzo Sica and Francesco Deflorio</small></li>
 <li>A Digital Twin of Signalized Intersections Integrating LISA and Real-time Traffic Detectors Data into SUMO - <small>Meng Wang and Runhao Zhou</small></li>
