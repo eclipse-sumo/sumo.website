@@ -337,7 +337,7 @@ The registration fee includes a two and a half day conference program with refre
     Christopher Stang <i><small>(ZF Friedrichshafen AG)</small></i> and Dennis Roeser <i><small>(dSPACE GmbH)</small></i>
 <hr>
     <b>Towards Improved Traffic Impact Assessments for Construction Sites</b><br>
-    Robert Hilbrich <i><small>(DLR - co4e GmbH)</small></i>, Jürgen Besler <i><small>(infrest)</small></i> and Natalie Dust <i><small>(infrest)</small></i>
+    Robert Hilbrich <i><small>(DLR - co4e GmbH)</small></i>, Jürgen Besler <i><small>(infrest)</small></i>, Natalie Dust <i><small>(infrest)</small>, Heiner Kretzer <i><small>(BWB)</small> and Bertram Monninkhoff <i><small>(BWB)</small></i>
 </td>
   </tr>
       <tr>
