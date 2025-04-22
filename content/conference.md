@@ -190,7 +190,8 @@ The registration fee includes a two and a half day conference program with refre
   <tr>
     <td align="right">15:45 - 17:00</td>
     <td>
-    Eclipse MOSAIC Workshop<br>
+    <b>Modeling Advanced Mobility with Eclipse MOSAIC</b><br>
+    Karl Schrab and Georg Hoelger <i><small>(all: Fraunhofer FOKUS)</small></i>
     </td>
     <td>MoDa Workshop</td>
   </tr>
