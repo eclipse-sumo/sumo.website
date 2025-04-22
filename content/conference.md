@@ -104,19 +104,6 @@ There are two submission types:
 
 You can read our *[Publication Ethics and Publication Malpractice Statement](../documents/SUMOPublicationEthics.pdf)*, where we list the responsibilities of editors, reviewers, and authors.
 
-# Important Dates
-
-For Papers:
-- ✅ ~~Paper submission deadline: Sunday, **February 23, 2025**~~.
-- ✅ ~~Notification of acceptance/rejection: **March 25, 2025**~~.
-- Camera Ready Paper deadline: Sunday, **April 20, 2025**.
-<!-- - <span class="badge badge-warning">New</span> Camera Ready Paper deadline: **Friday, April 26th, 2024**. -->
-
-For Posters:
-- ✅ ~~Mandatory title and abstract submission deadline: Sunday, **February 23, 2025**~~.
-- ✅ ~~Notification of acceptance/rejection: **March 20, 2025**~~.
-- ✅ ~~Final Poster upload deadline: Friday, **April 11, 2025**~~.
-
 
 # Prices
 
