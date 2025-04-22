@@ -216,7 +216,7 @@ The registration fee includes a two and a half day conference program with refre
     </td>
   </tr>
   <tr>
-    <td align="right">09:15 - 10:15<br><br>Session 1<br><b>&nbsp;</b><!--<p style="font-size: 60%">Session chair: Yun-Pang Flötteröd</p>--></td>
+    <td align="right">09:15 - 10:15<br><br>Session 1<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Benjamin Couéraud</p></td>
 <td colspan="2">
     <b>Overcoming Data Scarcity in Calibrating SUMO Scenarios with Evolutionary Algorithms</b><br>
     Jakob Kappenberger and Heiner Stuckenschmidt <i><small>(all: Uni Mannheim)</small></i>
@@ -232,7 +232,7 @@ The registration fee includes a two and a half day conference program with refre
     </td>
   </tr>
   <tr>
-    <td align="right">10:45 - 12:15<br><br>Session 2<br><b>&nbsp;</b></td>
+    <td align="right">10:45 - 12:15<br><br>Session 2<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Michael Behrisch</p></td>
 <td colspan="2">
     <b>Digital Twin-Aided Municipal Traffic Control</b><br>
     Sercan Aygun <i><small>(University of Louisiana at Lafayette)</small></i>, Reeti Pradhananga <i><small>(University of Louisiana at Lafayette)</small></i>, Shelby Williams <i><small>(University of Louisiana at Lafayette)</small></i>, Li Chen <i><small>(University of Louisiana at Lafayette)</small></i>, Yazhou Tu <i><small>(Auburn University)</small></i>, Whitney Crow <i><small>(Mississippi State University)</small></i>, Sathyanarayanan Aakur <i><small>(Auburn University)</small></i> and Nian-Feng Tzeng <i><small>(University of Louisiana at Lafayette)</small></i>
@@ -271,7 +271,7 @@ The registration fee includes a two and a half day conference program with refre
     </td>
   </tr>
     <tr>
-    <td align="right">15:00 - 16:00<br><br>Session 3<br><b>&nbsp;</b></td>
+    <td align="right">15:00 - 16:00<br><br>Session 3<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Yun-Pang Flötteröd</p></td>
 <td colspan="2">
     <b>Modeling Bus Traffic for the Berlin SUMO Traffic Scenario</b><br>
     Moritz Schweppenhäuser <i><small>(Fraunhofer FOKUS)</small></i>, Timo Großmann <i><small>(TU Berlin)</small></i>, Karl Schrab <i><small>(Fraunhofer FOKUS)</small></i>, Robert Protzmann <i><small>(Fraunhofer FOKUS)</small></i> and Ilja Radusch <i><small>(Daimler Center for Automotive IT Innovations)</small></i>
@@ -316,7 +316,7 @@ The registration fee includes a two and a half day conference program with refre
 </thead>
 <tbody>
   <tr>
-    <td align="right">09:00 - 10:30<br><br>Session 5<br><b>&nbsp;</b></td>
+    <td align="right">09:00 - 10:30<br><br>Session 5<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Peter Wagner</p></td>
 <td>
     <b>Effects of charging strategies and policies on electric vehicles and infrastructure from a microscopic perspective</b><br>
     Mirko Barthauer <i><small>(DLR)</small></i>
@@ -377,7 +377,7 @@ and Emissions of Road Users - <small>Maik Halbach</small></li>
     </td>
   </tr>
   <tr>
-    <td align="right">14:30 - 15:30<br><br>Session 8<br><b>&nbsp;</b></td>
+    <td align="right">14:30 - 15:30<br><br>Session 8<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Ronald Nippold</p></td>
 <td>
     <b>SUMO’s interpretation of the Krauß model</b><br>
     Peter Wagner and Jakob Erdmann <i><small>(all: DLR)</small></i>
