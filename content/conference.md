@@ -251,7 +251,7 @@ The registration fee includes a two and a half day conference program with refre
     <td align="right">13:00 - 13:30</td>
     <td colspan="2">
     <b>Transportation Systems Research @ DLR</b><br>
-    Dr. Tobias Hesse <i><small>(DLR)</small></i>
+    <i><small>(DLR)</small></i>
     </td>
   </tr>
   <tr>
