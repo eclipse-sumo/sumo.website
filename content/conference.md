@@ -19,18 +19,6 @@ The SUMO User Conference, held every year in Berlin since 2013, is a must-attend
 The conference is a great place to learn about new features, network with fellow enthusiasts, ask the developers, have fruitful discussions, exchange ideas and even start collaborations!
 
 
-# Save the date!
-
-SUMO User Conference 2025: **May 12-14** in Berlin.
-
-<!-- https://raw.githubusercontent.com/eclipse-sumo/sumo.website/88c6241d5dc095b7292c5b6068debd3132c6f86e/src/content/conference.md -->
-
-<div class="alert alert-success" role="alert">
-  Registration is now open: <a href="https://sumo2025.welcome-manager.de/">https://sumo2025.welcome-manager.de/</a>
-  <br>
-  <small><b>Please keep in mind that the registration will close on April 30th, 2025 (at 23:59 CEST).</b></small>
-</div>
-
 <!--
 # Call for Papers
 
@@ -104,34 +92,6 @@ There are two submission types:
 
 You can read our *[Publication Ethics and Publication Malpractice Statement](../documents/SUMOPublicationEthics.pdf)*, where we list the responsibilities of editors, reviewers, and authors.
 
-
-# Prices
-
-- Regular Ticket: **495 EUR**
-- Authors and Project Partners: **275 EUR**
-- Students: **50 EUR** (limited) *
-
-<small>All prices excluding VAT.</small>
-
-*Please contact us via email at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de) to request a discount code for student registration.
-The availability is limited.
-
-# Registration
-
-
-Registration is now open: <a href="https://sumo2025.welcome-manager.de/">https://sumo2025.welcome-manager.de/</a>
-<br>
-<small><b>Please keep in mind that the registration will close on April 30, 2025 (at 23:59 CEST).</b></small>
-
-<div class="alert alert-secondary" role="alert">
-  <b>Authors:</b> Paper or poster authors are required to register selecting the “Author and Project partners” category.
-</div>
-
-The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings and a social event in the evening. Accommodation is not included within the registration fee and must be pre-booked separately.
-
-<div class="alert alert-info" role="alert">
-  <b>Non-EU nationals:</b> Please register well in advance to facilitate internal procedures and (if necessary) ensure a smooth visa application process.
-</div>
 
 # Agenda
 
@@ -251,7 +211,7 @@ The registration fee includes a two and a half day conference program with refre
     <td align="right">13:00 - 13:30</td>
     <td colspan="2">
     <b>Transportation Systems Research @ DLR</b><br>
-    <i><small>(DLR)</small></i>
+    Sascha Knake-Langhorst <i><small>(DLR)</small></i>
     </td>
   </tr>
   <tr>
