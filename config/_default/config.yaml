@@ -20,8 +20,8 @@ params:
   logo: "images/logos/sumo-logo-white.svg"
   docsURL: "https://sumo.dlr.de/docs"
   githubEditURL: "https://github.com/eclipse-sumo/sumo.website/edit/main/content/"
-  Version: "1.22.0"
-  DOI: "10.5281/zenodo.14796685"
+  Version: "1.23.0"
+  DOI: "10.5281/zenodo.15344306"
 
 markup:
   goldmark:
