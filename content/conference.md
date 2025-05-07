@@ -118,15 +118,18 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
   </tr>
   <tr>
     <td align="right">13:15 - 14:15</td>
-    <td colspan="2">
-    <b>SUMO Tutorial</b><br>
+    <td><b>SUMO Tutorial</b></td>
+    <td rowspan="2">
+    <center><i class="fa-solid fa-video fa-xl"></i><br>
+    <span class="badge badge-info">
+    Will be transmitted via Zoom.<br>
+    <a href="https://us06web.zoom.us/meeting/register/19YPHYViTFiOw64Qn3-uJg">Register here</a> for free, to get the link.</span>
+    </center>
     </td>
   </tr>
   <tr>
     <td align="right">14:15 - 15:15</td>
-    <td colspan="2">
-    <b>Ask us anything</b><br>
-    </td>
+    <td><b>Ask us anything</b></td>
   </tr>
   <tr>
     <td align="right">15:15 - 15:45</td>
