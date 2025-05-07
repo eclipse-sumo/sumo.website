@@ -252,13 +252,13 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 <td>
 <ul>
 <li>A digital twin for passenger-centred intermodal disturbance management in public transport - <small>Lukas Hösch</small></li>
-<li>Leveraging SUMO for Traffic Twins: Experiences in Urban Traffic Processing - <small>Alejandro Morales Hernández</small></li>
+<li>Leveraging SUMO for Traffic Twins: Experiences in Urban Traffic Processing - <small>Alejandro Morales-Hernández, Eladio Montero-Porras, Davide Andrea Guastella, Gianluca Bontempi and Bruno Cornelis</small></li>
 <li>SumoWare: Bridging Sumo and Autoware for Realistic Autonomous Vehicle Evaluation - <small>Evald Nexhipi, Faruk Öztürk, Mathias Pechinger and Klaus Bogenberger </small></li>
-<li>Towards Adaptive Traffic Signal Control Through Foundation Models and Reinforcement Learning - <small>Lukas Klein</small></li>
+<li>FoundationTSC - Towards Adaptive Traffic Control through Foundation Models and Reinforcement Learning - <small>Lukas Klein, Arthur Müller and Magnus Redeker</small></li>
 <li>Simulation Framework for Evaluating Autonomous Delivery Robots in Urban Environments - <small>Philipp Münst, Jan-Philip Rehbein and Rick Voßwinkel</small></li>
 
-<li>Cycling on Hills: Approaches for adjusting Cycling speed based on real-world data - <small>Danil Belikhov and Heather Kaths</small></li>
-<li>Evaluating the Economic Feasibility of Mobile Autonomous Charging Pods for Electric Bus Operations - <small>Mohd Aiman Khan, Wilco Burghout, Oded Cats, Erik Jenelius and Matej Cebecauer</small></li>
+<li>Cycling on Hills: Approaches for Adjusting Cycling Speed Based on Real-world Data - <small>Danil Belikhov and Heather Kaths</small></li>
+<li>Evaluating the operational and economic feasibility of mobile charging pods for electric bus operations - <small>Mohd Aiman Khan, Wilco Burghout, Oded Cats, Erik Jenelius and Matej Cebecauer</small></li>
 </ul>
   </td>
   <td><b>JuPedSim</b>
@@ -311,13 +311,13 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 <li>Green Light Optimal Speed Advisory with Reduced Default Speed – Analysis of Speed Distribution
 and Emissions of Road Users - <small>Maik Halbach</small></li>
 <li>RouteRL: MARL framework for urban route choice with autonomous vehicles - <small>Anastasia Psarou, Ahmet Onur Akman, Łukasz Gorczyca, Zoltán György Varga, Grzegorz Jamróz and Rafał Kucharski</small></li>
-<li>Modelling Realistic Urban Traffic Scenarios for the City of Osnabrück Based on Traffic Count Data and Calculating Emissions Using SUMO - <small>Rebecca Kose, Dominik Diedrich, Mathias Heiker and Sandra Rosenberger</small></li>
+<li>Modelling realistic urban traffic scenarios for the city of Osnabrück based on traffic count data and calculating emissions using SUMO - <small>Rebecca Kose, Dominik Diedrich, Mathias Heiker and Sandra Rosenberger</small></li>
 <li>Traffic micro-simulation to identify critical road safety cases in lateral interactions - <small>Angela Carboni, Matteo Ferraro, Francesco Deflorio and Lorenzo Sica</small></li>
 <li>FTO-Sim: Floating Traffic Observation – An Open-Source Simulation Framework - <small>Mario Ilic, Mathias Pechinger, Tanja Niels and Klaus Bogenberger</small></li>
 <li>rescuePY: Realtime-capable Digital Twins for Rescue Systems - A SUMO-Centered Approach - <small>Fabian Schuhmann</small></li>
-<li>Microscopic Simulation of MoD Services: Coupling of FleetPy With SUMO - <small>Joel Brodersen and Florian Dandl</small></li>
+<li>Microscopic Simulation of Mobility on Demand Services: Coupling Framework for FleetPy and SUMO - <small>Joel Brodersen and Florian Dandl</small></li>
 <li>Urban Attractors for Swarms of Micromobility E-riders - <small>Juan Salamanca and Venkataramanan Srinivasan</small></li>
-<li>Sensitivity of traffic emissions to traffic management and modelling - <small>Addina Shafiyya Ediansjah and Jens Borken-Kleefeld</small></li>
+<li>Sensitivity of traffic emissions to traffic management and modelling - <small>Addina Shafiyya Ediansjah, Jens Borken-Kleefeld and Meng Wang</small></li>
 </ul>
 </td>
   </tr>
@@ -328,13 +328,13 @@ and Emissions of Road Users - <small>Maik Halbach</small></li>
     <td align="right">13:00 - 14:00<br><br>Session 7<br><b>Poster Session</b><br><br></td>
 <td>
 <ul>
-<li>Urban Rail Assessment in SUMO - <small>Paula von der Heide</small></li>
+<li>Urban rail assessment in SUMO - <small>Paula von der Heide and Gregor Wehrle</small></li>
 <li>Adapting vehicle driving behavior to extreme flood events – A case study in the city of Cologne, Germany - <small>Ana Maria Mager Pozo</small></li>
-<li>Dynamic simulation of bus emissions in urban transport - <small>Sina Anker, Rebecca Kose, Mathias Heiker and Sandra Rosenberger</small></li>
-<li>Sumonity Updates 2025: Pedestrian Modeling, and Streamlined Deployment - <small>Mathias Pechinger</small></li>
+<li>Dynamic simulation of bus emissions in urban transport - <small>Sina-Marie Anker, Rebecca Kose and Sandra Rosenberger</small></li>
+<li>Sumonity Updates 2025: Pedestrian Modeling, and Streamlined Deployment - <small>Mathias Pechinger, Johannes Lindner and Klaus Bogenberger</small></li>
 <li>TrafficTwin : a Simulation Tool to Assess the Impact of Deviation Plans on Disruptive Events of Urban Traffic - <small>Davide Andrea Guastella, Moisés Silva-Muñoz, Eladio Montero-Porras and Gianluca Bontempi</small></li>
 <li>Aix-Marseille Metropolitan Mobility Digital Twin Development based on Modeling and Simulation of Vehicular Traffic - <small>Thi Phuong Kieu, Hassan Haghighi and Maamar El Amine Hamri</small></li>
-<li>Explicit Modeling of Tactical Driving Behavior: Conceptualizing a “Clean Architecture for Microscopic Traffic Flow Simulation” - <small>Marvin Baumann</small></li>
+<li>Explicit Modeling of Tactical Driving Behavior: Conceptualizing a “Clean Architecture for Microscopic Traffic Flow Simulation” - <small>Marvin Baumann and Peter Vortisch</small></li>
 <li>Charging Activities Simulation of Electric Cars in Urban Areas - <small>Matteo Ferraro, Lorenzo Sica and Francesco Deflorio</small></li>
 <li>A Digital Twin of Signalized Intersections Integrating LISA and Real-time Traffic Detectors Data into SUMO - <small>Meng Wang and Runhao Zhou</small></li>
 </ul>
