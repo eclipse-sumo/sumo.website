@@ -13,11 +13,11 @@ aliases:
 
 
 <div class="text-center"><img src="../images/banner_2025.png" style="width:90%;" alt="Conference artwork" class="img-responsive"/></div>
-
+<!--
 The SUMO User Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
 
 The conference is a great place to learn about new features, network with fellow enthusiasts, ask the developers, have fruitful discussions, exchange ideas and even start collaborations!
-
+-->
 
 <!--
 # Call for Papers
@@ -87,11 +87,11 @@ There are two submission types:
 <small>Login or register and then click on <b>"Make a new Conference Proceedings Submission"</b></small>
 <br>
 - Poster submissions: Send us an E-Mail with the subject **`Poster Submission - SUMO 2025`** to sumo-conference@dlr.de. Include the title and abstract in the body of the E-Mail. -->
-
+<!--
 ## Ethics and Malpractice Statement
 
 You can read our *[Publication Ethics and Publication Malpractice Statement](../documents/SUMOPublicationEthics.pdf)*, where we list the responsibilities of editors, reviewers, and authors.
-
+-->
 
 # Agenda
 
@@ -178,10 +178,12 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
   <tr>
     <td align="right">09:15 - 10:15<br><br>Session 1<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Benjamin Couéraud</p></td>
 <td colspan="2">
+<a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2590.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
     <b>Overcoming Data Scarcity in Calibrating SUMO Scenarios with Evolutionary Algorithms</b><br>
     Jakob Kappenberger and Heiner Stuckenschmidt <i><small>(all: Uni Mannheim)</small></i>
 <hr>
-    <b>Spatiotemporal AI Modeling for Urban Traffic Calibration: A SUMO-Based Approach</b><br>
+<a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2628.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
+    <b>Spatio-Temporal AI Modeling for Urban Traffic Calibration: A SUMO-Based Approach</b><br>
     Pablo Manglano-Redondo, Alvaro Paricio-Garcia and Miguel A. Lopez-Carmona <i><small>(all: Universidad de Alcalá)</small></i>
 </td>
   </tr>
@@ -194,12 +196,15 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
   <tr>
     <td align="right">10:45 - 12:15<br><br>Session 2<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Michael Behrisch</p></td>
 <td colspan="2">
+<a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2619.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
     <b>Digital Twin-Aided Municipal Traffic Control</b><br>
     Sercan Aygun <i><small>(University of Louisiana at Lafayette)</small></i>, Reeti Pradhananga <i><small>(University of Louisiana at Lafayette)</small></i>, Shelby Williams <i><small>(University of Louisiana at Lafayette)</small></i>, Li Chen <i><small>(University of Louisiana at Lafayette)</small></i>, Yazhou Tu <i><small>(Auburn University)</small></i>, Whitney Crow <i><small>(Mississippi State University)</small></i>, Sathyanarayanan Aakur <i><small>(Auburn University)</small></i> and Nian-Feng Tzeng <i><small>(University of Louisiana at Lafayette)</small></i>
 <hr>
+<a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2633.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
     <b>SUMO Simulation of DLR's Research Intersection</b><br>
     Flötteröd Yun-Pang and Peter Wagner <i><small>(all: DLR)</small></i>
 <hr>
+<a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2605.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
     <b>HaTS - Hanover Traffic Scenario for SUMO</b><br>
     Nico Ostendorf <i><small>(Robert Bosch GmbH)</small></i>, Keno Garlichs <i><small>(Robert Bosch GmbH)</small></i> and Lars C. Wolf <i><small>(TU Braunschweig)</small></i>
 </td>
@@ -233,9 +238,11 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
     <tr>
     <td align="right">15:00 - 16:00<br><br>Session 3<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Yun-Pang Flötteröd</p></td>
 <td colspan="2">
+<a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2613.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
     <b>Modeling Bus Traffic for the Berlin SUMO Traffic Scenario</b><br>
     Moritz Schweppenhäuser <i><small>(Fraunhofer FOKUS)</small></i>, Timo Großmann <i><small>(TU Berlin)</small></i>, Karl Schrab <i><small>(Fraunhofer FOKUS)</small></i>, Robert Protzmann <i><small>(Fraunhofer FOKUS)</small></i> and Ilja Radusch <i><small>(Daimler Center for Automotive IT Innovations)</small></i>
 <hr>
+<a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2618.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
     <b>Modeling Passenger Boarding Times using Sumonity’s Sub-microscopic Pedestrian Simulation</b><br>
     Johannes Lindner, Mathias Pechinger and Klaus Bogenberger <i><small>(all: Technical University of Munich)</small></i>
 </td>
@@ -278,12 +285,15 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
   <tr>
     <td align="right">09:00 - 10:30<br><br>Session 5<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Peter Wagner</p></td>
 <td>
+<a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2622.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
     <b>Effects of charging strategies and policies on electric vehicles and infrastructure from a microscopic perspective</b><br>
     Mirko Barthauer <i><small>(DLR)</small></i>
 <hr>
+<a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2617.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
     <b>SUMO in SPACE: Combining SUMO and dSPACE for Advanced Traffic Simulation</b><br>
     Christopher Stang <i><small>(ZF Friedrichshafen AG)</small></i> and Dennis Roeser <i><small>(dSPACE GmbH)</small></i>
 <hr>
+<a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2647.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
     <b>Towards Improved Traffic Impact Assessments for Construction Sites</b><br>
     Robert Hilbrich <i><small>(DLR - co4e GmbH)</small></i>, Jürgen Besler <i><small>(infrest)</small></i>, Natalie Dust <i><small>(infrest)</small>, Heiner Kretzer <i><small>(BWB)</small> and Bertram Monninkhoff <i><small>(BWB)</small></i>
 </td>
@@ -339,10 +349,12 @@ and Emissions of Road Users - <small>Maik Halbach</small></li>
   <tr>
     <td align="right">14:30 - 15:30<br><br>Session 8<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Ronald Nippold</p></td>
 <td>
+<a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2638.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
     <b>SUMO’s interpretation of the Krauß model</b><br>
     Peter Wagner and Jakob Erdmann <i><small>(all: DLR)</small></i>
 <hr>
-    <b>SUAVPy: A SUMO Plugin For UAV-Based Ground Traffic Sensing</b><br>
+<a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2610.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
+    <b>SUMO-UAV-Py: A SUMO Plugin For UAV-Based Road Traffic Sensing</b><br>
     Charalambos Tsioutis, Christos Makridis and Stelios Timotheou <i><small>(all: University of Cyprus)</small></i>
 </td>
   </tr>
