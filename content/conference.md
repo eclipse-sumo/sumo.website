@@ -202,7 +202,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 <hr>
 <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2633.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
     <b>SUMO Simulation of DLR's Research Intersection</b><br>
-    Flötteröd Yun-Pang and Peter Wagner <i><small>(all: DLR)</small></i>
+    Yun-Pang Flötteröd and Peter Wagner <i><small>(all: DLR)</small></i>
 <hr>
 <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2605.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
     <b>HaTS - Hanover Traffic Scenario for SUMO</b><br>
