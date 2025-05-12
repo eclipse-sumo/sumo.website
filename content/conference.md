@@ -143,7 +143,10 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
     <b>Modeling Advanced Mobility with Eclipse MOSAIC</b><br>
     Karl Schrab and Georg Hoelger <i><small>(all: Fraunhofer FOKUS)</small></i>
     </td>
-    <td>MoDa Workshop</td>
+    <td>
+    <b>MoDa Workshop on Modeling Emissions and Urban Event Mobility</b><br>
+    Michael Behrisch and Johannes Hendricks <i><small>(all: DLR)</small></i>
+    </td>
   </tr>
   <tr>
     <td align="right">17:30 - 18:30</td>
