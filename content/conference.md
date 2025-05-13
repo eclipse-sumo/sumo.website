@@ -5,14 +5,13 @@ conferenceDate: "May 12-14"
 conferenceLocation: "Berlin-Adlershof, Germany"
 description : "Get in touch with our international user community"
 layout: "single"
+image: "conference_2025.png"
 conference-page: true
 draft: false
 aliases:
 - /2025
 ---
 
-
-<div class="text-center"><img src="../images/banner_2025.png" style="width:90%;" alt="Conference artwork" class="img-responsive"/></div>
 <!--
 The SUMO User Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
 
@@ -432,3 +431,7 @@ Germany
 # Contact
 
 For questions and comments, the conference team can be reached at the email address [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de).
+
+---
+
+<div class="text-center"><img src="../images/banner_2025.png" style="width:90%;" alt="Conference artwork" class="img-responsive"/></div>
