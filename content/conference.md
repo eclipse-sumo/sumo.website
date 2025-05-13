@@ -262,6 +262,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 
 <li>Cycling on Hills: Approaches for Adjusting Cycling Speed Based on Real-world Data - <small>Danil Belikhov and Heather Kaths</small></li>
 <li>Evaluating the operational and economic feasibility of mobile charging pods for electric bus operations - <small>Mohd Aiman Khan, Wilco Burghout, Oded Cats, Erik Jenelius and Matej Cebecauer</small></li>
+<li>TrafficTwin : a Simulation Tool to Assess the Impact of Deviation Plans on Disruptive Events of Urban Traffic - <small>Davide Andrea Guastella, Moisés Silva-Muñoz, Eladio Montero-Porras and Gianluca Bontempi</small></li>
 </ul>
   </td>
   <td><b>JuPedSim</b>
@@ -335,7 +336,6 @@ and Emissions of Road Users - <small>Maik Halbach</small></li>
 <li>Adapting vehicle driving behavior to extreme flood events – A case study in the city of Cologne, Germany - <small>Ana Maria Mager Pozo</small></li>
 <li>Dynamic simulation of bus emissions in urban transport - <small>Sina-Marie Anker, Rebecca Kose and Sandra Rosenberger</small></li>
 <li>Sumonity Updates 2025: Pedestrian Modeling, and Streamlined Deployment - <small>Mathias Pechinger, Johannes Lindner and Klaus Bogenberger</small></li>
-<li>TrafficTwin : a Simulation Tool to Assess the Impact of Deviation Plans on Disruptive Events of Urban Traffic - <small>Davide Andrea Guastella, Moisés Silva-Muñoz, Eladio Montero-Porras and Gianluca Bontempi</small></li>
 <li>Aix-Marseille Metropolitan Mobility Digital Twin Development based on Modeling and Simulation of Vehicular Traffic - <small>Thi Phuong Kieu, Hassan Haghighi and Maamar El Amine Hamri</small></li>
 <li>Explicit Modeling of Tactical Driving Behavior: Conceptualizing a “Clean Architecture for Microscopic Traffic Flow Simulation” - <small>Marvin Baumann and Peter Vortisch</small></li>
 <li>Charging Activities Simulation of Electric Cars in Urban Areas - <small>Matteo Ferraro, Lorenzo Sica and Francesco Deflorio</small></li>
