@@ -286,7 +286,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 </thead>
 <tbody>
   <tr>
-    <td align="right">09:00 - 10:30<br><br>Session 5<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Peter Wagner</p></td>
+    <td align="right">09:00 - 10:30<br><br>Session 5<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Michael Behrisch</p></td>
 <td>
 <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2622.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
     <b>Effects of charging strategies and policies on electric vehicles and infrastructure from a microscopic perspective</b><br>
@@ -352,8 +352,8 @@ and Emissions of Road Users - <small>Maik Halbach</small></li>
     <td align="right">14:30 - 15:30<br><br>Session 8<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Ronald Nippold</p></td>
 <td>
 <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2638.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
-    <b>SUMO’s interpretation of the Krauß model</b><br>
-    Peter Wagner and Jakob Erdmann <i><small>(all: DLR)</small></i>
+    <strike><b>SUMO’s interpretation of the Krauß model</b><br>
+    Peter Wagner and Jakob Erdmann <i><small>(all: DLR)</small></i></strike>
 <hr>
 <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2610.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
     <b>SUMO-UAV-Py: A SUMO Plugin For UAV-Based Road Traffic Sensing</b><br>
