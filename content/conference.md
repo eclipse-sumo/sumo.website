@@ -352,8 +352,8 @@ and Emissions of Road Users - <small>Maik Halbach</small></li>
     <td align="right">14:30 - 15:30<br><br>Session 8<br><b>&nbsp;</b><p style="font-size: 60%">Session chair: Ronald Nippold</p></td>
 <td>
 <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2638.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
-    <strike><b>SUMO’s interpretation of the Krauß model</b><br>
-    Peter Wagner and Jakob Erdmann <i><small>(all: DLR)</small></i></strike>
+    <b>SUMO’s interpretation of the Krauß model</b><br>
+    Peter Wagner and Jakob Erdmann <i><small>(all: DLR)</small></i>
 <hr>
 <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2610.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
     <b>SUMO-UAV-Py: A SUMO Plugin For UAV-Based Road Traffic Sensing</b><br>
