@@ -264,7 +264,9 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 <li>TrafficTwin : a Simulation Tool to Assess the Impact of Deviation Plans on Disruptive Events of Urban Traffic - <small>Davide Andrea Guastella, Moisés Silva-Muñoz, Eladio Montero-Porras and Gianluca Bontempi</small></li>
 </ul>
   </td>
-  <td><b>JuPedSim</b>
+  <td>
+  <a target="_blank" href="https://github.com/PedestrianDynamics/SUMO-JuPedSim-Simulations"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i>Tutorial files</span></a>
+  <b>JuPedSim</b>
   <br>
   Coupled Simulation of Traffic Flow and Pedestrian Dynamics for Enhanced Urban Mobility Planning - <small>Jette Schumann and Ronald Nippold</small>
   </td>
