@@ -208,83 +208,52 @@ Christopher Stang and Klaus Bogenberger &lt;i>&lt;small>(all: Technical Universi
 &lt;a target="_blank" href="https://sumo.dlr.de/pdf/2024/slides1-3.pdf">&lt;span class="badge badge-secondary">&lt;i class="fa-solid fa-file">&lt;/i> Slides&lt;/span>&lt;/a> &lt;a target="_blank" href="https://youtu.be/1BN2qVRKfsM">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;p>&lt;strong>Session 2&lt;/strong>&lt;/p></description></item><item><title>SUMO User Conference 2025</title><link>https://eclipse.dev/sumo/conference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/conference/</guid><description>&lt;!--
-The SUMO User Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
-
-The conference is a great place to learn about new features, network with fellow enthusiasts, ask the developers, have fruitful discussions, exchange ideas and even start collaborations!
--->
-&lt;!--
-# Call for Papers
-
-The conference focuses on presenting new and unique results in the field of mobility simulation and modelling using openly available tools and data. We expect a large variety of research topics and usage approaches.
-If you are working on a research project fitting the topics below, you are kindly invited to submit a scientific paper or an abstract for a poster. Possible areas of interest include (but are not limited to):
-
-- Mobility and Demand Modelling
-- Traffic Simulation
-- Open Tools and Open Data
-- Modelling Urban Mobility
-- Traffic Applications
-- Traffic Management Solutions
-- Intermodal Transport
-- Autonomous Driving
-- Logistics Simulation
-- Vehicular Communication
-- E-Mobility
-- Reinforcement learning / Machine Learning
-
-# Paper Submission
-
-There are two submission types:
-
----
-
-1. Scientific Papers:
- - All accepted scientific papers must be presented at the conference.
- - Scientific papers will be reviewed by at least 2 reviewers.
- - All accepted scientific papers will be published in the [SUMO proceedings](https://www.tib-op.org/ojs/index.php/scp/index).
- - Scientific papers should be between 5 and 20 pages long.
- - **The Paper must be submitted in LaTeX or Word format before Sunday,** ~~February 16, 2025~~ &lt;span class="badge badge-warning">New&lt;/span> **February 23, 2025 at 11:59 PM (Berlin time)**.
-
-&lt;div class="alert alert-info" role="alert">
- Authors are required to use the &lt;a href="https://www.tib-op.org/ojs/index.php/scp/libraryFiles/downloadPublic/8">Word&lt;/a> or &lt;a href="https://www.tib-op.org/ojs/index.php/scp/libraryFiles/downloadPublic/9">LaTeX&lt;/a> template provided by TIB Open Publishing.&lt;br>
- &lt;b>Submissions that do not adhere to the specified template will not be considered.&lt;/b>
-&lt;/div>
-
-&lt;div class="text-center">&lt;img src="../images/presentation.jpeg" style="width:60%;" alt="Presentation" class="img-responsive"/>&lt;/div>
-
----
-
+&lt;p>&lt;strong>Session 2&lt;/strong>&lt;/p></description></item><item><title>SUMO User Conference 2025</title><link>https://eclipse.dev/sumo/2025/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2025/</guid><description>&lt;h1 id="sessions-and-presentations">Sessions and Presentations&lt;/h1>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Tutorial&lt;/strong>
 &lt;br>
-
-2. Posters:
- - The SUMO conference gives the opportunity to present your topic during the poster session.
- - There is no need to write a scientific paper.
- - Possible contents can be:
- - Results of Bachelor or Master theses
- - Live Demos
- - SUMO Use Cases
- - Project Presentations
- - Work in Progress which would benefit from the feedback of other SUMO users
- - The Posters do not require following a specific template, but should be formatted in the A0 size (841 x 1189 mm / 33.1 x 46.8 in).
- - We will print the poster for you, provide the display panel, a chair and a table.
- - While changes to the poster are still possible after the submission deadline, we unfortunately will not be able to reprint it. If you do need to make changes, you would need to bring a printout of the updated version with you.
- - You are welcome to bring a laptop or other device to show a demo, slides, videos or any material that you deem appropriate to complement the presentation. In this case you will need to provide your own equipment.
- - **Title and a short abstract (up to 300 words) must be submitted until Sunday, February 23, 2025, at 11:59 PM (Berlin time)**.
-
-&lt;div class="text-center">&lt;img src="../images/poster_session.jpeg" style="width:60%;" alt="Poster session" class="img-responsive"/>&lt;/div>
-
----
-
-## Submission Link
-
-- Link for Paper submissions: https://www.tib-op.org/ojs/index.php/scp/about/submissions&lt;br>
-&lt;small>Login or register and then click on &lt;b>"Make a new Conference Proceedings Submission"&lt;/b>&lt;/small>
+&lt;a target="_blank" href="http://sumo.dlr.de/daily/sumo2025_tutorial.zip">&lt;span class="badge badge-secondary">&lt;i class="far fa-file-archive">&lt;/i> Tutorial files&lt;/span>&lt;/a> &lt;a target="_blank" href="https://www.youtube.com/watch?v=ccc2mnGX_Mg">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a> &lt;a target="_blank" href="https://sumo.dlr.de/docs/Tutorials/2025.html#transcription">&lt;span class="badge badge-info">&lt;i class="fa-solid fa-font">&lt;/i> Transcription&lt;/span>&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Keynote:&lt;/strong> Movement and waiting of crowds – state of the art models and data - &lt;em>Prof. Dr. Armin Seyfried&lt;/em>
 &lt;br>
-- Poster submissions: Send us an E-Mail with the subject **`Poster Submission - SUMO 2025`** to sumo-conference@dlr.de. Include the title and abstract in the body of the E-Mail. -->
-&lt;!--
-## Ethics and Malpractice Statement
+&lt;a target="_blank" href="https://www.youtube.com/watch?v=HQVxg43URQ0">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;strong>Session 1&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;b>Overcoming Data Scarcity in Calibrating SUMO Scenarios with Evolutionary Algorithms&lt;/b>&lt;br>
+Jakob Kappenberger and Heiner Stuckenschmidt &lt;i>&lt;small>(all: Uni Mannheim)&lt;/small>&lt;/i>
+&lt;br>
+&lt;a target="_blank" href="https://www.youtube.com/watch?v=axQS71RSHIc">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a>
+&lt;a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2590.pdf">&lt;span class="badge badge-secondary">&lt;i class="fa-solid fa-file">&lt;/i> Preprint&lt;/span>&lt;/a>
+&lt;br>&lt;br>&lt;/li>
+&lt;li>&lt;b>Spatio-Temporal AI Modeling for Urban Traffic Calibration: A SUMO-Based Approach&lt;/b>&lt;br>
+Pablo Manglano-Redondo, Alvaro Paricio-Garcia and Miguel A. Lopez-Carmona &lt;i>&lt;small>(all: Universidad de Alcalá)&lt;/small>&lt;/i>
+&lt;br>
+&lt;a target="_blank" href="https://www.youtube.com/watch?v=nhkE7GkGLxo">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a>
+&lt;a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2628.pdf">&lt;span class="badge badge-secondary">&lt;i class="fa-solid fa-file">&lt;/i> Preprint&lt;/span>&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;strong>Session 2&lt;/strong>&lt;/p></description></item><item><title>SUMO User Conference 2025</title><link>https://eclipse.dev/sumo/conference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/conference/</guid><description>&lt;!-- The SUMO User Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
 
-You can read our *[Publication Ethics and Publication Malpractice Statement](../documents/SUMOPublicationEthics.pdf)*, where we list the responsibilities of editors, reviewers, and authors.
--->
-&lt;h1 id="agenda">Agenda&lt;/h1>
-&lt;p>&lt;small>🕓 &lt;i>Schedule given in Central European Summer Time (CEST) (UTC+2) - This agenda may be subject to change&lt;/i>&lt;/small>&lt;/p></description></item></channel></rss>
+The conference is a great place to learn about new features, network with fellow enthusiasts, ask the developers, have fruitful discussions, exchange ideas and even start collaborations! -->
+&lt;!-- # FAQ
+
+&lt;details>
+
+ &lt;summary>Hello&lt;/summary>
+ World
+&lt;/details>
+&lt;details>
+ &lt;summary>Foo&lt;/summary>
+ Bar
+&lt;/details> -->
+&lt;h1 id="sessions-and-presentations">Sessions and Presentations&lt;/h1>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Tutorial&lt;/strong>
+&lt;br>
+&lt;a target="_blank" href="http://sumo.dlr.de/daily/sumo2025_tutorial.zip">&lt;span class="badge badge-secondary">&lt;i class="far fa-file-archive">&lt;/i> Tutorial files&lt;/span>&lt;/a> &lt;a target="_blank" href="">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a> &lt;a target="_blank" href="https://sumo.dlr.de/docs/Tutorials/2025.html#transcription">&lt;span class="badge badge-info">&lt;i class="fa-solid fa-font">&lt;/i> Transcription&lt;/span>&lt;/a>&lt;/p></description></item></channel></rss>
