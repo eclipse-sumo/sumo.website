@@ -31,6 +31,11 @@ The conference is a great place to learn about new features, network with fellow
   Bar
 </details> -->
 
+# Proceedings
+
+Conference Proceedings: https://www.tib-op.org/ojs/index.php/scp/issue/view/182    
+DOI: https://doi.org/10.52825/scp.v6i
+
 # Sessions and Presentations
 - **Tutorial**
 <br>
