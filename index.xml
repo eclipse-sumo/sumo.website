@@ -49,19 +49,25 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/">Eclipse Ar
 &lt;div class="alert alert-secondary" role="alert">
 &lt;div class="d-flex row align-items-center">
  &lt;div class="col-lg-8 mb-4 mb-lg-0">
- &lt;p>&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/29">&lt;strong>Vol. 5 (2024): SUMO User Conference 2024&lt;/strong>&lt;/a>&lt;/p>
- &lt;strong>DOI:&lt;/strong> &lt;a href="https://doi.org/10.52825/scp.v5i">https://doi.org/10.52825/scp.v5i&lt;/a>
+ &lt;p>&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/182">&lt;strong>Vol. 6 (2025): SUMO User Conference 2025&lt;/strong>&lt;/a>&lt;/p>
+ &lt;strong>DOI:&lt;/strong> &lt;a href="https://doi.org/10.52825/scp.v6i">https://doi.org/10.52825/scp.v6i&lt;/a>
  &lt;br>
- &lt;strong>Published:&lt;/strong> July 17, 2024
+ &lt;strong>Published:&lt;/strong> July 15, 2025
  &lt;/div>
  &lt;div class="col-lg-4">
- &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/29">
- &lt;img src="../images/cover_2024.png" style="max-width:150px;" alt="Conference artwork" class="img-responsive cover-image"/>
+ &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/182">
+ &lt;img src="../images/cover_2025.png" style="max-width:150px;" alt="Conference artwork" class="img-responsive cover-image"/>
  &lt;/a>
  &lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;h2 id="past-volumes--proceedings">Past Volumes / Proceedings&lt;/h2>
+&lt;p>&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/29">&lt;strong>Vol. 5 (2024): SUMO User Conference 2024&lt;/strong>&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>DOI&lt;/strong>: &lt;a href="https://doi.org/10.52825/scp.v5i">https://doi.org/10.52825/scp.v5i&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Published&lt;/strong>: July 17, 2024&lt;/li>
+&lt;/ul>
+&lt;br>
 &lt;p>&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/11">&lt;strong>Vol. 4 (2023): SUMO User Conference 2023&lt;/strong>&lt;/a>&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>DOI&lt;/strong>: &lt;a href="https://doi.org/10.52825/scp.v4i">https://doi.org/10.52825/scp.v4i&lt;/a>&lt;/li>
@@ -74,13 +80,7 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/">Eclipse Ar
 &lt;li>&lt;strong>Published&lt;/strong>: September 29, 2022&lt;/li>
 &lt;/ul>
 &lt;br>
-&lt;p>&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/5">&lt;strong>Vol. 2 (2021): SUMO User Conference 2021&lt;/strong>&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>DOI&lt;/strong>: &lt;a href="https://doi.org/10.52825/scp.v2i">https://doi.org/10.52825/scp.v2i&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Published&lt;/strong>: June 29, 2022&lt;/li>
-&lt;/ul>
-&lt;br>
-&lt;p>&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/4">&lt;strong>Vol. 1 (2020): SUMO User Conference 2020&lt;/strong>&lt;/a>&lt;/p></description></item><item><title>SUMO User Conference 2013</title><link>https://eclipse.dev/sumo/2013/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2013/</guid><description>&lt;h1 id="introduction">Introduction&lt;/h1>
+&lt;p>&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/5">&lt;strong>Vol. 2 (2021): SUMO User Conference 2021&lt;/strong>&lt;/a>&lt;/p></description></item><item><title>SUMO User Conference 2013</title><link>https://eclipse.dev/sumo/2013/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2013/</guid><description>&lt;h1 id="introduction">Introduction&lt;/h1>
 &lt;p>The first SUMO User Conference &amp;ldquo;SUMO2013&amp;rdquo; was attended by 30 participants from throughout Europe which presented three days of simulation results but also technical enhancements and new usage scenarios of the open source microscopic traffic simulation. The highlights were two keynote speakers, Christoph Sommer (Universitaet Innsbruck) and Kai Nagel (TU Berlin), which talked about the current developments in the simulation of vehicle communication, one of the main applications of SUMO, as well as experience with the development of MatSim. The program was rounded off by numerous discussions on the edge and a panel discussion, which will promote further exchanges among other simulation scenarios.&lt;/p></description></item><item><title>SUMO User Conference 2014</title><link>https://eclipse.dev/sumo/2014/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2014/</guid><description>&lt;h1 id="introduction">Introduction&lt;/h1>
 &lt;p>The SUMO2014 Conference was attended by over 50 participants from throughout Europe and America which presented two days of simulation results but also technical enhancements and new usage scenarios of the open source microscopic traffic simulation (&lt;a href="https://elib.dlr.de/97717/1/Proceeding_SUMO2014_15%2B16May2014_Berlin-Adlershof.pdf">Here&lt;/a> you can find the conference proceedings).
 A highlight was the keynote speaker Mario Krumnow (Technical University Dresden), who talked about &amp;ldquo;Modeling Mobility with Open Data&amp;rdquo; (here you can find his &lt;a href="../documents/2014/Presentation_Keynote_Open%20data%202014_MarioKrumnow.pdf">presentation&lt;/a> and &lt;a href="../documents/2014/Krumnow-Simulation.zip">simulation&lt;/a>).
@@ -208,7 +208,10 @@ Christopher Stang and Klaus Bogenberger &lt;i>&lt;small>(all: Technical Universi
 &lt;a target="_blank" href="https://sumo.dlr.de/pdf/2024/slides1-3.pdf">&lt;span class="badge badge-secondary">&lt;i class="fa-solid fa-file">&lt;/i> Slides&lt;/span>&lt;/a> &lt;a target="_blank" href="https://youtu.be/1BN2qVRKfsM">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;p>&lt;strong>Session 2&lt;/strong>&lt;/p></description></item><item><title>SUMO User Conference 2025</title><link>https://eclipse.dev/sumo/2025/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2025/</guid><description>&lt;h1 id="sessions-and-presentations">Sessions and Presentations&lt;/h1>
+&lt;p>&lt;strong>Session 2&lt;/strong>&lt;/p></description></item><item><title>SUMO User Conference 2025</title><link>https://eclipse.dev/sumo/2025/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2025/</guid><description>&lt;h1 id="proceedings">Proceedings&lt;/h1>
+&lt;p>Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/182">https://www.tib-op.org/ojs/index.php/scp/issue/view/182&lt;/a> &lt;br>
+DOI: &lt;a href="https://doi.org/10.52825/scp.v6i">https://doi.org/10.52825/scp.v6i&lt;/a>&lt;/p>
+&lt;h1 id="sessions-and-presentations">Sessions and Presentations&lt;/h1>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;strong>Tutorial&lt;/strong>
@@ -251,9 +254,6 @@ The conference is a great place to learn about new features, network with fellow
  &lt;summary>Foo&lt;/summary>
  Bar
 &lt;/details> -->
-&lt;h1 id="sessions-and-presentations">Sessions and Presentations&lt;/h1>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>Tutorial&lt;/strong>
-&lt;br>
-&lt;a target="_blank" href="http://sumo.dlr.de/daily/sumo2025_tutorial.zip">&lt;span class="badge badge-secondary">&lt;i class="far fa-file-archive">&lt;/i> Tutorial files&lt;/span>&lt;/a> &lt;a target="_blank" href="">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a> &lt;a target="_blank" href="https://sumo.dlr.de/docs/Tutorials/2025.html#transcription">&lt;span class="badge badge-info">&lt;i class="fa-solid fa-font">&lt;/i> Transcription&lt;/span>&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;h1 id="proceedings">Proceedings&lt;/h1>
+&lt;p>Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/182">https://www.tib-op.org/ojs/index.php/scp/issue/view/182&lt;/a> &lt;br>
+DOI: &lt;a href="https://doi.org/10.52825/scp.v6i">https://doi.org/10.52825/scp.v6i&lt;/a>&lt;/p></description></item></channel></rss>
