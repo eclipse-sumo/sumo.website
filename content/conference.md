@@ -53,13 +53,11 @@ DOI: https://doi.org/10.52825/scp.v6i
     Jakob Kappenberger and Heiner Stuckenschmidt <i><small>(all: Uni Mannheim)</small></i>
     <br>
     <a target="_blank" href="https://www.youtube.com/watch?v=axQS71RSHIc"><span class="badge badge-danger"><i class="fab fa-youtube"></i> Video</span></a>
-    <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2590.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
 <br><br>
 - <b>Spatio-Temporal AI Modeling for Urban Traffic Calibration: A SUMO-Based Approach</b><br>
     Pablo Manglano-Redondo, Alvaro Paricio-Garcia and Miguel A. Lopez-Carmona <i><small>(all: Universidad de Alcalá)</small></i>
     <br>
     <a target="_blank" href="https://www.youtube.com/watch?v=nhkE7GkGLxo"><span class="badge badge-danger"><i class="fab fa-youtube"></i> Video</span></a>
-    <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2628.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
 ---
 
 **Session 2**
@@ -68,19 +66,16 @@ DOI: https://doi.org/10.52825/scp.v6i
     Sercan Aygun <i><small>(University of Louisiana at Lafayette)</small></i>, Reeti Pradhananga <i><small>(University of Louisiana at Lafayette)</small></i>, Shelby Williams <i><small>(University of Louisiana at Lafayette)</small></i>, Li Chen <i><small>(University of Louisiana at Lafayette)</small></i>, Yazhou Tu <i><small>(Auburn University)</small></i>, Whitney Crow <i><small>(Mississippi State University)</small></i>, Sathyanarayanan Aakur <i><small>(Auburn University)</small></i> and Nian-Feng Tzeng <i><small>(University of Louisiana at Lafayette)</small></i>
     <br>
     <a target="_blank" href="https://www.youtube.com/watch?v=pG6IZU7_kzo"><span class="badge badge-danger"><i class="fab fa-youtube"></i> Video</span></a>
-    <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2619.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
 <br><br>
 - <b>SUMO Simulation of DLR's Research Intersection</b><br>
     Yun-Pang Flötteröd and Peter Wagner <i><small>(all: DLR)</small></i>
     <br>
     <a target="_blank" href="https://www.youtube.com/watch?v=MmcFpz6zDl8"><span class="badge badge-danger"><i class="fab fa-youtube"></i> Video</span></a>
-    <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2633.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
 <br><br>
 - <b>HaTS - Hanover Traffic Scenario for SUMO</b><br>
     Nico Ostendorf <i><small>(Robert Bosch GmbH)</small></i>, Keno Garlichs <i><small>(Robert Bosch GmbH)</small></i> and Lars C. Wolf <i><small>(TU Braunschweig)</small></i>
     <br>
     <a target="_blank" href="https://www.youtube.com/watch?v=QyQFUWGXJ_8"><span class="badge badge-danger"><i class="fab fa-youtube"></i> Video</span></a>
-    <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2605.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
 
 ---
 
@@ -90,13 +85,11 @@ DOI: https://doi.org/10.52825/scp.v6i
     Moritz Schweppenhäuser <i><small>(Fraunhofer FOKUS)</small></i>, Timo Großmann <i><small>(TU Berlin)</small></i>, Karl Schrab <i><small>(Fraunhofer FOKUS)</small></i>, Robert Protzmann <i><small>(Fraunhofer FOKUS)</small></i> and Ilja Radusch <i><small>(Daimler Center for Automotive IT Innovations)</small></i>
     <br>
     <a target="_blank" href="https://www.youtube.com/watch?v=GiKb5gbAPoI"><span class="badge badge-danger"><i class="fab fa-youtube"></i> Video</span></a>
-    <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2613.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
 <br><br>
 - <b>Modeling Passenger Boarding Times using Sumonity’s Sub-microscopic Pedestrian Simulation</b><br>
     Johannes Lindner, Mathias Pechinger and Klaus Bogenberger <i><small>(all: Technical University of Munich)</small></i>
     <br>
     <a target="_blank" href="https://www.youtube.com/watch?v=cBYYZ4wlEyE"><span class="badge badge-danger"><i class="fab fa-youtube"></i> Video</span></a>
-    <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2618.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
 ---
 
 **Session 4: Poster Session**
@@ -121,19 +114,16 @@ DOI: https://doi.org/10.52825/scp.v6i
     Mirko Barthauer <i><small>(DLR)</small></i>
     <br>
     <a target="_blank" href="https://www.youtube.com/watch?v=bjda5cL8mPw"><span class="badge badge-danger"><i class="fab fa-youtube"></i> Video</span></a>
-    <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2622.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
 <br><br>
 - <b>SUMO in SPACE: Combining SUMO and dSPACE for Advanced Traffic Simulation</b><br>
     Christopher Stang <i><small>(ZF Friedrichshafen AG)</small></i> and Dennis Roeser <i><small>(dSPACE GmbH)</small></i>
     <br>
     <a target="_blank" href="https://www.youtube.com/watch?v=NocXnOVqC-4"><span class="badge badge-danger"><i class="fab fa-youtube"></i> Video</span></a>
-    <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2617.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
 <br><br>
 - <b>Towards Improved Traffic Impact Assessments for Construction Sites</b><br>
     Robert Hilbrich <i><small>(DLR - co4e GmbH)</small></i>, Jürgen Besler <i><small>(infrest)</small></i>, Natalie Dust <i><small>(infrest)</small></i>, Heiner Kretzer <i><small>(BWB)</small></i> and Bertram Monninkhoff <i><small>(BWB)</small></i>
     <br>
     <a target="_blank" href="https://www.youtube.com/watch?v=SdcfIiEYLbo"><span class="badge badge-danger"><i class="fab fa-youtube"></i> Video</span></a>
-    <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2647.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
 ---
 
 **Session 6: Poster Session**
@@ -174,13 +164,11 @@ and Emissions of Road Users - <small>Maik Halbach</small></li>
     Peter Wagner and Jakob Erdmann <i><small>(all: DLR)</small></i>
     <br>
     <a target="_blank" href="https://www.youtube.com/watch?v=o352wlNxSxY"><span class="badge badge-danger"><i class="fab fa-youtube"></i> Video</span></a>
-    <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2638.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
 <br><br>
 - <b>SUMO-UAV-Py: A SUMO Plugin For UAV-Based Road Traffic Sensing</b><br>
     Charalambos Tsioutis, Christos Makridis and Stelios Timotheou <i><small>(all: University of Cyprus)</small></i>
     <br>
     <a target="_blank" href="https://www.youtube.com/watch?v=NMJ_C-ocOCE"><span class="badge badge-danger"><i class="fab fa-youtube"></i> Video</span></a>
-    <a target="_blank" href="https://sumo.dlr.de/pdf/2025/pre-print-2610.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
 
 ---
 
