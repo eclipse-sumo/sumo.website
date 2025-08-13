@@ -1,0 +1,46 @@
+conferences:
+  - year: 2025
+    location: "Berlin"
+    date: "May 12-14"
+    banner: "banner_2025.png"
+  - year: 2024
+    location: "Berlin"
+    date: "May 13-15"
+    banner: "banner_2024.png"
+  - year: 2023
+    location: "Berlin"
+    date: "May 02-04"
+    banner: "banner_2023.png"
+  - year: 2022
+    location: "Online"
+    date: "May 09-11"
+    banner: "banner_2022.png"
+  - year: 2021
+    location: "Online"
+    date: "September 13-15"
+    banner: "banner_2021.png"
+  - year: 2020
+    location: "Online"
+    date: "October 26-28"
+    banner: "banner_2020.png"
+  - year: 2019
+    location: "Berlin"
+    date: "May 13-15"
+  - year: 2018
+    location: "Berlin"
+    date: "May 14-16"
+  - year: 2017
+    location: "Berlin"
+    date: "May 08-10"
+  - year: 2016
+    location: "Berlin"
+    date: "May 23-25"
+  - year: 2015
+    location: "Berlin"
+    date: "May 07-08"
+  - year: 2014
+    location: "Berlin"
+    date: "May 15-16"
+  - year: 2013
+    location: "Berlin"
+    date: "May 15-17"

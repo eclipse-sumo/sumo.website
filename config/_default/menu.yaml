@@ -37,14 +37,18 @@ main:
       parent: "About"
       url: "https://sumo.dlr.de/daily"
       weight: 4
-    - name: "Proceedings and Editorial Team"
-      parent: "Conference"
-      url: "proceedings"
-      weight: 1
     - name: "SUMO User Conference 2025"
       parent: "Conference"
       url: "conference"
+      weight: 1
+    - name: "Proceedings and Editorial Team"
+      parent: "Conference"
+      url: "proceedings"
       weight: 2
+    - name: "Previous conferences"
+      parent: "Conference"
+      url: "archive"
+      weight: 3
     - name: "Projects"
       parent: "References"
       url: "https://sumo.dlr.de/docs/Other/Projects.html"

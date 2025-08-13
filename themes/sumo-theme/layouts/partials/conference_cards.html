@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="row" style="display:flex; flex-wrap: wrap; align-items: stretch;">
+        {{- $editions := site.Data.previous_conferences.conferences }}
+        {{- range $editions }}
+        <div class="col-md-4 mb-4 d-flex flex-column">
+            <div class="contact-div flex-fill">
+                {{- if .banner }}
+                <img src="../images/{{ .banner }}" class="card-img-top" alt="Card image">
+                {{- end }}
+                <div class="card-body">
+                    <h5 class="card-title">{{ .year }}</h5>
+                    <p class="card-text">{{ .date }} • {{ .location }}</p>
+                    <a href="../{{ .year }}" class="btn btn-sm btn-outline-info">Learn more</a>
+                </div>
+            </div>
+        </div>
+        {{- end }}
+        <div class="col-md-4 mb-4 d-flex flex-column">
+            <div class="contact-div flex-fill">
+                <div class="card-body">
+                    <h5 class="card-title">Workshop 2010</h5>
+                    <p class="card-text">November 11-12 • Berlin</p>
+                    <a href="https://sumo.dlr.de/docs/SumoWorkshop2010.html" class="btn btn-sm btn-outline-info">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
