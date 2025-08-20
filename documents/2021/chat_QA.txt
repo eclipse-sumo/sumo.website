@@ -1,13 +1,13 @@
 Q: What is the difference between SUMO and MATSim. In mathematical models used? 
-A: Sumo uses car-following and lane-changing models whereas MATSim uses a coarser and faster queing model (very similar to SUMO-meso). MATSim also includes models for building a virtual population and their plans (whereas SUMO requires those plans as input)
+A: Sumo uses car-following and lane-changing models whereas MATSim uses a coarser and faster queuing model (very similar to SUMO-meso). MATSim also includes models for building a virtual population and their plans (whereas SUMO requires those plans as input)
 
 Q: Is it possible to draw the TAZ in different shapes (say I want to draw a TAZs based on neighborhoods) using the tool shown in the tutorial?
 A: Arbitrary polygonal shapes can be drawn. TAZ can also be built based on shapes from OSM: https://sumo.dlr.de/docs/Tools/District.html#edgesindistrictspy
 
 Q: Do you plan to improve or update Traci? Currently, I am trying to integrate Sumo to Unity, and road construction was a bit hard. The shape list of a lane only gives information about the center line, but  I needed end points of a lane in Unity.
-A: TraCI is mainly for dynamic features. Lane geometry is static and tools/sumolib is the recommended library to retrieve this data. sumolib.geomhelper.move2side can be used to compute the outer boundar for a given lane center line.
+A: TraCI is mainly for dynamic features. Lane geometry is static and tools/sumolib is the recommended library to retrieve this data. sumolib.geomhelper.move2side can be used to compute the outer boundary for a given lane center line.
 
-Q: Is it possible to automatically optimise traffic light signal plans. By changing green times and/or cycle times. By running multiple simulations and resulting into an optimum. Which is minimal traffic delay.
+Q: Is it possible to automatically optimize traffic light signal plans. By changing green times and/or cycle times. By running multiple simulations and resulting into an optimum. Which is minimal traffic delay.
 A: Sumo does not include tools for iterative optimization. Timing and offsets can be optimized for given traffic demand: https://sumo.dlr.de/docs/Simulation/Traffic_Lights.html#improving_generated_programs_with_knowledge_about_traffic_demand
 
 Q: I see you plan to couple SUMO with some pedestrian models. Which pedestrian models do you think are good candidates for this?
@@ -20,7 +20,7 @@ Q: How can one associate trips generated from od2trips with passenger cars exhib
 A: od2trips option --vtype TYPEID and then in sumo load an additional file that defines vTypeDistribution TYPEID (https://sumo.dlr.de/docs/Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#vehicle_type_distributions)
 
 Q: Is there any weather information in sumo?
-A: There is no direct support for wheather but sumo can associate arbitrary date with network edges using generic parameters (https://sumo.dlr.de/docs/Simulation/GenericParameters.html) and custom models can access these parameters.
+A: There is no direct support for weather but sumo can associate arbitrary date with network edges using generic parameters (https://sumo.dlr.de/docs/Simulation/GenericParameters.html) and custom models can access these parameters.
 
 Q: Does SUMO support multi-cores cpu? how to set SUMO simulation setting in order to fully utilize the computer resources such as multi-core cpu or GPU?
 A: Routing can be parallelized over multiple cpu cores with sumo option --device.rerouting.thread and duarouter option --routing-threads. SUMO also supports option --threads for multi-core simulation but the realized speed-up is currently low. GPUs are not supported.
@@ -29,7 +29,7 @@ Q: About TAZ: Is it possible to only allow specific edges to be a origin/destina
 A: Yes. gridDistrict.y and edgesInDistrict.py support option --vclass. filterDistrict.py also filters and existing TAZ with option --vclass
 
 Q: By any chance, are you aware any study using SUMO for simulating logistics process, e.g., in container terminals (or production systems in factory)? Thank you.
-A: https://www.dlr.de/ts/en/PortalData/16/Resources/Veranstaltungen/2015/SUMO2015_Proceeding.pdf
+A: https://elib.dlr.de/97714/1/SUMO2015_Proceeding.pdf
 
 Q: Can I change lane change parameters such as lcPushy, lcAssertive during the simulation via Traci ?
 A: Yes. traci.vehicle.setParameter(vehID, "laneChangeModel.lcPushy", str(value))
@@ -50,10 +50,10 @@ Q: Can you briefly describe how the Python packages work? Is it the recommended 
 A: Many python tools are stand-alone. tools/sumolib is for writing own tools (i.e. analyze networks), tools/traci is for coupling own code to a simulation (which can be started with traci.start).  Normally sumo is started from the command line, batch files etc.
 
 Q: There are several car-following-models, do you know if they give results comparable to the one used by SUMO?
-A: All model behave differently. The same model implemented in different simulations should mostly work the same but there are difference in situations that are not fully discribed by the model (i.e.
+A: All model behave differently. The same model implemented in different simulations should mostly work the same but there are difference in situations that are not fully described by the model (i.e.
 how to stop at intersections).
 
-Q: Is there a workaround to show WMS layers as background map in SUMO-GUI? or such feacture needs to be carefully developed (hopefully for future realeses)?
+Q: Is there a workaround to show WMS layers as background map in SUMO-GUI? or such feature needs to be carefully developed (hopefully for future releases)?
 A: SUMO only supports backgrounds via raster images. Those can be imported from WMS via tileGet.py: https://sumo.dlr.de/docs/Tools/Misc.html#tilegetpy
 
 Q: Is it planned to implement another lane change model, for example MOBIL?
