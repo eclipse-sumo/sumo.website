@@ -27,7 +27,7 @@ A: There a several tools that deal with this topic. Good entry point are:
 
 ****************
 
-Q: I am trying to import the Junction connections, but the issue is that a connection or traversal drawn by a single vehicle is acutally separated I also looking for a way to customize the IDs in network if its possible
+Q: I am trying to import the Junction connections, but the issue is that a connection or traversal drawn by a single vehicle is actually separated I also looking for a way to customize the IDs in network if its possible
 A1: Most connections across an intersection consist of a single edge with one or
 more lanes. For some movements (i.e. permissive left turns) there are two edges
 split at the waiting position within the junction (a so-called internal
@@ -93,7 +93,7 @@ A: It should be possible to model them with the current version, either as a spe
 
 ****************
 
-Q: It's a recoming problem in our research that we need to know when a vehicle approaches and leaves an intersection. Is there a way to observe this?
+Q: It's a recurring problem in our research that we need to know when a vehicle approaches and leaves an intersection. Is there a way to observe this?
 A: This can be achieved with detectors
 Q2: If we place detectors far out, we also detect vehicles that do not pass this
 intersection. Is there a way to avoid this?
@@ -122,7 +122,7 @@ lay out your suggestions/requirements
 
 ****************
 
-Q: Another topic… we have a connected vehicle Framework that we want to introduced via the Automotive Grade Linux (AGL and Open Source), SUMO is an element of it (as a module/dependency, therefor our interest to dockerized SUMO)… any licencing thing that we should consider?
+Q: Another topic… we have a connected vehicle Framework that we want to introduced via the Automotive Grade Linux (AGL and Open Source), SUMO is an element of it (as a module/dependency, therefor our interest to dockerized SUMO)… any licensing thing that we should consider?
 A: You can use SUMO with either the EPL2 or GPL2-or-later so there should be no
 issues
 
@@ -176,7 +176,7 @@ learn more about rerouting, see https://sumo.dlr.de/docs/Simulation/Routing.html
 
 Q: To what extend is it possible to simulate shared spaces? or the interaction between cars and pedestrians? can pedestrians walk in sub-lane?
 A: Cars and pedestrians can move on the same lanes as well as through shared
-intersections. Pedestrians move freely within these spaces while avoidig the
+intersections. Pedestrians move freely within these spaces while avoiding the
 cars. Likewise, cars "see" the pedestrians and avoid them.
 	
 ****************
@@ -204,7 +204,7 @@ A: There are a range of tools for using geo-referenced data with SUMO. See https
 
 ****************
 
-Q: Is there a way to model or apply car taffic noise file in SUMO thru in a noise reduction project ?
+Q: Is there a way to model or apply car traffic noise file in SUMO thru in a noise reduction project ?
 A: SUMO has a noise emission model that can either provide aggregated data (for
 edges or trips) or raw-data (--emission-output)
 
