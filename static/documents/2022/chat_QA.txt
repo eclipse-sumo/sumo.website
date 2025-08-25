@@ -97,7 +97,7 @@ Q: It's a recurring problem in our research that we need to know when a vehicle 
 A: This can be achieved with detectors
 Q2: If we place detectors far out, we also detect vehicles that do not pass this
 intersection. Is there a way to avoid this?
-A2: Yes. We are planning on adding route-based filtering for detectors: https://github.com/eclipse/sumo/issues/9927
+A2: Yes. We are planning on adding route-based filtering for detectors: https://github.com/eclipse-sumo/sumo/issues/9927
 
 ****************
 
@@ -195,7 +195,7 @@ github and provide all input files for reproducing the problem.
 Q: Is it possible to make Calibrators sense the few edges (meters) upstream in order to have an approximate picture of traffic volume that will pass on it in the current calibrator interval? 
    To be able to generate, let's say, an equal amount of vehicles (or some distribution) during the calibration interval. So far, it often happened that Calibrator waits until the end of the interval and then generates a higher amount of vehicles forming the platoon. This is the case for short intervals (in my case, minute resolution).
 A: Thank you for pointing out this problem. We intend to solve it by increasing
-calibrator flexibility: https://github.com/eclipse/sumo/issues/10698
+calibrator flexibility: https://github.com/eclipse-sumo/sumo/issues/10698
 
 ****************
 

@@ -59,7 +59,7 @@ Q: Can the operation of taxis be intermodal, e.g. taking ppl to park&ride points
 A: Yes
 
 Q: Is there a database for real counting data of cars on real streets? (To simulate random traffic but near to reality in certain cities)
-A: (Zähldaten) For German Autobahnen there is data like that: https://www.bast.de/BASt_2017/DE/Verkehrstechnik/Fachthemen/v2-verkehrszaehlung/Verkehrszaehlung.html?nn=1817946
+A: (Zähldaten) For German Autobahnen there is data like that: https://www.bast.de/DE/Themen/Digitales/HF_1/Massnahmen/verkehrszaehlung/verkehrszaehlung.html?nn=401522
 A: You will find some loop detector data for urban traffic here: https://utd19.ethz.ch/.
 
 Q: Can the pickup at pt stops be limited to just a certain subset of those?
