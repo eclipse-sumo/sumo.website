@@ -1,259 +1,259 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Eclipse SUMO - Simulation of Urban MObility</title><link>https://eclipse.dev/sumo/</link><description>Recent content on Eclipse SUMO - Simulation of Urban MObility</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://eclipse.dev/sumo/index.xml" rel="self" type="application/rss+xml"/><item><title>About Eclipse SUMO</title><link>https://eclipse.dev/sumo/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/about/</guid><description>&lt;div class="container">&lt;div class="row">&lt;div class="col-md-12 contact-div">
-&lt;p>Eclipse SUMO is a free and open source traffic simulation suite. It was started in 2001 by employees of the &lt;a href="https://www.dlr.de/ts">Institute of Transportation Systems&lt;/a> at the &lt;a href="https://www.dlr.de/">German Aerospace Center (DLR)&lt;/a>. SUMO allows modelling of intermodal traffic systems - including road vehicles, public transport and pedestrians. Included with SUMO is a wealth of supporting tools that automate core tasks for the creation, the execution and evaluation of traffic simulations, such as network import, route calculations, visualization and emission calculation. SUMO can be enhanced with custom models and provides various APIs to remotely control the simulation.&lt;/p></description></item><item><title>Contact</title><link>https://eclipse.dev/sumo/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/contact/</guid><description>&lt;div class="container">&lt;div class="row">
-&lt;!-- mailing lists -->
-&lt;div class="col-md-12 contact-div">
-&lt;h4 style="color:#17412f;" id="mailing-lists">&lt;i class="fas fa-envelope-open-text">&lt;/i>&lt;br>
-Mailing lists&lt;/h4>
-&lt;br>
-If you have any questions about SUMO, please post them into one of our mailing lists. You may need to &lt;a href="https://accounts.eclipse.org/user/register">create an Eclipse account&lt;/a> first.
-&lt;br>
-Before you post on a list, please check the &lt;a href="https://sumo.dlr.de/docs/FAQ.html">FAQ&lt;/a> for already answered questions. 
-&lt;br>&lt;br>
-&lt;div class="row">
-&lt;div class="col-sm-4">
-&lt;a href="https://accounts.eclipse.org/mailing-list/sumo-user">&lt;h5>sumo-user&lt;/h5>&lt;/a>
-&lt;small>This is the first place you should ask your questions. If you have a novel question, &lt;a href="https://sumo.dlr.de/docs/FAQ.html#what_should_i_do_to_get_helpful_answers_on_the_mailing_list">here is some general advice before asking&lt;/a>. If you wish to report an error &lt;a href="https://sumo.dlr.de/docs/FAQ.html#how_do_i_report_erroneous_behavior_of_a_sumo_application">please follow these suggestions&lt;/a>. Subscribe to this list for asking questions, reporting issues and getting information about what other people ask.
-&lt;hr>
-&lt;i>Frequency: about 100 mails per month&lt;br>
-Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-user/">Eclipse Archive&lt;/a>, &lt;a href="https://www.mail-archive.com/sumo-user@eclipse.org/">Mail Archive&lt;/a>, &lt;a href="https://sourceforge.net/p/sumo/mailman/sumo-user/">SF Archive&lt;/a>&lt;/i>&lt;/small>
-&lt;div class="d-block d-sm-none" style="margin-top:60px;">&lt;/div>
-&lt;/div>
-&lt;div class="col-sm-4">
-&lt;a href="https://accounts.eclipse.org/mailing-list/sumo-announce">&lt;h5>sumo-announce&lt;/h5>&lt;/a>
-&lt;small>Subscribe to this list if you want to get information about new releases or documents. Post to the list if you have to announce something by yourself.
-&lt;hr>
-&lt;i>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Eclipse SUMO - Simulation of Urban MObility</title><link>https://eclipse.dev/sumo/</link><description>Recent content on Eclipse SUMO - Simulation of Urban MObility</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://eclipse.dev/sumo/index.xml" rel="self" type="application/rss+xml"/><item><title>About Eclipse SUMO</title><link>https://eclipse.dev/sumo/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/about/</guid><description>&lt;div class="container"&gt;&lt;div class="row"&gt;&lt;div class="col-md-12 contact-div"&gt;
+&lt;p&gt;Eclipse SUMO is a free and open source traffic simulation suite. It was started in 2001 by employees of the &lt;a href="https://www.dlr.de/ts"&gt;Institute of Transportation Systems&lt;/a&gt; at the &lt;a href="https://www.dlr.de/"&gt;German Aerospace Center (DLR)&lt;/a&gt;. SUMO allows modelling of intermodal traffic systems - including road vehicles, public transport and pedestrians. Included with SUMO is a wealth of supporting tools that automate core tasks for the creation, the execution and evaluation of traffic simulations, such as network import, route calculations, visualization and emission calculation. SUMO can be enhanced with custom models and provides various APIs to remotely control the simulation.&lt;/p&gt;</description></item><item><title>Contact</title><link>https://eclipse.dev/sumo/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/contact/</guid><description>&lt;div class="container"&gt;&lt;div class="row"&gt;
+&lt;!-- mailing lists --&gt;
+&lt;div class="col-md-12 contact-div"&gt;
+&lt;h4 style="color:#17412f;" id="mailing-lists"&gt;&lt;i class="fas fa-envelope-open-text"&gt;&lt;/i&gt;&lt;br&gt;
+Mailing lists&lt;/h4&gt;
+&lt;br&gt;
+If you have any questions about SUMO, please post them into one of our mailing lists. You may need to &lt;a href="https://accounts.eclipse.org/user/register"&gt;create an Eclipse account&lt;/a&gt; first.
+&lt;br&gt;
+Before you post on a list, please check the &lt;a href="https://sumo.dlr.de/docs/FAQ.html"&gt;FAQ&lt;/a&gt; for already answered questions. 
+&lt;br&gt;&lt;br&gt;
+&lt;div class="row"&gt;
+&lt;div class="col-sm-4"&gt;
+&lt;a href="https://accounts.eclipse.org/mailing-list/sumo-user"&gt;&lt;h5&gt;sumo-user&lt;/h5&gt;&lt;/a&gt;
+&lt;small&gt;This is the first place you should ask your questions. If you have a novel question, &lt;a href="https://sumo.dlr.de/docs/FAQ.html#what_should_i_do_to_get_helpful_answers_on_the_mailing_list"&gt;here is some general advice before asking&lt;/a&gt;. If you wish to report an error &lt;a href="https://sumo.dlr.de/docs/FAQ.html#how_do_i_report_erroneous_behavior_of_a_sumo_application"&gt;please follow these suggestions&lt;/a&gt;. Subscribe to this list for asking questions, reporting issues and getting information about what other people ask.
+&lt;hr&gt;
+&lt;i&gt;Frequency: about 100 mails per month&lt;br&gt;
+Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-user/"&gt;Eclipse Archive&lt;/a&gt;, &lt;a href="https://www.mail-archive.com/sumo-user@eclipse.org/"&gt;Mail Archive&lt;/a&gt;, &lt;a href="https://sourceforge.net/p/sumo/mailman/sumo-user/"&gt;SF Archive&lt;/a&gt;&lt;/i&gt;&lt;/small&gt;
+&lt;div class="d-block d-sm-none" style="margin-top:60px;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-sm-4"&gt;
+&lt;a href="https://accounts.eclipse.org/mailing-list/sumo-announce"&gt;&lt;h5&gt;sumo-announce&lt;/h5&gt;&lt;/a&gt;
+&lt;small&gt;Subscribe to this list if you want to get information about new releases or documents. Post to the list if you have to announce something by yourself.
+&lt;hr&gt;
+&lt;i&gt;
 Frequency: few mails per year
-&lt;br>
-Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-announce/">Eclipse Archive&lt;/a>, &lt;a href="https://www.mail-archive.com/sumo-announce@eclipse.org/">Mail Archive&lt;/a>, &lt;a href="https://sourceforge.net/p/sumo/mailman/sumo-announce/">SF Archive&lt;/a>
-&lt;/i>&lt;/small>
-&lt;div class="d-block d-sm-none" style="margin-top:60px;">&lt;/div>
-&lt;/div>
-&lt;div class="col-sm-4">
-&lt;a href="https://accounts.eclipse.org/mailing-list/sumo-dev">&lt;h5>sumo-dev&lt;/h5>&lt;/a>
-&lt;small>This list is for topics related to sumo development. If you want to contribute code or ask a question in regard to extending SUMO, this is the right place.
-&lt;hr>
-&lt;i>
+&lt;br&gt;
+Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-announce/"&gt;Eclipse Archive&lt;/a&gt;, &lt;a href="https://www.mail-archive.com/sumo-announce@eclipse.org/"&gt;Mail Archive&lt;/a&gt;, &lt;a href="https://sourceforge.net/p/sumo/mailman/sumo-announce/"&gt;SF Archive&lt;/a&gt;
+&lt;/i&gt;&lt;/small&gt;
+&lt;div class="d-block d-sm-none" style="margin-top:60px;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-sm-4"&gt;
+&lt;a href="https://accounts.eclipse.org/mailing-list/sumo-dev"&gt;&lt;h5&gt;sumo-dev&lt;/h5&gt;&lt;/a&gt;
+&lt;small&gt;This list is for topics related to sumo development. If you want to contribute code or ask a question in regard to extending SUMO, this is the right place.
+&lt;hr&gt;
+&lt;i&gt;
 Frequency: few mails per month
-&lt;br>
-Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/">Eclipse Archive&lt;/a>, &lt;a href="https://www.mail-archive.com/sumo-dev@eclipse.org/">Mail Archive&lt;/a>, &lt;a href="https://sourceforge.net/p/sumo/mailman/sumo-devel/">SF Archive&lt;/a>
-&lt;/i>&lt;/small>
-&lt;div class="d-block d-sm-none" style="margin-top:20px;">&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;br>
-&lt;p>To &lt;strong>unsubscribe&lt;/strong> visit the same link(s) as given above for subscription.&lt;/p></description></item><item><title>Previous SUMO User Conferences</title><link>https://eclipse.dev/sumo/archive/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/archive/</guid><description>&lt;div class="container">&lt;div class="row">&lt;div class="col-md-12 contact-div">
-&lt;p>The SUMO User Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.&lt;/p>
-&lt;p>The conference is a great place to learn about new features, network with fellow enthusiasts, ask the developers, have fruitful discussions, exchange ideas and even start collaborations!&lt;/p></description></item><item><title>SUMO Conference Proceedings</title><link>https://eclipse.dev/sumo/proceedings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/proceedings/</guid><description>&lt;p>Read more information about the SUMO Conference Proceedings (SCP) Series &lt;a href="https://www.tib-op.org/ojs/index.php/scp/about">here&lt;/a>.&lt;/p>
-&lt;h1 id="proceedings">Proceedings&lt;/h1>
-&lt;hr>
-&lt;h2 id="current-volume">Current Volume&lt;/h2>
-&lt;div class="alert alert-secondary" role="alert">
-&lt;div class="d-flex row align-items-center">
- &lt;div class="col-lg-8 mb-4 mb-lg-0">
- &lt;p>&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/182">&lt;strong>Vol. 6 (2025): SUMO User Conference 2025&lt;/strong>&lt;/a>&lt;/p>
- &lt;strong>DOI:&lt;/strong> &lt;a href="https://doi.org/10.52825/scp.v6i">https://doi.org/10.52825/scp.v6i&lt;/a>
- &lt;br>
- &lt;strong>Published:&lt;/strong> July 15, 2025
- &lt;/div>
- &lt;div class="col-lg-4">
- &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/182">
- &lt;img src="../images/cover_2025.png" style="max-width:150px;" alt="Conference artwork" class="img-responsive cover-image"/>
- &lt;/a>
- &lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;h2 id="past-volumes--proceedings">Past Volumes / Proceedings&lt;/h2>
-&lt;p>&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/29">&lt;strong>Vol. 5 (2024): SUMO User Conference 2024&lt;/strong>&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>DOI&lt;/strong>: &lt;a href="https://doi.org/10.52825/scp.v5i">https://doi.org/10.52825/scp.v5i&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Published&lt;/strong>: July 17, 2024&lt;/li>
-&lt;/ul>
-&lt;br>
-&lt;p>&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/11">&lt;strong>Vol. 4 (2023): SUMO User Conference 2023&lt;/strong>&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>DOI&lt;/strong>: &lt;a href="https://doi.org/10.52825/scp.v4i">https://doi.org/10.52825/scp.v4i&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Published&lt;/strong>: June 29, 2023&lt;/li>
-&lt;/ul>
-&lt;br>
-&lt;p>&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/8">&lt;strong>Vol. 3 (2022): SUMO User Conference 2022&lt;/strong>&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>DOI&lt;/strong>: &lt;a href="https://doi.org/10.52825/scp.v3i">https://doi.org/10.52825/scp.v3i&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Published&lt;/strong>: September 29, 2022&lt;/li>
-&lt;/ul>
-&lt;br>
-&lt;p>&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/5">&lt;strong>Vol. 2 (2021): SUMO User Conference 2021&lt;/strong>&lt;/a>&lt;/p></description></item><item><title>SUMO User Conference 2013</title><link>https://eclipse.dev/sumo/2013/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2013/</guid><description>&lt;h1 id="introduction">Introduction&lt;/h1>
-&lt;p>The first SUMO User Conference &amp;ldquo;SUMO2013&amp;rdquo; was attended by 30 participants from throughout Europe which presented three days of simulation results but also technical enhancements and new usage scenarios of the open source microscopic traffic simulation. The highlights were two keynote speakers, Christoph Sommer (Universitaet Innsbruck) and Kai Nagel (TU Berlin), which talked about the current developments in the simulation of vehicle communication, one of the main applications of SUMO, as well as experience with the development of MatSim. The program was rounded off by numerous discussions on the edge and a panel discussion, which will promote further exchanges among other simulation scenarios.&lt;/p></description></item><item><title>SUMO User Conference 2014</title><link>https://eclipse.dev/sumo/2014/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2014/</guid><description>&lt;h1 id="introduction">Introduction&lt;/h1>
-&lt;p>The SUMO2014 Conference was attended by over 50 participants from throughout Europe and America which presented two days of simulation results but also technical enhancements and new usage scenarios of the open source microscopic traffic simulation (&lt;a href="https://elib.dlr.de/97717/1/Proceeding_SUMO2014_15%2B16May2014_Berlin-Adlershof.pdf">Here&lt;/a> you can find the conference proceedings).
-A highlight was the keynote speaker Mario Krumnow (Technical University Dresden), who talked about &amp;ldquo;Modeling Mobility with Open Data&amp;rdquo; (here you can find his &lt;a href="../documents/2014/Presentation_Keynote_Open%20data%202014_MarioKrumnow.pdf">presentation&lt;/a> and &lt;a href="../documents/2014/Krumnow-Simulation.zip">simulation&lt;/a>).
-The program was rounded off by numerous discussions on the edge and a panel discussion, which will promote further exchanges among other simulation scenarios.&lt;/p></description></item><item><title>SUMO User Conference 2015</title><link>https://eclipse.dev/sumo/2015/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2015/</guid><description>&lt;div class="btn-group" style="margin-bottom:40px;">
- &lt;a href="https://elib.dlr.de/97714/1/SUMO2015_Proceeding.pdf" class="btn btn-info btn-sm btn-padding">&lt;i class="fas fa-file-download">&lt;/i> SUMO 2015 Proceedings (17.07 MB)&lt;/a>
- &lt;a href="../documents/2015/SUMO2015.pdf" class="btn btn-info btn-sm btn-padding">&lt;i class="fas fa-file-download">&lt;/i> SUMO 2015 Flyer (1.42 MB)&lt;/a>
-&lt;/div>
-&lt;h1 id="introduction">Introduction&lt;/h1>
-&lt;p>The SUMO2015 Conference was attended by over 40 participants from throughout Europe and America which presented two days of simulation results but also technical enhancements and new usage scenarios of the open source microscopic traffic simulation (Here you can find the conference proceedings). A highlight were the keynote speakers Fritz Busch (Technische Universität München) and Hans van Lint (Delft University of Technology). The program was rounded off by numerous discussions on the edge and the SUMO Café, which will promote further exchanges among other simulation scenarios.&lt;/p></description></item><item><title>SUMO User Conference 2016</title><link>https://eclipse.dev/sumo/2016/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2016/</guid><description>&lt;div class="btn-group" style="margin-bottom:40px;">
- &lt;a href="https://elib.dlr.de/106342/1/SUMOconference_proceedings_2016.pdf" class="btn btn-info btn-sm btn-padding">&lt;i class="fas fa-file-download">&lt;/i> SUMO 2016 Proceedings (23.48 MB)&lt;/a>
- &lt;a href="../documents/2016/SUMO2016_program.pdf" class="btn btn-info btn-sm btn-padding">&lt;i class="fas fa-file-download">&lt;/i> SUMO 2016 Program (0.77 MB)&lt;/a>
-&lt;/div>
-&lt;h1 id="introduction">Introduction&lt;/h1>
-&lt;p>This year, the SUMO User Conference focused on traffic, mobility and logistics. It was attended by almost 50 international participants from industry and academia. In addition to the excellent keynote given by Prof. Dr. Björn Scheuermann (Humboldt-Universität Berlin), the conference program allowed for intensive discussions on recent research advancements and developments in SUMO. A highlight was the poster session with a PARCOURS demo in which the attendants were able experience a live 3D traffic simulator with VR googles. The program was rounded off by a tutorial, numerous discussions on the edge and the SUMO Café, which will promote further exchanges among the SUMO user community.&lt;/p></description></item><item><title>SUMO User Conference 2017</title><link>https://eclipse.dev/sumo/2017/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2017/</guid><description>&lt;div class="btn-group" style="margin-bottom:40px;">
- &lt;a href="https://elib.dlr.de/118438/1/SUMO_proceedings_online.pdf" class="btn btn-info btn-sm btn-padding">&lt;i class="fas fa-file-download">&lt;/i> SUMO 2017 Proceedings (21.07 MB)&lt;/a>
- &lt;a href="../documents/2017/flyer_sumo_2017.pdf" class="btn btn-info btn-sm btn-padding">&lt;i class="fas fa-file-download">&lt;/i> SUMO 2017 Flyer (5.06 MB)&lt;/a>
-&lt;/div>
-&lt;h1 id="introduction">Introduction&lt;/h1>
-&lt;p>This year, the SUMO User Conference focused on traffic simulation and simulator coupling for autonomous mobility. It was attended by more than 70 international participants from industry and academia. In addition to the joint keynote given by Johan Magnusson and Christer Lindström from 4Dialog AB, the conference program allowed for intensive discussions on recent research advancements and developments in SUMO. A highlight was the poster session with live demos of traffic simulators from rfPro and TESIS DYNAware both of which used SUMO internally. The program was rounded off by a tutorial, numerous interesting and engaging discussions on the side and the SUMO Café, which facilitated an exchange of experiences among the SUMO community.&lt;/p></description></item><item><title>SUMO User Conference 2018</title><link>https://eclipse.dev/sumo/2018/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2018/</guid><description>&lt;h1 id="introduction">Introduction&lt;/h1>
-&lt;p>Traffic simulations are of immense importance for researchers as well as practitioners in the field of transportation. SUMO has been available since 2001 and provides a wide range of traffic planning and simulation applications. SUMO consists of a suite of tools covering road network imports and enrichment, demand generation and assignment and a state-of-the-art microscopic traffic simulation capable to simulate private and public transport modes, as well as person-based trip chains. Being open source, SUMO is ready to implement new behavioral models or to control the simulation remotely using various programming environments. These and other features make SUMO one of the most often used open source traffic simulations with a large and international user community.&lt;/p></description></item><item><title>SUMO User Conference 2019</title><link>https://eclipse.dev/sumo/2019/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2019/</guid><description>&lt;h1 id="introduction">Introduction&lt;/h1>
-&lt;p>Traffic simulations are of immense importance for researchers as well as practitioners in the field of transportation. Eclipse SUMO provides a wide range of traffic planning and simulation applications. Eclipse SUMO is a toolsuite covering road network imports and enrichment, demand generation and assignment and a state-of-the-art microscopic traffic simulation capable to simulate private and public transport modes, as well as person-based trip chains. Being open source, Eclipse SUMO is ready to implement new behavioral models or to control the simulation remotely using various programming environments. These and other features make Eclipse SUMO one of the most often used open source traffic simulations with a large and international user community.&lt;/p></description></item><item><title>SUMO User Conference 2020</title><link>https://eclipse.dev/sumo/2020/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2020/</guid><description>&lt;h1 id="proceedings">Proceedings&lt;/h1>
-&lt;p>Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/4">https://www.tib-op.org/ojs/index.php/scp/issue/view/4&lt;/a>&lt;br>
-DOI: &lt;a href="https://doi.org/10.52825/scp.v1i">https://doi.org/10.52825/scp.v1i&lt;/a>&lt;/p>
-&lt;h1 id="sessions-and-presentations">Sessions and Presentations&lt;/h1>
-&lt;ul>
-&lt;li>Tutorial • &lt;a href="https://youtu.be/aiOQbaB-pWo">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a> • &lt;a href="http://sumo.dlr.de/daily/sumo2020_tutorial.zip">&lt;i class="far fa-file-archive">&lt;/i> Tutorial files&lt;/a>&lt;/li>
-&lt;li>Ask us anything • &lt;a href="../documents/2020/chat_QA.txt">&lt;i class="far fa-file-alt">&lt;/i> Q&amp;amp;A Transcript&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Keynote:&lt;/strong> Emerging mobility trends and the role of transport simulation models - &lt;em>Jordi Casas&lt;/em> • &lt;a href="https://www.youtube.com/watch?v=vJe-2T73UOg">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;p>&lt;strong>Eclipse Session&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Eclipse Foundation • &lt;a href="../documents/2020/EclipseFoundation-GaelBlondelle.pdf">&lt;i class="far fa-file-pdf">&lt;/i> Slides&lt;/a>&lt;/li>
-&lt;li>openADx Working Group • &lt;a href="../documents/2020/openADx-AndreasRiexinger.pdf">&lt;i class="far fa-file-pdf">&lt;/i> Slides&lt;/a>&lt;/li>
-&lt;li>Eclipse ADORe • &lt;a href="../documents/2020/EclipseADORe-DanielHess.pdf">&lt;i class="far fa-file-pdf">&lt;/i> Slides&lt;/a>&lt;/li>
-&lt;li>openMobility Working Group • &lt;a href="../documents/2020/openMobility-RobertHilbrich.pdf">&lt;i class="far fa-file-pdf">&lt;/i> Slides&lt;/a>&lt;/li>
-&lt;li>Eclipse MOSAIC • &lt;a href="../documents/2020/EclipseMOSAIC-RobertProtzmann.pdf">&lt;i class="far fa-file-pdf">&lt;/i> Slides&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;p>&lt;strong>Session 1: Autonomous Vehicles&lt;/strong>&lt;/p></description></item><item><title>SUMO User Conference 2021</title><link>https://eclipse.dev/sumo/2021/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2021/</guid><description>&lt;h1 id="proceedings">Proceedings&lt;/h1>
-&lt;p>Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/5">https://www.tib-op.org/ojs/index.php/scp/issue/view/5&lt;/a>&lt;br>
-DOI: &lt;a href="https://doi.org/10.52825/scp.v2i">https://doi.org/10.52825/scp.v2i&lt;/a>&lt;/p>
-&lt;h1 id="sessions-and-presentations">Sessions and Presentations&lt;/h1>
-&lt;ul>
-&lt;li>Tutorial • &lt;a href="https://youtu.be/tlshWdzFWpY">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a> • &lt;a href="http://sumo.dlr.de/daily/sumo2021_tutorial.zip">&lt;i class="far fa-file-archive">&lt;/i> Tutorial files&lt;/a>&lt;/li>
-&lt;li>Ask us anything • &lt;a href="../documents/2021/chat_QA.txt">&lt;i class="far fa-file-alt">&lt;/i> Q&amp;amp;A Transcript&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Keynote:&lt;/strong> Ride-hailing and ride-pooling: State of the art, future research directions, and the role of traffic simulation - &lt;em>Klaus Bogenberger&lt;/em> • &lt;a href="https://youtu.be/kQT_mhexuYw">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;p>&lt;strong>Session 1: V2X&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Cooperative traffic light control - considering cyclists with the aid of V2I - &lt;em>Maik Halbach and Kim Jannik Eggers&lt;/em> • &lt;a href="https://youtu.be/8aC-rL04W68">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a>&lt;/li>
-&lt;li>A Study of Applying Eco-Driving Speed Advisory System on Transit Signal Priority - &lt;em>Hsuan Chih Wang&lt;/em> • &lt;a href="https://youtu.be/JInBlui6-N0">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a> - &lt;a href="https://www.tib-op.org/ojs/index.php/scp/article/view/92">&lt;i class="far fa-file-pdf">&lt;/i> Paper&lt;/a>&lt;/li>
-&lt;li>Modeling Cellular Network Infrastructure in SUMO - &lt;em>Anupama Hegde, Ringo Stahl, Silas Lobo and Andreas Festag&lt;/em> • &lt;a href="https://youtu.be/71R6HURyedc">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a> - &lt;a href="https://www.tib-op.org/ojs/index.php/scp/article/view/97">&lt;i class="far fa-file-pdf">&lt;/i> Paper&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;p>&lt;strong>Session 2: Tools&lt;/strong>&lt;/p></description></item><item><title>SUMO User Conference 2022</title><link>https://eclipse.dev/sumo/2022/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2022/</guid><description>&lt;h1 id="proceedings">Proceedings&lt;/h1>
-&lt;p>Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/8">https://www.tib-op.org/ojs/index.php/scp/issue/view/8&lt;/a>&lt;br>
-DOI: &lt;a href="https://doi.org/10.52825/scp.v3i">https://doi.org/10.52825/scp.v3i&lt;/a>&lt;/p>
-&lt;h1 id="sessions-and-presentations">Sessions and Presentations&lt;/h1>
-&lt;ul>
-&lt;li>Tutorial • &lt;a href="https://youtu.be/urKtJj87X5M">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a> • &lt;a href="http://sumo.dlr.de/daily/sumo2022_tutorial.zip">&lt;i class="far fa-file-archive">&lt;/i> Tutorial files&lt;/a>&lt;/li>
-&lt;li>Ask us anything • &lt;a href="../documents/2022/chat_QA.txt">&lt;i class="far fa-file-alt">&lt;/i> Q&amp;amp;A Transcript&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Keynote:&lt;/strong> Simulating and modelling traffic: What are we trying to achieve? - &lt;em>Heather Kaths&lt;/em> • &lt;a href="https://youtu.be/HBvuTjUy_kY">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a>&lt;/li>
-&lt;li>TAPAS Workshop - &lt;em>Matthias Heinrichs&lt;/em> • &lt;a href="https://youtu.be/twLLWBKRlbg">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;p>&lt;strong>Session 1: Traffic lights&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Extension and Validation of NEMA-Style Dual-Ring Controller in SUMO - &lt;em>Max Schrader, Qichao Wang and Joshua Bittle&lt;/em> • &lt;a href="https://youtu.be/MzsVO5Q3sP4">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a>&lt;/li>
-&lt;li>A Comparison of Reinforcement Learning Agents Applied to Traffic Signal Optimisation - &lt;em>Cobus Louw, Louwrens Labuschange and Tiffany Woodley&lt;/em> • &lt;a href="https://youtu.be/WCAsaNf_Z_Q">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a>&lt;/li>
-&lt;li>High fidelity modelling of traffic light control with xml logic representation - &lt;em>Maik Halbach and Jakob Erdmann&lt;/em> • &lt;a href="https://youtu.be/RvwSXXDwrZI">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a>&lt;/li>
-&lt;li>Evaluating traffic performance of transit signal priority using SUMO simulation: A real-world case - &lt;em>Chun-Cheng Liang, Hsuan-Chih Wang, Wei-Hsun Lee and Ming-Te Wang&lt;/em> • &lt;a href="https://youtu.be/orrKpgA8jCw">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;p>&lt;strong>Session 2: Other modes of transportation&lt;/strong>&lt;/p></description></item><item><title>SUMO User Conference 2023</title><link>https://eclipse.dev/sumo/2023/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2023/</guid><description>&lt;h1 id="proceedings">Proceedings&lt;/h1>
-&lt;p>Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/11">https://www.tib-op.org/ojs/index.php/scp/issue/view/11&lt;/a> &lt;br>
-DOI: &lt;a href="https://doi.org/10.52825/scp.v4i">https://doi.org/10.52825/scp.v4i&lt;/a>&lt;/p>
-&lt;h1 id="sessions-and-presentations">Sessions and Presentations&lt;/h1>
-&lt;ul>
-&lt;li>Tutorial • &lt;a href="https://youtu.be/3J5KqOPT2qI">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a> • &lt;a href="http://sumo.dlr.de/daily/sumo2023_tutorial.zip">&lt;i class="far fa-file-archive">&lt;/i> Tutorial files&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Keynote:&lt;/strong> e-bike-city: An answer to our transport dead-end? - &lt;em>Prof. Dr. Kay W. Axhausen&lt;/em> • &lt;a href="https://youtu.be/V8eXTufrSnA">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;p>&lt;strong>Session 1&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Generating and Calibrating a Microscopic Traffic Flow Simulation Network of Kyoto&lt;br>
-Andreas Keler &lt;i>&lt;small>(Technical University of Munich)&lt;/small>&lt;/i>, Wenzhe Sun &lt;i>&lt;small>(Kyoto University)&lt;/small>&lt;/i> and Jan-Dirk Schmöcker &lt;i>&lt;small>(Kyoto University)&lt;/small>&lt;/i>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Simulation-based origin-destination matrix reduction: a case study of Helsinki city area&lt;br>
-Klavdiia Bochenina, Anton Taleiko and Laura Ruotsalainen &lt;i>&lt;small>(all: University of Helsinki)&lt;/small>&lt;/i> • &lt;a href="https://youtu.be/bi6XqpasWao">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/a>&lt;/p></description></item><item><title>SUMO User Conference 2024</title><link>https://eclipse.dev/sumo/2024/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2024/</guid><description>&lt;h1 id="proceedings">Proceedings&lt;/h1>
-&lt;p>Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/29">https://www.tib-op.org/ojs/index.php/scp/issue/view/29&lt;/a> &lt;br>
-DOI: &lt;a href="https://doi.org/10.52825/scp.v5i">https://doi.org/10.52825/scp.v5i&lt;/a>&lt;/p>
-&lt;h1 id="sessions-and-presentations">Sessions and Presentations&lt;/h1>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>Tutorial&lt;/strong>
-&lt;br>
-&lt;a target="_blank" href="http://sumo.dlr.de/daily/sumo2024_tutorial.zip">&lt;span class="badge badge-secondary">&lt;i class="far fa-file-archive">&lt;/i> Tutorial files&lt;/span>&lt;/a> &lt;a target="_blank" href="https://youtu.be/9WCGxJDdY9s">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a> &lt;a target="_blank" href="https://sumo.dlr.de/docs/Tutorials/2024.html#transcription">&lt;span class="badge badge-info">&lt;i class="fa-solid fa-font">&lt;/i> Transcription&lt;/span>&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Keynote:&lt;/strong> Seeing is believing – Simulation and other Transportation Research at the Alabama Transportation Institute - &lt;em>Dr. Steven Jones&lt;/em>
-&lt;br>
-&lt;a target="_blank" href="https://youtu.be/BlzubVvQTz4">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;p>&lt;strong>Session 1&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>&lt;b>Simulating Traffic Networks: Driving SUMO towards digital twins&lt;/b>&lt;br>
-Axel Schaffland, Jonas Nelson and Julius Schöning &lt;i>&lt;small>(all: Hochschule Osnabrück)&lt;/small>&lt;/i>
-&lt;br>
-&lt;a target="_blank" href="https://sumo.dlr.de/pdf/2024/slides1-1.pdf">&lt;span class="badge badge-secondary">&lt;i class="fa-solid fa-file">&lt;/i> Slides&lt;/span>&lt;/a> &lt;a target="_blank" href="https://youtu.be/wZRyxqmnlHE">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a>
-&lt;br>&lt;br>&lt;/li>
-&lt;li>&lt;b>Leveraging SUMO for Real-World Traffic Optimization: A Comprehensive Approach&lt;/b>&lt;br>
-Alon Bublil and Olga Dobrilko &lt;i>&lt;small>(all: NoTraffic)&lt;/small>&lt;/i>
-&lt;br>
-&lt;a target="_blank" href="https://sumo.dlr.de/pdf/2024/slides1-2.pdf">&lt;span class="badge badge-secondary">&lt;i class="fa-solid fa-file">&lt;/i> Slides&lt;/span>&lt;/a> &lt;a target="_blank" href="https://youtu.be/9O5nh5xYGwc">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a>
-&lt;br>&lt;br>&lt;/li>
-&lt;li>&lt;b>Calibration of Microscopic Traffic Simulation in an Urban Environment Using GPS-Data&lt;/b>&lt;br>
-Christopher Stang and Klaus Bogenberger &lt;i>&lt;small>(all: Technical University of Munich)&lt;/small>&lt;/i>
-&lt;br>
-&lt;a target="_blank" href="https://sumo.dlr.de/pdf/2024/slides1-3.pdf">&lt;span class="badge badge-secondary">&lt;i class="fa-solid fa-file">&lt;/i> Slides&lt;/span>&lt;/a> &lt;a target="_blank" href="https://youtu.be/1BN2qVRKfsM">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;p>&lt;strong>Session 2&lt;/strong>&lt;/p></description></item><item><title>SUMO User Conference 2025</title><link>https://eclipse.dev/sumo/2025/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2025/</guid><description>&lt;h1 id="proceedings">Proceedings&lt;/h1>
-&lt;p>Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/182">https://www.tib-op.org/ojs/index.php/scp/issue/view/182&lt;/a> &lt;br>
-DOI: &lt;a href="https://doi.org/10.52825/scp.v6i">https://doi.org/10.52825/scp.v6i&lt;/a>&lt;/p>
-&lt;h1 id="sessions-and-presentations">Sessions and Presentations&lt;/h1>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>Tutorial&lt;/strong>
-&lt;br>
-&lt;a target="_blank" href="http://sumo.dlr.de/daily/sumo2025_tutorial.zip">&lt;span class="badge badge-secondary">&lt;i class="far fa-file-archive">&lt;/i> Tutorial files&lt;/span>&lt;/a> &lt;a target="_blank" href="https://www.youtube.com/watch?v=ccc2mnGX_Mg">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a> &lt;a target="_blank" href="https://sumo.dlr.de/docs/Tutorials/2025.html#transcription">&lt;span class="badge badge-info">&lt;i class="fa-solid fa-font">&lt;/i> Transcription&lt;/span>&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Keynote:&lt;/strong> Movement and waiting of crowds – state of the art models and data - &lt;em>Prof. Dr. Armin Seyfried&lt;/em>
-&lt;br>
-&lt;a target="_blank" href="https://www.youtube.com/watch?v=HQVxg43URQ0">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;p>&lt;strong>Session 1&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>&lt;b>Overcoming Data Scarcity in Calibrating SUMO Scenarios with Evolutionary Algorithms&lt;/b>&lt;br>
-Jakob Kappenberger and Heiner Stuckenschmidt &lt;i>&lt;small>(all: Uni Mannheim)&lt;/small>&lt;/i>
-&lt;br>
-&lt;a target="_blank" href="https://www.youtube.com/watch?v=axQS71RSHIc">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a>
-&lt;br>&lt;br>&lt;/li>
-&lt;li>&lt;b>Spatio-Temporal AI Modeling for Urban Traffic Calibration: A SUMO-Based Approach&lt;/b>&lt;br>
-Pablo Manglano-Redondo, Alvaro Paricio-Garcia and Miguel A. Lopez-Carmona &lt;i>&lt;small>(all: Universidad de Alcalá)&lt;/small>&lt;/i>
-&lt;br>
-&lt;a target="_blank" href="https://www.youtube.com/watch?v=nhkE7GkGLxo">&lt;span class="badge badge-danger">&lt;i class="fab fa-youtube">&lt;/i> Video&lt;/span>&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;p>&lt;strong>Session 2&lt;/strong>&lt;/p></description></item><item><title>SUMO User Conference 2025</title><link>https://eclipse.dev/sumo/conference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/conference/</guid><description>&lt;!-- The SUMO User Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
+&lt;br&gt;
+Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/"&gt;Eclipse Archive&lt;/a&gt;, &lt;a href="https://www.mail-archive.com/sumo-dev@eclipse.org/"&gt;Mail Archive&lt;/a&gt;, &lt;a href="https://sourceforge.net/p/sumo/mailman/sumo-devel/"&gt;SF Archive&lt;/a&gt;
+&lt;/i&gt;&lt;/small&gt;
+&lt;div class="d-block d-sm-none" style="margin-top:20px;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;p&gt;To &lt;strong&gt;unsubscribe&lt;/strong&gt; visit the same link(s) as given above for subscription.&lt;/p&gt;</description></item><item><title>Previous SUMO User Conferences</title><link>https://eclipse.dev/sumo/archive/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/archive/</guid><description>&lt;div class="container"&gt;&lt;div class="row"&gt;&lt;div class="col-md-12 contact-div"&gt;
+&lt;p&gt;The SUMO User Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.&lt;/p&gt;
+&lt;p&gt;The conference is a great place to learn about new features, network with fellow enthusiasts, ask the developers, have fruitful discussions, exchange ideas and even start collaborations!&lt;/p&gt;</description></item><item><title>SUMO Conference Proceedings</title><link>https://eclipse.dev/sumo/proceedings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/proceedings/</guid><description>&lt;p&gt;Read more information about the SUMO Conference Proceedings (SCP) Series &lt;a href="https://www.tib-op.org/ojs/index.php/scp/about"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id="proceedings"&gt;Proceedings&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id="current-volume"&gt;Current Volume&lt;/h2&gt;
+&lt;div class="alert alert-secondary" role="alert"&gt;
+&lt;div class="d-flex row align-items-center"&gt;
+ &lt;div class="col-lg-8 mb-4 mb-lg-0"&gt;
+ &lt;p&gt;&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/182"&gt;&lt;strong&gt;Vol. 6 (2025): SUMO User Conference 2025&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+ &lt;strong&gt;DOI:&lt;/strong&gt; &lt;a href="https://doi.org/10.52825/scp.v6i"&gt;https://doi.org/10.52825/scp.v6i&lt;/a&gt;
+ &lt;br&gt;
+ &lt;strong&gt;Published:&lt;/strong&gt; July 15, 2025
+ &lt;/div&gt;
+ &lt;div class="col-lg-4"&gt;
+ &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/182"&gt;
+ &lt;img src="../images/cover_2025.png" style="max-width:150px;" alt="Conference artwork" class="img-responsive cover-image"/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="past-volumes--proceedings"&gt;Past Volumes / Proceedings&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/29"&gt;&lt;strong&gt;Vol. 5 (2024): SUMO User Conference 2024&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;DOI&lt;/strong&gt;: &lt;a href="https://doi.org/10.52825/scp.v5i"&gt;https://doi.org/10.52825/scp.v5i&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Published&lt;/strong&gt;: July 17, 2024&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/11"&gt;&lt;strong&gt;Vol. 4 (2023): SUMO User Conference 2023&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;DOI&lt;/strong&gt;: &lt;a href="https://doi.org/10.52825/scp.v4i"&gt;https://doi.org/10.52825/scp.v4i&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Published&lt;/strong&gt;: June 29, 2023&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/8"&gt;&lt;strong&gt;Vol. 3 (2022): SUMO User Conference 2022&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;DOI&lt;/strong&gt;: &lt;a href="https://doi.org/10.52825/scp.v3i"&gt;https://doi.org/10.52825/scp.v3i&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Published&lt;/strong&gt;: September 29, 2022&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/5"&gt;&lt;strong&gt;Vol. 2 (2021): SUMO User Conference 2021&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</description></item><item><title>SUMO User Conference 2013</title><link>https://eclipse.dev/sumo/2013/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2013/</guid><description>&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;The first SUMO User Conference &amp;ldquo;SUMO2013&amp;rdquo; was attended by 30 participants from throughout Europe which presented three days of simulation results but also technical enhancements and new usage scenarios of the open source microscopic traffic simulation. The highlights were two keynote speakers, Christoph Sommer (Universitaet Innsbruck) and Kai Nagel (TU Berlin), which talked about the current developments in the simulation of vehicle communication, one of the main applications of SUMO, as well as experience with the development of MatSim. The program was rounded off by numerous discussions on the edge and a panel discussion, which will promote further exchanges among other simulation scenarios.&lt;/p&gt;</description></item><item><title>SUMO User Conference 2014</title><link>https://eclipse.dev/sumo/2014/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2014/</guid><description>&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;The SUMO2014 Conference was attended by over 50 participants from throughout Europe and America which presented two days of simulation results but also technical enhancements and new usage scenarios of the open source microscopic traffic simulation (&lt;a href="https://elib.dlr.de/97717/1/Proceeding_SUMO2014_15%2B16May2014_Berlin-Adlershof.pdf"&gt;Here&lt;/a&gt; you can find the conference proceedings).
+A highlight was the keynote speaker Mario Krumnow (Technical University Dresden), who talked about &amp;ldquo;Modeling Mobility with Open Data&amp;rdquo; (here you can find his &lt;a href="../documents/2014/Presentation_Keynote_Open%20data%202014_MarioKrumnow.pdf"&gt;presentation&lt;/a&gt; and &lt;a href="../documents/2014/Krumnow-Simulation.zip"&gt;simulation&lt;/a&gt;).
+The program was rounded off by numerous discussions on the edge and a panel discussion, which will promote further exchanges among other simulation scenarios.&lt;/p&gt;</description></item><item><title>SUMO User Conference 2015</title><link>https://eclipse.dev/sumo/2015/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2015/</guid><description>&lt;div class="btn-group" style="margin-bottom:40px;"&gt;
+ &lt;a href="https://elib.dlr.de/97714/1/SUMO2015_Proceeding.pdf" class="btn btn-info btn-sm btn-padding"&gt;&lt;i class="fas fa-file-download"&gt;&lt;/i&gt; SUMO 2015 Proceedings (17.07 MB)&lt;/a&gt;
+ &lt;a href="../documents/2015/SUMO2015.pdf" class="btn btn-info btn-sm btn-padding"&gt;&lt;i class="fas fa-file-download"&gt;&lt;/i&gt; SUMO 2015 Flyer (1.42 MB)&lt;/a&gt;
+&lt;/div&gt;
+&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;The SUMO2015 Conference was attended by over 40 participants from throughout Europe and America which presented two days of simulation results but also technical enhancements and new usage scenarios of the open source microscopic traffic simulation (Here you can find the conference proceedings). A highlight were the keynote speakers Fritz Busch (Technische Universität München) and Hans van Lint (Delft University of Technology). The program was rounded off by numerous discussions on the edge and the SUMO Café, which will promote further exchanges among other simulation scenarios.&lt;/p&gt;</description></item><item><title>SUMO User Conference 2016</title><link>https://eclipse.dev/sumo/2016/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2016/</guid><description>&lt;div class="btn-group" style="margin-bottom:40px;"&gt;
+ &lt;a href="https://elib.dlr.de/106342/1/SUMOconference_proceedings_2016.pdf" class="btn btn-info btn-sm btn-padding"&gt;&lt;i class="fas fa-file-download"&gt;&lt;/i&gt; SUMO 2016 Proceedings (23.48 MB)&lt;/a&gt;
+ &lt;a href="../documents/2016/SUMO2016_program.pdf" class="btn btn-info btn-sm btn-padding"&gt;&lt;i class="fas fa-file-download"&gt;&lt;/i&gt; SUMO 2016 Program (0.77 MB)&lt;/a&gt;
+&lt;/div&gt;
+&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;This year, the SUMO User Conference focused on traffic, mobility and logistics. It was attended by almost 50 international participants from industry and academia. In addition to the excellent keynote given by Prof. Dr. Björn Scheuermann (Humboldt-Universität Berlin), the conference program allowed for intensive discussions on recent research advancements and developments in SUMO. A highlight was the poster session with a PARCOURS demo in which the attendants were able experience a live 3D traffic simulator with VR googles. The program was rounded off by a tutorial, numerous discussions on the edge and the SUMO Café, which will promote further exchanges among the SUMO user community.&lt;/p&gt;</description></item><item><title>SUMO User Conference 2017</title><link>https://eclipse.dev/sumo/2017/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2017/</guid><description>&lt;div class="btn-group" style="margin-bottom:40px;"&gt;
+ &lt;a href="https://elib.dlr.de/118438/1/SUMO_proceedings_online.pdf" class="btn btn-info btn-sm btn-padding"&gt;&lt;i class="fas fa-file-download"&gt;&lt;/i&gt; SUMO 2017 Proceedings (21.07 MB)&lt;/a&gt;
+ &lt;a href="../documents/2017/flyer_sumo_2017.pdf" class="btn btn-info btn-sm btn-padding"&gt;&lt;i class="fas fa-file-download"&gt;&lt;/i&gt; SUMO 2017 Flyer (5.06 MB)&lt;/a&gt;
+&lt;/div&gt;
+&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;This year, the SUMO User Conference focused on traffic simulation and simulator coupling for autonomous mobility. It was attended by more than 70 international participants from industry and academia. In addition to the joint keynote given by Johan Magnusson and Christer Lindström from 4Dialog AB, the conference program allowed for intensive discussions on recent research advancements and developments in SUMO. A highlight was the poster session with live demos of traffic simulators from rfPro and TESIS DYNAware both of which used SUMO internally. The program was rounded off by a tutorial, numerous interesting and engaging discussions on the side and the SUMO Café, which facilitated an exchange of experiences among the SUMO community.&lt;/p&gt;</description></item><item><title>SUMO User Conference 2018</title><link>https://eclipse.dev/sumo/2018/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2018/</guid><description>&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Traffic simulations are of immense importance for researchers as well as practitioners in the field of transportation. SUMO has been available since 2001 and provides a wide range of traffic planning and simulation applications. SUMO consists of a suite of tools covering road network imports and enrichment, demand generation and assignment and a state-of-the-art microscopic traffic simulation capable to simulate private and public transport modes, as well as person-based trip chains. Being open source, SUMO is ready to implement new behavioral models or to control the simulation remotely using various programming environments. These and other features make SUMO one of the most often used open source traffic simulations with a large and international user community.&lt;/p&gt;</description></item><item><title>SUMO User Conference 2019</title><link>https://eclipse.dev/sumo/2019/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2019/</guid><description>&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Traffic simulations are of immense importance for researchers as well as practitioners in the field of transportation. Eclipse SUMO provides a wide range of traffic planning and simulation applications. Eclipse SUMO is a toolsuite covering road network imports and enrichment, demand generation and assignment and a state-of-the-art microscopic traffic simulation capable to simulate private and public transport modes, as well as person-based trip chains. Being open source, Eclipse SUMO is ready to implement new behavioral models or to control the simulation remotely using various programming environments. These and other features make Eclipse SUMO one of the most often used open source traffic simulations with a large and international user community.&lt;/p&gt;</description></item><item><title>SUMO User Conference 2020</title><link>https://eclipse.dev/sumo/2020/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2020/</guid><description>&lt;h1 id="proceedings"&gt;Proceedings&lt;/h1&gt;
+&lt;p&gt;Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/4"&gt;https://www.tib-op.org/ojs/index.php/scp/issue/view/4&lt;/a&gt;&lt;br&gt;
+DOI: &lt;a href="https://doi.org/10.52825/scp.v1i"&gt;https://doi.org/10.52825/scp.v1i&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="sessions-and-presentations"&gt;Sessions and Presentations&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Tutorial • &lt;a href="https://youtu.be/aiOQbaB-pWo"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt; • &lt;a href="http://sumo.dlr.de/daily/sumo2020_tutorial.zip"&gt;&lt;i class="far fa-file-archive"&gt;&lt;/i&gt; Tutorial files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Ask us anything • &lt;a href="../documents/2020/chat_QA.txt"&gt;&lt;i class="far fa-file-alt"&gt;&lt;/i&gt; Q&amp;amp;A Transcript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Keynote:&lt;/strong&gt; Emerging mobility trends and the role of transport simulation models - &lt;em&gt;Jordi Casas&lt;/em&gt; • &lt;a href="https://www.youtube.com/watch?v=vJe-2T73UOg"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Eclipse Session&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Eclipse Foundation • &lt;a href="../documents/2020/EclipseFoundation-GaelBlondelle.pdf"&gt;&lt;i class="far fa-file-pdf"&gt;&lt;/i&gt; Slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;openADx Working Group • &lt;a href="../documents/2020/openADx-AndreasRiexinger.pdf"&gt;&lt;i class="far fa-file-pdf"&gt;&lt;/i&gt; Slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Eclipse ADORe • &lt;a href="../documents/2020/EclipseADORe-DanielHess.pdf"&gt;&lt;i class="far fa-file-pdf"&gt;&lt;/i&gt; Slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;openMobility Working Group • &lt;a href="../documents/2020/openMobility-RobertHilbrich.pdf"&gt;&lt;i class="far fa-file-pdf"&gt;&lt;/i&gt; Slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Eclipse MOSAIC • &lt;a href="../documents/2020/EclipseMOSAIC-RobertProtzmann.pdf"&gt;&lt;i class="far fa-file-pdf"&gt;&lt;/i&gt; Slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Session 1: Autonomous Vehicles&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>SUMO User Conference 2021</title><link>https://eclipse.dev/sumo/2021/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2021/</guid><description>&lt;h1 id="proceedings"&gt;Proceedings&lt;/h1&gt;
+&lt;p&gt;Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/5"&gt;https://www.tib-op.org/ojs/index.php/scp/issue/view/5&lt;/a&gt;&lt;br&gt;
+DOI: &lt;a href="https://doi.org/10.52825/scp.v2i"&gt;https://doi.org/10.52825/scp.v2i&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="sessions-and-presentations"&gt;Sessions and Presentations&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Tutorial • &lt;a href="https://youtu.be/tlshWdzFWpY"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt; • &lt;a href="http://sumo.dlr.de/daily/sumo2021_tutorial.zip"&gt;&lt;i class="far fa-file-archive"&gt;&lt;/i&gt; Tutorial files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Ask us anything • &lt;a href="../documents/2021/chat_QA.txt"&gt;&lt;i class="far fa-file-alt"&gt;&lt;/i&gt; Q&amp;amp;A Transcript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Keynote:&lt;/strong&gt; Ride-hailing and ride-pooling: State of the art, future research directions, and the role of traffic simulation - &lt;em&gt;Klaus Bogenberger&lt;/em&gt; • &lt;a href="https://youtu.be/kQT_mhexuYw"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Session 1: V2X&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cooperative traffic light control - considering cyclists with the aid of V2I - &lt;em&gt;Maik Halbach and Kim Jannik Eggers&lt;/em&gt; • &lt;a href="https://youtu.be/8aC-rL04W68"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A Study of Applying Eco-Driving Speed Advisory System on Transit Signal Priority - &lt;em&gt;Hsuan Chih Wang&lt;/em&gt; • &lt;a href="https://youtu.be/JInBlui6-N0"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt; - &lt;a href="https://www.tib-op.org/ojs/index.php/scp/article/view/92"&gt;&lt;i class="far fa-file-pdf"&gt;&lt;/i&gt; Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Modeling Cellular Network Infrastructure in SUMO - &lt;em&gt;Anupama Hegde, Ringo Stahl, Silas Lobo and Andreas Festag&lt;/em&gt; • &lt;a href="https://youtu.be/71R6HURyedc"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt; - &lt;a href="https://www.tib-op.org/ojs/index.php/scp/article/view/97"&gt;&lt;i class="far fa-file-pdf"&gt;&lt;/i&gt; Paper&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Session 2: Tools&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>SUMO User Conference 2022</title><link>https://eclipse.dev/sumo/2022/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2022/</guid><description>&lt;h1 id="proceedings"&gt;Proceedings&lt;/h1&gt;
+&lt;p&gt;Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/8"&gt;https://www.tib-op.org/ojs/index.php/scp/issue/view/8&lt;/a&gt;&lt;br&gt;
+DOI: &lt;a href="https://doi.org/10.52825/scp.v3i"&gt;https://doi.org/10.52825/scp.v3i&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="sessions-and-presentations"&gt;Sessions and Presentations&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Tutorial • &lt;a href="https://youtu.be/urKtJj87X5M"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt; • &lt;a href="http://sumo.dlr.de/daily/sumo2022_tutorial.zip"&gt;&lt;i class="far fa-file-archive"&gt;&lt;/i&gt; Tutorial files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Ask us anything • &lt;a href="../documents/2022/chat_QA.txt"&gt;&lt;i class="far fa-file-alt"&gt;&lt;/i&gt; Q&amp;amp;A Transcript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Keynote:&lt;/strong&gt; Simulating and modelling traffic: What are we trying to achieve? - &lt;em&gt;Heather Kaths&lt;/em&gt; • &lt;a href="https://youtu.be/HBvuTjUy_kY"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;TAPAS Workshop - &lt;em&gt;Matthias Heinrichs&lt;/em&gt; • &lt;a href="https://youtu.be/twLLWBKRlbg"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Session 1: Traffic lights&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Extension and Validation of NEMA-Style Dual-Ring Controller in SUMO - &lt;em&gt;Max Schrader, Qichao Wang and Joshua Bittle&lt;/em&gt; • &lt;a href="https://youtu.be/MzsVO5Q3sP4"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A Comparison of Reinforcement Learning Agents Applied to Traffic Signal Optimisation - &lt;em&gt;Cobus Louw, Louwrens Labuschange and Tiffany Woodley&lt;/em&gt; • &lt;a href="https://youtu.be/WCAsaNf_Z_Q"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;High fidelity modelling of traffic light control with xml logic representation - &lt;em&gt;Maik Halbach and Jakob Erdmann&lt;/em&gt; • &lt;a href="https://youtu.be/RvwSXXDwrZI"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Evaluating traffic performance of transit signal priority using SUMO simulation: A real-world case - &lt;em&gt;Chun-Cheng Liang, Hsuan-Chih Wang, Wei-Hsun Lee and Ming-Te Wang&lt;/em&gt; • &lt;a href="https://youtu.be/orrKpgA8jCw"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Session 2: Other modes of transportation&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>SUMO User Conference 2023</title><link>https://eclipse.dev/sumo/2023/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2023/</guid><description>&lt;h1 id="proceedings"&gt;Proceedings&lt;/h1&gt;
+&lt;p&gt;Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/11"&gt;https://www.tib-op.org/ojs/index.php/scp/issue/view/11&lt;/a&gt; &lt;br&gt;
+DOI: &lt;a href="https://doi.org/10.52825/scp.v4i"&gt;https://doi.org/10.52825/scp.v4i&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="sessions-and-presentations"&gt;Sessions and Presentations&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Tutorial • &lt;a href="https://youtu.be/3J5KqOPT2qI"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt; • &lt;a href="http://sumo.dlr.de/daily/sumo2023_tutorial.zip"&gt;&lt;i class="far fa-file-archive"&gt;&lt;/i&gt; Tutorial files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Keynote:&lt;/strong&gt; e-bike-city: An answer to our transport dead-end? - &lt;em&gt;Prof. Dr. Kay W. Axhausen&lt;/em&gt; • &lt;a href="https://youtu.be/V8eXTufrSnA"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Session 1&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Generating and Calibrating a Microscopic Traffic Flow Simulation Network of Kyoto&lt;br&gt;
+Andreas Keler &lt;i&gt;&lt;small&gt;(Technical University of Munich)&lt;/small&gt;&lt;/i&gt;, Wenzhe Sun &lt;i&gt;&lt;small&gt;(Kyoto University)&lt;/small&gt;&lt;/i&gt; and Jan-Dirk Schmöcker &lt;i&gt;&lt;small&gt;(Kyoto University)&lt;/small&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Simulation-based origin-destination matrix reduction: a case study of Helsinki city area&lt;br&gt;
+Klavdiia Bochenina, Anton Taleiko and Laura Ruotsalainen &lt;i&gt;&lt;small&gt;(all: University of Helsinki)&lt;/small&gt;&lt;/i&gt; • &lt;a href="https://youtu.be/bi6XqpasWao"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/a&gt;&lt;/p&gt;</description></item><item><title>SUMO User Conference 2024</title><link>https://eclipse.dev/sumo/2024/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2024/</guid><description>&lt;h1 id="proceedings"&gt;Proceedings&lt;/h1&gt;
+&lt;p&gt;Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/29"&gt;https://www.tib-op.org/ojs/index.php/scp/issue/view/29&lt;/a&gt; &lt;br&gt;
+DOI: &lt;a href="https://doi.org/10.52825/scp.v5i"&gt;https://doi.org/10.52825/scp.v5i&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="sessions-and-presentations"&gt;Sessions and Presentations&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Tutorial&lt;/strong&gt;
+&lt;br&gt;
+&lt;a target="_blank" href="http://sumo.dlr.de/daily/sumo2024_tutorial.zip"&gt;&lt;span class="badge badge-secondary"&gt;&lt;i class="far fa-file-archive"&gt;&lt;/i&gt; Tutorial files&lt;/span&gt;&lt;/a&gt; &lt;a target="_blank" href="https://youtu.be/9WCGxJDdY9s"&gt;&lt;span class="badge badge-danger"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/span&gt;&lt;/a&gt; &lt;a target="_blank" href="https://sumo.dlr.de/docs/Tutorials/2024.html#transcription"&gt;&lt;span class="badge badge-info"&gt;&lt;i class="fa-solid fa-font"&gt;&lt;/i&gt; Transcription&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Keynote:&lt;/strong&gt; Seeing is believing – Simulation and other Transportation Research at the Alabama Transportation Institute - &lt;em&gt;Dr. Steven Jones&lt;/em&gt;
+&lt;br&gt;
+&lt;a target="_blank" href="https://youtu.be/BlzubVvQTz4"&gt;&lt;span class="badge badge-danger"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Session 1&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Simulating Traffic Networks: Driving SUMO towards digital twins&lt;/b&gt;&lt;br&gt;
+Axel Schaffland, Jonas Nelson and Julius Schöning &lt;i&gt;&lt;small&gt;(all: Hochschule Osnabrück)&lt;/small&gt;&lt;/i&gt;
+&lt;br&gt;
+&lt;a target="_blank" href="https://sumo.dlr.de/pdf/2024/slides1-1.pdf"&gt;&lt;span class="badge badge-secondary"&gt;&lt;i class="fa-solid fa-file"&gt;&lt;/i&gt; Slides&lt;/span&gt;&lt;/a&gt; &lt;a target="_blank" href="https://youtu.be/wZRyxqmnlHE"&gt;&lt;span class="badge badge-danger"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/span&gt;&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Leveraging SUMO for Real-World Traffic Optimization: A Comprehensive Approach&lt;/b&gt;&lt;br&gt;
+Alon Bublil and Olga Dobrilko &lt;i&gt;&lt;small&gt;(all: NoTraffic)&lt;/small&gt;&lt;/i&gt;
+&lt;br&gt;
+&lt;a target="_blank" href="https://sumo.dlr.de/pdf/2024/slides1-2.pdf"&gt;&lt;span class="badge badge-secondary"&gt;&lt;i class="fa-solid fa-file"&gt;&lt;/i&gt; Slides&lt;/span&gt;&lt;/a&gt; &lt;a target="_blank" href="https://youtu.be/9O5nh5xYGwc"&gt;&lt;span class="badge badge-danger"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/span&gt;&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Calibration of Microscopic Traffic Simulation in an Urban Environment Using GPS-Data&lt;/b&gt;&lt;br&gt;
+Christopher Stang and Klaus Bogenberger &lt;i&gt;&lt;small&gt;(all: Technical University of Munich)&lt;/small&gt;&lt;/i&gt;
+&lt;br&gt;
+&lt;a target="_blank" href="https://sumo.dlr.de/pdf/2024/slides1-3.pdf"&gt;&lt;span class="badge badge-secondary"&gt;&lt;i class="fa-solid fa-file"&gt;&lt;/i&gt; Slides&lt;/span&gt;&lt;/a&gt; &lt;a target="_blank" href="https://youtu.be/1BN2qVRKfsM"&gt;&lt;span class="badge badge-danger"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Session 2&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>SUMO User Conference 2025</title><link>https://eclipse.dev/sumo/2025/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2025/</guid><description>&lt;h1 id="proceedings"&gt;Proceedings&lt;/h1&gt;
+&lt;p&gt;Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/182"&gt;https://www.tib-op.org/ojs/index.php/scp/issue/view/182&lt;/a&gt; &lt;br&gt;
+DOI: &lt;a href="https://doi.org/10.52825/scp.v6i"&gt;https://doi.org/10.52825/scp.v6i&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="sessions-and-presentations"&gt;Sessions and Presentations&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Tutorial&lt;/strong&gt;
+&lt;br&gt;
+&lt;a target="_blank" href="http://sumo.dlr.de/daily/sumo2025_tutorial.zip"&gt;&lt;span class="badge badge-secondary"&gt;&lt;i class="far fa-file-archive"&gt;&lt;/i&gt; Tutorial files&lt;/span&gt;&lt;/a&gt; &lt;a target="_blank" href="https://www.youtube.com/watch?v=ccc2mnGX_Mg"&gt;&lt;span class="badge badge-danger"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/span&gt;&lt;/a&gt; &lt;a target="_blank" href="https://sumo.dlr.de/docs/Tutorials/2025.html#transcription"&gt;&lt;span class="badge badge-info"&gt;&lt;i class="fa-solid fa-font"&gt;&lt;/i&gt; Transcription&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Keynote:&lt;/strong&gt; Movement and waiting of crowds – state of the art models and data - &lt;em&gt;Prof. Dr. Armin Seyfried&lt;/em&gt;
+&lt;br&gt;
+&lt;a target="_blank" href="https://www.youtube.com/watch?v=HQVxg43URQ0"&gt;&lt;span class="badge badge-danger"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Session 1&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Overcoming Data Scarcity in Calibrating SUMO Scenarios with Evolutionary Algorithms&lt;/b&gt;&lt;br&gt;
+Jakob Kappenberger and Heiner Stuckenschmidt &lt;i&gt;&lt;small&gt;(all: Uni Mannheim)&lt;/small&gt;&lt;/i&gt;
+&lt;br&gt;
+&lt;a target="_blank" href="https://www.youtube.com/watch?v=axQS71RSHIc"&gt;&lt;span class="badge badge-danger"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/span&gt;&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Spatio-Temporal AI Modeling for Urban Traffic Calibration: A SUMO-Based Approach&lt;/b&gt;&lt;br&gt;
+Pablo Manglano-Redondo, Alvaro Paricio-Garcia and Miguel A. Lopez-Carmona &lt;i&gt;&lt;small&gt;(all: Universidad de Alcalá)&lt;/small&gt;&lt;/i&gt;
+&lt;br&gt;
+&lt;a target="_blank" href="https://www.youtube.com/watch?v=nhkE7GkGLxo"&gt;&lt;span class="badge badge-danger"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Session 2&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>SUMO User Conference 2025</title><link>https://eclipse.dev/sumo/conference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/conference/</guid><description>&lt;!-- The SUMO User Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
 
-The conference is a great place to learn about new features, network with fellow enthusiasts, ask the developers, have fruitful discussions, exchange ideas and even start collaborations! -->
+The conference is a great place to learn about new features, network with fellow enthusiasts, ask the developers, have fruitful discussions, exchange ideas and even start collaborations! --&gt;
 &lt;!-- # FAQ
 
-&lt;details>
+&lt;details&gt;
 
- &lt;summary>Hello&lt;/summary>
+ &lt;summary&gt;Hello&lt;/summary&gt;
  World
-&lt;/details>
-&lt;details>
- &lt;summary>Foo&lt;/summary>
+&lt;/details&gt;
+&lt;details&gt;
+ &lt;summary&gt;Foo&lt;/summary&gt;
  Bar
-&lt;/details> -->
-&lt;h1 id="proceedings">Proceedings&lt;/h1>
-&lt;p>Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/182">https://www.tib-op.org/ojs/index.php/scp/issue/view/182&lt;/a> &lt;br>
-DOI: &lt;a href="https://doi.org/10.52825/scp.v6i">https://doi.org/10.52825/scp.v6i&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;/details&gt; --&gt;
+&lt;h1 id="proceedings"&gt;Proceedings&lt;/h1&gt;
+&lt;p&gt;Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/182"&gt;https://www.tib-op.org/ojs/index.php/scp/issue/view/182&lt;/a&gt; &lt;br&gt;
+DOI: &lt;a href="https://doi.org/10.52825/scp.v6i"&gt;https://doi.org/10.52825/scp.v6i&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
