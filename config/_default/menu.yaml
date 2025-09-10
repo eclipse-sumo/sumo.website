@@ -3,10 +3,10 @@ main:
       url: ""
       weight: 1
     - name: "Documentation"
-      url: "https://sumo.dlr.de/docs/"
+      url: "https://sumo.sourceforge.net/docs/"
       weight: 2
     - name: "Downloads"
-      url: "https://sumo.dlr.de/docs/Downloads.php"
+      url: "https://sumo.sourceforge.net/docs/Downloads.php"
       weight: 3
     - name: "Conference"
       url: ""
@@ -31,7 +31,7 @@ main:
       weight: 2
     - name: "ChangeLog"
       parent: "About"
-      url: "https://sumo.dlr.de/docs/ChangeLog.html"
+      url: "https://sumo.sourceforge.net/docs/ChangeLog.html"
       weight: 3
     - name: "Status of daily build and tests"
       parent: "About"
@@ -51,23 +51,23 @@ main:
       weight: 3
     - name: "Projects"
       parent: "References"
-      url: "https://sumo.dlr.de/docs/Other/Projects.html"
+      url: "https://sumo.sourceforge.net/docs/Other/Projects.html"
       weight: 1
     - name: "Publications"
       parent: "References"
-      url: "https://sumo.dlr.de/docs/Publications.html"
+      url: "https://sumo.sourceforge.net/docs/Publications.html"
       weight: 2
     - name: "Contributed extensions"
       parent: "References"
-      url: "https://sumo.dlr.de/docs/Contributed/index.html"
+      url: "https://sumo.sourceforge.net/docs/Contributed/index.html"
       weight: 3
     - name: "FAQ"
       parent: "Support"
-      url: "https://sumo.dlr.de/docs/FAQ.html"
+      url: "https://sumo.sourceforge.net/docs/FAQ.html"
       weight: 1
     - name: "Tutorials"
       parent: "Support"
-      url: "https://sumo.dlr.de/docs/Tutorials/index.html"
+      url: "https://sumo.sourceforge.net/docs/Tutorials/index.html"
       weight: 2
     - name: "Report a Bug / Issue"
       parent: "Support"
@@ -83,5 +83,5 @@ main:
       weight: 5
     - name: "Developer Documentation"
       parent: "Support"
-      url: "https://sumo.dlr.de/docs/Developer/index.html"
+      url: "https://sumo.sourceforge.net/docs/Developer/index.html"
       weight: 6

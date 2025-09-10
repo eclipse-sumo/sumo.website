@@ -74,22 +74,22 @@ The SUMO package contains the following applications:
     
 <div class="row text-center" id="components">
   <div class="col-md-3 margin-b">
-    <a href="https://sumo.dlr.de/docs/sumo.html" style="text-decoration:none !important;"><div class="application-box">
+    <a href="https://sumo.sourceforge.net/docs/sumo.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>sumo</h6><p class="text-muted">command line simulation</p>
     </div></a>
   </div>
   <div class="col-md-3 margin-b">
-    <a href="https://sumo.dlr.de/docs/sumo-gui.html" style="text-decoration:none !important;"><div class="application-box">
+    <a href="https://sumo.sourceforge.net/docs/sumo-gui.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>sumo-gui</h6><p class="text-muted">simulation with a graphical user interface</p>
     </div></a>
   </div>
   <div class="col-md-3 margin-b">
-    <a href="https://sumo.dlr.de/docs/netconvert.html" style="text-decoration:none !important;"><div class="application-box">
+    <a href="https://sumo.sourceforge.net/docs/netconvert.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>netconvert</h6><p class="text-muted">network importer</p>
     </div></a>
   </div>
   <div class="col-md-3 margin-b">
-    <a href="https://sumo.dlr.de/docs/Netedit/index.html" style="text-decoration:none !important;"><div class="application-box">
+    <a href="https://sumo.sourceforge.net/docs/Netedit/index.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>netedit</h6><p class="text-muted">visual editor for network elements</p>
     </div></a>
   </div>
@@ -97,22 +97,22 @@ The SUMO package contains the following applications:
 
 <div class="row text-center">
   <div class="col-md-3 margin-b">
-    <a href="https://sumo.dlr.de/docs/netgenerate.html" style="text-decoration:none !important;"><div class="application-box">
+    <a href="https://sumo.sourceforge.net/docs/netgenerate.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>netgenerate</h6><p class="text-muted">abstract networks generator</p>
     </div></a>
   </div>
   <div class="col-md-3 margin-b">
-    <a href="https://sumo.dlr.de/docs/od2trips.html" style="text-decoration:none !important;"><div class="application-box">
+    <a href="https://sumo.sourceforge.net/docs/od2trips.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>od2trips</h6><p class="text-muted">converter from O/D matrices to trips</p>
     </div></a>
   </div>
   <div class="col-md-3 margin-b">
-    <a href="https://sumo.dlr.de/docs/duarouter.html" style="text-decoration:none !important;"><div class="application-box">
+    <a href="https://sumo.sourceforge.net/docs/duarouter.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>duarouter</h6><p class="text-muted">routes generator based on a dynamic user assignment</p>
     </div></a>
   </div>
   <div class="col-md-3 margin-b">
-    <a href="https://sumo.dlr.de/docs/jtrrouter.html" style="text-decoration:none !important;"><div class="application-box">
+    <a href="https://sumo.sourceforge.net/docs/jtrrouter.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>jtrrouter</h6><p class="text-muted">routes generator based on turning ratios at intersections</p>
     </div></a>
   </div>
@@ -120,22 +120,22 @@ The SUMO package contains the following applications:
 
 <div class="row text-center">
   <div class="col-md-3 margin-b">
-    <a href="https://sumo.dlr.de/docs/dfrouter.html" style="text-decoration:none !important;"><div class="application-box">
+    <a href="https://sumo.sourceforge.net/docs/dfrouter.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>dfrouter</h6><p class="text-muted">route generator with use of detector data</p>
     </div></a>
   </div>
   <div class="col-md-3 margin-b">
-    <a href="https://sumo.dlr.de/docs/marouter.html" style="text-decoration:none !important;"><div class="application-box">
+    <a href="https://sumo.sourceforge.net/docs/marouter.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>marouter</h6><p class="text-muted">macroscopic user assignment based on capacity functions</p>
     </div></a>
   </div>
   <div class="col-md-3 margin-b">
-    <a href="https://sumo.dlr.de/docs/polyconvert.html" style="text-decoration:none !important;"><div class="application-box">
+    <a href="https://sumo.sourceforge.net/docs/polyconvert.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>polyconvert</h6><p class="text-muted">imports geometrical shapes and convert them to be visualized using sumo-gui</p>
     </div></a>
   </div>
   <div class="col-md-3 margin-b">
-    <a href="https://sumo.dlr.de/docs/activitygen.html" style="text-decoration:none !important;"><div class="application-box">
+    <a href="https://sumo.sourceforge.net/docs/activitygen.html" style="text-decoration:none !important;"><div class="application-box">
       <h6>activitygen</h6><p class="text-muted">compute mobility wishes based on population</p>
     </div></a>
   </div>
@@ -143,28 +143,28 @@ The SUMO package contains the following applications:
 
 <div class="row text-center">
   <div class="col-md-3 margin-b">
-    <a href="https://sumo.dlr.de/docs/Tools/Emissions.html#emissionsmap" style="text-decoration:none !important;"><div class="application-box">
+    <a href="https://sumo.sourceforge.net/docs/Tools/Emissions.html#emissionsmap" style="text-decoration:none !important;"><div class="application-box">
       <h6>emissionsMap</h6><p class="text-muted">emission map generator</p>
     </div></a>
   </div>
   <div class="col-md-3 margin-b">
-    <a href="https://sumo.dlr.de/docs/Tools/Emissions.html#emissionsdrivingcycle" style="text-decoration:none !important;"><div class="application-box">
+    <a href="https://sumo.sourceforge.net/docs/Tools/Emissions.html#emissionsdrivingcycle" style="text-decoration:none !important;"><div class="application-box">
       <h6>emissionsDrivingCycle</h6><p class="text-muted">calculates emission values based on a given driving cycle</p>
     </div></a>
   </div>
   <div class="col-md-3 margin-b">
-    <a href="https://sumo.dlr.de/docs/Tools/Import/OSM.html#osmwebwizardpy" style="text-decoration:none !important;"><div class="application-box">
+    <a href="https://sumo.sourceforge.net/docs/Tools/Import/OSM.html#osmwebwizardpy" style="text-decoration:none !important;"><div class="application-box">
       <h6>osmWebWizard</h6><p class="text-muted">generate a SUMO scenario with just a few clicks</p>
     </div></a>
   </div>
   <div class="col-md-3 margin-b">
-    <a href="https://sumo.dlr.de/docs/Tools/index.html" style="text-decoration:none !important;"><div class="application-box" style="background-color:#dedede !important;">
+    <a href="https://sumo.sourceforge.net/docs/Tools/index.html" style="text-decoration:none !important;"><div class="application-box" style="background-color:#dedede !important;">
       <br><h6>And many other Tools!</h6>
     </div></a>
   </div>
 </div>
 
-SUMO is [licensed](https://sumo.dlr.de/docs/Libraries_Licenses.html) under the [Eclipse Public License V2](https://www.eclipse.org/legal/epl-2.0/). "Eclipse SUMO" is a trademark of the [Eclipse Foundation](https://eclipse.org). If you use SUMO, please support its development by telling us about your projects, products and [publications](https://sumo.dlr.de/docs/Publications.html).
+SUMO is [licensed](https://sumo.sourceforge.net/docs/Libraries_Licenses.html) under the [Eclipse Public License V2](https://www.eclipse.org/legal/epl-2.0/). "Eclipse SUMO" is a trademark of the [Eclipse Foundation](https://eclipse.org). If you use SUMO, please support its development by telling us about your projects, products and [publications](https://sumo.sourceforge.net/docs/Publications.html).
 
 # Citing SUMO
 

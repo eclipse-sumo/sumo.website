@@ -14,13 +14,13 @@ Mailing lists</h4>
 <br>
 If you have any questions about SUMO, please post them into one of our mailing lists. You may need to <a href="https://accounts.eclipse.org/user/register">create an Eclipse account</a> first.
 <br>
-Before you post on a list, please check the <a href="https://sumo.dlr.de/docs/FAQ.html">FAQ</a> for already answered questions. 
+Before you post on a list, please check the <a href="https://sumo.sourceforge.net/docs/FAQ.html">FAQ</a> for already answered questions. 
 <br><br>
 
 <div class="row">
 <div class="col-sm-4">
 <a href="https://accounts.eclipse.org/mailing-list/sumo-user"><h5>sumo-user</h5></a>
-<small>This is the first place you should ask your questions. If you have a novel question, <a href="https://sumo.dlr.de/docs/FAQ.html#what_should_i_do_to_get_helpful_answers_on_the_mailing_list">here is some general advice before asking</a>. If you wish to report an error <a href="https://sumo.dlr.de/docs/FAQ.html#how_do_i_report_erroneous_behavior_of_a_sumo_application">please follow these suggestions</a>. Subscribe to this list for asking questions, reporting issues and getting information about what other people ask.
+<small>This is the first place you should ask your questions. If you have a novel question, <a href="https://sumo.sourceforge.net/docs/FAQ.html#what_should_i_do_to_get_helpful_answers_on_the_mailing_list">here is some general advice before asking</a>. If you wish to report an error <a href="https://sumo.sourceforge.net/docs/FAQ.html#how_do_i_report_erroneous_behavior_of_a_sumo_application">please follow these suggestions</a>. Subscribe to this list for asking questions, reporting issues and getting information about what other people ask.
 <hr>
 <i>Frequency: about 100 mails per month<br>
 Archive: <a href="https://dev.eclipse.org/mhonarc/lists/sumo-user/">Eclipse Archive</a>, <a href="https://www.mail-archive.com/sumo-user@eclipse.org/">Mail Archive</a>, <a href="https://sourceforge.net/p/sumo/mailman/sumo-user/">SF Archive</a></i></small>
