@@ -9,7 +9,7 @@
             {{- range $editions }}
                 <a class="dropdown-item" href="{{ .year | absURL }}">{{ .year }}</a>
             {{- end }}
-            <a class="dropdown-item" href="https://sumo.sourceforge.net/docs/SumoWorkshop2010.html">Workshop 2010</a>
+            <a class="dropdown-item" href="{{ $.Site.Params.docsURL }}/SumoWorkshop2010.html">Workshop 2010</a>
         </div>
     </div> 
 </div>

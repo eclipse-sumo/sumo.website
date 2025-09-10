@@ -39,7 +39,7 @@ DOI: https://doi.org/10.52825/scp.v6i
 # Sessions and Presentations
 - **Tutorial**
 <br>
-<a target="_blank" href="http://sumo.dlr.de/daily/sumo2025_tutorial.zip"><span class="badge badge-secondary"><i class="far fa-file-archive"></i> Tutorial files</span></a> <a target="_blank" href=""><span class="badge badge-danger"><i class="fab fa-youtube"></i> Video</span></a> <a target="_blank" href="https://sumo.sourceforge.net/docs/Tutorials/2025.html#transcription"><span class="badge badge-info"><i class="fa-solid fa-font"></i> Transcription</span></a>
+<a target="_blank" href="http://sumo.dlr.de/daily/sumo2025_tutorial.zip"><span class="badge badge-secondary"><i class="far fa-file-archive"></i> Tutorial files</span></a> <a target="_blank" href=""><span class="badge badge-danger"><i class="fab fa-youtube"></i> Video</span></a> <a target="_blank" href="{{< docsurl >}}/Tutorials/2025.html#transcription"><span class="badge badge-info"><i class="fa-solid fa-font"></i> Transcription</span></a>
 
 - **Keynote:** Movement and waiting of crowds – state of the art models and data - *Prof. Dr. Armin Seyfried*
 <br>
