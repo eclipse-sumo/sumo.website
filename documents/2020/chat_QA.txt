@@ -1,6 +1,6 @@
 Q: While using webwizard, I don't get always the right information for example the location of traffic lights.
 A: Part of this may be input data issues which can only be fixed manually. Some of this is interpretation of the input data. Make sure to use the recommended options:
-https://sumo.sourceforge.net/docs/Networks/Import/OpenStreetMap.html#recommended_netconvert_options. If input data is lacking your best option may be heuristic generation: (tls.guess, https://sumo.sourceforge.net/docs/netconvert.html#tls_building)
+https://sumo.dlr.de/docs/Networks/Import/OpenStreetMap.html#recommended_netconvert_options. If input data is lacking your best option may be heuristic generation: (tls.guess, https://sumo.dlr.de/docs/netconvert.html#tls_building)
 
 Q: I cant find the tools folder with osmWebWizard.py in, have i not installed it correctly?
 A: if you downloaded the installer, check to target of the link in your start menu. If you downloaded the zip it should be in there.
@@ -41,13 +41,13 @@ Q: Thanks, like I code my own new model and assign it to the vehicles
 A: You can use your own model either by coding the whole model with traci (setting the speed /position in every step) or by implementing the model in C++ and then selecting it in the vehicle type.
 
 Q: What is the role of random when applying activitygen (what is the difference between running the simulation with and without the random option)?
-A: Please read here: https://sumo.sourceforge.net/docs/Simulation/Randomness.html
+A: Please read here: https://sumo.dlr.de/docs/Simulation/Randomness.html
 
 Q: Hi, I want to know if sumo supports a custom area to let the vehicle drive freely on it(similar to being in an area of a parking lot), thanks!
 A: (free movement of vehicles) is not possible with the standard models but you can achieve it with traci.
 
 Q: Hey, whats a good way to evaluate the count data like in this tutorial scenario? Placing some detectors?
-A: (How to evaluate counts): It depends whether you need only local data or the whole network. The format is usually more like meandata https://sumo.sourceforge.net/docs/Simulation/Output/Lane-_or_Edge-based_Traffic_Measures.html
+A: (How to evaluate counts): It depends whether you need only local data or the whole network. The format is usually more like meandata https://sumo.dlr.de/docs/Simulation/Output/Lane-_or_Edge-based_Traffic_Measures.html
 
 Q: Can you do similar things for busses
 A: The vehicle type does not matter
@@ -69,10 +69,10 @@ Q: Is it possible to use the same lane in both directions,if one direction has p
 A: Yes.
 
 Q: Is there an (taxi) algorithm list that explains each use?
-A: Here you can find a list of the available algorithm: https://sumo.sourceforge.net/docs/Simulation/Taxi.html#dispatch
+A: Here you can find a list of the available algorithm: https://sumo.dlr.de/docs/Simulation/Taxi.html#dispatch
 
 Q: If I use flow to generate vehicles, such as defining 500 vehs per hour, does this generate uniformly or followed the Poisson distribution? And how to get the average delay of the whole network?
-A: By default departures are uniform but you can also define a random flow: https://sumo.sourceforge.net/docs/Simulation/Randomness.html#flows_with_a_random_number_of_vehicles
+A: By default departures are uniform but you can also define a random flow: https://sumo.dlr.de/docs/Simulation/Randomness.html#flows_with_a_random_number_of_vehicles
 
 Q: Who can i contact for email support?
 A: See https://www.eclipse.org/sumo/contact/
@@ -95,7 +95,7 @@ Q: Thanks, but the getIDList function is for the all the objects in the road net
 A: No. traci.edge.getIDList and traci.junction.getIDList return distinct lists
 
 Q: You mentioned it is possible to "mix" car following models (a tool), could you give me a keyword to look for?
-A: (mix following models) you can generate vehicle type distributions using https://sumo.sourceforge.net/docs/Tools/Misc.html
+A: (mix following models) you can generate vehicle type distributions using https://sumo.dlr.de/docs/Tools/Misc.html
 
 Q: Does latest version of SUMO which is 1.7.0 supports sumo web3D simulation on browser or we have to use the older version which is SUMO 0.3.2
 A: (support for web3D) We do not test this regularly, so we cannot tell.
@@ -105,7 +105,7 @@ Q: Hi team! Thank you for the nice introduction. We have been using SUMO for som
 A: You can reach us on our regular support channels (sumo-user mailinglist, mattermost, twitter) where we provide free support; the German Aerospace Center is a choice for a more elaborate research collaboration and we have a spin-off - the co4e.com - for professional consultancy and support (and less research)
 
 Q: Thanks a lot for the Information. And do you have any advice from your experience about getting traffic lights Information in Germany (Lichtsignalanlagen)? Is it something DLR makes use of? This turns to be a key point for large scale simulations like the ones we perform.
-A: It's difficult and involves lots of handcrafting. Some relevant tools: See https://github.com/DLR-TS/sumo-ocit and https://sumo.sourceforge.net/docs/Tools/tls.html#tls_csvsignalgroupspy
+A: It's difficult and involves lots of handcrafting. Some relevant tools: See https://github.com/DLR-TS/sumo-ocit and https://sumo.dlr.de/docs/Tools/tls.html#tls_csvsignalgroupspy
 
 Q: Is it possible to put some kind of business model to a taxi driver to calculate the profits?
 A: You could do this when controlling the taxis via TraCI
@@ -117,7 +117,7 @@ Q: Are there car following model configurations which better simulate specific p
 A: There probably are but it's hard to make a general recommendation on this. I recommend looking at junction model parameters jmDriveAfterYellowtime, jmIgnoreKeepClearTime, jmDriveAfterRedTime, ...
 
 Q: Good evening, I'd like to ask if is possible to change the driver agent
-A: Yes. Take a look at https://sumo.sourceforge.net/docs/Definition_of_Vehicles,_Vehicle_Types,_and_Routes.html#car-following_models
+A: Yes. Take a look at https://sumo.dlr.de/docs/Definition_of_Vehicles,_Vehicle_Types,_and_Routes.html#car-following_models
 
 Q: When adding lanes in the left-hand traffic, can we add "right-turn lane" on the right side of the road?
 A: Yes. You can define arbitrary lanes and connections via netedit
