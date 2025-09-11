@@ -14,7 +14,7 @@ A: Yes, if at least one of the following conditions are met:
 ****************
 
 Q: I would like to know about map-matching in SUMO. How can it match a sequence of GPS points on the SUMO network? I tried to associate each GPS point with the closest edge, but this led to a noisy trajectory, mainly when the GPS point lies inside a junction.
-A: see https://sumo.sourceforge.net/docs/FAQ.html#how_do_i_generate_sumo_routes_from_gps_traces
+A: see https://sumo.dlr.de/docs/FAQ.html#how_do_i_generate_sumo_routes_from_gps_traces
    Discarding points that map to junction-internal edges (edge id starts with
 ':') could also help
 
@@ -22,8 +22,8 @@ A: see https://sumo.sourceforge.net/docs/FAQ.html#how_do_i_generate_sumo_routes_
 
 Q: may I know, is it SUMO can plan a vehicle from one destination to another destination with several options of the route with estimated time arrival (ETA)
 A: There a several tools that deal with this topic. Good entry point are:
-- https://sumo.sourceforge.net/docs/Demand/Dynamic_User_Assignment.html
-- https://sumo.sourceforge.net/docs/Simulation/Routing.html
+- https://sumo.dlr.de/docs/Demand/Dynamic_User_Assignment.html
+- https://sumo.dlr.de/docs/Simulation/Routing.html
 
 ****************
 
@@ -31,7 +31,7 @@ Q: I am trying to import the Junction connections, but the issue is that a conne
 A1: Most connections across an intersection consist of a single edge with one or
 more lanes. For some movements (i.e. permissive left turns) there are two edges
 split at the waiting position within the junction (a so-called internal
-junction). See https://sumo.sourceforge.net/docs/Networks/SUMO_Road_Networks.html#internal_junctions
+junction). See https://sumo.dlr.de/docs/Networks/SUMO_Road_Networks.html#internal_junctions
 A2: Edge and junction ids can be customized freely. Lane ids and internal edge
 ids are always generated based on the former.
 
@@ -40,13 +40,13 @@ ids are always generated based on the former.
 
 Q: Is there any way we can export the junction from network as JSON?
 A: The tool net2geojson.py supports option --junctions to export junction
-shapes. See https://sumo.sourceforge.net/docs/Tools/Net.html#net2geojsonpy
+shapes. See https://sumo.dlr.de/docs/Tools/Net.html#net2geojsonpy
 
 ****************
 
 Q: As SUMO is the core of many academic research, I wonder whether there are benchmark scenarios. E.g. highway scenario for platooning, downtown scenario to improve traffic control, etc., with predefined networks, traffic demands, and baseline results. Do you know any of such scenarios? How can we help creating such benchmark cases?
 A: Scenarios that have been made available to the community are collected at
-https://sumo.sourceforge.net/docs/Data/Scenarios.html Contact us on any channel to have
+https://sumo.dlr.de/docs/Data/Scenarios.html Contact us on any channel to have
 your scenarios added there.
 
 ****************
@@ -61,7 +61,7 @@ suffix.
 ****************
 
 Q: Is there a 3D Mode for the SUMO GUI planned?
-A: The "extra" build already includes a 3D-mode! https://sumo.sourceforge.net/docs/Downloads.php#note_on_licensing 
+A: The "extra" build already includes a 3D-mode! https://sumo.dlr.de/docs/Downloads.php#note_on_licensing 
 
 ****************
 
@@ -71,7 +71,7 @@ A: We're happy to add your scenario. Please resend your question or open an issu
 ****************
 
 Q: Is there a containerized version of SUMO (e.g. Docker)? We want to support the Simulation part as part of a synthetic data generation toolchain. No GUI and Scenarios are pre configured.
-A: Yes. See https://sumo.sourceforge.net/docs/Developer/Docker.html
+A: Yes. See https://sumo.dlr.de/docs/Developer/Docker.html
 
 ****************
 
@@ -111,7 +111,7 @@ Q: Hey, I've been recently trying to extract the positions of traffic Lights on 
 A: The position of the lights is identical with the end position of the lane
 leading into the intersection. The exact stopping position varies by
 - junction-type  (1m for priority / traffic light)
-- stopOffset element for the lane (may vary by vClass): https://sumo.sourceforge.net/docs/Networks/PlainXML.html#stop_offsets
+- stopOffset element for the lane (may vary by vClass): https://sumo.dlr.de/docs/Networks/PlainXML.html#stop_offsets
 - vType attribute jmStoplineGap
 
 ****************
@@ -151,7 +151,7 @@ machine.
 ****************
 
 Q: We have been looking to model real time operation of ambulances using Sumo taking real-time incidents. Is there any available library to model emergency vehicles? The challenge is allowing vehicles to adopt contra-flow as well as disregard red lights and other vehicles to give way to the emergency vehicles
-A: Yes. See https://sumo.sourceforge.net/docs/Simulation/Emergency.html
+A: Yes. See https://sumo.dlr.de/docs/Simulation/Emergency.html
 
 ****************
 
@@ -170,7 +170,7 @@ weather related influences on traffic.
 
 Q: Is SUMO not using TRACI for generating the Simulation at the first time? What is rerouting?
 A: No. TraCI is and advanced feature for coupling SUMO to another process. To
-learn more about rerouting, see https://sumo.sourceforge.net/docs/Simulation/Routing.html
+learn more about rerouting, see https://sumo.dlr.de/docs/Simulation/Routing.html
 
 ****************
 
@@ -200,7 +200,7 @@ calibrator flexibility: https://github.com/eclipse-sumo/sumo/issues/10698
 ****************
 
 Q: My research in emergency vehicle prioritizes system that needs input from google maps or any mapping platform. How do I integrate the mapping platform to SUMO
-A: There are a range of tools for using geo-referenced data with SUMO. See https://sumo.sourceforge.net/docs/Geo-Coordinates.html
+A: There are a range of tools for using geo-referenced data with SUMO. See https://sumo.dlr.de/docs/Geo-Coordinates.html
 
 ****************
 
@@ -225,4 +225,4 @@ bicycle lane before or after the junction.
 Q: Where are the laneid, junction ids given (any script)?
 A: The lane ids are computed based on the edge id (by adding _INDEX). Edge and
 junction ids can be set by the user. When importing data (i.e. from OSM) the
-original ids are kept as closely as possible. See https://sumo.sourceforge.net/docs/Networks/Import/OpenStreetMap.html#relationship_between_osm_ids_and_sumo-ids
+original ids are kept as closely as possible. See https://sumo.dlr.de/docs/Networks/Import/OpenStreetMap.html#relationship_between_osm_ids_and_sumo-ids
