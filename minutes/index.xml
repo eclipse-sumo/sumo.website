@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Minutes on Eclipse SUMO - Simulation of Urban MObility</title><link>https://eclipse.dev/sumo/minutes/</link><description>Recent content in Minutes on Eclipse SUMO - Simulation of Urban MObility</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 23 Sep 2025 14:30:28 +0200</lastBuildDate><atom:link href="https://eclipse.dev/sumo/minutes/index.xml" rel="self" type="application/rss+xml"/><item><title>SUMO Developer Meeting Sep 23, 2025</title><link>https://eclipse.dev/sumo/minutes/2025-09-23/</link><pubDate>Tue, 23 Sep 2025 14:09:45 +0200</pubDate><guid>https://eclipse.dev/sumo/minutes/2025-09-23/</guid><description>&lt;h2 id="attendees"&gt;Attendees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
+&lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
+&lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
+&lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
+&lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="topics"&gt;Topics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Release 1.25 moved to 27th of October (holidays)&lt;/li&gt;
+&lt;li&gt;we have 102 different labels which might not all be useful
+&lt;ul&gt;
+&lt;li&gt;we review them on demand&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;max-num-vehicles / max-num-persons
+&lt;ul&gt;
+&lt;li&gt;SUMO user wanted to use this type specific, we do not see the need&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="issues"&gt;Issues&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SUMO has now routing types to define vehicle type / class specific preferences for certain edges
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://sumo.dlr.de/docs/Simulation/Routing.html#routing_by_travel_time_and_routingtype"&gt;https://sumo.dlr.de/docs/Simulation/Routing.html#routing_by_travel_time_and_routingtype&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;netedit support is open&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;automated routing can now be avoided if the improvement is below a threshold
+&lt;ul&gt;
+&lt;li&gt;routing performnace might also benefit -&amp;gt; Micha opens an issue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;we have now parsable metadata&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
