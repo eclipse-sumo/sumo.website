@@ -13,6 +13,7 @@ The SUMO website is generated using [Hugo](https://gohugo.io/).
 
 ### Prerequisites
 - [Hugo](https://gohugo.io/getting-started/installing/)
+  - The easiest way on Windows is `winget install Hugo.Hugo.Extended`, on (Debian/Ubuntu) Linux `sudo apt install hugo`.
 
 ### Installation
 
