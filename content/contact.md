@@ -23,7 +23,9 @@ Before you post on a list, please check the <a href="{{< docsurl >}}/FAQ.html">F
 <small>This is the first place you should ask your questions. If you have a novel question, <a href="{{< docsurl >}}/FAQ.html#what_should_i_do_to_get_helpful_answers_on_the_mailing_list">here is some general advice before asking</a>. If you wish to report an error <a href="{{< docsurl >}}/FAQ.html#how_do_i_report_erroneous_behavior_of_a_sumo_application">please follow these suggestions</a>. Subscribe to this list for asking questions, reporting issues and getting information about what other people ask.
 <hr>
 <i>Frequency: about 100 mails per month<br>
-Archive: <a href="https://dev.eclipse.org/mhonarc/lists/sumo-user/">Eclipse Archive</a>, <a href="https://www.mail-archive.com/sumo-user@eclipse.org/">Mail Archive</a>, <a href="https://sourceforge.net/p/sumo/mailman/sumo-user/">SF Archive</a></i></small>
+Archive: <a href="https://dev.eclipse.org/mhonarc/lists/sumo-user/">Eclipse Archive</a>,
+<!-- <a href="https://www.mail-archive.com/sumo-user@eclipse.org/">Mail Archive</a>, -->
+<a href="https://sourceforge.net/p/sumo/mailman/sumo-user/">SF Archive</a></i></small>
 <div class="d-block d-sm-none" style="margin-top:60px;"></div>
 </div>
 
@@ -34,7 +36,9 @@ Archive: <a href="https://dev.eclipse.org/mhonarc/lists/sumo-user/">Eclipse Arch
 <i>
 Frequency: few mails per year
 <br>
-Archive: <a href="https://dev.eclipse.org/mhonarc/lists/sumo-announce/">Eclipse Archive</a>, <a href="https://www.mail-archive.com/sumo-announce@eclipse.org/">Mail Archive</a>, <a href="https://sourceforge.net/p/sumo/mailman/sumo-announce/">SF Archive</a>
+Archive: <a href="https://dev.eclipse.org/mhonarc/lists/sumo-announce/">Eclipse Archive</a>,
+<!-- <a href="https://www.mail-archive.com/sumo-announce@eclipse.org/">Mail Archive</a>, -->
+<a href="https://sourceforge.net/p/sumo/mailman/sumo-announce/">SF Archive</a>
 </i></small>
 <div class="d-block d-sm-none" style="margin-top:60px;"></div>
 </div>
@@ -46,7 +50,9 @@ Archive: <a href="https://dev.eclipse.org/mhonarc/lists/sumo-announce/">Eclipse 
 <i>
 Frequency: few mails per month
 <br>
-Archive: <a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/">Eclipse Archive</a>, <a href="https://www.mail-archive.com/sumo-dev@eclipse.org/">Mail Archive</a>, <a href="https://sourceforge.net/p/sumo/mailman/sumo-devel/">SF Archive</a>
+Archive: <a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/">Eclipse Archive</a>,
+<!-- <a href="https://www.mail-archive.com/sumo-dev@eclipse.org/">Mail Archive</a>, -->
+<a href="https://sourceforge.net/p/sumo/mailman/sumo-devel/">SF Archive</a>
 </i></small>
 <div class="d-block d-sm-none" style="margin-top:20px;"></div>
 </div>
