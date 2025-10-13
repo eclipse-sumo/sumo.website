@@ -37,7 +37,7 @@ main:
       parent: "About"
       url: "https://sumo.dlr.de/daily"
       weight: 4
-    - name: "SUMO User Conference 2025"
+    - name: "SUMO User Conference 2026"
       parent: "Conference"
       url: "conference"
       weight: 1
