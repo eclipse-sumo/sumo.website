@@ -307,7 +307,9 @@ Pablo Manglano-Redondo, Alvaro Paricio-Garcia and Miguel A. Lopez-Carmona &lt;i&
 &lt;a target="_blank" href="https://www.youtube.com/watch?v=nhkE7GkGLxo"&gt;&lt;span class="badge badge-danger"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Video&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Session 2&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>SUMO User Conference 2025</title><link>https://eclipse.dev/sumo/conference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/conference/</guid><description>&lt;!-- The SUMO User Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
+&lt;p&gt;&lt;strong&gt;Session 2&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>SUMO User Conference 2026</title><link>https://eclipse.dev/sumo/conference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/conference/</guid><description>&lt;h1 id="save-the-date"&gt;Save the Date!&lt;/h1&gt;
+&lt;p&gt;June 01-04, 2026, in Berlin.&lt;/p&gt;
+&lt;!-- The SUMO User Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
 
 The conference is a great place to learn about new features, network with fellow enthusiasts, ask the developers, have fruitful discussions, exchange ideas and even start collaborations! --&gt;
 &lt;!-- # FAQ
@@ -321,6 +323,30 @@ The conference is a great place to learn about new features, network with fellow
  &lt;summary&gt;Foo&lt;/summary&gt;
  Bar
 &lt;/details&gt; --&gt;
-&lt;h1 id="proceedings"&gt;Proceedings&lt;/h1&gt;
-&lt;p&gt;Conference Proceedings: &lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/182"&gt;https://www.tib-op.org/ojs/index.php/scp/issue/view/182&lt;/a&gt; &lt;br&gt;
-DOI: &lt;a href="https://doi.org/10.52825/scp.v6i"&gt;https://doi.org/10.52825/scp.v6i&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
+&lt;!-- # Social Event
+
+*More info soon!*
+
+# Language
+
+The conference language is English. --&gt;
+&lt;h1 id="venue"&gt;Venue&lt;/h1&gt;
+&lt;div class="container"&gt;
+ &lt;div class="row"&gt;
+ &lt;div class="col-md-4 p-0"&gt;
+&lt;b&gt;Bunsen-Saal&lt;/b&gt;&lt;br&gt;
+Volmerstraße 2&lt;br&gt;
+12489 Berlin&lt;br&gt;
+Germany
+ &lt;/div&gt;
+ &lt;div class="col-md-8 p-0"&gt;
+ &lt;img src="../images/bunsen_saal.jpg" alt="Bunsen Saal" class="img-fluid"&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;iframe width="100%" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=13.533085584640505%2C52.42993042332849%2C13.536626100540163%2C52.43153965365014&amp;amp;layer=mapnik&amp;amp;marker=52.43073504583373%2C13.534855842590332" style="border: 1px solid black"&gt;&lt;/iframe&gt;
+&lt;div class="text-right"&gt;
+&lt;small&gt;View in: &lt;a target="_blank" href="https://www.openstreetmap.org/?mlat=52.430735&amp;amp;mlon=13.534856#map=19/52.430735/13.534856"&gt;OSM &lt;i class="fa-solid fa-square-arrow-up-right"&gt;&lt;/i&gt;&lt;/a&gt; - &lt;a target="_blank" href="https://maps.app.goo.gl/iD5ahnSaGRGvpTcP7"&gt;Google Maps &lt;i class="fa-solid fa-square-arrow-up-right"&gt;&lt;/i&gt;&lt;/a&gt; - &lt;a target="_blank" href="https://maps.apple/p/S~s11mzEKLQ1Am"&gt;Apple Maps &lt;i class="fa-solid fa-square-arrow-up-right"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/small&gt;
+&lt;/div&gt;
+&lt;h1 id="contact"&gt;Contact&lt;/h1&gt;
+&lt;p&gt;For questions and comments, the conference team can be reached at the email address &lt;a href="mailto:sumo-conference@dlr.de"&gt;sumo-conference@dlr.de&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>
