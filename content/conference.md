@@ -44,19 +44,10 @@ The conference language is English. -->
 
 # Venue
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 p-0">
-<b>Bunsen-Saal</b><br>
-Volmerstraße 2<br>
-12489 Berlin<br>
+**WISTA Event Center - "Bunsen-Saal"**   
+Volmerstraße 2   
+12489 Berlin   
 Germany
-        </div>
-        <div class="col-md-8 p-0">
-            <img src="../images/bunsen_saal.jpg" alt="Bunsen Saal" class="img-fluid">
-        </div>
-    </div>
-</div>
 
 
 <iframe width="100%" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=13.533085584640505%2C52.42993042332849%2C13.536626100540163%2C52.43153965365014&amp;layer=mapnik&amp;marker=52.43073504583373%2C13.534855842590332" style="border: 1px solid black"></iframe>
