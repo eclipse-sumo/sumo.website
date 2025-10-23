@@ -22,8 +22,20 @@
       {{ .Content }}</div>
     <div class="col-md-2"><div style="border-left: 1px solid #d4d4d4; padding-left: 10px;">{{- partial "toc.html" . -}}{{- partial "conference_archive.html" . -}}{{ if ne (isset .Params "about-conference") true }}{{- partial "info_proceedings_editors.html" . -}}{{ end }}</div></div>
     </div></div>
-    {{ else }}
+    {{ else if isset .Params "with-toc" }}
+    <div class="container"><div class="row">
+    <div class="col-md-10 contact-div">
+      {{ .Content }}</div>
+    <div class="col-md-2"><div style="border-left: 1px solid #d4d4d4; padding-left: 10px;">{{- partial "toc.html" . -}}</div></div>
+    </div></div>
+    {{ else if isset .Params "no-background" }}
+    <div class="container"><div class="row">
     {{ .Content }}
+    </div></div>
+    {{ else }}
+    <div class="container"><div class="row"><div class="col-md-12 contact-div">
+    {{ .Content }}
+    </div></div></div>
     {{ end }}
     
     {{ if isset .Params "conference-page" }}
