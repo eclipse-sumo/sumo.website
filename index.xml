@@ -48,7 +48,7 @@
 &lt;/ul&gt;
 &lt;h2 id="topics-1"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;running protocal instead of separate files
+&lt;li&gt;running protocol instead of separate files
 &lt;ul&gt;
 &lt;li&gt;link is missing&lt;/li&gt;
 &lt;/ul&gt;
@@ -59,6 +59,33 @@
 &lt;h2 id="issues-1"&gt;Issues&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;MacOS build needs doc for Parquet&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="2025-10-23"&gt;2025-10-23&lt;/h1&gt;
+&lt;h2 id="attendees-2"&gt;Attendees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
+&lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
+&lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
+&lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
+&lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="topics-2"&gt;Topics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;protocol still needs to be linked from the main site (Angelo)&lt;/li&gt;
+&lt;li&gt;Zoom meeting needs co-hosts (Micha)&lt;/li&gt;
+&lt;li&gt;offline docs currently require network link&lt;/li&gt;
+&lt;li&gt;openlayers should be substituted locally&lt;/li&gt;
+&lt;li&gt;Font size on Gnome? Anton Gladky did a patch for the debian package, Ronald had the opposite experience (fonts too large by default)&lt;/li&gt;
+&lt;li&gt;Packaging strange dependencies in Fedora RPM
+&lt;ul&gt;
+&lt;li&gt;Packaging might be abandoned we rather recommmend pip or flatpak&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Release moved to 6.11.
+&lt;ul&gt;
+&lt;li&gt;open issues to be discussed earlier because Jakob / Angelo are in a meeting on the 6th&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>About Eclipse SUMO</title><link>https://eclipse.dev/sumo/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/about/</guid><description>&lt;div class="container"&gt;&lt;div class="row"&gt;&lt;div class="col-md-12 contact-div"&gt;
 &lt;p&gt;Eclipse SUMO is a free and open source traffic simulation suite. It was started in 2001 by employees of the &lt;a href="https://www.dlr.de/ts"&gt;Institute of Transportation Systems&lt;/a&gt; at the &lt;a href="https://www.dlr.de/"&gt;German Aerospace Center (DLR)&lt;/a&gt;. SUMO allows modelling of intermodal traffic systems - including road vehicles, public transport and pedestrians. Included with SUMO is a wealth of supporting tools that automate core tasks for the creation, the execution and evaluation of traffic simulations, such as network import, route calculations, visualization and emission calculation. SUMO can be enhanced with custom models and provides various APIs to remotely control the simulation.&lt;/p&gt;</description></item><item><title>Contact</title><link>https://eclipse.dev/sumo/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/contact/</guid><description>&lt;div class="container"&gt;&lt;div class="row"&gt;
 &lt;!-- mailing lists --&gt;
