@@ -33,10 +33,14 @@ main:
       parent: "About"
       url: "https://sumo.dlr.de/docs/ChangeLog.html"
       weight: 3
+    - name: "Developer Meeting Minutes"
+      parent: "About"
+      url: "minutes"
+      weight: 4
     - name: "Status of daily build and tests"
       parent: "About"
       url: "https://sumo.dlr.de/daily"
-      weight: 4
+      weight: 5
     - name: "SUMO User Conference 2026"
       parent: "Conference"
       url: "conference"

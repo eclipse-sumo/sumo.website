@@ -1,5 +1,7 @@
 ---
 title: "Eclipse SUMO - Developer Meetings"
+description : "Developer Meetings"
+layout: "single"
 draft: false
 ---
 
