@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Eclipse SUMO - Developer Meetings on Eclipse SUMO - Simulation of Urban MObility</title><link>https://eclipse.dev/sumo/minutes/</link><description>Recent content in Eclipse SUMO - Developer Meetings on Eclipse SUMO - Simulation of Urban MObility</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 23 Oct 2025 13:43:44 +0200</lastBuildDate><atom:link href="https://eclipse.dev/sumo/minutes/index.xml" rel="self" type="application/rss+xml"/><item><title>SUMO Developer Meetings 2025</title><link>https://eclipse.dev/sumo/minutes/2025/</link><pubDate>Thu, 09 Oct 2025 14:09:45 +0200</pubDate><guid>https://eclipse.dev/sumo/minutes/2025/</guid><description>&lt;h1 id="2025-09-23"&gt;2025-09-23&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Eclipse SUMO - Developer Meetings on Eclipse SUMO - Simulation of Urban MObility</title><link>https://eclipse.dev/sumo/minutes/</link><description>Recent content in Eclipse SUMO - Developer Meetings on Eclipse SUMO - Simulation of Urban MObility</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://eclipse.dev/sumo/minutes/index.xml" rel="self" type="application/rss+xml"/><item><title>SUMO Developer Meetings 2025</title><link>https://eclipse.dev/sumo/minutes/2025/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/minutes/2025/</guid><description>&lt;h1 id="2025-09-23"&gt;2025-09-23&lt;/h1&gt;
 &lt;h2 id="attendees"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
@@ -78,7 +78,7 @@
 &lt;li&gt;Font size on Gnome? Anton Gladky did a patch for the debian package, Ronald had the opposite experience (fonts too large by default)&lt;/li&gt;
 &lt;li&gt;Packaging strange dependencies in Fedora RPM
 &lt;ul&gt;
-&lt;li&gt;Packaging might be abandoned we rather recommmend pip or flatpak&lt;/li&gt;
+&lt;li&gt;Packaging might be abandoned we rather recommend pip or flatpak&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Release moved to 6.11.
