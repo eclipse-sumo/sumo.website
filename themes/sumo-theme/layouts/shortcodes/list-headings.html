@@ -1,0 +1,8 @@
+{{ $page := .Site.GetPage (printf "/minutes/%s" (.Get 0)) }}
+{{ if $page }}
+  {{ range findRE `(?m)^# (.+)$` $page.RawContent }}
+    {{ $title := replaceRE `^# (.+)$` "$1" . }}
+    {{ $anchor := $title | anchorize }}
+    <li><a href="{{ $page.RelPermalink }}#{{ $anchor }}">{{ $title }}</a></li>
+  {{ end }}
+{{ end }}
