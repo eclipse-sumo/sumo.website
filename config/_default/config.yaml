@@ -19,7 +19,7 @@ params:
   favicon: "images/favicon.ico"
   logo: "images/logos/sumo-logo-white.svg"
   docsURL: "https://sumo.dlr.de/docs"
-  githubEditURL: "https://github.com/eclipse-sumo/sumo.website/edit/main/content/"
+  githubEditURL: "https://github.com/eclipse-sumo/sumo.website/edit/source/content/"
   Version: "1.24.0"
   DOI: "10.5281/zenodo.16268320"
 
