@@ -1,5 +1,5 @@
 ---
-title: "SUMO User Conference 2026"
+title: "SUMO Conference 2026"
 subtitle: ""
 conferenceDate: "June 01-04"
 conferenceLocation: "Berlin-Adlershof, Germany"
@@ -15,7 +15,7 @@ aliases:
 
 June 01-04, 2026, in Berlin.
 
-<!-- The SUMO User Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
+<!-- The SUMO Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
 
 The conference is a great place to learn about new features, network with fellow enthusiasts, ask the developers, have fruitful discussions, exchange ideas and even start collaborations! -->
 
