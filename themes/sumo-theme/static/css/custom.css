@@ -4,6 +4,25 @@ background-color: #f8f8f8;
 color: #403b3b;
 }
 
+/* .dropdown {
+position: relative;
+}
+
+.show-on-hover {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+}
+
+.dropdown:hover .show-on-hover {
+display: block;
+}
+
+.default-cursor {
+cursor: default;
+} */
+
 html, body {
 position: relative;
 overflow-x: hidden;
@@ -536,4 +555,16 @@ padding: 3px;
 
 .cover-image {
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.14);
+}
+
+.square-img-box {
+width: 100%;
+height: 250px;
+overflow: hidden;
+}
+
+.square-img-box img {
+width: 100%;
+height: 100%;
+object-fit: cover;
 }
