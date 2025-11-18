@@ -90,7 +90,7 @@ SUMO developer at the German Aerospace Center (DLR) since 2007, researcher, stra
 <h5>Robert Hilbrich</h5>
 SUMO team lead at the German Aerospace Center (DLR) in Berlin, responsible for business development and strategy, member of Eclipse Board of Directors and Chair of Eclipse openMobility.
 <br><br>
-<a href="mailto:sumo@dlr.de" class="btn btn-sm btn-outline-info">Email</a> <a href="https://twitter.com/roberthilbrich" class="btn btn-sm btn-outline-info"><i class="fab fa-x-twitter"></i></a> <a href="https://linkedin.com/in/roberthilbrich" class="btn btn-sm btn-outline-info"><i class="fab fa-linkedin"></i></a>
+<a href="mailto:sumo@dlr.de" class="btn btn-sm btn-outline-info">Email</a> <a href="https://x.com/roberthilbrich" class="btn btn-sm btn-outline-info"><i class="fab fa-x-twitter"></i></a> <a href="https://linkedin.com/in/roberthilbrich" class="btn btn-sm btn-outline-info"><i class="fab fa-linkedin"></i></a>
 </div>
 
 </div>
@@ -117,7 +117,7 @@ Social media</h4><br>
 Occasional development updates are posted on our social media channels. Follow us and stay informed!
 <br><br>
 <a href="https://www.facebook.com/simulationofurbanmobility/"><button class="btn btn-sm btn-outline-info"><i class="fa-brands fa-facebook"></i></button></a>
-<a href="https://twitter.com/EclipseSumo"><button class="btn btn-sm btn-outline-info"><i class="fa-brands fa-x-twitter"></i></button></a>
+<a href="https://x.com/EclipseSumo"><button class="btn btn-sm btn-outline-info"><i class="fa-brands fa-x-twitter"></i></button></a>
 <a href="https://instagram.com/eclipse.sumo"><button class="btn btn-sm btn-outline-info"><i class="fa-brands fa-instagram"></i></button></a>
 <a href="https://www.threads.net/@eclipse.sumo"><button class="btn btn-sm btn-outline-info"><i class="fa-brands fa-threads"></i></button></a>
 <a href="https://www.linkedin.com/groups/5156801/"><button class="btn btn-sm btn-outline-info"><i class="fa-brands fa-linkedin"></i></button></a>
