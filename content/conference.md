@@ -5,6 +5,7 @@ conferenceDate: "June 01-04"
 conferenceLocation: "Berlin-Adlershof, Germany"
 description : "Get in touch with our international user community"
 layout: "single"
+image: "banner_2026.png"
 conference-page: true
 draft: false
 aliases:
