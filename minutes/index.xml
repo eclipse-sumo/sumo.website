@@ -86,4 +86,91 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;we have now parsable metadata&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="2025-10-09-1"&gt;2025-10-09&lt;/h1&gt;
+&lt;h2 id="attendees-3"&gt;Attendees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
+&lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
+&lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
+&lt;li&gt;Robert Hilbrich (DLR)&lt;/li&gt;
+&lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
+&lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="topics-3"&gt;Topics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;running protocol instead of separate files
+&lt;ul&gt;
+&lt;li&gt;link is missing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Meso - Parallelization as technology transfer idea&lt;/li&gt;
+&lt;li&gt;SUMO conference offer has been improved&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="issues-2"&gt;Issues&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;MacOS build needs doc for Parquet&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="2025-10-23-1"&gt;2025-10-23&lt;/h1&gt;
+&lt;h2 id="attendees-4"&gt;Attendees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
+&lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
+&lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
+&lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
+&lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="topics-4"&gt;Topics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;protocol still needs to be linked from the main site (Angelo)&lt;/li&gt;
+&lt;li&gt;Zoom meeting needs co-hosts (Micha)&lt;/li&gt;
+&lt;li&gt;offline docs currently require network link&lt;/li&gt;
+&lt;li&gt;openlayers should be substituted locally&lt;/li&gt;
+&lt;li&gt;Font size on Gnome? Anton Gladky did a patch for the debian package, Ronald had the opposite experience (fonts too large by default)&lt;/li&gt;
+&lt;li&gt;Packaging strange dependencies in Fedora RPM
+&lt;ul&gt;
+&lt;li&gt;Packaging might be abandoned we rather recommmend pip or flatpak&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Release moved to 6.11.
+&lt;ul&gt;
+&lt;li&gt;open issues to be discussed earlier because Jakob / Angelo are in a meeting on the 6th&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="2025-11-20"&gt;2025-11-20&lt;/h1&gt;
+&lt;h2 id="attendees-5"&gt;Attendees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
+&lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
+&lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
+&lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
+&lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="topics-5"&gt;Topics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;new Fox-Toolkit version&lt;/li&gt;
+&lt;li&gt;new Visual Studio version with prominent Co-Pilot&lt;/li&gt;
+&lt;li&gt;API-Key available for academic cloud
+&lt;ul&gt;
+&lt;li&gt;GPT-OSS available&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;setup for the mac
+&lt;ul&gt;
+&lt;li&gt;GUI tests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Release feedback
+&lt;ul&gt;
+&lt;li&gt;small regression with invalid error message in duarouter&lt;/li&gt;
+&lt;li&gt;netedit problem with additional files&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;check whether we can check at least compilation success before a commit is accepted -&amp;gt; Micha
+&lt;ul&gt;
+&lt;li&gt;minimal effort&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;</description></item></channel></rss>
