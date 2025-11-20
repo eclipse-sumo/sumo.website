@@ -55,7 +55,7 @@ This year, there are three types of submission:
    - Recommended: Submit the title and a short abstract (up to 300 words) in advance to receive initial feedback. Do this by Sunday, January 11, 2026 - 23:59 UTC.
 
 <div class="alert alert-info" role="alert">
-  Authors are required to use the <a href="https://www.tib-op.org/ojs/index.php/scp/libraryFiles/downloadPublic/8">Word</a> or <a href="https://www.tib-op.org/ojs/index.php/scp/libraryFiles/downloadPublic/9">LaTeX</a> template provided by TIB Open Publishing.<br>
+  Authors are required to use the <a href="../documents/2025-08-25_Word-template-TIB-Open-Publishing-Conference.docx">Word</a> or <a href="../documents/TIBOpenPublishing_LaTeX-template.zip">LaTeX</a> template provided by TIB Open Publishing.<br>
   <b>Submissions that do not adhere to the specified template will not be considered.</b>
 </div>
 
