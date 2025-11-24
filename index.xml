@@ -98,8 +98,44 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/"&gt;Eclipse
 &lt;li&gt;&lt;strong&gt;Published&lt;/strong&gt;: September 29, 2022&lt;/li&gt;
 &lt;/ul&gt;
 &lt;br&gt;
-&lt;p&gt;&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/5"&gt;&lt;strong&gt;Vol. 2 (2021): SUMO User Conference 2021&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</description></item><item><title>SUMO Developer Meetings 2025</title><link>https://eclipse.dev/sumo/minutes/2025/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/minutes/2025/</guid><description>&lt;h1 id="2025-10-23"&gt;2025-10-23&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/5"&gt;&lt;strong&gt;Vol. 2 (2021): SUMO User Conference 2021&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</description></item><item><title>SUMO Developer Meetings 2025</title><link>https://eclipse.dev/sumo/minutes/2025/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/minutes/2025/</guid><description>&lt;h1 id="2025-11-20"&gt;2025-11-20&lt;/h1&gt;
 &lt;h2 id="attendees"&gt;Attendees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
+&lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
+&lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
+&lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
+&lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="topics"&gt;Topics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;new Fox-Toolkit version&lt;/li&gt;
+&lt;li&gt;new Visual Studio version with prominent Co-Pilot&lt;/li&gt;
+&lt;li&gt;API-Key available for academic cloud
+&lt;ul&gt;
+&lt;li&gt;GPT-OSS available&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;setup for the mac
+&lt;ul&gt;
+&lt;li&gt;GUI tests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Release feedback
+&lt;ul&gt;
+&lt;li&gt;small regression with invalid error message in duarouter&lt;/li&gt;
+&lt;li&gt;netedit problem with additional files&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;check whether we can check at least compilation success before a commit is accepted -&amp;gt; Micha
+&lt;ul&gt;
+&lt;li&gt;minimal effort&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Issues&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="2025-10-23"&gt;2025-10-23&lt;/h1&gt;
+&lt;h2 id="attendees-1"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
@@ -107,7 +143,7 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/"&gt;Eclipse
 &lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-1"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;protocol still needs to be linked from the main site (Angelo)&lt;/li&gt;
 &lt;li&gt;Zoom meeting needs co-hosts (Micha)&lt;/li&gt;
@@ -126,7 +162,7 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/"&gt;Eclipse
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2025-10-09"&gt;2025-10-09&lt;/h1&gt;
-&lt;h2 id="attendees-1"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-2"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
@@ -135,7 +171,7 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/"&gt;Eclipse
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-1"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-2"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;running protocol instead of separate files
 &lt;ul&gt;
@@ -150,7 +186,7 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/"&gt;Eclipse
 &lt;li&gt;MacOS build needs doc for Parquet&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2025-09-23"&gt;2025-09-23&lt;/h1&gt;
-&lt;h2 id="attendees-2"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-3"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
@@ -158,7 +194,7 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/"&gt;Eclipse
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-2"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-3"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Release 1.25 moved to 27th of October (holidays)&lt;/li&gt;
 &lt;li&gt;we have 102 different labels which might not all be useful
@@ -186,93 +222,6 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/"&gt;Eclipse
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;we have now parsable metadata&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id="2025-10-09-1"&gt;2025-10-09&lt;/h1&gt;
-&lt;h2 id="attendees-3"&gt;Attendees&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
-&lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
-&lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
-&lt;li&gt;Robert Hilbrich (DLR)&lt;/li&gt;
-&lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
-&lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="topics-3"&gt;Topics&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;running protocol instead of separate files
-&lt;ul&gt;
-&lt;li&gt;link is missing&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Meso - Parallelization as technology transfer idea&lt;/li&gt;
-&lt;li&gt;SUMO conference offer has been improved&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="issues-2"&gt;Issues&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;MacOS build needs doc for Parquet&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id="2025-10-23-1"&gt;2025-10-23&lt;/h1&gt;
-&lt;h2 id="attendees-4"&gt;Attendees&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
-&lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
-&lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
-&lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
-&lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="topics-4"&gt;Topics&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;protocol still needs to be linked from the main site (Angelo)&lt;/li&gt;
-&lt;li&gt;Zoom meeting needs co-hosts (Micha)&lt;/li&gt;
-&lt;li&gt;offline docs currently require network link&lt;/li&gt;
-&lt;li&gt;openlayers should be substituted locally&lt;/li&gt;
-&lt;li&gt;Font size on Gnome? Anton Gladky did a patch for the debian package, Ronald had the opposite experience (fonts too large by default)&lt;/li&gt;
-&lt;li&gt;Packaging strange dependencies in Fedora RPM
-&lt;ul&gt;
-&lt;li&gt;Packaging might be abandoned we rather recommmend pip or flatpak&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Release moved to 6.11.
-&lt;ul&gt;
-&lt;li&gt;open issues to be discussed earlier because Jakob / Angelo are in a meeting on the 6th&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id="2025-11-20"&gt;2025-11-20&lt;/h1&gt;
-&lt;h2 id="attendees-5"&gt;Attendees&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
-&lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
-&lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
-&lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
-&lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="topics-5"&gt;Topics&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;new Fox-Toolkit version&lt;/li&gt;
-&lt;li&gt;new Visual Studio version with prominent Co-Pilot&lt;/li&gt;
-&lt;li&gt;API-Key available for academic cloud
-&lt;ul&gt;
-&lt;li&gt;GPT-OSS available&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;setup for the mac
-&lt;ul&gt;
-&lt;li&gt;GUI tests&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Release feedback
-&lt;ul&gt;
-&lt;li&gt;small regression with invalid error message in duarouter&lt;/li&gt;
-&lt;li&gt;netedit problem with additional files&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;check whether we can check at least compilation success before a commit is accepted -&amp;gt; Micha
-&lt;ul&gt;
-&lt;li&gt;minimal effort&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>SUMO User Conference 2013</title><link>https://eclipse.dev/sumo/2013/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2013/</guid><description>&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;The first SUMO User Conference &amp;ldquo;SUMO2013&amp;rdquo; was attended by 30 participants from throughout Europe which presented three days of simulation results but also technical enhancements and new usage scenarios of the open source microscopic traffic simulation. The highlights were two keynote speakers, Christoph Sommer (Universitaet Innsbruck) and Kai Nagel (TU Berlin), which talked about the current developments in the simulation of vehicle communication, one of the main applications of SUMO, as well as experience with the development of MatSim. The program was rounded off by numerous discussions on the edge and a panel discussion, which will promote further exchanges among other simulation scenarios.&lt;/p&gt;</description></item><item><title>SUMO User Conference 2014</title><link>https://eclipse.dev/sumo/2014/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2014/</guid><description>&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;The SUMO2014 Conference was attended by over 50 participants from throughout Europe and America which presented two days of simulation results but also technical enhancements and new usage scenarios of the open source microscopic traffic simulation (&lt;a href="https://elib.dlr.de/97717/1/Proceeding_SUMO2014_15%2B16May2014_Berlin-Adlershof.pdf"&gt;Here&lt;/a&gt; you can find the conference proceedings).
