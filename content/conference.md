@@ -138,7 +138,15 @@ For SUMO moments:
 
 # Prices
 
-*Coming soon*
+- Regular Ticket: **575 EUR**
+- One-Day Ticket: **350 EUR**
+- Authors and Project Partners: **375 EUR**
+- Students & Invited Guests: **125 EUR** (limited) *
+
+<small>All prices excluding VAT.</small>
+
+*Please contact us via email at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de) to request a discount code for student registration.
+The availability is limited.
 
 # Registration
 
