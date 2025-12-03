@@ -108,12 +108,10 @@ Selected submissions will be featured as brief presentations during the conferen
 ## Submission links
 
 - Paper submissions: https://www.tib-op.org/ojs/index.php/scp/about/submissions<br>
-<small>Login or register and then click on <b>"Make a new Conference Proceedings Submission"</b>. Under <b>"Section"</b> select <b>"Conference papers"</b>.</small>
+<small>Login or register and then click on <b>"Make a new Conference Proceedings Submission"</b>.</small>
 <br>
-- Poster submissions: https://www.tib-op.org/ojs/index.php/scp/about/submissions<br>
-<small>Login or register and then click on <b>"Make a new Conference Proceedings Submission"</b>. Under <b>"Section"</b> select <b>"Poster"</b>.</small>
-- SUMO moments: https://www.tib-op.org/ojs/index.php/scp/about/submissions<br>
-<small>Login or register and then click on <b>"Make a new Conference Proceedings Submission"</b>. Under <b>"Section"</b> select <b>"SUMO Moments"</b>.</small>
+- Poster submissions: <i>Coming soon</i>
+- SUMO moments: <i>Coming soon</i>
 
 ## Ethics and Malpractice Statement
 
