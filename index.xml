@@ -98,7 +98,7 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/"&gt;Eclipse
 &lt;li&gt;&lt;strong&gt;Published&lt;/strong&gt;: September 29, 2022&lt;/li&gt;
 &lt;/ul&gt;
 &lt;br&gt;
-&lt;p&gt;&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/5"&gt;&lt;strong&gt;Vol. 2 (2021): SUMO User Conference 2021&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</description></item><item><title>SUMO Developer Meetings 2025</title><link>https://eclipse.dev/sumo/minutes/2025/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/minutes/2025/</guid><description>&lt;h1 id="2025-11-20"&gt;2025-11-20&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/5"&gt;&lt;strong&gt;Vol. 2 (2021): SUMO User Conference 2021&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</description></item><item><title>SUMO Developer Meetings 2025</title><link>https://eclipse.dev/sumo/minutes/2025/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/minutes/2025/</guid><description>&lt;h1 id="2025-12-04"&gt;2025-12-04&lt;/h1&gt;
 &lt;h2 id="attendees"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
@@ -106,8 +106,50 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/"&gt;Eclipse
 &lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
 &lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
 &lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
+&lt;li&gt;Robert Hilbrich (DLR)&lt;/li&gt;
+&lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
+&lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="topics"&gt;Topics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Meeting on the 18th
+&lt;ul&gt;
+&lt;li&gt;will take place&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;visualizing TAZ labels
+&lt;ul&gt;
+&lt;li&gt;how to visualize sets of edges with a common label?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;visualization discussions with Billy Charlton
+&lt;ul&gt;
+&lt;li&gt;Angelo takes over&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;global building model
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://tubvsig-so2sat-vm1.srv.mwn.de"&gt;https://tubvsig-so2sat-vm1.srv.mwn.de&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/zhu-xlab/GlobalBuildingAtlas"&gt;https://github.com/zhu-xlab/GlobalBuildingAtlas&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;netedit interface
+&lt;ul&gt;
+&lt;li&gt;save all when saving neteditcfg?&lt;/li&gt;
+&lt;li&gt;no one uses neteditcfg ;-)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="2025-11-20"&gt;2025-11-20&lt;/h1&gt;
+&lt;h2 id="attendees-1"&gt;Attendees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
+&lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
+&lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
+&lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
+&lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="topics-1"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;new Fox-Toolkit version&lt;/li&gt;
 &lt;li&gt;new Visual Studio version with prominent Co-Pilot&lt;/li&gt;
@@ -135,7 +177,7 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/"&gt;Eclipse
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2025-10-23"&gt;2025-10-23&lt;/h1&gt;
-&lt;h2 id="attendees-1"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-2"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
@@ -143,7 +185,7 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/"&gt;Eclipse
 &lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-1"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-2"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;protocol still needs to be linked from the main site (Angelo)&lt;/li&gt;
 &lt;li&gt;Zoom meeting needs co-hosts (Micha)&lt;/li&gt;
@@ -162,7 +204,7 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/"&gt;Eclipse
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2025-10-09"&gt;2025-10-09&lt;/h1&gt;
-&lt;h2 id="attendees-2"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-3"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
@@ -171,7 +213,7 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/"&gt;Eclipse
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-2"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-3"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;running protocol instead of separate files
 &lt;ul&gt;
@@ -186,7 +228,7 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/"&gt;Eclipse
 &lt;li&gt;MacOS build needs doc for Parquet&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2025-09-23"&gt;2025-09-23&lt;/h1&gt;
-&lt;h2 id="attendees-3"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-4"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
@@ -194,7 +236,7 @@ Archive: &lt;a href="https://dev.eclipse.org/mhonarc/lists/sumo-dev/"&gt;Eclipse
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-3"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-4"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Release 1.25 moved to 27th of October (holidays)&lt;/li&gt;
 &lt;li&gt;we have 102 different labels which might not all be useful
