@@ -110,8 +110,8 @@ Selected submissions will be featured as brief presentations during the conferen
 - Paper submissions: https://www.tib-op.org/ojs/index.php/scp/about/submissions<br>
 <small>Login or register and then click on <b>"Make a new Conference Proceedings Submission"</b>.</small>
 <br>
-- Poster submissions: <i>Coming soon</i>
-- SUMO moments: <i>Coming soon</i>
+- Poster submissions: Send us an E-Mail with the subject **`Poster Submission - SUMO 2026`** to sumo-conference@dlr.de. Include the title and abstract in the body of the E-Mail.
+- SUMO moments: Send us an E-Mail with the subject **`SUMO Moment - SUMO 2026`** to sumo-conference@dlr.de. Include the description in the body of the E-Mail.
 
 ## Ethics and Malpractice Statement
 
