@@ -5,7 +5,7 @@ layout: "single"
 draft: false
 ---
 
-Join us for our regular Zoom meetings aimed at enhancing community participation through discussions on development and open GitHub issues. Meetings are scheduled every second Thursday at 13:00 CET, starting January 15th. We provide the meeting link upon request - please reach out at sumo@dlr.de to participate.
+Join us for our regular Zoom meetings aimed at enhancing community participation through discussions on development and open GitHub issues. Meetings are scheduled every second Thursday at 10:00 a.m. CET, starting January 15th. We provide the meeting link upon request - please reach out at sumo@dlr.de to participate.
 
 # Meeting minutes
 
