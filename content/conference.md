@@ -180,13 +180,15 @@ Accommodation is not included within the registration fee and must be pre-booked
 </details> -->
 
 
-<!-- # Social Event
+# Social Event
 
 *More info soon!*
 
+<!-- <small>Limited capacity</small> -->
+
 # Language
 
-The conference language is English. -->
+The conference language is English.
 
 # Venue
 
