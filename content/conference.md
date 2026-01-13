@@ -52,7 +52,7 @@ This year, there are three types of submission:
    - Papers will be reviewed by at least two reviewers.
    - All accepted papers will be published in the [SUMO Conference Proceedings (SCP)](https://www.tib-op.org/ojs/index.php/scp/index).
    - Papers should be 5-20 pages long.
-   - Recommended: Submit the title and a short abstract (up to 300 words) in advance to receive initial feedback. Do this by Sunday, January 11, 2026 - 23:59 UTC.
+   - ~~Recommended: Submit the title and a short abstract (up to 300 words) in advance to receive initial feedback. Do this by Sunday, January 11, 2026 - 23:59 UTC.~~
 
 <div class="alert alert-info" role="alert">
   Authors are required to use the <a href="../documents/2025-08-25_Word-template-TIB-Open-Publishing-Conference.docx">Word</a> or <a href="../documents/TIBOpenPublishing_LaTeX-template.zip">LaTeX</a> template provided by TIB Open Publishing.<br>

@@ -33,7 +33,7 @@ main:
       parent: "About"
       url: "https://sumo.dlr.de/docs/ChangeLog.html"
       weight: 3
-    - name: "Developer Meeting Minutes"
+    - name: "Developer Meetings"
       parent: "About"
       url: "minutes"
       weight: 4
