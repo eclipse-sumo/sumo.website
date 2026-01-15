@@ -150,9 +150,9 @@ The availability is limited.
 
 Registration will open on Thursday, January 15, 2026.
 
-<!--
+
 Registration is now open: <a href="https://sumo2026.welcome-manager.de/">https://sumo2026.welcome-manager.de/</a>
-<br>-->
+<br>
 <small><b>Please keep in mind that the registration will close on May 15, 2026 (at 23:59 CEST).</b></small>
 
 
