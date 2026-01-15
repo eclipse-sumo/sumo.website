@@ -120,6 +120,7 @@ Occasional development updates are posted on our social media channels. Follow u
 <a href="https://x.com/EclipseSumo"><button class="btn btn-sm btn-outline-info"><i class="fa-brands fa-x-twitter"></i></button></a>
 <a href="https://instagram.com/eclipse.sumo"><button class="btn btn-sm btn-outline-info"><i class="fa-brands fa-instagram"></i></button></a>
 <a href="https://www.threads.net/@eclipse.sumo"><button class="btn btn-sm btn-outline-info"><i class="fa-brands fa-threads"></i></button></a>
+<a href="https://bsky.app/profile/eclipse-sumo.bsky.social"><button class="btn btn-sm btn-outline-info"><i class="fa-brands fa-bluesky"></i></button></a>
 <a href="https://www.linkedin.com/groups/5156801/"><button class="btn btn-sm btn-outline-info"><i class="fa-brands fa-linkedin"></i></button></a>
 </div>
 
