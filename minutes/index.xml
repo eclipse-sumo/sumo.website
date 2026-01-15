@@ -165,17 +165,32 @@
 &lt;/li&gt;
 &lt;li&gt;we have now parsable metadata&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>SUMO Developer Meetings 2026</title><link>https://eclipse.dev/sumo/minutes/2026/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/minutes/2026/</guid><description>&lt;h1 id="2026-01-15"&gt;2026-01-15&lt;/h1&gt;
-&lt;!-- ## Attendees
-
-- Pablo Alvarez Lopez (DLR)
-- Angelo Banse (DLR)
-- Michael Behrisch (DLR)
-- Jakob Erdmann (DLR)
-- Yun-Pang Flötteröd (DLR)
-- Robert Hilbrich (DLR)
-- Ronald Nippold (DLR)
-- Peter Wagner (DLR)
-
-## Topics
-
- --&gt;</description></item></channel></rss>
+&lt;h2 id="attendees"&gt;Attendees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
+&lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
+&lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
+&lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
+&lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
+&lt;li&gt;Robert Hilbrich (DLR)&lt;/li&gt;
+&lt;li&gt;Daniel Krajzewicz (DLR)&lt;/li&gt;
+&lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
+&lt;li&gt;Kanagaraj Krishnamoorthy (Tetcos)&lt;/li&gt;
+&lt;li&gt;Vassileios Karagounis (CERTH)&lt;/li&gt;
+&lt;li&gt;Mario Krumnow (Schlothauer+Wauer)&lt;/li&gt;
+&lt;li&gt;Evangelos Mintsis (CERTH)&lt;/li&gt;
+&lt;li&gt;Mirko Barthauer (mouver)&lt;/li&gt;
+&lt;li&gt;Sasan Amini (Transcality)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="topics"&gt;Topics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;next release 1.26.0 may still work on the 26th of January&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;explaining the python wheels&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Issues&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
