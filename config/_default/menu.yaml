@@ -18,12 +18,12 @@ main:
       url: ""
       weight: 6
     - name: "Contact"
-      url: "contact"
+      url: "contact/"
       weight: 7
     # submenus
     - name: "About SUMO"
       parent: "About"
-      url: "about"
+      url: "about/"
       weight: 1
     - name: "Who's involved"
       parent: "About"
@@ -35,23 +35,23 @@ main:
       weight: 3
     - name: "Developer Meetings"
       parent: "About"
-      url: "minutes"
+      url: "minutes/"
       weight: 4
     - name: "Status of daily build and tests"
       parent: "About"
-      url: "https://sumo.dlr.de/daily"
+      url: "https://sumo.dlr.de/daily/"
       weight: 5
     - name: "SUMO Conference 2026"
       parent: "Conference"
-      url: "conference"
+      url: "conference/"
       weight: 1
     - name: "Proceedings and Editorial Team"
       parent: "Conference"
-      url: "proceedings"
+      url: "proceedings/"
       weight: 2
     - name: "Previous conferences"
       parent: "Conference"
-      url: "archive"
+      url: "archive/"
       weight: 3
     - name: "Projects"
       parent: "References"
