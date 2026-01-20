@@ -75,7 +75,7 @@ Q: If I use flow to generate vehicles, such as defining 500 vehs per hour, does 
 A: By default departures are uniform but you can also define a random flow: https://sumo.dlr.de/docs/Simulation/Randomness.html#flows_with_a_random_number_of_vehicles
 
 Q: Who can i contact for email support?
-A: See https://www.eclipse.org/sumo/contact/
+A: See https://eclipse.dev/sumo/contact/
 
 Q: What can I expect from the "public transport in meso"? how does it differ from current possibilities to simulate public transport busses?
 A: meso is much faster so it would allow for larger networks or more simulations done in shorter time

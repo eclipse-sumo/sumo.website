@@ -182,7 +182,7 @@ cars. Likewise, cars "see" the pedestrians and avoid them.
 ****************
 
 Q: Are there any SUMO community groups/forums or mailing groups?
-A: Yes. See https://www.eclipse.org/sumo/contact/
+A: Yes. See https://eclipse.dev/sumo/contact/
 
 ****************
 
