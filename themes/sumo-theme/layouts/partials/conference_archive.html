@@ -4,7 +4,7 @@
     <div class="dropdown">
     <button type="button" class="btn btn-light btn-archive btn-sm dropdown-toggle" data-toggle="dropdown" title="Explore previous conferences">Select year </button>
         <div class="dropdown-menu text-center">
-            <a class="dropdown-item" href="{{ `conference` | absURL }}">Current conference <i class="fas fa-angle-double-right"></i></a>
+            <a class="dropdown-item" href="{{ `conference/` | absURL }}">Current conference <i class="fas fa-angle-double-right"></i></a>
             {{- $editions := site.Data.previous_conferences.conferences }}
             {{- range $editions }}
                 <a class="dropdown-item" href="{{ .year | absURL }}/">{{ .year }}</a>

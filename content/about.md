@@ -162,7 +162,7 @@ The SUMO package contains the following applications:
   </div>
 </div>
 
-SUMO is [licensed]({{< docsurl >}}/Libraries_Licenses.html) under the [Eclipse Public License V2](https://www.eclipse.org/legal/epl-2.0/). "Eclipse SUMO" is a trademark of the [Eclipse Foundation](https://eclipse.org). If you use SUMO, please support its development by telling us about your projects, products and [publications]({{< docsurl >}}/Publications.html).
+SUMO is [licensed]({{< docsurl >}}/Libraries_Licenses.html) under the [Eclipse Public License V2](https://www.eclipse.org/legal/epl-2.0/). "Eclipse SUMO" is a trademark of the [Eclipse Foundation](https://www.eclipse.org/). If you use SUMO, please support its development by telling us about your projects, products and [publications]({{< docsurl >}}/Publications.html).
 
 # Citing SUMO
 
