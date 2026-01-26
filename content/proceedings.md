@@ -125,8 +125,8 @@ Prof. Dr. **Peter Wagner**, Institute of Transportation Systems, German Aerospac
 - **Olaf Angelo Banse Bueno**, Institute of Transportation Systems, German Aerospace Center, Germany
   <small>[[ORCID](https://orcid.org/0000-0001-7615-627X)] [[ResearchGate](https://www.researchgate.net/profile/Olaf-Banse-Bueno)]</small>
 
-- Dr. **Mirko Barthauer**, Institute of Transportation Systems, German Aerospace Center, Germany
-  <small>[[ORCID](https://orcid.org/0000-0003-3177-3260)] [[ResearchGate](https://www.researchgate.net/profile/Mirko-Barthauer)]</small>
+<!-- - Dr. **Mirko Barthauer**, Institute of Transportation Systems, German Aerospace Center, Germany
+  <small>[[ORCID](https://orcid.org/0000-0003-3177-3260)] [[ResearchGate](https://www.researchgate.net/profile/Mirko-Barthauer)]</small> -->
 
 - Dr. **Michael Behrisch**, Institute of Transportation Systems, German Aerospace Center, Germany
   <small>[[ORCID](https://orcid.org/0000-0002-0032-7930)] [[ResearchGate](https://www.researchgate.net/profile/Michael-Behrisch-3)]</small>
@@ -136,9 +136,6 @@ Prof. Dr. **Peter Wagner**, Institute of Transportation Systems, German Aerospac
 
 - Prof. **Joshua Bittle**, Ph.D., College of Engineering, University of Alabama, United States
   <small>[[ORCID](https://orcid.org/0000-0003-4524-3316)] [[Website](https://sites.ua.edu/jbittle/)] [[ResearchGate](https://www.researchgate.net/profile/Joshua-Bittle)]</small>
-
-- Dr. **Benjamin Couéraud**, Institute of Transportation Systems, German Aerospace Center, Germany
-  <small>[[ORCID](https://orcid.org/0009-0001-3739-730X)] [[ResearchGate](https://www.researchgate.net/profile/Benjamin-Coueraud)]</small>
 
 - Dr. **Jakob Erdmann**, Institute of Transportation Systems, German Aerospace Center, Germany
   <small>[[ORCID](https://orcid.org/0000-0002-4195-4535)] [[ResearchGate](https://www.researchgate.net/profile/Jakob-Erdmann-2)]</small>
