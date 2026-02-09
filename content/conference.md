@@ -65,7 +65,7 @@ This year, there are three types of submission:
   <b>Submissions that do not adhere to the specified template will not be considered.</b>
 </div>
 
-   - **The paper must be submitted in LaTeX or Word before Sunday, February 15, 2026 - 23:59 UTC.**
+   - **The paper must be submitted in LaTeX or Word before Sunday, ~~February 15, 2026~~ February 22, 2026 - 23:59 UTC.**
 
 <!-- <div class="text-center"><img src="../images/presentation.jpeg" style="width:60%;" alt="Presentation" class="img-responsive"/></div> -->
 
@@ -127,7 +127,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 
 For papers:
 - ~~Recommended title and abstract submission deadline: **Sunday, January 11, 2026.**~~
-- Paper submission deadline: **Sunday, February 15, 2026.**
+- <span class="badge badge-warning">New</span> Paper submission deadline: ~~**Sunday, February 15, 2026.**~~ **Sunday, February 22, 2026.**
 - Notification of acceptance/rejection: **First week of April 2026.**
 - Camera-ready paper deadline: **Sunday, May 10, 2026.**
 
@@ -153,9 +153,6 @@ For SUMO moments:
 The availability is limited.
 
 # Registration
-
-Registration will open on Thursday, January 15, 2026.
-
 
 Registration is now open: <a href="https://sumo2026.welcome-manager.de/">https://sumo2026.welcome-manager.de/</a>
 <br>
@@ -188,9 +185,13 @@ Accommodation is not included within the registration fee and must be pre-booked
 
 # Social Event
 
+**⛴️ Boat Tour ⛴️**
+
+<small>*Limited capacity</small>
+
+
 *More info soon!*
 
-<!-- <small>Limited capacity</small> -->
 
 # Language
 
