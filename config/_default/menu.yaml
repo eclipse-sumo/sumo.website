@@ -3,7 +3,7 @@ main:
       url: ""
       weight: 1
     - name: "Documentation"
-      url: "https://sumo.dlr.de/docs/"
+      url: "https://sumo.sourceforge.net/docs/"
       weight: 2
     - name: "Downloads"
       url: "https://sumo.dlr.de/docs/Downloads.php"
