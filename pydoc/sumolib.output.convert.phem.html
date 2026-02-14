@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module sumolib.output.convert.phem</title>
+<style>/*
+    CSS file for pydoc.
+
+    Contents of this file are subject to change without notice.
+
+*/
+
+body {
+    background-color: #f0f0f8;
+}
+
+table.heading tr {
+    background-color: #7799ee;
+}
+
+.decor {
+    color: #ffffff;
+}
+
+.title-decor {
+    background-color: #ffc8d8;
+    color: #000000;
+}
+
+.pkg-content-decor {
+    background-color: #aa55cc;
+}
+
+.index-decor {
+    background-color: #ee77aa;
+}
+
+.functions-decor {
+    background-color: #eeaa77;
+}
+
+.data-decor {
+    background-color: #55aa55;
+}
+
+.author-decor {
+    background-color: #7799ee;
+}
+
+.credits-decor {
+    background-color: #7799ee;
+}
+
+.error-decor {
+    background-color: #bb0000;
+}
+
+.grey {
+    color: #909090;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.repr {
+    color: #c040c0;
+}
+
+table.heading tr td.title {
+    vertical-align: bottom;
+}
+
+table.heading tr td.extra {
+    vertical-align: bottom;
+    text-align: right;
+}
+
+.heading-text {
+    font-family: helvetica, arial;
+}
+
+.bigsection {
+    font-size: larger;
+}
+
+.title {
+    font-size: x-large;
+}
+
+.code {
+    font-family: monospace;
+}
+
+table {
+    width: 100%;
+    border-spacing : 0;
+    border-collapse : collapse;
+    border: 0;
+}
+
+td {
+    padding: 2;
+}
+
+td.section-title {
+    vertical-align: bottom;
+}
+
+td.multicolumn {
+    width: 25%;
+    vertical-align: bottom;
+}
+
+td.singlecolumn {
+    width: 100%;
+}
+</style></head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="sumolib.html" class="white">sumolib</a>.<a href="sumolib.output.html" class="white">output</a>.<a href="sumolib.output.convert.html" class="white">convert</a>.phem</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/runner/work/sumo.website/sumo.website/sumo/tools/sumolib/output/convert/phem.py">/home/runner/work/sumo.website/sumo.website/sumo/tools/sumolib/output/convert/phem.py</a></td></tr></table>
+    <p><span class="code">This&nbsp;module&nbsp;includes&nbsp;functions&nbsp;for&nbsp;converting&nbsp;SUMO's&nbsp;fcd-output&nbsp;into<br>
+data&nbsp;files&nbsp;read&nbsp;by&nbsp;PHEM.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="math.html">math</a><br>
+</td><td class="multicolumn"><a href="sumolib.html">sumolib</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-fcd2dri"><strong>fcd2dri</strong></a>(inpFCD, outSTRM, ignored)</dt><dd><span class="code">Reformats&nbsp;the&nbsp;contents&nbsp;of&nbsp;the&nbsp;given&nbsp;fcd-output&nbsp;file&nbsp;into&nbsp;a&nbsp;.dri&nbsp;file,&nbsp;readable<br>
+by&nbsp;PHEM.&nbsp;The&nbsp;fcd-output&nbsp;"fcd"&nbsp;must&nbsp;be&nbsp;a&nbsp;valid&nbsp;file&nbsp;name&nbsp;of&nbsp;an&nbsp;fcd-output.<br>
+&nbsp;<br>
+The&nbsp;following&nbsp;may&nbsp;be&nbsp;a&nbsp;matter&nbsp;of&nbsp;changes:<br>
+-&nbsp;the&nbsp;engine&nbsp;torque&nbsp;is&nbsp;not&nbsp;given</span></dd></dl>
+ <dl><dt><a name="-fcd2fzp"><strong>fcd2fzp</strong></a>(inpFCD, outSTRM, further)</dt><dd><span class="code">Reformats&nbsp;the&nbsp;contents&nbsp;of&nbsp;the&nbsp;given&nbsp;fcd-output&nbsp;file&nbsp;into&nbsp;a&nbsp;.fzp&nbsp;file,&nbsp;readable<br>
+by&nbsp;PHEM.&nbsp;The&nbsp;fcd-output&nbsp;"fcd"&nbsp;must&nbsp;be&nbsp;a&nbsp;valid&nbsp;file&nbsp;name&nbsp;of&nbsp;an&nbsp;fcd-output.<br>
+&nbsp;<br>
+The&nbsp;"sIDm"&nbsp;parameter&nbsp;must&nbsp;be&nbsp;a&nbsp;map&nbsp;from&nbsp;SUMO-edge&nbsp;ids&nbsp;to&nbsp;their&nbsp;numerical<br>
+representation&nbsp;as&nbsp;generated&nbsp;by&nbsp;toSTR(inpNET,&nbsp;outSTRM).<br>
+Returns&nbsp;two&nbsp;maps,&nbsp;the&nbsp;first&nbsp;from&nbsp;vehicle&nbsp;ids&nbsp;to&nbsp;a&nbsp;numerical&nbsp;representation,<br>
+the&nbsp;second&nbsp;from&nbsp;vehicle&nbsp;type&nbsp;ids&nbsp;to&nbsp;a&nbsp;numerical&nbsp;representation.</span></dd></dl>
+ <dl><dt><a name="-net2str"><strong>net2str</strong></a>(net, outSTRM)</dt><dd><span class="code">Writes&nbsp;the&nbsp;network&nbsp;object&nbsp;given&nbsp;as&nbsp;"inpNET"&nbsp;as&nbsp;a&nbsp;.str&nbsp;file&nbsp;readable&nbsp;by&nbsp;PHEM.<br>
+Returns&nbsp;a&nbsp;map&nbsp;from&nbsp;the&nbsp;SUMO-road&nbsp;id&nbsp;to&nbsp;the&nbsp;generated&nbsp;numerical&nbsp;id&nbsp;used&nbsp;by&nbsp;PHEM.<br>
+&nbsp;<br>
+The&nbsp;following&nbsp;may&nbsp;be&nbsp;a&nbsp;matter&nbsp;of&nbsp;changes:<br>
+-&nbsp;currently,&nbsp;only&nbsp;the&nbsp;positions&nbsp;of&nbsp;the&nbsp;start&nbsp;and&nbsp;the&nbsp;end&nbsp;nodes&nbsp;are&nbsp;written,<br>
+&nbsp;&nbsp;the&nbsp;geometry&nbsp;of&nbsp;the&nbsp;edge&nbsp;as&nbsp;defined&nbsp;in&nbsp;the&nbsp;SUMO-network&nbsp;is&nbsp;not&nbsp;exported.<br>
+&nbsp;&nbsp;A&nbsp;map&nbsp;between&nbsp;the&nbsp;edge&nbsp;id&nbsp;and&nbsp;a&nbsp;segment&nbsp;to&nbsp;a&nbsp;numerical&nbsp;id&nbsp;would&nbsp;be&nbsp;necessary</span></dd></dl>
+ <dl><dt><a name="-vehicleTypes2flt"><strong>vehicleTypes2flt</strong></a>(outSTRM, vtIDm)</dt><dd><span class="code">Currently,&nbsp;rather&nbsp;a&nbsp;stub&nbsp;than&nbsp;an&nbsp;implementation.&nbsp;Writes&nbsp;the&nbsp;vehicle&nbsp;ids&nbsp;stored<br>
+in&nbsp;the&nbsp;given&nbsp;"vtIDm"&nbsp;map&nbsp;formatted&nbsp;as&nbsp;a&nbsp;.flt&nbsp;file&nbsp;readable&nbsp;by&nbsp;PHEM.<br>
+&nbsp;<br>
+The&nbsp;following&nbsp;may&nbsp;be&nbsp;a&nbsp;matter&nbsp;of&nbsp;changes:<br>
+-&nbsp;A&nbsp;default&nbsp;map&nbsp;is&nbsp;assigned&nbsp;to&nbsp;all&nbsp;vehicle&nbsp;types&nbsp;with&nbsp;the&nbsp;same&nbsp;probability</span></dd></dl>
+</td></tr></table>
+</body></html>

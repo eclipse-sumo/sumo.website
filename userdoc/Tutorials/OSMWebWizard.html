@@ -1,0 +1,455 @@
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 14 February 2026 22:27:03
+Last edit: 13 February 2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="theme-color" content="#338033">
+        <meta name="theme-color" content="#338033" media="(prefers-color-scheme: dark)">
+        <meta property="og:image" content="../images/image-facebook.jpg">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="1080">
+        <meta property="og:image:height" content="1080">
+
+        
+        
+        <link rel="canonical" href="https://sumo.dlr.de/docs/Tutorials/OSMWebWizard.html">
+        <link rel="shortcut icon" href="../images/favicon.ico">
+        <title>OSMWebWizard - SUMO Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.all.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-3.7.0.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+
+      <script>
+        // DARK MODE
+        function detectColorScheme(){
+          var theme="light";
+
+          if(localStorage.getItem("sumo-docs-theme")){
+              if(localStorage.getItem("sumo-docs-theme") == "dark"){
+                  var theme = "dark";
+              }
+          } else if(!window.matchMedia) {
+              return false;
+          } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+              var theme = "dark";
+          }
+
+          if (theme=="dark") {
+              document.documentElement.setAttribute("data-theme", "dark");
+          }
+        }
+        detectColorScheme();
+      </script>
+
+    </head>
+
+    <body>
+
+    <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-center">
+    <div class="container-fluid">
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li class="navitem">
+                        <a href="../index.html" class="nav-link">Documentation</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="index.html" class="nav-link">Tutorials</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../FAQ.html" class="nav-link">FAQ</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Downloads.html" class="nav-link">Downloads</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Publications.html" class="nav-link">Publications</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Developer/index.html" class="nav-link">Developer</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../ChangeLog.html" class="nav-link">ChangeLog</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="https://eclipse.dev/sumo/contact/" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa-solid fa-magnifying-glass"></i> <u>S</u>earch
+                    </a>
+                </li>
+                    <li class="nav-item">
+                        <a rel="edit" href="https://github.com/eclipse-sumo/sumo/edit/main/docs/web/docs/Tutorials/OSMWebWizard.md" class="nav-link"><i class="fa-brands fa-github"></i> <u>E</u>dit on GitHub</a>
+                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    More <i class="fa-solid fa-circle-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item no-arrow-link" href="https://github.com/eclipse/sumo/issues">Report a Bug / Issue / Typo</a>
+                    <a class="dropdown-item" href="../Editing_Articles.html">Help on editing articles</a>
+                    <a class="dropdown-item" href="https://github.com/eclipse/sumo/commits/main/docs/web">Recent documentation changes</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#mkdocs_keyboard_modal">Keyboard Shortcuts</a>
+                    <a class="dropdown-item no-arrow-link" href="https://sumo.dlr.de/sumo_documentation.zip">Download the Documentation</a>
+                    <span class="dropdown-item" id="dark-mode-div">Dark mode <label id="theme-switch" class="theme-switch" for="checkbox_theme">
+                        <input type="checkbox" id="checkbox_theme">
+                    </label></span>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="languagedrop" data-toggle="dropdown">
+                    <i class="fa-solid fa-language"></i> Languages <i class="fa-solid fa-circle-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                    <span class="dropdown-item">
+                        Translations are generated automatically by Google Translate:
+                    </span>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/OSMWebWizard.html?_x_tr_sl=en&_x_tr_tl=de">Deutsch</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/OSMWebWizard.html?_x_tr_sl=en&_x_tr_tl=es">Español</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/OSMWebWizard.html?_x_tr_sl=en&_x_tr_tl=pt">Português</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/OSMWebWizard.html?_x_tr_sl=en&_x_tr_tl=fr">Français</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/OSMWebWizard.html?_x_tr_sl=en&_x_tr_tl=it">Italiano</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/OSMWebWizard.html?_x_tr_sl=en&_x_tr_tl=zh-CN">简体中文</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/OSMWebWizard.html?_x_tr_sl=en&_x_tr_tl=zh-TW">繁體中文</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/OSMWebWizard.html?_x_tr_sl=en&_x_tr_tl=tr">Türkçe</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/OSMWebWizard.html?_x_tr_sl=en&_x_tr_tl=ja">日本語</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/OSMWebWizard.html?_x_tr_sl=en&_x_tr_tl=ko">한국어</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/OSMWebWizard.html?_x_tr_sl=auto&_x_tr_tl=en"><i class="fa-solid fa-arrow-right"></i> Other languages</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container-fluid">
+          <div class="row">
+                <div class="col-md-3">
+                  <div class="text-center"><a href="../index.html" style="display: inline-block; margin-top: 5px;"><img src="../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
+                  
+<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
+            <span class="fa-solid fa-angle-down"></span>
+        </button>
+    </div>
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary toc-scroll toc">
+        <ul class="nav flex-column bs-sidenav">
+            <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
+            <li class="nav-item main"><a href="#about">About</a></li>
+            <li class="nav-item main"><a href="#requirements">Requirements</a></li>
+            <li class="nav-item main"><a href="#getting_started">Getting started</a></li>
+            <li class="nav-item main"><a href="#network_generation">Network Generation</a></li>
+            <li class="nav-item main"><a href="#demand_generation">Demand Generation</a></li>
+            <li class="nav-item main"><a href="#road-type_selection">Road-Type Selection</a></li>
+            <li class="nav-item main"><a href="#generating_and_running_the_scenario">Generating and Running the scenario</a></li>
+            <li class="nav-item main"><a href="#where_to_go_from_here">Where to go from here</a></li>
+        </ul>
+    </div>
+
+    <div class="admonition conference" style="position: sticky; margin-top: 20px; margin-bottom:10px;">
+        <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
+    </div>
+
+    <div class="admonition" style="position: sticky; margin-top: 20px; margin-bottom:10px; background-color: #d6cbb2; border-color: #c6b795; padding: 0;">
+        <center>
+            <a class="no-arrow-link" href="https://eclipse.dev/sumo/conference"><img src="../images/SUMO2026.png" alt="SUMO User Conference 2025" class="img-fluid" style="max-height: 200px"></a>
+        </center>
+    </div>
+
+</div>
+                </div>
+                <div class="col-md-9 main-area" role="main">
+                   <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
+                  <ul class="breadcrumbs">
+    <script>
+        var pagePath = "/docs/Tutorials/OSMWebWizard.html";
+        var splitUrl = pagePath.split("/");
+        splitUrl.pop();
+        splitUrl.shift();
+        if (splitUrl[0] == 'docs') splitUrl.shift();
+        var homeLink = "../index.html";
+        document.write('<li class="breadcrumb-item"><a href="' + homeLink + '"><i class="fa-solid fa-house"></i></a></li>');
+        var prev = '';
+
+        var dirLink = splitUrl.map(function (el) {
+        el = prev + el; prev = el + '/'; return el;
+        });
+
+        for (let i = 0; i < splitUrl.length; i++) {
+            document.write("<li class=\"breadcrumb-item\"><a class=\"no-arrow-link\" href=\"../" + dirLink[i] + "\">" + splitUrl[i] + "</a></li>");
+        }
+    </script>
+    <li class="breadcrumb-item active">OSMWebWizard</li>
+</ul>
+                  <hTitles>OSMWebWizard<hr style="border: 0.5px solid #338033; margin-top: 5px !important;"></hTitles>
+                  
+                  
+
+<h1 id="about">About<a class="headerlink" href="#about" title="Permanent link">#</a></h1>
+<p>The OSM Web Wizard offers one of the easiest solutions to start with
+SUMO. Based on a selection of an <a href="../Networks/Import/OpenStreetMap.html">openstreetmap</a> map excerpt, you will be
+able to configure a randomized traffic demand and run and visualize the
+scenario in the <a href="../sumo-gui.html">sumo-gui</a>. This tutorial will
+guide you step by step from the selection of the map excerpt over
+defining the traffic demand through running and visualizing the scenario
+in the sumo-gui.</p>
+<h1 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">#</a></h1>
+<ul>
+<li><a href="../Installing/index.html">SUMO</a> installation</li>
+<li><a href="https://www.python.org">Python</a> (&gt;= 2.7) installation</li>
+</ul>
+<h1 id="getting_started">Getting started<a class="headerlink" href="#getting_started" title="Permanent link">#</a></h1>
+<p>The OSM Web Wizard is essentially a collection of python scripts located
+under the directory <em>tools</em> in your sumo installation root. You start
+the OSM Web wizard by invoking the following command in the <em>tools</em>
+directory:</p>
+<div class="codehilite"><pre><span></span><code>python osmWebWizard.py
+</code></pre></div>
+
+<p>Windows users may also invoke the command by clicking <em>All Programs -&gt;
+SUMO -&gt; OSM Web Wizard</em>. Once the script is running, a web browser
+should open showing a map excerpt of central Berlin.</p>
+<p><img alt="wz01.jpg" src="../images/Wz01.png" title="wz01.png" /></p>
+<p>You may zoom and pan to the area of your interest. Caution: if the map
+excerpt covers a very large area, the simulation might become slow or
+even unresponsive. We suggest choosing a similar zoom level as in the
+initial view.</p>
+<p>In the next step, you select the actual area for which you wish to
+generate the simulation scenario. The area selection will be activated
+by clicking the checkbox <em>Select Area</em> at the blue area selection panel
+on the right side of the map.</p>
+<p><img alt="wz02.jpg" src="../images/Wz02.png" title="wz02.png" /></p>
+<p>You can change the size and location of this area by click and hold with
+the mouse pointer at the boundary between the grayed and non-grayed
+area. Once you are satisfied with the area selection, you can proceed to
+the next step.</p>
+<h1 id="network_generation">Network Generation<a class="headerlink" href="#network_generation" title="Permanent link">#</a></h1>
+<p>The infrastructure import from OSM into the SUMO simulation are affected by different Wizard options</p>
+<ul>
+<li>by default the "Add Polygon" checkbox is checked and a road traffic simulation is generated but all types of roads and rails will be imported as well (cycle paths, footpaths, railways etc)</li>
+<li>if the checkbox "left-hand Traffic" is enabled, the network will be built with left hand traffic rules. For most geographic regions where this is required, this feature will be enabled automatically but if it does not work, this option can be used as a remedy.</li>
+<li>if the checkbox "Car-only Network" is enabled, then only roads that permit passenger car traffic will be included. This can be used to reduce the network size and also helps to reduce intersection complexity</li>
+<li>if the checkbox "Import Public Transport" is enabled, then busStops and trainStops will be exported. Also busses, trams and trains will be generated that follow the public transport routes defined in OSM (but they will follow synthetic schedules).</li>
+<li>if the Demand-checkbox "Bicycles" is active, then extra bicycle lanes will be added to roads where OSM contains this information</li>
+<li>if the Demand-checkbox "Pedestrians" is active, then sidewalks and pedestrian crossings will be generated</li>
+</ul>
+<h1 id="demand_generation">Demand Generation<a class="headerlink" href="#demand_generation" title="Permanent link">#</a></h1>
+<p>The demand is defined by the demand generation panel. You activate this
+panel by clicking on the car pictogram.</p>
+<p><img alt="wz03.jpg" src="../images/Wz03.png" title="wz03.png" /></p>
+<p>SUMO supports various modes of transport. At the demand generation
+panel, you can activate/deactivate the individual modes of transport by
+clicking the corresponding checkboxes. For each mode of transport, the
+OSM Web Wizard generates random demand based on a certain probability
+distribution, which is influenced by two parameters:</p>
+<ul>
+<li>Every time a new vehicle is generated, the OSM Web Wizard randomly
+chooses a departure and arrival edge for the vehicle. The <em>Through
+Traffic Factor</em> defines how many times it is more likely for an edge
+at the boundary of the simulation area being chosen, compared to an
+edge entirely located inside the simulation area. A big value for
+the <em>Through Traffic Factor</em> implies that many vehicles depart and
+arrive at the boundary of the simulation area, which corresponds to
+a scenario with a lot of through traffic.</li>
+<li>The <em>Count</em> parameter defines how many vehicles are generated per
+hour and lane-kilometer. Assuming<ul>
+<li>the network contains 3 edges with a combined length of 5 km</li>
+<li>that each has 2 lanes which allows the current traffic mode</li>
+<li>and the count value is set to 90,</li>
+<li>then 5 * 2 * 90 = 900 vehicles per hour will be generated.
+  This translates to a
+  <a href="../Tools/Trip.html#randomtripspy">randomTrips</a>
+  parameter of p=4 which means a new vehicle is inserted every 4
+  seconds somewhere in the network.</li>
+</ul>
+</li>
+</ul>
+<p>The next step is generating and running the scenario.</p>
+<h1 id="road-type_selection">Road-Type Selection<a class="headerlink" href="#road-type_selection" title="Permanent link">#</a></h1>
+<p>In the Road-Type tab of the OSM Web Wizard one can define which road types
+to be downloaded and rendered.</p>
+<p><img alt="wz01.jpg" src="../images/Wz05.png" title="wz05.png" /></p>
+<p>For example, one can only choose motorways, primary,
+secondary and tertiary to simulate major traffic.
+This impacts the file size of the OSM map data.</p>
+<p>By default, all road types are checked which implies downloading and rendering
+all roads.
+Unchecking the "Add Polygon" checkbox in the Demand Generation section disables
+downloading and rendering non-road objects like buildings, waterways, etc. resulting
+in a smaller file size.</p>
+<h1 id="generating_and_running_the_scenario">Generating and Running the scenario<a class="headerlink" href="#generating_and_running_the_scenario" title="Permanent link">#</a></h1>
+<p>The complete scenario will be generated automatically once <em>Generate
+Scenario</em> in the control panel has been clicked. The scenario generation
+takes a couple of seconds or minutes (depending, among other factors, on the
+size of the scenario). Once the scenario generation process has
+finished, the sumo-gui starts and the simulation can be started by
+pressing the <em>Play</em> button.</p>
+<p><img alt="wz04.jpg" src="../images/Wz04.jpg" title="wz04.jpg" /></p>
+<h1 id="where_to_go_from_here">Where to go from here<a class="headerlink" href="#where_to_go_from_here" title="Permanent link">#</a></h1>
+<p>The OSM Web Wizard stores the entire simulation scenario sumo config and
+intermediate files in a local directory with a name in the format of
+<em>yyyy-mm-dd-hh-mm-ss</em>. If your SUMO installation location is writeable,
+the data will be stored inside the <em>tools</em> directory. Otherwise, a new
+directory <em>~/SUMO/yyyy-mm-dd-hh-mm-ss</em> will be created to host the
+data. The contents of the directory look like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">   ➜  2016-10-17-14-54-30 ls</span>
+<span class="n">   build.bat                  osm.net.xml                osm.rail.rou.alt.xml       osm.tram.rou.alt.xml</span>
+<span class="n">   osm.bicycle.rou.alt.xml    osm.netccfg                osm.rail.rou.xml           osm.tram.rou.xml</span>
+<span class="n">   osm.bicycle.rou.xml        osm.passenger.rou.alt.xml  osm.rail.trips.xml         osm.tram.trips.xml</span>
+<span class="n">   osm.bicycle.trips.xml      osm.passenger.rou.xml      osm.rail_urban.rou.alt.xml osm.truck.rou.alt.xml</span>
+<span class="n">   osm.bus.rou.alt.xml        osm.passenger.trips.xml    osm.rail_urban.rou.xml     osm.truck.rou.xml</span>
+<span class="n">   osm.bus.rou.xml            osm.pedestrian.rou.alt.xml osm.rail_urban.trips.xml   osm.truck.trips.xml</span>
+<span class="n">   osm.bus.trips.xml          osm.pedestrian.rou.xml     osm.ship.rou.alt.xml       osm.view.xml</span>
+<span class="n">   osm.motorcycle.rou.alt.xml osm.pedestrian.trips.xml   osm.ship.rou.xml           osm_bbox.osm.xml</span>
+<span class="n">   osm.motorcycle.rou.xml     osm.poly.xml               osm.ship.trips.xml         run.bat</span>
+<span class="n">   osm.motorcycle.trips.xml   osm.polycfg                osm.sumocfg</span>
+</code></pre></div>
+
+<p>You may now edit those files and re-run the simulation. To learn more
+about the SUMO scenario files, please consult the other
+<a href="index.html">Tutorials</a> as well.</p>
+<p>Please note that depending on your SUMO version some of these files may have an additional <em>.gz</em> suffix.
+The SUMO tools (including sumo-gui and netedit) will still be able to process them but to view or modify
+them in a text editor you will need to unzip them (for instance with gunzip or 7z).</p>
+                </div>
+          </div>
+          <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+        </div>
+
+        <footer class="col-md-12">
+          
+            <br><small><i>This page was last edited on: 13 February 2026</i></small>
+          
+          <hr>
+            <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
+          <p>Follow us on <a class="no-arrow-link" href="https://www.twitter.com/eclipsesumo/"><i class="fa-brands fa-x-twitter"></i></a> <a class="no-arrow-link" href="https://www.facebook.com/simulationofurbanmobility/"><i class="fa-brands fa-facebook"></i></a> <a class="no-arrow-link" href="https://www.instagram.com/eclipse.sumo/"><i class="fa-brands fa-instagram"></i></a> <a class="no-arrow-link" href="https://www.threads.net/@eclipse.sumo"><i class="fa-brands fa-threads"></i></a> <a class="no-arrow-link" href="https://bsky.app/profile/eclipse-sumo.bsky.social"><i class="fa-brands fa-bluesky"></i></a> <a class="no-arrow-link" href="https://www.linkedin.com/groups/5156801/"><i class="fab fa-linkedin"></i></a>
+          | Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a></p>
+        </footer>
+
+      <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="color: #495057 !important;">
+                <p>Enter your search terms:</p>
+                <script async src="https://cse.google.com/cse.js?cx=004302551366764109984:1kpgtzrm6kv"></script>
+                <div class="gcse-search"></div>
+            </div>
+        </div>
+    </div>
+</div>
+      <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("goToTop").style.display = "block";
+          } else {
+            document.getElementById("goToTop").style.display = "none";
+          }
+        }
+
+        function goTopFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+
+        var base_url = "..",
+            shortcuts = {"edit": 69, "help": 191, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+
+        <script>
+          const toggleSwitch = document.querySelector('#theme-switch input[type="checkbox"]');
+
+          function switchTheme(e) {
+              if (e.target.checked) {
+                  localStorage.setItem('sumo-docs-theme', 'dark');
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                  toggleSwitch.checked = true;
+              } else {
+                  localStorage.setItem('sumo-docs-theme', 'light');
+                  document.documentElement.setAttribute('data-theme', 'light');
+                  toggleSwitch.checked = false;
+              }
+          }
+
+          toggleSwitch.addEventListener('change', switchTheme, false);
+
+          if (document.documentElement.getAttribute("data-theme") == "dark"){
+              toggleSwitch.checked = true;
+          }
+          </script>
+
+      <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Key</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody style="color: #495057 !important;">
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help dialog</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search the Documentation</td>
+                  </tr>
+                  <tr>
+                    <td class="edit shortcut"><kbd>e</kbd></td>
+                    <td>Edit current page on GitHub</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+</html>

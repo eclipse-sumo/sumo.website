@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module traci.main</title>
+<style>/*
+    CSS file for pydoc.
+
+    Contents of this file are subject to change without notice.
+
+*/
+
+body {
+    background-color: #f0f0f8;
+}
+
+table.heading tr {
+    background-color: #7799ee;
+}
+
+.decor {
+    color: #ffffff;
+}
+
+.title-decor {
+    background-color: #ffc8d8;
+    color: #000000;
+}
+
+.pkg-content-decor {
+    background-color: #aa55cc;
+}
+
+.index-decor {
+    background-color: #ee77aa;
+}
+
+.functions-decor {
+    background-color: #eeaa77;
+}
+
+.data-decor {
+    background-color: #55aa55;
+}
+
+.author-decor {
+    background-color: #7799ee;
+}
+
+.credits-decor {
+    background-color: #7799ee;
+}
+
+.error-decor {
+    background-color: #bb0000;
+}
+
+.grey {
+    color: #909090;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.repr {
+    color: #c040c0;
+}
+
+table.heading tr td.title {
+    vertical-align: bottom;
+}
+
+table.heading tr td.extra {
+    vertical-align: bottom;
+    text-align: right;
+}
+
+.heading-text {
+    font-family: helvetica, arial;
+}
+
+.bigsection {
+    font-size: larger;
+}
+
+.title {
+    font-size: x-large;
+}
+
+.code {
+    font-family: monospace;
+}
+
+table {
+    width: 100%;
+    border-spacing : 0;
+    border-collapse : collapse;
+    border: 0;
+}
+
+td {
+    padding: 2;
+}
+
+td.section-title {
+    vertical-align: bottom;
+}
+
+td.multicolumn {
+    width: 25%;
+    vertical-align: bottom;
+}
+
+td.singlecolumn {
+    width: 100%;
+}
+</style></head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="traci.html" class="white">traci</a>.main</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/runner/work/sumo.website/sumo.website/sumo/tools/traci/main.py">/home/runner/work/sumo.website/sumo.website/sumo/tools/traci/main.py</a></td></tr></table>
+    <p><span class="code">#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-<br>
+#&nbsp;Eclipse&nbsp;SUMO,&nbsp;Simulation&nbsp;of&nbsp;Urban&nbsp;MObility;&nbsp;see&nbsp;<a href="https://eclipse.dev/sumo">https://eclipse.dev/sumo</a><br>
+#&nbsp;Copyright&nbsp;(C)&nbsp;2008-2026&nbsp;German&nbsp;Aerospace&nbsp;Center&nbsp;(DLR)&nbsp;and&nbsp;others.<br>
+#&nbsp;This&nbsp;program&nbsp;and&nbsp;the&nbsp;accompanying&nbsp;materials&nbsp;are&nbsp;made&nbsp;available&nbsp;under&nbsp;the<br>
+#&nbsp;terms&nbsp;of&nbsp;the&nbsp;Eclipse&nbsp;Public&nbsp;License&nbsp;2.0&nbsp;which&nbsp;is&nbsp;available&nbsp;at<br>
+#&nbsp;<a href="https://www.eclipse.org/legal/epl-2.0/">https://www.eclipse.org/legal/epl-2.0/</a><br>
+#&nbsp;This&nbsp;Source&nbsp;Code&nbsp;may&nbsp;also&nbsp;be&nbsp;made&nbsp;available&nbsp;under&nbsp;the&nbsp;following&nbsp;Secondary<br>
+#&nbsp;Licenses&nbsp;when&nbsp;the&nbsp;conditions&nbsp;for&nbsp;such&nbsp;availability&nbsp;set&nbsp;forth&nbsp;in&nbsp;the&nbsp;Eclipse<br>
+#&nbsp;Public&nbsp;License&nbsp;2.0&nbsp;are&nbsp;satisfied:&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License,&nbsp;version&nbsp;2<br>
+#&nbsp;or&nbsp;later&nbsp;which&nbsp;is&nbsp;available&nbsp;at<br>
+#&nbsp;<a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html">https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html</a><br>
+#&nbsp;SPDX-License-Identifier:&nbsp;EPL-2.0&nbsp;OR&nbsp;GPL-2.0-or-later</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="traci._busstop.html">traci._busstop</a><br>
+<a href="traci._calibrator.html">traci._calibrator</a><br>
+<a href="traci._chargingstation.html">traci._chargingstation</a><br>
+<a href="traci._edge.html">traci._edge</a><br>
+<a href="traci._gui.html">traci._gui</a><br>
+<a href="traci._inductionloop.html">traci._inductionloop</a><br>
+<a href="traci._junction.html">traci._junction</a><br>
+<a href="traci._lane.html">traci._lane</a><br>
+</td><td class="multicolumn"><a href="traci._lanearea.html">traci._lanearea</a><br>
+<a href="traci._meandata.html">traci._meandata</a><br>
+<a href="traci._multientryexit.html">traci._multientryexit</a><br>
+<a href="traci._overheadwire.html">traci._overheadwire</a><br>
+<a href="traci._parkingarea.html">traci._parkingarea</a><br>
+<a href="traci._person.html">traci._person</a><br>
+<a href="traci._poi.html">traci._poi</a><br>
+<a href="traci._polygon.html">traci._polygon</a><br>
+</td><td class="multicolumn"><a href="traci._rerouter.html">traci._rerouter</a><br>
+<a href="traci._route.html">traci._route</a><br>
+<a href="traci._routeprobe.html">traci._routeprobe</a><br>
+<a href="traci._simulation.html">traci._simulation</a><br>
+<a href="traci._trafficlight.html">traci._trafficlight</a><br>
+<a href="traci._variablespeedsign.html">traci._variablespeedsign</a><br>
+<a href="traci._vehicle.html">traci._vehicle</a><br>
+<a href="traci._vehicletype.html">traci._vehicletype</a><br>
+</td><td class="multicolumn"><a href="traci.connection.html">traci.connection</a><br>
+<a href="os.html">os</a><br>
+<a href="socket.html">socket</a><br>
+<a href="subprocess.html">subprocess</a><br>
+<a href="sys.html">sys</a><br>
+<a href="traci.constants.html">traci.constants</a><br>
+<a href="time.html">time</a><br>
+<a href="warnings.html">warnings</a><br>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-addStepListener"><strong>addStepListener</strong></a>(listener)</dt><dd><span class="code"><a href="#-addStepListener">addStepListener</a>(traci.StepListener)&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Append&nbsp;the&nbsp;step&nbsp;listener&nbsp;(its&nbsp;step&nbsp;function&nbsp;is&nbsp;called&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;every&nbsp;call&nbsp;to&nbsp;traci.<a href="#-simulationStep">simulationStep</a>())<br>
+to&nbsp;the&nbsp;current&nbsp;connection.<br>
+Returns&nbsp;the&nbsp;ID&nbsp;assigned&nbsp;to&nbsp;the&nbsp;listener&nbsp;if&nbsp;it&nbsp;was&nbsp;added&nbsp;successfully,&nbsp;None&nbsp;otherwise.</span></dd></dl>
+ <dl><dt><a name="-close"><strong>close</strong></a>(wait=True)</dt><dd><span class="code">Tells&nbsp;TraCI&nbsp;to&nbsp;close&nbsp;the&nbsp;connection.</span></dd></dl>
+ <dl><dt><a name="-connect"><strong>connect</strong></a>(port=8813, numRetries=60, host='localhost', proc=None, waitBetweenRetries=1, traceFile=None, traceGetters=True, label=None)</dt><dd><span class="code">Establish&nbsp;a&nbsp;connection&nbsp;to&nbsp;a&nbsp;TraCI-Server&nbsp;and&nbsp;return&nbsp;the<br>
+connection&nbsp;object.&nbsp;If&nbsp;label&nbsp;is&nbsp;not&nbsp;set,&nbsp;the&nbsp;connection&nbsp;is&nbsp;not&nbsp;saved&nbsp;in&nbsp;the&nbsp;pool&nbsp;and&nbsp;not<br>
+accessible&nbsp;via&nbsp;traci.switch.&nbsp;It&nbsp;should&nbsp;be&nbsp;safe&nbsp;to&nbsp;use&nbsp;different<br>
+connections&nbsp;established&nbsp;by&nbsp;this&nbsp;method&nbsp;in&nbsp;different&nbsp;threads.</span></dd></dl>
+ <dl><dt><a name="-executeMove"><strong>executeMove</strong></a>()</dt><dd><span class="code"><a href="#-executeMove">executeMove</a>()&nbsp;-&gt;&nbsp;None<br>
+Make&nbsp;"half"&nbsp;a&nbsp;simulation&nbsp;step.</span></dd></dl>
+ <dl><dt><a name="-getConnection"><strong>getConnection</strong></a>(label='default')</dt><dd><span class="code">Return&nbsp;the&nbsp;connection&nbsp;associated&nbsp;with&nbsp;the&nbsp;given&nbsp;label.<br>
+Throws&nbsp;a&nbsp;TraCIException&nbsp;if&nbsp;no&nbsp;such&nbsp;connection&nbsp;exists.</span></dd></dl>
+ <dl><dt><a name="-getLabel"><strong>getLabel</strong></a>()</dt><dd><span class="code">Return&nbsp;the&nbsp;label&nbsp;of&nbsp;the&nbsp;current&nbsp;connection.<br>
+Throws&nbsp;a&nbsp;FatalTraCIError&nbsp;if&nbsp;no&nbsp;connection&nbsp;exists.</span></dd></dl>
+ <dl><dt><a name="-getVersion"><strong>getVersion</strong></a>()</dt><dd><span class="code"><a href="#-getVersion">getVersion</a>()&nbsp;-&gt;&nbsp;tuple<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;tuple&nbsp;containing&nbsp;the&nbsp;TraCI&nbsp;API&nbsp;version&nbsp;number&nbsp;(integer)<br>
+and&nbsp;a&nbsp;string&nbsp;identifying&nbsp;the&nbsp;SUMO&nbsp;version&nbsp;running&nbsp;on&nbsp;the&nbsp;TraCI&nbsp;server&nbsp;in&nbsp;human-readable&nbsp;form.</span></dd></dl>
+ <dl><dt><a name="-hasGUI"><strong>hasGUI</strong></a>()</dt><dd><span class="code">Return&nbsp;whether&nbsp;a&nbsp;GUI&nbsp;and&nbsp;the&nbsp;corresponding&nbsp;GUI&nbsp;commands&nbsp;are&nbsp;available&nbsp;for&nbsp;the&nbsp;current&nbsp;connection.</span></dd></dl>
+ <dl><dt><a name="-init"><strong>init</strong></a>(port=8813, numRetries=60, host='localhost', label='default', proc=None, doSwitch=True, traceFile=None, traceGetters=True)</dt><dd><span class="code">Establish&nbsp;a&nbsp;connection&nbsp;to&nbsp;a&nbsp;TraCI-Server&nbsp;and&nbsp;store&nbsp;it&nbsp;under&nbsp;the&nbsp;given<br>
+label.&nbsp;This&nbsp;method&nbsp;is&nbsp;not&nbsp;thread-safe.&nbsp;It&nbsp;accesses&nbsp;the&nbsp;connection<br>
+pool&nbsp;concurrently.</span></dd></dl>
+ <dl><dt><a name="-isLibsumo"><strong>isLibsumo</strong></a>()</dt></dl>
+ <dl><dt><a name="-isLibtraci"><strong>isLibtraci</strong></a>()</dt></dl>
+ <dl><dt><a name="-isLoaded"><strong>isLoaded</strong></a>()</dt><dd><span class="code">Returns&nbsp;whether&nbsp;there&nbsp;is&nbsp;an&nbsp;active&nbsp;connection.</span></dd></dl>
+ <dl><dt><a name="-load"><strong>load</strong></a>(args)</dt><dd><span class="code"><a href="#-load">load</a>([optionOrParam,&nbsp;...])<br>
+Let&nbsp;sumo&nbsp;load&nbsp;a&nbsp;simulation&nbsp;using&nbsp;the&nbsp;given&nbsp;command&nbsp;line&nbsp;like&nbsp;options<br>
+Example:<br>
+&nbsp;&nbsp;<a href="#-load">load</a>(['-c',&nbsp;'run.sumocfg'])<br>
+&nbsp;&nbsp;<a href="#-load">load</a>(['-n',&nbsp;'net.net.xml',&nbsp;'-r',&nbsp;'routes.rou.xml'])</span></dd></dl>
+ <dl><dt><a name="-removeStepListener"><strong>removeStepListener</strong></a>(listenerID)</dt><dd><span class="code"><a href="#-removeStepListener">removeStepListener</a>(traci.StepListener)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Remove&nbsp;the&nbsp;step&nbsp;listener&nbsp;from&nbsp;the&nbsp;current&nbsp;connection's&nbsp;step&nbsp;listener&nbsp;container.<br>
+Returns&nbsp;True&nbsp;if&nbsp;the&nbsp;listener&nbsp;was&nbsp;removed&nbsp;successfully,&nbsp;False&nbsp;if&nbsp;it&nbsp;wasn't&nbsp;registered.</span></dd></dl>
+ <dl><dt><a name="-setConnectHook"><strong>setConnectHook</strong></a>(hookFunc)</dt><dd><span class="code">Set&nbsp;a&nbsp;function&nbsp;which&nbsp;is&nbsp;called&nbsp;whenever&nbsp;a&nbsp;new&nbsp;connection&nbsp;has&nbsp;been&nbsp;established.<br>
+The&nbsp;function&nbsp;should&nbsp;take&nbsp;a&nbsp;single&nbsp;parameter&nbsp;which&nbsp;is&nbsp;the&nbsp;connection&nbsp;object.</span></dd></dl>
+ <dl><dt><a name="-setLegacyGetLeader"><strong>setLegacyGetLeader</strong></a>(enabled)</dt></dl>
+ <dl><dt><a name="-setOrder"><strong>setOrder</strong></a>(order)</dt><dd><span class="code">Tells&nbsp;TraCI&nbsp;to&nbsp;give&nbsp;the&nbsp;current&nbsp;client&nbsp;the&nbsp;given&nbsp;position&nbsp;in&nbsp;the<br>
+execution&nbsp;order.&nbsp;It&nbsp;is&nbsp;mandatory&nbsp;to&nbsp;send&nbsp;this&nbsp;as&nbsp;the&nbsp;first&nbsp;command&nbsp;after<br>
+connecting&nbsp;to&nbsp;the&nbsp;TraCI&nbsp;server&nbsp;when&nbsp;using&nbsp;multiple&nbsp;clients.&nbsp;Each&nbsp;client<br>
+must&nbsp;be&nbsp;assigned&nbsp;a&nbsp;unique&nbsp;integer&nbsp;but&nbsp;there&nbsp;are&nbsp;not&nbsp;further&nbsp;restrictions<br>
+on&nbsp;numbering.</span></dd></dl>
+ <dl><dt><a name="-simulationStep"><strong>simulationStep</strong></a>(step=0)</dt><dd><span class="code"><a href="#-simulationStep">simulationStep</a>(float)&nbsp;-&gt;&nbsp;None<br>
+Make&nbsp;a&nbsp;simulation&nbsp;step&nbsp;and&nbsp;simulate&nbsp;up&nbsp;to&nbsp;the&nbsp;given&nbsp;second&nbsp;in&nbsp;sim&nbsp;time.<br>
+If&nbsp;the&nbsp;given&nbsp;value&nbsp;is&nbsp;0&nbsp;or&nbsp;absent,&nbsp;exactly&nbsp;one&nbsp;step&nbsp;is&nbsp;performed.<br>
+Values&nbsp;smaller&nbsp;than&nbsp;or&nbsp;equal&nbsp;to&nbsp;the&nbsp;current&nbsp;sim&nbsp;time&nbsp;result&nbsp;in&nbsp;no&nbsp;action.</span></dd></dl>
+ <dl><dt><a name="-simulationStepLegacy"><strong>simulationStepLegacy</strong></a>(step=0)</dt><dd><span class="code"><a href="#-simulationStep">simulationStep</a>(float)&nbsp;-&gt;&nbsp;list<br>
+Make&nbsp;a&nbsp;simulation&nbsp;step&nbsp;and&nbsp;simulate&nbsp;up&nbsp;to&nbsp;the&nbsp;given&nbsp;second&nbsp;in&nbsp;sim&nbsp;time.<br>
+If&nbsp;the&nbsp;given&nbsp;value&nbsp;is&nbsp;0&nbsp;or&nbsp;absent,&nbsp;exactly&nbsp;one&nbsp;step&nbsp;is&nbsp;performed.<br>
+Values&nbsp;smaller&nbsp;than&nbsp;or&nbsp;equal&nbsp;to&nbsp;the&nbsp;current&nbsp;sim&nbsp;time&nbsp;result&nbsp;in&nbsp;no&nbsp;action.<br>
+This&nbsp;is&nbsp;a&nbsp;legacy&nbsp;function&nbsp;which&nbsp;returns&nbsp;the&nbsp;subscription&nbsp;results&nbsp;for&nbsp;the<br>
+current&nbsp;step&nbsp;in&nbsp;a&nbsp;list.</span></dd></dl>
+ <dl><dt><a name="-start"><strong>start</strong></a>(cmd, port=None, numRetries=60, label='default', verbose=False, traceFile=None, traceGetters=True, stdout=None, doSwitch=True)</dt><dd><span class="code">Start&nbsp;a&nbsp;sumo&nbsp;server&nbsp;using&nbsp;cmd,&nbsp;establish&nbsp;a&nbsp;connection&nbsp;to&nbsp;it&nbsp;and<br>
+store&nbsp;it&nbsp;under&nbsp;the&nbsp;given&nbsp;label.&nbsp;This&nbsp;method&nbsp;is&nbsp;not&nbsp;thread-safe.<br>
+&nbsp;<br>
+-&nbsp;cmd&nbsp;(list):&nbsp;uses&nbsp;the&nbsp;Popen&nbsp;syntax.&nbsp;i.e.&nbsp;['sumo',&nbsp;'-c',&nbsp;'run.sumocfg'].&nbsp;The&nbsp;remote<br>
+&nbsp;&nbsp;port&nbsp;option&nbsp;will&nbsp;be&nbsp;added&nbsp;automatically<br>
+-&nbsp;numRetries&nbsp;(int):&nbsp;retries&nbsp;on&nbsp;failing&nbsp;to&nbsp;connect&nbsp;to&nbsp;sumo&nbsp;(more&nbsp;retries&nbsp;are&nbsp;needed<br>
+&nbsp;&nbsp;if&nbsp;a&nbsp;big&nbsp;.net.xml&nbsp;file&nbsp;must&nbsp;be&nbsp;loaded)<br>
+-&nbsp;label&nbsp;(string)&nbsp;:&nbsp;distinguish&nbsp;multiple&nbsp;traci&nbsp;connections&nbsp;used&nbsp;in&nbsp;the&nbsp;same&nbsp;script<br>
+-&nbsp;verbose&nbsp;(bool):&nbsp;print&nbsp;complete&nbsp;cmd<br>
+-&nbsp;traceFile&nbsp;(string):&nbsp;write&nbsp;all&nbsp;traci&nbsp;commands&nbsp;to&nbsp;FILE&nbsp;for&nbsp;debugging<br>
+-&nbsp;traceGetters&nbsp;(bool):&nbsp;whether&nbsp;to&nbsp;include&nbsp;get-commands&nbsp;in&nbsp;traceFile<br>
+-&nbsp;stdout&nbsp;(iostream):&nbsp;where&nbsp;to&nbsp;pipe&nbsp;sumo&nbsp;process&nbsp;stdout</span></dd></dl>
+ <dl><dt><a name="-switch"><strong>switch</strong></a>(label)</dt><dd><span class="code">Switch&nbsp;the&nbsp;current&nbsp;connection&nbsp;to&nbsp;the&nbsp;one&nbsp;given&nbsp;by&nbsp;the&nbsp;label.<br>
+Throws&nbsp;a&nbsp;TraCIException&nbsp;if&nbsp;no&nbsp;such&nbsp;connection&nbsp;exists.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>DOMAINS</strong> = [&lt;traci._busstop.BusStopDomain object&gt;, &lt;traci._calibrator.CalibratorDomain object&gt;, &lt;traci._chargingstation.ChargingStationDomain object&gt;, &lt;traci._edge.EdgeDomain object&gt;, &lt;traci._gui.GuiDomain object&gt;, &lt;traci._inductionloop.InductionLoopDomain object&gt;, &lt;traci._junction.JunctionDomain object&gt;, &lt;traci._lane.LaneDomain object&gt;, &lt;traci._lanearea.LaneAreaDomain object&gt;, &lt;traci._meandata.MeanDataDomain object&gt;, &lt;traci._multientryexit.MultiEntryExitDomain object&gt;, &lt;traci._overheadwire.OverheadWireDomain object&gt;, &lt;traci._parkingarea.ParkingAreaDomain object&gt;, &lt;traci._person.PersonDomain object&gt;, &lt;traci._poi.PoiDomain object&gt;, &lt;traci._polygon.PolygonDomain object&gt;, &lt;traci._rerouter.RerouterDomain object&gt;, &lt;traci._route.RouteDomain object&gt;, &lt;traci._routeprobe.RouteProbeDomain object&gt;, &lt;traci._simulation.SimulationDomain object&gt;, ...]<br>
+<strong>busstop</strong> = &lt;traci._busstop.BusStopDomain object&gt;<br>
+<strong>calibrator</strong> = &lt;traci._calibrator.CalibratorDomain object&gt;<br>
+<strong>chargingstation</strong> = &lt;traci._chargingstation.ChargingStationDomain object&gt;<br>
+<strong>edge</strong> = &lt;traci._edge.EdgeDomain object&gt;<br>
+<strong>gui</strong> = &lt;traci._gui.GuiDomain object&gt;<br>
+<strong>inductionloop</strong> = &lt;traci._inductionloop.InductionLoopDomain object&gt;<br>
+<strong>junction</strong> = &lt;traci._junction.JunctionDomain object&gt;<br>
+<strong>lane</strong> = &lt;traci._lane.LaneDomain object&gt;<br>
+<strong>lanearea</strong> = &lt;traci._lanearea.LaneAreaDomain object&gt;<br>
+<strong>meandata</strong> = &lt;traci._meandata.MeanDataDomain object&gt;<br>
+<strong>multientryexit</strong> = &lt;traci._multientryexit.MultiEntryExitDomain object&gt;<br>
+<strong>overheadwire</strong> = &lt;traci._overheadwire.OverheadWireDomain object&gt;<br>
+<strong>parkingarea</strong> = &lt;traci._parkingarea.ParkingAreaDomain object&gt;<br>
+<strong>person</strong> = &lt;traci._person.PersonDomain object&gt;<br>
+<strong>poi</strong> = &lt;traci._poi.PoiDomain object&gt;<br>
+<strong>polygon</strong> = &lt;traci._polygon.PolygonDomain object&gt;<br>
+<strong>rerouter</strong> = &lt;traci._rerouter.RerouterDomain object&gt;<br>
+<strong>route</strong> = &lt;traci._route.RouteDomain object&gt;<br>
+<strong>routeprobe</strong> = &lt;traci._routeprobe.RouteProbeDomain object&gt;<br>
+<strong>simulation</strong> = &lt;traci._simulation.SimulationDomain object&gt;<br>
+<strong>trafficlight</strong> = &lt;traci._trafficlight.TrafficLightDomain object&gt;<br>
+<strong>variablespeedsign</strong> = &lt;traci._variablespeedsign.VariableSpeedSignDomain object&gt;<br>
+<strong>vehicle</strong> = &lt;traci._vehicle.VehicleDomain object&gt;<br>
+<strong>vehicletype</strong> = &lt;traci._vehicletype.VehicleTypeDomain object&gt;</td></tr></table>
+</body></html>

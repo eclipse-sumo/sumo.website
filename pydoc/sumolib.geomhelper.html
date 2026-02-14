@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module sumolib.geomhelper</title>
+<style>/*
+    CSS file for pydoc.
+
+    Contents of this file are subject to change without notice.
+
+*/
+
+body {
+    background-color: #f0f0f8;
+}
+
+table.heading tr {
+    background-color: #7799ee;
+}
+
+.decor {
+    color: #ffffff;
+}
+
+.title-decor {
+    background-color: #ffc8d8;
+    color: #000000;
+}
+
+.pkg-content-decor {
+    background-color: #aa55cc;
+}
+
+.index-decor {
+    background-color: #ee77aa;
+}
+
+.functions-decor {
+    background-color: #eeaa77;
+}
+
+.data-decor {
+    background-color: #55aa55;
+}
+
+.author-decor {
+    background-color: #7799ee;
+}
+
+.credits-decor {
+    background-color: #7799ee;
+}
+
+.error-decor {
+    background-color: #bb0000;
+}
+
+.grey {
+    color: #909090;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.repr {
+    color: #c040c0;
+}
+
+table.heading tr td.title {
+    vertical-align: bottom;
+}
+
+table.heading tr td.extra {
+    vertical-align: bottom;
+    text-align: right;
+}
+
+.heading-text {
+    font-family: helvetica, arial;
+}
+
+.bigsection {
+    font-size: larger;
+}
+
+.title {
+    font-size: x-large;
+}
+
+.code {
+    font-family: monospace;
+}
+
+table {
+    width: 100%;
+    border-spacing : 0;
+    border-collapse : collapse;
+    border: 0;
+}
+
+td {
+    padding: 2;
+}
+
+td.section-title {
+    vertical-align: bottom;
+}
+
+td.multicolumn {
+    width: 25%;
+    vertical-align: bottom;
+}
+
+td.singlecolumn {
+    width: 100%;
+}
+</style></head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="sumolib.html" class="white">sumolib</a>.geomhelper</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/runner/work/sumo.website/sumo.website/sumo/tools/sumolib/geomhelper.py">/home/runner/work/sumo.website/sumo.website/sumo/tools/sumolib/geomhelper.py</a></td></tr></table>
+    <p><span class="code">#&nbsp;Eclipse&nbsp;SUMO,&nbsp;Simulation&nbsp;of&nbsp;Urban&nbsp;MObility;&nbsp;see&nbsp;<a href="https://eclipse.dev/sumo">https://eclipse.dev/sumo</a><br>
+#&nbsp;Copyright&nbsp;(C)&nbsp;2013-2026&nbsp;German&nbsp;Aerospace&nbsp;Center&nbsp;(DLR)&nbsp;and&nbsp;others.<br>
+#&nbsp;This&nbsp;program&nbsp;and&nbsp;the&nbsp;accompanying&nbsp;materials&nbsp;are&nbsp;made&nbsp;available&nbsp;under&nbsp;the<br>
+#&nbsp;terms&nbsp;of&nbsp;the&nbsp;Eclipse&nbsp;Public&nbsp;License&nbsp;2.0&nbsp;which&nbsp;is&nbsp;available&nbsp;at<br>
+#&nbsp;<a href="https://www.eclipse.org/legal/epl-2.0/">https://www.eclipse.org/legal/epl-2.0/</a><br>
+#&nbsp;This&nbsp;Source&nbsp;Code&nbsp;may&nbsp;also&nbsp;be&nbsp;made&nbsp;available&nbsp;under&nbsp;the&nbsp;following&nbsp;Secondary<br>
+#&nbsp;Licenses&nbsp;when&nbsp;the&nbsp;conditions&nbsp;for&nbsp;such&nbsp;availability&nbsp;set&nbsp;forth&nbsp;in&nbsp;the&nbsp;Eclipse<br>
+#&nbsp;Public&nbsp;License&nbsp;2.0&nbsp;are&nbsp;satisfied:&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License,&nbsp;version&nbsp;2<br>
+#&nbsp;or&nbsp;later&nbsp;which&nbsp;is&nbsp;available&nbsp;at<br>
+#&nbsp;<a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html">https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html</a><br>
+#&nbsp;SPDX-License-Identifier:&nbsp;EPL-2.0&nbsp;OR&nbsp;GPL-2.0-or-later</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="math.html">math</a><br>
+</td><td class="multicolumn"><a href="sys.html">sys</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-add"><strong>add</strong></a>(a, b)</dt></dl>
+ <dl><dt><a name="-addToBoundingBox"><strong>addToBoundingBox</strong></a>(coordList, bbox=None)</dt></dl>
+ <dl><dt><a name="-angle2D"><strong>angle2D</strong></a>(p1, p2)</dt></dl>
+ <dl><dt><a name="-angleTo2D"><strong>angleTo2D</strong></a>(p1, p2)</dt></dl>
+ <dl><dt><a name="-debugPrint"><strong>debugPrint</strong></a>(polygon, polyID)</dt><dd><span class="code">print&nbsp;polygon&nbsp;in&nbsp;a&nbsp;way&nbsp;that&nbsp;can&nbsp;be&nbsp;processed&nbsp;with&nbsp;debug2poly.py</span></dd></dl>
+ <dl><dt><a name="-distance"><strong>distance</strong></a>(p1, p2)</dt></dl>
+ <dl><dt><a name="-distancePointToLine"><strong>distancePointToLine</strong></a>(point, line_start, line_end, perpendicular=False)</dt><dd><span class="code">Return&nbsp;the&nbsp;minimum&nbsp;distance&nbsp;between&nbsp;point&nbsp;and&nbsp;the&nbsp;line&nbsp;(line_start,&nbsp;line_end)</span></dd></dl>
+ <dl><dt><a name="-distancePointToPolygon"><strong>distancePointToPolygon</strong></a>(point, polygon, perpendicular=False)</dt><dd><span class="code">Return&nbsp;the&nbsp;minimum&nbsp;distance&nbsp;between&nbsp;point&nbsp;and&nbsp;polygon</span></dd></dl>
+ <dl><dt><a name="-dotProduct"><strong>dotProduct</strong></a>(a, b)</dt></dl>
+ <dl><dt><a name="-fromNaviDegree"><strong>fromNaviDegree</strong></a>(degrees)</dt></dl>
+ <dl><dt><a name="-indexAtShapeOffset"><strong>indexAtShapeOffset</strong></a>(shape, offset)</dt><dd><span class="code">Returns&nbsp;the&nbsp;index&nbsp;of&nbsp;the&nbsp;shape&nbsp;segment&nbsp;which&nbsp;contains&nbsp;the&nbsp;offset&nbsp;and<br>
+the&nbsp;cumulated&nbsp;length&nbsp;of&nbsp;the&nbsp;shape&nbsp;up&nbsp;to&nbsp;the&nbsp;start&nbsp;point&nbsp;of&nbsp;the&nbsp;segment.<br>
+If&nbsp;the&nbsp;offset&nbsp;is&nbsp;less&nbsp;or&nbsp;equal&nbsp;to&nbsp;0,&nbsp;it&nbsp;returns&nbsp;(0,&nbsp;0.)&nbsp;If&nbsp;the&nbsp;offset&nbsp;is<br>
+larger&nbsp;than&nbsp;the&nbsp;shape&nbsp;length&nbsp;it&nbsp;returns&nbsp;(None,&nbsp;length&nbsp;of&nbsp;the&nbsp;shape)</span></dd></dl>
+ <dl><dt><a name="-intersectsAtLengths2D"><strong>intersectsAtLengths2D</strong></a>(polygon1, polygon2)</dt><dd><span class="code">Returns&nbsp;the&nbsp;2D-length&nbsp;from&nbsp;polygon1's&nbsp;start&nbsp;to&nbsp;all&nbsp;intersections&nbsp;between&nbsp;polygon1&nbsp;and&nbsp;polygon2.</span></dd></dl>
+ <dl><dt><a name="-intersectsLineSegment"><strong>intersectsLineSegment</strong></a>(p11, p12, p21, p22, withinDist=0.0, pIntersection=None, storeEndPointsIfCoincident=False)</dt><dd><span class="code">Returns&nbsp;whether&nbsp;the&nbsp;line&nbsp;segments&nbsp;defined&nbsp;by&nbsp;Line&nbsp;p11,p12&nbsp;and&nbsp;Line&nbsp;p21,p22&nbsp;intersect.<br>
+If&nbsp;not&nbsp;set&nbsp;to&nbsp;'None',&nbsp;'pIntersection'&nbsp;serves&nbsp;as&nbsp;a&nbsp;storage&nbsp;for&nbsp;the&nbsp;intersection&nbsp;point(s).<br>
+Parameter&nbsp;'storeEndPointsIfCoincident'&nbsp;is&nbsp;an&nbsp;option&nbsp;for&nbsp;storing&nbsp;the&nbsp;endpoints&nbsp;of&nbsp;the<br>
+line&nbsp;segment&nbsp;defined&nbsp;by&nbsp;the&nbsp;intersecting&nbsp;set&nbsp;of&nbsp;line1&nbsp;and&nbsp;line2&nbsp;if&nbsp;applicable.</span></dd></dl>
+ <dl><dt><a name="-intersectsPolygon"><strong>intersectsPolygon</strong></a>(polygon1, polygon2)</dt><dd><span class="code">Returns&nbsp;whether&nbsp;the&nbsp;polygons&nbsp;intersect&nbsp;on&nbsp;at&nbsp;least&nbsp;one&nbsp;of&nbsp;their&nbsp;segments.</span></dd></dl>
+ <dl><dt><a name="-isClosedPolygon"><strong>isClosedPolygon</strong></a>(polygon)</dt></dl>
+ <dl><dt><a name="-isLeft"><strong>isLeft</strong></a>(point, line_start, line_end)</dt></dl>
+ <dl><dt><a name="-isWithin"><strong>isWithin</strong></a>(pos, shape)</dt><dd><span class="code">Returns&nbsp;whether&nbsp;the&nbsp;given&nbsp;pos&nbsp;coordinate&nbsp;is&nbsp;inside&nbsp;the&nbsp;polygon&nbsp;shape&nbsp;defined&nbsp;in&nbsp;anticlockwise&nbsp;order.</span></dd></dl>
+ <dl><dt><a name="-isclose"><strong>isclose</strong></a>(a, b, rel_tol=1e-09, abs_tol=0.0)</dt></dl>
+ <dl><dt><a name="-length"><strong>length</strong></a>(a)</dt></dl>
+ <dl><dt><a name="-line2boundary"><strong>line2boundary</strong></a>(shape, width)</dt><dd><span class="code">expand&nbsp;center&nbsp;line&nbsp;by&nbsp;width/2&nbsp;on&nbsp;both&nbsp;sides&nbsp;to&nbsp;obtain&nbsp;a&nbsp;(closed)&nbsp;boundary&nbsp;shape<br>
+(i.e.&nbsp;for&nbsp;an&nbsp;edge&nbsp;or&nbsp;lane)</span></dd></dl>
+ <dl><dt><a name="-lineOffsetWithMinimumDistanceToPoint"><strong>lineOffsetWithMinimumDistanceToPoint</strong></a>(point, line_start, line_end, perpendicular=False)</dt><dd><span class="code">Return&nbsp;the&nbsp;offset&nbsp;from&nbsp;line&nbsp;(line_start,&nbsp;line_end)&nbsp;where&nbsp;the&nbsp;distance&nbsp;to<br>
+point&nbsp;is&nbsp;minimal</span></dd></dl>
+ <dl><dt><a name="-minAngleDegreeDiff"><strong>minAngleDegreeDiff</strong></a>(d1, d2)</dt></dl>
+ <dl><dt><a name="-move2side"><strong>move2side</strong></a>(shape, amount)</dt></dl>
+ <dl><dt><a name="-mul"><strong>mul</strong></a>(a, x)</dt></dl>
+ <dl><dt><a name="-narrow"><strong>narrow</strong></a>(fromPos, pos, toPos, amount)</dt><dd><span class="code">detect&nbsp;narrow&nbsp;turns&nbsp;which&nbsp;cannot&nbsp;be&nbsp;shifted&nbsp;regularly</span></dd></dl>
+ <dl><dt><a name="-naviDegree"><strong>naviDegree</strong></a>(rad)</dt></dl>
+ <dl><dt><a name="-norm"><strong>norm</strong></a>(a)</dt></dl>
+ <dl><dt><a name="-normalizeAngle"><strong>normalizeAngle</strong></a>(a, lower, upper, circle)</dt></dl>
+ <dl><dt><a name="-orthoIntersection"><strong>orthoIntersection</strong></a>(a, b)</dt></dl>
+ <dl><dt><a name="-polyLength"><strong>polyLength</strong></a>(polygon)</dt></dl>
+ <dl><dt><a name="-polygonOffsetAndDistanceToPoint"><strong>polygonOffsetAndDistanceToPoint</strong></a>(point, polygon, perpendicular=False)</dt><dd><span class="code">Return&nbsp;the&nbsp;offset&nbsp;and&nbsp;the&nbsp;distance&nbsp;from&nbsp;the&nbsp;polygon&nbsp;start&nbsp;where&nbsp;the&nbsp;distance&nbsp;to&nbsp;the&nbsp;point&nbsp;is&nbsp;minimal</span></dd></dl>
+ <dl><dt><a name="-polygonOffsetWithMinimumDistanceToPoint"><strong>polygonOffsetWithMinimumDistanceToPoint</strong></a>(point, polygon, perpendicular=False)</dt><dd><span class="code">Return&nbsp;the&nbsp;offset&nbsp;from&nbsp;the&nbsp;polygon&nbsp;start&nbsp;where&nbsp;the&nbsp;distance&nbsp;to&nbsp;the&nbsp;point&nbsp;is&nbsp;minimal</span></dd></dl>
+ <dl><dt><a name="-positionAtOffset"><strong>positionAtOffset</strong></a>(p1, p2, offset)</dt></dl>
+ <dl><dt><a name="-positionAtShapeOffset"><strong>positionAtShapeOffset</strong></a>(shape, offset)</dt></dl>
+ <dl><dt><a name="-rotateAround2D"><strong>rotateAround2D</strong></a>(p, rad, origin)</dt></dl>
+ <dl><dt><a name="-rotationAtShapeOffset"><strong>rotationAtShapeOffset</strong></a>(shape, offset)</dt></dl>
+ <dl><dt><a name="-sideOffset"><strong>sideOffset</strong></a>(fromPos, toPos, amount)</dt></dl>
+ <dl><dt><a name="-splitPolygonAtLengths2D"><strong>splitPolygonAtLengths2D</strong></a>(polygon, lengths)</dt><dd><span class="code">Returns&nbsp;the&nbsp;polygon&nbsp;segments&nbsp;split&nbsp;at&nbsp;the&nbsp;given&nbsp;2D-lengths.</span></dd></dl>
+ <dl><dt><a name="-sub"><strong>sub</strong></a>(a, b)</dt></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>INVALID_DISTANCE</strong> = -1</td></tr></table>
+</body></html>

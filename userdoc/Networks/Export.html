@@ -1,0 +1,480 @@
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 14 February 2026 22:27:03
+Last edit: 13 February 2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="theme-color" content="#338033">
+        <meta name="theme-color" content="#338033" media="(prefers-color-scheme: dark)">
+        <meta property="og:image" content="../images/image-facebook.jpg">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="1080">
+        <meta property="og:image:height" content="1080">
+
+        
+        
+        <link rel="canonical" href="https://sumo.dlr.de/docs/Networks/Export.html">
+        <link rel="shortcut icon" href="../images/favicon.ico">
+        <title>Export - SUMO Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.all.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-3.7.0.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+
+      <script>
+        // DARK MODE
+        function detectColorScheme(){
+          var theme="light";
+
+          if(localStorage.getItem("sumo-docs-theme")){
+              if(localStorage.getItem("sumo-docs-theme") == "dark"){
+                  var theme = "dark";
+              }
+          } else if(!window.matchMedia) {
+              return false;
+          } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+              var theme = "dark";
+          }
+
+          if (theme=="dark") {
+              document.documentElement.setAttribute("data-theme", "dark");
+          }
+        }
+        detectColorScheme();
+      </script>
+
+    </head>
+
+    <body>
+
+    <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-center">
+    <div class="container-fluid">
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li class="navitem">
+                        <a href="../index.html" class="nav-link">Documentation</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Tutorials/index.html" class="nav-link">Tutorials</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../FAQ.html" class="nav-link">FAQ</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Downloads.html" class="nav-link">Downloads</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Publications.html" class="nav-link">Publications</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Developer/index.html" class="nav-link">Developer</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../ChangeLog.html" class="nav-link">ChangeLog</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="https://eclipse.dev/sumo/contact/" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa-solid fa-magnifying-glass"></i> <u>S</u>earch
+                    </a>
+                </li>
+                    <li class="nav-item">
+                        <a rel="edit" href="https://github.com/eclipse-sumo/sumo/edit/main/docs/web/docs/Networks/Export.md" class="nav-link"><i class="fa-brands fa-github"></i> <u>E</u>dit on GitHub</a>
+                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    More <i class="fa-solid fa-circle-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item no-arrow-link" href="https://github.com/eclipse/sumo/issues">Report a Bug / Issue / Typo</a>
+                    <a class="dropdown-item" href="../Editing_Articles.html">Help on editing articles</a>
+                    <a class="dropdown-item" href="https://github.com/eclipse/sumo/commits/main/docs/web">Recent documentation changes</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#mkdocs_keyboard_modal">Keyboard Shortcuts</a>
+                    <a class="dropdown-item no-arrow-link" href="https://sumo.dlr.de/sumo_documentation.zip">Download the Documentation</a>
+                    <span class="dropdown-item" id="dark-mode-div">Dark mode <label id="theme-switch" class="theme-switch" for="checkbox_theme">
+                        <input type="checkbox" id="checkbox_theme">
+                    </label></span>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="languagedrop" data-toggle="dropdown">
+                    <i class="fa-solid fa-language"></i> Languages <i class="fa-solid fa-circle-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                    <span class="dropdown-item">
+                        Translations are generated automatically by Google Translate:
+                    </span>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Networks/Export.html?_x_tr_sl=en&_x_tr_tl=de">Deutsch</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Networks/Export.html?_x_tr_sl=en&_x_tr_tl=es">Español</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Networks/Export.html?_x_tr_sl=en&_x_tr_tl=pt">Português</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Networks/Export.html?_x_tr_sl=en&_x_tr_tl=fr">Français</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Networks/Export.html?_x_tr_sl=en&_x_tr_tl=it">Italiano</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Networks/Export.html?_x_tr_sl=en&_x_tr_tl=zh-CN">简体中文</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Networks/Export.html?_x_tr_sl=en&_x_tr_tl=zh-TW">繁體中文</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Networks/Export.html?_x_tr_sl=en&_x_tr_tl=tr">Türkçe</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Networks/Export.html?_x_tr_sl=en&_x_tr_tl=ja">日本語</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Networks/Export.html?_x_tr_sl=en&_x_tr_tl=ko">한국어</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Networks/Export.html?_x_tr_sl=auto&_x_tr_tl=en"><i class="fa-solid fa-arrow-right"></i> Other languages</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container-fluid">
+          <div class="row">
+                <div class="col-md-3">
+                  <div class="text-center"><a href="../index.html" style="display: inline-block; margin-top: 5px;"><img src="../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
+                  
+<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
+            <span class="fa-solid fa-angle-down"></span>
+        </button>
+    </div>
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary toc-scroll toc">
+        <ul class="nav flex-column bs-sidenav">
+            <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
+            <li class="nav-item main"><a href="#supported_export_formats">Supported export formats</a></li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#sumo" class="nav-link">• SUMO</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#plain" class="nav-link">• Plain</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#opendrive" class="nav-link">• OpenDRIVE</a>
+                </li>
+                <li class="nav-item" style="text-indent: 25px;">
+                    <a href="#embedding_road_objects" class="nav-link">&rarr; Embedding Road Objects</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#matsim" class="nav-link">• MATSim</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#dlrnavteq" class="nav-link">• DlrNavteq</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#amitran" class="nav-link">• Amitran</a>
+                </li>
+            <li class="nav-item main"><a href="#converting_to_other_gis_formats">Converting to other GIS formats</a></li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#qgis_geojson" class="nav-link">• (Q)GIS / GeoJSON</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#kml" class="nav-link">• KML</a>
+                </li>
+        </ul>
+    </div>
+
+    <div class="admonition conference" style="position: sticky; margin-top: 20px; margin-bottom:10px;">
+        <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
+    </div>
+
+    <div class="admonition" style="position: sticky; margin-top: 20px; margin-bottom:10px; background-color: #d6cbb2; border-color: #c6b795; padding: 0;">
+        <center>
+            <a class="no-arrow-link" href="https://eclipse.dev/sumo/conference"><img src="../images/SUMO2026.png" alt="SUMO User Conference 2025" class="img-fluid" style="max-height: 200px"></a>
+        </center>
+    </div>
+
+</div>
+                </div>
+                <div class="col-md-9 main-area" role="main">
+                   <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
+                  <ul class="breadcrumbs">
+    <script>
+        var pagePath = "/docs/Networks/Export.html";
+        var splitUrl = pagePath.split("/");
+        splitUrl.pop();
+        splitUrl.shift();
+        if (splitUrl[0] == 'docs') splitUrl.shift();
+        var homeLink = "../index.html";
+        document.write('<li class="breadcrumb-item"><a href="' + homeLink + '"><i class="fa-solid fa-house"></i></a></li>');
+        var prev = '';
+
+        var dirLink = splitUrl.map(function (el) {
+        el = prev + el; prev = el + '/'; return el;
+        });
+
+        for (let i = 0; i < splitUrl.length; i++) {
+            document.write("<li class=\"breadcrumb-item\"><a class=\"no-arrow-link\" href=\"../" + dirLink[i] + "\">" + splitUrl[i] + "</a></li>");
+        }
+    </script>
+    <li class="breadcrumb-item active">Export</li>
+</ul>
+                  <hTitles>Export<hr style="border: 0.5px solid #338033; margin-top: 5px !important;"></hTitles>
+                  
+                  
+
+<h1 id="supported_export_formats">Supported export formats<a class="headerlink" href="#supported_export_formats" title="Permanent link">#</a></h1>
+<h2 id="sumo">SUMO<a class="headerlink" href="#sumo" title="Permanent link">#</a></h2>
+<p>The default output format, when using no other options. While being
+partly similar in structure to the plain format below, this file is not
+meant to be edited by hand since there are complex dependencies between
+the various parts. The name of the file to
+write the network into can be given using the option <strong>--output-file</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a>.
+<strong>--sumo-output</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a> and <strong>--output</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a> are
+synonyms. If any of the other outputs below is active the SUMO
+network will only be generated if the <strong>--output</strong> option is set.</p>
+<h2 id="plain">Plain<a class="headerlink" href="#plain" title="Permanent link">#</a></h2>
+<p>Parsed node and edge definitions may be saved into XML-files which
+have the same format as the ones used for importing XML-networks as
+described in
+<a href="PlainXML.html">Networks/Building_Networks_from_own_XML-descriptions</a>.
+This shall ease processing of networks read from other formats than XML.
+The option <strong>--plain-output</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a> lets <a href="../netconvert.html">netconvert</a> and
+<a href="../netgenerate.html">netgenerate</a> generate four files named
+"<a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a>.nod.xml", "<a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a>.edg.xml". "<a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a>.con.xml",
+and "<a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a>.tll.xml" which contain the previously imported nodes, edges,
+connections, and traffic light logics, respectively. If the original network contained
+edge type information a fifth file with the name "<a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a>.typ.xml"
+will be generated.</p>
+<p>The edge file contains the list of previously read edges and each edge
+will have the information about the edge's id, the allowed velocity, the
+number of lanes, and the from/to - nodes stored. Geometry information is
+stored only if the imported edge has a shape, meaning that it is not
+only a straight connection between the from/to-nodes. The lane spread
+type and the basic edge type are only saved if differing from defaults
+("right" and "normal", respectively). Additionally, if one of the lanes
+prohibits/allows vehicle classes, this information is saved, too (see
+also "Defining allowed Vehicle Types").</p>
+<h2 id="opendrive">OpenDRIVE<a class="headerlink" href="#opendrive" title="Permanent link">#</a></h2>
+<p>To write the imported/generated network as a
+<a href="Import/OpenDRIVE.html">OpenDRIVE</a> file (version 1.4),
+use the option <strong>--opendrive-output</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a>. The extension for OpenDRIVE networks is usually
+".xodr".</p>
+<p>Some notes:</p>
+<ul>
+<li>The feature is currently under implementation</li>
+<li><code>road</code> - the normal ones<ul>
+<li>the road <code>type</code> is always set to
+  "<code>town</code>" for the complete street</li>
+<li>the lane <code>type</code> is set to either
+  <em>biking, sidewalk, tram, none</em> or <em>driving</em> according to the
+  edge permissions.</li>
+<li><code>link</code><ul>
+<li>The road is always connected to the nodes it is outgoing
+  (<code>predecessor</code>) / incoming
+  (<code>successor</code>) from/to</li>
+</ul>
+</li>
+<li><code>planView</code><ul>
+<li>the geometry is given as lines and paramPoly3</li>
+</ul>
+</li>
+<li>no road widenings are modeled - if the number of lanes changes,
+  the road changes</li>
+<li><code>elevationProfile</code> is written if the
+  network contains 3D geometries</li>
+<li><code>lateralProfile</code> does not contain
+  relevant information</li>
+<li>the roads are always unidirectional, this means only the center
+  lane and the right lanes are given</li>
+<li><code>objects</code> and
+  <code>signals</code> do not contain relevant
+  information</li>
+</ul>
+</li>
+</ul>
+<p>Recommended options</p>
+<ul>
+<li><strong>--junctions.scurve-stretch 1.0</strong>. This elongates junction shapes to allow for smooth transitions
+  (values around <em>1.0</em> can be used to reduced or increase stretching)</li>
+</ul>
+<ul>
+<li><strong>--output.original-names</strong>. This records the edge IDs from the corresponding <em>.net.xml</em> within <code>&lt;userData sumoID="..."/&gt;</code> elements as children of the <code>&lt;road&gt;</code></li>
+</ul>
+<h3 id="embedding_road_objects">Embedding Road Objects<a class="headerlink" href="#embedding_road_objects" title="Permanent link">#</a></h3>
+<p>To include road objects in the generated <em>xodr</em>-output, the following
+conditions must be met:</p>
+<ul>
+<li>a polygon file is loaded with <code>&lt;poly&gt;</code> and <code>&lt;poi&gt;</code> elements</li>
+<li>either:<ul>
+<li>edges include the <a href="../Simulation/GenericParameters.html">generic
+parameter</a> <code>&lt;param key="roadObjects" value="POLY_D1 POLY_ID2 ... POLY_IDK"/&gt;</code></li>
+<li>option <strong>--opendrive-output.shape-match-dist FLOAT</strong> is set to automatically match loaded polygons and POIs to the closest network edge</li>
+</ul>
+</li>
+</ul>
+<p>Such edges will receive the polygon objects with the indicated IDs as
+road objects</p>
+<h2 id="matsim">MATSim<a class="headerlink" href="#matsim" title="Permanent link">#</a></h2>
+<p>To write the imported/generated network as a MATSim file, use the option
+<strong>--matsim-output</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a>. The extension for MATSim networks is usually ".xml".</p>
+<p>Please note that the capacity is computed by multiplying an edge's lane
+number with the capacity norm:</p>
+<div class="codehilite"><pre><span></span><code>MAXIMUM_FLOW = LANE_NUMBER * CAPACITY_NORM
+</code></pre></div>
+
+<p>The value of CAPACITY_NORM is controlled via the option <strong>--capacity-norm</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a> (default: 1800).</p>
+<h2 id="dlrnavteq">DlrNavteq<a class="headerlink" href="#dlrnavteq" title="Permanent link">#</a></h2>
+<p>The <strong>--dlr-navteq-output</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a> generates a links, a nodes and a traffic lights file matching extraction version 6.5 by default. The version can be set using the option <strong>--dlr-navteq.version</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a>. A version of 7 or larger will trigger the output of additional attributes such as maximum height and width.</p>
+<h2 id="amitran">Amitran<a class="headerlink" href="#amitran" title="Permanent link">#</a></h2>
+<p>The Amitran network format consists of a single XML file conforming to
+the schema at <a href="https://sumo.dlr.de/xsd/amitran/network.xsd">https://sumo.dlr.de/xsd/amitran/network.xsd</a>. The option <strong>--amitran-output</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a>
+writes the data to a file with the following format</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+
+<span class="nt">&lt;network</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;http://sumo.dlr.de/xsd/amitran/network.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="w">   </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;rightBeforeLeft&quot;</span><span class="nt">/&gt;</span>
+<span class="w">   </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;priority&quot;</span><span class="nt">/&gt;</span>
+<span class="w">   </span>...
+<span class="w">   </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">roadClass=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;136448&quot;</span><span class="w"> </span><span class="na">speedLimitKmh=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">laneNr=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+<span class="w">   </span>...
+<span class="nt">&lt;/network&gt;</span>
+</code></pre></div>
+
+<p>where all values are integers (the length is in units of 0.01m, the road
+class is a functional road class in the Navteq sense)</p>
+<h1 id="converting_to_other_gis_formats">Converting to other GIS formats<a class="headerlink" href="#converting_to_other_gis_formats" title="Permanent link">#</a></h1>
+<h2 id="qgis_geojson">(Q)GIS / GeoJSON<a class="headerlink" href="#qgis_geojson" title="Permanent link">#</a></h2>
+<p>Conversion of .net.xml file with <a href="../Tools/Net.html#net2geojsonpy">python tool net2geojson</a></p>
+<h2 id="kml">KML<a class="headerlink" href="#kml" title="Permanent link">#</a></h2>
+<p>Conversion of .net.xml file with <a href="../Tools/Net.html#net2kmlpy">python tool net2kml</a></p>
+<div style="border:1px solid #909090; min-height: 35px;" align="right">
+<span style="float: right; margin-top: -5px;"><a href="https://web.archive.org/web/20191005024529/https:/ec.europa.eu/research/fp7/index_en.cfm"><img src="../images/FP7-small.gif" alt="Seventh Framework Programme"></a>
+<a href="https://web.archive.org/web/20180309093847/https://amitran.eu/"><img src="../images/AMITRAN-small.png" alt="AMITRAN project"></a></span>
+<span style="">This part of SUMO was developed, reworked, or extended within the project
+<a href="https://web.archive.org/web/20180309093847/https://amitran.eu/">"AMITRAN"</a>, co-funded by the European Commission within the <a href="https://web.archive.org/web/20191005024529/https:/ec.europa.eu/research/fp7/index_en.cfm">Seventh Framework Programme</a>.</span></div>
+                </div>
+          </div>
+          <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+        </div>
+
+        <footer class="col-md-12">
+          
+            <br><small><i>This page was last edited on: 13 February 2026</i></small>
+          
+          <hr>
+            <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
+          <p>Follow us on <a class="no-arrow-link" href="https://www.twitter.com/eclipsesumo/"><i class="fa-brands fa-x-twitter"></i></a> <a class="no-arrow-link" href="https://www.facebook.com/simulationofurbanmobility/"><i class="fa-brands fa-facebook"></i></a> <a class="no-arrow-link" href="https://www.instagram.com/eclipse.sumo/"><i class="fa-brands fa-instagram"></i></a> <a class="no-arrow-link" href="https://www.threads.net/@eclipse.sumo"><i class="fa-brands fa-threads"></i></a> <a class="no-arrow-link" href="https://bsky.app/profile/eclipse-sumo.bsky.social"><i class="fa-brands fa-bluesky"></i></a> <a class="no-arrow-link" href="https://www.linkedin.com/groups/5156801/"><i class="fab fa-linkedin"></i></a>
+          | Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a></p>
+        </footer>
+
+      <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="color: #495057 !important;">
+                <p>Enter your search terms:</p>
+                <script async src="https://cse.google.com/cse.js?cx=004302551366764109984:1kpgtzrm6kv"></script>
+                <div class="gcse-search"></div>
+            </div>
+        </div>
+    </div>
+</div>
+      <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("goToTop").style.display = "block";
+          } else {
+            document.getElementById("goToTop").style.display = "none";
+          }
+        }
+
+        function goTopFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+
+        var base_url = "..",
+            shortcuts = {"edit": 69, "help": 191, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+
+        <script>
+          const toggleSwitch = document.querySelector('#theme-switch input[type="checkbox"]');
+
+          function switchTheme(e) {
+              if (e.target.checked) {
+                  localStorage.setItem('sumo-docs-theme', 'dark');
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                  toggleSwitch.checked = true;
+              } else {
+                  localStorage.setItem('sumo-docs-theme', 'light');
+                  document.documentElement.setAttribute('data-theme', 'light');
+                  toggleSwitch.checked = false;
+              }
+          }
+
+          toggleSwitch.addEventListener('change', switchTheme, false);
+
+          if (document.documentElement.getAttribute("data-theme") == "dark"){
+              toggleSwitch.checked = true;
+          }
+          </script>
+
+      <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Key</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody style="color: #495057 !important;">
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help dialog</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search the Documentation</td>
+                  </tr>
+                  <tr>
+                    <td class="edit shortcut"><kbd>e</kbd></td>
+                    <td>Edit current page on GitHub</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+</html>

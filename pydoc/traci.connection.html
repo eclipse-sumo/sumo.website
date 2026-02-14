@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module traci.connection</title>
+<style>/*
+    CSS file for pydoc.
+
+    Contents of this file are subject to change without notice.
+
+*/
+
+body {
+    background-color: #f0f0f8;
+}
+
+table.heading tr {
+    background-color: #7799ee;
+}
+
+.decor {
+    color: #ffffff;
+}
+
+.title-decor {
+    background-color: #ffc8d8;
+    color: #000000;
+}
+
+.pkg-content-decor {
+    background-color: #aa55cc;
+}
+
+.index-decor {
+    background-color: #ee77aa;
+}
+
+.functions-decor {
+    background-color: #eeaa77;
+}
+
+.data-decor {
+    background-color: #55aa55;
+}
+
+.author-decor {
+    background-color: #7799ee;
+}
+
+.credits-decor {
+    background-color: #7799ee;
+}
+
+.error-decor {
+    background-color: #bb0000;
+}
+
+.grey {
+    color: #909090;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.repr {
+    color: #c040c0;
+}
+
+table.heading tr td.title {
+    vertical-align: bottom;
+}
+
+table.heading tr td.extra {
+    vertical-align: bottom;
+    text-align: right;
+}
+
+.heading-text {
+    font-family: helvetica, arial;
+}
+
+.bigsection {
+    font-size: larger;
+}
+
+.title {
+    font-size: x-large;
+}
+
+.code {
+    font-family: monospace;
+}
+
+table {
+    width: 100%;
+    border-spacing : 0;
+    border-collapse : collapse;
+    border: 0;
+}
+
+td {
+    padding: 2;
+}
+
+td.section-title {
+    vertical-align: bottom;
+}
+
+td.multicolumn {
+    width: 25%;
+    vertical-align: bottom;
+}
+
+td.singlecolumn {
+    width: 100%;
+}
+</style></head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="traci.html" class="white">traci</a>.connection</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/runner/work/sumo.website/sumo.website/sumo/tools/traci/connection.py">/home/runner/work/sumo.website/sumo.website/sumo/tools/traci/connection.py</a></td></tr></table>
+    <p><span class="code">#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-<br>
+#&nbsp;Eclipse&nbsp;SUMO,&nbsp;Simulation&nbsp;of&nbsp;Urban&nbsp;MObility;&nbsp;see&nbsp;<a href="https://eclipse.dev/sumo">https://eclipse.dev/sumo</a><br>
+#&nbsp;Copyright&nbsp;(C)&nbsp;2008-2026&nbsp;German&nbsp;Aerospace&nbsp;Center&nbsp;(DLR)&nbsp;and&nbsp;others.<br>
+#&nbsp;This&nbsp;program&nbsp;and&nbsp;the&nbsp;accompanying&nbsp;materials&nbsp;are&nbsp;made&nbsp;available&nbsp;under&nbsp;the<br>
+#&nbsp;terms&nbsp;of&nbsp;the&nbsp;Eclipse&nbsp;Public&nbsp;License&nbsp;2.0&nbsp;which&nbsp;is&nbsp;available&nbsp;at<br>
+#&nbsp;<a href="https://www.eclipse.org/legal/epl-2.0/">https://www.eclipse.org/legal/epl-2.0/</a><br>
+#&nbsp;This&nbsp;Source&nbsp;Code&nbsp;may&nbsp;also&nbsp;be&nbsp;made&nbsp;available&nbsp;under&nbsp;the&nbsp;following&nbsp;Secondary<br>
+#&nbsp;Licenses&nbsp;when&nbsp;the&nbsp;conditions&nbsp;for&nbsp;such&nbsp;availability&nbsp;set&nbsp;forth&nbsp;in&nbsp;the&nbsp;Eclipse<br>
+#&nbsp;Public&nbsp;License&nbsp;2.0&nbsp;are&nbsp;satisfied:&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License,&nbsp;version&nbsp;2<br>
+#&nbsp;or&nbsp;later&nbsp;which&nbsp;is&nbsp;available&nbsp;at<br>
+#&nbsp;<a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html">https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html</a><br>
+#&nbsp;SPDX-License-Identifier:&nbsp;EPL-2.0&nbsp;OR&nbsp;GPL-2.0-or-later</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="socket.html">socket</a><br>
+<a href="struct.html">struct</a><br>
+</td><td class="multicolumn"><a href="sys.html">sys</a><br>
+<a href="traci.constants.html">traci.constants</a><br>
+</td><td class="multicolumn"><a href="threading.html">threading</a><br>
+<a href="warnings.html">warnings</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="traci.step.html#StepManager">traci.step.StepManager</a>(<a href="builtins.html#object">builtins.object</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="traci.connection.html#Connection">Connection</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Connection">class <strong>Connection</strong></a>(<a href="traci.step.html#StepManager">traci.step.StepManager</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Connection">Connection</a>(host,&nbsp;port,&nbsp;process,&nbsp;traceFile,&nbsp;traceGetters,&nbsp;label=None)<br>
+&nbsp;<br>
+Contains&nbsp;the&nbsp;socket,&nbsp;the&nbsp;composed&nbsp;message&nbsp;string<br>
+together&nbsp;with&nbsp;a&nbsp;list&nbsp;of&nbsp;TraCI&nbsp;commands&nbsp;which&nbsp;are&nbsp;inside.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="traci.connection.html#Connection">Connection</a></dd>
+<dd><a href="traci.step.html#StepManager">traci.step.StepManager</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Connection-__init__"><strong>__init__</strong></a>(self, host, port, process, traceFile, traceGetters, label=None)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="Connection-close"><strong>close</strong></a>(self, wait=True)</dt></dl>
+
+<dl><dt><a name="Connection-getLabel"><strong>getLabel</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Connection-getVersion"><strong>getVersion</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Connection-hasGUI"><strong>hasGUI</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Connection-load"><strong>load</strong></a>(self, args)</dt><dd><span class="code">Load&nbsp;a&nbsp;simulation&nbsp;from&nbsp;the&nbsp;given&nbsp;arguments.</span></dd></dl>
+
+<dl><dt><a name="Connection-setOrder"><strong>setOrder</strong></a>(self, order)</dt></dl>
+
+<dl><dt><a name="Connection-simulationStep"><strong>simulationStep</strong></a>(self, step=0.0)</dt><dd><span class="code">Make&nbsp;a&nbsp;simulation&nbsp;step&nbsp;and&nbsp;simulate&nbsp;up&nbsp;to&nbsp;the&nbsp;given&nbsp;second&nbsp;in&nbsp;sim&nbsp;time.<br>
+If&nbsp;the&nbsp;given&nbsp;value&nbsp;is&nbsp;0&nbsp;or&nbsp;absent,&nbsp;exactly&nbsp;one&nbsp;step&nbsp;is&nbsp;performed.<br>
+Values&nbsp;smaller&nbsp;than&nbsp;or&nbsp;equal&nbsp;to&nbsp;the&nbsp;current&nbsp;sim&nbsp;time&nbsp;result&nbsp;in&nbsp;no&nbsp;action.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="traci.step.html#StepManager">traci.step.StepManager</a>:<br>
+<dl><dt><a name="Connection-addStepListener"><strong>addStepListener</strong></a>(self, listener)</dt><dd><span class="code"><a href="#Connection-addStepListener">addStepListener</a>(traci.StepListener)&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Append&nbsp;the&nbsp;step&nbsp;listener&nbsp;(its&nbsp;step&nbsp;function&nbsp;is&nbsp;called&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;every&nbsp;call&nbsp;to&nbsp;traci.<a href="#Connection-simulationStep">simulationStep</a>())<br>
+Returns&nbsp;the&nbsp;ID&nbsp;assigned&nbsp;to&nbsp;the&nbsp;listener&nbsp;if&nbsp;it&nbsp;was&nbsp;added&nbsp;successfully,&nbsp;None&nbsp;otherwise.</span></dd></dl>
+
+<dl><dt><a name="Connection-manageStepListeners"><strong>manageStepListeners</strong></a>(self, step)</dt></dl>
+
+<dl><dt><a name="Connection-removeStepListener"><strong>removeStepListener</strong></a>(self, listenerID)</dt><dd><span class="code"><a href="#Connection-removeStepListener">removeStepListener</a>(traci.StepListener)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Remove&nbsp;the&nbsp;step&nbsp;listener&nbsp;from&nbsp;traci's&nbsp;step&nbsp;listener&nbsp;container.<br>
+Returns&nbsp;True&nbsp;if&nbsp;the&nbsp;listener&nbsp;was&nbsp;removed&nbsp;successfully,&nbsp;False&nbsp;if&nbsp;it&nbsp;wasn't&nbsp;registered.</span></dd></dl>
+
+<dl><dt><a name="Connection-startTracing"><strong>startTracing</strong></a>(self, traceFile, traceGetters, domains)</dt></dl>
+
+<dl><dt><a name="Connection-write"><strong>write</strong></a>(self, method, args='', isGetter=False)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="traci.step.html#StepManager">traci.step.StepManager</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-check"><strong>check</strong></a>()</dt></dl>
+ <dl><dt><a name="-get"><strong>get</strong></a>(label='default')</dt></dl>
+ <dl><dt><a name="-has"><strong>has</strong></a>(label)</dt></dl>
+ <dl><dt><a name="-switch"><strong>switch</strong></a>(label)</dt></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>DOMAINS</strong> = [&lt;traci._busstop.BusStopDomain object&gt;, &lt;traci._calibrator.CalibratorDomain object&gt;, &lt;traci._chargingstation.ChargingStationDomain object&gt;, &lt;traci._edge.EdgeDomain object&gt;, &lt;traci._gui.GuiDomain object&gt;, &lt;traci._inductionloop.InductionLoopDomain object&gt;, &lt;traci._junction.JunctionDomain object&gt;, &lt;traci._lane.LaneDomain object&gt;, &lt;traci._lanearea.LaneAreaDomain object&gt;, &lt;traci._meandata.MeanDataDomain object&gt;, &lt;traci._multientryexit.MultiEntryExitDomain object&gt;, &lt;traci._overheadwire.OverheadWireDomain object&gt;, &lt;traci._parkingarea.ParkingAreaDomain object&gt;, &lt;traci._person.PersonDomain object&gt;, &lt;traci._poi.PoiDomain object&gt;, &lt;traci._polygon.PolygonDomain object&gt;, &lt;traci._rerouter.RerouterDomain object&gt;, &lt;traci._route.RouteDomain object&gt;, &lt;traci._routeprobe.RouteProbeDomain object&gt;, &lt;traci._simulation.SimulationDomain object&gt;, ...]</td></tr></table>
+</body></html>

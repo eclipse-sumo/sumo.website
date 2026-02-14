@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module sumolib.xml.parsing</title>
+<style>/*
+    CSS file for pydoc.
+
+    Contents of this file are subject to change without notice.
+
+*/
+
+body {
+    background-color: #f0f0f8;
+}
+
+table.heading tr {
+    background-color: #7799ee;
+}
+
+.decor {
+    color: #ffffff;
+}
+
+.title-decor {
+    background-color: #ffc8d8;
+    color: #000000;
+}
+
+.pkg-content-decor {
+    background-color: #aa55cc;
+}
+
+.index-decor {
+    background-color: #ee77aa;
+}
+
+.functions-decor {
+    background-color: #eeaa77;
+}
+
+.data-decor {
+    background-color: #55aa55;
+}
+
+.author-decor {
+    background-color: #7799ee;
+}
+
+.credits-decor {
+    background-color: #7799ee;
+}
+
+.error-decor {
+    background-color: #bb0000;
+}
+
+.grey {
+    color: #909090;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.repr {
+    color: #c040c0;
+}
+
+table.heading tr td.title {
+    vertical-align: bottom;
+}
+
+table.heading tr td.extra {
+    vertical-align: bottom;
+    text-align: right;
+}
+
+.heading-text {
+    font-family: helvetica, arial;
+}
+
+.bigsection {
+    font-size: larger;
+}
+
+.title {
+    font-size: x-large;
+}
+
+.code {
+    font-family: monospace;
+}
+
+table {
+    width: 100%;
+    border-spacing : 0;
+    border-collapse : collapse;
+    border: 0;
+}
+
+td {
+    padding: 2;
+}
+
+td.section-title {
+    vertical-align: bottom;
+}
+
+td.multicolumn {
+    width: 25%;
+    vertical-align: bottom;
+}
+
+td.singlecolumn {
+    width: 100%;
+}
+</style></head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="sumolib.html" class="white">sumolib</a>.<a href="sumolib.xml.html" class="white">xml</a>.parsing</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/runner/work/sumo.website/sumo.website/sumo/tools/sumolib/xml/parsing.py">/home/runner/work/sumo.website/sumo.website/sumo/tools/sumolib/xml/parsing.py</a></td></tr></table>
+    <p><span class="code">#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-<br>
+#&nbsp;Eclipse&nbsp;SUMO,&nbsp;Simulation&nbsp;of&nbsp;Urban&nbsp;MObility;&nbsp;see&nbsp;<a href="https://eclipse.dev/sumo">https://eclipse.dev/sumo</a><br>
+#&nbsp;Copyright&nbsp;(C)&nbsp;2011-2026&nbsp;German&nbsp;Aerospace&nbsp;Center&nbsp;(DLR)&nbsp;and&nbsp;others.<br>
+#&nbsp;This&nbsp;program&nbsp;and&nbsp;the&nbsp;accompanying&nbsp;materials&nbsp;are&nbsp;made&nbsp;available&nbsp;under&nbsp;the<br>
+#&nbsp;terms&nbsp;of&nbsp;the&nbsp;Eclipse&nbsp;Public&nbsp;License&nbsp;2.0&nbsp;which&nbsp;is&nbsp;available&nbsp;at<br>
+#&nbsp;<a href="https://www.eclipse.org/legal/epl-2.0/">https://www.eclipse.org/legal/epl-2.0/</a><br>
+#&nbsp;This&nbsp;Source&nbsp;Code&nbsp;may&nbsp;also&nbsp;be&nbsp;made&nbsp;available&nbsp;under&nbsp;the&nbsp;following&nbsp;Secondary<br>
+#&nbsp;Licenses&nbsp;when&nbsp;the&nbsp;conditions&nbsp;for&nbsp;such&nbsp;availability&nbsp;set&nbsp;forth&nbsp;in&nbsp;the&nbsp;Eclipse<br>
+#&nbsp;Public&nbsp;License&nbsp;2.0&nbsp;are&nbsp;satisfied:&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License,&nbsp;version&nbsp;2<br>
+#&nbsp;or&nbsp;later&nbsp;which&nbsp;is&nbsp;available&nbsp;at<br>
+#&nbsp;<a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html">https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html</a><br>
+#&nbsp;SPDX-License-Identifier:&nbsp;EPL-2.0&nbsp;OR&nbsp;GPL-2.0-or-later</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="xml.etree.cElementTree.html">xml.etree.cElementTree</a><br>
+<a href="gzip.html">gzip</a><br>
+<a href="io.html">io</a><br>
+</td><td class="multicolumn"><a href="sumolib.miscutils.html">sumolib.miscutils</a><br>
+<a href="re.html">re</a><br>
+<a href="xml.sax.saxutils.html">xml.sax.saxutils</a><br>
+</td><td class="multicolumn"><a href="sys.html">sys</a><br>
+<a href="xml.html">xml</a><br>
+<a href="sumolib.xml.xsd.html">sumolib.xml.xsd</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="xml.sax.handler.html#ContentHandler">xml.sax.handler.ContentHandler</a>(<a href="builtins.html#object">builtins.object</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="sumolib.xml.parsing.html#NestingHandler">NestingHandler</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="sumolib.xml.parsing.html#AttrFinder">AttrFinder</a>
+</dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="AttrFinder">class <strong>AttrFinder</strong></a>(<a href="sumolib.xml.parsing.html#NestingHandler">NestingHandler</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#AttrFinder">AttrFinder</a>(xsdFile,&nbsp;source,&nbsp;split,&nbsp;keepAttrs=None)<br>
+&nbsp;<br>
+<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="sumolib.xml.parsing.html#AttrFinder">AttrFinder</a></dd>
+<dd><a href="sumolib.xml.parsing.html#NestingHandler">NestingHandler</a></dd>
+<dd><a href="xml.sax.handler.html#ContentHandler">xml.sax.handler.ContentHandler</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="AttrFinder-__init__"><strong>__init__</strong></a>(self, xsdFile, source, split, keepAttrs=None)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="AttrFinder-addElement"><strong>addElement</strong></a>(self, root, name, depth)</dt></dl>
+
+<dl><dt><a name="AttrFinder-recursiveAttrFind"><strong>recursiveAttrFind</strong></a>(self, root, currEle, depth)</dt></dl>
+
+<dl><dt><a name="AttrFinder-startElement"><strong>startElement</strong></a>(self, name, attrs)</dt><dd><span class="code">Signals&nbsp;the&nbsp;start&nbsp;of&nbsp;an&nbsp;element&nbsp;in&nbsp;non-namespace&nbsp;mode.<br>
+&nbsp;<br>
+The&nbsp;name&nbsp;parameter&nbsp;contains&nbsp;the&nbsp;raw&nbsp;XML&nbsp;1.0&nbsp;name&nbsp;of&nbsp;the<br>
+element&nbsp;type&nbsp;as&nbsp;a&nbsp;string&nbsp;and&nbsp;the&nbsp;attrs&nbsp;parameter&nbsp;holds&nbsp;an<br>
+instance&nbsp;of&nbsp;the&nbsp;Attributes&nbsp;class&nbsp;containing&nbsp;the&nbsp;attributes&nbsp;of<br>
+the&nbsp;element.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="sumolib.xml.parsing.html#NestingHandler">NestingHandler</a>:<br>
+<dl><dt><a name="AttrFinder-depth"><strong>depth</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="AttrFinder-endElement"><strong>endElement</strong></a>(self, name)</dt><dd><span class="code">Signals&nbsp;the&nbsp;end&nbsp;of&nbsp;an&nbsp;element&nbsp;in&nbsp;non-namespace&nbsp;mode.<br>
+&nbsp;<br>
+The&nbsp;name&nbsp;parameter&nbsp;contains&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;element&nbsp;type,&nbsp;just<br>
+as&nbsp;with&nbsp;the&nbsp;startElement&nbsp;event.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="xml.sax.handler.html#ContentHandler">xml.sax.handler.ContentHandler</a>:<br>
+<dl><dt><a name="AttrFinder-characters"><strong>characters</strong></a>(self, content)</dt><dd><span class="code">Receive&nbsp;notification&nbsp;of&nbsp;character&nbsp;data.<br>
+&nbsp;<br>
+The&nbsp;Parser&nbsp;will&nbsp;call&nbsp;this&nbsp;method&nbsp;to&nbsp;report&nbsp;each&nbsp;chunk&nbsp;of<br>
+character&nbsp;data.&nbsp;SAX&nbsp;parsers&nbsp;may&nbsp;return&nbsp;all&nbsp;contiguous<br>
+character&nbsp;data&nbsp;in&nbsp;a&nbsp;single&nbsp;chunk,&nbsp;or&nbsp;they&nbsp;may&nbsp;split&nbsp;it&nbsp;into<br>
+several&nbsp;chunks;&nbsp;however,&nbsp;all&nbsp;of&nbsp;the&nbsp;characters&nbsp;in&nbsp;any&nbsp;single<br>
+event&nbsp;must&nbsp;come&nbsp;from&nbsp;the&nbsp;same&nbsp;external&nbsp;entity&nbsp;so&nbsp;that&nbsp;the<br>
+Locator&nbsp;provides&nbsp;useful&nbsp;information.</span></dd></dl>
+
+<dl><dt><a name="AttrFinder-endDocument"><strong>endDocument</strong></a>(self)</dt><dd><span class="code">Receive&nbsp;notification&nbsp;of&nbsp;the&nbsp;end&nbsp;of&nbsp;a&nbsp;document.<br>
+&nbsp;<br>
+The&nbsp;SAX&nbsp;parser&nbsp;will&nbsp;invoke&nbsp;this&nbsp;method&nbsp;only&nbsp;once,&nbsp;and&nbsp;it&nbsp;will<br>
+be&nbsp;the&nbsp;last&nbsp;method&nbsp;invoked&nbsp;during&nbsp;the&nbsp;parse.&nbsp;The&nbsp;parser&nbsp;shall<br>
+not&nbsp;invoke&nbsp;this&nbsp;method&nbsp;until&nbsp;it&nbsp;has&nbsp;either&nbsp;abandoned&nbsp;parsing<br>
+(because&nbsp;of&nbsp;an&nbsp;unrecoverable&nbsp;error)&nbsp;or&nbsp;reached&nbsp;the&nbsp;end&nbsp;of<br>
+input.</span></dd></dl>
+
+<dl><dt><a name="AttrFinder-endElementNS"><strong>endElementNS</strong></a>(self, name, qname)</dt><dd><span class="code">Signals&nbsp;the&nbsp;end&nbsp;of&nbsp;an&nbsp;element&nbsp;in&nbsp;namespace&nbsp;mode.<br>
+&nbsp;<br>
+The&nbsp;name&nbsp;parameter&nbsp;contains&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;element&nbsp;type,&nbsp;just<br>
+as&nbsp;with&nbsp;the&nbsp;startElementNS&nbsp;event.</span></dd></dl>
+
+<dl><dt><a name="AttrFinder-endPrefixMapping"><strong>endPrefixMapping</strong></a>(self, prefix)</dt><dd><span class="code">End&nbsp;the&nbsp;scope&nbsp;of&nbsp;a&nbsp;prefix-URI&nbsp;mapping.<br>
+&nbsp;<br>
+See&nbsp;startPrefixMapping&nbsp;for&nbsp;details.&nbsp;This&nbsp;event&nbsp;will&nbsp;always<br>
+occur&nbsp;after&nbsp;the&nbsp;corresponding&nbsp;endElement&nbsp;event,&nbsp;but&nbsp;the&nbsp;order<br>
+of&nbsp;endPrefixMapping&nbsp;events&nbsp;is&nbsp;not&nbsp;otherwise&nbsp;guaranteed.</span></dd></dl>
+
+<dl><dt><a name="AttrFinder-ignorableWhitespace"><strong>ignorableWhitespace</strong></a>(self, whitespace)</dt><dd><span class="code">Receive&nbsp;notification&nbsp;of&nbsp;ignorable&nbsp;whitespace&nbsp;in&nbsp;element&nbsp;content.<br>
+&nbsp;<br>
+Validating&nbsp;Parsers&nbsp;must&nbsp;use&nbsp;this&nbsp;method&nbsp;to&nbsp;report&nbsp;each&nbsp;chunk<br>
+of&nbsp;ignorable&nbsp;whitespace&nbsp;(see&nbsp;the&nbsp;W3C&nbsp;XML&nbsp;1.0&nbsp;recommendation,<br>
+section&nbsp;2.10):&nbsp;non-validating&nbsp;parsers&nbsp;may&nbsp;also&nbsp;use&nbsp;this&nbsp;method<br>
+if&nbsp;they&nbsp;are&nbsp;capable&nbsp;of&nbsp;parsing&nbsp;and&nbsp;using&nbsp;content&nbsp;models.<br>
+&nbsp;<br>
+SAX&nbsp;parsers&nbsp;may&nbsp;return&nbsp;all&nbsp;contiguous&nbsp;whitespace&nbsp;in&nbsp;a&nbsp;single<br>
+chunk,&nbsp;or&nbsp;they&nbsp;may&nbsp;split&nbsp;it&nbsp;into&nbsp;several&nbsp;chunks;&nbsp;however,&nbsp;all<br>
+of&nbsp;the&nbsp;characters&nbsp;in&nbsp;any&nbsp;single&nbsp;event&nbsp;must&nbsp;come&nbsp;from&nbsp;the&nbsp;same<br>
+external&nbsp;entity,&nbsp;so&nbsp;that&nbsp;the&nbsp;Locator&nbsp;provides&nbsp;useful<br>
+information.</span></dd></dl>
+
+<dl><dt><a name="AttrFinder-processingInstruction"><strong>processingInstruction</strong></a>(self, target, data)</dt><dd><span class="code">Receive&nbsp;notification&nbsp;of&nbsp;a&nbsp;processing&nbsp;instruction.<br>
+&nbsp;<br>
+The&nbsp;Parser&nbsp;will&nbsp;invoke&nbsp;this&nbsp;method&nbsp;once&nbsp;for&nbsp;each&nbsp;processing<br>
+instruction&nbsp;found:&nbsp;note&nbsp;that&nbsp;processing&nbsp;instructions&nbsp;may&nbsp;occur<br>
+before&nbsp;or&nbsp;after&nbsp;the&nbsp;main&nbsp;document&nbsp;element.<br>
+&nbsp;<br>
+A&nbsp;SAX&nbsp;parser&nbsp;should&nbsp;never&nbsp;report&nbsp;an&nbsp;XML&nbsp;declaration&nbsp;(XML&nbsp;1.0,<br>
+section&nbsp;2.8)&nbsp;or&nbsp;a&nbsp;text&nbsp;declaration&nbsp;(XML&nbsp;1.0,&nbsp;section&nbsp;4.3.1)<br>
+using&nbsp;this&nbsp;method.</span></dd></dl>
+
+<dl><dt><a name="AttrFinder-setDocumentLocator"><strong>setDocumentLocator</strong></a>(self, locator)</dt><dd><span class="code">Called&nbsp;by&nbsp;the&nbsp;parser&nbsp;to&nbsp;give&nbsp;the&nbsp;application&nbsp;a&nbsp;locator&nbsp;for<br>
+locating&nbsp;the&nbsp;origin&nbsp;of&nbsp;document&nbsp;events.<br>
+&nbsp;<br>
+SAX&nbsp;parsers&nbsp;are&nbsp;strongly&nbsp;encouraged&nbsp;(though&nbsp;not&nbsp;absolutely<br>
+required)&nbsp;to&nbsp;supply&nbsp;a&nbsp;locator:&nbsp;if&nbsp;it&nbsp;does&nbsp;so,&nbsp;it&nbsp;must&nbsp;supply<br>
+the&nbsp;locator&nbsp;to&nbsp;the&nbsp;application&nbsp;by&nbsp;invoking&nbsp;this&nbsp;method&nbsp;before<br>
+invoking&nbsp;any&nbsp;of&nbsp;the&nbsp;other&nbsp;methods&nbsp;in&nbsp;the&nbsp;DocumentHandler<br>
+interface.<br>
+&nbsp;<br>
+The&nbsp;locator&nbsp;allows&nbsp;the&nbsp;application&nbsp;to&nbsp;determine&nbsp;the&nbsp;end<br>
+position&nbsp;of&nbsp;any&nbsp;document-related&nbsp;event,&nbsp;even&nbsp;if&nbsp;the&nbsp;parser&nbsp;is<br>
+not&nbsp;reporting&nbsp;an&nbsp;error.&nbsp;Typically,&nbsp;the&nbsp;application&nbsp;will&nbsp;use<br>
+this&nbsp;information&nbsp;for&nbsp;reporting&nbsp;its&nbsp;own&nbsp;errors&nbsp;(such&nbsp;as<br>
+character&nbsp;content&nbsp;that&nbsp;does&nbsp;not&nbsp;match&nbsp;an&nbsp;application's<br>
+business&nbsp;rules).&nbsp;The&nbsp;information&nbsp;returned&nbsp;by&nbsp;the&nbsp;locator&nbsp;is<br>
+probably&nbsp;not&nbsp;sufficient&nbsp;for&nbsp;use&nbsp;with&nbsp;a&nbsp;search&nbsp;engine.<br>
+&nbsp;<br>
+Note&nbsp;that&nbsp;the&nbsp;locator&nbsp;will&nbsp;return&nbsp;correct&nbsp;information&nbsp;only<br>
+during&nbsp;the&nbsp;invocation&nbsp;of&nbsp;the&nbsp;events&nbsp;in&nbsp;this&nbsp;interface.&nbsp;The<br>
+application&nbsp;should&nbsp;not&nbsp;attempt&nbsp;to&nbsp;use&nbsp;it&nbsp;at&nbsp;any&nbsp;other&nbsp;time.</span></dd></dl>
+
+<dl><dt><a name="AttrFinder-skippedEntity"><strong>skippedEntity</strong></a>(self, name)</dt><dd><span class="code">Receive&nbsp;notification&nbsp;of&nbsp;a&nbsp;skipped&nbsp;entity.<br>
+&nbsp;<br>
+The&nbsp;Parser&nbsp;will&nbsp;invoke&nbsp;this&nbsp;method&nbsp;once&nbsp;for&nbsp;each&nbsp;entity<br>
+skipped.&nbsp;Non-validating&nbsp;processors&nbsp;may&nbsp;skip&nbsp;entities&nbsp;if&nbsp;they<br>
+have&nbsp;not&nbsp;seen&nbsp;the&nbsp;declarations&nbsp;(because,&nbsp;for&nbsp;example,&nbsp;the<br>
+entity&nbsp;was&nbsp;declared&nbsp;in&nbsp;an&nbsp;external&nbsp;DTD&nbsp;subset).&nbsp;All&nbsp;processors<br>
+may&nbsp;skip&nbsp;external&nbsp;entities,&nbsp;depending&nbsp;on&nbsp;the&nbsp;values&nbsp;of&nbsp;the<br>
+<a href="http://xml.org/sax/features/external-general-entities">http://xml.org/sax/features/external-general-entities</a>&nbsp;and&nbsp;the<br>
+<a href="http://xml.org/sax/features/external-parameter-entities">http://xml.org/sax/features/external-parameter-entities</a><br>
+properties.</span></dd></dl>
+
+<dl><dt><a name="AttrFinder-startDocument"><strong>startDocument</strong></a>(self)</dt><dd><span class="code">Receive&nbsp;notification&nbsp;of&nbsp;the&nbsp;beginning&nbsp;of&nbsp;a&nbsp;document.<br>
+&nbsp;<br>
+The&nbsp;SAX&nbsp;parser&nbsp;will&nbsp;invoke&nbsp;this&nbsp;method&nbsp;only&nbsp;once,&nbsp;before&nbsp;any<br>
+other&nbsp;methods&nbsp;in&nbsp;this&nbsp;interface&nbsp;or&nbsp;in&nbsp;DTDHandler&nbsp;(except&nbsp;for<br>
+setDocumentLocator).</span></dd></dl>
+
+<dl><dt><a name="AttrFinder-startElementNS"><strong>startElementNS</strong></a>(self, name, qname, attrs)</dt><dd><span class="code">Signals&nbsp;the&nbsp;start&nbsp;of&nbsp;an&nbsp;element&nbsp;in&nbsp;namespace&nbsp;mode.<br>
+&nbsp;<br>
+The&nbsp;name&nbsp;parameter&nbsp;contains&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;element&nbsp;type&nbsp;as&nbsp;a<br>
+(uri,&nbsp;localname)&nbsp;tuple,&nbsp;the&nbsp;qname&nbsp;parameter&nbsp;the&nbsp;raw&nbsp;XML&nbsp;1.0<br>
+name&nbsp;used&nbsp;in&nbsp;the&nbsp;source&nbsp;document,&nbsp;and&nbsp;the&nbsp;attrs&nbsp;parameter<br>
+holds&nbsp;an&nbsp;instance&nbsp;of&nbsp;the&nbsp;Attributes&nbsp;class&nbsp;containing&nbsp;the<br>
+attributes&nbsp;of&nbsp;the&nbsp;element.<br>
+&nbsp;<br>
+The&nbsp;uri&nbsp;part&nbsp;of&nbsp;the&nbsp;name&nbsp;tuple&nbsp;is&nbsp;None&nbsp;for&nbsp;elements&nbsp;which&nbsp;have<br>
+no&nbsp;namespace.</span></dd></dl>
+
+<dl><dt><a name="AttrFinder-startPrefixMapping"><strong>startPrefixMapping</strong></a>(self, prefix, uri)</dt><dd><span class="code">Begin&nbsp;the&nbsp;scope&nbsp;of&nbsp;a&nbsp;prefix-URI&nbsp;Namespace&nbsp;mapping.<br>
+&nbsp;<br>
+The&nbsp;information&nbsp;from&nbsp;this&nbsp;event&nbsp;is&nbsp;not&nbsp;necessary&nbsp;for&nbsp;normal<br>
+Namespace&nbsp;processing:&nbsp;the&nbsp;SAX&nbsp;XML&nbsp;reader&nbsp;will&nbsp;automatically<br>
+replace&nbsp;prefixes&nbsp;for&nbsp;element&nbsp;and&nbsp;attribute&nbsp;names&nbsp;when&nbsp;the<br>
+<a href="http://xml.org/sax/features/namespaces">http://xml.org/sax/features/namespaces</a>&nbsp;feature&nbsp;is&nbsp;true&nbsp;(the<br>
+default).<br>
+&nbsp;<br>
+There&nbsp;are&nbsp;cases,&nbsp;however,&nbsp;when&nbsp;applications&nbsp;need&nbsp;to&nbsp;use<br>
+prefixes&nbsp;in&nbsp;character&nbsp;data&nbsp;or&nbsp;in&nbsp;attribute&nbsp;values,&nbsp;where&nbsp;they<br>
+cannot&nbsp;safely&nbsp;be&nbsp;expanded&nbsp;automatically;&nbsp;the<br>
+start/endPrefixMapping&nbsp;event&nbsp;supplies&nbsp;the&nbsp;information&nbsp;to&nbsp;the<br>
+application&nbsp;to&nbsp;expand&nbsp;prefixes&nbsp;in&nbsp;those&nbsp;contexts&nbsp;itself,&nbsp;if<br>
+necessary.<br>
+&nbsp;<br>
+Note&nbsp;that&nbsp;start/endPrefixMapping&nbsp;events&nbsp;are&nbsp;not&nbsp;guaranteed&nbsp;to<br>
+be&nbsp;properly&nbsp;nested&nbsp;relative&nbsp;to&nbsp;each-other:&nbsp;all<br>
+startPrefixMapping&nbsp;events&nbsp;will&nbsp;occur&nbsp;before&nbsp;the&nbsp;corresponding<br>
+startElement&nbsp;event,&nbsp;and&nbsp;all&nbsp;endPrefixMapping&nbsp;events&nbsp;will&nbsp;occur<br>
+after&nbsp;the&nbsp;corresponding&nbsp;endElement&nbsp;event,&nbsp;but&nbsp;their&nbsp;order&nbsp;is<br>
+not&nbsp;guaranteed.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="xml.sax.handler.html#ContentHandler">xml.sax.handler.ContentHandler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="NestingHandler">class <strong>NestingHandler</strong></a>(<a href="xml.sax.handler.html#ContentHandler">xml.sax.handler.ContentHandler</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">A&nbsp;handler&nbsp;which&nbsp;knows&nbsp;the&nbsp;current&nbsp;nesting&nbsp;of&nbsp;tags<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="sumolib.xml.parsing.html#NestingHandler">NestingHandler</a></dd>
+<dd><a href="xml.sax.handler.html#ContentHandler">xml.sax.handler.ContentHandler</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="NestingHandler-__init__"><strong>__init__</strong></a>(self)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="NestingHandler-depth"><strong>depth</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="NestingHandler-endElement"><strong>endElement</strong></a>(self, name)</dt><dd><span class="code">Signals&nbsp;the&nbsp;end&nbsp;of&nbsp;an&nbsp;element&nbsp;in&nbsp;non-namespace&nbsp;mode.<br>
+&nbsp;<br>
+The&nbsp;name&nbsp;parameter&nbsp;contains&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;element&nbsp;type,&nbsp;just<br>
+as&nbsp;with&nbsp;the&nbsp;startElement&nbsp;event.</span></dd></dl>
+
+<dl><dt><a name="NestingHandler-startElement"><strong>startElement</strong></a>(self, name, attrs)</dt><dd><span class="code">Signals&nbsp;the&nbsp;start&nbsp;of&nbsp;an&nbsp;element&nbsp;in&nbsp;non-namespace&nbsp;mode.<br>
+&nbsp;<br>
+The&nbsp;name&nbsp;parameter&nbsp;contains&nbsp;the&nbsp;raw&nbsp;XML&nbsp;1.0&nbsp;name&nbsp;of&nbsp;the<br>
+element&nbsp;type&nbsp;as&nbsp;a&nbsp;string&nbsp;and&nbsp;the&nbsp;attrs&nbsp;parameter&nbsp;holds&nbsp;an<br>
+instance&nbsp;of&nbsp;the&nbsp;Attributes&nbsp;class&nbsp;containing&nbsp;the&nbsp;attributes&nbsp;of<br>
+the&nbsp;element.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="xml.sax.handler.html#ContentHandler">xml.sax.handler.ContentHandler</a>:<br>
+<dl><dt><a name="NestingHandler-characters"><strong>characters</strong></a>(self, content)</dt><dd><span class="code">Receive&nbsp;notification&nbsp;of&nbsp;character&nbsp;data.<br>
+&nbsp;<br>
+The&nbsp;Parser&nbsp;will&nbsp;call&nbsp;this&nbsp;method&nbsp;to&nbsp;report&nbsp;each&nbsp;chunk&nbsp;of<br>
+character&nbsp;data.&nbsp;SAX&nbsp;parsers&nbsp;may&nbsp;return&nbsp;all&nbsp;contiguous<br>
+character&nbsp;data&nbsp;in&nbsp;a&nbsp;single&nbsp;chunk,&nbsp;or&nbsp;they&nbsp;may&nbsp;split&nbsp;it&nbsp;into<br>
+several&nbsp;chunks;&nbsp;however,&nbsp;all&nbsp;of&nbsp;the&nbsp;characters&nbsp;in&nbsp;any&nbsp;single<br>
+event&nbsp;must&nbsp;come&nbsp;from&nbsp;the&nbsp;same&nbsp;external&nbsp;entity&nbsp;so&nbsp;that&nbsp;the<br>
+Locator&nbsp;provides&nbsp;useful&nbsp;information.</span></dd></dl>
+
+<dl><dt><a name="NestingHandler-endDocument"><strong>endDocument</strong></a>(self)</dt><dd><span class="code">Receive&nbsp;notification&nbsp;of&nbsp;the&nbsp;end&nbsp;of&nbsp;a&nbsp;document.<br>
+&nbsp;<br>
+The&nbsp;SAX&nbsp;parser&nbsp;will&nbsp;invoke&nbsp;this&nbsp;method&nbsp;only&nbsp;once,&nbsp;and&nbsp;it&nbsp;will<br>
+be&nbsp;the&nbsp;last&nbsp;method&nbsp;invoked&nbsp;during&nbsp;the&nbsp;parse.&nbsp;The&nbsp;parser&nbsp;shall<br>
+not&nbsp;invoke&nbsp;this&nbsp;method&nbsp;until&nbsp;it&nbsp;has&nbsp;either&nbsp;abandoned&nbsp;parsing<br>
+(because&nbsp;of&nbsp;an&nbsp;unrecoverable&nbsp;error)&nbsp;or&nbsp;reached&nbsp;the&nbsp;end&nbsp;of<br>
+input.</span></dd></dl>
+
+<dl><dt><a name="NestingHandler-endElementNS"><strong>endElementNS</strong></a>(self, name, qname)</dt><dd><span class="code">Signals&nbsp;the&nbsp;end&nbsp;of&nbsp;an&nbsp;element&nbsp;in&nbsp;namespace&nbsp;mode.<br>
+&nbsp;<br>
+The&nbsp;name&nbsp;parameter&nbsp;contains&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;element&nbsp;type,&nbsp;just<br>
+as&nbsp;with&nbsp;the&nbsp;startElementNS&nbsp;event.</span></dd></dl>
+
+<dl><dt><a name="NestingHandler-endPrefixMapping"><strong>endPrefixMapping</strong></a>(self, prefix)</dt><dd><span class="code">End&nbsp;the&nbsp;scope&nbsp;of&nbsp;a&nbsp;prefix-URI&nbsp;mapping.<br>
+&nbsp;<br>
+See&nbsp;startPrefixMapping&nbsp;for&nbsp;details.&nbsp;This&nbsp;event&nbsp;will&nbsp;always<br>
+occur&nbsp;after&nbsp;the&nbsp;corresponding&nbsp;endElement&nbsp;event,&nbsp;but&nbsp;the&nbsp;order<br>
+of&nbsp;endPrefixMapping&nbsp;events&nbsp;is&nbsp;not&nbsp;otherwise&nbsp;guaranteed.</span></dd></dl>
+
+<dl><dt><a name="NestingHandler-ignorableWhitespace"><strong>ignorableWhitespace</strong></a>(self, whitespace)</dt><dd><span class="code">Receive&nbsp;notification&nbsp;of&nbsp;ignorable&nbsp;whitespace&nbsp;in&nbsp;element&nbsp;content.<br>
+&nbsp;<br>
+Validating&nbsp;Parsers&nbsp;must&nbsp;use&nbsp;this&nbsp;method&nbsp;to&nbsp;report&nbsp;each&nbsp;chunk<br>
+of&nbsp;ignorable&nbsp;whitespace&nbsp;(see&nbsp;the&nbsp;W3C&nbsp;XML&nbsp;1.0&nbsp;recommendation,<br>
+section&nbsp;2.10):&nbsp;non-validating&nbsp;parsers&nbsp;may&nbsp;also&nbsp;use&nbsp;this&nbsp;method<br>
+if&nbsp;they&nbsp;are&nbsp;capable&nbsp;of&nbsp;parsing&nbsp;and&nbsp;using&nbsp;content&nbsp;models.<br>
+&nbsp;<br>
+SAX&nbsp;parsers&nbsp;may&nbsp;return&nbsp;all&nbsp;contiguous&nbsp;whitespace&nbsp;in&nbsp;a&nbsp;single<br>
+chunk,&nbsp;or&nbsp;they&nbsp;may&nbsp;split&nbsp;it&nbsp;into&nbsp;several&nbsp;chunks;&nbsp;however,&nbsp;all<br>
+of&nbsp;the&nbsp;characters&nbsp;in&nbsp;any&nbsp;single&nbsp;event&nbsp;must&nbsp;come&nbsp;from&nbsp;the&nbsp;same<br>
+external&nbsp;entity,&nbsp;so&nbsp;that&nbsp;the&nbsp;Locator&nbsp;provides&nbsp;useful<br>
+information.</span></dd></dl>
+
+<dl><dt><a name="NestingHandler-processingInstruction"><strong>processingInstruction</strong></a>(self, target, data)</dt><dd><span class="code">Receive&nbsp;notification&nbsp;of&nbsp;a&nbsp;processing&nbsp;instruction.<br>
+&nbsp;<br>
+The&nbsp;Parser&nbsp;will&nbsp;invoke&nbsp;this&nbsp;method&nbsp;once&nbsp;for&nbsp;each&nbsp;processing<br>
+instruction&nbsp;found:&nbsp;note&nbsp;that&nbsp;processing&nbsp;instructions&nbsp;may&nbsp;occur<br>
+before&nbsp;or&nbsp;after&nbsp;the&nbsp;main&nbsp;document&nbsp;element.<br>
+&nbsp;<br>
+A&nbsp;SAX&nbsp;parser&nbsp;should&nbsp;never&nbsp;report&nbsp;an&nbsp;XML&nbsp;declaration&nbsp;(XML&nbsp;1.0,<br>
+section&nbsp;2.8)&nbsp;or&nbsp;a&nbsp;text&nbsp;declaration&nbsp;(XML&nbsp;1.0,&nbsp;section&nbsp;4.3.1)<br>
+using&nbsp;this&nbsp;method.</span></dd></dl>
+
+<dl><dt><a name="NestingHandler-setDocumentLocator"><strong>setDocumentLocator</strong></a>(self, locator)</dt><dd><span class="code">Called&nbsp;by&nbsp;the&nbsp;parser&nbsp;to&nbsp;give&nbsp;the&nbsp;application&nbsp;a&nbsp;locator&nbsp;for<br>
+locating&nbsp;the&nbsp;origin&nbsp;of&nbsp;document&nbsp;events.<br>
+&nbsp;<br>
+SAX&nbsp;parsers&nbsp;are&nbsp;strongly&nbsp;encouraged&nbsp;(though&nbsp;not&nbsp;absolutely<br>
+required)&nbsp;to&nbsp;supply&nbsp;a&nbsp;locator:&nbsp;if&nbsp;it&nbsp;does&nbsp;so,&nbsp;it&nbsp;must&nbsp;supply<br>
+the&nbsp;locator&nbsp;to&nbsp;the&nbsp;application&nbsp;by&nbsp;invoking&nbsp;this&nbsp;method&nbsp;before<br>
+invoking&nbsp;any&nbsp;of&nbsp;the&nbsp;other&nbsp;methods&nbsp;in&nbsp;the&nbsp;DocumentHandler<br>
+interface.<br>
+&nbsp;<br>
+The&nbsp;locator&nbsp;allows&nbsp;the&nbsp;application&nbsp;to&nbsp;determine&nbsp;the&nbsp;end<br>
+position&nbsp;of&nbsp;any&nbsp;document-related&nbsp;event,&nbsp;even&nbsp;if&nbsp;the&nbsp;parser&nbsp;is<br>
+not&nbsp;reporting&nbsp;an&nbsp;error.&nbsp;Typically,&nbsp;the&nbsp;application&nbsp;will&nbsp;use<br>
+this&nbsp;information&nbsp;for&nbsp;reporting&nbsp;its&nbsp;own&nbsp;errors&nbsp;(such&nbsp;as<br>
+character&nbsp;content&nbsp;that&nbsp;does&nbsp;not&nbsp;match&nbsp;an&nbsp;application's<br>
+business&nbsp;rules).&nbsp;The&nbsp;information&nbsp;returned&nbsp;by&nbsp;the&nbsp;locator&nbsp;is<br>
+probably&nbsp;not&nbsp;sufficient&nbsp;for&nbsp;use&nbsp;with&nbsp;a&nbsp;search&nbsp;engine.<br>
+&nbsp;<br>
+Note&nbsp;that&nbsp;the&nbsp;locator&nbsp;will&nbsp;return&nbsp;correct&nbsp;information&nbsp;only<br>
+during&nbsp;the&nbsp;invocation&nbsp;of&nbsp;the&nbsp;events&nbsp;in&nbsp;this&nbsp;interface.&nbsp;The<br>
+application&nbsp;should&nbsp;not&nbsp;attempt&nbsp;to&nbsp;use&nbsp;it&nbsp;at&nbsp;any&nbsp;other&nbsp;time.</span></dd></dl>
+
+<dl><dt><a name="NestingHandler-skippedEntity"><strong>skippedEntity</strong></a>(self, name)</dt><dd><span class="code">Receive&nbsp;notification&nbsp;of&nbsp;a&nbsp;skipped&nbsp;entity.<br>
+&nbsp;<br>
+The&nbsp;Parser&nbsp;will&nbsp;invoke&nbsp;this&nbsp;method&nbsp;once&nbsp;for&nbsp;each&nbsp;entity<br>
+skipped.&nbsp;Non-validating&nbsp;processors&nbsp;may&nbsp;skip&nbsp;entities&nbsp;if&nbsp;they<br>
+have&nbsp;not&nbsp;seen&nbsp;the&nbsp;declarations&nbsp;(because,&nbsp;for&nbsp;example,&nbsp;the<br>
+entity&nbsp;was&nbsp;declared&nbsp;in&nbsp;an&nbsp;external&nbsp;DTD&nbsp;subset).&nbsp;All&nbsp;processors<br>
+may&nbsp;skip&nbsp;external&nbsp;entities,&nbsp;depending&nbsp;on&nbsp;the&nbsp;values&nbsp;of&nbsp;the<br>
+<a href="http://xml.org/sax/features/external-general-entities">http://xml.org/sax/features/external-general-entities</a>&nbsp;and&nbsp;the<br>
+<a href="http://xml.org/sax/features/external-parameter-entities">http://xml.org/sax/features/external-parameter-entities</a><br>
+properties.</span></dd></dl>
+
+<dl><dt><a name="NestingHandler-startDocument"><strong>startDocument</strong></a>(self)</dt><dd><span class="code">Receive&nbsp;notification&nbsp;of&nbsp;the&nbsp;beginning&nbsp;of&nbsp;a&nbsp;document.<br>
+&nbsp;<br>
+The&nbsp;SAX&nbsp;parser&nbsp;will&nbsp;invoke&nbsp;this&nbsp;method&nbsp;only&nbsp;once,&nbsp;before&nbsp;any<br>
+other&nbsp;methods&nbsp;in&nbsp;this&nbsp;interface&nbsp;or&nbsp;in&nbsp;DTDHandler&nbsp;(except&nbsp;for<br>
+setDocumentLocator).</span></dd></dl>
+
+<dl><dt><a name="NestingHandler-startElementNS"><strong>startElementNS</strong></a>(self, name, qname, attrs)</dt><dd><span class="code">Signals&nbsp;the&nbsp;start&nbsp;of&nbsp;an&nbsp;element&nbsp;in&nbsp;namespace&nbsp;mode.<br>
+&nbsp;<br>
+The&nbsp;name&nbsp;parameter&nbsp;contains&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;element&nbsp;type&nbsp;as&nbsp;a<br>
+(uri,&nbsp;localname)&nbsp;tuple,&nbsp;the&nbsp;qname&nbsp;parameter&nbsp;the&nbsp;raw&nbsp;XML&nbsp;1.0<br>
+name&nbsp;used&nbsp;in&nbsp;the&nbsp;source&nbsp;document,&nbsp;and&nbsp;the&nbsp;attrs&nbsp;parameter<br>
+holds&nbsp;an&nbsp;instance&nbsp;of&nbsp;the&nbsp;Attributes&nbsp;class&nbsp;containing&nbsp;the<br>
+attributes&nbsp;of&nbsp;the&nbsp;element.<br>
+&nbsp;<br>
+The&nbsp;uri&nbsp;part&nbsp;of&nbsp;the&nbsp;name&nbsp;tuple&nbsp;is&nbsp;None&nbsp;for&nbsp;elements&nbsp;which&nbsp;have<br>
+no&nbsp;namespace.</span></dd></dl>
+
+<dl><dt><a name="NestingHandler-startPrefixMapping"><strong>startPrefixMapping</strong></a>(self, prefix, uri)</dt><dd><span class="code">Begin&nbsp;the&nbsp;scope&nbsp;of&nbsp;a&nbsp;prefix-URI&nbsp;Namespace&nbsp;mapping.<br>
+&nbsp;<br>
+The&nbsp;information&nbsp;from&nbsp;this&nbsp;event&nbsp;is&nbsp;not&nbsp;necessary&nbsp;for&nbsp;normal<br>
+Namespace&nbsp;processing:&nbsp;the&nbsp;SAX&nbsp;XML&nbsp;reader&nbsp;will&nbsp;automatically<br>
+replace&nbsp;prefixes&nbsp;for&nbsp;element&nbsp;and&nbsp;attribute&nbsp;names&nbsp;when&nbsp;the<br>
+<a href="http://xml.org/sax/features/namespaces">http://xml.org/sax/features/namespaces</a>&nbsp;feature&nbsp;is&nbsp;true&nbsp;(the<br>
+default).<br>
+&nbsp;<br>
+There&nbsp;are&nbsp;cases,&nbsp;however,&nbsp;when&nbsp;applications&nbsp;need&nbsp;to&nbsp;use<br>
+prefixes&nbsp;in&nbsp;character&nbsp;data&nbsp;or&nbsp;in&nbsp;attribute&nbsp;values,&nbsp;where&nbsp;they<br>
+cannot&nbsp;safely&nbsp;be&nbsp;expanded&nbsp;automatically;&nbsp;the<br>
+start/endPrefixMapping&nbsp;event&nbsp;supplies&nbsp;the&nbsp;information&nbsp;to&nbsp;the<br>
+application&nbsp;to&nbsp;expand&nbsp;prefixes&nbsp;in&nbsp;those&nbsp;contexts&nbsp;itself,&nbsp;if<br>
+necessary.<br>
+&nbsp;<br>
+Note&nbsp;that&nbsp;start/endPrefixMapping&nbsp;events&nbsp;are&nbsp;not&nbsp;guaranteed&nbsp;to<br>
+be&nbsp;properly&nbsp;nested&nbsp;relative&nbsp;to&nbsp;each-other:&nbsp;all<br>
+startPrefixMapping&nbsp;events&nbsp;will&nbsp;occur&nbsp;before&nbsp;the&nbsp;corresponding<br>
+startElement&nbsp;event,&nbsp;and&nbsp;all&nbsp;endPrefixMapping&nbsp;events&nbsp;will&nbsp;occur<br>
+after&nbsp;the&nbsp;corresponding&nbsp;endElement&nbsp;event,&nbsp;but&nbsp;their&nbsp;order&nbsp;is<br>
+not&nbsp;guaranteed.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="xml.sax.handler.html#ContentHandler">xml.sax.handler.ContentHandler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-average"><strong>average</strong></a>(elements, attrname)</dt></dl>
+ <dl><dt><a name="-compound_object"><strong>compound_object</strong></a>(element_name, attrnames, warn=False, sort=False)</dt><dd><span class="code">return&nbsp;a&nbsp;class&nbsp;which&nbsp;delegates&nbsp;bracket&nbsp;access&nbsp;to&nbsp;an&nbsp;internal&nbsp;dict.<br>
+Missing&nbsp;attributes&nbsp;are&nbsp;delegated&nbsp;to&nbsp;the&nbsp;child&nbsp;dict&nbsp;for&nbsp;convenience.<br>
+@note:&nbsp;Care&nbsp;must&nbsp;be&nbsp;taken&nbsp;when&nbsp;child&nbsp;nodes&nbsp;and&nbsp;attributes&nbsp;have&nbsp;the&nbsp;same&nbsp;names</span></dd></dl>
+ <dl><dt><a name="-contextualRename"><strong>contextualRename</strong></a>(xmlTree, prefixes, attribute='id', ids=None)</dt><dd><span class="code">Renames&nbsp;the&nbsp;given&nbsp;attribute&nbsp;in&nbsp;a&nbsp;specified&nbsp;set&nbsp;of&nbsp;child&nbsp;elements&nbsp;within<br>
+xmlTree&nbsp;and&nbsp;also&nbsp;replaces&nbsp;all&nbsp;attribute&nbsp;values&nbsp;that&nbsp;referred&nbsp;to&nbsp;such&nbsp;an&nbsp;id<br>
+with&nbsp;the&nbsp;new&nbsp;value.<br>
+Example:<br>
+Given&nbsp;an&nbsp;opendrive&nbsp;file,&nbsp;when&nbsp;called&nbsp;with&nbsp;prefixes={'road':&nbsp;'r',&nbsp;'junction':&nbsp;'j'}<br>
+&nbsp;&nbsp;-&nbsp;all&nbsp;road&nbsp;ids&nbsp;will&nbsp;be&nbsp;renamed&nbsp;to&nbsp;rN&nbsp;where&nbsp;N&nbsp;is&nbsp;a&nbsp;running&nbsp;integer<br>
+&nbsp;&nbsp;-&nbsp;all&nbsp;junction&nbsp;ids&nbsp;will&nbsp;be&nbsp;renamed&nbsp;to&nbsp;jN&nbsp;where&nbsp;N&nbsp;is&nbsp;also&nbsp;a&nbsp;running&nbsp;integer<br>
+&nbsp;&nbsp;-&nbsp;all&nbsp;attributes&nbsp;that&nbsp;refered&nbsp;to&nbsp;roads&nbsp;or&nbsp;junctions&nbsp;will&nbsp;now&nbsp;refer&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;their&nbsp;new&nbsp;ids</span></dd></dl>
+ <dl><dt><a name="-create_document"><strong>create_document</strong></a>(root_element_name, attrs=None, schema=None)</dt></dl>
+ <dl><dt><a name="-iskeyword"><strong>iskeyword</strong></a> = __contains__(...)<span class="grey"><span class="heading-text"> method of <a href="builtins.html#frozenset">builtins.frozenset</a> instance</span></span></dt><dd><span class="code">x.__contains__(y)&nbsp;&lt;==&gt;&nbsp;y&nbsp;in&nbsp;x.</span></dd></dl>
+ <dl><dt><a name="-parse"><strong>parse</strong></a>(xmlfile, element_names=None, element_attrs=None, attr_conversions=None, heterogeneous=True, warn=False, ignoreXmlns=False, outputLevel=1)</dt><dd><span class="code">Parses&nbsp;the&nbsp;given&nbsp;element_names&nbsp;from&nbsp;xmlfile&nbsp;and&nbsp;yield&nbsp;compound&nbsp;objects&nbsp;for<br>
+their&nbsp;xml&nbsp;subtrees&nbsp;(no&nbsp;extra&nbsp;objects&nbsp;are&nbsp;returned&nbsp;if&nbsp;element_names&nbsp;appear&nbsp;in<br>
+the&nbsp;subtree)&nbsp;The&nbsp;compound&nbsp;objects&nbsp;provide&nbsp;all&nbsp;element&nbsp;attributes&nbsp;of<br>
+the&nbsp;root&nbsp;of&nbsp;the&nbsp;subtree&nbsp;as&nbsp;attributes&nbsp;unless&nbsp;attr_names&nbsp;are&nbsp;supplied.&nbsp;In&nbsp;this<br>
+case&nbsp;attr_names&nbsp;maps&nbsp;element&nbsp;names&nbsp;to&nbsp;a&nbsp;list&nbsp;of&nbsp;attributes&nbsp;which&nbsp;are<br>
+supplied.&nbsp;If&nbsp;attr_conversions&nbsp;is&nbsp;not&nbsp;empty&nbsp;it&nbsp;must&nbsp;map&nbsp;attribute&nbsp;names&nbsp;to<br>
+callables&nbsp;which&nbsp;will&nbsp;be&nbsp;called&nbsp;upon&nbsp;the&nbsp;attribute&nbsp;value&nbsp;before&nbsp;storing&nbsp;under<br>
+the&nbsp;attribute&nbsp;name.<br>
+The&nbsp;compound&nbsp;objects&nbsp;gives&nbsp;dictionary&nbsp;style&nbsp;access&nbsp;to&nbsp;list&nbsp;of&nbsp;compound<br>
+objects&nbsp;o&nbsp;for&nbsp;any&nbsp;children&nbsp;with&nbsp;the&nbsp;given&nbsp;element&nbsp;name<br>
+o['child_element_name']&nbsp;=&nbsp;[osub0,&nbsp;osub1,&nbsp;...]<br>
+As&nbsp;a&nbsp;shorthand,&nbsp;attribute&nbsp;style&nbsp;access&nbsp;to&nbsp;the&nbsp;list&nbsp;of&nbsp;child&nbsp;elements&nbsp;is<br>
+provided&nbsp;unless&nbsp;an&nbsp;attribute&nbsp;with&nbsp;the&nbsp;same&nbsp;name&nbsp;as&nbsp;the&nbsp;child&nbsp;elements<br>
+exists&nbsp;(i.e.&nbsp;o.child_element_name&nbsp;=&nbsp;[osub0,&nbsp;osub1,&nbsp;...])<br>
+@Note:&nbsp;All&nbsp;elements&nbsp;with&nbsp;the&nbsp;same&nbsp;name&nbsp;must&nbsp;have&nbsp;the&nbsp;same&nbsp;type&nbsp;regardless&nbsp;of<br>
+the&nbsp;subtree&nbsp;in&nbsp;which&nbsp;they&nbsp;occur&nbsp;(heterogeneous&nbsp;cases&nbsp;may&nbsp;be&nbsp;handled&nbsp;by<br>
+setting&nbsp;heterogeneous=True&nbsp;(with&nbsp;reduced&nbsp;parsing&nbsp;speed)<br>
+@Note:&nbsp;Attribute&nbsp;names&nbsp;may&nbsp;be&nbsp;modified&nbsp;to&nbsp;avoid&nbsp;name&nbsp;clashes<br>
+with&nbsp;python&nbsp;keywords.&nbsp;(set&nbsp;warn=True&nbsp;to&nbsp;receive&nbsp;renaming&nbsp;warnings)<br>
+@Note:&nbsp;The&nbsp;element_names&nbsp;may&nbsp;be&nbsp;either&nbsp;a&nbsp;single&nbsp;string&nbsp;or&nbsp;a&nbsp;list&nbsp;of&nbsp;strings.<br>
+@Example:&nbsp;<a href="#-parse">parse</a>('plain.edg.xml',&nbsp;['edge'])</span></dd></dl>
+ <dl><dt><a name="-parse_fast"><strong>parse_fast</strong></a>(xmlfile, element_name, attrnames, warn=False, optional=False, encoding='utf8', line_filter=None)</dt><dd><span class="code">Parses&nbsp;the&nbsp;given&nbsp;attrnames&nbsp;from&nbsp;all&nbsp;elements&nbsp;with&nbsp;element_name<br>
+@Note:&nbsp;The&nbsp;element&nbsp;must&nbsp;be&nbsp;on&nbsp;its&nbsp;own&nbsp;line&nbsp;and&nbsp;the&nbsp;attributes&nbsp;must&nbsp;appear&nbsp;in<br>
+the&nbsp;given&nbsp;order.&nbsp;If&nbsp;you&nbsp;set&nbsp;"optional=True",&nbsp;missing&nbsp;attributes&nbsp;will&nbsp;be&nbsp;set&nbsp;to&nbsp;None.<br>
+Make&nbsp;sure&nbsp;that&nbsp;you&nbsp;list&nbsp;all&nbsp;(potential)&nbsp;attributes&nbsp;(even&nbsp;the&nbsp;ones&nbsp;you&nbsp;are&nbsp;not&nbsp;interested&nbsp;in)<br>
+in&nbsp;this&nbsp;case.&nbsp;You&nbsp;can&nbsp;only&nbsp;leave&nbsp;out&nbsp;attributes&nbsp;at&nbsp;the&nbsp;end.<br>
+@Example:&nbsp;<a href="#-parse_fast">parse_fast</a>('plain.edg.xml',&nbsp;'edge',&nbsp;['id',&nbsp;'speed'])</span></dd></dl>
+ <dl><dt><a name="-parse_fast_nested"><strong>parse_fast_nested</strong></a>(xmlfile, element_name, attrnames, element_name2, attrnames2, warn=False, optional=False, encoding='utf8')</dt><dd><span class="code">Parses&nbsp;the&nbsp;given&nbsp;attrnames&nbsp;from&nbsp;all&nbsp;elements&nbsp;with&nbsp;element_name<br>
+And&nbsp;attrnames2&nbsp;from&nbsp;element_name2&nbsp;where&nbsp;element_name2&nbsp;is&nbsp;a&nbsp;child&nbsp;element&nbsp;of&nbsp;element_name<br>
+If&nbsp;you&nbsp;set&nbsp;"optional=True",&nbsp;missing&nbsp;attributes&nbsp;will&nbsp;be&nbsp;set&nbsp;to&nbsp;None.<br>
+Make&nbsp;sure&nbsp;that&nbsp;you&nbsp;list&nbsp;all&nbsp;(potential)&nbsp;attributes&nbsp;(even&nbsp;the&nbsp;ones&nbsp;you&nbsp;are&nbsp;not&nbsp;interested&nbsp;in)<br>
+in&nbsp;this&nbsp;case.&nbsp;You&nbsp;can&nbsp;only&nbsp;leave&nbsp;out&nbsp;attributes&nbsp;at&nbsp;the&nbsp;end.<br>
+@Note:&nbsp;The&nbsp;element&nbsp;must&nbsp;be&nbsp;on&nbsp;its&nbsp;own&nbsp;line&nbsp;and&nbsp;the&nbsp;attributes&nbsp;must&nbsp;appear&nbsp;in<br>
+the&nbsp;given&nbsp;order.<br>
+@Example:&nbsp;<a href="#-parse_fast_nested">parse_fast_nested</a>('fcd.xml',&nbsp;'timestep',&nbsp;['time'],&nbsp;'vehicle',&nbsp;['id',&nbsp;'speed',&nbsp;'lane']):</span></dd></dl>
+ <dl><dt><a name="-parse_fast_structured"><strong>parse_fast_structured</strong></a>(xmlfile, element_name, attrnames, nested, warn=False, optional=False, encoding='utf8')</dt><dd><span class="code">Parses&nbsp;the&nbsp;given&nbsp;attrnames&nbsp;from&nbsp;all&nbsp;elements&nbsp;with&nbsp;element_name&nbsp;and&nbsp;nested&nbsp;elements&nbsp;of&nbsp;level&nbsp;1.<br>
+Unlike&nbsp;parse_fast_nested&nbsp;this&nbsp;function&nbsp;can&nbsp;handle&nbsp;multiple&nbsp;different&nbsp;child&nbsp;elements&nbsp;and<br>
+returns&nbsp;objects&nbsp;where&nbsp;the&nbsp;child&nbsp;elements&nbsp;can&nbsp;be&nbsp;accessed&nbsp;by&nbsp;name&nbsp;(e.g.&nbsp;timestep.vehicle[0])<br>
+as&nbsp;with&nbsp;the&nbsp;parse&nbsp;method.&nbsp;The&nbsp;returned&nbsp;object&nbsp;is&nbsp;not&nbsp;modifiable&nbsp;though.<br>
+If&nbsp;you&nbsp;set&nbsp;"optional=True",&nbsp;missing&nbsp;attributes&nbsp;will&nbsp;be&nbsp;set&nbsp;to&nbsp;None.<br>
+Make&nbsp;sure&nbsp;that&nbsp;you&nbsp;list&nbsp;all&nbsp;(potential)&nbsp;attributes&nbsp;(even&nbsp;the&nbsp;ones&nbsp;you&nbsp;are&nbsp;not&nbsp;interested&nbsp;in)<br>
+in&nbsp;this&nbsp;case.&nbsp;You&nbsp;can&nbsp;only&nbsp;leave&nbsp;out&nbsp;attributes&nbsp;at&nbsp;the&nbsp;end.<br>
+@Note:&nbsp;Every&nbsp;element&nbsp;must&nbsp;be&nbsp;on&nbsp;its&nbsp;own&nbsp;line&nbsp;and&nbsp;the&nbsp;attributes&nbsp;must&nbsp;appear&nbsp;in&nbsp;the&nbsp;given&nbsp;order.<br>
+@Example:&nbsp;<a href="#-parse_fast_structured">parse_fast_structured</a>('fcd.xml',&nbsp;'timestep',&nbsp;['time'],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'vehicle':&nbsp;['id',&nbsp;'speed',&nbsp;'lane'],&nbsp;'person':&nbsp;['id',&nbsp;'speed',&nbsp;'edge']}):</span></dd></dl>
+ <dl><dt><a name="-parselines"><strong>parselines</strong></a>(xmlline, element_name, element_attrs=None, attr_conversions=None, heterogeneous=True, warn=False, addRoot='dummy')</dt></dl>
+ <dl><dt><a name="-quoteattr"><strong>quoteattr</strong></a>(val, ensureUnicode=False)</dt></dl>
+ <dl><dt><a name="-reduce"><strong>reduce</strong></a>(...)</dt><dd><span class="code"><a href="#-reduce">reduce</a>(function,&nbsp;iterable[,&nbsp;initial])&nbsp;-&gt;&nbsp;value<br>
+&nbsp;<br>
+Apply&nbsp;a&nbsp;function&nbsp;of&nbsp;two&nbsp;arguments&nbsp;cumulatively&nbsp;to&nbsp;the&nbsp;items&nbsp;of&nbsp;a&nbsp;sequence<br>
+or&nbsp;iterable,&nbsp;from&nbsp;left&nbsp;to&nbsp;right,&nbsp;so&nbsp;as&nbsp;to&nbsp;reduce&nbsp;the&nbsp;iterable&nbsp;to&nbsp;a&nbsp;single<br>
+value.&nbsp;&nbsp;For&nbsp;example,&nbsp;<a href="#-reduce">reduce</a>(lambda&nbsp;x,&nbsp;y:&nbsp;x+y,&nbsp;[1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5])&nbsp;calculates<br>
+((((1+2)+3)+4)+5).&nbsp;&nbsp;If&nbsp;initial&nbsp;is&nbsp;present,&nbsp;it&nbsp;is&nbsp;placed&nbsp;before&nbsp;the&nbsp;items<br>
+of&nbsp;the&nbsp;iterable&nbsp;in&nbsp;the&nbsp;calculation,&nbsp;and&nbsp;serves&nbsp;as&nbsp;a&nbsp;default&nbsp;when&nbsp;the<br>
+iterable&nbsp;is&nbsp;empty.</span></dd></dl>
+ <dl><dt><a name="-sum"><strong>sum</strong></a>(elements, attrname)</dt></dl>
+ <dl><dt><a name="-supports_comments"><strong>supports_comments</strong></a>()</dt></dl>
+ <dl><dt><a name="-xmlescape"><strong>xmlescape</strong></a>(value)</dt></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>DEFAULT_ATTR_CONVERSIONS</strong> = {'angle': &lt;class 'float'&gt;, 'contPos': &lt;class 'float'&gt;, 'endOffset': &lt;class 'float'&gt;, 'endPos': &lt;class 'float'&gt;, 'freq': &lt;class 'float'&gt;, 'fromLane': &lt;class 'int'&gt;, 'index': &lt;class 'int'&gt;, 'lat': &lt;class 'float'&gt;, 'length': &lt;class 'float'&gt;, 'linkIndex': &lt;class 'int'&gt;, ...}</td></tr></table>
+</body></html>

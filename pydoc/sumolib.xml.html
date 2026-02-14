@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: package sumolib.xml</title>
+<style>/*
+    CSS file for pydoc.
+
+    Contents of this file are subject to change without notice.
+
+*/
+
+body {
+    background-color: #f0f0f8;
+}
+
+table.heading tr {
+    background-color: #7799ee;
+}
+
+.decor {
+    color: #ffffff;
+}
+
+.title-decor {
+    background-color: #ffc8d8;
+    color: #000000;
+}
+
+.pkg-content-decor {
+    background-color: #aa55cc;
+}
+
+.index-decor {
+    background-color: #ee77aa;
+}
+
+.functions-decor {
+    background-color: #eeaa77;
+}
+
+.data-decor {
+    background-color: #55aa55;
+}
+
+.author-decor {
+    background-color: #7799ee;
+}
+
+.credits-decor {
+    background-color: #7799ee;
+}
+
+.error-decor {
+    background-color: #bb0000;
+}
+
+.grey {
+    color: #909090;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.repr {
+    color: #c040c0;
+}
+
+table.heading tr td.title {
+    vertical-align: bottom;
+}
+
+table.heading tr td.extra {
+    vertical-align: bottom;
+    text-align: right;
+}
+
+.heading-text {
+    font-family: helvetica, arial;
+}
+
+.bigsection {
+    font-size: larger;
+}
+
+.title {
+    font-size: x-large;
+}
+
+.code {
+    font-family: monospace;
+}
+
+table {
+    width: 100%;
+    border-spacing : 0;
+    border-collapse : collapse;
+    border: 0;
+}
+
+td {
+    padding: 2;
+}
+
+td.section-title {
+    vertical-align: bottom;
+}
+
+td.multicolumn {
+    width: 25%;
+    vertical-align: bottom;
+}
+
+td.singlecolumn {
+    width: 100%;
+}
+</style></head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="sumolib.html" class="white">sumolib</a>.xml</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/runner/work/sumo.website/sumo.website/sumo/tools/sumolib/xml/__init__.py">/home/runner/work/sumo.website/sumo.website/sumo/tools/sumolib/xml/__init__.py</a></td></tr></table>
+    <p><span class="code">#&nbsp;Eclipse&nbsp;SUMO,&nbsp;Simulation&nbsp;of&nbsp;Urban&nbsp;MObility;&nbsp;see&nbsp;<a href="https://eclipse.dev/sumo">https://eclipse.dev/sumo</a><br>
+#&nbsp;Copyright&nbsp;(C)&nbsp;2011-2026&nbsp;German&nbsp;Aerospace&nbsp;Center&nbsp;(DLR)&nbsp;and&nbsp;others.<br>
+#&nbsp;This&nbsp;program&nbsp;and&nbsp;the&nbsp;accompanying&nbsp;materials&nbsp;are&nbsp;made&nbsp;available&nbsp;under&nbsp;the<br>
+#&nbsp;terms&nbsp;of&nbsp;the&nbsp;Eclipse&nbsp;Public&nbsp;License&nbsp;2.0&nbsp;which&nbsp;is&nbsp;available&nbsp;at<br>
+#&nbsp;<a href="https://www.eclipse.org/legal/epl-2.0/">https://www.eclipse.org/legal/epl-2.0/</a><br>
+#&nbsp;This&nbsp;Source&nbsp;Code&nbsp;may&nbsp;also&nbsp;be&nbsp;made&nbsp;available&nbsp;under&nbsp;the&nbsp;following&nbsp;Secondary<br>
+#&nbsp;Licenses&nbsp;when&nbsp;the&nbsp;conditions&nbsp;for&nbsp;such&nbsp;availability&nbsp;set&nbsp;forth&nbsp;in&nbsp;the&nbsp;Eclipse<br>
+#&nbsp;Public&nbsp;License&nbsp;2.0&nbsp;are&nbsp;satisfied:&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License,&nbsp;version&nbsp;2<br>
+#&nbsp;or&nbsp;later&nbsp;which&nbsp;is&nbsp;available&nbsp;at<br>
+#&nbsp;<a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html">https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html</a><br>
+#&nbsp;SPDX-License-Identifier:&nbsp;EPL-2.0&nbsp;OR&nbsp;GPL-2.0-or-later</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Package Contents</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="sumolib.xml.parsing.html">parsing</a><br>
+</td><td class="multicolumn"><a href="sumolib.xml.xsd.html">xsd</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-buildHeader"><strong>buildHeader</strong></a>(script=None, root=None, schemaPath=None, rootAttrs='', options=None, includeXMLDeclaration=False)</dt><dd><span class="code">Builds&nbsp;an&nbsp;XML&nbsp;header&nbsp;with&nbsp;schema&nbsp;information&nbsp;and&nbsp;a&nbsp;comment&nbsp;on&nbsp;how&nbsp;the&nbsp;file&nbsp;has&nbsp;been&nbsp;generated<br>
+(script&nbsp;name,&nbsp;arguments&nbsp;and&nbsp;datetime).<br>
+If&nbsp;script&nbsp;name&nbsp;is&nbsp;not&nbsp;given,&nbsp;it&nbsp;is&nbsp;determined&nbsp;from&nbsp;the&nbsp;command&nbsp;line&nbsp;call.<br>
+If&nbsp;root&nbsp;is&nbsp;not&nbsp;given,&nbsp;no&nbsp;root&nbsp;element&nbsp;is&nbsp;printed&nbsp;(and&nbsp;thus&nbsp;no&nbsp;schema).<br>
+If&nbsp;schemaPath&nbsp;is&nbsp;not&nbsp;given,&nbsp;it&nbsp;is&nbsp;derived&nbsp;from&nbsp;the&nbsp;root&nbsp;element.<br>
+If&nbsp;rootAttrs&nbsp;is&nbsp;given&nbsp;as&nbsp;a&nbsp;string,&nbsp;it&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;add&nbsp;further&nbsp;attributes&nbsp;to&nbsp;the&nbsp;root&nbsp;element.<br>
+If&nbsp;rootAttrs&nbsp;is&nbsp;set&nbsp;to&nbsp;None,&nbsp;the&nbsp;schema&nbsp;related&nbsp;attributes&nbsp;are&nbsp;not&nbsp;printed.</span></dd></dl>
+ <dl><dt><a name="-insertOptionsHeader"><strong>insertOptionsHeader</strong></a>(filename, options)</dt><dd><span class="code">Inserts&nbsp;a&nbsp;comment&nbsp;header&nbsp;with&nbsp;the&nbsp;options&nbsp;used&nbsp;to&nbsp;call&nbsp;the&nbsp;script&nbsp;into&nbsp;an&nbsp;existing&nbsp;file.</span></dd></dl>
+ <dl><dt><a name="-iskeyword"><strong>iskeyword</strong></a> = __contains__(...)<span class="grey"><span class="heading-text"> method of <a href="builtins.html#frozenset">builtins.frozenset</a> instance</span></span></dt><dd><span class="code">x.__contains__(y)&nbsp;&lt;==&gt;&nbsp;y&nbsp;in&nbsp;x.</span></dd></dl>
+ <dl><dt><a name="-reduce"><strong>reduce</strong></a>(...)</dt><dd><span class="code"><a href="#-reduce">reduce</a>(function,&nbsp;iterable[,&nbsp;initial])&nbsp;-&gt;&nbsp;value<br>
+&nbsp;<br>
+Apply&nbsp;a&nbsp;function&nbsp;of&nbsp;two&nbsp;arguments&nbsp;cumulatively&nbsp;to&nbsp;the&nbsp;items&nbsp;of&nbsp;a&nbsp;sequence<br>
+or&nbsp;iterable,&nbsp;from&nbsp;left&nbsp;to&nbsp;right,&nbsp;so&nbsp;as&nbsp;to&nbsp;reduce&nbsp;the&nbsp;iterable&nbsp;to&nbsp;a&nbsp;single<br>
+value.&nbsp;&nbsp;For&nbsp;example,&nbsp;<a href="#-reduce">reduce</a>(lambda&nbsp;x,&nbsp;y:&nbsp;x+y,&nbsp;[1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5])&nbsp;calculates<br>
+((((1+2)+3)+4)+5).&nbsp;&nbsp;If&nbsp;initial&nbsp;is&nbsp;present,&nbsp;it&nbsp;is&nbsp;placed&nbsp;before&nbsp;the&nbsp;items<br>
+of&nbsp;the&nbsp;iterable&nbsp;in&nbsp;the&nbsp;calculation,&nbsp;and&nbsp;serves&nbsp;as&nbsp;a&nbsp;default&nbsp;when&nbsp;the<br>
+iterable&nbsp;is&nbsp;empty.</span></dd></dl>
+ <dl><dt><a name="-writeHeader"><strong>writeHeader</strong></a>(outf, script=None, root=None, schemaPath=None, rootAttrs='', options=None, includeXMLDeclaration=True)</dt><dd><span class="code">Writes&nbsp;an&nbsp;XML&nbsp;header&nbsp;with&nbsp;schema&nbsp;information&nbsp;and&nbsp;a&nbsp;comment&nbsp;on&nbsp;how&nbsp;the&nbsp;file&nbsp;has&nbsp;been&nbsp;generated<br>
+(script&nbsp;name,&nbsp;arguments&nbsp;and&nbsp;datetime).&nbsp;Please&nbsp;use&nbsp;this&nbsp;as&nbsp;first&nbsp;call&nbsp;whenever&nbsp;you&nbsp;open&nbsp;a<br>
+SUMO&nbsp;related&nbsp;XML&nbsp;file&nbsp;for&nbsp;writing&nbsp;from&nbsp;your&nbsp;script.<br>
+If&nbsp;script&nbsp;name&nbsp;is&nbsp;not&nbsp;given,&nbsp;it&nbsp;is&nbsp;determined&nbsp;from&nbsp;the&nbsp;command&nbsp;line&nbsp;call.<br>
+If&nbsp;root&nbsp;is&nbsp;not&nbsp;given,&nbsp;no&nbsp;root&nbsp;element&nbsp;is&nbsp;printed&nbsp;(and&nbsp;thus&nbsp;no&nbsp;schema).<br>
+If&nbsp;schemaPath&nbsp;is&nbsp;not&nbsp;given,&nbsp;it&nbsp;is&nbsp;derived&nbsp;from&nbsp;the&nbsp;root&nbsp;element.<br>
+If&nbsp;rootAttrs&nbsp;is&nbsp;given&nbsp;as&nbsp;a&nbsp;string,&nbsp;it&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;add&nbsp;further&nbsp;attributes&nbsp;to&nbsp;the&nbsp;root&nbsp;element.<br>
+If&nbsp;rootAttrs&nbsp;is&nbsp;set&nbsp;to&nbsp;None,&nbsp;the&nbsp;schema&nbsp;related&nbsp;attributes&nbsp;are&nbsp;not&nbsp;printed.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>DEFAULT_ATTR_CONVERSIONS</strong> = {'angle': &lt;class 'float'&gt;, 'contPos': &lt;class 'float'&gt;, 'endOffset': &lt;class 'float'&gt;, 'endPos': &lt;class 'float'&gt;, 'freq': &lt;class 'float'&gt;, 'fromLane': &lt;class 'int'&gt;, 'index': &lt;class 'int'&gt;, 'lat': &lt;class 'float'&gt;, 'length': &lt;class 'float'&gt;, 'linkIndex': &lt;class 'int'&gt;, ...}</td></tr></table>
+</body></html>
