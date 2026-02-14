@@ -44,7 +44,8 @@ jobs:
         cd sumo/docs/web
         python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
-        mkdocs build --strict
+        mkdocs build --strict -d ../userdoc
+        ../../tools/build_config/buildPyDoc.py -p ../pydoc -c
 
     - name: Get Commit Message
       id: commit_message
@@ -58,7 +59,7 @@ jobs:
       run: |
         mkdir -p $HOME/temp
         cp -r public/* $HOME/temp/
-        mv sumo/docs/web/site $HOME/temp/userdoc
+        mv sumo/docs/userdoc sumo/docs/pydoc $HOME/temp/
         cp README.md $HOME/temp/
         cp lychee.toml $HOME/temp/
 
