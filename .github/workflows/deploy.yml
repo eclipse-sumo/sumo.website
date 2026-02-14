@@ -31,6 +31,22 @@ jobs:
           exit 1
         fi
 
+    - name: Clone SUMO Repository
+      uses: actions/checkout@v4
+      with:
+        repository: eclipse-sumo/sumo
+        path: sumo
+
+    - name: Install dependencies and run mkdocs
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y plantuml
+        cd sumo/docs/web
+        python -m pip install --upgrade pip
+        python -m pip install -r requirements.txt
+        mkdocs build --strict -d ../userdoc
+        ../../tools/build_config/buildPyDoc.py -p ../pydoc -c
+
     - name: Get Commit Message
       id: commit_message
       run: |
@@ -43,6 +59,7 @@ jobs:
       run: |
         mkdir -p $HOME/temp
         cp -r public/* $HOME/temp/
+        mv sumo/docs/userdoc sumo/docs/pydoc $HOME/temp/
         cp README.md $HOME/temp/
         cp lychee.toml $HOME/temp/
 
