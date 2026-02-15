@@ -45,7 +45,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
         mkdocs build --strict -d ../userdoc
-        ../../tools/build_config/buildPyDoc.py -p ../pydoc -c
+        ../../tools/build_config/buildPyDoc.py ../pydoc
 
     - name: Get Commit Message
       id: commit_message
