@@ -5,4 +5,4 @@ on:
 
 jobs:
   call-workflow:
-    uses: eclipse-sumo/sumo/.github/workflows/deploy.yml@source
+    uses: eclipse-sumo/sumo.website/.github/workflows/deploy.yml@source
