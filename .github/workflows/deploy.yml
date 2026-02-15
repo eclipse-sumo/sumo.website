@@ -1,8 +1,8 @@
 name: deploy-static-pages
 
 on:
-  workflow_dispatch:
   push:
+  workflow_call:
 
 jobs:
   build-and-deploy:
