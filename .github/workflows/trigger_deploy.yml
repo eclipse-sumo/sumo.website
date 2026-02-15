@@ -6,3 +6,6 @@ on:
 jobs:
   call-workflow:
     uses: eclipse-sumo/sumo.website/.github/workflows/deploy.yml@source
+    permissions:
+      contents: write
+      actions: write
