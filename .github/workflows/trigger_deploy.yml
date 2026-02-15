@@ -1,0 +1,8 @@
+name: trigger_deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-workflow:
+    uses: eclipse-sumo/sumo/.github/workflows/deploy.yml@source
