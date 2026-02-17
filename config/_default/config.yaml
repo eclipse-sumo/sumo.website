@@ -18,7 +18,7 @@ frontmatter:
 params:
   favicon: "images/favicon.ico"
   logo: "images/logos/sumo-logo-white.svg"
-  docsURL: "https://sumo.sourceforge.net/docs"
+  docsURL: "https://sumo.dlr.de/docs"
   githubEditURL: "https://github.com/eclipse-sumo/sumo.website/edit/source/content/"
   Version: "1.26.0"
   DOI: "10.5281/zenodo.18406080"
