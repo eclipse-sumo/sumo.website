@@ -15,6 +15,7 @@ jobs:
     - name: Checkout source Branch
       uses: actions/checkout@v4
       with:
+        fetch-depth: 0  # to fetch all branches
         ref: 'source'
 
     - name: Install Hugo
@@ -40,9 +41,9 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y plantuml
-        cd sumo/docs/web
         python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
+        cd sumo/docs/web
         mkdocs build --strict -d ../userdoc
         mv ../userdoc/Downloads.html ../userdoc/Downloads.php
         ../../tools/build_config/buildPyDoc.py ../pydoc
