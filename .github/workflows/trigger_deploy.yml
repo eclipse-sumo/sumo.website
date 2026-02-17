@@ -2,10 +2,21 @@ name: trigger_deploy
 
 on:
   workflow_dispatch:
+    inputs:
+      hugo_config:
+        description: "Hugo configuration to use"
+        required: true
+        type: choice
+        options:
+          - default
+          - dlr
+          - eclipse
 
 jobs:
   call-workflow:
     uses: eclipse-sumo/sumo.website/.github/workflows/deploy.yml@source
+    with:
+      hugo_config: ${{ inputs.hugo_config }}
     permissions:
       contents: write
       actions: write
