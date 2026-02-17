@@ -1,0 +1,4 @@
+###################### All URLs pointing to eclipse.dev ########################
+
+params:
+  docsURL: "https://eclipse.dev/sumo/userdoc"

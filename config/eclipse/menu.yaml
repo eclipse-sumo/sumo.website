@@ -1,0 +1,41 @@
+###################### All URLs pointing to eclipse.dev ########################
+
+main:
+    - name: "Documentation"
+      url: "https://eclipse.dev/sumo/userdoc/"
+      weight: 2
+    - name: "Downloads"
+      url: "https://eclipse.dev/sumo/userdoc/Downloads.php"
+      weight: 3
+    - name: "ChangeLog"
+      parent: "About"
+      url: "https://eclipse.dev/sumo/userdoc/ChangeLog.html"
+      weight: 3
+    - name: "Projects"
+      parent: "References"
+      url: "https://eclipse.dev/sumo/userdoc/Other/Projects.html"
+      weight: 1
+    - name: "Publications"
+      parent: "References"
+      url: "https://eclipse.dev/sumo/userdoc/Publications.html"
+      weight: 2
+    - name: "Contributed extensions"
+      parent: "References"
+      url: "https://eclipse.dev/sumo/userdoc/Contributed/index.html"
+      weight: 3
+    - name: "FAQ"
+      parent: "Support"
+      url: "https://eclipse.dev/sumo/userdoc/FAQ.html"
+      weight: 1
+    - name: "Tutorials"
+      parent: "Support"
+      url: "https://eclipse.dev/sumo/userdoc/Tutorials/index.html"
+      weight: 2
+    - name: "Pydoc Documentation"
+      parent: "Support"
+      url: "https://eclipse.dev/sumo/pydoc/"
+      weight: 4
+    - name: "Developer Documentation"
+      parent: "Support"
+      url: "https://eclipse.dev/sumo/userdoc/Developer/index.html"
+      weight: 6

@@ -3,6 +3,10 @@ name: deploy-static-pages
 on:
   push:
   workflow_call:
+    inputs:
+      hugo_config:
+        type: string
+        required: false
 
 jobs:
   build-and-deploy:
@@ -25,7 +29,7 @@ jobs:
 
     - name: Build Hugo Site
       run: |
-        hugo --minify
+        hugo --minify --environment ${{ inputs.hugo_config || 'default' }}
         if [ ! -d "public" ] || [ -z "$(ls -A public)" ]; then
           echo "Error: Hugo did not generate any files."
           exit 1
