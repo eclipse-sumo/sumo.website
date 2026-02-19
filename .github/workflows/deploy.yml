@@ -52,7 +52,7 @@ jobs:
       run: |
         cd sumo/docs/web
         mkdocs build --strict -d ../docs
-        mv ../docs/Downloads.html ../docs/Downloads.php
+        # mv ../docs/Downloads.html ../docs/Downloads.php
         ../../tools/build_config/buildPyDoc.py ../pydoc
 
     - name: Get Commit Message
