@@ -51,8 +51,8 @@ jobs:
     - name: Running mkdocs and pydoc
       run: |
         cd sumo/docs/web
-        mkdocs build --strict -d ../userdoc
-        mv ../userdoc/Downloads.html ../userdoc/Downloads.php
+        mkdocs build --strict -d ../docs
+        mv ../docs/Downloads.html ../docs/Downloads.php
         ../../tools/build_config/buildPyDoc.py ../pydoc
 
     - name: Get Commit Message
