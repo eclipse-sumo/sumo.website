@@ -1,0 +1,595 @@
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 19 February 2026 11:35:22
+Last edit: 19 February 2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="theme-color" content="#338033">
+        <meta name="theme-color" content="#338033" media="(prefers-color-scheme: dark)">
+        <meta property="og:image" content="../images/image-facebook.jpg">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="1080">
+        <meta property="og:image:height" content="1080">
+
+        
+        
+        <link rel="canonical" href="https://sumo.dlr.de/docs/Simulation/NEMA.html">
+        <link rel="shortcut icon" href="../images/favicon.ico">
+        <title>Traffic Lights with NEMA Phases - SUMO Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.all.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-3.7.0.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+
+      <script>
+        // DARK MODE
+        function detectColorScheme(){
+          var theme="light";
+
+          if(localStorage.getItem("sumo-docs-theme")){
+              if(localStorage.getItem("sumo-docs-theme") == "dark"){
+                  var theme = "dark";
+              }
+          } else if(!window.matchMedia) {
+              return false;
+          } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+              var theme = "dark";
+          }
+
+          if (theme=="dark") {
+              document.documentElement.setAttribute("data-theme", "dark");
+          }
+        }
+        detectColorScheme();
+      </script>
+
+    </head>
+
+    <body>
+
+    <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-center">
+    <div class="container-fluid">
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li class="navitem">
+                        <a href="../index.html" class="nav-link">Documentation</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Tutorials/index.html" class="nav-link">Tutorials</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../FAQ.html" class="nav-link">FAQ</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Downloads.html" class="nav-link">Downloads</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Publications.html" class="nav-link">Publications</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Developer/index.html" class="nav-link">Developer</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../ChangeLog.html" class="nav-link">ChangeLog</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="https://eclipse.dev/sumo/contact/" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa-solid fa-magnifying-glass"></i> <u>S</u>earch
+                    </a>
+                </li>
+                    <li class="nav-item">
+                        <a rel="edit" href="https://github.com/eclipse-sumo/sumo/edit/main/docs/web/docs/Simulation/NEMA.md" class="nav-link"><i class="fa-brands fa-github"></i> <u>E</u>dit on GitHub</a>
+                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    More <i class="fa-solid fa-circle-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item no-arrow-link" href="https://github.com/eclipse/sumo/issues">Report a Bug / Issue / Typo</a>
+                    <a class="dropdown-item" href="../Editing_Articles.html">Help on editing articles</a>
+                    <a class="dropdown-item" href="https://github.com/eclipse/sumo/commits/main/docs/web">Recent documentation changes</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#mkdocs_keyboard_modal">Keyboard Shortcuts</a>
+                    <a class="dropdown-item no-arrow-link" href="https://sumo.dlr.de/sumo_documentation.zip">Download the Documentation</a>
+                    <span class="dropdown-item" id="dark-mode-div">Dark mode <label id="theme-switch" class="theme-switch" for="checkbox_theme">
+                        <input type="checkbox" id="checkbox_theme">
+                    </label></span>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="languagedrop" data-toggle="dropdown">
+                    <i class="fa-solid fa-language"></i> Languages <i class="fa-solid fa-circle-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                    <span class="dropdown-item">
+                        Translations are generated automatically by Google Translate:
+                    </span>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/NEMA.html?_x_tr_sl=en&_x_tr_tl=de">Deutsch</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/NEMA.html?_x_tr_sl=en&_x_tr_tl=es">Español</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/NEMA.html?_x_tr_sl=en&_x_tr_tl=pt">Português</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/NEMA.html?_x_tr_sl=en&_x_tr_tl=fr">Français</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/NEMA.html?_x_tr_sl=en&_x_tr_tl=it">Italiano</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/NEMA.html?_x_tr_sl=en&_x_tr_tl=zh-CN">简体中文</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/NEMA.html?_x_tr_sl=en&_x_tr_tl=zh-TW">繁體中文</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/NEMA.html?_x_tr_sl=en&_x_tr_tl=tr">Türkçe</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/NEMA.html?_x_tr_sl=en&_x_tr_tl=ja">日本語</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/NEMA.html?_x_tr_sl=en&_x_tr_tl=ko">한국어</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/NEMA.html?_x_tr_sl=auto&_x_tr_tl=en"><i class="fa-solid fa-arrow-right"></i> Other languages</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container-fluid">
+          <div class="row">
+                <div class="col-md-3">
+                  <div class="text-center"><a href="../index.html" style="display: inline-block; margin-top: 5px;"><img src="../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
+                  
+<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
+            <span class="fa-solid fa-angle-down"></span>
+        </button>
+    </div>
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary toc-scroll toc">
+        <ul class="nav flex-column bs-sidenav">
+            <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
+            <li class="nav-item main"><a href="#nema_phases">NEMA Phases</a></li>
+            <li class="nav-item main"><a href="#defining_new_nema_phase_timings">Defining New NEMA phase timings</a></li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#tllogic_attributes" class="nav-link">• &lt;tlLogic> Attributes</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#param_attributes" class="nav-link">• &lt;param> Attributes</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#phase_attributes" class="nav-link">• &lt;phase> Attributes</a>
+                </li>
+            <li class="nav-item main"><a href="#change_the_timings_during_the_simulation">Change the timings during the simulation</a></li>
+            <li class="nav-item main"><a href="#configuration_errors">Configuration Errors</a></li>
+            <li class="nav-item main"><a href="#publication">Publication</a></li>
+        </ul>
+    </div>
+
+    <div class="admonition conference" style="position: sticky; margin-top: 20px; margin-bottom:10px;">
+        <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
+    </div>
+
+    <div class="admonition" style="position: sticky; margin-top: 20px; margin-bottom:10px; background-color: #d6cbb2; border-color: #c6b795; padding: 0;">
+        <center>
+            <a class="no-arrow-link" href="https://eclipse.dev/sumo/conference"><img src="../images/SUMO2026.png" alt="SUMO User Conference 2025" class="img-fluid" style="max-height: 200px"></a>
+        </center>
+    </div>
+
+</div>
+                </div>
+                <div class="col-md-9 main-area" role="main">
+                   <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
+                  <ul class="breadcrumbs">
+    <script>
+        var pagePath = "/docs/Simulation/NEMA.html";
+        var splitUrl = pagePath.split("/");
+        splitUrl.pop();
+        splitUrl.shift();
+        if (splitUrl[0] == 'docs') splitUrl.shift();
+        var homeLink = "../index.html";
+        document.write('<li class="breadcrumb-item"><a href="' + homeLink + '"><i class="fa-solid fa-house"></i></a></li>');
+        var prev = '';
+
+        var dirLink = splitUrl.map(function (el) {
+        el = prev + el; prev = el + '/'; return el;
+        });
+
+        for (let i = 0; i < splitUrl.length; i++) {
+            document.write("<li class=\"breadcrumb-item\"><a class=\"no-arrow-link\" href=\"../" + dirLink[i] + "\">" + splitUrl[i] + "</a></li>");
+        }
+    </script>
+    <li class="breadcrumb-item active">Traffic Lights with NEMA Phases</li>
+</ul>
+                  <hTitles>Traffic Lights with NEMA Phases<hr style="border: 0.5px solid #338033; margin-top: 5px !important;"></hTitles>
+                  
+                  
+
+<p>The controller modules in <a href="Traffic_Lights.html">Traffic Lights</a> use a stage-based control structure. A phase is defined as a stage of all allowed movements at a time instance. However, traffic signal controllers used in North America widely use National Electrical Manufacturers Association (NEMA) phase definition. A NEMA phase is defined by a certain flow movement at an intersection. At one time, more than one NEMA phase could happen together as long as they do not conflict with each other.</p>
+<p><img alt="NEMA_phases.png" src="../images/NEMA_phases.png" title="NEMA_phases.png" /></p>
+<p>Example: The movements at an intersection are numbered. The right turns usually go with the associated through movements. The left turn movements are usually odd numbers and the through and right turn movements are usually labeled with even number. Phase 2 and 6 are usually on the main street. An intersection does not need to have all 8 phases.</p>
+<p>SUMO now includes a controller module that is compatible with NEMA phases. The NEMA-phase controller can perform actuated or coordinated actuated control. This module is developed by Tianxin Li and <a href="mailto:Qichao.Wang@nrel.gov">Qichao Wang</a> at the National Renewable Energy Laboratory and funded by U.S. Department of Energy Vehicle Technology Office.</p>
+<h1 id="nema_phases">NEMA Phases<a class="headerlink" href="#nema_phases" title="Permanent link">#</a></h1>
+<p>We can visualize the NEMA phases and timings in Ring-and-Barrier structured NEMA diagrams. For one controller, only one phase from a ring can be activated at a time. Phases from different rings could be activated together as long as they are not from the different sides of a barrier. When a controller is operated in fixed-time control mode, we can model the NEMA phase timing as a corresponding stage-based control timing without any issues. When introducing actuation into the signal control, a Ring-and-Barrier structured traffic signal controller can be more flexible than stage-based controller by allowing different possible phase combinations.</p>
+<p><img alt="NEMA_diagram.png" src="../images/NEMA_diagram.png" title="NEMA_diagram.png" /></p>
+<p>Example: In the above NEMA diagram, we could see phase 1+5, 1+6, 2+6, 3+7, 3+8 and 4+8. However, when the traffic on phase 1 is very low and phase 1 could gap out early. In that case, we will not see phase 1+6 but additionally see phase 2+5.</p>
+<h1 id="defining_new_nema_phase_timings">Defining New NEMA phase timings<a class="headerlink" href="#defining_new_nema_phase_timings" title="Permanent link">#</a></h1>
+<p>You can load new definitions for NEMA-phase traffic controller as a part of an <a href="/docs/sumo.html#format_of_additional_files"><em>additional-file</em></a>. The signal timing could be updated in simulation through <a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-setNemaOffset">TraCI functions</a>. A definition of a traffic light program for a four-leg eight-phase intersection within an <a href="/docs/sumo.html#format_of_additional_files"><em>additional-file</em></a>
+looks like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;add&gt;</span>
+<span class="w">    </span><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2881&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;NEMA&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;NEMA&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;detector-length&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;detector-length-leftTurnLane&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;total-cycle-length&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;130&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ring1&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1,2,3,4&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ring2&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;5,6,7,8&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;barrierPhases&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2,6&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;coordinate-mode&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;barrier2Phases&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;4,8&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;minRecall&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2,6&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;maxRecall&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;whetherOutputState&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;fixForceOff&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">maxDur=</span><span class="s">&quot;25&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrrrrrrrGrrr&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">maxDur=</span><span class="s">&quot;25&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrGrrrrrrrrr&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;GGrrrrrrrrrr&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;8&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrrrrrGGrrrr&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">maxDur=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrrrrGrrrrrr&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">maxDur=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrrrrrrrrrrG&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">maxDur=</span><span class="s">&quot;35&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrrrrrrrrGGr&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">maxDur=</span><span class="s">&quot;35&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrrGGrrrrrrr&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/tlLogic&gt;</span>
+<span class="nt">&lt;/add&gt;</span>
+</code></pre></div>
+
+<p>For an intersection at a ramp, the traffic light program configuration could look like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;add&gt;</span>
+<span class="w">    </span><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2881&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;NEMA&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;NEMA&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;detector-length&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;detector-length-leftTurnLane&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;total-cycle-length&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;120&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ring1&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1,2,0,4&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ring2&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0,6,0,4&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;barrierPhases&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2,6&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;coordinate-mode&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;barrier2Phases&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;4,4&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;minRecall&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2,6&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;maxRecall&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;whetherOutputState&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;fixForceOff&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">maxDur=</span><span class="s">&quot;16&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;srrrrrrGGrrr&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;67&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;srrrrrrrrGGG&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;22&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3.5&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;GGGGGrrrrrrr&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;88&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;srrrrGGrrrrr&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/tlLogic&gt;</span>
+<span class="nt">&lt;/add&gt;</span>
+</code></pre></div>
+
+<p><img alt="NEMA_ramp_intersection.png" src="../images/NEMA_ramp_intersection.png" title="NEMA_ramp_intersection.png" /></p>
+<p>Example: A ramp intersection which only has phases 1, 2, 4, and 6. Phase 4 controls the traffic from the off ramp.</p>
+<h2 id="tllogic_attributes">&lt;tlLogic&gt; Attributes<a class="headerlink" href="#tllogic_attributes" title="Permanent link">#</a></h2>
+<p>The following attributes/elements are used within the tlLogic element:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>The id of the traffic light. This must be an existing traffic light id in the .net.xml file. Typically the id for a traffic light is identical with the junction id. The name may be obtained by right-clicking the red/green bars in front of a controlled intersection.</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>NEMA (string)</td>
+<td>This value should be kept as <em>NEMA</em> to activate the NEMA-phase controller module</td>
+</tr>
+<tr>
+<td><strong>programID</strong></td>
+<td>id (string)</td>
+<td>The id of the traffic light program.</td>
+</tr>
+<tr>
+<td><strong>offset</strong></td>
+<td>int</td>
+<td>The offset value in seconds. Default to <em>0</em>. Only effective when the controller is in coordinated mode. The reference to the offset is dependent on the controller cabinent type, which is configured via the <em>cabinentType</em> parameter below.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="param_attributes">&lt;param&gt; Attributes<a class="headerlink" href="#param_attributes" title="Permanent link">#</a></h2>
+<p>The following parameters are used to set the NEMA diagram and controller behavior:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter Key</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>detector-length</strong></td>
+<td>int</td>
+<td>The length (in meters) of the stop bar detectors for non-left-turn lane. Note that the detectors can be replaced by customized detectors. This parameter is for quick generation of a stop bar detector setting.</td>
+</tr>
+<tr>
+<td><strong>detector-length-leftTurnLane</strong></td>
+<td>int</td>
+<td>The length (in meters) of the stop bar detectors for left-turn lane. Note that the detectors can be replaced by customized detectors. This parameter is for quick generation of a stop bar detector setting. We have this parameter here because typically the stop bar detectors on the left-turn lanes have different lengths from the through lanes.</td>
+</tr>
+<tr>
+<td><strong>total-cycle-length</strong></td>
+<td>int</td>
+<td>The cycle length in seconds.</td>
+</tr>
+<tr>
+<td><strong>ring1</strong></td>
+<td>string</td>
+<td>The phase numbers in ring 1 separated by comma (','). Fill <em>0</em> if a phase does not exist.</td>
+</tr>
+<tr>
+<td><strong>ring2</strong></td>
+<td>string</td>
+<td>The phase numbers in ring 2 separated by comma (','). Fill <em>0</em> if a phase does not exist. Repeat the ring 1 phases of the side of barrier if that side of barrier does not have any phases.</td>
+</tr>
+<tr>
+<td><strong>barrierPhases</strong></td>
+<td>string</td>
+<td>One set of phases, separated by comma (','), that need to end together. This defines a barrier. Usually phase 4 and 8, i.e., "4,8".</td>
+</tr>
+<tr>
+<td><strong>coordinate-mode</strong></td>
+<td>bool (true or false)</td>
+<td>Default to <em>false</em>. True if the controller is in coordinated mode.</td>
+</tr>
+<tr>
+<td><strong>barrier2Phases</strong></td>
+<td>string</td>
+<td>One set of phases, separated by comma (','), that need to end together. This defines another barrier. If in coordinated mode, this set of phases are the coordinated phases. Usually phase 2 and 6, i.e., "2,6".</td>
+</tr>
+<tr>
+<td><strong>minRecall</strong></td>
+<td>string</td>
+<td>One set of phases, separated by comma (','), that will get activated no matter if the corresponding detectors will be activated or not. The duration of the phase activation will be between minDur and maxDur of the phase. E.g., "2,6". The value will be default to "1,2,3,4,5,6,7,8" if not set (all the existing phases will be called).</td>
+</tr>
+<tr>
+<td><strong>maxRecall</strong></td>
+<td>string</td>
+<td>One set of phases, separated by comma (','), that will get activated no matter if the corresponding detectors will be activated or not. The duration of the phase activation will be the maxDur of the phase. If you set all the phases to have maxRecall, the controller will behave as a fixed time controller with the green times being the maxDur of the phases. The value will be default to empty ("") if not set.</td>
+</tr>
+<tr>
+<td><strong>fixForceOff</strong></td>
+<td>bool (true or false)</td>
+<td>If true, the controller will be in fixed force-off mode. This permits non-coordinated phases to use the unused time of previous phases. If false, the controller will be in floating force-off mode. default <em>false</em></td>
+</tr>
+<tr>
+<td><strong>whetherOutputState</strong></td>
+<td>bool (true or false)</td>
+<td>Whether record the signal phase change events. This could be used for generating Automated Traffic Signal Performance Measures (ATSPM). The value will be default to false if not set.</td>
+</tr>
+<tr>
+<td><strong>show-detectors</strong></td>
+<td>bool (true or false)</td>
+<td>It controls whether generated detectors will be visible or hidden in sumo-gui. The default for all traffic lights can be set with option --tls.actuated.show-detectors. It is also possible to toggle this value from within the GUI by right-clicking on a traffic light.</td>
+</tr>
+<tr>
+<td><strong>controllerType</strong></td>
+<td>string (TS2 or Type 170)</td>
+<td>It controls the type of controller used. NEMA TS2 controllers reference the coordinated <em>offset</em> to the beginning of the 1st coordinated phase. Type 170 controllers reference the coordinated <em>offset</em> to the beginning of yellow on the coordinated phase. TS2 offset has been validated against software-in-the-loop Econolite controllers. default <em>TS2</em>.</td>
+</tr>
+<tr>
+<td><strong>latchingDetectors</strong></td>
+<td>string</td>
+<td>Passing a string of phases (like "1,2,3,4") will cause the detector in those phases to remain on until the phase has been served, regardless of whether the vehicle left the detection zone or not. default "".</td>
+</tr>
+<tr>
+<td><strong>crossPhaseSwitching:X</strong></td>
+<td>string</td>
+<td>X is a phase number. For example, key="crossPhaseSwitching:2" value="5" will cause phase 5 detector to report to phase 2 while phase 2 is active. Default is no cross phase switching</td>
+</tr>
+</tbody>
+</table>
+<h2 id="phase_attributes">&lt;phase&gt; Attributes<a class="headerlink" href="#phase_attributes" title="Permanent link">#</a></h2>
+<p>Each phase is defined using the following attributes:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>duration</strong></td>
+<td>time (int)</td>
+<td>This attribute is default to 99 and does not affect the control. The duration of the phase will change dynamically according to the traffic actuation and constrained by <strong>minDur</strong> and <strong>maxDur</strong>.</td>
+</tr>
+<tr>
+<td><strong>minDur</strong></td>
+<td>time (double)</td>
+<td>The minimum green of the phase.</td>
+</tr>
+<tr>
+<td><strong>maxDur</strong></td>
+<td>time (double)</td>
+<td>The maximum green of the phase. <strong>In coordinated mode, it's the split minus the yellow and all red time of the phase.</strong></td>
+</tr>
+<tr>
+<td><strong>vehExt</strong></td>
+<td>time (double)</td>
+<td>Vehicle extension in seconds of the actuated phase.</td>
+</tr>
+<tr>
+<td><strong>yellow</strong></td>
+<td>time (double)</td>
+<td>The yellow time of the phase.</td>
+</tr>
+<tr>
+<td><strong>red</strong></td>
+<td>time (double)</td>
+<td>Red clearance time of the phase.</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>int</td>
+<td>The NEMA phase number.</td>
+</tr>
+<tr>
+<td><strong>state</strong></td>
+<td>string</td>
+<td>The <strong>state</strong> attribute defines the allowable movements associated with the phase. This is best set from netedit. You can find more information from <a href="Traffic_Lights.html#signal_state_definitions">Traffic Lights -&gt; Signal state definitions</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="change_the_timings_during_the_simulation">Change the timings during the simulation<a class="headerlink" href="#change_the_timings_during_the_simulation" title="Permanent link">#</a></h1>
+<p>Certain signal timing parameters can be updated during the simulation through TraCI.</p>
+<ul>
+<li><strong>traci.trafficlight.setNemaOffset(tlsID, offset)</strong>: The offset will be adjusted by shortening or extending the green time of the coordinated phase so that the end of the coordinated phase will match the offset. It is recommended to change the offset gradually to mimic a transition time.</li>
+<li><strong>traci.trafficlight.setNemaMaxGreens(tlsID, maxGreens)</strong>: sets maximum green times for each NEMA phase by giving 8 numbers. Time 0 must be used for each phase that does not exists</li>
+<li><strong>traci.trafficlight.setNemaSplits(tlsID, splits)</strong>: works like setNemaMaxGreens but subtracts the red- and yellow-times before setting maximum green time for each phase</li>
+<li><strong>traci.trafficlight.setNemaCycleLength(tlsID, cycleLength)</strong>: the cycle length may change when you update the splits/max green. You need to set the new cycle length to make the new timing work without problems.</li>
+</ul>
+<p>All the updates in the signal timing parameters in the NEMA-phase controller will happen after the current cycle ended.</p>
+<h1 id="configuration_errors">Configuration Errors<a class="headerlink" href="#configuration_errors" title="Permanent link">#</a></h1>
+<p>The following errors may be raised:</p>
+<ul>
+<li><strong>the phases before barrier X from both rings do not add up</strong>: EXPLANATION FORTHCOMING</li>
+<li><strong>Ring X does not add to cycle length</strong>: EXPLANATION FORTHCOMING</li>
+</ul>
+<p>To simulate misconfigured controllers, both errors may be ignored by setting <code>&lt;param key="ignore-errors" value="true"/&gt;</code>.</p>
+<h1 id="publication">Publication<a class="headerlink" href="#publication" title="Permanent link">#</a></h1>
+<p>The implementation and validation of the controller was described in <a href="https://www.tib-op.org/ojs/index.php/scp/article/view/115">Schrader, M.; Wang, Q.; Bittle, J. Extension and Validation of NEMA-Style Dual-Ring Controller in SUMO. SUMO Conf Proc 2022, 3, 1-13.</a></p>
+                </div>
+          </div>
+          <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+        </div>
+
+        <footer class="col-md-12">
+          
+            <br><small><i>This page was last edited on: 19 February 2026</i></small>
+          
+          <hr>
+            <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
+          <p>Follow us on <a class="no-arrow-link" href="https://www.twitter.com/eclipsesumo/"><i class="fa-brands fa-x-twitter"></i></a> <a class="no-arrow-link" href="https://www.facebook.com/simulationofurbanmobility/"><i class="fa-brands fa-facebook"></i></a> <a class="no-arrow-link" href="https://www.instagram.com/eclipse.sumo/"><i class="fa-brands fa-instagram"></i></a> <a class="no-arrow-link" href="https://www.threads.net/@eclipse.sumo"><i class="fa-brands fa-threads"></i></a> <a class="no-arrow-link" href="https://bsky.app/profile/eclipse-sumo.bsky.social"><i class="fa-brands fa-bluesky"></i></a> <a class="no-arrow-link" href="https://www.linkedin.com/groups/5156801/"><i class="fab fa-linkedin"></i></a>
+          | Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a></p>
+        </footer>
+
+      <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="color: #495057 !important;">
+                <p>Enter your search terms:</p>
+                <script async src="https://cse.google.com/cse.js?cx=004302551366764109984:1kpgtzrm6kv"></script>
+                <div class="gcse-search"></div>
+            </div>
+        </div>
+    </div>
+</div>
+      <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("goToTop").style.display = "block";
+          } else {
+            document.getElementById("goToTop").style.display = "none";
+          }
+        }
+
+        function goTopFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+
+        var base_url = "..",
+            shortcuts = {"edit": 69, "help": 191, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+
+        <script>
+          const toggleSwitch = document.querySelector('#theme-switch input[type="checkbox"]');
+
+          function switchTheme(e) {
+              if (e.target.checked) {
+                  localStorage.setItem('sumo-docs-theme', 'dark');
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                  toggleSwitch.checked = true;
+              } else {
+                  localStorage.setItem('sumo-docs-theme', 'light');
+                  document.documentElement.setAttribute('data-theme', 'light');
+                  toggleSwitch.checked = false;
+              }
+          }
+
+          toggleSwitch.addEventListener('change', switchTheme, false);
+
+          if (document.documentElement.getAttribute("data-theme") == "dark"){
+              toggleSwitch.checked = true;
+          }
+          </script>
+
+      <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Key</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody style="color: #495057 !important;">
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help dialog</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search the Documentation</td>
+                  </tr>
+                  <tr>
+                    <td class="edit shortcut"><kbd>e</kbd></td>
+                    <td>Edit current page on GitHub</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+</html>

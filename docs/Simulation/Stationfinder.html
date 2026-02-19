@@ -1,0 +1,712 @@
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 19 February 2026 11:35:22
+Last edit: 19 February 2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="theme-color" content="#338033">
+        <meta name="theme-color" content="#338033" media="(prefers-color-scheme: dark)">
+        <meta property="og:image" content="../images/image-facebook.jpg">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="1080">
+        <meta property="og:image:height" content="1080">
+
+        
+        
+        <link rel="canonical" href="https://sumo.dlr.de/docs/Simulation/Stationfinder.html">
+        <link rel="shortcut icon" href="../images/favicon.ico">
+        <title>Stationfinder device - SUMO Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.all.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-3.7.0.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+
+      <script>
+        // DARK MODE
+        function detectColorScheme(){
+          var theme="light";
+
+          if(localStorage.getItem("sumo-docs-theme")){
+              if(localStorage.getItem("sumo-docs-theme") == "dark"){
+                  var theme = "dark";
+              }
+          } else if(!window.matchMedia) {
+              return false;
+          } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+              var theme = "dark";
+          }
+
+          if (theme=="dark") {
+              document.documentElement.setAttribute("data-theme", "dark");
+          }
+        }
+        detectColorScheme();
+      </script>
+
+    </head>
+
+    <body>
+
+    <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-center">
+    <div class="container-fluid">
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li class="navitem">
+                        <a href="../index.html" class="nav-link">Documentation</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Tutorials/index.html" class="nav-link">Tutorials</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../FAQ.html" class="nav-link">FAQ</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Downloads.html" class="nav-link">Downloads</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Publications.html" class="nav-link">Publications</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Developer/index.html" class="nav-link">Developer</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../ChangeLog.html" class="nav-link">ChangeLog</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="https://eclipse.dev/sumo/contact/" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa-solid fa-magnifying-glass"></i> <u>S</u>earch
+                    </a>
+                </li>
+                    <li class="nav-item">
+                        <a rel="edit" href="https://github.com/eclipse-sumo/sumo/edit/main/docs/web/docs/Simulation/Stationfinder.md" class="nav-link"><i class="fa-brands fa-github"></i> <u>E</u>dit on GitHub</a>
+                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    More <i class="fa-solid fa-circle-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item no-arrow-link" href="https://github.com/eclipse/sumo/issues">Report a Bug / Issue / Typo</a>
+                    <a class="dropdown-item" href="../Editing_Articles.html">Help on editing articles</a>
+                    <a class="dropdown-item" href="https://github.com/eclipse/sumo/commits/main/docs/web">Recent documentation changes</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#mkdocs_keyboard_modal">Keyboard Shortcuts</a>
+                    <a class="dropdown-item no-arrow-link" href="https://sumo.dlr.de/sumo_documentation.zip">Download the Documentation</a>
+                    <span class="dropdown-item" id="dark-mode-div">Dark mode <label id="theme-switch" class="theme-switch" for="checkbox_theme">
+                        <input type="checkbox" id="checkbox_theme">
+                    </label></span>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="languagedrop" data-toggle="dropdown">
+                    <i class="fa-solid fa-language"></i> Languages <i class="fa-solid fa-circle-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                    <span class="dropdown-item">
+                        Translations are generated automatically by Google Translate:
+                    </span>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/Stationfinder.html?_x_tr_sl=en&_x_tr_tl=de">Deutsch</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/Stationfinder.html?_x_tr_sl=en&_x_tr_tl=es">Español</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/Stationfinder.html?_x_tr_sl=en&_x_tr_tl=pt">Português</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/Stationfinder.html?_x_tr_sl=en&_x_tr_tl=fr">Français</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/Stationfinder.html?_x_tr_sl=en&_x_tr_tl=it">Italiano</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/Stationfinder.html?_x_tr_sl=en&_x_tr_tl=zh-CN">简体中文</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/Stationfinder.html?_x_tr_sl=en&_x_tr_tl=zh-TW">繁體中文</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/Stationfinder.html?_x_tr_sl=en&_x_tr_tl=tr">Türkçe</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/Stationfinder.html?_x_tr_sl=en&_x_tr_tl=ja">日本語</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/Stationfinder.html?_x_tr_sl=en&_x_tr_tl=ko">한국어</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Simulation/Stationfinder.html?_x_tr_sl=auto&_x_tr_tl=en"><i class="fa-solid fa-arrow-right"></i> Other languages</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container-fluid">
+          <div class="row">
+                <div class="col-md-3">
+                  <div class="text-center"><a href="../index.html" style="display: inline-block; margin-top: 5px;"><img src="../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
+                  
+<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
+            <span class="fa-solid fa-angle-down"></span>
+        </button>
+    </div>
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary toc-scroll toc">
+        <ul class="nav flex-column bs-sidenav">
+            <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
+            <li class="nav-item main"><a href="#overview">Overview</a></li>
+            <li class="nav-item main"><a href="#configuration">Configuration</a></li>
+            <li class="nav-item main"><a href="#decision_logic_for_charging">Decision logic for charging</a></li>
+            <li class="nav-item main"><a href="#charging_station_target_function">Charging station target function</a></li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#further_parameters_to_affect_charging_station_search_behavior" class="nav-link">• Further parameters to affect charging station search behavior</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#inspect_the_target_function_result" class="nav-link">• Inspect the target function result</a>
+                </li>
+            <li class="nav-item main"><a href="#break_down_due_to_lack_of_energy">Break down due to lack of energy</a></li>
+            <li class="nav-item main"><a href="#interaction_with_other_planned_stops">Interaction with other planned stops</a></li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#charging_strategies" class="nav-link">• Charging strategies</a>
+                </li>
+            <li class="nav-item main"><a href="#traci">TraCI</a></li>
+        </ul>
+    </div>
+
+    <div class="admonition conference" style="position: sticky; margin-top: 20px; margin-bottom:10px;">
+        <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
+    </div>
+
+    <div class="admonition" style="position: sticky; margin-top: 20px; margin-bottom:10px; background-color: #d6cbb2; border-color: #c6b795; padding: 0;">
+        <center>
+            <a class="no-arrow-link" href="https://eclipse.dev/sumo/conference"><img src="../images/SUMO2026.png" alt="SUMO User Conference 2025" class="img-fluid" style="max-height: 200px"></a>
+        </center>
+    </div>
+
+</div>
+                </div>
+                <div class="col-md-9 main-area" role="main">
+                   <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
+                  <ul class="breadcrumbs">
+    <script>
+        var pagePath = "/docs/Simulation/Stationfinder.html";
+        var splitUrl = pagePath.split("/");
+        splitUrl.pop();
+        splitUrl.shift();
+        if (splitUrl[0] == 'docs') splitUrl.shift();
+        var homeLink = "../index.html";
+        document.write('<li class="breadcrumb-item"><a href="' + homeLink + '"><i class="fa-solid fa-house"></i></a></li>');
+        var prev = '';
+
+        var dirLink = splitUrl.map(function (el) {
+        el = prev + el; prev = el + '/'; return el;
+        });
+
+        for (let i = 0; i < splitUrl.length; i++) {
+            document.write("<li class=\"breadcrumb-item\"><a class=\"no-arrow-link\" href=\"../" + dirLink[i] + "\">" + splitUrl[i] + "</a></li>");
+        }
+    </script>
+    <li class="breadcrumb-item active">Stationfinder device</li>
+</ul>
+                  <hTitles>Stationfinder device<hr style="border: 0.5px solid #338033; margin-top: 5px !important;"></hTitles>
+                  
+                  
+
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
+<p>Although SUMO offers output regarding emissions and energy/fuel usage, by default SUMO vehicles would travel as long as wanted without need to charge.
+Charging stations for battery electric vehicles have been introduced with the <a href="../Models/Electric.html#defining_electric_vehicles">battery device</a>.</p>
+<p>The stationfinder device lets equipped vehicles monitor their energy buffer (currently battery only) when traveling and reroute to nearby
+charging stations in case they won't make it to their destinations otherwise. Vehicles can break down due to low battery charge (see <code>rescueAction</code> parameter).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As of SUMO 1.21 the device implementation works only for vehicles with a battery device.</p>
+</div>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
+<p>The following table gives the full list of possible parameters for the stationfinder device. Each of these parameters must be specified as a child
+element of the form <code>&lt;param key="device.stationfinder.&lt;PARAMETER NAME&gt;" value="&lt;PARAMETER VALUE&gt;"</code> of the appropriate demand definition element (e.g. <code>&lt;vehicle ... /&gt;</code>, <code>&lt;vType ... /&gt;</code>, or <code>&lt;flow ... /&gt;</code>).
+The parameters take effect only on vehicles which have been assigned a stationfinder device by one of the <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#devices">device assignment options</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Range</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rescueTime</td>
+<td>float (s)</td>
+<td>≥0</td>
+<td>1800</td>
+<td>Time to wait for a rescue vehicle on the road side when the battery is empty</td>
+</tr>
+<tr>
+<td>rescueAction</td>
+<td>enum</td>
+<td>{remove; tow; none}</td>
+<td>remove</td>
+<td>What to do with vehicles in rescue mode: <code>remove</code> remove immediately from the simulation, <code>tow</code> teleport to a charging station after waiting or do nothing using <code>none</code></td>
+</tr>
+<tr>
+<td>reserveFactor</td>
+<td>float</td>
+<td>≥1</td>
+<td>1.1</td>
+<td>Scale battery need with this factor to account for unexpected traffic situations</td>
+</tr>
+<tr>
+<td>emptyThreshold</td>
+<td>float</td>
+<td>[0;1]</td>
+<td>0.05</td>
+<td>Battery percentage to go into rescue mode</td>
+</tr>
+<tr>
+<td>radius</td>
+<td>float (s)</td>
+<td>≥0</td>
+<td>180</td>
+<td>Search radius in travel time seconds</td>
+</tr>
+<tr>
+<td>maxEuclideanDistance</td>
+<td>float (m)</td>
+<td></td>
+<td>-1</td>
+<td>Euclidean search radius in meters (negative values disable this restriction)</td>
+</tr>
+<tr>
+<td>repeat</td>
+<td>float (s)</td>
+<td>≥0</td>
+<td>60</td>
+<td>When to trigger a new search if no station has been found</td>
+</tr>
+<tr>
+<td>maxChargePower</td>
+<td>float (W)</td>
+<td>≥0</td>
+<td>100000</td>
+<td>The maximum charging speed of the vehicle battery</td>
+</tr>
+<tr>
+<td>chargeType</td>
+<td>enum</td>
+<td>{charging}</td>
+<td>charging</td>
+<td>Type of energy transfer (not used at the moment)</td>
+</tr>
+<tr>
+<td>waitForCharge</td>
+<td>float (s)</td>
+<td>≥0</td>
+<td>600</td>
+<td>After this waiting time vehicle searches for a new station when the initial one is blocked</td>
+</tr>
+<tr>
+<td>saturatedChargeLevel</td>
+<td>float</td>
+<td>[0;1]</td>
+<td>0.8</td>
+<td>Target state of charge after which the vehicle stops charging</td>
+</tr>
+<tr>
+<td>needToChargeLevel</td>
+<td>float</td>
+<td>[0;1]</td>
+<td>0.4</td>
+<td>State of charge the vehicle begins searching for charging stations</td>
+</tr>
+<tr>
+<td>replacePlannedStop</td>
+<td>float</td>
+<td>[0;inf[</td>
+<td>0</td>
+<td>Share of the time until the departure at the next planned stop used for charging (values &gt;1 will cause skipping the next planned stop)</td>
+</tr>
+<tr>
+<td>maxDistanceToReplacedStop</td>
+<td>float</td>
+<td>≥0</td>
+<td>300</td>
+<td>Distance in meters along the network from charging station to the next planned stop</td>
+</tr>
+<tr>
+<td>chargingStrategy</td>
+<td>string</td>
+<td>{balanced; latest; none}</td>
+<td>none</td>
+<td>Chosen charging strategy (<code>balanced</code> will spread the charging across the whole stopping duration, <code>latest</code> will shift charging towards the end of the stopping duration)</td>
+</tr>
+<tr>
+<td>opportunisticChargeLevel</td>
+<td>float</td>
+<td>[0;1]</td>
+<td>0</td>
+<td>State of charge below which the vehicle wants to charge nearby planned stops (on the same edge as the planned stop) although not needed to complete its route (named opportunistic charging)</td>
+</tr>
+<tr>
+<td>minOpportunityDuration</td>
+<td>float (s)</td>
+<td>≥0</td>
+<td>3600</td>
+<td>The minimum expected duration of a planned stop to be used for opportunistic charging</td>
+</tr>
+<tr>
+<td>checkEnergyForRoute</td>
+<td>bool</td>
+<td>{true; false}</td>
+<td>true</td>
+<td>Check whether the current battery charge may be enough to complete the route and thus skip searching for charging stations</td>
+</tr>
+</tbody>
+</table>
+<h2 id="decision_logic_for_charging">Decision logic for charging<a class="headerlink" href="#decision_logic_for_charging" title="Permanent link">#</a></h2>
+<p>This paragraph shall convey the major conditions used in the decision logic of the device. The device has to decide whether and where to reroute the
+vehicle to charge. The user can configure multiple thresholds to change how different vehicles behave.</p>
+<ul>
+<li>As long as the battery state of charge (SoC) is above <code>needToChargeLevel</code>, no action is taken. This condition is rechecked each time the SoC has lowered by 10%.</li>
+<li>If the stationfinder device estimates the battery charge is still sufficient to reach the destination and keep at least the <code>emptyThreshold</code> state of charge, then no action is taken. This check can be deactivated by setting <code>checkEnergyForRoute</code> to <code>false</code>.</li>
+<li>When the SoC reaches <code>needToChargeLevel</code>, possible charging stations are searched and evaluated using the <a href="#charging_station_target_function">target function</a>. Only charging stations offering the right charging type (such as charging the vehicle battery) are considered valid destinations. If the destination can presumably still be reached with the current SoC and without using the SoC below <code>emptyThreshold</code> then no charging station is targeted. If a valid charging station is found within <code>radius</code> travel time (and optionally within <code>maxEuclideanDistance</code> air line), the vehicle is immediately rerouted to go there. Other programmed stops will be served after charging.</li>
+<li>If no charging station is available, the vehicle continues its original route. It will search again after <code>repeat</code> seconds.</li>
+<li>If the charging station is occupied on arrival, the vehicle will wait <code>waitForCharge</code> seconds before looking for an alternative site.</li>
+<li>The vehicle will charge enough to complete the planned route multiplied by <code>reserveFactor</code> and try to keep the SoC above <code>emptyThreshold</code>.</li>
+<li>Equipped vehicles monitor every second (not necessarily every time step) whether the battery state of charge (SoC) goes beyond <code>emptyThreshold</code>. If it does, the configured <code>rescueAction</code> is executed.</li>
+</ul>
+<h2 id="charging_station_target_function">Charging station target function<a class="headerlink" href="#charging_station_target_function" title="Permanent link">#</a></h2>
+<p>When there are more sites to choose from, the device sorts the charging stations according to a target function and chooses the one with the lowest score. The target function works the same way as
+<a href="Rerouter.html#determining_the_alternative_parking_area">the one for parking search</a>. Thus it consists of a linear combination of components and corresponding weight factors. Each of these parameters must be specified as a child
+element of the form <code>&lt;param key="device.stationfinder.&lt;PARAMETER NAME&gt;" value="&lt;PARAMETER VALUE&gt;"</code> of the appropriate demand definition element (e.g. <code>&lt;vehicle ... /&gt;</code>, <code>&lt;vType ... /&gt;</code>, or <code>&lt;flow ... /&gt;</code>).
+The available components and their weight factors are described in the table below:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Default value</th>
+<th>Description</th>
+<th>Inverse (Bigger is better)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>charging.probability.weight</td>
+<td>0</td>
+<td>currently not applicable</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>charging.capacity.weight</td>
+<td>0</td>
+<td>The total capacity of the charging station</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>charging.absfreespace.weight</td>
+<td>0</td>
+<td>The absolute number of free spaces</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>charging.relfreespace.weight</td>
+<td>0</td>
+<td>The relative number of free spaces</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>charging.distanceto.weight</td>
+<td>0</td>
+<td>The road distance to the charging station</td>
+<td>no</td>
+</tr>
+<tr>
+<td>charging.timeto.weight</td>
+<td>1</td>
+<td>The assumed travel time to the charging station</td>
+<td>no</td>
+</tr>
+<tr>
+<td>charging.distancefrom.weight</td>
+<td>0</td>
+<td>The road distance from the charging station to the vehicle destination / next stop</td>
+<td>no</td>
+</tr>
+<tr>
+<td>charging.timefrom.weight</td>
+<td>1</td>
+<td>The assumed travel time from the charging station to the vehicle destination / next stop</td>
+<td>no</td>
+</tr>
+<tr>
+<td>charging.chargingTime.weight</td>
+<td>1</td>
+<td>The assumed charging time at the charging station</td>
+<td>no</td>
+</tr>
+<tr>
+<td>charging.waitingTime.weight</td>
+<td>1</td>
+<td>The assumed waiting time at the charging station for a free charging point</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<p>Normalization is done by dividing the single value by the maximum value found among all available charging stations within the search range. Inversion means taking the remainder to 1 instead of the normalized value itself.</p>
+<p>When <code>charging.probability.weight</code> is set to a positive value, a random number between 0 and 1 is drawn for each candidate charging station.
+This value is then normalized to the range [0,1] by dividing with the maximum probability value of all charging station elements.
+The inverted normalized value is then multiplied with <code>charging.probability.weight</code> to enter into the candidate score.</p>
+<h3 id="further_parameters_to_affect_charging_station_search_behavior">Further parameters to affect charging station search behavior<a class="headerlink" href="#further_parameters_to_affect_charging_station_search_behavior" title="Permanent link">#</a></h3>
+<p>Each of these parameters must be specified as a child
+element of the form <code>&lt;param key="device.stationfinder.&lt;PARAMETER NAME&gt;" value="&lt;PARAMETER VALUE&gt;"</code> of the appropriate demand definition element (e.g. <code>&lt;vehicle ... /&gt;</code>, <code>&lt;vType ... /&gt;</code>, or <code>&lt;flow ... /&gt;</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>charging.frustration</td>
+<td>100</td>
+<td>increases the preference for visibly free charging stations over time (after x unsuccessful trials, targets with unknown occupancy will assumed to be <em>almost</em> full)</td>
+</tr>
+<tr>
+<td>charging.knowledge</td>
+<td>0</td>
+<td>Let driver "guess" the exact occupancy of invisible charging stations with probability x</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inspect_the_target_function_result">Inspect the target function result<a class="headerlink" href="#inspect_the_target_function_result" title="Permanent link">#</a></h3>
+<p>The target function value of each searched charging station of the vehicle can be inspected in <a href="../sumo-gui.html">sumo-gui</a>. Proceed with the following steps to see the results next to the charging stations:</p>
+<ul>
+<li>Open the vehicle visualization settings](../sumo-gui.md#vehicle_visualisation_settings) and check "Show charging info"</li>
+<li>Move to vehicle of interest and open its context menu by right click, then choose "Show Current Route"</li>
+</ul>
+<p>Some charging stations may not show target function results. They may be excluded beforehand due to stationfinder device settings like <code>radius</code> and <code>maxEuclideanDistance</code>.</p>
+<h2 id="break_down_due_to_lack_of_energy">Break down due to lack of energy<a class="headerlink" href="#break_down_due_to_lack_of_energy" title="Permanent link">#</a></h2>
+<p>Vehicles may not always manage to reach a free charging point before they run out of energy. This can be due to a number of reasons:</p>
+<ul>
+<li>low battery capacity (actual or maximum battery capacity)</li>
+<li>high energy consumption</li>
+<li>low number of charging stations nearby</li>
+<li>high occupancy of charging stations</li>
+</ul>
+<p>The stationfinder device can be configured using the parameters <code>rescueTime</code> and <code>rescueAction</code> to handle the lack of energy in the following ways:</p>
+<ul>
+<li><code>rescueAction="none"</code>: let vehicles continue on their route although they don't have enough energy</li>
+<li><code>rescueAction="remove"</code>: the vehicle will come to a standstill and then will be removed from the simulation</li>
+<li><code>rescueTime="TIME" rescueAction="tow"</code>: the vehicle will come to a standstill and wait for <code>TIME</code> seconds (waiting time for a tow truck). Then it will be teleported to a free charging point, charge and continue its route. Thus the travel from the break down to the charging station is not included in <a href="Output/EmissionOutput.html">emissions output</a>.</li>
+</ul>
+<h2 id="interaction_with_other_planned_stops">Interaction with other planned stops<a class="headerlink" href="#interaction_with_other_planned_stops" title="Permanent link">#</a></h2>
+<p>By default, the stationfinder device will add stops at charging stations without changing any other planned stops. However it checks if there are planned stops at charging stations which have not been created by the device itself.
+In case a charging need is detected and the vehicle stops next at a charging station, the device will refrain from planning an additional stop if the battery capacity is assumed sufficient to reach said stop.</p>
+<p>Addind additional stops may influence the vehicle's travel time. Under real-world conditions users may prefer charging the vehicle close to their activity location and walk the remaining distance.
+This can be modeled using the parameters <code>replacePlannedStop</code> and <code>maxDistanceToReplacedStop</code> and stops with defined departure times through the <code>until</code> attribute (see <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#stops_and_waypoints">stops</a>):</p>
+<ul>
+<li><code>replacePlannedStop</code> &gt; 0: Defines the share of stopping time to be transferred from the next planned stop to charging. If the value exceeds 1, the next planned stop is skipped. If the value is set to 0, no stopping time is transferred.</li>
+<li><code>maxDistanceToReplacedStop</code> defines the acceptable distance in meters between the charging station and the stop modeling the activity location. If the distance is above this threshold, no stopping time will be transferred</li>
+</ul>
+<h3 id="charging_strategies">Charging strategies<a class="headerlink" href="#charging_strategies" title="Permanent link">#</a></h3>
+<p>The charging process is defined by time, location and charging power. Time and location are determined using the stationfinder logic as <a href="#decision_logic_for_charging">explained</a> .
+When the vehicle remains attached to the charging station longer than needed there is the opportunity to alter the charging power curve, thus shift charging in time.
+Here a charging strategy is defined as the charging power curve agreed between the vehicle and the charging station. Electricity grid operators may use such strategies to lower the peak energy they have to provide.</p>
+<p>Currently two charging strategies can be set in the stationfinder device using the <code>chargingStrategy</code> parameter:</p>
+<ul>
+<li><code>chargingStrategy="balanced"</code>: limit the charging power such that charging to the target SoC needs the whole stopping duration ("flat" charging curve)</li>
+<li><code>chargingStrategy="latest"</code>: still charge at the maximum charge rate but rather than start charging immediately after arrival, start the latest time possible to reach the target SoC</li>
+</ul>
+<h1 id="traci">TraCI<a class="headerlink" href="#traci" title="Permanent link">#</a></h1>
+<p>The internal state of the stationfinder device can be accessed directly using
+<a href="../TraCI/Vehicle_Value_Retrieval.html#supported_device_parameters"><em>traci.vehicle.getParameter</em></a>
+and
+<a href="../TraCI/Change_Vehicle_State.html#supported_device_parameters"><em>traci.vehicle.setParameter</em></a>.</p>
+<p>Some of the device parameters explained above and more <strong>read-only</strong> properties are available (Note that you need to supply the full name <code>device.stationfinder.&lt;PARAMETER NAME&gt;</code> to
+the TraCI function):</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Get</th>
+<th>Set</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chargingStation</td>
+<td>yes</td>
+<td>no</td>
+<td>ID of the charging station the vehicle is heading to (empty string elsewise)</td>
+</tr>
+<tr>
+<td>batteryNeed</td>
+<td>yes</td>
+<td>no</td>
+<td>Estimated energy needed for completing the remaining route</td>
+</tr>
+<tr>
+<td>needToChargeLevel</td>
+<td>yes</td>
+<td>yes</td>
+<td>See <a href="#configuration">above</a></td>
+</tr>
+<tr>
+<td>saturatedChargeLevel</td>
+<td>yes</td>
+<td>yes</td>
+<td>See <a href="#configuration">above</a></td>
+</tr>
+<tr>
+<td>waitForCharge</td>
+<td>yes</td>
+<td>yes</td>
+<td>See <a href="#configuration">above</a></td>
+</tr>
+<tr>
+<td>repeat</td>
+<td>yes</td>
+<td>yes</td>
+<td>See <a href="#configuration">above</a></td>
+</tr>
+<tr>
+<td>radius</td>
+<td>yes</td>
+<td>yes</td>
+<td>See <a href="#configuration">above</a></td>
+</tr>
+<tr>
+<td>reserveFactor</td>
+<td>yes</td>
+<td>yes</td>
+<td>See <a href="#configuration">above</a></td>
+</tr>
+</tbody>
+</table>
+                </div>
+          </div>
+          <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+        </div>
+
+        <footer class="col-md-12">
+          
+            <br><small><i>This page was last edited on: 19 February 2026</i></small>
+          
+          <hr>
+            <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
+          <p>Follow us on <a class="no-arrow-link" href="https://www.twitter.com/eclipsesumo/"><i class="fa-brands fa-x-twitter"></i></a> <a class="no-arrow-link" href="https://www.facebook.com/simulationofurbanmobility/"><i class="fa-brands fa-facebook"></i></a> <a class="no-arrow-link" href="https://www.instagram.com/eclipse.sumo/"><i class="fa-brands fa-instagram"></i></a> <a class="no-arrow-link" href="https://www.threads.net/@eclipse.sumo"><i class="fa-brands fa-threads"></i></a> <a class="no-arrow-link" href="https://bsky.app/profile/eclipse-sumo.bsky.social"><i class="fa-brands fa-bluesky"></i></a> <a class="no-arrow-link" href="https://www.linkedin.com/groups/5156801/"><i class="fab fa-linkedin"></i></a>
+          | Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a></p>
+        </footer>
+
+      <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="color: #495057 !important;">
+                <p>Enter your search terms:</p>
+                <script async src="https://cse.google.com/cse.js?cx=004302551366764109984:1kpgtzrm6kv"></script>
+                <div class="gcse-search"></div>
+            </div>
+        </div>
+    </div>
+</div>
+      <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("goToTop").style.display = "block";
+          } else {
+            document.getElementById("goToTop").style.display = "none";
+          }
+        }
+
+        function goTopFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+
+        var base_url = "..",
+            shortcuts = {"edit": 69, "help": 191, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+
+        <script>
+          const toggleSwitch = document.querySelector('#theme-switch input[type="checkbox"]');
+
+          function switchTheme(e) {
+              if (e.target.checked) {
+                  localStorage.setItem('sumo-docs-theme', 'dark');
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                  toggleSwitch.checked = true;
+              } else {
+                  localStorage.setItem('sumo-docs-theme', 'light');
+                  document.documentElement.setAttribute('data-theme', 'light');
+                  toggleSwitch.checked = false;
+              }
+          }
+
+          toggleSwitch.addEventListener('change', switchTheme, false);
+
+          if (document.documentElement.getAttribute("data-theme") == "dark"){
+              toggleSwitch.checked = true;
+          }
+          </script>
+
+      <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Key</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody style="color: #495057 !important;">
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help dialog</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search the Documentation</td>
+                  </tr>
+                  <tr>
+                    <td class="edit shortcut"><kbd>e</kbd></td>
+                    <td>Edit current page on GitHub</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+</html>

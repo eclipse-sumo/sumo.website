@@ -1,0 +1,463 @@
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 19 February 2026 11:35:22
+Last edit: 19 February 2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta property="og:image" content="../../images/image-facebook.jpg">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="1080">
+        <meta property="og:image:height" content="1080">
+
+        
+        
+        <link rel="canonical" href="https://sumo.dlr.de/docs/Tutorials/Jupedsim/crossing-simulation.html">
+        <link rel="shortcut icon" href="../../images/favicon.ico">
+        <title>Crossing Simulation - SUMO Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-3.7.0.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+
+      <script>
+        // DARK MODE
+        function detectColorScheme(){
+          var theme="light";
+
+          if(localStorage.getItem("sumo-docs-theme")){
+              if(localStorage.getItem("sumo-docs-theme") == "dark"){
+                  var theme = "dark";
+              }
+          } else if(!window.matchMedia) {
+              return false;
+          } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+              var theme = "dark";
+          }
+
+          if (theme=="dark") {
+              document.documentElement.setAttribute("data-theme", "dark");
+          }
+        }
+        detectColorScheme();
+      </script>
+
+    </head>
+
+    <body>
+
+    <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-center">
+    <div class="container-fluid">
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li class="navitem">
+                        <a href="../../index.html" class="nav-link">Documentation</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../index.html" class="nav-link">Tutorials</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../../FAQ.html" class="nav-link">FAQ</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../../Downloads.html" class="nav-link">Downloads</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../../Publications.html" class="nav-link">Publications</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../../Developer/index.html" class="nav-link">Developer</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../../ChangeLog.html" class="nav-link">ChangeLog</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="https://eclipse.dev/sumo/contact/" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa-solid fa-magnifying-glass"></i> <u>S</u>earch
+                    </a>
+                </li>
+                    <li class="nav-item">
+                        <a rel="edit" href="https://github.com/eclipse-sumo/sumo/edit/main/docs/web/docs/Tutorials/Jupedsim/crossing-simulation.md" class="nav-link"><i class="fa-brands fa-github"></i> <u>E</u>dit on GitHub</a>
+                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    More <i class="fa-solid fa-circle-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item no-arrow-link" href="https://github.com/eclipse/sumo/issues">Report a Bug / Issue / Typo</a>
+                    <a class="dropdown-item" href="../../Editing_Articles.html">Help on editing articles</a>
+                    <a class="dropdown-item" href="https://github.com/eclipse/sumo/commits/main/docs/web">Recent documentation changes</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#mkdocs_keyboard_modal">Keyboard Shortcuts</a>
+                    <a class="dropdown-item no-arrow-link" href="https://sumo.dlr.de/sumo_documentation.zip">Download the Documentation</a>
+                    <span class="dropdown-item" id="dark-mode-div">Dark mode <label id="theme-switch" class="theme-switch" for="checkbox_theme">
+                        <input type="checkbox" id="checkbox_theme">
+                    </label></span>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="languagedrop" data-toggle="dropdown">
+                    <i class="fa-solid fa-language"></i> Languages <i class="fa-solid fa-circle-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                    <span class="dropdown-item">
+                        Translations are generated automatically by Google Translate:
+                    </span>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/crossing-simulation.html?_x_tr_sl=en&_x_tr_tl=de">Deutsch</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/crossing-simulation.html?_x_tr_sl=en&_x_tr_tl=es">Español</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/crossing-simulation.html?_x_tr_sl=en&_x_tr_tl=pt">Português</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/crossing-simulation.html?_x_tr_sl=en&_x_tr_tl=fr">Français</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/crossing-simulation.html?_x_tr_sl=en&_x_tr_tl=it">Italiano</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/crossing-simulation.html?_x_tr_sl=en&_x_tr_tl=zh-CN">简体中文</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/crossing-simulation.html?_x_tr_sl=en&_x_tr_tl=zh-TW">繁體中文</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/crossing-simulation.html?_x_tr_sl=en&_x_tr_tl=tr">Türkçe</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/crossing-simulation.html?_x_tr_sl=en&_x_tr_tl=ja">日本語</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/crossing-simulation.html?_x_tr_sl=en&_x_tr_tl=ko">한국어</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/crossing-simulation.html?_x_tr_sl=auto&_x_tr_tl=en"><i class="fa-solid fa-arrow-right"></i> Other languages</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container-fluid">
+          <div class="row">
+                <div class="col-md-3">
+                  <div class="text-center"><a href="../../index.html" style="display: inline-block; margin: 5px 15px;"><img src="../../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a>
+                <a href="https://www.jupedsim.org" class="no-arrow-link" style="display: inline-block; margin-top: 5px;"><img src="../../images/jupedsim-logo.svg" alt="SUMO Logo" width="120px"></a></div>
+                  
+<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
+            <span class="fa-solid fa-angle-down"></span>
+        </button>
+    </div>
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary toc-scroll toc">
+        <ul class="nav flex-column bs-sidenav">
+            <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
+            <li class="nav-item main"><a href="#setting_up_the_network">Setting up the Network</a></li>
+            <li class="nav-item main"><a href="#setting_up_the_demand">Setting up the Demand</a></li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#vehicle_flow" class="nav-link">• Vehicle Flow</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#person_flow" class="nav-link">• Person Flow</a>
+                </li>
+            <li class="nav-item main"><a href="#run_with_striping_model">Run with Striping Model</a></li>
+            <li class="nav-item main"><a href="#run_with_jupedsim_model">Run with JuPedSim Model</a></li>
+            <li class="nav-item main"><a href="#results">Results</a></li>
+        </ul>
+    </div>
+
+    <div class="admonition conference" style="position: sticky; margin-top: 20px; margin-bottom:10px;">
+        <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
+    </div>
+
+    <div class="admonition" style="position: sticky; margin-top: 20px; margin-bottom:10px; background-color: #d6cbb2; border-color: #c6b795; padding: 0;">
+        <center>
+            <a class="no-arrow-link" href="https://eclipse.dev/sumo/conference"><img src="../../images/SUMO2026.png" alt="SUMO User Conference 2025" class="img-fluid" style="max-height: 200px"></a>
+        </center>
+    </div>
+
+</div>
+                </div>
+                <div class="col-md-9 main-area" role="main">
+                   <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
+                  <ul class="breadcrumbs">
+    <script>
+        var pagePath = "/docs/Tutorials/Jupedsim/crossing-simulation.html";
+        var splitUrl = pagePath.split("/");
+        splitUrl.pop();
+        splitUrl.shift();
+        if (splitUrl[0] == 'docs') splitUrl.shift();
+        var homeLink = "../../index.html";
+        document.write('<li class="breadcrumb-item"><a href="' + homeLink + '"><i class="fa-solid fa-house"></i></a></li>');
+        var prev = '';
+
+        var dirLink = splitUrl.map(function (el) {
+        el = prev + el; prev = el + '/'; return el;
+        });
+
+        for (let i = 0; i < splitUrl.length; i++) {
+            document.write("<li class=\"breadcrumb-item\"><a class=\"no-arrow-link\" href=\"../../" + dirLink[i] + "\">" + splitUrl[i] + "</a></li>");
+        }
+    </script>
+    <li class="breadcrumb-item active">Crossing Simulation</li>
+</ul>
+                  <hTitles>Crossing Simulation<hr style="border: 0.5px solid #338033; margin-top: 5px !important;"></hTitles>
+                  
+                  
+
+<p>In this tutorial you will learn how to configure a basic simulation scenario with <em>netedit</em> from scratch.
+The scenario consists of crossing with interacting cars and pedestrians.
+We will define the simulation network and the demand for vehicle and person flows.
+First, you will run a simulation with the default pedestrian model of <em>SUMO</em> (<a href="../../Simulation/Pedestrians.html#model_striping">striping model</a>).
+Then you will switch to the <em>JuPedSim</em> model and inspect the results.
+At the end of this tutorial, you can find videos of the simulation results for both models.</p>
+<p>You can find the resulting <strong>configuration files</strong> for this tutorial <a href="https://github.com/PedestrianDynamics/SUMO-JuPedSim-Simulations/tree/main/tutorials/crossing">here</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you made a mistake press <kbd>Ctrl</kbd> + <kbd>Z</kbd> to undo the last step.</p>
+</div>
+<p>The message window at the bottom of <em>netedit</em> informs you about warnings and errors. For this tutorial, the window was hidden.</p>
+<h2 id="setting_up_the_network">Setting up the Network<a class="headerlink" href="#setting_up_the_network" title="Permanent link">#</a></h2>
+<p>Open <em>netedit</em> and create a new network by clicking on <em>File &gt; New Network</em>.
+Now you are in the <strong>Network supermode</strong> and can draw the roads for the crossing.
+By default the <em>Edge mode</em> is activated.
+To draw two-way roads enable the <em>Edge opposite direction</em> on the right side of the toolbar.
+Then you can draw the edges (roads) in the editor.</p>
+<p><img alt="*Edge mode* for creating the network" src="../../images/network_edges1.png" /></p>
+<p>Make sure that the edges are connected by a node in the center so that a crossing can be generated.
+To learn more about the <em>SUMO</em> road network we refer to <a href="../../Networks/SUMO_Road_Networks.html">this</a> website.</p>
+<p>As pedestrians are spawned distributed along an edge we define small edges at the end of the roads of interest.
+In this way, we reduce the effects of the initial conditions and the pedestrians are already in motion when they enter the network defined above.
+To compute junctions press <em>F5</em> or click <em>Processing &gt; Compute Junctions</em>.</p>
+<p><img alt="Adapted network for spawning and removing agents" src="../../images/network_edges2.png" /></p>
+<p>Now we add sidewalks for the pedestrians to our network.
+For this, we enable the <em>Select Mode</em>.
+In the selection menu on the left choose <em>Apply selection</em> for the specified match attributes.
+The selected edges are highlighted in blue.</p>
+<p><img alt="Network with selected edges" src="../../images/network_select.png" /></p>
+<p>Then right click on the selected edges <em>Lane operations &gt; Add restricted lane &gt; Sidewalk</em> and confirm the operation as shown here:</p>
+<p><img alt="Adding a sidewalk to each edge" src="../../images/network_sidewalk.png" /></p>
+<p>For each road a sidewalk is created.
+Clear the selection by pressing <em>ESC</em> and compute the junctions again (press <em>F5</em>).
+The network should look like this:</p>
+<p><img alt="Final egdes" src="../../images/network_edges_final.png" /></p>
+<p>Now we add a traffic light.
+Switch to <em>Traffic light mode</em> and select the junction in the middle of the network.
+Then click on <em>Create</em> in the left menu.</p>
+<p><img alt="*Traffic light mode*" src="../../images/network_traffic_lights1.png" /><img alt="Network with traffic lights" src="../../images/network_traffic_lights2.png" /></p>
+<p>Now we configure the crossing options for pedestrians.
+Enable the <em>Crossing mode</em> and click on the junction.
+Select the pair of roads that should be connected by a crosswalk and press <em>Enter</em>.
+Possible candidates are highlighted in dark green.
+Once you have selected a candidate (light green) the matching one is restricted to the neighbored lane.</p>
+<p><img alt="Adding crossings to the junction" src="../../images/network_crossing2.png" /></p>
+<p>In this example, pedestrians are allowed to cross the junction on all roads.
+So you have to repeat this process for the three remaining roads.</p>
+<p>You have finished the configuration of the network.
+Save the network file by clicking <em>Save network</em> in the toolbar on the left.
+In this example, the file is named <em>crossing.net.xml</em>.</p>
+<p><img alt="Final network file" src="../../images/network_final.png" /></p>
+<h2 id="setting_up_the_demand">Setting up the Demand<a class="headerlink" href="#setting_up_the_demand" title="Permanent link">#</a></h2>
+<p>Next, we configure the flow of cars and pedestrians at the border of the defined crossing.</p>
+<h3 id="vehicle_flow">Vehicle Flow<a class="headerlink" href="#vehicle_flow" title="Permanent link">#</a></h3>
+<p>We start with the vehicles.
+Switch to the <strong>Demand supermode</strong> and enable the <em>Vehicle mode</em>.
+As we want to create a flow of vehicles, you need to choose the option <em>flow (from-to edges)</em> at the top of the menu on the left.
+You can define properties of the flow when you scroll down the menu.
+We define that a car should appear every 30 seconds.</p>
+<p><img alt="*Vehicle mode* for configuration of vehicle flows" src="../../images/demand_vehicle1.png" /></p>
+<p>Now you can define the route for that flow by clicking on the edge where the flow should start.
+If you scroll down on the left, you can see information on the coloring of the edges in the defined network.
+Select the edges you want to connect and click on <em>Finish route creation</em> in the menu on the left.</p>
+<p><img alt="Route creation for vehicles" src="../../images/demand_vehicle2.png" /></p>
+<p>We create a second flow and define a route starting from a different edge.
+By default, this flow has the same properties as the previously defined flow - we keep the same attributes.
+We switch to <em>Inspect mode</em> and click on a vehicle to check its attributes and route.
+This way you can modify the attributes after creating elements.</p>
+<p><img alt="Inspect created vehicle flows" src="../../images/demand_vehicle3.png" /></p>
+<h3 id="person_flow">Person Flow<a class="headerlink" href="#person_flow" title="Permanent link">#</a></h3>
+<p>Next, we add pedestrian flows to the scenario.
+Click on the <em>Person mode</em> and choose the <em>personFlow</em> on the top of the menu on the left.
+We choose <em>red</em> as the color for the first flow.
+For <em>departPos</em> type in <em>random</em> so that the pedestrians are distributed on different positions along the edge.
+The spawning period is set to 4 seconds.</p>
+<p><img alt="*Person mode* for configuration of person flows" src="../../images/demand_person1.png" /></p>
+<p>As plan type we use the default <em>PersonTrip</em>.
+Scroll down to the <em>Route creator</em> in the menu on the left.
+Now we can plan the route as for the vehicle flow.
+Click on an edge where the pedestrians should be spawned and click on the destination edge. Do not forget to click on <em>Finish route creation</em>.</p>
+<p><img alt="Route creation for person flows" src="../../images/demand_person2.png" /></p>
+<p>We add more flows starting from different edges.
+In this example, we define two flows that are moving towards each other (red and green) and one additional flow, that is crossing from above (blue).
+We save the demand file named as <em>crossing.rou.xml</em>.</p>
+<p><img alt="Save the final demand configuration" src="../../images/demand_person3.png" /></p>
+<h2 id="run_with_striping_model">Run with Striping Model<a class="headerlink" href="#run_with_striping_model" title="Permanent link">#</a></h2>
+<p>Next, we start the simulation with the default settings.
+To do so open the simulation configuration in <em>sumo-gui</em> as shown here:</p>
+<p><img alt="Open *sumo-gui*" src="../../images/gui_open.png" /></p>
+<p><em>netedit</em> asks for saving the sumoconfig file.
+After saving the file as <em>crossing.sumocfg</em>, a new window in <em>sumo-gui</em> is opened.
+Before pressing <em>Run</em> increase the <em>Delay</em> (as the simulation is performed very quickly)  and adapt the visualization as you wish.
+We choose <em>triangles</em> as a visualization for the pedestrians.
+This option can be found by clicking on <em>Edit Coloring Schemes</em> (color wheel) and then go to <em>Persons</em>.</p>
+<p><img alt="Settings of *sumo-gui*" src="../../images/gui_settings.png" /></p>
+<p>When zooming in you can see interacting cars and pedestrian at the crossing.
+For this simulation the <em>striping</em> model is used.
+As you can see the pedestrians are moving and waiting in structured formations.</p>
+<p><img alt="Snapshot of simulation with *striping* model" src="../../images/gui_snapshot_striping.png" /></p>
+<h2 id="run_with_jupedsim_model">Run with JuPedSim Model<a class="headerlink" href="#run_with_jupedsim_model" title="Permanent link">#</a></h2>
+<p>Now we want to use the <em>JupedSim</em> model instead.
+For this, we open <em>nededit</em> again and change the configuration options by clicking on <em>Processing &gt; Sumo options</em>.
+An new window is opened.
+Search for <em>model</em> and type in <em>jupedsim</em> as a pedestrian model.</p>
+<p><img alt="Configuration of simulation options" src="../../images/sumo_options1.png" /></p>
+<p>The <em>JuPedSim</em> routing differs from the usual <em>SUMO</em> routing.
+Edges within the walkable area do not necessarily have to be connected to each other.
+Therefore, we ignore route errors.
+Enable this function as shown here:</p>
+<p><img alt="Further configuration of simulation options" src="../../images/sumo_options2.png" /></p>
+<p>Press <em>OK</em>, save the sumoconfig file and open the simulation scenario in <em>sumo-gui</em> again.
+The walkable area is shown in light blue now.
+Your simulation should look similar to this one:</p>
+<p><img alt="Snapshot of simulation with *JuPedSim* model" src="../../images/gui_snapshot_jupedsim.png" /></p>
+<h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">#</a></h2>
+<p>In the following, you can see a comparison of the two simulations results (left: <em>striping</em> model, right: <em>JuPedSim</em> model).
+There are clear differences in the movement patterns and interactions as the <em>JuPedSim</em> pedestrians are moving in 2D space.</p>
+<table>
+<thead>
+<tr>
+<th><img alt="image" src="../../images/simulation_striping.gif" /></th>
+<th><img alt="image" src="../../images/simulation_jupedsim.gif" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+                </div>
+          </div>
+          <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+        </div>
+
+        <footer class="col-md-12">
+          
+            <br><small><i>This page was last edited on: 19 February 2026</i></small>
+          
+          <hr>
+            <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
+          <p>Follow us on <a class="no-arrow-link" href="https://www.twitter.com/eclipsesumo/"><i class="fa-brands fa-x-twitter"></i></a> <a class="no-arrow-link" href="https://www.facebook.com/simulationofurbanmobility/"><i class="fa-brands fa-facebook"></i></a> <a class="no-arrow-link" href="https://www.instagram.com/eclipse.sumo/"><i class="fa-brands fa-instagram"></i></a> <a class="no-arrow-link" href="https://www.threads.net/@eclipse.sumo"><i class="fa-brands fa-threads"></i></a>
+          | Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a></p>
+        </footer>
+
+      <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="color: #495057 !important;">
+                <p>Enter your search terms:</p>
+                <script async src="https://cse.google.com/cse.js?cx=004302551366764109984:1kpgtzrm6kv"></script>
+                <div class="gcse-search"></div>
+            </div>
+        </div>
+    </div>
+</div>
+      <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("goToTop").style.display = "block";
+          } else {
+            document.getElementById("goToTop").style.display = "none";
+          }
+        }
+
+        function goTopFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+
+        var base_url = "../..",
+            shortcuts = {"edit": 69, "help": 191, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+
+        <script>
+          const toggleSwitch = document.querySelector('#theme-switch input[type="checkbox"]');
+
+          function switchTheme(e) {
+              if (e.target.checked) {
+                  localStorage.setItem('sumo-docs-theme', 'dark');
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                  toggleSwitch.checked = true;
+              } else {
+                  localStorage.setItem('sumo-docs-theme', 'light');
+                  document.documentElement.setAttribute('data-theme', 'light');
+                  toggleSwitch.checked = false;
+              }
+          }
+
+          toggleSwitch.addEventListener('change', switchTheme, false);
+
+          if (document.documentElement.getAttribute("data-theme") == "dark"){
+              toggleSwitch.checked = true;
+          }
+          </script>
+
+      <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Key</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody style="color: #495057 !important;">
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help dialog</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search the Documentation</td>
+                  </tr>
+                  <tr>
+                    <td class="edit shortcut"><kbd>e</kbd></td>
+                    <td>Edit current page on GitHub</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+</html>

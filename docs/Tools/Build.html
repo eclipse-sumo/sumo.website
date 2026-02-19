@@ -1,0 +1,446 @@
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 19 February 2026 11:35:22
+Last edit: 19 February 2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="theme-color" content="#338033">
+        <meta name="theme-color" content="#338033" media="(prefers-color-scheme: dark)">
+        <meta property="og:image" content="../images/image-facebook.jpg">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="1080">
+        <meta property="og:image:height" content="1080">
+
+        
+        
+        <link rel="canonical" href="https://sumo.dlr.de/docs/Tools/Build.html">
+        <link rel="shortcut icon" href="../images/favicon.ico">
+        <title>Build - SUMO Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.all.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-3.7.0.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+
+      <script>
+        // DARK MODE
+        function detectColorScheme(){
+          var theme="light";
+
+          if(localStorage.getItem("sumo-docs-theme")){
+              if(localStorage.getItem("sumo-docs-theme") == "dark"){
+                  var theme = "dark";
+              }
+          } else if(!window.matchMedia) {
+              return false;
+          } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+              var theme = "dark";
+          }
+
+          if (theme=="dark") {
+              document.documentElement.setAttribute("data-theme", "dark");
+          }
+        }
+        detectColorScheme();
+      </script>
+
+    </head>
+
+    <body>
+
+    <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-center">
+    <div class="container-fluid">
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li class="navitem">
+                        <a href="../index.html" class="nav-link">Documentation</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Tutorials/index.html" class="nav-link">Tutorials</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../FAQ.html" class="nav-link">FAQ</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Downloads.html" class="nav-link">Downloads</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Publications.html" class="nav-link">Publications</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../Developer/index.html" class="nav-link">Developer</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../ChangeLog.html" class="nav-link">ChangeLog</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="https://eclipse.dev/sumo/contact/" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa-solid fa-magnifying-glass"></i> <u>S</u>earch
+                    </a>
+                </li>
+                    <li class="nav-item">
+                        <a rel="edit" href="https://github.com/eclipse-sumo/sumo/edit/main/docs/web/docs/Tools/Build.md" class="nav-link"><i class="fa-brands fa-github"></i> <u>E</u>dit on GitHub</a>
+                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    More <i class="fa-solid fa-circle-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item no-arrow-link" href="https://github.com/eclipse/sumo/issues">Report a Bug / Issue / Typo</a>
+                    <a class="dropdown-item" href="../Editing_Articles.html">Help on editing articles</a>
+                    <a class="dropdown-item" href="https://github.com/eclipse/sumo/commits/main/docs/web">Recent documentation changes</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#mkdocs_keyboard_modal">Keyboard Shortcuts</a>
+                    <a class="dropdown-item no-arrow-link" href="https://sumo.dlr.de/sumo_documentation.zip">Download the Documentation</a>
+                    <span class="dropdown-item" id="dark-mode-div">Dark mode <label id="theme-switch" class="theme-switch" for="checkbox_theme">
+                        <input type="checkbox" id="checkbox_theme">
+                    </label></span>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="languagedrop" data-toggle="dropdown">
+                    <i class="fa-solid fa-language"></i> Languages <i class="fa-solid fa-circle-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                    <span class="dropdown-item">
+                        Translations are generated automatically by Google Translate:
+                    </span>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tools/Build.html?_x_tr_sl=en&_x_tr_tl=de">Deutsch</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tools/Build.html?_x_tr_sl=en&_x_tr_tl=es">Español</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tools/Build.html?_x_tr_sl=en&_x_tr_tl=pt">Português</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tools/Build.html?_x_tr_sl=en&_x_tr_tl=fr">Français</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tools/Build.html?_x_tr_sl=en&_x_tr_tl=it">Italiano</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tools/Build.html?_x_tr_sl=en&_x_tr_tl=zh-CN">简体中文</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tools/Build.html?_x_tr_sl=en&_x_tr_tl=zh-TW">繁體中文</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tools/Build.html?_x_tr_sl=en&_x_tr_tl=tr">Türkçe</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tools/Build.html?_x_tr_sl=en&_x_tr_tl=ja">日本語</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tools/Build.html?_x_tr_sl=en&_x_tr_tl=ko">한국어</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tools/Build.html?_x_tr_sl=auto&_x_tr_tl=en"><i class="fa-solid fa-arrow-right"></i> Other languages</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container-fluid">
+          <div class="row">
+                <div class="col-md-3">
+                  <div class="text-center"><a href="../index.html" style="display: inline-block; margin-top: 5px;"><img src="../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
+                  
+<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
+            <span class="fa-solid fa-angle-down"></span>
+        </button>
+    </div>
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary toc-scroll toc">
+        <ul class="nav flex-column bs-sidenav">
+            <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
+            <li class="nav-item main"><a href="#build_tools">Build Tools</a></li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#dailybuildmsvcpy" class="nav-link">• dailyBuildMSVC.py</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#dailyupdatemakegccsh" class="nav-link">• dailyUpdateMakeGCC.sh</a>
+                </li>
+            <li class="nav-item main"><a href="#code_cleaning_tools">Code Cleaning Tools</a></li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#checkstylepy" class="nav-link">• checkStyle.py</a>
+                </li>
+            <li class="nav-item main"><a href="#documentation_tools">Documentation Tools</a></li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#buildpydocpy" class="nav-link">• buildPyDoc.py</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#checkauthorspy" class="nav-link">• checkAuthors.py</a>
+                </li>
+            <li class="nav-item main"><a href="#translation_tools">Translation Tools</a></li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#updatemessageidspy" class="nav-link">• updateMessageIDs.py</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#obsoletetranslationspy" class="nav-link">• obsoleteTranslations.py</a>
+                </li>
+        </ul>
+    </div>
+
+    <div class="admonition conference" style="position: sticky; margin-top: 20px; margin-bottom:10px;">
+        <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
+    </div>
+
+    <div class="admonition" style="position: sticky; margin-top: 20px; margin-bottom:10px; background-color: #d6cbb2; border-color: #c6b795; padding: 0;">
+        <center>
+            <a class="no-arrow-link" href="https://eclipse.dev/sumo/conference"><img src="../images/SUMO2026.png" alt="SUMO User Conference 2025" class="img-fluid" style="max-height: 200px"></a>
+        </center>
+    </div>
+
+</div>
+                </div>
+                <div class="col-md-9 main-area" role="main">
+                   <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
+                  <ul class="breadcrumbs">
+    <script>
+        var pagePath = "/docs/Tools/Build.html";
+        var splitUrl = pagePath.split("/");
+        splitUrl.pop();
+        splitUrl.shift();
+        if (splitUrl[0] == 'docs') splitUrl.shift();
+        var homeLink = "../index.html";
+        document.write('<li class="breadcrumb-item"><a href="' + homeLink + '"><i class="fa-solid fa-house"></i></a></li>');
+        var prev = '';
+
+        var dirLink = splitUrl.map(function (el) {
+        el = prev + el; prev = el + '/'; return el;
+        });
+
+        for (let i = 0; i < splitUrl.length; i++) {
+            document.write("<li class=\"breadcrumb-item\"><a class=\"no-arrow-link\" href=\"../" + dirLink[i] + "\">" + splitUrl[i] + "</a></li>");
+        }
+    </script>
+    <li class="breadcrumb-item active">Build</li>
+</ul>
+                  <hTitles>Build<hr style="border: 0.5px solid #338033; margin-top: 5px !important;"></hTitles>
+                  
+                  
+
+<h1 id="build_tools">Build Tools<a class="headerlink" href="#build_tools" title="Permanent link">#</a></h1>
+<h2 id="dailybuildmsvcpy">dailyBuildMSVC.py<a class="headerlink" href="#dailybuildmsvcpy" title="Permanent link">#</a></h2>
+<p>The build script for the nightly windows build. Calls cmake and triggers
+release and debug build as well as the tests and installer / zip
+creation. Depends on a successful Linux build to pick up the docs.</p>
+<h2 id="dailyupdatemakegccsh">dailyUpdateMakeGCC.sh<a class="headerlink" href="#dailyupdatemakegccsh" title="Permanent link">#</a></h2>
+<p>The build script for the nightly Linux and macOS build. Calls cmake and
+triggers release and debug build as well as the tests and the zips.</p>
+<h1 id="code_cleaning_tools">Code Cleaning Tools<a class="headerlink" href="#code_cleaning_tools" title="Permanent link">#</a></h1>
+<h2 id="checkstylepy">checkStyle.py<a class="headerlink" href="#checkstylepy" title="Permanent link">#</a></h2>
+<p>Checks .java, .cpp, .h and .py files for the correct license header and
+applies <a href="https://github.com/hhatto/autopep8">autopep8</a> and
+<a href="https://github.com/PyCQA/flake8">flake8</a> for PEP 8 compatibility. Also
+applies <a href="https://astyle.sourceforge.net/">astyle</a> to all .java, .cpp, and
+.h files. The position of the source tree(s) to check is given as
+optional arguments or determined relative to the position of the script.
+This call is part of our nightly tests. The script is able to fix some
+minor whitespace / naming issues when called with the "--fix" flag. The
+PEP 8 checks are quite slow, so if only a header check is wished, run
+with the option "--skip-pep".</p>
+<p>Call:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">checkStyle</span><span class="o">.</span><span class="n">py</span>
+<span class="n">checkStyle</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">fix</span><span class="w"> </span><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span>
+</code></pre></div>
+
+<h1 id="documentation_tools">Documentation Tools<a class="headerlink" href="#documentation_tools" title="Permanent link">#</a></h1>
+<h2 id="buildpydocpy">buildPyDoc.py<a class="headerlink" href="#buildpydocpy" title="Permanent link">#</a></h2>
+<p>Generate the static PyDoc documentation for the <code>sumolib</code> and <code>traci</code> Python libraries. Alternatively, you can <a href="https://sumo.dlr.de/pydoc/">read the PyDoc documentation online</a> instead of building it locally.
+Call <code>buildPyDoc.py --help</code> for a complete list of options.</p>
+<p>Call:</p>
+<div class="codehilite"><pre><span></span><code>buildPyDoc.py -p my_output_dir
+</code></pre></div>
+
+<h2 id="checkauthorspy">checkAuthors.py<a class="headerlink" href="#checkauthorspy" title="Permanent link">#</a></h2>
+<p>Checks the log for all source files for authors and "thanks" and checks
+whether they appear in the file header. It can optionally try to fix the
+file header and also update the global AUTHORS file if needed.</p>
+<p>Call:</p>
+<div class="codehilite"><pre><span></span><code>checkAuthors.py
+</code></pre></div>
+
+<h1 id="translation_tools">Translation Tools<a class="headerlink" href="#translation_tools" title="Permanent link">#</a></h1>
+<h2 id="updatemessageidspy">updateMessageIDs.py<a class="headerlink" href="#updatemessageidspy" title="Permanent link">#</a></h2>
+<p>SUMO uses the original string from the source code as message ID in gettext.
+All translations are bound to a message ID. The script offers help in changing
+the message ID / the original string in cases where it is profitable to keep
+existing translations. As recurrent uses of the same original string are
+grouped in gettext into the same message ID (except for different context),
+strings shall not be edited directly in the source code. The work flow of the
+script is the following:</p>
+<ul>
+<li>The script <code>i18n.py</code> is called to ensure the <code>.po</code> files correspond to the current source code.</li>
+<li>For every available <code>.pot</code> file an English to English <code>.po</code> file with identical <strong>msgid</strong> and <strong>msgstr</strong> values  is created.</li>
+<li>The user can choose to edit the <strong>msgstr</strong> values in this file manually to reflect the wanted changes or use one of the predefined actions of the script (e.g. simple search/replace).</li>
+<li>The script reads the changes and the occurrences to patch the corresponding lines in the source code.</li>
+<li>The <code>.po</code> translation files are patched as well. In case the changed <strong>msgid</strong> already existed before, both entries are merged.</li>
+</ul>
+<p>Below there are the options the script provides and how to use them.</p>
+<ul>
+<li><strong>--lang</strong>: Update only the <code>.po</code> files corresponding to the given sequence of language codes</li>
+<li><strong>--start</strong>: Will create/overwrite the English to English <code>.po</code> file in the <code>**SUMO_HOME**/data/po</code> directory</li>
+<li><strong>--strict</strong>: Change the <strong>msgid</strong> value only if it corresponds completely to a given search string</li>
+<li><strong>--replace</strong>: Followed by an even number of arguments where the odd strings are the search pattern and the following ones the corresponding replacement string</li>
+<li><strong>--search-prefix <characters></strong>, <strong>--search-suffix <characters></strong>: Adds any of these characters as a prefix/suffix to any of the given search patterns (not with <strong>--strict</strong>)</li>
+<li><strong>--apply</strong>: Patch source code and <code>.po</code> translation files</li>
+<li><strong>--remove-obsolete</strong>: Directly remove entries which have become obsolete (otherwise only the occurrence comments in gettext are moved to the replacement <strong>msgid</strong>)</li>
+<li><strong>--process-languages</strong>: Apply the search/replace logic on the translated <strong>msgstr</strong> values as well</li>
+<li><strong>--sumo-home <home></strong>: The SUMO home directory to use</li>
+<li><strong>--placeholder <placeholder></strong>: The placeholder string used in <strong>msgid</strong></li>
+<li><strong>--numbered-placeholders</strong>: Add an order number to every placeholder given by <strong>--placeholder</strong> inside every <strong>msgid</strong>, starting with 0</li>
+</ul>
+<p>An example call to replace all minor case uses of the abbreviation "id" with the upper case version "ID" for all languages:</p>
+<div class="codehilite"><pre><span></span><code>updateMessageIDs.py --start --replace &quot;id&quot; &quot;ID&quot; --apply
+</code></pre></div>
+
+<p>If the changes are done manually inside the English to English <code>.po</code> file, it is necessary to call the script twice. The first call is merely for creating the file to edit:</p>
+<div class="codehilite"><pre><span></span><code>python updateMessageIDs.py --start
+</code></pre></div>
+
+<p>Then the changes are processed in the second call:</p>
+<div class="codehilite"><pre><span></span><code>python updateMessageIDs.py --apply
+</code></pre></div>
+
+<h2 id="obsoletetranslationspy">obsoleteTranslations.py<a class="headerlink" href="#obsoletetranslationspy" title="Permanent link">#</a></h2>
+<p>The script processes translations which have been lost due to changes of the original string in
+the source code but are still present in the <code>.po</code> translation files. It can be restricted to languages given by their language codes
+using the option <strong>--lang <langCode1> [<langCode2>]</strong>. If the said option is not given, all existing language files will be processed.</p>
+<p>In order to write a protocol of the obsolete translations (those which are not referenced in the source code),
+the script has to be called with a file path to write the protocol to as follows:</p>
+<div class="codehilite"><pre><span></span><code>python obsoleteTranslations.py --output obsolete.txt
+</code></pre></div>
+
+<p>Adding the option <strong>--clear</strong> will remove the obsolete translations permanently from the <code>.po</code> files.</p>
+<p>There is an option called <strong>--patch</strong> to link obsolete translations again if the updated message ID / the current source string is known .
+The script is provided with a sequence of arguments which form pairs of first the outdated message ID and then new updated one.</p>
+<div class="codehilite"><pre><span></span><code>python obsoleteTranslations.py --patch &quot;Add Sidewalk&quot; &quot;Add sidewalk&quot; &quot;Overrids default shape of pedestrian sidewalk&quot; &quot;Overrides default shape of pedestrian sidewalk&quot;
+</code></pre></div>
+
+<p>The script looks into the translation files and moves the actual translations from the obsolete to the current entry (only if the current one is still empty). The obsolete entry
+is removed in case its content has been transferred to the current entry.</p>
+                </div>
+          </div>
+          <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+        </div>
+
+        <footer class="col-md-12">
+          
+            <br><small><i>This page was last edited on: 19 February 2026</i></small>
+          
+          <hr>
+            <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
+          <p>Follow us on <a class="no-arrow-link" href="https://www.twitter.com/eclipsesumo/"><i class="fa-brands fa-x-twitter"></i></a> <a class="no-arrow-link" href="https://www.facebook.com/simulationofurbanmobility/"><i class="fa-brands fa-facebook"></i></a> <a class="no-arrow-link" href="https://www.instagram.com/eclipse.sumo/"><i class="fa-brands fa-instagram"></i></a> <a class="no-arrow-link" href="https://www.threads.net/@eclipse.sumo"><i class="fa-brands fa-threads"></i></a> <a class="no-arrow-link" href="https://bsky.app/profile/eclipse-sumo.bsky.social"><i class="fa-brands fa-bluesky"></i></a> <a class="no-arrow-link" href="https://www.linkedin.com/groups/5156801/"><i class="fab fa-linkedin"></i></a>
+          | Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a></p>
+        </footer>
+
+      <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="color: #495057 !important;">
+                <p>Enter your search terms:</p>
+                <script async src="https://cse.google.com/cse.js?cx=004302551366764109984:1kpgtzrm6kv"></script>
+                <div class="gcse-search"></div>
+            </div>
+        </div>
+    </div>
+</div>
+      <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("goToTop").style.display = "block";
+          } else {
+            document.getElementById("goToTop").style.display = "none";
+          }
+        }
+
+        function goTopFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+
+        var base_url = "..",
+            shortcuts = {"edit": 69, "help": 191, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+
+        <script>
+          const toggleSwitch = document.querySelector('#theme-switch input[type="checkbox"]');
+
+          function switchTheme(e) {
+              if (e.target.checked) {
+                  localStorage.setItem('sumo-docs-theme', 'dark');
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                  toggleSwitch.checked = true;
+              } else {
+                  localStorage.setItem('sumo-docs-theme', 'light');
+                  document.documentElement.setAttribute('data-theme', 'light');
+                  toggleSwitch.checked = false;
+              }
+          }
+
+          toggleSwitch.addEventListener('change', switchTheme, false);
+
+          if (document.documentElement.getAttribute("data-theme") == "dark"){
+              toggleSwitch.checked = true;
+          }
+          </script>
+
+      <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Key</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody style="color: #495057 !important;">
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help dialog</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search the Documentation</td>
+                  </tr>
+                  <tr>
+                    <td class="edit shortcut"><kbd>e</kbd></td>
+                    <td>Edit current page on GitHub</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+</html>
