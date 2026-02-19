@@ -67,7 +67,7 @@ jobs:
       run: |
         mkdir -p $HOME/temp
         cp -r public/* $HOME/temp/
-        mv sumo/docs/userdoc sumo/docs/pydoc $HOME/temp/
+        mv sumo/docs/docs sumo/docs/pydoc $HOME/temp/
         cp README.md $HOME/temp/
         cp lychee.toml $HOME/temp/
 
