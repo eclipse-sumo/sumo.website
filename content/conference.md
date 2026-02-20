@@ -65,7 +65,7 @@ This year, there are three types of submission:
   <b>Submissions that do not adhere to the specified template will not be considered.</b>
 </div>
 
-   - **The paper must be submitted in LaTeX or Word before Sunday, ~~February 15, 2026~~ February 22, 2026 - 23:59 UTC.**
+   - **The paper must be submitted in LaTeX or Word before Sunday, ~~February 22, 2026~~ March 01, 2026 - 23:59 UTC.**
 
 <!-- <div class="text-center"><img src="../images/presentation.jpeg" style="width:60%;" alt="Presentation" class="img-responsive"/></div> -->
 
@@ -86,7 +86,7 @@ This year, there are three types of submission:
   - We will print your poster and provide a display panel, chair, and table.
   - Changes are allowed after the submission deadline, but we cannot reprint revised posters; you will need to bring the updated version yourself.
   - You may bring a laptop or device for demos or supplementary material (please bring your own equipment).
-  - **Submit the title and a short abstract (up to 300 words) by Sunday, February 22, 2026 - 23:59 UTC.**
+  - **Submit the title and a short abstract (up to 300 words) by Sunday, ~~February 22, 2026~~ March 01, 2026 - 23:59 UTC.**
 
 <!-- <div class="text-center"><img src="../images/poster_session.jpeg" style="width:60%;" alt="Poster session" class="img-responsive"/></div> -->
 
@@ -105,7 +105,7 @@ To celebrate 25 years of SUMO, we invite the community to share *"SUMO Moments"*
   - Encounters with users, developers, or collaborators who influenced your work
   - Any memory that shows what SUMO has meant to you, your project, or your career
 - Contributors will be able to register under the *Authors & Project Partners* special rate.
-- **Submit a description (up to 300 words) until Sunday, February 22, 2026 - 23:59 UTC.**
+- **Submit a description (up to 300 words) until Sunday, ~~February 22, 2026~~ March 01, 2026 - 23:59 UTC.**
 
 Selected submissions will be featured as brief presentations during the conference as part of the 25-year anniversary program. The goal is to capture the human side of the SUMO journey - the challenges, discoveries, and community interactions that have shaped the project over the past decades.
 
@@ -127,18 +127,18 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 
 For papers:
 - ~~Recommended title and abstract submission deadline: **Sunday, January 11, 2026.**~~
-- <span class="badge badge-warning">New</span> Paper submission deadline: ~~**Sunday, February 15, 2026.**~~ **Sunday, February 22, 2026.**
+- <span class="badge badge-warning">New</span> Paper submission deadline: ~~**Sunday, February 22, 2026.**~~ **Sunday, March 01, 2026.**
 - Notification of acceptance/rejection: **First week of April 2026.**
 - Camera-ready paper deadline: **Sunday, May 10, 2026.**
 
 For posters:
-- Mandatory title and abstract submission deadline: **Sunday, February 22, 2026.**
-- Notification of acceptance/rejection: **Thursday, February 26, 2026.**
+- <span class="badge badge-warning">New</span> Mandatory title and abstract submission deadline: ~~**Sunday, February 22, 2026.**~~ **Sunday, March 01, 2026.**
+- <span class="badge badge-warning">New</span> Notification of acceptance/rejection: ~~**Thursday, February 26, 2026.**~~ **Thursday, March 04, 2026.**
 - Final poster upload deadline: **Sunday, May 03, 2026.**
 
 For SUMO moments:
-- Description submission deadline: **Sunday, February 22, 2026.**
-- Notification of acceptance/rejection: **Thursday, February 26, 2026.**
+- <span class="badge badge-warning">New</span> Description submission deadline: ~~**Sunday, February 22, 2026.**~~ **Sunday, March 01, 2026.**
+- <span class="badge badge-warning">New</span> Notification of acceptance/rejection: ~~**Thursday, February 26, 2026.**~~ **Thursday, March 04, 2026.**
 
 # Prices
 
