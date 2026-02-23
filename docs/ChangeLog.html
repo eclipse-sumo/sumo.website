@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 20 February 2026 10:38:46
-Last edit: 20 February 2026
+Build Date UTC : 23 February 2026 16:26:36
+Last edit: 23 February 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -280,6 +280,7 @@ Last edit: 20 February 2026
 <li>fixed invalid estimation of pickup-traveltime during taxi dispatch <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17631" title="GitHub Issue eclipse-sumo/sumo #17631">#17631</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17629" title="GitHub Issue eclipse-sumo/sumo #17629">#17629</a></li>
 <li>stopping on a long busStop before reaching the designated spot due to jamming now permits passengers to exit if the vehicle is fully within the busStop <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17635" title="GitHub Issue eclipse-sumo/sumo #17635">#17635</a></li>
 <li>Fixed failure to group taxi passengers when the dispatch-period is low <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17644" title="GitHub Issue eclipse-sumo/sumo #17644">#17644</a></li>
+<li>Fixed bug where imprecise driving caused vehicles to enter a slower lane with excessive speed (this could cause negative timeLoss). <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/15435" title="GitHub Issue eclipse-sumo/sumo #15435">#15435</a></li>
 </ul>
 </li>
 </ul>
@@ -299,7 +300,9 @@ Last edit: 20 February 2026
 </ul>
 <ul>
 <li>netconvert<ul>
-<li>NEMA computation now works for 4-arm junction without right-turns (also affects some signal plans of non-NEMA junctions) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17610" title="GitHub Issue eclipse-sumo/sumo #17610">#17610</a>  </li>
+<li>NEMA computation now works for 4-arm junction without right-turns (also affects some signal plans of non-NEMA junctions) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17610" title="GitHub Issue eclipse-sumo/sumo #17610">#17610</a></li>
+<li>Zipper junctions no longer feature internal junctions (which could cause deadlock in the simulation) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17650" title="GitHub Issue eclipse-sumo/sumo #17650">#17650</a></li>
+<li>Fixed interpretation of some geo-projection strings <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17655" title="GitHub Issue eclipse-sumo/sumo #17655">#17655</a></li>
 </ul>
 </li>
 </ul>
@@ -327,6 +330,7 @@ Last edit: 20 February 2026
 <li>Added taxi param <code>&lt;param key="device.taxi.swapGroup" value="&lt;GROUP_NAME&gt;"/&gt;</code> which permits idle taxis to receive dispatch tasks before pickup is complete from other taxis in the same swapGroup if that would reduce time to pickup <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17639" title="GitHub Issue eclipse-sumo/sumo #17639">#17639</a></li>
 <li>carFollowModel <em>ACC</em> now supports driverstate device (but it is only active when setting vType attribute <code>applyDriverState="1"</code>) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17633" title="GitHub Issue eclipse-sumo/sumo #17633">#17633</a></li>
 <li>Option <strong>--vtk-output</strong> now supports writing data at sub-second simulation step-length <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17645" title="GitHub Issue eclipse-sumo/sumo #17645">#17645</a></li>
+<li>edgeData and laneData-output now support attribute <code>excludeEmpty="modified"</code> which writes unused edges but only if their speed was modified with calibrators or variableSpeedSigns. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17587" title="GitHub Issue eclipse-sumo/sumo #17587">#17587</a></li>
 </ul>
 </li>
 </ul>
@@ -1739,7 +1743,7 @@ Last edit: 20 February 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 20 February 2026</i></small>
+            <br><small><i>This page was last edited on: 23 February 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
