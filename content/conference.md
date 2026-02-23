@@ -182,6 +182,47 @@ Accommodation is not included within the registration fee and must be pre-booked
   Bar
 </details> -->
 
+---
+
+# Keynotes
+
+<h3><i>Traffic simulation modeling: combining generative modeling with transportation science to achieve scalability</i></h3>
+<img src="../images/Carolina_Osorio.jpg" alt="picture of Carolina Osorio" style="width:150px; border-radius: 50%; margin-bottom:10px;">
+<br>
+<small style="color: lightgray">© Carolina Osorio</small>
+<h6>Prof. Dr. Carolina Osorio</h6>
+Staff Research Scientist, Google Research<br>
+Full Professor, HEC Montreal<br>
+<a href="https://www.carolinaosorio.net/" class="btn btn-sm btn-outline-info" style="margin-top:10px;">Website</a>
+<br><br>
+
+This talk presents physics-informed machine learning methods to search high-dimensional continuous spaces in a sample efficient way, with a focus on urban mobility applications. We discuss how the design of variance reduction methods for gradient estimation of generative models can accelerate convergence and robustify model training. We present how standard transportation science metrics can be used to perform physics-informed dimensionality reduction, enabling a more efficient search of high-dimensional spaces. We discuss recent advances in the use of macroscopic traffic models as metamodels for the design of digital urban mobility twins. Methods will be illustrated with case studies of various metropolitan areas. Finally, we identify research opportunities and challenges in the fields of simulation-based optimization and machine learning as applied to urban mobility problems.
+
+<details>
+<summary>About the Speaker</summary>
+Osorio is a Full Professor at HEC Montreal, where Osorio holds the SCALE AI Research Chair in Artificial Intelligence for Urban Mobility and Logistics. Osorio is also a Staff Research Scientist at Google Research, where Osorio is research lead of Mobility AI. Prior to joining HEC Montreal, Osorio was a faculty at MIT for 9 years. Osorio has consulted for Alphabet's Sidewalk Labs, and has collaborated with top private and public sector, transportation and supply chain stakeholders, including Zipcar, Ford Motor Company, New York City Department of Transportation, and the San Diego planning agency SANDAG. Her research focuses on the design of ML and simulation-based optimization algorithms to tackle high-dimensional transportation problems. Osorio was recognized as an outstanding early-career engineer in the US by the National Academy of Engineering's EU-US Frontiers of Engineering Symposium, is the recipient of an MIT Technology Review EmTech Colombia TR35 Award and was on the GOOD 100 list of innovators in the category of "Minds That Are Hacking Our Surroundings for the Better". Since 2022, Osorio has been ranked yearly in the top 2% of the most cited scientists in the field of Operations Research, Transportation and Logistics.
+</details>
+
+---
+
+<h3><i>SUMO and I – 25 years later...</i></h3>
+<img src="../images/Peter_Wagner.jpg" alt="picture of Prof. Dr. Peter Wagner" style="width:150px; border-radius: 50%; margin-bottom:10px;">
+<br>
+<small style="color: lightgray">© DLR</small>
+<h6>Prof. Dr. Peter Wagner</h6>
+Institute of Transportation Systems<br>
+German Aerospace Center (DLR)<br>
+<a href="https://www.dlr.de/en/ts" class="btn btn-sm btn-outline-info" style="margin-top:10px;">Website</a>
+<br><br>
+
+This contribution begins with a brief and biased account of the origins of SUMO. Given perceived current challenges in microscopic modelling, particularly with regard to the author‘s current favorite topic of traffic safety, it outlines potential future developments centered on modelling rather than usage.
+
+<details>
+<summary>About the Speaker</summary>
+Being a physicists by training, I have worked in transport for over 30 years, focusing strongly on modelling and simulation. I started out working with cellular automata as traffic simulation tools, but I have also touched most of the pillars of the 4-step algorithm, i.e. on travel demand, traffic assignment, traffic signal control, and assessment (mostly emissions). Recently, I have developed a strong focus on traffic safety, which strongly resonates with modelling and a bit of simulation, but even more so with data analysis. While I have written some papers myself, I have done more work reviewing and improving the work of others, including the students of my classes at TU Berlin and elsewhere.
+</details>
+
+---
 
 # Social Event
 
