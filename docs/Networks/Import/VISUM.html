@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 24 February 2026 14:33:00
-Last edit: 24 February 2026
+Build Date UTC : 26 February 2026 09:19:41
+Last edit: 26 February 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -175,6 +175,9 @@ Last edit: 24 February 2026
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#dealing_with_connectors" class="nav-link">• Dealing with Connectors</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#permissions" class="nav-link">• Permissions</a>
                 </li>
             <li class="nav-item main"><a href="#see_also">See also</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
@@ -391,6 +394,13 @@ should be described at a different
 page. Here, we want to show the
 possibilities to change the connector attributes using
 <a href="../../netconvert.html">netconvert</a>.</p>
+<h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">#</a></h2>
+<p>A VISUM model declares a list of abstract traffic types and uses these to define access rules for every road. While there are some conventions for typical types (i.e. 'c' for passenger car and 'w' for walk), these types are user-definable. Since version 1.27.0 netconvert uses the following three strategies to interpret permissions (earlier versions only use the first strategy):</p>
+<ul>
+<li>a <a href="https://github.com/eclipse-sumo/sumo/blob/main/data/typemap/visumNetconvert.typ.xml">pre-defined list</a> of typical traffic type codes</li>
+<li>interpreting the textual description field for each type (i.e. anything with the substring 'bus' in it's description is guessed as abstract vehicle class 'bus')</li>
+<li>loading a custom type file with option <strong>--type-files</strong> that maps traffic type ids to permissions (the <a href="https://github.com/eclipse-sumo/sumo/blob/main/data/typemap/visumNetconvert.typ.xml">default file</a> can be copied and extended as needed).</li>
+</ul>
 <h1 id="see_also">See also<a class="headerlink" href="#see_also" title="Permanent link">#</a></h1>
 <p><a href="../../netconvert.html">netconvert</a> is able to guess some information
 which is sometimes missing in imported networks. Below, you may find
@@ -413,10 +423,15 @@ links to further information of interest.</p>
 projection of geo-coordinates, should not apply when working with
 <a href="https://www.ptvgroup.com/en/solutions/products/ptv-visum/">VISUM</a> networks.</p>
 <h2 id="importing_other_data_from_visum">Importing other data from VISUM<a class="headerlink" href="#importing_other_data_from_visum" title="Permanent link">#</a></h2>
-<p><a href="https://www.ptvgroup.com/en/solutions/products/ptv-visum/">VISUM</a> uses O/D-matrices
+<ul>
+<li>netconvert can import <a href="../../Simulation/Public_Transport.html#bus_stops">public transport stop locations</a> by setting option <strong>--ptstop-output</strong></li>
+<li>netconvert can import <a href="../../Demand/Importing_O/D_Matrices.html#describing_the_taz">Traffic Analysis Zones (TAZ)</a> by setting option <strong>--polygon-output</strong></li>
+<li><a href="https://www.ptvgroup.com/en/solutions/products/ptv-visum/">VISUM</a> uses O/D-matrices
 as a demand descriptions. There is some further information on
 <a href="../../Demand/Importing_O/D_Matrices.html">Demand/Importing O/D
-Matrices</a>.</p>
+Matrices</a>.</li>
+<li>Abstract network model XML routes (anm_routes.xml) can be imported with <a href="../../Tools/Import/VISUM.html#visum_convertxmlroutespy">visum_convertXMLRoutes.py</a></li>
+</ul>
 <h1 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h1>
 <ul>
 <li><a href="https://www.ptvgroup.com/en/solutions/products/ptv-visum/">PTV AG's
@@ -438,7 +453,7 @@ Matrices</a>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 24 February 2026</i></small>
+            <br><small><i>This page was last edited on: 26 February 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

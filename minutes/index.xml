@@ -164,8 +164,63 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;we have now parsable metadata&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>SUMO Developer Meetings 2026</title><link>https://eclipse.dev/sumo/minutes/2026/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/minutes/2026/</guid><description>&lt;h1 id="2026-02-12"&gt;2026-02-12&lt;/h1&gt;
+&lt;/ul&gt;</description></item><item><title>SUMO Developer Meetings 2026</title><link>https://eclipse.dev/sumo/minutes/2026/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/minutes/2026/</guid><description>&lt;h1 id="2026-02-26"&gt;2026-02-26&lt;/h1&gt;
 &lt;h2 id="attendees"&gt;Attendees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Jakob Erdmann (DLR)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Yun-Pang Flötteröd (DLR)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Robert Hilbrich (DLR)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Vassileios Karagounis (CERTH)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Evangelos Mintsis (CERTH)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ronald Nippold (DLR)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Peter Wagner (DLR)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Angelo Banse (DLR)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="topics"&gt;Topics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Release Feedback
+&lt;ul&gt;
+&lt;li&gt;Regression regarding python tools from netedit&lt;/li&gt;
+&lt;li&gt;Parquet format for FCD output (see &lt;code&gt;--person-fcd-output&lt;/code&gt;) &amp;ndash;&amp;gt; solves the issue of having consistent tables for parquet
+&lt;ul&gt;
+&lt;li&gt;Open issues exists for battery output, emissions, meandata, &amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;SUMO Conference Keynote speakers finalized: &lt;a href="https://eclipse.dev/sumo/conference/#keynotes"&gt;https://eclipse.dev/sumo/conference/#keynotes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SUMO Conference submission deadline has be postponed until Mar 1&lt;/li&gt;
+&lt;li&gt;Question regarding the integration of COPERT database into SUMO
+&lt;ul&gt;
+&lt;li&gt;data files can be added to the data emissions folder in the SUMO repository (may also use gzipped files)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Question regarding the assignment of emissions classes to vehicle classes
+&lt;ul&gt;
+&lt;li&gt;Recommendation: use create vtype distribution script&lt;/li&gt;
+&lt;li&gt;If that is not sufficient, please report back to improve the script instead of creating a new script&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Issues&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="2026-02-12"&gt;2026-02-12&lt;/h1&gt;
+&lt;h2 id="attendees-1"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Sasan Amini (Transcality)&lt;/li&gt;
@@ -179,7 +234,7 @@
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-1"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;release 1.26.0 feedback
 &lt;ul&gt;
@@ -207,7 +262,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-01-29"&gt;2026-01-29&lt;/h1&gt;
-&lt;h2 id="attendees-1"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-2"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
@@ -220,7 +275,7 @@
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-1"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-2"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;release 1.26.0
 &lt;ul&gt;
@@ -250,7 +305,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-01-15"&gt;2026-01-15&lt;/h1&gt;
-&lt;h2 id="attendees-2"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-3"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
@@ -267,7 +322,7 @@
 &lt;li&gt;Mirko Barthauer (mouver)&lt;/li&gt;
 &lt;li&gt;Sasan Amini (Transcality)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-2"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-3"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;next release 1.26.0 may still work on the 26th of January&lt;/li&gt;
 &lt;li&gt;explaining the python wheels&lt;/li&gt;
