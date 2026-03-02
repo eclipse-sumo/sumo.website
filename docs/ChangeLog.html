@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 26 February 2026 12:28:30
-Last edit: 26 February 2026
+Build Date UTC : 02 March 2026 13:14:57
+Last edit: 02 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -295,6 +295,7 @@ Last edit: 26 February 2026
 <li>netedit<ul>
 <li>python tool dialogs now permit selecting multiple files <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17615" title="GitHub Issue eclipse-sumo/sumo #17615">#17615</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17619" title="GitHub Issue eclipse-sumo/sumo #17619">#17619</a> (regression in 1.25.0)</li>
 <li>fixed crash when calling python tool and using the 'back' button <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17618" title="GitHub Issue eclipse-sumo/sumo #17618">#17618</a> (regression in 1.25.0)</li>
+<li>The network file name shows up in the window title again <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17662" title="GitHub Issue eclipse-sumo/sumo #17662">#17662</a> (regression in 1.26.0)</li>
 </ul>
 </li>
 </ul>
@@ -303,6 +304,8 @@ Last edit: 26 February 2026
 <li>NEMA computation now works for 4-arm junction without right-turns (also affects some signal plans of non-NEMA junctions) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17610" title="GitHub Issue eclipse-sumo/sumo #17610">#17610</a></li>
 <li>Zipper junctions no longer feature internal junctions (which could cause deadlock in the simulation) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17650" title="GitHub Issue eclipse-sumo/sumo #17650">#17650</a></li>
 <li>Fixed interpretation of some geo-projection strings <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17655" title="GitHub Issue eclipse-sumo/sumo #17655">#17655</a></li>
+<li>Fixed invalid connections in visum import (non-german version) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17660" title="GitHub Issue eclipse-sumo/sumo #17660">#17660</a></li>
+<li>Fixed invalid edge permissions in visum import <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17659" title="GitHub Issue eclipse-sumo/sumo #17659">#17659</a></li>
 </ul>
 </li>
 </ul>
@@ -317,6 +320,7 @@ Last edit: 26 February 2026
 <li>osmWebWizard.py: fixed various platform issues that prevent running. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17503" title="GitHub Issue eclipse-sumo/sumo #17503">#17503</a></li>
 <li>patchRailConflicts.py: no longer declaring rail signals that do not control any links <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17588" title="GitHub Issue eclipse-sumo/sumo #17588">#17588</a></li>
 <li>plotXMLAttributes.py: fixed missing labels on barplots with a non-numerical axis <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17611" title="GitHub Issue eclipse-sumo/sumo #17611">#17611</a></li>
+<li>countEdgeUsage.py: fixed interpretation of (expected) poisson flow count <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17657" title="GitHub Issue eclipse-sumo/sumo #17657">#17657</a></li>
 </ul>
 </li>
 </ul>
@@ -338,6 +342,20 @@ Last edit: 26 February 2026
 <li>meso<ul>
 <li>edge-type specific meso parameters now support <code>edgeLength</code> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17582" title="GitHub Issue eclipse-sumo/sumo #17582">#17582</a></li>
 <li>now supporting battery device <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/13843" title="GitHub Issue eclipse-sumo/sumo #13843">#13843</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>netedit<ul>
+<li>Edge attribute routingType is now supported <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17095" title="GitHub Issue eclipse-sumo/sumo #17095">#17095</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>netconvert<ul>
+<li>Now importing geo-projection from visum networks <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17658" title="GitHub Issue eclipse-sumo/sumo #17658">#17658</a></li>
+<li>visum import now supports option <strong>--type-files</strong> for loading custom interpretation of permissions for TSys codes <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17659" title="GitHub Issue eclipse-sumo/sumo #17659">#17659</a></li>
+<li>OSM networks now assign routingType <em>narrow</em> to one-lane edges to permit post-processing and <a href="Simulation/Routing.html#routing_by_travel_time_and_routingtype">routing</a> or capacity adaptations. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17661" title="GitHub Issue eclipse-sumo/sumo #17661">#17661</a></li>
 </ul>
 </li>
 </ul>
@@ -1743,7 +1761,7 @@ Last edit: 26 February 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 26 February 2026</i></small>
+            <br><small><i>This page was last edited on: 02 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

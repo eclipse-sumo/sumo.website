@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 26 February 2026 12:28:30
-Last edit: 26 February 2026
+Build Date UTC : 02 March 2026 13:14:57
+Last edit: 02 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -243,6 +243,9 @@ Last edit: 26 February 2026
                 </li>
                 <li class="nav-item" style="text-indent: 25px;">
                     <a href="#histogram_of_timeloss" class="nav-link">&rarr; Histogram of timeLoss</a>
+                </li>
+                <li class="nav-item" style="text-indent: 25px;">
+                    <a href="#time-space-plot" class="nav-link">&rarr; Time-Space-Plot</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#plot_trajectoriespy" class="nav-link">• plot_trajectories.py</a>
@@ -609,6 +612,15 @@ It also shows how to clamp data to the upper range of 300.</p>
 <p class="admonition-title">Caution</p>
 <p>It is important to set <strong>-i <a class="gh-link gh-mention" href="https://github.com/NONE" title="GitHub User: @NONE">@NONE</a></strong> to ensure that the timeLoss values are aggregated by file rather than by vehicle id.</p>
 </div>
+<h3 id="time-space-plot">Time-Space-Plot<a class="headerlink" href="#time-space-plot" title="Permanent link">#</a></h3>
+<p>This plot demonstrates a common use-case in traffic simulation: Mapping vehicle positions to a single dimension (i.e. distance driven from a common point) and plotting that distance value over time with one continuous line per vehicle. This kind of plot reveals how disturbances in traffic flow move in space and time through the intuitive impressions of slope and line density.
+The source data for this kind of plot is typically <a href="../Simulation/Output/FCDOutput.html">FCD-Output</a> and there are different ways to obtain the one dimensional position for the vehicles:</p>
+<ol>
+<li>use x (or y) coordinate in case the road is aligned with the coordinate system (i.e. in a synthetic scenario). The command is <code>plotXMLAttributes.py fcd.xml -x time -y x</code></li>
+<li>use the total distance driven since the vehicle started (i.e. when all vehicles depart at the same location). Requires <a href="../Simulation/Output/FCDOutput.html#changing_the_written_attributes">SUMO option to enable FCD attribute 'odometer'</a>: <strong>--fcd-output.attributes odometer</strong> (or <strong>--fcd-output.attributes all</strong>). The command is <code>plotXMLAttributes.py fcd.xml -x time -y odometer</code></li>
+<li>use a sumo network where roads are part of <a href="../Simulation/Distances.html#defining_and_using_linear_coordinates">linear reference scheme (kilometrage)</a>. Requires <a href="../Simulation/Output/FCDOutput.html#changing_the_written_attributes">SUMO option to enable FCD attribute 'distance'</a>: <strong>--fcd-output.attributes distance</strong> (or <strong>--fcd-output.attributes all</strong>). The command is <code>plotXMLAttributes.py fcd.xml -x time -y distance</code></li>
+</ol>
+<p><img src="../images/timespace.png" width="500px"/></p>
 <h2 id="plot_trajectoriespy">plot_trajectories.py<a class="headerlink" href="#plot_trajectoriespy" title="Permanent link">#</a></h2>
 <p>Create plot of all trajectories obtained from a file generated through <a href="../Simulation/Output/FCDOutput.html">--fcd-output</a>. This tool in particular is located in <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools.</p>
 <p>Example use:</p>
@@ -1535,7 +1547,7 @@ the weight file can be shown. It can be useful to adapt the simulation step leng
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 26 February 2026</i></small>
+            <br><small><i>This page was last edited on: 02 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

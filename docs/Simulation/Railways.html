@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 26 February 2026 12:28:30
-Last edit: 26 February 2026
+Build Date UTC : 02 March 2026 13:14:57
+Last edit: 02 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -577,20 +577,9 @@ Time values are in seconds.</p>
 </code></pre></div>
 
 <h2 id="kilometrage_mileage_chainage">Kilometrage (Mileage, Chainage)<a class="headerlink" href="#kilometrage_mileage_chainage" title="Permanent link">#</a></h2>
-<p>Edges support the attribute <em>distance</em> to denote the distance at the
-start of the edge relative to some point of reference for a <a href="https://en.wikipedia.org/wiki/Linear_referencing">linear
-referencing scheme</a>.
-When the distance metric decreases along the forward direction of the edge, this is indicated by using a negative sign for the distance value.</p>
-<p>The distance value along an edge is computed as:</p>
-<div class="codehilite"><pre><span></span><code>  |edgeDistance + vehiclePos|
-</code></pre></div>
-
-<p>Edge distance is imported from OSM and can also be be set along a route in <a href="../Netedit/elementsDemand.html#route">netedit</a></p>
-<p>The distances value can be written in <a href="Output/FCDOutput.html#further_options">fcd-output</a> using option <strong>--fcd-output.distance</strong>. It may then be used for plotting by <a href="../Tools/Visualization.html#plot_trajectoriespy">plot_trajectories.py</a> using the code <code>k</code> (i.e. -t kt). The distances can also be visualized in sumo-gui (color edges by distance).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Negative distance values are not currently supported (pending introduction of another attribute)</p>
-</div>
+<p>Edges can be configured to take part in a <a href="https://en.wikipedia.org/wiki/Linear_referencing">linear
+referencing scheme</a> by setting their <a href="Distances.html#defining_and_using_linear_coordinates"><code>distance</code>-attribute</a>.
+The linear coordinates of a vehicle can be included in <a href="Output/FCDOutput.html#further_options">fcd-output</a> using option <strong>--fcd-output.distance</strong>.</p>
 <h1 id="modelling_trains">Modelling Trains<a class="headerlink" href="#modelling_trains" title="Permanent link">#</a></h1>
 <p>There is a dedicated carFollowMode for trains which can be activated by
 setting <code>carFollowModel="Rail" trainType="&lt;TYPE&gt;"</code> in the <code>&lt;vType&gt;</code> definition. Allowed values for trainType are</p>
@@ -1089,7 +1078,7 @@ This file provides the times whenever a vehicle has entered or left a driveway.<
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 26 February 2026</i></small>
+            <br><small><i>This page was last edited on: 02 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

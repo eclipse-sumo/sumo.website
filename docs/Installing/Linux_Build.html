@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 26 February 2026 12:28:30
-Last edit: 26 February 2026
+Build Date UTC : 02 March 2026 13:14:57
+Last edit: 02 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -186,7 +186,7 @@ Last edit: 26 February 2026
             <li class="nav-item main"><a href="#building_a_minimal_feature_set">Building a minimal feature set</a></li>
             <li class="nav-item main"><a href="#installing_the_sumo_binaries">Installing the SUMO binaries</a></li>
             <li class="nav-item main"><a href="#uninstalling">Uninstalling</a></li>
-            <li class="nav-item main"><a href="#building_python_wheels_for_sumolib_traci_and_libsumo">Building Python wheels for sumolib, traci and libsumo</a></li>
+            <li class="nav-item main"><a href="#building_python_wheels_for_sumolib_traci_libsumo_and_eclipse-sumo">Building Python wheels for sumolib, traci, libsumo and eclipse-sumo</a></li>
             <li class="nav-item main"><a href="#frequent_rebuilds">(Frequent) Rebuilds</a></li>
             <li class="nav-item main"><a href="#how_to_build_jupedsim_and_then_build_sumo_with_jupedsim">How to build JuPedSim and then build SUMO with JuPedSim</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
@@ -456,7 +456,7 @@ some false negatives also in system libraries. It is recommended to use
 before calling the executable.</p>
 <h2 id="building_a_minimal_feature_set">Building a minimal feature set<a class="headerlink" href="#building_a_minimal_feature_set" title="Permanent link">#</a></h2>
 <p>Many of the project features are optional. To test a minimal setup, the following build configuration can be used:</p>
-<div class="codehilite"><pre><span></span><code>cmake -DFOX_CONFIG= -DPROJ_LIBRARY= -DCHECK_OPTIONAL_LIBS=OFF -DFMI=OFF -B build. 
+<div class="codehilite"><pre><span></span><code>cmake -DFOX_CONFIG= -DPROJ_LIBRARY= -DCHECK_OPTIONAL_LIBS=OFF -DFMI=OFF -B build.
 </code></pre></div>
 
 <h2 id="installing_the_sumo_binaries">Installing the SUMO binaries<a class="headerlink" href="#installing_the_sumo_binaries" title="Permanent link">#</a></h2>
@@ -481,34 +481,34 @@ SUMO from the bin subfolder (bin/sumo-gui and bin/sumo).</p>
 <p>from the same folder you ran <code>make install</code>. This will leave some empty
 directories, so if you want to remove them as well, double check that
 $SUMO_HOME points to the right directory (see above) and run</p>
-<div class="codehilite"><pre><span></span><code>sudo xargs rm -r $SUMO_HOME
+<div class="codehilite"><pre><span></span><code>sudo rm -r $SUMO_HOME
 </code></pre></div>
 
-<h2 id="building_python_wheels_for_sumolib_traci_and_libsumo">Building Python wheels for sumolib, traci and libsumo<a class="headerlink" href="#building_python_wheels_for_sumolib_traci_and_libsumo" title="Permanent link">#</a></h2>
-<p>If you want to distribute sumolib, traci and/or libsumo as wheels
-you can build those wheels directly from the tools tree. Please be aware
-that nightly builds of those packages are also available on <a href="https://test.pypi.org">https://test.pypi.org</a></p>
-<div class="codehilite"><pre><span></span><code><span class="n">pip</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">wheel</span><span class="w"> </span><span class="n">build</span>
-<span class="n">cd</span><span class="w"> </span><span class="n">tools</span>
-<span class="n">python</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">version</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">setup</span><span class="o">-</span><span class="n">sumolib</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">./</span><span class="n">setup</span><span class="o">.</span><span class="n">py</span>
-<span class="n">python</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">--</span><span class="n">wheel</span>
-<span class="n">python</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">version</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">setup</span><span class="o">-</span><span class="n">traci</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">./</span><span class="n">setup</span><span class="o">.</span><span class="n">py</span>
-<span class="n">python</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">--</span><span class="n">wheel</span>
-<span class="n">python</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">version</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">setup</span><span class="o">-</span><span class="n">libsumo</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">./</span><span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<h2 id="building_python_wheels_for_sumolib_traci_libsumo_and_eclipse-sumo">Building Python wheels for sumolib, traci, libsumo and eclipse-sumo<a class="headerlink" href="#building_python_wheels_for_sumolib_traci_libsumo_and_eclipse-sumo" title="Permanent link">#</a></h2>
+<p>If you want to distribute sumolib, traci, libsumo or the whole SUMO package
+as wheels, you can build those directly from the source tree. Please be aware
+that nightly builds of those packages are also available on
+<a href="https://sumo.dlr.de/wheels/">https://sumo.dlr.de/wheels/</a> (built on the SUMO servers) and
+<a href="https://sumo.dlr.de/ciwheels/">https://sumo.dlr.de/ciwheels/</a> (built on GitHub CI, has usually more platforms).</p>
+<p>If you still want to build them all yourself, maybe because you need a custom configuration,
+the easiest way is to call tools/build_config/build_wheels.sh but be aware that this
+will invoke <a href="https://cibuildwheel.pypa.io/">cibuildwheel</a> which in turn fires up docker
+and may take some time and space to build for multiple python versions.</p>
+<p>If you only need a single wheel the pattern is usually:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">tools</span><span class="o">/</span><span class="n">build_config</span><span class="o">/</span><span class="n">version</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">pep440</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">pyproject</span><span class="o">/</span><span class="n">sumolib</span><span class="o">.</span><span class="n">toml</span><span class="w"> </span><span class="n">pyproject</span><span class="o">.</span><span class="n">toml</span>
 <span class="n">python</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">--</span><span class="n">wheel</span>
 </code></pre></div>
 
-<p>You will need a recent version of pip (&gt;=22) for this to work. If for some reason
-you cannot update your pip you can also use the (discouraged!) method of calling
-setup.py directly.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">cd</span><span class="w"> </span><span class="n">tools</span>
-<span class="n">python</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">setup</span><span class="o">-</span><span class="n">sumolib</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">bdist_wheel</span>
-</code></pre></div>
-
-<p>Please note that you always need to be in the tools directory for this to work
-and your wheels will be placed in tools/dist. Furthermore the traci and the sumolib wheel
-are platform and Python version independent while libsumo depends on the exact
-platform and Python you built it with.</p>
+<p>where the first line patches the pyproject.toml with the current version
+(you can replace sumolib here by traci, libsumo etc.)
+and saves it in the SUMO root dir and the second call runs the build.</p>
+<p>You will need a recent version of pip (&gt;=22) and <a href="https://build.pypa.io/">python-build</a>
+for this to work. If you cannot build in an isolated environment
+(maybe because you do not have internet access) you will also need scikit-build-core
+(for sumo-data, eclipse-sumo and libsumo) and/or hatchling (sumolib and traci).
+The traci and the sumolib wheel are platform and Python version independent,
+sumo-data and eclipse-sumo depend on the platform but not on the Python version
+while libsumo depends on the exact platform and Python you built it with.</p>
 <h2 id="frequent_rebuilds">(Frequent) Rebuilds<a class="headerlink" href="#frequent_rebuilds" title="Permanent link">#</a></h2>
 <p>If you did a repository clone you can simply update it by doing <code>git pull</code>
 from inside the SUMO_HOME folder. Then change to the build directory and run
@@ -591,7 +591,7 @@ contains</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 26 February 2026</i></small>
+            <br><small><i>This page was last edited on: 02 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

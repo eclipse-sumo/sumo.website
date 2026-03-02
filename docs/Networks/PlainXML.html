@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 26 February 2026 12:28:30
-Last edit: 26 February 2026
+Build Date UTC : 02 March 2026 13:14:57
+Last edit: 02 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -261,6 +261,21 @@ Last edit: 26 February 2026
             <li class="nav-item main"><a href="#connection_descriptions">Connection Descriptions</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#explicitly_setting_which_edge_lane_is_connected_to_which" class="nav-link">• Explicitly setting which Edge / Lane is connected to which</a>
+                </li>
+                <li class="nav-item" style="text-indent: 25px;">
+                    <a href="#edge-to-edge_connectivity" class="nav-link">&rarr; Edge-to-Edge connectivity</a>
+                </li>
+                <li class="nav-item" style="text-indent: 25px;">
+                    <a href="#lane-to-lane_connectivity" class="nav-link">&rarr; Lane-to-Lane connectivity</a>
+                </li>
+                <li class="nav-item" style="text-indent: 25px;">
+                    <a href="#deleting_connections" class="nav-link">&rarr; Deleting connections</a>
+                </li>
+                <li class="nav-item" style="text-indent: 25px;">
+                    <a href="#patching_connections_and_guessing_again" class="nav-link">&rarr; Patching connections and guessing again</a>
+                </li>
+                <li class="nav-item" style="text-indent: 25px;">
+                    <a href="#examples" class="nav-link">&rarr; Examples</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#setting_connection_priorities" class="nav-link">• Setting Connection Priorities</a>
@@ -921,7 +936,7 @@ default.</p>
 <tr>
 <td>distance</td>
 <td>float</td>
-<td><a href="../Simulation/Railways.html#kilometrage_mileage_chainage">Kilometrage</a> at the start of this edge. If the value is positive, kilometrage increases in driving direction; if the value is negative, kilometrage decreases. Kilometrage along the edge is computed as abs(<em>distance</em> + <em>offsetFromStart</em>).</td>
+<td><a href="../Simulation/Distances.html#defining_and_using_linear_coordinates">Kilometrage</a> at the start of this edge. If the value is positive, kilometrage increases in driving direction; if the value is negative, kilometrage decreases. Kilometrage along the edge is computed as abs(<em>distance</em> + <em>offsetFromStart</em>).</td>
 </tr>
 <tr>
 <td>routingType</td>
@@ -1439,9 +1454,13 @@ lanes may be manually set up and given to
 connection file specifies which edges outgoing from a junction may be
 reached by a certain edge incoming into this junction and optionally
 also which lanes shall be used on both sides.</p>
+<h3 id="edge-to-edge_connectivity">Edge-to-Edge connectivity<a class="headerlink" href="#edge-to-edge_connectivity" title="Permanent link">#</a></h3>
 <p>If you only want to describe which edges may be reached from a certain
-edge, the definition is:<code>&lt;connection from="&lt;FROM_EDGE_ID&gt;" to="&lt;T0_EDGE_ID&gt;"/&gt;</code>. This tells
-<a href="../netconvert.html">netconvert</a> not only that vehicles shall be
+edge, the definition is:</p>
+<div class="codehilite"><pre><span></span><code>&lt;connection from=&quot;&lt;FROM_EDGE_ID&gt;&quot; to=&quot;&lt;T0_EDGE_ID&gt;&quot;/&gt;
+</code></pre></div>
+
+<p>This tells <a href="../netconvert.html">netconvert</a> not only that vehicles shall be
 allowed to drive from the edge named <em>&lt;FROM_EDGE_ID&gt;</em> to the edge named
 <em>&lt;TO_EDGE_ID&gt;</em>, but also prohibits all movements to other edges from
 <em>&lt;FROM_EDGE_ID&gt;</em>, unless they are specified within this file. Let's
@@ -1467,11 +1486,15 @@ repeat the parameters:</p>
 </tr>
 </tbody>
 </table>
-<p>When using this kind of input, <a href="../netconvert.html">netconvert</a> will
+<p>When using the kind of input, <a href="../netconvert.html">netconvert</a> will
 compute which lanes shall be used if any of the connected edges has more
-than one lane. If you also want to override this computation and set the
-lanes by hand, use the following: <code>&lt;connection from="&lt;FROM_EDGE_ID&gt;" to="&lt;T0_EDGE_ID&gt;" fromLane="&lt;INT_1&gt;" toLane="&lt;INT_2&gt;"/&gt;</code>
-Here, a connection from the edge's "<em>&lt;FROM_EDGE_ID&gt;</em>" lane with the number <em>&lt;INT_1&gt;</em> is build to the lane <em>&lt;INT_2&gt;</em> of the edge "<em>&lt;TO_EDGE_ID&gt;</em>". Lanes are counted from the right (outer) to the left (inner) side of the road beginning with 0. Again the parameter:</p>
+than one lane. To obtain more control, additional attributes may be given as described below.</p>
+<h3 id="lane-to-lane_connectivity">Lane-to-Lane connectivity<a class="headerlink" href="#lane-to-lane_connectivity" title="Permanent link">#</a></h3>
+<p>To declare connections fully (and avoid any kind of guessing), use the following:</p>
+<div class="codehilite"><pre><span></span><code>&lt;connection from=&quot;&lt;FROM_EDGE_ID&gt;&quot; to=&quot;&lt;T0_EDGE_ID&gt;&quot; fromLane=&quot;&lt;INT_1&gt;&quot; toLane=&quot;&lt;INT_2&gt;&quot;/&gt;
+</code></pre></div>
+
+<p>Here, a connection from the edge's "<em>&lt;FROM_EDGE_ID&gt;</em>" lane with the number <em>&lt;INT_1&gt;</em> is build to the lane <em>&lt;INT_2&gt;</em> of the edge "<em>&lt;TO_EDGE_ID&gt;</em>". Lanes are counted from the right (outer) to the left (inner) side of the road beginning with 0. This style must be used when further connection attributes (such as permissions) shall be declared.</p>
 <table>
 <thead>
 <tr>
@@ -1592,8 +1615,14 @@ Here, a connection from the edge's "<em>&lt;FROM_EDGE_ID&gt;</em>" lane with the
 </tr>
 </tbody>
 </table>
-<p>If you only wish to <strong>remove</strong> a connection it may be convenient to use
-the following xml definition: <code>&lt;delete from="&lt;FROM_EDGE_ID&gt;" to="&lt;T0_EDGE_ID&gt;"/&gt;</code>. The attributes are the same as for the
+<h3 id="deleting_connections">Deleting connections<a class="headerlink" href="#deleting_connections" title="Permanent link">#</a></h3>
+<p><a href="../netconvert.html">netconvert</a> may be used to patch existing sumo networks (<em>.net.xml</em> files) and changing connections is one of the supported use cases.
+If you only wish to <strong>remove</strong> a connection it may be convenient to use
+the following xml definition: </p>
+<div class="codehilite"><pre><span></span><code>&lt;delete from=&quot;&lt;FROM_EDGE_ID&gt;&quot; to=&quot;&lt;T0_EDGE_ID&gt;&quot;/&gt;
+</code></pre></div>
+
+<p>The attributes are the same as for the
 simple connection element:</p>
 <table>
 <thead>
@@ -1630,6 +1659,19 @@ simple connection element:</p>
 <p class="admonition-title">Note</p>
 <p>Note that in basic format (that is, without <strong>fromLane</strong> and <strong>toLane</strong> attributes) the definition deletes <strong>all</strong> connections from given incoming edge to the given outgoing edge. When <strong>fromLane</strong> and <strong>toLane</strong> attributes are provided, only the connection from given lane to given lane is removed.</p>
 </div>
+<h3 id="patching_connections_and_guessing_again">Patching connections and guessing again<a class="headerlink" href="#patching_connections_and_guessing_again" title="Permanent link">#</a></h3>
+<p>By default there are two modes when processing connections.</p>
+<ol>
+<li>when loading from <em>plain-xml</em>, any missing information is guessed (and this typically causes connections to be added)</li>
+<li>when loading from a <em>.net.xml</em>, everything existing is kept by default and nothing is guessed. Any changes to connections must be enacted by explicitly adding or removing connections (as described above).</li>
+</ol>
+<p>It may be convenient to trigger re-guessing of connections for selected edges (i.e. after loading and edge-patch to change lane numbers).
+For this, the following definition may be used:</p>
+<div class="codehilite"><pre><span></span><code>&lt;connection from=&quot;&lt;FROM_EDGE_ID&gt;&quot; reset=&quot;true&quot;/&gt;
+</code></pre></div>
+
+<p>This will trigger all connections from edge with id <code>FROM_EDGE_ID</code> to be removed and re-guessed.</p>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h3>
 <p>There are two examples within the distribution. Both use the nodes and
 edges descriptions from the example located in
 "<strong><em>&lt;SUMO_HOME&gt;</em></strong>/docs/examples/netconvert/types/cross_notypes/". The junction in the
@@ -1958,7 +2000,7 @@ explicitly. This is done using <code>walkingArea</code> element within a
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 26 February 2026</i></small>
+            <br><small><i>This page was last edited on: 02 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
