@@ -26,6 +26,7 @@ The SUMO Conference, held every year in Berlin since 2013, is a must-attend even
 
 The conference offers opportunities to learn about new features, connect with other users, engage with the developers, exchange ideas, and even start new collaborations.
 
+<!--
 # Call for Papers
 
 The conference focuses on presenting new and unique results in the field of mobility simulation and modelling using openly available tools and data. We expect a large variety of research topics and usage approaches.
@@ -67,7 +68,7 @@ This year, there are three types of submission:
 
    - **The paper must be submitted in LaTeX or Word before Sunday, ~~February 22, 2026~~ March 01, 2026 - 23:59 UTC.**
 
-<!-- <div class="text-center"><img src="../images/presentation.jpeg" style="width:60%;" alt="Presentation" class="img-responsive"/></div> -->
+<div class="text-center"><img src="../images/presentation.jpeg" style="width:60%;" alt="Presentation" class="img-responsive"/></div>
 
 ---
 
@@ -88,7 +89,7 @@ This year, there are three types of submission:
   - You may bring a laptop or device for demos or supplementary material (please bring your own equipment).
   - **Submit the title and a short abstract (up to 300 words) by Sunday, ~~February 22, 2026~~ March 01, 2026 - 23:59 UTC.**
 
-<!-- <div class="text-center"><img src="../images/poster_session.jpeg" style="width:60%;" alt="Poster session" class="img-responsive"/></div> -->
+<div class="text-center"><img src="../images/poster_session.jpeg" style="width:60%;" alt="Poster session" class="img-responsive"/></div>
 
 ---
 
@@ -119,6 +120,8 @@ Selected submissions will be featured as brief presentations during the conferen
 - Poster submissions: Send us an E-Mail with the subject **`Poster Submission - SUMO 2026`** to sumo-conference@dlr.de. Include the title and abstract in the body of the E-Mail.
 - SUMO moments: Send us an E-Mail with the subject **`SUMO Moment - SUMO 2026`** to sumo-conference@dlr.de. Include the description in the body of the E-Mail.
 
+-->
+
 ## Ethics and Malpractice Statement
 
 You can read our *[Publication Ethics and Publication Malpractice Statement](../documents/SUMOPublicationEthics.pdf)*, where we list the responsibilities of editors, reviewers, and authors.
@@ -127,18 +130,18 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 
 For papers:
 - ~~Recommended title and abstract submission deadline: **Sunday, January 11, 2026.**~~
-- <span class="badge badge-warning">New</span> Paper submission deadline: ~~**Sunday, February 22, 2026.**~~ **Sunday, March 01, 2026.**
+- ~~Paper submission deadline: **Sunday, March 01, 2026.**~~
 - Notification of acceptance/rejection: **First week of April 2026.**
 - Camera-ready paper deadline: **Sunday, May 10, 2026.**
 
 For posters:
-- <span class="badge badge-warning">New</span> Mandatory title and abstract submission deadline: ~~**Sunday, February 22, 2026.**~~ **Sunday, March 01, 2026.**
-- <span class="badge badge-warning">New</span> Notification of acceptance/rejection: ~~**Thursday, February 26, 2026.**~~ **Thursday, March 04, 2026.**
+- ~~Mandatory title and abstract submission deadline: **Sunday, March 01, 2026.**~~
+- Notification of acceptance/rejection: **Thursday, March 04, 2026.**
 - Final poster upload deadline: **Sunday, May 03, 2026.**
 
 For SUMO moments:
-- <span class="badge badge-warning">New</span> Description submission deadline: ~~**Sunday, February 22, 2026.**~~ **Sunday, March 01, 2026.**
-- <span class="badge badge-warning">New</span> Notification of acceptance/rejection: ~~**Thursday, February 26, 2026.**~~ **Thursday, March 04, 2026.**
+- ~~Description submission deadline: **Sunday, March 01, 2026.**~~
+- Notification of acceptance/rejection: **Thursday, March 04, 2026.**
 
 # Prices
 
