@@ -136,12 +136,12 @@ For papers:
 
 For posters:
 - ~~Mandatory title and abstract submission deadline: **Sunday, March 01, 2026.**~~
-- Notification of acceptance/rejection: **Thursday, March 04, 2026.**
+- Notification of acceptance/rejection: **Thursday, March 05, 2026.**
 - Final poster upload deadline: **Sunday, May 03, 2026.**
 
 For SUMO moments:
 - ~~Description submission deadline: **Sunday, March 01, 2026.**~~
-- Notification of acceptance/rejection: **Thursday, March 04, 2026.**
+- Notification of acceptance/rejection: **Thursday, March 05, 2026.**
 
 # Prices
 
