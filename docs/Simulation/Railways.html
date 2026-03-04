@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 02 March 2026 13:14:57
-Last edit: 02 March 2026
+Build Date UTC : 04 March 2026 11:58:33
+Last edit: 04 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -218,6 +218,9 @@ Last edit: 02 March 2026
                 <li class="nav-item" style="text-indent: 25px;">
                     <a href="#heuristic_generation" class="nav-link">&rarr; Heuristic generation</a>
                 </li>
+                <li class="nav-item" style="text-indent: 25px;">
+                    <a href="#placement" class="nav-link">&rarr; Placement</a>
+                </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#rail_crossings" class="nav-link">• Rail Crossings</a>
                 </li>
@@ -312,6 +315,9 @@ Last edit: 02 March 2026
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#railsignal-vehicle-output" class="nav-link">• railsignal-vehicle-output</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#railsignal_state_output" class="nav-link">• railsignal state output</a>
                 </li>
             <li class="nav-item main"><a href="#miscellaneous">Miscellaneous</a></li>
             <li class="nav-item main"><a href="#limitations">Limitations</a></li>
@@ -541,6 +547,14 @@ Stops are either loaded from the input (i.e. OSM) or with option <strong>--ptsto
 <li>a signal at the start of the stop edge or the next upstream edge that is at least 200m upstream of the stop edge end (unless the node happens to be a switch)</li>
 </ul>
 <p>The minimum distance of 200m between the two signals can be customized with option <strong>--osm.stop-outout.length.train</strong>.</p>
+<h3 id="placement">Placement<a class="headerlink" href="#placement" title="Permanent link">#</a></h3>
+<p>In mainline rail operations, a rail signal is located upstream of a conflict point (i.e. a switch) by 50 to 200 meters and even more on high-speed lines. This means it will often be necessary to split an edge so that a new node is created at the exact location where a rail signal is needed (whenever a missing rail signal is added manually). This splitting can be accomplished in <a href="../Netedit/neteditPopupFunctions.html#split_edge_here">netedit</a> or by loading <a href="../Networks/PlainXML.html#road_segment_refining">split definitions</a> in netconvert patch file.</p>
+<p>An altenative is to define, the switch itself as type <code>rail_signal</code> and to move the stop line upstream with <a href="../Networks/PlainXML.html#edge_descriptions">edge attribute <code>endOffset</code></a>. This has several implications:</p>
+<ul>
+<li>it preserves existing network topology and route validity because no new nodes or edges are introduced</li>
+<li>it requires simulation with <a href="Intersections.html#internal_links">internal links</a> because vehicles will spend significant time on the greatly enlarged junction (switch) interior.</li>
+<li>it makes rail signal states harder to analyze in sumo-gui because a single junction may have multiple signal states at the same time and corresponding attributes in the dialog are vectors instead of single numbers</li>
+</ul>
 <h2 id="rail_crossings">Rail Crossings<a class="headerlink" href="#rail_crossings" title="Permanent link">#</a></h2>
 <p>The <a href="../Networks/PlainXML.html#node_descriptions">node type</a>
 <code>rail_crossing</code> may be used to define railway crossings. At these nodes trains will
@@ -1052,6 +1066,10 @@ This file provides the times whenever a vehicle has entered or left a driveway.<
 </tr>
 </tbody>
 </table>
+<h2 id="railsignal_state_output">railsignal state output<a class="headerlink" href="#railsignal_state_output" title="Permanent link">#</a></h2>
+<p>For logging the states of a rail signal, the same method as for <a href="Output/Traffic_Lights.html#tls_states">logging
+TLS states of traffic lights</a> can be
+used. The attribute <code>source</code> must be set to the ID of the junction the rail signal belongs to (or omitted to track the states of all rail signals in the simulation).</p>
 <h1 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">#</a></h1>
 <ul>
 <li>Error checking for <a href="Public_Transport.html#single_vehicles_and_trips">railway schedules</a> can be done with the tool <a href="../Tools/Routes.html#checkstoporderpy">checkStopOrder.py</a></li>
@@ -1078,7 +1096,7 @@ This file provides the times whenever a vehicle has entered or left a driveway.<
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 02 March 2026</i></small>
+            <br><small><i>This page was last edited on: 04 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 02 March 2026 13:14:57
-Last edit: 02 March 2026
+Build Date UTC : 04 March 2026 11:58:33
+Last edit: 04 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -265,14 +265,11 @@ information</a>, and <a href="Summary.html">simulation
 state statistics</a>) are triggered
 using command line options, the others have to be defined within <a href="/docs/sumo.html#format_of_additional_files"><em>additional-files</em></a>.</p>
 <h2 id="converting_outputs">Converting Outputs<a class="headerlink" href="#converting_outputs" title="Permanent link">#</a></h2>
-<p>All output files written by SUMO are in XML-format by default. However,
-with the python tool <a href="../../Tools/Xml.html#xml2csvpy">xml2csv.py</a> you
-can convert any of them to a flat-file (CSV) format which can be opened
-with most spread-sheet software. If you need a more compressed but still
-"standardized" binary version, you can use
-<a href="../../Tools/Xml.html#xml2protobufpy">xml2protobuf.py</a>. Furthermore all
-files can be written and read in compressed form (gzip) which is triggered by the
-file extension .gz.</p>
+<p>All output files written by SUMO are in XML-format by default. However, by setting the file extension <em>.csv</em> or <em>.parqet</em> files will instead by written <a href="../../TabularOutputs.html">tabular output</a> instead.
+It is also possible to convert existing XML output files with the python tool <a href="../../Tools/Xml.html#xml2csvpy">xml2csv.py</a> to a flat-file (CSV) format which can be opened
+with most spread-sheet software. </p>
+<p>The file endings <em>.xml.gz</em> or <em>.csv.gz</em> will automatically switch to gzip-compressed output files.
+Note, that <em>.xml.gz</em> files are also accepted as input by all SUMO applications.</p>
 <h2 id="separating_outputs_of_repeated_runs">Separating outputs of repeated runs<a class="headerlink" href="#separating_outputs_of_repeated_runs" title="Permanent link">#</a></h2>
 <p>To keep the outputs of multiple simulation runs separate, the option <strong>--output-prefix</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a>
 can be used to prefix <strong>all</strong> output file names. When setting <strong>--output-prefix TIME</strong> all
@@ -358,7 +355,7 @@ found by following its link.</p>
   or separate the approaching edges and to include or exclude the
   junction interior. (area-based detection on edges)</li>
 </ul>
-<p>Alternatively, the <a href="#values_for_edges_or_lanes">values for edges or lanes</a> can be aggregated to obtain the flow at at a junction by using edgeData attribute <code>edges</code> and <code>aggregate="true"</code>.</p>
+<p>Alternatively, the <a href="#values_for_edges_or_lanes">values for edges or lanes</a> can be aggregated to obtain the flow at a junction by using edgeData attribute <code>edges</code> and <code>aggregate="true"</code>.</p>
 <h2 id="vehicle-based_information">vehicle-based information<a class="headerlink" href="#vehicle-based_information" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="TripInfo.html">trip information</a>:
@@ -564,7 +561,7 @@ network background).</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 02 March 2026</i></small>
+            <br><small><i>This page was last edited on: 04 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

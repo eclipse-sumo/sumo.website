@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 02 March 2026 13:14:57
-Last edit: 02 March 2026
+Build Date UTC : 04 March 2026 11:58:33
+Last edit: 04 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -276,7 +276,7 @@ Last edit: 02 March 2026
 <h3 id="bugfixes">Bugfixes<a class="headerlink" href="#bugfixes" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
-<li>fixed invalid driveWay foes in moving-block mode <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17623" title="GitHub Issue eclipse-sumo/sumo #17623">#17623</a></li>
+<li>fixed invalid driveWay foes in moving-block mode <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17623" title="GitHub Issue eclipse-sumo/sumo #17623">#17623</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17683" title="GitHub Issue eclipse-sumo/sumo #17683">#17683</a></li>
 <li>fixed invalid estimation of pickup-traveltime during taxi dispatch <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17631" title="GitHub Issue eclipse-sumo/sumo #17631">#17631</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17629" title="GitHub Issue eclipse-sumo/sumo #17629">#17629</a></li>
 <li>stopping on a long busStop before reaching the designated spot due to jamming now permits passengers to exit if the vehicle is fully within the busStop <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17635" title="GitHub Issue eclipse-sumo/sumo #17635">#17635</a></li>
 <li>Fixed failure to group taxi passengers when the dispatch-period is low <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17644" title="GitHub Issue eclipse-sumo/sumo #17644">#17644</a></li>
@@ -293,6 +293,7 @@ Last edit: 02 March 2026
 </ul>
 <ul>
 <li>netedit<ul>
+<li>Adding a "smart" next phase in the TLS editor now works even if a program has only a single phase <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17680" title="GitHub Issue eclipse-sumo/sumo #17680">#17680</a> (regression in 1.6.0)</li>
 <li>python tool dialogs now permit selecting multiple files <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17615" title="GitHub Issue eclipse-sumo/sumo #17615">#17615</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17619" title="GitHub Issue eclipse-sumo/sumo #17619">#17619</a> (regression in 1.25.0)</li>
 <li>fixed crash when calling python tool and using the 'back' button <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17618" title="GitHub Issue eclipse-sumo/sumo #17618">#17618</a> (regression in 1.25.0)</li>
 <li>The network file name shows up in the window title again <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17662" title="GitHub Issue eclipse-sumo/sumo #17662">#17662</a> (regression in 1.26.0)</li>
@@ -306,6 +307,13 @@ Last edit: 02 March 2026
 <li>Fixed interpretation of some geo-projection strings <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17655" title="GitHub Issue eclipse-sumo/sumo #17655">#17655</a></li>
 <li>Fixed invalid connections in visum import (non-german version) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17660" title="GitHub Issue eclipse-sumo/sumo #17660">#17660</a></li>
 <li>Fixed invalid edge permissions in visum import <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17659" title="GitHub Issue eclipse-sumo/sumo #17659">#17659</a></li>
+<li>Fixed invalid changes to loaded edge attributes when patching edge type <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17678" title="GitHub Issue eclipse-sumo/sumo #17678">#17678</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>duarouter<ul>
+<li>Fixed invalid vehicle departure times when defining poisson flow (very noticable at low rate) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17663" title="GitHub Issue eclipse-sumo/sumo #17663">#17663</a></li>
 </ul>
 </li>
 </ul>
@@ -319,8 +327,11 @@ Last edit: 02 March 2026
 <li>tools<ul>
 <li>osmWebWizard.py: fixed various platform issues that prevent running. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17503" title="GitHub Issue eclipse-sumo/sumo #17503">#17503</a></li>
 <li>patchRailConflicts.py: no longer declaring rail signals that do not control any links <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17588" title="GitHub Issue eclipse-sumo/sumo #17588">#17588</a></li>
+<li>patchRailConflicts.py: now works for mixed-permission networks (i.e. tram on road) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17682" title="GitHub Issue eclipse-sumo/sumo #17682">#17682</a></li>
 <li>plotXMLAttributes.py: fixed missing labels on barplots with a non-numerical axis <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17611" title="GitHub Issue eclipse-sumo/sumo #17611">#17611</a></li>
 <li>countEdgeUsage.py: fixed interpretation of (expected) poisson flow count <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17657" title="GitHub Issue eclipse-sumo/sumo #17657">#17657</a></li>
+<li>countEdgeUsage.py: now returns fractional counts for random flows (very noticable at low rate) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17664" title="GitHub Issue eclipse-sumo/sumo #17664">#17664</a></li>
+<li>netdiff.py: now handles aribtrary network file names, now includes modified edge type in diff. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17676" title="GitHub Issue eclipse-sumo/sumo #17676">#17676</a></li>
 </ul>
 </li>
 </ul>
@@ -356,6 +367,13 @@ Last edit: 02 March 2026
 <li>Now importing geo-projection from visum networks <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17658" title="GitHub Issue eclipse-sumo/sumo #17658">#17658</a></li>
 <li>visum import now supports option <strong>--type-files</strong> for loading custom interpretation of permissions for TSys codes <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17659" title="GitHub Issue eclipse-sumo/sumo #17659">#17659</a></li>
 <li>OSM networks now assign routingType <em>narrow</em> to one-lane edges to permit post-processing and <a href="Simulation/Routing.html#routing_by_travel_time_and_routingtype">routing</a> or capacity adaptations. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17661" title="GitHub Issue eclipse-sumo/sumo #17661">#17661</a></li>
+<li>connection files (*.con.xml) now support attribute <code>reset="true"</code> to trigger connection guessing when patching a network <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17668" title="GitHub Issue eclipse-sumo/sumo #17668">#17668</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>TraCI<ul>
+<li>Added function <code>vehicle.getReferenceDistance</code> to retrieve the position of the vehicle in the underlying <a href="Simulation/Distances.html#defining_and_using_linear_coordinates">linear referenced system</a> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/10572" title="GitHub Issue eclipse-sumo/sumo #10572">#10572</a></li>
 </ul>
 </li>
 </ul>
@@ -368,6 +386,8 @@ Last edit: 02 March 2026
 <li>plotXMLAttrbutes.py: added option <strong>--join</strong> to configure the separator when joining values or labels <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17612" title="GitHub Issue eclipse-sumo/sumo #17612">#17612</a></li>
 <li>generateStationEdges.py: added option <strong>--join-stations</strong> to generate a single access edge for all stops with the same name <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17625" title="GitHub Issue eclipse-sumo/sumo #17625">#17625</a></li>
 <li>generateStationEdges.py: added option <strong>--build</strong> to automatically create the extended network <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/13383" title="GitHub Issue eclipse-sumo/sumo #13383">#13383</a></li>
+<li>visum_convertXMLRoutes.py: added option <strong>--trips</strong> to write unvalidated trips <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17666" title="GitHub Issue eclipse-sumo/sumo #17666">#17666</a></li>
+<li>visum_convertXMLRoute.py: now use demand time range when interpreting volume <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17667" title="GitHub Issue eclipse-sumo/sumo #17667">#17667</a></li>
 </ul>
 </li>
 </ul>
@@ -1761,7 +1781,7 @@ Last edit: 02 March 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 02 March 2026</i></small>
+            <br><small><i>This page was last edited on: 04 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

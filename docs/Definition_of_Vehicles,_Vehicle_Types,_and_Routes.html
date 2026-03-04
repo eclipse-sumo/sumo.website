@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 02 March 2026 13:14:57
-Last edit: 02 March 2026
+Build Date UTC : 04 March 2026 11:58:33
+Last edit: 04 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -1165,13 +1165,19 @@ parameters are described in the following.</p>
 <td>boardingDuration</td>
 <td>float</td>
 <td>0.5</td>
-<td>The time required by a person to board the vehicle.</td>
+<td>The time required by a person to board and deboard the vehicle.</td>
 </tr>
 <tr>
 <td>loadingDuration</td>
 <td>float</td>
 <td>90.0</td>
-<td>The time required to load a container onto the vehicle.</td>
+<td>The time required to load a container onto the vehicle and also to unlaod it</td>
+</tr>
+<tr>
+<td>boardingFactor</td>
+<td>float</td>
+<td>1.0</td>
+<td>The factor applied to <code>boardingDuration</code> and <code>loadingDuration</code> (set in the vType of the person or container being loaded/unloaded)</td>
 </tr>
 <tr>
 <td>latAlignment</td>
@@ -3093,7 +3099,7 @@ defining them for the vehicle or the vehicle type in the following way:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 02 March 2026</i></small>
+            <br><small><i>This page was last edited on: 04 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

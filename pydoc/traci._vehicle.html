@@ -564,7 +564,8 @@ Returns&nbsp;the&nbsp;position&nbsp;of&nbsp;the&nbsp;named&nbsp;vehicle&nbsp;wit
 Returns&nbsp;the&nbsp;position&nbsp;of&nbsp;the&nbsp;named&nbsp;vehicle&nbsp;within&nbsp;the&nbsp;last&nbsp;step&nbsp;[m,m,m].</span></dd></dl>
 
 <dl><dt><a name="VehicleDomain-getReferenceDistance"><strong>getReferenceDistance</strong></a>(self, vehID)</dt><dd><span class="code"><a href="#VehicleDomain-getReferenceDistance">getReferenceDistance</a>(string)&nbsp;-&gt;&nbsp;double<br>
-Returns&nbsp;the&nbsp;distance&nbsp;along&nbsp;the&nbsp;linear&nbsp;reference&nbsp;system&nbsp;in&nbsp;which&nbsp;the&nbsp;current&nbsp;edge&nbsp;takes&nbsp;part&nbsp;(i.e.&nbsp;kilometrage/mile&nbsp;markers)</span></dd></dl>
+Returns&nbsp;the&nbsp;distance&nbsp;along&nbsp;the&nbsp;linear&nbsp;reference&nbsp;system<br>
+in&nbsp;which&nbsp;the&nbsp;current&nbsp;edge&nbsp;takes&nbsp;part&nbsp;(i.e.&nbsp;kilometrage/mile&nbsp;markers)</span></dd></dl>
 
 <dl><dt><a name="VehicleDomain-getRightFollowers"><strong>getRightFollowers</strong></a>(self, vehID, blockingOnly=False)</dt><dd><span class="code"><a href="#VehicleDomain-getRightFollowers">getRightFollowers</a>(string,&nbsp;bool)&nbsp;-&gt;&nbsp;tuple(tuple(string,&nbsp;double))<br>
 Convenience&nbsp;method,&nbsp;see&nbsp;<a href="#VehicleDomain-getNeighbors">getNeighbors</a>()</span></dd></dl>
@@ -874,7 +875,7 @@ previous&nbsp;step&nbsp;(in&nbsp;m/s^2)&nbsp;can&nbsp;be&nbsp;set&nbsp;as&nbsp;w
 <dl><dt><a name="VehicleDomain-setRoute"><strong>setRoute</strong></a>(self, vehID, edgeList)</dt><dd><span class="code"><a href="#VehicleDomain-setRoute">setRoute</a>(string,&nbsp;list)&nbsp;-&gt;&nbsp;&nbsp;None<br>
 &nbsp;<br>
 changes&nbsp;the&nbsp;vehicle&nbsp;route&nbsp;to&nbsp;given&nbsp;edges&nbsp;list.<br>
-The&nbsp;first&nbsp;edge&nbsp;in&nbsp;the&nbsp;list&nbsp;has&nbsp;to&nbsp;be&nbsp;the&nbsp;one&nbsp;that&nbsp;the&nbsp;vehicle&nbsp;is&nbsp;at&nbsp;at&nbsp;the&nbsp;moment.<br>
+The&nbsp;first&nbsp;edge&nbsp;in&nbsp;the&nbsp;list&nbsp;has&nbsp;to&nbsp;be&nbsp;the&nbsp;one&nbsp;that&nbsp;the&nbsp;vehicle&nbsp;is&nbsp;at&nbsp;the&nbsp;moment.<br>
 &nbsp;<br>
 example&nbsp;usage:<br>
 <a href="#VehicleDomain-setRoute">setRoute</a>('1',&nbsp;['1',&nbsp;'2',&nbsp;'4',&nbsp;'6',&nbsp;'7'])<br>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 02 March 2026 13:14:57
-Last edit: 02 March 2026
+Build Date UTC : 04 March 2026 11:58:33
+Last edit: 04 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -168,6 +168,8 @@ Last edit: 02 March 2026
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary toc-scroll toc">
         <ul class="nav flex-column bs-sidenav">
             <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
+            <li class="nav-item main"><a href="#high_level_overview">High level Overview</a></li>
+            <li class="nav-item main"><a href="#workflow">Workflow</a></li>
             <li class="nav-item main"><a href="#automatically_generated_tls-programs">Automatically Generated TLS-Programs</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#default_4-arm_intersection_layout_opposites" class="nav-link">• Default 4-arm intersection (layout opposites)</a>
@@ -322,6 +324,7 @@ Last edit: 02 March 2026
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#track_phases" class="nav-link">• Track Phases</a>
                 </li>
+            <li class="nav-item main"><a href="#miscellaneous">Miscellaneous</a></li>
         </ul>
     </div>
 
@@ -364,6 +367,21 @@ Last edit: 02 March 2026
                   
                   
 
+<h1 id="high_level_overview">High level Overview<a class="headerlink" href="#high_level_overview" title="Permanent link">#</a></h1>
+<p>The purpose of traffic light modelling in SUMO is threefold:</p>
+<ol>
+<li>provide comfortable ways to set up plausible traffic signals for a whole city </li>
+<li>provide functionality to replicate an existing traffic light with high fidelity </li>
+<li>provide functionality to simulate any conceivable traffic light algorithm for research purposes</li>
+</ol>
+<p>The first aim is supported by a deep pool of heuristics that construct traffic lights and programs.
+The other aims are supported by the following capabilities:</p>
+<ul>
+<li>parameterization of the <a href="#defining_new_tls-programs">built-in-algorithms</a></li>
+<li>loading custom algorithms directly into the simulation with a <a href="#type_actuated_with_custom_switching_rules">mini-programming language</a> tailored to traffic light operations</li>
+<li>attaching arbitrary external code to a running simulation via a <a href="#controlling_traffic_lights_via_traci">process-coupling interface (TraCI)</a></li>
+</ul>
+<h1 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">#</a></h1>
 <p>Normally, <a href="../netconvert.html">netconvert</a> and
 <a href="../netgenerate.html">netgenerate</a> generate traffic lights and
 programs for junctions during the computation of the networks. Still,
@@ -373,8 +391,9 @@ to run <a href="../sumo.html">sumo</a>/<a href="../sumo-gui.html">sumo-gui</a> w
 additional program definitions. Also,
 <a href="../sumo.html">sumo</a>/<a href="../sumo-gui.html">sumo-gui</a> allow loading
 definitions which describe when and how a set of traffic lights can
-switch from one program to another. Both will be discussed in the
-following subchapters. Another possibility is to edit traffic light plans
+<a href="#defining_program_switch_times_and_procedure">switch from one program to another</a>.
+Both will be discussed in the following subchapters.
+Another possibility is to edit traffic light plans
 visually in <a href="../Netedit/editModesNetwork.html#traffic_lights">netedit</a>.</p>
 <h1 id="automatically_generated_tls-programs">Automatically Generated TLS-Programs<a class="headerlink" href="#automatically_generated_tls-programs" title="Permanent link">#</a></h1>
 <ul>
@@ -1538,6 +1557,10 @@ The top row contains the phase index but it is possible to change this so it sho
 <p>When the mouse is placed over an active condition block, the numerical value of the condition will be shown.</p>
 </div>
 <p><img alt="track_phases.png" src="../images/track_phases.png" title="Track Phases Window" /></p>
+<h1 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">#</a></h1>
+<ul>
+<li><a href="../Tools/LiSuM.html">LiSUM</a> LiSuM is a middleware that couples LISA+ and SUMO, making it easier to use Software-in-the-Loop for existing virtual controller definitions (i.e. as used in VISSIM)execute more complex traffic</li>
+</ul>
                 </div>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -1545,7 +1568,7 @@ The top row contains the phase index but it is possible to change this so it sho
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 02 March 2026</i></small>
+            <br><small><i>This page was last edited on: 04 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
