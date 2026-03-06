@@ -129,19 +129,19 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 # Important Dates
 
 For papers:
-- ~~Recommended title and abstract submission deadline: **Sunday, January 11, 2026.**~~
-- ~~Paper submission deadline: **Sunday, March 01, 2026.**~~
+- ✅ ~~Recommended title and abstract submission deadline: **Sunday, January 11, 2026.**~~
+- ✅ ~~Paper submission deadline: **Sunday, March 01, 2026.**~~
 - Notification of acceptance/rejection: **First week of April 2026.**
 - Camera-ready paper deadline: **Sunday, May 10, 2026.**
 
 For posters:
-- ~~Mandatory title and abstract submission deadline: **Sunday, March 01, 2026.**~~
-- Notification of acceptance/rejection: **Thursday, March 05, 2026.**
+- ✅ ~~Mandatory title and abstract submission deadline: **Sunday, March 01, 2026.**~~
+- ✅ ~~Notification of acceptance/rejection: **Thursday, March 05, 2026.**~~
 - Final poster upload deadline: **Sunday, May 03, 2026.**
 
 For SUMO moments:
-- ~~Description submission deadline: **Sunday, March 01, 2026.**~~
-- Notification of acceptance/rejection: **Thursday, March 05, 2026.**
+- ✅ ~~Description submission deadline: **Sunday, March 01, 2026.**~~
+- Notification of acceptance/rejection: **Monday, March 09, 2026.**
 
 # Prices
 
@@ -224,6 +224,24 @@ This contribution begins with a brief and biased account of the origins of SUMO.
 <summary>About the Speaker</summary>
 Being a physicists by training, I have worked in transport for over 30 years, focusing strongly on modelling and simulation. I started out working with cellular automata as traffic simulation tools, but I have also touched most of the pillars of the 4-step algorithm, i.e. on travel demand, traffic assignment, traffic signal control, and assessment (mostly emissions). Recently, I have developed a strong focus on traffic safety, which strongly resonates with modelling and a bit of simulation, but even more so with data analysis. While I have written some papers myself, I have done more work reviewing and improving the work of others, including the students of my classes at TU Berlin and elsewhere.
 </details>
+
+---
+
+# Workshops
+
+During the conference, a series of workshops will take place in dedicated rooms alongside the main program. These sessions offer participants the opportunity to engage more deeply with specific topics in a smaller, interactive setting.
+
+## Digital Twins and Traffic Management in Cities
+
+This 2-hour workshop explores the potential of Digital Twins in urban traffic management. Participants will learn how real-time data integration and simulation models enable more adaptive, data-driven mobility systems. Interactive demonstrations highlight smart city case studies that use Digital Twins to optimise traffic flow, reduce environmental impact, and enhance safety. The session concludes with a discussion on technical challenges, scalability, and future directions within the SUMO ecosystem - defining practical next steps for intelligent urban mobility.
+
+## Navigating Complexity: Leveraging SUMO for Traffic Planning at Major Events
+
+Large-scale events create complex interactions between vehicular traffic and pedestrian flows that require holistic planning tools. This workshop explores the added value of coupling SUMO with JuPedSim to simulate both road networks and crowd dynamics simultaneously. We will discuss specific needs, data requirements, and pitfalls faced by authorities, event organizers, and transport providers in this context. Through interactive discussion, participants will collaboratively define best practices for using multi-modal simulation in approval workflows and operational planning.
+
+## Simulating Connected and Automated Mobility 
+
+Connected and Automated Mobility (CAM) relies on advanced and interoperable simulation frameworks to evaluate communication, cooperation, and automated driving functions in realistic traffic scenarios. This workshop presents current developments and applications based on Eclipse MOSAIC, Eclipse SUMO, Eclipse ADORe, as well as specialized CAM use cases implemented with SUMO’s libtraci interface. Short impulse talks and live demonstrations by tool developers provide practical insights into architectures, coupling strategies, and communication modeling (e.g., CAMs/CPMs, platooning). The session is designed to stimulate exchange between developers and users and to discuss integration strategies and future directions for CAM simulation toolchains.
 
 ---
 
