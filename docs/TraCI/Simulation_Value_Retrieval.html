@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 04 March 2026 11:58:33
-Last edit: 04 March 2026
+Build Date UTC : 06 March 2026 14:23:55
+Last edit: 06 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -169,6 +169,9 @@ Last edit: 04 March 2026
         <ul class="nav flex-column bs-sidenav">
             <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
             <li class="nav-item main"><a href="#command_0xab_get_simulation_variable">Command 0xab: Get Simulation Variable</a></li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#overview_retrievable_simulation_variables" class="nav-link">• Overview Retrievable Simulation Variables</a>
+                </li>
             <li class="nav-item main"><a href="#response_0xbb_simulation_variable">Response 0xbb: Simulation Variable</a></li>
             <li class="nav-item main"><a href="#extended_retrieval_messages">Extended retrieval messages</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
@@ -259,209 +262,199 @@ The type of the return
 value is also shown in the table. It is not possible to subscribe to
 position conversion (0x82), distance request (0x83), find route (0x86),
 find intermodal route (0x87) and all bus stop functions.</p>
-<center>
-**Overview Retrievable Simulation Variables**
-</center>
-
+<h3 id="overview_retrievable_simulation_variables">Overview Retrievable Simulation Variables<a class="headerlink" href="#overview_retrievable_simulation_variables" title="Permanent link">#</a></h3>
 <table>
 <thead>
-<tr class="header">
-<th><p>Variable</p></th>
-<th><p>ValueType</p></th>
-<th><p>Description</p></th>
-<th><p><a href="../TraCI/Interfacing_TraCI_from_Python.html">Python Method</a></p></th>
+<tr>
+<th>Variable</th>
+<th>ValueType</th>
+<th>Description</th>
+<th><a href="Interfacing_TraCI_from_Python.html">Python Method</a></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td><p>current simulation time (0x66)</p></td>
-<td><p>double</p></td>
-<td><p>Returns the current simulation time (in s)</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getTime">getTime</a></p></td>
+<tr>
+<td>current simulation time (0x66)</td>
+<td>double</td>
+<td>Returns the current simulation time (in s)</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getTime">getTime</a></td>
 </tr>
-<tr class="even">
-<td><p>current simulation time (0x70) (deprecated)</p></td>
-<td><p>int</p></td>
-<td><p>Returns the current simulation time (in ms)</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getCurrentTime">getCurrentTime</a></p></td>
+<tr>
+<td>current simulation time (0x70) (deprecated)</td>
+<td>int</td>
+<td>Returns the current simulation time (in ms)</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getCurrentTime">getCurrentTime</a></td>
 </tr>
-<tr class="odd">
-<td><p>number of loaded vehicles (id 0x71)</p></td>
-<td><p>int</p></td>
-<td><p>The number of vehicles which were loaded in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getLoadedNumber">getLoadedNumber</a></p></td>
+<tr>
+<td>number of loaded vehicles (id 0x71)</td>
+<td>int</td>
+<td>The number of vehicles which were loaded in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getLoadedNumber">getLoadedNumber</a></td>
 </tr>
-<tr class="even">
-<td><p>ids of loaded vehicles (id 0x72)</p></td>
-<td><p>stringList</p></td>
-<td><p>A list of ids of vehicles which were loaded in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getLoadedIDList">getLoadedIDList</a></p></td>
+<tr>
+<td>ids of loaded vehicles (id 0x72)</td>
+<td>stringList</td>
+<td>A list of ids of vehicles which were loaded in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getLoadedIDList">getLoadedIDList</a></td>
 </tr>
-<tr class="odd">
-<td><p>number of departed vehicles (id 0x73)</p></td>
-<td><p>int</p></td>
-<td><p>The number of vehicles which departed (were inserted into the road network) in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getDepartedNumber">getDepartedNumber</a></p></td>
+<tr>
+<td>number of departed vehicles (id 0x73)</td>
+<td>int</td>
+<td>The number of vehicles which departed (were inserted into the road network) in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getDepartedNumber">getDepartedNumber</a></td>
 </tr>
-<tr class="even">
-<td><p>ids of departed vehicles (id 0x74)</p></td>
-<td><p>stringList</p></td>
-<td><p>A list of ids of vehicles which departed (were inserted into the road network) in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getDepartedIDList">getDepartedIDList</a></p></td>
+<tr>
+<td>ids of departed vehicles (id 0x74)</td>
+<td>stringList</td>
+<td>A list of ids of vehicles which departed (were inserted into the road network) in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getDepartedIDList">getDepartedIDList</a></td>
 </tr>
-<tr class="odd">
-<td><p>number of vehicles that start to teleport<br />
-(id 0x75)</p></td>
-<td><p>int</p></td>
-<td><p>The number of vehicles which started to teleport in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStartingTeleportNumber">getStartingTeleportNumber</a></p></td>
+<tr>
+<td>number of vehicles <br/> that start to teleport (id 0x75)</td>
+<td>int</td>
+<td>The number of vehicles which started to teleport in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStartingTeleportNumber">getStartingTeleportNumber</a></td>
 </tr>
-<tr class="even">
-<td><p>ids of vehicles that start to teleport (id 0x76)</p></td>
-<td><p>stringList</p></td>
-<td><p>A list of ids of vehicles which started to teleport in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStartingTeleportIDList">getStartingTeleportIDList</a></p></td>
+<tr>
+<td>ids of vehicles <br/> that start to teleport (id 0x76)</td>
+<td>stringList</td>
+<td>A list of ids of vehicles which started to teleport in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStartingTeleportIDList">getStartingTeleportIDList</a></td>
 </tr>
-<tr class="odd">
-<td><p>number of vehicles that end being teleported<br />
-(id 0x77)</p></td>
-<td><p>int</p></td>
-<td><p>The number of vehicles which ended to be teleported in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getEndingTeleportNumber">getEndingTeleportNumber</a></p></td>
+<tr>
+<td>number of vehicles <br/> that end being teleported (id 0x77)</td>
+<td>int</td>
+<td>The number of vehicles which ended to be teleported in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getEndingTeleportNumber">getEndingTeleportNumber</a></td>
 </tr>
-<tr class="even">
-<td><p>ids of vehicles that end being teleported<br />
-(id 0x78)</p></td>
-<td><p>stringList</p></td>
-<td><p>A list of ids of vehicles which ended to be teleported in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getEndingTeleportIDList">getEndingTeleportIDList</a></p></td>
+<tr>
+<td>ids of vehicles <br/> that end being teleported (id 0x78)</td>
+<td>stringList</td>
+<td>A list of ids of vehicles which ended to be teleported in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getEndingTeleportIDList">getEndingTeleportIDList</a></td>
 </tr>
-<tr class="odd">
-<td><p>number of arrived vehicles (id 0x79)</p></td>
-<td><p>int</p></td>
-<td><p>The number of vehicles which arrived (have reached their destination and are removed from the road network) in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getArrivedNumber">getArrivedNumber</a></p></td>
+<tr>
+<td>number of arrived vehicles (id 0x79)</td>
+<td>int</td>
+<td>The number of vehicles which arrived (have reached their destination and are removed from the road network) in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getArrivedNumber">getArrivedNumber</a></td>
 </tr>
-<tr class="even">
-<td><p>ids of arrived vehicles (id 0x7a)</p></td>
-<td><p>stringList</p></td>
-<td><p>A list of ids of vehicles which arrived (have reached their destination and are removed from the road network) in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getArrivedIDList">getArrivedIDList</a></p></td>
+<tr>
+<td>ids of arrived vehicles (id 0x7a)</td>
+<td>stringList</td>
+<td>A list of ids of vehicles which arrived (have reached their destination and are removed from the road network) in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getArrivedIDList">getArrivedIDList</a></td>
 </tr>
-<tr class="odd">
-<td><p>network bounding box (id 0x7c)</p></td>
-<td><p>2D polygon</p></td>
-<td><p>The lower left and the upper right corner of the bounding box of the simulation network.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getNetBoundary">getNetBoundary</a></p></td>
+<tr>
+<td>network bounding box (id 0x7c)</td>
+<td>2D polygon</td>
+<td>The lower left and the upper right corner of the bounding box of the simulation network.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getNetBoundary">getNetBoundary</a></td>
 </tr>
-<tr class="even">
-<td><p>minimum number of vehicles that are still expected to leave the net (id 0x7d)</p></td>
-<td><p>int</p></td>
-<td><p>The number of vehicles which are in the net plus the ones still waiting to start. This number may be smaller than the actual number of vehicles still to come because of delayed route file parsing.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getMinExpectedNumber">getMinExpectedNumber</a></p></td>
+<tr>
+<td>minimum number of vehicles <br/> that are still expected to leave the net (id 0x7d)</td>
+<td>int</td>
+<td>The number of vehicles which are in the net plus the ones still waiting to start. This number may be smaller than the actual number of vehicles still to come because of delayed route file parsing.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getMinExpectedNumber">getMinExpectedNumber</a></td>
 </tr>
-<tr class="odd">
-<td><p>number of vehicles that begin a stop (id 0x68)</p></td>
-<td><p>int</p></td>
-<td><p>The number of vehicles that halted on a scheduled stop in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStopStartingVehiclesNumber">getStopStartingVehiclesNumber</a></p></td>
+<tr>
+<td>number of vehicles <br/> that begin a stop (id 0x68)</td>
+<td>int</td>
+<td>The number of vehicles that halted on a scheduled stop in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStopStartingVehiclesNumber">getStopStartingVehiclesNumber</a></td>
 </tr>
-<tr class="even">
-<td><p>ids of vehicles that begin a stop (id 0x69)</p></td>
-<td><p>stringList</p></td>
-<td><p>A list of ids of vehicles that halted on a scheduled stop in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStopStartingVehiclesIDList">getStopStartingVehiclesIDList</a></p></td>
+<tr>
+<td>ids of vehicles <br/> that begin a stop (id 0x69)</td>
+<td>stringList</td>
+<td>A list of ids of vehicles that halted on a scheduled stop in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStopStartingVehiclesIDList">getStopStartingVehiclesIDList</a></td>
 </tr>
-<tr class="odd">
-<td><p>number of vehicles that end a stop (id 0x6a)</p></td>
-<td><p>int</p></td>
-<td><p>The number of vehicles that begin to continue their journey, leaving a scheduled stop in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStopEndingVehiclesNumber">getStopEndingVehiclesNumber</a></p></td>
+<tr>
+<td>number of vehicles <br/> that end a stop (id 0x6a)</td>
+<td>int</td>
+<td>The number of vehicles that begin to continue their journey, leaving a scheduled stop in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStopEndingVehiclesNumber">getStopEndingVehiclesNumber</a></td>
 </tr>
-<tr class="even">
-<td><p>ids of vehicles that end a stop (id 0x6b)</p></td>
-<td><p>stringList</p></td>
-<td><p>A list of ids of vehicles that begin to continue their journey, leaving a scheduled stop in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStopEndingVehiclesIDList">getStopEndingVehiclesIDList</a></p></td>
+<tr>
+<td>ids of vehicles <br/> that end a stop (id 0x6b)</td>
+<td>stringList</td>
+<td>A list of ids of vehicles that begin to continue their journey, leaving a scheduled stop in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStopEndingVehiclesIDList">getStopEndingVehiclesIDList</a></td>
 </tr>
-<tr class="odd">
-<td><p>number of vehicles involved in a collision (id 0x80)</p></td>
-<td><p>int</p></td>
-<td><p>The number of vehicles that were involved in a collision in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getCollidingVehiclesNumber">getCollidingVehiclesNumber</a></p></td>
+<tr>
+<td>number of vehicles <br/> involved in a collision (id 0x80)</td>
+<td>int</td>
+<td>The number of vehicles that were involved in a collision in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getCollidingVehiclesNumber">getCollidingVehiclesNumber</a></td>
 </tr>
-<tr class="even">
-<td><p>ids of vehicles involved in a collision (id 0x81)</p></td>
-<td><p>stringList</p></td>
-<td><p>A list of ids of vehicles that were involved in a collision in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getCollidingVehiclesIDList">getCollidingVehiclesIDList</a></p></td>
+<tr>
+<td>ids of vehicles <br/> involved in a collision (id 0x81)</td>
+<td>stringList</td>
+<td>A list of ids of vehicles that were involved in a collision in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getCollidingVehiclesIDList">getCollidingVehiclesIDList</a></td>
 </tr>
-<tr class="odd">
-<td><p>number of vehicles that begin to be parked<br />
-(id 0x6c)</p></td>
-<td><p>int</p></td>
-<td><p>The number of vehicles that enter a parking position in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getParkingStartingVehiclesNumber">getParkingStartingVehiclesNumber</a></p></td>
+<tr>
+<td>number of vehicles <br/> that begin to be parked (id 0x6c)</td>
+<td>int</td>
+<td>The number of vehicles that enter a parking position in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getParkingStartingVehiclesNumber">getParkingStartingVehiclesNumber</a></td>
 </tr>
-<tr class="even">
-<td><p>ids of vehicles that begin to be parked<br />
-(id 0x6d)</p></td>
-<td><p>stringList</p></td>
-<td><p>A list of ids of vehicles that enter a parking position in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getParkingStartingVehiclesIDList">getParkingStartingVehiclesIDList</a></p></td>
+<tr>
+<td>ids of vehicles <br/> that begin to be parked (id 0x6d)</td>
+<td>stringList</td>
+<td>A list of ids of vehicles that enter a parking position in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getParkingStartingVehiclesIDList">getParkingStartingVehiclesIDList</a></td>
 </tr>
-<tr class="odd">
-<td><p>number of vehicles that end to be parked<br />
-(id 0x6e)</p></td>
-<td><p>int</p></td>
-<td><p>The number of vehicles that begin to continue their journey, leaving a scheduled parking in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getParkingEndingVehiclesNumber">getParkingEndingVehiclesNumber</a></p></td>
+<tr>
+<td>number of vehicles <br/> that end to be parked (id 0x6e)</td>
+<td>int</td>
+<td>The number of vehicles that begin to continue their journey, leaving a scheduled parking in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getParkingEndingVehiclesNumber">getParkingEndingVehiclesNumber</a></td>
 </tr>
-<tr class="even">
-<td><p>ids of vehicles that end being parked (id 0x6f)</p></td>
-<td><p>stringList</p></td>
-<td><p>A list of ids of vehicles that begin to continue their journey, leaving a scheduled parking in this time step.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getParkingEndingVehiclesIDList">getParkingEndingVehiclesIDList</a></p></td>
+<tr>
+<td>ids of vehicles <br/> that end being parked (id 0x6f)</td>
+<td>stringList</td>
+<td>A list of ids of vehicles that begin to continue their journey, leaving a scheduled parking in this time step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getParkingEndingVehiclesIDList">getParkingEndingVehiclesIDList</a></td>
 </tr>
-<tr class="odd">
-<td><p>bus stop waiting (id 0x67)</p></td>
-<td><p>int</p></td>
-<td><p>Get the total number of waiting persons at the named bus stop (deprecated, use busstop.getPersonCount instead).</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getBusStopWaiting">getBusStopWaiting</a></p></td>
+<tr>
+<td>bus stop waiting (id 0x67)</td>
+<td>int</td>
+<td>Get the total number of waiting persons at the named bus stop (deprecated, use busstop.getPersonCount instead).</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getBusStopWaiting">getBusStopWaiting</a></td>
 </tr>
-<tr class="even">
-<td><p>bus stop waiting ids (id 0xef)</p></td>
-<td><p>stringList</p></td>
-<td><p>Get the ids of waiting persons at the named bus stop (deprecated, use busstop.getPersonIDs instead).</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getBusStopWaitingIDList">getBusStopWaitingIDList</a></p></td>
+<tr>
+<td>bus stop waiting ids (id 0xef)</td>
+<td>stringList</td>
+<td>Get the ids of waiting persons at the named bus stop (deprecated, use busstop.getPersonIDs instead).</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getBusStopWaitingIDList">getBusStopWaitingIDList</a></td>
 </tr>
-<tr class="odd">
-<td><p>delta T (id 0x7b)</p></td>
-<td><p>double</p></td>
-<td><p>Returns the length of one simulation step in seconds.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getDeltaT">getDeltaT</a></p></td>
+<tr>
+<td>delta T (id 0x7b)</td>
+<td>double</td>
+<td>Returns the length of one simulation step in seconds.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getDeltaT">getDeltaT</a></td>
 </tr>
-<tr class="even">
-<td><p>parameter (0x7e)</p></td>
-<td><p>string</p></td>
-<td><p>Returns the value for the given string parameter.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getParameter">getParameter</a></p></td>
+<tr>
+<td>parameter (0x7e)</td>
+<td>string</td>
+<td>Returns the value for the given string parameter.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getParameter">getParameter</a></td>
 </tr>
-<tr class="odd">
-<td><p>scale (id 0x8e)</p></td>
-<td><p>double</p></td>
-<td><p>Returns the traffic scaling factor.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getScale">getScale</a></p></td>
+<tr>
+<td>scale (id 0x8e)</td>
+<td>double</td>
+<td>Returns the traffic scaling factor.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getScale">getScale</a></td>
 </tr>
-<tr class="even">
-<td><p>option (0x3f)</p></td>
-<td><p>string</p></td>
-<td><p>Returns the value of one of the global SUMO options.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getOption">getOption</a></p></td>
+<tr>
+<td>option (0x3f)</td>
+<td>string</td>
+<td>Returns the value of one of the global SUMO options.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getOption">getOption</a></td>
 </tr>
 </tbody>
 </table>
-
 <h2 id="response_0xbb_simulation_variable">Response 0xbb: Simulation Variable<a class="headerlink" href="#response_0xbb_simulation_variable" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -490,57 +483,52 @@ find intermodal route (0x87) and all bus stop functions.</p>
 
 <table>
 <thead>
-<tr class="header">
-<th><p>Variable</p></th>
-<th><p>Request ValueType</p></th>
-<th><p>Response ValueType</p></th>
-<th><p>Description</p></th>
-<th><p><a href="../TraCI/Interfacing_TraCI_from_Python.html">Python Method</a></p></th>
+<tr>
+<th>Variable</th>
+<th>Request ValueType</th>
+<th>Response ValueType</th>
+<th>Description</th>
+<th><a href="Interfacing_TraCI_from_Python.html">Python Method</a></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td><p>position conversion (0x82)</p></td>
-<td><p>compound, see below</p></td>
-<td><p>Position, as wished</p></td>
-<td><p>Reads a position information and returns it converted into the given representation.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-convert2D">convert2D</a><br />
-<a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-convert3D">convert3D</a><br />
-<a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-convertGeo">convertGeo</a><br />
-<a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-convertRoad">convertRoad</a></p></td>
+<tr>
+<td>position conversion (0x82)</td>
+<td>compound, see below</td>
+<td>Position, as wished</td>
+<td>Reads a position information and returns it converted into the given representation.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-convert2D">convert2D</a> <a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-convert3D">convert3D</a> <a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-convertGeo">convertGeo</a> <a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-convertRoad">convertRoad</a></td>
 </tr>
-<tr class="even">
-<td><p>distance request (0x83)</p></td>
-<td><p>compound, see below</p></td>
-<td><p>double</p></td>
-<td><p>Reads two positions and an indicator whether the air or the driving distance shall be computed. Returns the according distance.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getDistanceRoad">getDistanceRoad</a><br />
-<a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getDistance2D">getDistance2D</a></p></td>
+<tr>
+<td>distance request (0x83)</td>
+<td>compound, see below</td>
+<td>double</td>
+<td>Reads two positions and an indicator whether the air or the driving distance shall be computed. Returns the according distance.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getDistanceRoad">getDistanceRoad</a> <a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getDistance2D">getDistance2D</a></td>
 </tr>
-<tr class="odd">
-<td><p>find route (0x86)</p></td>
-<td><p>compound, see below</p></td>
-<td><p>compound, see below</p></td>
-<td><p>Reads origin and destination edge together with some vehicle parameters and computes the currently fastest driving route for the vehicle (for pedestrians / passengers use find intermodal route).</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-findRoute">findRoute</a></p></td>
+<tr>
+<td>find route (0x86)</td>
+<td>compound, see below</td>
+<td>compound, see below</td>
+<td>Reads origin and destination edge together with some vehicle parameters and computes the currently fastest driving route for the vehicle (for pedestrians / passengers use find intermodal route).</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-findRoute">findRoute</a></td>
 </tr>
-<tr class="even">
-<td><p>find intermodal route (0x87)</p></td>
-<td><p>compound, see below</p></td>
-<td><p>compound, see below</p></td>
-<td><p>Reads origin and destination position together with usable modes and other person parameters and computes the currently fastest route for the person using the available modes.</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-findIntermodalRoute">findIntermodalRoute</a></p></td>
+<tr>
+<td>find intermodal route (0x87)</td>
+<td>compound, see below</td>
+<td>compound, see below</td>
+<td>Reads origin and destination position together with usable modes and other person parameters and computes the currently fastest route for the person using the available modes.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-findIntermodalRoute">findIntermodalRoute</a></td>
 </tr>
-<tr class="odd">
-<td><p>get collisions (0x23)</p></td>
-<td><p>-</p></td>
-<td><p>compound, see below</p></td>
-<td><p>Retrieves details on all collision events in the last time step. Collision detection is disabled by default (**--collision.action none**).</p></td>
-<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getCollisions">getCollisions</a></p></td>
+<tr>
+<td>get collisions (0x23)</td>
+<td>-</td>
+<td>compound, see below</td>
+<td>Retrieves details on all collision events in the last time step. Collision detection is disabled by default (<strong>--collision.action none</strong>).</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getCollisions">getCollisions</a></td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="command_0x82_position_conversion">Command 0x82: Position Conversion<a class="headerlink" href="#command_0x82_position_conversion" title="Permanent link">#</a></h3>
 <p>The request needs the following parameter:</p>
 <table>
@@ -880,7 +868,7 @@ are supported:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 04 March 2026</i></small>
+            <br><small><i>This page was last edited on: 06 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

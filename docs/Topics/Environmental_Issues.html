@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 04 March 2026 11:58:33
-Last edit: 04 March 2026
+Build Date UTC : 06 March 2026 14:23:55
+Last edit: 06 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -273,64 +273,7 @@ the vehicle's <code>emissionClass</code>; if the vehicle
 belongs to a passenger emission class, the noise parameter for a
 passenger vehicle are used, otherwise those of a heavy duty vehicle.</p>
 <h1 id="models">Models<a class="headerlink" href="#models" title="Permanent link">#</a></h1>
-<p>SUMO includes the following emission models:</p>
-<ul>
-<li><a href="../Models/Emissions/HBEFA-based.html">HBEFA v2.1-based</a>: A
-  continuous reformulation of the <a href="https://www.hbefa.net/">HBEFA</a> <a href="#references">[1]</a>
-  v2.1 emissions data base;</li>
-<li><a href="../Models/Emissions/PHEMlight.html">PHEMlight</a>, a derivation of
-  the original
-  <a href="https://www.itna.tugraz.at/en/research/areas/em/">PHEM</a><a href="#references">[2]</a>
-  emission model.</li>
-</ul>
-<p>Both models implement different vehicle emission classes. These classes
-can be assigned to vehicles by using the vehicle type attribute
-"<code>emissionClass</code>" (see <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#vehicle_emission_classes">Vehicle Emission
-Classes</a>).
-Available emission classes can be found within the emission model
-descriptions (<a href="../Models/Emissions/HBEFA-based.html">HBEFA
-v2.1-based</a>,
-<a href="../Models/Emissions/PHEMlight.html">PHEMlight</a>).</p>
-<p>The noise model is based on HARMONOISE.</p>
-<center>
-
-**Table: pollutants covered by models**
-
-<table>
-  <tr>
-    <th class="tg-amwm" rowspan="2">model</th>
-    <th class="tg-amwm" colspan="6">pollutant / measurement</th>
-  </tr>
-  <tr>
-    <td class="tg-amwm">CO2</td>
-    <td class="tg-amwm">CO</td>
-    <td class="tg-amwm">HC</td>
-    <td class="tg-amwm">NOx</td>
-    <td class="tg-amwm">PMx</td>
-    <td class="tg-amwm">fuel</td>
-  </tr>
-  <tr>
-    <td class="tg-0lax"><a href="../Models/Emissions/HBEFA-based.html">HBEFA v2.1-based</a></td>
-    <td class="tg-baqh">x</td>
-    <td class="tg-baqh">x</td>
-    <td class="tg-baqh">x</td>
-    <td class="tg-baqh">x</td>
-    <td class="tg-baqh">x</td>
-    <td class="tg-baqh">x</td>
-  </tr>
-  <tr>
-    <td class="tg-0lax"><a href="../Models/Emissions/PHEMlight.html">PHEMlight</a></td>
-    <td class="tg-baqh">x</td>
-    <td class="tg-baqh">x</td>
-    <td class="tg-baqh">x</td>
-    <td class="tg-baqh">x</td>
-    <td class="tg-baqh">x</td>
-    <td class="tg-baqh">x</td>
-  </tr>
-</table>
-
-</center>
-
+<p>SUMO includes <a href="../Models/Emissions.html">several emission models</a> and a noise model based on HARMONOISE.</p>
 <h1 id="research">Research<a class="headerlink" href="#research" title="Permanent link">#</a></h1>
 <h2 id="emissions_modelling">Emissions Modelling<a class="headerlink" href="#emissions_modelling" title="Permanent link">#</a></h2>
 <p>The emission models implemented in <a href="../sumo.html">sumo</a> re-use
@@ -479,7 +422,7 @@ simulate and evaluate some of such actions in his Master thesis<a href="#referen
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 04 March 2026</i></small>
+            <br><small><i>This page was last edited on: 06 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

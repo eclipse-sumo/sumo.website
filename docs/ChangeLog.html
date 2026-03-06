@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 04 March 2026 11:58:33
-Last edit: 04 March 2026
+Build Date UTC : 06 March 2026 14:23:55
+Last edit: 06 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -281,6 +281,7 @@ Last edit: 04 March 2026
 <li>stopping on a long busStop before reaching the designated spot due to jamming now permits passengers to exit if the vehicle is fully within the busStop <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17635" title="GitHub Issue eclipse-sumo/sumo #17635">#17635</a></li>
 <li>Fixed failure to group taxi passengers when the dispatch-period is low <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17644" title="GitHub Issue eclipse-sumo/sumo #17644">#17644</a></li>
 <li>Fixed bug where imprecise driving caused vehicles to enter a slower lane with excessive speed (this could cause negative timeLoss). <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/15435" title="GitHub Issue eclipse-sumo/sumo #15435">#15435</a></li>
+<li>less crashes with parquet output (especially summary output) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17656" title="GitHub Issue eclipse-sumo/sumo #17656">#17656</a></li>
 </ul>
 </li>
 </ul>
@@ -390,6 +391,10 @@ Last edit: 04 March 2026
 <li>visum_convertXMLRoute.py: now use demand time range when interpreting volume <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17667" title="GitHub Issue eclipse-sumo/sumo #17667">#17667</a></li>
 </ul>
 </li>
+</ul>
+<ul>
+<li>no more HTML tables in the docs</li>
+<li>the build configuration now uses consistently options like ENABLE_FOX to enable or disable optional features <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17677" title="GitHub Issue eclipse-sumo/sumo #17677">#17677</a></li>
 </ul>
 <h2 id="version_1260_29012026">Version 1.26.0 (29.01.2026)<a class="headerlink" href="#version_1260_29012026" title="Permanent link">#</a></h2>
 <h3 id="bugfixes_1">Bugfixes<a class="headerlink" href="#bugfixes_1" title="Permanent link">#</a></h3>
@@ -1781,7 +1786,7 @@ Last edit: 04 March 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 04 March 2026</i></small>
+            <br><small><i>This page was last edited on: 06 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

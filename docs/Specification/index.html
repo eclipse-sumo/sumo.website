@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 04 March 2026 11:58:33
-Last edit: 04 March 2026
+Build Date UTC : 06 March 2026 14:23:55
+Last edit: 06 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -436,186 +436,185 @@ this type belong to. All these parameters are identical among all
 vehicles of a type.</p>
 <table>
 <thead>
-<tr class="header">
-<th><p>Attribute</p></th>
-<th><p>Type</p></th>
-<th><p>Range</p></th>
-<th><p>Default</p></th>
-<th><p>Remark</p></th>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Range</th>
+<th>Default</th>
+<th>Remark</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td><p>id</p></td>
-<td><p>string</p></td>
-<td><p>valid XML ids</p></td>
-<td><p>-</p></td>
-<td><p>This attribute is mandatory.</p></td>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>valid XML ids</td>
+<td>-</td>
+<td>This attribute is mandatory.</td>
 </tr>
-<tr class="even">
-<td><p>vClass</p></td>
-<td><p>string</p></td>
-<td><p>list of category ids</p></td>
-<td><p>empty list</p></td>
+<tr>
+<td>vClass</td>
+<td>string</td>
+<td>list of category ids</td>
+<td>empty list</td>
 <td></td>
 </tr>
-<tr class="odd">
-<td><p>accel</p></td>
-<td><p>float(m/s<sup>2</sup>)</p></td>
-<td><p>≥0</p></td>
-<td><p>2.6</p></td>
+<tr>
+<td>accel</td>
+<td>float(m/s<sup>2</sup>)</td>
+<td>≥0</td>
+<td>2.6</td>
 <td></td>
 </tr>
-<tr class="even">
-<td><p>decel</p></td>
-<td><p>float(m/s<sup>2</sup>)</p></td>
-<td><p>≥0</p></td>
-<td><p>4.5</p></td>
+<tr>
+<td>decel</td>
+<td>float(m/s<sup>2</sup>)</td>
+<td>≥0</td>
+<td>4.5</td>
 <td></td>
 </tr>
-<tr class="odd">
-<td><p>sigma</p></td>
-<td><p>float</p></td>
-<td><p>0≤sigma≤1</p></td>
-<td><p>0.5</p></td>
+<tr>
+<td>sigma</td>
+<td>float</td>
+<td>0≤sigma≤1</td>
+<td>0.5</td>
 <td></td>
 </tr>
-<tr class="even">
-<td><p>length</p></td>
-<td><p>float(m)</p></td>
-<td><p>&gt;0</p></td>
-<td><p>5</p></td>
-<td><p>The physical length of the vehicle</p></td>
+<tr>
+<td>length</td>
+<td>float(m)</td>
+<td>&gt;0</td>
+<td>5</td>
+<td>The physical length of the vehicle</td>
 </tr>
-<tr class="odd">
-<td><p>minGap</p></td>
-<td><p>float(m)</p></td>
-<td><p>&gt;0</p></td>
-<td><p>2.5</p></td>
-<td><p>The minimum gap between this vehicle and the vehicle before it</p></td>
+<tr>
+<td>minGap</td>
+<td>float(m)</td>
+<td>&gt;0</td>
+<td>2.5</td>
+<td>The minimum gap between this vehicle and the vehicle before it</td>
 </tr>
-<tr class="even">
-<td><p>maxSpeed</p></td>
-<td><p>float(m/s)</p></td>
-<td><p>&gt;0</p></td>
-<td><p>70</p></td>
+<tr>
+<td>maxSpeed</td>
+<td>float(m/s)</td>
+<td>&gt;0</td>
+<td>70</td>
 <td></td>
 </tr>
-<tr class="odd">
-<td><p>color</p></td>
-<td>&lt;COLOR&gt;</td>
+<tr>
+<td>color</td>
+<td>\&lt;COLOR&gt;</td>
 <td></td>
 <td></td>
-<td><p>the color to use for vehicles of this type.</p></td>
+<td>the color to use for vehicles of this type.</td>
 </tr>
-<tr class="even">
-<td><p>tau</p></td>
-<td><p>float</p></td>
-<td><p>&gt;0</p></td>
-<td><p>1</p></td>
+<tr>
+<td>tau</td>
+<td>float</td>
+<td>&gt;0</td>
+<td>1</td>
 <td></td>
 </tr>
-<tr class="odd">
-<td style="background:red;"><p>carFollowModel</p></td>
-<td><p>string</p></td>
+<tr>
+<td>carFollowModel</td>
+<td>string</td>
+<td>"Krauss", "IDM", ...</td>
+<td>"Krauss"</td>
+<td><a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#car-following-models">model used for car following</a></td>
+</tr>
+<tr>
+<td>laneChangeModel</td>
+<td>string</td>
+<td>"DK2008", "LC2013", "JE2013"</td>
+<td>"LC2013"</td>
+<td>model used for lane changing behavior</td>
+</tr>
+<tr>
+<td>speedFactor</td>
+<td>float/distribution</td>
+<td>&gt;0</td>
+<td>1</td>
+<td>the factor by which the driver multiplies the speed read from street signs to estimate "real" maximum allowed speed</td>
+</tr>
+<tr>
+<td>speedDev</td>
+<td>float</td>
+<td>≥0</td>
+<td>0</td>
+<td>the standard deviation of the speed factor (deprecated in favor of a real distribution).</td>
+</tr>
+<tr>
+<td>emissionClass</td>
+<td>string</td>
+<td></td>
+<td>PC_petrol_Euro-4</td>
+<td>the emission class, see <a href="../Models/Emissions.html">Models/Emissions</a>.</td>
+</tr>
+<tr>
+<td>probability</td>
+<td>float</td>
+<td>&gt;0</td>
+<td>1</td>
+<td>this is only useful in distributions</td>
+</tr>
+<tr>
+<td>guiShape</td>
+<td>string (enum)</td>
+<td></td>
+<td>"unknown"</td>
+<td>How this vehicle is rendered</td>
+</tr>
+<tr>
+<td>width</td>
+<td>float</td>
+<td>&gt;0</td>
+<td>2.0</td>
+<td>The vehicle's width [m] (only used for drawing);</td>
+</tr>
+<tr>
+<td>imgFile</td>
+<td>string</td>
 <td></td>
 <td></td>
-<td style="background:red;"><p>not yet implemented (see #663")</p></td>
+<td>Image file for rendering vehicles of this type (should be grayscale to allow functional coloring);</td>
 </tr>
-<tr class="even">
-<td><p>laneChangeModel</p></td>
-<td><p>string</p></td>
-<td><p>"DK2008", "LC2013", "JE2013"</p></td>
-<td><p>"LC2013"</p></td>
-<td><p>model used for lane changing behavior</p></td>
-</tr>
-<tr class="odd">
-<td><p>speedFactor</p></td>
-<td><p>float/distribution</p></td>
-<td><p>&gt;0</p></td>
-<td><p>1</p></td>
-<td><p>the factor by which the driver multiplies the speed read from street signs to estimate "real" maximum allowed speed</p></td>
-</tr>
-<tr class="even">
-<td><p>speedDev</p></td>
-<td><p>float</p></td>
-<td><p>≥0</p></td>
-<td><p>0</p></td>
-<td><p>the standard deviation of the speed factor (deprecated in favor of a real distribution).</p></td>
-</tr>
-<tr class="odd">
-<td><p>emissionClass</p></td>
-<td><p>string</p></td>
-<td></td>
-<td><p>P_7_7</p></td>
-<td><p>the emission class, see <a href="../Models/Emissions.html">Models/Emissions</a>.</p></td>
-</tr>
-<tr class="even">
-<td><p>probability</p></td>
-<td><p>float</p></td>
-<td><p>&gt;0</p></td>
-<td><p>1</p></td>
-<td><p>this is only useful in distributions</p></td>
-</tr>
-<tr class="odd">
-<td><p>guiShape</p></td>
-<td><p>string (enum)</p></td>
-<td></td>
-<td><p>"unknown"</p></td>
-<td><p>How this vehicle is rendered</p></td>
-</tr>
-<tr class="even">
-<td><p>width</p></td>
-<td><p>float</p></td>
-<td><p>&gt;0</p></td>
-<td><p>2.0</p></td>
-<td><p>The vehicle's width [m] (only used for drawing);</p></td>
-</tr>
-<tr class="odd">
-<td><p>imgFile</p></td>
-<td><p>string</p></td>
+<tr>
+<td>osgFile</td>
+<td>string</td>
 <td></td>
 <td></td>
-<td><p>Image file for rendering vehicles of this type (should be grayscale to allow functional coloring);</p></td>
+<td>3D-Model file rendering vehicles of this type - internal experimental branch;</td>
 </tr>
-<tr class="even">
-<td style="background:yellow;"><p>osgFile</p></td>
-<td><p>string</p></td>
-<td></td>
-<td></td>
-<td><p>3D-Model file rendering vehicles of this type - internal experimental branch;</p></td>
+<tr>
+<td>personCapacity</td>
+<td>int</td>
+<td>≥0</td>
+<td>4</td>
+<td>the number of persons (excluding an autonomous driver) the vehicle can transport</td>
 </tr>
-<tr class="odd">
-<td><p>personCapacity</p></td>
-<td><p>int</p></td>
-<td><p>≥0</p></td>
-<td><p>4</p></td>
-<td><p>the number of persons (excluding an autonomous driver) the vehicle can transport</p></td>
+<tr>
+<td>containerCapacity</td>
+<td>int</td>
+<td>≥0</td>
+<td>0</td>
+<td>the number of containers the vehicle can transport</td>
 </tr>
-<tr class="even">
-<td><p>containerCapacity</p></td>
-<td><p>int</p></td>
-<td><p>≥0</p></td>
-<td><p>0</p></td>
-<td><p>the number of containers the vehicle can transport</p></td>
+<tr>
+<td>boardingDuration</td>
+<td>float</td>
+<td>≥0</td>
+<td>0.5</td>
+<td>the time required by a person to board the vehicle</td>
 </tr>
-<tr class="odd">
-<td><p>boardingDuration</p></td>
-<td><p>float</p></td>
-<td><p>≥0</p></td>
-<td><p>0.5</p></td>
-<td><p>the time required by a person to board the vehicle</p></td>
-</tr>
-<tr class="even">
-<td><p>loadingDuration</p></td>
-<td><p>float</p></td>
-<td><p>≥0</p></td>
-<td><p>30.0</p></td>
-<td><p>the time required to load a container onto the vehicle</p></td>
+<tr>
+<td>loadingDuration</td>
+<td>float</td>
+<td>≥0</td>
+<td>30.0</td>
+<td>the time required to load a container onto the vehicle</td>
 </tr>
 </tbody>
 </table>
-
 <p>There is a default type defined with the id "DEFAULT_VEHTYPE", having
 all the default parameters above, which may be redefined once but only
 if it was not used beforehand (either by a vehicle or as a refId).
@@ -1173,7 +1172,7 @@ equal to the destination point, the vehicle gets removed in this step.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 04 March 2026</i></small>
+            <br><small><i>This page was last edited on: 06 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

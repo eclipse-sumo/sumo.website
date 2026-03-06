@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 04 March 2026 11:58:33
-Last edit: 04 March 2026
+Build Date UTC : 06 March 2026 14:23:55
+Last edit: 06 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -263,66 +263,45 @@ represented. Some facts and needs (unsorted):</p>
 <h2 id="possible_descriptions">Possible Descriptions<a class="headerlink" href="#possible_descriptions" title="Permanent link">#</a></h2>
 <table>
 <thead>
-<tr class="header">
-<th><p>Index</p></th>
-<th><p>Sample</p></th>
-<th><p>pros/cons</p></th>
+<tr>
+<th>Index</th>
+<th>Sample</th>
+<th>pros/cons</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td><p>A</p></td>
-<td><p>&lt;vtype cfModel="xxx" xxxParam1="..." xxxParam2="..." ...</p></td>
-<td><ul>
-<li>(-) hard to verify - parameter change in dependence to the value of "cfModel"</li>
-</ul></td>
+<tr>
+<td>A</td>
+<td><code>&lt;vtype cfModel="xxx" xxxParam1="..." xxxParam2="..." ...</code></td>
+<td><ul><li>(-) hard to verify - parameter change in dependence to the value of "cfModel"</li></ul></td>
 </tr>
-<tr class="even">
-<td><p>B</p></td>
-<td><p>&lt;vtype-XXX xxxParam1="..." xxxParam2="..." ...</p></td>
-<td><ul>
-<li>(-) large number of different elements needed</li>
-</ul></td>
+<tr>
+<td>B</td>
+<td><code>&lt;vtype-XXX xxxParam1="..." xxxParam2="..." ...</code></td>
+<td><ul><li>(-) large number of different elements needed</li></ul></td>
 </tr>
-<tr class="odd">
-<td><p>C</p></td>
-<td><p>&lt;cfmodel id="#id" model="xxx" param1="..." param2="..." .../&gt;<br>
-    &lt;vtype cfModelId="#id" .../&gt;</p></td>
-<td><ul>
-<li>(+) straight forward; many combinations possible</li>
-<li>(+) is similar to how every vehicle references its vtype</li>
-<li>(-) hard to verify - parameter change in dependence to the value of "cfModel"</li>
-</ul></td>
+<tr>
+<td>C</td>
+<td><code>&lt;cfmodel id="#id" model="xxx" param1="..." param2="..." .../&gt;</code> <br> <code>&lt;vtype cfModelId="#id" .../&gt;</code></td>
+<td><ul><li>(+) straight forward; many combinations possible</li><li>(+) is similar to how every vehicle references its vtype</li><li>(-) hard to verify - parameter change in dependence to the value of "cfModel"</li></ul></td>
 </tr>
-<tr class="even">
-<td><p>D</p></td>
-<td><p>&lt;vtype cfModel="xxx" param1="..." param2="..." ...&gt;</p></td>
-<td><ul>
-<li>(--) parameter sets differ between models</li>
-<li>(-) hard to verify - parameter change in dependence to the value of "cfModel"</li>
-</ul></td>
+<tr>
+<td>D</td>
+<td><code>&lt;vtype cfModel="xxx" param1="..." param2="..." ...&gt;</code></td>
+<td><ul><li>(--) parameter sets differ between models</li><li>(-) hard to verify - parameter change in dependence to the value of "cfModel"</li></ul></td>
 </tr>
-<tr class="odd">
-<td><p>E</p></td>
-<td><p>&lt;vtype ...&gt;<br>&lt;cfmodel model="xxx" param1="..." param2="..." .../&gt;</vtype></p></td>
-<td><ul>
-<li>(+) straight forward</li>
-<li>(-) hard to verify - parameter change in dependence to the value of "cfModel"</li>
-<li><strong>1 vote (Mayer)</strong></li>
-</ul></td>
+<tr>
+<td>E</td>
+<td><code>&lt;vtype ...&gt;</code> <br> <code>&lt;cfmodel model="xxx" param1="..." param2="..." .../&gt;</code></td>
+<td><ul><li>(+) straight forward</li><li>(-) hard to verify - parameter change in dependence to the value of "cfModel"</li><li><strong>1 vote (Mayer)</strong></li></ul></td>
 </tr>
-<tr class="even">
-<td><p>F</p></td>
-<td><p>&lt;vtype ...&gt;<br>&lt;cfmodel-XXX model="xxx" param1="..." param2="..." .../&gt;</vtype></p></td>
-<td><ul>
-<li>(+) straight forward</li>
-<li>(-) large number of different elements needed</li>
-<li><strong>2 votes (Behrisch, Krajzewicz)</strong></li>
-</ul></td>
+<tr>
+<td>F</td>
+<td><code>&lt;vtype ...&gt;</code> <br> <code>&lt;cfmodel-XXX model="xxx" param1="..." param2="..." .../&gt;</code></td>
+<td><ul><li>(+) straight forward</li><li>(-) large number of different elements needed</li><li><strong>2 votes (Behrisch, Krajzewicz)</strong></li></ul></td>
 </tr>
 </tbody>
 </table>
-
 <h2 id="currently_chosen_description">(currently) Chosen Description<a class="headerlink" href="#currently_chosen_description" title="Permanent link">#</a></h2>
 <p>After some talks, the following description of vehicle types was chosen:</p>
 <div class="codehilite"><pre><span></span><code><span class="nt">&lt;vtype</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
@@ -449,7 +428,7 @@ complete vehicle type/model descriptions.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 04 March 2026</i></small>
+            <br><small><i>This page was last edited on: 06 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
