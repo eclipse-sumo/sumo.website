@@ -243,6 +243,10 @@ Large-scale events create complex interactions between vehicular traffic and ped
 
 Connected and Automated Mobility (CAM) relies on advanced and interoperable simulation frameworks to evaluate communication, cooperation, and automated driving functions in realistic traffic scenarios. This workshop presents current developments and applications based on Eclipse MOSAIC, Eclipse SUMO, Eclipse ADORe, as well as specialized CAM use cases implemented with SUMO’s libtraci interface. Short impulse talks and live demonstrations by tool developers provide practical insights into architectures, coupling strategies, and communication modeling (e.g., CAMs/CPMs, platooning). The session is designed to stimulate exchange between developers and users and to discuss integration strategies and future directions for CAM simulation toolchains.
 
+## Using SUMO for Railway simulations
+
+SUMO supports signal infrastructure models, train dynamics and automated operational response mechanisms such as overtaking, track changes and stop cancellations. How do the current Features and Limitation fit into the simulation needs in railway research and strategic and operational planning. The goal is share insights, inspire new projects and shape the future development trajectory.
+
 ---
 
 # Social Event
