@@ -141,7 +141,7 @@ For posters:
 
 For SUMO moments:
 - ✅ ~~Description submission deadline: **Sunday, March 01, 2026.**~~
-- Notification of acceptance/rejection: **Monday, March 09, 2026.**
+- ✅ ~~Notification of acceptance/rejection: **Monday, March 09, 2026.**~~
 
 # Prices
 
