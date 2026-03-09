@@ -247,6 +247,10 @@ Connected and Automated Mobility (CAM) relies on advanced and interoperable simu
 
 SUMO supports signal infrastructure models, train dynamics and automated operational response mechanisms such as overtaking, track changes and stop cancellations. How do the current Features and Limitation fit into the simulation needs in railway research and strategic and operational planning. The goal is share insights, inspire new projects and shape the future development trajectory.
 
+## Using SUMO for simulating innovative public transportation systems
+
+Traffic simulation is the major tool to convince technical people and communities alike to follow different paths in enhancing their public transportation systems. SUMO supports them with the ability to model rail, road and water based transportation modes, importing existing networks and schedules and editing them in a flexible way. The resulting simulations cover the whole trip chain of the people involved showing bottlenecks and accumulating delays due to congestion on roads but also on train platforms and how to avoid them. The topic of the workshop will be to evaluate the strengths and room for improvements of SUMO in public transportation research and which new modes still need more coverage. The goal is share insights, inspire new projects and shape the future development trajectory.
+
 ---
 
 # Social Event
