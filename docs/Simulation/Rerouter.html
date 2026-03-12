@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 09 March 2026 16:21:08
-Last edit: 09 March 2026
+Build Date UTC : 12 March 2026 11:25:01
+Last edit: 12 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -577,7 +577,7 @@ first applicable value is used):</p>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is possible to combine <strong>closingReroute</strong> and <strong>destProbReroute</strong> within the same interval. In this case, only vehicles which cannot reach their original destination draw new destinations from the probability distribution.</p>
+<p>It is possible to combine <strong>closingReroute</strong> and <strong>destProbReroute</strong> within the same interval. In this case, only vehicles which cannot reach their original destination (because it is closed or disconnected by the closing) draw new destinations from the probability distribution. Alternative destinations will be drawn until a reachable destination is found or the special value <code>terminateRoute</code> (see below) is drawn. The latter will force the vehicle to wait before the closed edge until the closing ends.</p>
 </div>
 <h3 id="special_destination_values">Special Destination Values<a class="headerlink" href="#special_destination_values" title="Permanent link">#</a></h3>
 <ul>
@@ -929,7 +929,7 @@ along their route (other vehicles are not affected directly).</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 09 March 2026</i></small>
+            <br><small><i>This page was last edited on: 12 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
