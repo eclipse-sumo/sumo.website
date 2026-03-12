@@ -25,22 +25,26 @@ main:
       parent: "About"
       url: "about/"
       weight: 1
+    - name: "Logos and Branding"
+      parent: "About"
+      url: "logo/"
+      weight: 2
     - name: "Who's involved"
       parent: "About"
       url: "https://projects.eclipse.org/projects/automotive.sumo/who"
-      weight: 2
+      weight: 3
     - name: "ChangeLog"
       parent: "About"
       url: "https://sumo.dlr.de/docs/ChangeLog.html"
-      weight: 3
+      weight: 4
     - name: "Developer Meetings"
       parent: "About"
       url: "minutes/"
-      weight: 4
+      weight: 5
     - name: "Status of daily build and tests"
       parent: "About"
       url: "https://sumo.dlr.de/daily/"
-      weight: 5
+      weight: 6
     - name: "SUMO Conference 2026"
       parent: "Conference"
       url: "conference/"

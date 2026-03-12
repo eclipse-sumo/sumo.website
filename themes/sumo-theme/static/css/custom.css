@@ -568,3 +568,16 @@ width: 100%;
 height: 100%;
 object-fit: cover;
 }
+
+/* - Branding - */
+.color-box {
+width: 120px;
+height: 120px;
+margin: auto;
+border-radius: 4px;
+}
+
+.bg-color1 { background:#338033; }
+.bg-color2 { background:#17412F; }
+.bg-color3 { background:#BEE4C0; }
+.bg-color4 { background:#F8F8F8; }
