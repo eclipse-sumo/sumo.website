@@ -143,12 +143,13 @@ td.singlecolumn {
 <a href="gzip.html">gzip</a><br>
 <a href="io.html">io</a><br>
 </td><td class="multicolumn"><a href="sumolib.miscutils.html">sumolib.miscutils</a><br>
+<a href="os.html">os</a><br>
 <a href="re.html">re</a><br>
-<a href="xml.sax.saxutils.html">xml.sax.saxutils</a><br>
-</td><td class="multicolumn"><a href="sys.html">sys</a><br>
+</td><td class="multicolumn"><a href="xml.sax.saxutils.html">xml.sax.saxutils</a><br>
+<a href="sys.html">sys</a><br>
 <a href="xml.html">xml</a><br>
-<a href="sumolib.xml.xsd.html">sumolib.xml.xsd</a><br>
-</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+</td><td class="multicolumn"><a href="sumolib.xml.xsd.html">sumolib.xml.xsd</a><br>
+</td></tr></table></td></tr></table><p>
 <table class="section">
 <tr class="decor index-decor heading-text">
 <td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
@@ -544,30 +545,39 @@ setting&nbsp;heterogeneous=True&nbsp;(with&nbsp;reduced&nbsp;parsing&nbsp;speed)
 with&nbsp;python&nbsp;keywords.&nbsp;(set&nbsp;warn=True&nbsp;to&nbsp;receive&nbsp;renaming&nbsp;warnings)<br>
 @Note:&nbsp;The&nbsp;element_names&nbsp;may&nbsp;be&nbsp;either&nbsp;a&nbsp;single&nbsp;string&nbsp;or&nbsp;a&nbsp;list&nbsp;of&nbsp;strings.<br>
 @Example:&nbsp;<a href="#-parse">parse</a>('plain.edg.xml',&nbsp;['edge'])</span></dd></dl>
- <dl><dt><a name="-parse_fast"><strong>parse_fast</strong></a>(xmlfile, element_name, attrnames, warn=False, optional=False, encoding='utf8', line_filter=None)</dt><dd><span class="code">Parses&nbsp;the&nbsp;given&nbsp;attrnames&nbsp;from&nbsp;all&nbsp;elements&nbsp;with&nbsp;element_name<br>
+ <dl><dt><a name="-parse_fast"><strong>parse_fast</strong></a>(xmlfile, element_name, attrnames=None, warn=False, optional=False, encoding='utf8', line_filter=None)</dt><dd><span class="code">Parses&nbsp;the&nbsp;given&nbsp;attrnames&nbsp;from&nbsp;all&nbsp;elements&nbsp;with&nbsp;element_name<br>
 @Note:&nbsp;The&nbsp;element&nbsp;must&nbsp;be&nbsp;on&nbsp;its&nbsp;own&nbsp;line&nbsp;and&nbsp;the&nbsp;attributes&nbsp;must&nbsp;appear&nbsp;in<br>
 the&nbsp;given&nbsp;order.&nbsp;If&nbsp;you&nbsp;set&nbsp;"optional=True",&nbsp;missing&nbsp;attributes&nbsp;will&nbsp;be&nbsp;set&nbsp;to&nbsp;None.<br>
 Make&nbsp;sure&nbsp;that&nbsp;you&nbsp;list&nbsp;all&nbsp;(potential)&nbsp;attributes&nbsp;(even&nbsp;the&nbsp;ones&nbsp;you&nbsp;are&nbsp;not&nbsp;interested&nbsp;in)<br>
 in&nbsp;this&nbsp;case.&nbsp;You&nbsp;can&nbsp;only&nbsp;leave&nbsp;out&nbsp;attributes&nbsp;at&nbsp;the&nbsp;end.<br>
-@Example:&nbsp;<a href="#-parse_fast">parse_fast</a>('plain.edg.xml',&nbsp;'edge',&nbsp;['id',&nbsp;'speed'])</span></dd></dl>
- <dl><dt><a name="-parse_fast_nested"><strong>parse_fast_nested</strong></a>(xmlfile, element_name, attrnames, element_name2, attrnames2, warn=False, optional=False, encoding='utf8')</dt><dd><span class="code">Parses&nbsp;the&nbsp;given&nbsp;attrnames&nbsp;from&nbsp;all&nbsp;elements&nbsp;with&nbsp;element_name<br>
+If&nbsp;attrnames&nbsp;is&nbsp;None,&nbsp;the&nbsp;attribute&nbsp;list&nbsp;is&nbsp;read&nbsp;from&nbsp;the&nbsp;XSD&nbsp;schema&nbsp;referenced&nbsp;in&nbsp;the<br>
+XML&nbsp;file&nbsp;header&nbsp;(detected&nbsp;while&nbsp;reading);&nbsp;in&nbsp;this&nbsp;case&nbsp;optional&nbsp;is&nbsp;forced&nbsp;to&nbsp;True.<br>
+@Example:&nbsp;<a href="#-parse_fast">parse_fast</a>('plain.edg.xml',&nbsp;'edge',&nbsp;['id',&nbsp;'speed'])<br>
+@Example:&nbsp;<a href="#-parse_fast">parse_fast</a>('fcd.xml',&nbsp;'vehicle')</span></dd></dl>
+ <dl><dt><a name="-parse_fast_nested"><strong>parse_fast_nested</strong></a>(xmlfile, element_name, attrnames=None, element_name2=None, attrnames2=None, warn=False, optional=False, encoding='utf8')</dt><dd><span class="code">Parses&nbsp;the&nbsp;given&nbsp;attrnames&nbsp;from&nbsp;all&nbsp;elements&nbsp;with&nbsp;element_name<br>
 And&nbsp;attrnames2&nbsp;from&nbsp;element_name2&nbsp;where&nbsp;element_name2&nbsp;is&nbsp;a&nbsp;child&nbsp;element&nbsp;of&nbsp;element_name<br>
 If&nbsp;you&nbsp;set&nbsp;"optional=True",&nbsp;missing&nbsp;attributes&nbsp;will&nbsp;be&nbsp;set&nbsp;to&nbsp;None.<br>
 Make&nbsp;sure&nbsp;that&nbsp;you&nbsp;list&nbsp;all&nbsp;(potential)&nbsp;attributes&nbsp;(even&nbsp;the&nbsp;ones&nbsp;you&nbsp;are&nbsp;not&nbsp;interested&nbsp;in)<br>
 in&nbsp;this&nbsp;case.&nbsp;You&nbsp;can&nbsp;only&nbsp;leave&nbsp;out&nbsp;attributes&nbsp;at&nbsp;the&nbsp;end.<br>
+If&nbsp;attrnames&nbsp;or&nbsp;attrnames2&nbsp;is&nbsp;None,&nbsp;the&nbsp;attribute&nbsp;list&nbsp;is&nbsp;read&nbsp;from&nbsp;the&nbsp;XSD&nbsp;schema<br>
+referenced&nbsp;in&nbsp;the&nbsp;XML&nbsp;file&nbsp;header&nbsp;(detected&nbsp;while&nbsp;reading);&nbsp;in&nbsp;this&nbsp;case&nbsp;optional&nbsp;is&nbsp;forced&nbsp;to&nbsp;True.<br>
 @Note:&nbsp;The&nbsp;element&nbsp;must&nbsp;be&nbsp;on&nbsp;its&nbsp;own&nbsp;line&nbsp;and&nbsp;the&nbsp;attributes&nbsp;must&nbsp;appear&nbsp;in<br>
 the&nbsp;given&nbsp;order.<br>
-@Example:&nbsp;<a href="#-parse_fast_nested">parse_fast_nested</a>('fcd.xml',&nbsp;'timestep',&nbsp;['time'],&nbsp;'vehicle',&nbsp;['id',&nbsp;'speed',&nbsp;'lane']):</span></dd></dl>
- <dl><dt><a name="-parse_fast_structured"><strong>parse_fast_structured</strong></a>(xmlfile, element_name, attrnames, nested, warn=False, optional=False, encoding='utf8')</dt><dd><span class="code">Parses&nbsp;the&nbsp;given&nbsp;attrnames&nbsp;from&nbsp;all&nbsp;elements&nbsp;with&nbsp;element_name&nbsp;and&nbsp;nested&nbsp;elements&nbsp;of&nbsp;level&nbsp;1.<br>
+@Example:&nbsp;<a href="#-parse_fast_nested">parse_fast_nested</a>('fcd.xml',&nbsp;'timestep',&nbsp;['time'],&nbsp;'vehicle',&nbsp;['id',&nbsp;'speed',&nbsp;'lane']):<br>
+@Example:&nbsp;<a href="#-parse_fast_nested">parse_fast_nested</a>('fcd.xml',&nbsp;'timestep',&nbsp;None,&nbsp;'vehicle',&nbsp;None):</span></dd></dl>
+ <dl><dt><a name="-parse_fast_structured"><strong>parse_fast_structured</strong></a>(xmlfile, element_name, attrnames=None, nested=None, warn=False, optional=False, encoding='utf8')</dt><dd><span class="code">Parses&nbsp;the&nbsp;given&nbsp;attrnames&nbsp;from&nbsp;all&nbsp;elements&nbsp;with&nbsp;element_name&nbsp;and&nbsp;nested&nbsp;elements&nbsp;of&nbsp;level&nbsp;1.<br>
 Unlike&nbsp;parse_fast_nested&nbsp;this&nbsp;function&nbsp;can&nbsp;handle&nbsp;multiple&nbsp;different&nbsp;child&nbsp;elements&nbsp;and<br>
 returns&nbsp;objects&nbsp;where&nbsp;the&nbsp;child&nbsp;elements&nbsp;can&nbsp;be&nbsp;accessed&nbsp;by&nbsp;name&nbsp;(e.g.&nbsp;timestep.vehicle[0])<br>
 as&nbsp;with&nbsp;the&nbsp;parse&nbsp;method.&nbsp;The&nbsp;returned&nbsp;object&nbsp;is&nbsp;not&nbsp;modifiable&nbsp;though.<br>
 If&nbsp;you&nbsp;set&nbsp;"optional=True",&nbsp;missing&nbsp;attributes&nbsp;will&nbsp;be&nbsp;set&nbsp;to&nbsp;None.<br>
 Make&nbsp;sure&nbsp;that&nbsp;you&nbsp;list&nbsp;all&nbsp;(potential)&nbsp;attributes&nbsp;(even&nbsp;the&nbsp;ones&nbsp;you&nbsp;are&nbsp;not&nbsp;interested&nbsp;in)<br>
 in&nbsp;this&nbsp;case.&nbsp;You&nbsp;can&nbsp;only&nbsp;leave&nbsp;out&nbsp;attributes&nbsp;at&nbsp;the&nbsp;end.<br>
+If&nbsp;attrnames&nbsp;or&nbsp;any&nbsp;value&nbsp;in&nbsp;nested&nbsp;is&nbsp;None,&nbsp;the&nbsp;attribute&nbsp;list&nbsp;is&nbsp;read&nbsp;from&nbsp;the&nbsp;XSD&nbsp;schema<br>
+referenced&nbsp;in&nbsp;the&nbsp;XML&nbsp;file&nbsp;header&nbsp;(detected&nbsp;while&nbsp;reading);&nbsp;in&nbsp;this&nbsp;case&nbsp;optional&nbsp;is&nbsp;forced&nbsp;to&nbsp;True.<br>
 @Note:&nbsp;Every&nbsp;element&nbsp;must&nbsp;be&nbsp;on&nbsp;its&nbsp;own&nbsp;line&nbsp;and&nbsp;the&nbsp;attributes&nbsp;must&nbsp;appear&nbsp;in&nbsp;the&nbsp;given&nbsp;order.<br>
 @Example:&nbsp;<a href="#-parse_fast_structured">parse_fast_structured</a>('fcd.xml',&nbsp;'timestep',&nbsp;['time'],<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'vehicle':&nbsp;['id',&nbsp;'speed',&nbsp;'lane'],&nbsp;'person':&nbsp;['id',&nbsp;'speed',&nbsp;'edge']}):</span></dd></dl>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'vehicle':&nbsp;['id',&nbsp;'speed',&nbsp;'lane'],&nbsp;'person':&nbsp;['id',&nbsp;'speed',&nbsp;'edge']}):<br>
+@Example:&nbsp;<a href="#-parse_fast_structured">parse_fast_structured</a>('fcd.xml',&nbsp;'timestep',&nbsp;None,&nbsp;{'vehicle':&nbsp;None,&nbsp;'person':&nbsp;None}):</span></dd></dl>
  <dl><dt><a name="-parselines"><strong>parselines</strong></a>(xmlline, element_name, element_attrs=None, attr_conversions=None, heterogeneous=True, warn=False, addRoot='dummy')</dt></dl>
  <dl><dt><a name="-quoteattr"><strong>quoteattr</strong></a>(val, ensureUnicode=False)</dt></dl>
  <dl><dt><a name="-reduce"><strong>reduce</strong></a>(...)</dt><dd><span class="code"><a href="#-reduce">reduce</a>(function,&nbsp;iterable[,&nbsp;initial])&nbsp;-&gt;&nbsp;value<br>

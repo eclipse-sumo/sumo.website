@@ -265,8 +265,31 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;we have now parsable metadata&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>SUMO Developer Meetings 2026</title><link>https://eclipse.dev/sumo/minutes/2026/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/minutes/2026/</guid><description>&lt;h1 id="2026-02-26"&gt;2026-02-26&lt;/h1&gt;
+&lt;/ul&gt;</description></item><item><title>SUMO Developer Meetings 2026</title><link>https://eclipse.dev/sumo/minutes/2026/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/minutes/2026/</guid><description>&lt;h1 id="2026-03-12"&gt;2026-03-12&lt;/h1&gt;
 &lt;h2 id="attendees"&gt;Attendees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
+&lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
+&lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
+&lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
+&lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
+&lt;li&gt;Vassileios Karagounis (CERTH)&lt;/li&gt;
+&lt;li&gt;Mario Krumnow (Schlothauer + Wauer)&lt;/li&gt;
+&lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="topics"&gt;Topics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Regression netedit&lt;/li&gt;
+&lt;li&gt;Branding guide in preparation by Angelo&lt;/li&gt;
+&lt;li&gt;Reliability of emission values
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://arxiv.org/abs/2507.10280"&gt;https://arxiv.org/abs/2507.10280&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Issues&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="2026-02-26"&gt;2026-02-26&lt;/h1&gt;
+&lt;h2 id="attendees-1"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
 &lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
@@ -276,7 +299,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-1"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Release Feedback
 &lt;ul&gt;
@@ -304,7 +327,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-02-12"&gt;2026-02-12&lt;/h1&gt;
-&lt;h2 id="attendees-1"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-2"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Sasan Amini (Transcality)&lt;/li&gt;
@@ -318,7 +341,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-1"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-2"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;release 1.26.0 feedback
 &lt;ul&gt;
@@ -346,7 +369,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-01-29"&gt;2026-01-29&lt;/h1&gt;
-&lt;h2 id="attendees-2"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-3"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
@@ -359,7 +382,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-2"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-3"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;release 1.26.0
 &lt;ul&gt;
@@ -389,7 +412,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-01-15"&gt;2026-01-15&lt;/h1&gt;
-&lt;h2 id="attendees-3"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-4"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
@@ -406,7 +429,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;li&gt;Mirko Barthauer (mouver)&lt;/li&gt;
 &lt;li&gt;Sasan Amini (Transcality)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-3"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-4"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;next release 1.26.0 may still work on the 26th of January&lt;/li&gt;
 &lt;li&gt;explaining the python wheels&lt;/li&gt;
