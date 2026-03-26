@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 16 March 2026 08:27:05
-Last edit: 16 March 2026
+Build Date UTC : 26 March 2026 08:07:39
+Last edit: 26 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -188,6 +188,7 @@ Last edit: 16 March 2026
                     <a href="#example_for_an_actuated_traffic_light" class="nav-link">• Example for an actuated traffic light</a>
                 </li>
             <li class="nav-item main"><a href="#buildtransitionspy">buildTransitions.py</a></li>
+            <li class="nav-item main"><a href="#tls_analyzesplitpy">tls_analyzeSplit.py</a></li>
         </ul>
     </div>
 
@@ -598,6 +599,18 @@ The corresponding yellow and red phases will be build and the 'next' attribute
 will be set to the appropriate transition phase.</p>
 <div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">tls</span><span class="o">/</span><span class="n">buildTransitions</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="n">tlLogic</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">&lt;</span><span class="n">output</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
 </code></pre></div>
+
+<h1 id="tls_analyzesplitpy">tls_analyzeSplit.py<a class="headerlink" href="#tls_analyzesplitpy" title="Permanent link">#</a></h1>
+<p>Compute how much time each controlled link of a traffic light spent in the green state (in percent).</p>
+<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">tls</span><span class="o">/</span><span class="n">tls_analyzeSplit</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">FILE</span>
+</code></pre></div>
+
+<p>Any input file with <code>&lt;tlLogic&gt;</code> elements is supported (<em>.net.xml</em>, <em>.add.xml</em> and <a href="../Simulation/Output/Traffic_Lights.html#tls_programs">traffic light logs</a> in <code>SaveTLSProgram</code> format).</p>
+<p>The output is one line per traffic light program:</p>
+<div class="codehilite"><pre><span></span><code>tlLogic=0 program=0 cycle=138.0 G=[22, 22, 4, 4, 22, 22, 4, 4, 22, 22, 4, 4, 22, 22, 4, 4] Gg=[22, 22, 38, 38, 22, 22, 38, 38, 22, 22, 38, 38, 22, 22, 38, 38]
+</code></pre></div>
+
+<p>Where the element <code>G</code> gives percentages in state <code>G</code> (major green, no foes) and element <code>Gg</code> gives percentages in stage <code>G</code> or <code>g</code> (including minor green, green with some foes).</p>
                 </div>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -605,7 +618,7 @@ will be set to the appropriate transition phase.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 16 March 2026</i></small>
+            <br><small><i>This page was last edited on: 26 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

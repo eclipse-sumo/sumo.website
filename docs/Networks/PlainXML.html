@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 16 March 2026 08:27:05
-Last edit: 16 March 2026
+Build Date UTC : 26 March 2026 08:07:39
+Last edit: 26 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -397,120 +397,75 @@ available as XML Schema Definitions:</p>
   <a href="https://sumo.dlr.de/xsd/tllogic_file.xsd">https://sumo.dlr.de/xsd/tllogic_file.xsd</a></li>
 </ul>
 <h1 id="node_descriptions">Node Descriptions<a class="headerlink" href="#node_descriptions" title="Permanent link">#</a></h1>
-<center>
-
-| Node Descriptions  |                                 |
-|--------------------|---------------------------------|
-| Filename extension | .nod.xml                        |
-| Type of content    | Nodes (intersections/junctions) |
-| Open format?       | Yes                             |
-| SUMO specific?     | Yes                             |
-| XML Schema         | [nodes_file.xsd](https://sumo.dlr.de/xsd/nodes_file.xsd)                  |
-
-</center>
-
-<p>Within the nodes-files, normally having the extension ".nod.xml" (see
-<a href="../Other/File_Extensions.html">Known Extensions</a>), every node is
-described in a single line which looks like this:
-<code>&lt;node id="&lt;STRING&gt;" x="&lt;FLOAT&gt;" y="&lt;FLOAT&gt;" [type="&lt;TYPE&gt;"]/&gt;</code> - the straight brackets ('[' and ']')
-indicate that the parameter is optional. Each of these attributes has a
-certain meaning and value range:</p>
 <table>
 <thead>
 <tr>
-<th>Attribute Name</th>
-<th>Value Type</th>
-<th>Description</th>
+<th>Node Descriptions</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>id</strong></td>
-<td>id (string)</td>
-<td>The name of the node</td>
+<td>Filename extension</td>
+<td>.nod.xml</td>
 </tr>
 <tr>
-<td><strong>x</strong></td>
-<td>float</td>
-<td>The x-position of the node on the plane in meters</td>
+<td>Type of content</td>
+<td>Nodes (intersections/junctions)</td>
 </tr>
 <tr>
-<td><strong>y</strong></td>
-<td>float</td>
-<td>The y-position of the node on the plane in meters</td>
+<td>Open format?</td>
+<td>Yes</td>
 </tr>
 <tr>
-<td>z</td>
-<td>float</td>
-<td>The z-position of the node on the plane in meters</td>
+<td>SUMO specific?</td>
+<td>Yes</td>
 </tr>
 <tr>
-<td>type</td>
-<td>enum ( "priority", "traffic_light", "right_before_left", "left_before_right", "unregulated", "priority_stop", "traffic_light_unregulated", "allway_stop", "rail_signal", "zipper", "traffic_light_right_on_red", "rail_crossing")</td>
-<td>An optional type for the node</td>
-</tr>
-<tr>
-<td>tlType</td>
-<td>enum ( <strong>"static"</strong>, "actuated", "delay_based")</td>
-<td>An optional type for the <a href="../Simulation/Traffic_Lights.html#type_actuated">traffic light algorithm</a></td>
-</tr>
-<tr>
-<td>tlLayout</td>
-<td>enum (  <strong>"opposites"</strong>, "incoming", "alternateOneWay")</td>
-<td>An optional layout for the traffic light plan (see below)</td>
-</tr>
-<tr>
-<td>tl</td>
-<td>id (string)</td>
-<td>An optional id for the traffic light program. Nodes with the same tl-value will be joined into a single program</td>
-</tr>
-<tr>
-<td>radius</td>
-<td>positive float</td>
-<td>optional turning radius (for all corners) for that node in meters <em>(default 1.5)</em></td>
-</tr>
-<tr>
-<td>shape</td>
-<td>List of positions; each position is encoded in x,y or x,y,z in meters (do not separate the numbers with a space!).</td>
-<td>A custom shape for that node. If less than two positions are given, netconvert will reset that node to use a computed shape.</td>
-</tr>
-<tr>
-<td>keepClear</td>
-<td>bool</td>
-<td>Whether the <a href="../Simulation/Intersections.html#junction_blocking">junction-blocking-heuristic</a> should be activated at this node <em>(default true)</em></td>
-</tr>
-<tr>
-<td>rightOfWay</td>
-<td>string</td>
-<td>Set algorithm for computing <a href="#right-of-way">#Right-of-way</a>. Allowed values are <em>default</em>, <em>edgePriority</em>, <em>mixedPriority</em>, and <em>allwayStop</em></td>
-</tr>
-<tr>
-<td>fringe</td>
-<td>string</td>
-<td>Clarify whether this junction is on the <a href="#fringe">network fringe</a>. Allowed values are <em>default</em>, <em>outer</em> and <em>inner</em></td>
-</tr>
-<tr>
-<td>roundabout</td>
-<td>string</td>
-<td>Clarify whether this junction may be part of a roundabout. Allowed values are <em>default</em>, <em>1</em> and <em>0</em></td>
-</tr>
-<tr>
-<td>controlledInner</td>
-<td>list of edge ids</td>
-<td>Edges which shall be controlled by a joined TLS despite being incoming as well as outgoing to the jointly controlled nodes</td>
+<td>XML Schema</td>
+<td><a href="https://sumo.dlr.de/xsd/nodes_file.xsd">nodes_file.xsd</a></td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You may also use lon/lat values in place of x/y but you then need to add option <strong>--proj.utm</strong> in order to project your coordinates into the cartesian plane.</p>
-</div>
-<p>When writing your nodes-file, please do not forget to embed your node
-definitions into an opening and a closing "tag". A complete file should
-like the example below, which is the node file "cross3l.nod.xml" for the
-examples "<strong><em>&lt;SUMO_HOME&gt;</em></strong>/data/examples/netbuild/types/cross_usingtypes/" and
-"<strong><em>&lt;SUMO_HOME&gt;</em></strong>/data/examples/netbuild/types/cross_notypes/" example.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;nodes&gt;</span><span class="w"> </span><span class="cm">&lt;!-- The opening tag --&gt;</span>
+<p>Within the nodes-files, normally having the extension ".nod.xml" (see
+<a href="../Other/File_Extensions.html">Known Extensions</a>), every node is
+described in a single line which looks like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;STRING&gt;&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;&lt;FLOAT&gt;&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;&lt;FLOAT&gt;&quot;</span><span class="w"> </span><span class="err">[</span><span class="na">type=</span><span class="s">&quot;&lt;TYPE&gt;&quot;</span><span class="err">]</span><span class="nt">/&gt;</span>
+````
+
+the<span class="w"> </span>straight<span class="w"> </span>brackets<span class="w"> </span>(&#39;\[&#39;<span class="w"> </span>and<span class="w"> </span>&#39;\]&#39;)
+indicate<span class="w"> </span>that<span class="w"> </span>the<span class="w"> </span>parameter<span class="w"> </span>is<span class="w"> </span>optional.<span class="w"> </span>Each<span class="w"> </span>of<span class="w"> </span>these<span class="w"> </span>attributes<span class="w"> </span>has<span class="w"> </span>a
+certain<span class="w"> </span>meaning<span class="w"> </span>and<span class="w"> </span>value<span class="w"> </span>range:
+
+|<span class="w"> </span>Attribute<span class="w"> </span>Name<span class="w">  </span>|<span class="w"> </span>Value<span class="w"> </span>Type<span class="w">                                </span>|<span class="w"> </span>Description<span class="w">                  </span>|
+|<span class="w"> </span>---------------<span class="w"> </span>|<span class="w"> </span>----------------------------------------------------------------------------<span class="w"> </span>|<span class="w"> </span>-------------------------------------------------------------------------<span class="w"> </span>|
+|<span class="w"> </span>**id**<span class="w">          </span>|<span class="w"> </span>id<span class="w"> </span>(string)<span class="w">                                                                                                                                                                                                               </span>|<span class="w"> </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>node<span class="w">                                                                                                                               </span>|
+|<span class="w"> </span>**x**<span class="w">           </span>|<span class="w"> </span>float<span class="w">                                                                                                                                                                                                                     </span>|<span class="w"> </span>The<span class="w"> </span>x-position<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>node<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>plane<span class="w"> </span>in<span class="w"> </span>meters<span class="w">                                                                                                  </span>|
+|<span class="w"> </span>**y**<span class="w">           </span>|<span class="w"> </span>float<span class="w">                                                                                                                                                                                                                     </span>|<span class="w"> </span>The<span class="w"> </span>y-position<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>node<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>plane<span class="w"> </span>in<span class="w"> </span>meters<span class="w">                                                                                                  </span>|
+|<span class="w"> </span>z<span class="w">               </span>|<span class="w"> </span>float<span class="w">                                                                                                                                                                                                                     </span>|<span class="w"> </span>The<span class="w"> </span>z-position<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>node<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>plane<span class="w"> </span>in<span class="w"> </span>meters<span class="w">                                                                                                  </span>|
+|<span class="w"> </span>type<span class="w">            </span>|<span class="w"> </span>enum<span class="w"> </span>(<span class="w"> </span>&quot;priority&quot;,<span class="w"> </span>&quot;traffic_light&quot;,<span class="w"> </span>&quot;right_before_left&quot;,<span class="w"> </span>&quot;left_before_right&quot;,<span class="w"> </span>&quot;unregulated&quot;,<span class="w"> </span>&quot;priority_stop&quot;,<span class="w"> </span>&quot;traffic_light_unregulated&quot;,<span class="w"> </span>&quot;allway_stop&quot;,<span class="w"> </span>&quot;rail_signal&quot;,<span class="w"> </span>&quot;zipper&quot;,<span class="w"> </span>&quot;traffic_light_right_on_red&quot;,<span class="w"> </span>&quot;rail_crossing&quot;)<span class="w"> </span>|<span class="w"> </span>An<span class="w"> </span>optional<span class="w"> </span>type<span class="w"> </span>for<span class="w"> </span>the<span class="w"> </span>node<span class="w">                                                                                                                      </span>|
+|<span class="w"> </span>tlType<span class="w">          </span>|<span class="w"> </span>enum<span class="w"> </span>(<span class="w"> </span>**&quot;static&quot;**,<span class="w"> </span>&quot;actuated&quot;,<span class="w"> </span>&quot;delay_based&quot;)<span class="w">                                                                                                                                                                                              </span>|<span class="w"> </span>An<span class="w"> </span>optional<span class="w"> </span>type<span class="w"> </span>for<span class="w"> </span>the<span class="w"> </span>[traffic<span class="w"> </span>light<span class="w"> </span>algorithm](../Simulation/Traffic_Lights.md#type_actuated)
+|<span class="w"> </span>tlLayout<span class="w">        </span>|<span class="w"> </span>enum<span class="w"> </span>(<span class="w">  </span>**&quot;opposites&quot;**,<span class="w"> </span>&quot;incoming&quot;,<span class="w"> </span>&quot;alternateOneWay&quot;)<span class="w">                                                                                                                                                                                              </span>|<span class="w"> </span>An<span class="w"> </span>optional<span class="w"> </span>layout<span class="w"> </span>for<span class="w"> </span>the<span class="w"> </span>traffic<span class="w"> </span>light<span class="w"> </span>plan<span class="w"> </span>(see<span class="w"> </span>below)
+|<span class="w"> </span>tl<span class="w">              </span>|<span class="w"> </span>id<span class="w"> </span>(string)<span class="w">                                                                                                                                                                                                               </span>|<span class="w"> </span>An<span class="w"> </span>optional<span class="w"> </span>id<span class="w"> </span>for<span class="w"> </span>the<span class="w"> </span>traffic<span class="w"> </span>light<span class="w"> </span>program.<span class="w"> </span>Nodes<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>tl-value<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>joined<span class="w"> </span>into<span class="w"> </span>a<span class="w"> </span>single<span class="w"> </span>program<span class="w">                                    </span>|
+|<span class="w"> </span>radius<span class="w">          </span>|<span class="w"> </span>positive<span class="w"> </span>float<span class="w">                                                                                                                                                                                                           </span>|<span class="w"> </span>optional<span class="w"> </span>turning<span class="w"> </span>radius<span class="w"> </span>(for<span class="w"> </span>all<span class="w"> </span>corners)<span class="w"> </span>for<span class="w"> </span>that<span class="w"> </span>node<span class="w"> </span>in<span class="w"> </span>meters<span class="w"> </span>*(default<span class="w"> </span>1.5)*<span class="w">                                                                  </span>|
+|<span class="w"> </span>shape<span class="w">           </span>|<span class="w"> </span>List<span class="w"> </span>of<span class="w"> </span>positions;<span class="w"> </span>each<span class="w"> </span>position<span class="w"> </span>is<span class="w"> </span>encoded<span class="w"> </span>in<span class="w"> </span>x,y<span class="w"> </span>or<span class="w"> </span>x,y,z<span class="w"> </span>in<span class="w"> </span>meters<span class="w"> </span>(do<span class="w"> </span>not<span class="w"> </span>separate<span class="w"> </span>the<span class="w"> </span>numbers<span class="w"> </span>with<span class="w"> </span>a<span class="w"> </span>space\!).<span class="w">                                                                                                       </span>|<span class="w"> </span>A<span class="w"> </span>custom<span class="w"> </span>shape<span class="w"> </span>for<span class="w"> </span>that<span class="w"> </span>node.<span class="w"> </span>If<span class="w"> </span>less<span class="w"> </span>than<span class="w"> </span>two<span class="w"> </span>positions<span class="w"> </span>are<span class="w"> </span>given,<span class="w"> </span>netconvert<span class="w"> </span>will<span class="w"> </span>reset<span class="w"> </span>that<span class="w"> </span>node<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>a<span class="w"> </span>computed<span class="w"> </span>shape.<span class="w">                       </span>|
+|<span class="w"> </span>keepClear<span class="w">       </span>|<span class="w"> </span>bool<span class="w">                                                                                                                                                                                                                      </span>|<span class="w"> </span>Whether<span class="w"> </span>the<span class="w"> </span>[junction-blocking-heuristic](../Simulation/Intersections.md#junction_blocking)<span class="w"> </span>should<span class="w"> </span>be<span class="w"> </span>activated<span class="w"> </span>at<span class="w"> </span>this<span class="w"> </span>node<span class="w"> </span>*(default<span class="w"> </span>true)*<span class="w"> </span>|
+|<span class="w"> </span>rightOfWay<span class="w">      </span>|<span class="w"> </span>string<span class="w">                                                                                                                                                                                                                    </span>|<span class="w"> </span>Set<span class="w"> </span>algorithm<span class="w"> </span>for<span class="w"> </span>computing<span class="w"> </span>[\#Right-of-way](#right-of-way).<span class="w"> </span>Allowed<span class="w"> </span>values<span class="w"> </span>are<span class="w"> </span>*default*,<span class="w"> </span>*edgePriority*,<span class="w"> </span>*mixedPriority*,<span class="w"> </span>and<span class="w"> </span>*allwayStop*<span class="w">   </span>|
+|<span class="w"> </span>fringe<span class="w">      </span>|<span class="w"> </span>string<span class="w">                                                                                                                                                                                                                    </span>|<span class="w"> </span>Clarify<span class="w"> </span>whether<span class="w"> </span>this<span class="w"> </span>junction<span class="w"> </span>is<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>[network<span class="w"> </span>fringe](#fringe).<span class="w"> </span>Allowed<span class="w"> </span>values<span class="w"> </span>are<span class="w"> </span>*default*,<span class="w"> </span>*outer*<span class="w"> </span>and<span class="w"> </span>*inner*<span class="w">      </span>|
+|<span class="w"> </span>roundabout<span class="w">  </span>|<span class="w"> </span>string<span class="w">                                                                                                                                                                                                                    </span>|<span class="w"> </span>Clarify<span class="w"> </span>whether<span class="w"> </span>this<span class="w"> </span>junction<span class="w"> </span>may<span class="w"> </span>be<span class="w"> </span>part<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>roundabout.<span class="w"> </span>Allowed<span class="w"> </span>values<span class="w"> </span>are<span class="w"> </span>*default*,<span class="w"> </span>*1*<span class="w"> </span>and<span class="w"> </span>*0*<span class="w">      </span>|
+|<span class="w"> </span>controlledInner<span class="w"> </span>|<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>edge<span class="w"> </span>ids<span class="w">                                                                                                                                                                                                          </span>|<span class="w"> </span>Edges<span class="w"> </span>which<span class="w"> </span>shall<span class="w"> </span>be<span class="w"> </span>controlled<span class="w"> </span>by<span class="w"> </span>a<span class="w"> </span>joined<span class="w"> </span>TLS<span class="w"> </span>despite<span class="w"> </span>being<span class="w"> </span>incoming<span class="w"> </span>as<span class="w"> </span>well<span class="w"> </span>as<span class="w"> </span>outgoing<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>jointly<span class="w"> </span>controlled<span class="w"> </span>nodes<span class="w">                         </span>|
+
+!!!<span class="w"> </span>note
+<span class="w">    </span>You<span class="w"> </span>may<span class="w"> </span>also<span class="w"> </span>use<span class="w"> </span>lon/lat<span class="w"> </span>values<span class="w"> </span>in<span class="w"> </span>place<span class="w"> </span>of<span class="w"> </span>x/y<span class="w"> </span>but<span class="w"> </span>you<span class="w"> </span>then<span class="w"> </span>need<span class="w"> </span>to<span class="w"> </span>add<span class="w"> </span>option<span class="w"> </span>**--proj.utm**<span class="w"> </span>in<span class="w"> </span>order<span class="w"> </span>to<span class="w"> </span>project<span class="w"> </span>your<span class="w"> </span>coordinates<span class="w"> </span>into<span class="w"> </span>the<span class="w"> </span>cartesian<span class="w"> </span>plane.
+
+When<span class="w"> </span>writing<span class="w"> </span>your<span class="w"> </span>nodes-file,<span class="w"> </span>please<span class="w"> </span>do<span class="w"> </span>not<span class="w"> </span>forget<span class="w"> </span>to<span class="w"> </span>embed<span class="w"> </span>your<span class="w"> </span>node
+definitions<span class="w"> </span>into<span class="w"> </span>an<span class="w"> </span>opening<span class="w"> </span>and<span class="w"> </span>a<span class="w"> </span>closing<span class="w"> </span>&quot;tag&quot;.<span class="w"> </span>A<span class="w"> </span>complete<span class="w"> </span>file<span class="w"> </span>should
+like<span class="w"> </span>the<span class="w"> </span>example<span class="w"> </span>below,<span class="w"> </span>which<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>node<span class="w"> </span>file<span class="w"> </span>&quot;cross3l.nod.xml&quot;<span class="w"> </span>for<span class="w"> </span>the
+examples<span class="w"> </span>&quot;***<span class="ni">&amp;lt;</span>SUMO_HOME<span class="ni">&amp;gt;</span>***/data/examples/netbuild/types/cross_usingtypes/&quot;<span class="w"> </span>and
+&quot;***<span class="ni">&amp;lt;</span>SUMO_HOME<span class="ni">&amp;gt;</span>***/data/examples/netbuild/types/cross_notypes/&quot;<span class="w"> </span>example.
+
+```xml
+<span class="nt">&lt;nodes&gt;</span><span class="w"> </span><span class="cm">&lt;!-- The opening tag --&gt;</span>
 
 <span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;traffic_light&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- def. of node &quot;0&quot; --&gt;</span>
 
@@ -715,8 +670,7 @@ joinable node clusters works like this:</p>
 <li>each cluster is turned into a joined node</li>
 </ol>
 <h3 id="specifying_and_excluding_explicit_joins">Specifying and excluding explicit joins<a class="headerlink" href="#specifying_and_excluding_explicit_joins" title="Permanent link">#</a></h3>
-<p>More fine grained control over joining can be achieved by using the
-following syntax within a nodes-file</p>
+<p>More fine grained control over joining can be achieved by using elements <code>&lt;join&gt;</code> and <code>&lt;joinExclude&gt;</code> within a nodes-file</p>
 <div class="codehilite"><pre><span></span><code><span class="nt">&lt;nodes&gt;</span>
 <span class="w">  </span><span class="nt">&lt;join</span><span class="w"> </span><span class="na">nodes=</span><span class="s">&quot;id0 id23 id24&quot;</span><span class="nt">/&gt;</span>
 <span class="w">  </span><span class="nt">&lt;joinExclude</span><span class="w"> </span><span class="na">nodes=</span><span class="s">&quot;id13 id17&quot;</span><span class="nt">/&gt;</span>
@@ -726,46 +680,48 @@ following syntax within a nodes-file</p>
 <p>This will cause the nodes <em>id0</em>,<em>id23</em> and <em>id24</em> to be joined into a
 single junction. It will also prevent the nodes <em>id13</em> and <em>id17</em> from
 being joined. The <strong>joinExclude</strong>-tag is only useful together with the
-option <strong>--junctions.join</strong> but the <strong>join</strong>-tag can also be used all by itself. Nodes to be
-excluded from joining can also be specified via the option <strong>--junctions.join-exclude id,[id]+</strong>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <code>&lt;join&gt;</code>-element supports all attributes that are also supported by the <code>&lt;node&gt;</code>-element. This allows overriding the attributes of the created node.</p>
-</div>
+option <strong>--junctions.join</strong> but the <strong>join</strong>-tag can also be used all by itself.</p>
+<p>Element <code>&lt;joinExclude&gt;</code> only supports attribute <code>nodes</code> and works in the same way as option <strong>--junctions.join-exclude id,[id]+</strong>.
+The supported attributes for element <code>&lt;join&gt;</code> are described below.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*<em>nodes</em></td>
+<td>id list (string)</td>
+<td>The ids of nodes to join</td>
+</tr>
+<tr>
+<td>reset</td>
+<td>bool (default: <em>false</em>)</td>
+<td>Whether all connections at the created node should be re-guessed</td>
+</tr>
+<tr>
+<td><any <a href="#node_descriptions">node node attriutes</a>></td>
+<td>Sets attributes on the new node (i.e. its <code>id</code> or <code>type</code>)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="connections_after_joining_nodes">Connections after joining nodes<a class="headerlink" href="#connections_after_joining_nodes" title="Permanent link">#</a></h3>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>After merging nodes, the lane-to-lane connections are recalculated. You can override them by resorting to a 2-step process:</p>
-<div class="codehilite"><pre><span></span><code><span class="c"># 1. Merging the junctions.</span>
-<span class="n">netconvert --sumo-net-file berlin-separated-junctions.net.xml \</span>
-<span class="n">  --output-file berlin-joined-junctions.net.xml \</span>
-<span class="n">  --junctions.join</span>
-<span class="c"># 2. Resetting the connections.</span>
-<span class="n">netconvert --sumo-net-file berlin-joined-junctions.net.xml \</span>
-<span class="n">  --output-file berlin-with-fixed-connections.net.xml \</span>
-<span class="n">  --connection-files berlin-new-connections.con.xml</span>
-</code></pre></div>
-
-<p>See <a href="#connection_descriptions">#Connection Descriptions</a> on how to define connections in <strong>*.con.xml</strong> format.</p>
-</div>
-<p>When loading networks with defined connections, the results of joining
-nodes may be quite surprising. Please note the - quite pathologic -
-network on the left side and compare it to the one on the right. You may
-note some big differences in lane-to-lane connections, especially for
-the edge coming from the south.</p>
-<p><a href="../images/JunctionJoin_before.svg" title="junctionJoin_before.svg"><img src="../images/JunctionJoin_before.svg" alt="junction before joining" width="400" /></a>
-<a href="../images/JunctionJoin_after.svg" title="junctionJoin_after.svg"><img src="../images/JunctionJoin_after.svg" alt="junction after joining" width="400" /></a></p>
-<p>The reason is that during joining, edges are subsequently merged, and
-the connections are tried to be kept. In the case of the straight
-connection on the left lane of the road from south, it is propagated
-along the intersection - along all four edges that are lying within the
-intersection - yielding in a further right-turning connection.</p>
-<p>To avoid surprises like this, you should first join the nodes. Then, set
-the connections.</p>
+<p>The connections at joined junctions depend on the loaded connection definitions and on further attributes and options</p>
+<ul>
+<li>if no connections are loaded, the connections will be guessed for the joined junction (this applies to most junctions imported from OSM where explicit connection data is often missing)</li>
+<li>if any connections are loaded, they connections at the joined node will be re-created to match the loaded connectivity<ul>
+<li>unless option <code>&lt;join&gt;</code>-attribute <code>reset="true"</code> or option <strong>--junctions.join-reset</strong> is set in which guess all connections will be guessed again</li>
+</ul>
+</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you use the option <strong>--junctions.join</strong> during OSM import, the connections are guessed based on the joined junctions and no pathologies should occur.</p>
 </div>
+<p>Re-guessing loaded connections is useful when joining junctions while merging networks.</p>
 <h1 id="edge_descriptions">Edge Descriptions<a class="headerlink" href="#edge_descriptions" title="Permanent link">#</a></h1>
 <table>
 <thead>
@@ -937,6 +893,11 @@ default.</p>
 <td>distance</td>
 <td>float</td>
 <td><a href="../Simulation/Distances.html#defining_and_using_linear_coordinates">Kilometrage</a> at the start of this edge. If the value is positive, kilometrage increases in driving direction; if the value is negative, kilometrage decreases. Kilometrage along the edge is computed as abs(<em>distance</em> + <em>offsetFromStart</em>).</td>
+</tr>
+<tr>
+<td>bidi</td>
+<td>id</td>
+<td>Declares the opposite-direction edge that should form a pair of bidi-edges with this edge</td>
 </tr>
 <tr>
 <td>routingType</td>
@@ -2000,7 +1961,7 @@ explicitly. This is done using <code>walkingArea</code> element within a
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 16 March 2026</i></small>
+            <br><small><i>This page was last edited on: 26 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

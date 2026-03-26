@@ -229,13 +229,16 @@ Coordinates&nbsp;are&nbsp;in&nbsp;X&nbsp;and&nbsp;Y&nbsp;(not&nbsp;Lat&nbsp;and&
 
 <dl><dt><a name="Net-getEdgesByOrigID"><strong>getEdgesByOrigID</strong></a>(self, origID)</dt></dl>
 
-<dl><dt><a name="Net-getFastestPath"><strong>getFastestPath</strong></a>(self, fromEdge, toEdge, maxCost=inf, vClass=None, reversalPenalty=0, includeFromToCost=True, withInternal=False, ignoreDirection=False, fromPos=None, toPos=None)</dt><dd><span class="code">Finds&nbsp;the&nbsp;fastest&nbsp;path&nbsp;from&nbsp;fromEdge&nbsp;to&nbsp;toEdge&nbsp;respecting&nbsp;vClass,&nbsp;using&nbsp;Dijkstra's&nbsp;algorithm.<br>
+<dl><dt><a name="Net-getFastestPath"><strong>getFastestPath</strong></a>(self, fromEdge, toEdge, maxCost=inf, vClass=None, reversalPenalty=0, includeFromToCost=True, withInternal=False, ignoreDirection=False, fromPos=None, toPos=None, preferences={})</dt><dd><span class="code">Finds&nbsp;the&nbsp;fastest&nbsp;path&nbsp;from&nbsp;fromEdge&nbsp;to&nbsp;toEdge&nbsp;respecting&nbsp;vClass,&nbsp;using&nbsp;Dijkstra's&nbsp;algorithm.<br>
 It&nbsp;returns&nbsp;a&nbsp;pair&nbsp;of&nbsp;a&nbsp;tuple&nbsp;of&nbsp;edges&nbsp;and&nbsp;the&nbsp;cost.&nbsp;If&nbsp;no&nbsp;path&nbsp;is&nbsp;found&nbsp;the&nbsp;first&nbsp;element&nbsp;is&nbsp;None.<br>
 The&nbsp;cost&nbsp;for&nbsp;the&nbsp;returned&nbsp;path&nbsp;is&nbsp;equal&nbsp;to&nbsp;the&nbsp;sum&nbsp;of&nbsp;all&nbsp;edge&nbsp;costs&nbsp;in&nbsp;the&nbsp;path,<br>
 including&nbsp;the&nbsp;internal&nbsp;connectors,&nbsp;if&nbsp;they&nbsp;are&nbsp;present&nbsp;in&nbsp;the&nbsp;network.<br>
 The&nbsp;path&nbsp;itself&nbsp;does&nbsp;not&nbsp;include&nbsp;internal&nbsp;edges&nbsp;except&nbsp;for&nbsp;the&nbsp;case<br>
 when&nbsp;the&nbsp;start&nbsp;or&nbsp;end&nbsp;edge&nbsp;are&nbsp;internal&nbsp;edges.<br>
-The&nbsp;search&nbsp;may&nbsp;be&nbsp;limited&nbsp;using&nbsp;the&nbsp;given&nbsp;threshold.</span></dd></dl>
+The&nbsp;search&nbsp;may&nbsp;be&nbsp;limited&nbsp;using&nbsp;the&nbsp;given&nbsp;threshold.<br>
+The&nbsp;preferences&nbsp;declare&nbsp;a&nbsp;mapping&nbsp;from&nbsp;the&nbsp;'routingType'&nbsp;of&nbsp;each&nbsp;edge&nbsp;to&nbsp;divisor<br>
+that&nbsp;is&nbsp;applied&nbsp;to&nbsp;the&nbsp;computed&nbsp;traveltime&nbsp;of&nbsp;that&nbsp;edge<br>
+(i.e.&nbsp;a&nbsp;preference&nbsp;of&nbsp;2&nbsp;reduces&nbsp;effective&nbsp;traveltime&nbsp;by&nbsp;a&nbsp;factor&nbsp;of&nbsp;0.5).</span></dd></dl>
 
 <dl><dt><a name="Net-getGeoProj"><strong>getGeoProj</strong></a>(self)</dt></dl>
 
@@ -255,7 +258,7 @@ The&nbsp;search&nbsp;may&nbsp;be&nbsp;limited&nbsp;using&nbsp;the&nbsp;given&nbs
 
 <dl><dt><a name="Net-getNodes"><strong>getNodes</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="Net-getOptimalPath"><strong>getOptimalPath</strong></a>(self, fromEdge, toEdge, fastest=False, maxCost=inf, vClass=None, reversalPenalty=0, includeFromToCost=True, withInternal=False, ignoreDirection=False, fromPos=None, toPos=None)</dt><dd><span class="code">Finds&nbsp;the&nbsp;optimal&nbsp;(shortest&nbsp;or&nbsp;fastest)&nbsp;path&nbsp;for&nbsp;vClass&nbsp;from&nbsp;fromEdge&nbsp;to&nbsp;toEdge<br>
+<dl><dt><a name="Net-getOptimalPath"><strong>getOptimalPath</strong></a>(self, fromEdge, toEdge, fastest=False, maxCost=inf, vClass=None, reversalPenalty=0, includeFromToCost=True, withInternal=False, ignoreDirection=False, fromPos=None, toPos=None, preferences={})</dt><dd><span class="code">Finds&nbsp;the&nbsp;optimal&nbsp;(shortest&nbsp;or&nbsp;fastest)&nbsp;path&nbsp;for&nbsp;vClass&nbsp;from&nbsp;fromEdge&nbsp;to&nbsp;toEdge<br>
 by&nbsp;using&nbsp;using&nbsp;Dijkstra's&nbsp;algorithm.<br>
 It&nbsp;returns&nbsp;a&nbsp;pair&nbsp;of&nbsp;a&nbsp;tuple&nbsp;of&nbsp;edges&nbsp;and&nbsp;the&nbsp;cost.<br>
 If&nbsp;no&nbsp;path&nbsp;is&nbsp;found&nbsp;the&nbsp;first&nbsp;element&nbsp;is&nbsp;None.<br>
@@ -263,19 +266,24 @@ The&nbsp;cost&nbsp;for&nbsp;the&nbsp;returned&nbsp;path&nbsp;is&nbsp;equal&nbsp;
 including&nbsp;the&nbsp;internal&nbsp;connectors,&nbsp;if&nbsp;they&nbsp;are&nbsp;present&nbsp;in&nbsp;the&nbsp;network.<br>
 The&nbsp;path&nbsp;itself&nbsp;does&nbsp;not&nbsp;include&nbsp;internal&nbsp;edges&nbsp;except&nbsp;for&nbsp;the&nbsp;case<br>
 when&nbsp;the&nbsp;start&nbsp;or&nbsp;end&nbsp;edge&nbsp;are&nbsp;internal&nbsp;edges.<br>
-The&nbsp;search&nbsp;may&nbsp;be&nbsp;limited&nbsp;using&nbsp;the&nbsp;given&nbsp;threshold.</span></dd></dl>
+The&nbsp;search&nbsp;may&nbsp;be&nbsp;limited&nbsp;using&nbsp;the&nbsp;given&nbsp;threshold.<br>
+The&nbsp;preferences&nbsp;declare&nbsp;a&nbsp;mapping&nbsp;from&nbsp;the&nbsp;'routingType'&nbsp;of&nbsp;each&nbsp;edge&nbsp;to&nbsp;divisor<br>
+that&nbsp;is&nbsp;applied&nbsp;to&nbsp;the&nbsp;computed&nbsp;cost&nbsp;of&nbsp;that&nbsp;edge&nbsp;(i.e.&nbsp;a&nbsp;preference&nbsp;of&nbsp;2&nbsp;reduces&nbsp;cost&nbsp;by&nbsp;a&nbsp;factor&nbsp;of&nbsp;0.5).</span></dd></dl>
 
 <dl><dt><a name="Net-getReachable"><strong>getReachable</strong></a>(self, source, vclass=None, useIncoming=False, cache=None)</dt></dl>
 
 <dl><dt><a name="Net-getRoundabouts"><strong>getRoundabouts</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="Net-getShortestPath"><strong>getShortestPath</strong></a>(self, fromEdge, toEdge, maxCost=inf, vClass=None, reversalPenalty=0, includeFromToCost=True, withInternal=False, ignoreDirection=False, fromPos=None, toPos=None)</dt><dd><span class="code">Finds&nbsp;the&nbsp;shortest&nbsp;path&nbsp;from&nbsp;fromEdge&nbsp;to&nbsp;toEdge&nbsp;respecting&nbsp;vClass,&nbsp;using&nbsp;Dijkstra's&nbsp;algorithm.<br>
+<dl><dt><a name="Net-getShortestPath"><strong>getShortestPath</strong></a>(self, fromEdge, toEdge, maxCost=inf, vClass=None, reversalPenalty=0, includeFromToCost=True, withInternal=False, ignoreDirection=False, fromPos=None, toPos=None, preferences={})</dt><dd><span class="code">Finds&nbsp;the&nbsp;shortest&nbsp;path&nbsp;from&nbsp;fromEdge&nbsp;to&nbsp;toEdge&nbsp;respecting&nbsp;vClass,&nbsp;using&nbsp;Dijkstra's&nbsp;algorithm.<br>
 It&nbsp;returns&nbsp;a&nbsp;pair&nbsp;of&nbsp;a&nbsp;tuple&nbsp;of&nbsp;edges&nbsp;and&nbsp;the&nbsp;cost.&nbsp;If&nbsp;no&nbsp;path&nbsp;is&nbsp;found&nbsp;the&nbsp;first&nbsp;element&nbsp;is&nbsp;None.<br>
 The&nbsp;cost&nbsp;for&nbsp;the&nbsp;returned&nbsp;path&nbsp;is&nbsp;equal&nbsp;to&nbsp;the&nbsp;sum&nbsp;of&nbsp;all&nbsp;edge&nbsp;lengths&nbsp;in&nbsp;the&nbsp;path,<br>
 including&nbsp;the&nbsp;internal&nbsp;connectors,&nbsp;if&nbsp;they&nbsp;are&nbsp;present&nbsp;in&nbsp;the&nbsp;network.<br>
 The&nbsp;path&nbsp;itself&nbsp;does&nbsp;not&nbsp;include&nbsp;internal&nbsp;edges&nbsp;except&nbsp;for&nbsp;the&nbsp;case<br>
 when&nbsp;the&nbsp;start&nbsp;or&nbsp;end&nbsp;edge&nbsp;are&nbsp;internal&nbsp;edges.<br>
-The&nbsp;search&nbsp;may&nbsp;be&nbsp;limited&nbsp;using&nbsp;the&nbsp;given&nbsp;threshold.</span></dd></dl>
+The&nbsp;search&nbsp;may&nbsp;be&nbsp;limited&nbsp;using&nbsp;the&nbsp;given&nbsp;threshold.<br>
+The&nbsp;preferences&nbsp;declare&nbsp;a&nbsp;mapping&nbsp;from&nbsp;the&nbsp;'routingType'&nbsp;of&nbsp;each&nbsp;edge&nbsp;to&nbsp;divisor<br>
+that&nbsp;is&nbsp;applied&nbsp;to&nbsp;the&nbsp;lenght&nbsp;of&nbsp;that&nbsp;edge<br>
+(i.e.&nbsp;a&nbsp;preference&nbsp;of&nbsp;2&nbsp;reduces&nbsp;reduces&nbsp;effective&nbsp;length&nbsp;by&nbsp;a&nbsp;factor&nbsp;of&nbsp;0.5).</span></dd></dl>
 
 <dl><dt><a name="Net-getTLS"><strong>getTLS</strong></a>(self, tlid)</dt></dl>
 
@@ -299,6 +307,8 @@ where<br>
 <dl><dt><a name="Net-hasGeoProj"><strong>hasGeoProj</strong></a>(self)</dt></dl>
 
 <dl><dt><a name="Net-hasNode"><strong>hasNode</strong></a>(self, id)</dt></dl>
+
+<dl><dt><a name="Net-initRoutingCache"><strong>initRoutingCache</strong></a>(self, maxsize=1000)</dt></dl>
 
 <dl><dt><a name="Net-loadSelection"><strong>loadSelection</strong></a>(self, selectionFile)</dt></dl>
 
@@ -620,12 +630,14 @@ The&nbsp;following&nbsp;named&nbsp;options&nbsp;are&nbsp;supported:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;'withFoes'&nbsp;:&nbsp;import&nbsp;right-of-way&nbsp;information&nbsp;(default&nbsp;True)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;'withInternal'&nbsp;:&nbsp;import&nbsp;internal&nbsp;edges&nbsp;and&nbsp;lanes&nbsp;(default&nbsp;False)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;'withPedestrianConnections'&nbsp;:&nbsp;import&nbsp;connections&nbsp;between&nbsp;sidewalks,&nbsp;crossings&nbsp;(default&nbsp;False)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;'lxml'&nbsp;:&nbsp;set&nbsp;to&nbsp;False&nbsp;to&nbsp;use&nbsp;the&nbsp;xml.sax&nbsp;parser&nbsp;instead&nbsp;of&nbsp;the&nbsp;lxml&nbsp;parser</span></dd></dl>
+&nbsp;&nbsp;&nbsp;&nbsp;'lxml'&nbsp;:&nbsp;set&nbsp;to&nbsp;False&nbsp;to&nbsp;use&nbsp;the&nbsp;xml.sax&nbsp;parser&nbsp;instead&nbsp;of&nbsp;the&nbsp;lxml&nbsp;parser<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'maxcache'&nbsp;:&nbsp;set&nbsp;maximum&nbsp;cache&nbsp;size&nbsp;(default&nbsp;1000)&nbsp;or&nbsp;0&nbsp;to&nbsp;disable&nbsp;optimal&nbsp;route&nbsp;caching</span></dd></dl>
 </td></tr></table><p>
 <table class="section">
 <tr class="decor data-decor heading-text">
 <td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
     
 <tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
-<td class="singlecolumn"><strong>HAVE_LXML</strong> = False</td></tr></table>
+<td class="singlecolumn"><strong>HAVE_LRU_CACHE</strong> = True<br>
+<strong>HAVE_LXML</strong> = False</td></tr></table>
 </body></html>

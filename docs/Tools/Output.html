@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 16 March 2026 08:27:05
-Last edit: 16 March 2026
+Build Date UTC : 26 March 2026 08:07:39
+Last edit: 26 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -200,6 +200,7 @@ Last edit: 16 March 2026
             <li class="nav-item main"><a href="#aggregatebatteryoutputpy">aggregateBatteryOutput.py</a></li>
             <li class="nav-item main"><a href="#fcddiffpy">fcdDiff.py</a></li>
             <li class="nav-item main"><a href="#edgedepartdelaypy">edgeDepartDelay.py</a></li>
+            <li class="nav-item main"><a href="#instantoutdiffpy">instantOutDiff.py</a></li>
         </ul>
     </div>
 
@@ -549,6 +550,15 @@ Data points in the files are matched by time and by id (no time shifting is done
 </code></pre></div>
 
 <p>The <em>maxLabel</em> attribute will hold the id of the vehicle with the maximum departDelay on a given edge.</p>
+<h2 id="instantoutdiffpy">instantOutDiff.py<a class="headerlink" href="#instantoutdiffpy" title="Permanent link">#</a></h2>
+<p>Compares two files with output of <a href="../Simulation/Output/Instantaneous_Induction_Loops_Detectors.html">instantInductionLoops</a> according to the number of detections for each matching detector and according to the time differences of detections.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">instantOutDiff</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">DETECTIONS1</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="n">DETECTIONS2</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="n">DIFF</span><span class="o">.</span><span class="n">xml</span>
+</code></pre></div>
+
+<p>The third agument defines the output file which holds statistical measures for each detector. 
+For each detector in the first input file, the best-matching event in the second file is identified (without constraints on re-use) and the time difference is collected as a data point.
+The attribute <code>delta</code> is the difference in number of detected events of the two files.
+Additional information on missing detectors is given as command line output</p>
                 </div>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -556,7 +566,7 @@ Data points in the files are matched by time and by id (no time shifting is done
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 16 March 2026</i></small>
+            <br><small><i>This page was last edited on: 26 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
