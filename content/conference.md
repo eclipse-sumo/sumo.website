@@ -245,8 +245,8 @@ Connected and Automated Mobility (CAM) relies on advanced and interoperable simu
 <span id="workshop2"></span> <!-- hidden anchor -->
 <h3><span class="badge badge-info">W2</span> Navigating Complexity: Leveraging SUMO for Traffic Planning at Major Events</h3>
 <small><i class="fas fa-calendar-alt"></i> Monday June 01, 15:30 - 17:30
-<!-- <br>
-<i><i class="fa-solid fa-user-group"></i> Confirmed participation from </i> -->
+<br>
+<i><i class="fa-solid fa-user-group"></i> Confirmed participation from Forschungszentrum Jülich</i>
 <br><br>
 </small>
 
