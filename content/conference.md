@@ -231,36 +231,82 @@ Being a physicists by training, I have worked in transport for over 30 years, fo
 
 During the conference, a series of workshops will take place in dedicated rooms alongside the main program. These sessions offer participants the opportunity to engage more deeply with specific topics in a smaller, interactive setting.
 
-## Digital Twins and Traffic Management in Cities
-
-This 2-hour workshop explores the potential of Digital Twins in urban traffic management. Participants will learn how real-time data integration and simulation models enable more adaptive, data-driven mobility systems. Interactive demonstrations highlight smart city case studies that use Digital Twins to optimise traffic flow, reduce environmental impact, and enhance safety. The session concludes with a discussion on technical challenges, scalability, and future directions within the SUMO ecosystem - defining practical next steps for intelligent urban mobility.
-
-## Navigating Complexity: Leveraging SUMO for Traffic Planning at Major Events
-
-Large-scale events create complex interactions between vehicular traffic and pedestrian flows that require holistic planning tools. This workshop explores the added value of coupling SUMO with JuPedSim to simulate both road networks and crowd dynamics simultaneously. We will discuss specific needs, data requirements, and pitfalls faced by authorities, event organizers, and transport providers in this context. Through interactive discussion, participants will collaboratively define best practices for using multi-modal simulation in approval workflows and operational planning.
-
-## Simulating Connected and Automated Mobility 
+<span id="workshop1"></span> <!-- hidden anchor -->
+<h3><span class="badge badge-info">W1</span> Simulating Connected and Automated Mobility</h3>
+<small><i class="fas fa-calendar-alt"></i> Monday June 01, 15:30 - 17:30
+<br>
+<i><i class="fa-solid fa-user-group"></i> Confirmed participation from DLR Institute of Transportation Systems, University of Trento</i>
+<br><br>
+</small>
 
 Connected and Automated Mobility (CAM) relies on advanced and interoperable simulation frameworks to evaluate communication, cooperation, and automated driving functions in realistic traffic scenarios. This workshop presents current developments and applications based on Eclipse MOSAIC, Eclipse SUMO, Eclipse ADORe, as well as specialized CAM use cases implemented with SUMO’s libtraci interface. Short impulse talks and live demonstrations by tool developers provide practical insights into architectures, coupling strategies, and communication modeling (e.g., CAMs/CPMs, platooning). The session is designed to stimulate exchange between developers and users and to discuss integration strategies and future directions for CAM simulation toolchains.
 
-## Using SUMO for Railway simulations
+---
+<span id="workshop2"></span> <!-- hidden anchor -->
+<h3><span class="badge badge-info">W2</span> Navigating Complexity: Leveraging SUMO for Traffic Planning at Major Events</h3>
+<small><i class="fas fa-calendar-alt"></i> Monday June 01, 15:30 - 17:30
+<!-- <br>
+<i><i class="fa-solid fa-user-group"></i> Confirmed participation from </i> -->
+<br><br>
+</small>
 
-SUMO supports signal infrastructure models, train dynamics and automated operational response mechanisms such as overtaking, track changes and stop cancellations. How do the current Features and Limitation fit into the simulation needs in railway research and strategic and operational planning. The goal is share insights, inspire new projects and shape the future development trajectory.
+Large-scale events create complex interactions between vehicular traffic and pedestrian flows that require holistic planning tools. This workshop explores the added value of coupling SUMO with JuPedSim to simulate both road networks and crowd dynamics simultaneously. We will discuss specific needs, data requirements, and pitfalls faced by authorities, event organizers, and transport providers in this context. Through interactive discussion, participants will collaboratively define best practices for using multi-modal simulation in approval workflows and operational planning.
 
-## Using SUMO for simulating innovative public transportation systems
+---
+<span id="workshop3"></span> <!-- hidden anchor -->
+<h3><span class="badge badge-info">W3</span> Digital Twins and Traffic Management in Cities</h3>
+<small><i class="fas fa-calendar-alt"></i> Tuesday June 02, 15:30 - 17:30
+<br>
+<i><i class="fa-solid fa-user-group"></i> Confirmed participation from Transcality, Infrest GmbH, Stadt Ulm, Stadt Mannheim, Stadt München, City of Bratislava</i>
+<br><br>
+</small>
+
+This 2-hour workshop explores the potential of Digital Twins in urban traffic management. Participants will learn how real-time data integration and simulation models enable more adaptive, data-driven mobility systems. Interactive demonstrations highlight smart city case studies that use Digital Twins to optimise traffic flow, reduce environmental impact, and enhance safety. The session concludes with a discussion on technical challenges, scalability, and future directions within the SUMO ecosystem - defining practical next steps for intelligent urban mobility.
+
+---
+<span id="workshop4"></span> <!-- hidden anchor -->
+<h3><span class="badge badge-info">W4</span> Using SUMO for simulating innovative public transportation systems</h3>
+<small><i class="fas fa-calendar-alt"></i> Wednesday June 03, 10:00 - 12:00
+<!-- <br>
+<i><i class="fa-solid fa-user-group"></i> Confirmed participation from </i> -->
+<br><br>
+</small>
 
 Traffic simulation is the major tool to convince technical people and communities alike to follow different paths in enhancing their public transportation systems. SUMO supports them with the ability to model rail, road and water based transportation modes, importing existing networks and schedules and editing them in a flexible way. The resulting simulations cover the whole trip chain of the people involved showing bottlenecks and accumulating delays due to congestion on roads but also on train platforms and how to avoid them. The topic of the workshop will be to evaluate the strengths and room for improvements of SUMO in public transportation research and which new modes still need more coverage. The goal is share insights, inspire new projects and shape the future development trajectory.
+
+---
+<span id="workshop5"></span> <!-- hidden anchor -->
+<h3><span class="badge badge-info">W5</span> Using SUMO for Railway simulations</h3>
+<small><i class="fas fa-calendar-alt"></i> Thursday June 04, 10:00 - 12:00
+<!-- <br>
+<i><i class="fa-solid fa-user-group"></i> Confirmed participation from </i> -->
+<br><br>
+</small>
+
+SUMO supports signal infrastructure models, train dynamics and automated operational response mechanisms such as overtaking, track changes and stop cancellations. How do the current Features and Limitation fit into the simulation needs in railway research and strategic and operational planning. The goal is share insights, inspire new projects and shape the future development trajectory.
 
 ---
 
 # Social Event
 
-**⛴️ Boat Tour ⛴️**
-
-<small>*Limited capacity</small>
 
 
-*More info soon!*
+<div class="row g-3">
+  <div class="col-12 col-md-6">
+    <div class="square-img-box">
+      <img src="https://www.reederei-kutzker.de/wp-content/uploads/2022/05/MS_Donau-1024x683.jpg" class="img-fluid" alt="">
+    </div>
+    <small style="color: lightgray">Image: <a style="color:inherit" href="https://www.reederei-kutzker.de/">© Reederei Kutzker</a></small>
+  </div>
+  <div class="col-12 col-md-6">
+  <h3 class="mt-0">Boat Tour</h3>
+<small><i class="fas fa-calendar-alt"></i> Monday June 01, 18:00 - 20:30</small>
+<br><br>
+<b>Limited capacity.</b>
+During registration, you will be asked to indicate whether you plan to attend the social event.
+Please note that your response is non-binding and serves only to help us estimate attendance - it does not guarantee a reserved spot.
+  </div>
+</div>
 
 
 # Language

@@ -28,6 +28,6 @@ markup:
     renderer:
       unsafe: true
   tableOfContents:
+    startLevel: 1
     endLevel: 2
     ordered: false
-    startLevel: 1
