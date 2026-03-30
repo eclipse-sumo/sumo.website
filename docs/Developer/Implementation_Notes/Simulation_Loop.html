@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 29 March 2026 10:58:00
-Last edit: 29 March 2026
+Build Date UTC : 30 March 2026 12:08:25
+Last edit: 30 March 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -220,7 +220,7 @@ with the other elements of the simulation and the update cycle for the vehicles.
 <h1 id="pedestrian_lifecycle_and_update_loop">Pedestrian Lifecycle and update Loop<a class="headerlink" href="#pedestrian_lifecycle_and_update_loop" title="Permanent link">#</a></h1>
 <p>Persons in SUMO are modelled by the distinct <a href="../../Specification/Persons.html#simulation_behavior">stages</a> <em>walk</em>, <em>ride</em>, <em>stop</em> and <em>access</em>.
 The simulation behavior of a person in stage <em>walk</em> is controlled by the pedestrian model configured via option <strong>--pedestrian.model</strong>.</p>
-<p>The model must inherit from <a href="">class MSPModel</a> and provide instances of <a href="">MSTransportableStateAdapter</a> for each pedestrian. The adapter instances are used by the simulation to retrieve the state of the pedestrian (i.e. position and speed). The MSPModel is responsible for signaling when the pedestrian changes to another edge. The following sketch describes the interaction.</p>
+<p>The model must inherit from <a href="https://github.com/eclipse-sumo/sumo/blob/main/src/microsim/transportables/MSPModel.h">class MSPModel</a> and provide instances of MSTransportableStateAdapter for each pedestrian. The adapter instances are used by the simulation to retrieve the state of the pedestrian (i.e. position and speed). The MSPModel is responsible for signaling when the pedestrian changes to another edge. The following sketch describes the interaction.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>abstract methods that must be overridden by the model implementation are in <em>italics</em></p>
@@ -233,7 +233,7 @@ The simulation behavior of a person in stage <em>walk</em> is controlled by the 
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 29 March 2026</i></small>
+            <br><small><i>This page was last edited on: 30 March 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
