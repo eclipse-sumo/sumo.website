@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 30 March 2026 13:03:49
-Last edit: 30 March 2026
+Build Date UTC : 02 April 2026 19:25:01
+Last edit: 02 April 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -223,6 +223,15 @@ Last edit: 30 March 2026
                 <li class="nav-item" style="text-indent: 25px;">
                     <a href="#example_scenarios_for_parkingsearch" class="nav-link">&rarr; Example scenarios for parkingSearch</a>
                 </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#rerouting_to_a_railroad_siding_to_be_overtaken_by_a_faster_train" class="nav-link">• Rerouting to a railroad siding to be overtaken by a faster train</a>
+                </li>
+                <li class="nav-item" style="text-indent: 25px;">
+                    <a href="#computing_the_time_saved_by_an_overtaking_maneuver" class="nav-link">&rarr; Computing the time saved by an overtaking maneuver</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#rerouting_to_an_alternative_stop_of_the_same_station" class="nav-link">• Rerouting to an alternative stop of the same station</a>
+                </li>
             <li class="nav-item main"><a href="#vehicle_behavior_when_closing_a_street">Vehicle Behavior when closing a street</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#hard_closing" class="nav-link">• Hard closing</a>
@@ -232,6 +241,9 @@ Last edit: 30 March 2026
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#departure_on_a_closed_edge" class="nav-link">• Departure on a closed edge</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#skipping_stops_and_optimizing_reached_stops" class="nav-link">• Skipping stops and optimizing reached stops</a>
                 </li>
         </ul>
     </div>
@@ -821,6 +833,72 @@ of the new parkingArea will be set as new arrivalPos.</p>
 <p>The current state of the parkingSearch can be accessed via calls to <code>traci.vehicle.getParameter</code> with the list permitted parameters given at <a href="../TraCI/Vehicle_Value_Retrieval.html#supported_further_parameters">TraCI/Vehicle_Value_Retrieval</a>.</p>
 <h3 id="example_scenarios_for_parkingsearch">Example scenarios for parkingSearch<a class="headerlink" href="#example_scenarios_for_parkingsearch" title="Permanent link">#</a></h3>
 <p>Test cases can be downloaded <a href="https://sumo.dlr.de/extractTest.php?path=sumo/extended/rerouter/parking/parkingSearch">here</a></p>
+<h2 id="rerouting_to_a_railroad_siding_to_be_overtaken_by_a_faster_train">Rerouting to a railroad siding to be overtaken by a faster train<a class="headerlink" href="#rerouting_to_a_railroad_siding_to_be_overtaken_by_a_faster_train" title="Permanent link">#</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;rerouter&gt;</span>
+<span class="w">   </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;&lt;BEGIN_TIME&gt;&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;&lt;END_TIME&gt;&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;overtakingReroute</span><span class="w"> </span><span class="na">main=</span><span class="s">&quot;E4 E5 E6&quot;</span><span class="w"> </span><span class="na">siding=</span><span class="s">&quot;E4b E5b E6b&quot;</span><span class="nt">/&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/interval&gt;</span>
+<span class="nt">&lt;/rerouter&gt;</span>
+</code></pre></div>
+
+<p>The attributes used within such definitions are:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>main</strong></td>
+<td>edge ids (stringList)</td>
+<td>The ids of consecutive edges that a train must take at some point after the rerouter edge to be considered for being overtaken</td>
+</tr>
+<tr>
+<td><strong>siding</strong></td>
+<td>edge ids (stringList)</td>
+<td>The ids of consecutive edges that will be used instead of the main edges for waiting to be overtaken.</td>
+</tr>
+<tr>
+<td>minSaving</td>
+<td>float</td>
+<td>The minimum time saving in seconds to trigger an overtaking maneuver (see below for the saving computation)</td>
+</tr>
+<tr>
+<td>defer</td>
+<td>bool</td>
+<td>Whether a slow train may elect to be overtaking at some downstream location (defaults to <em>true</em> if more than one <code>&lt;overtakingReroute&gt;</code> element is defined within the rerouter)</td>
+</tr>
+</tbody>
+</table>
+<p>Requirements for the siding:
+- one of the edges of the saiding must have a rail_signal at it's end
+- the siding must be long enough to accomodate the train being overtaken ahead of the rail signal</p>
+<p>Definitions for <code>&lt;overtakingReroute&gt;</code> can be created with the tool <a href="../Tools/Railways.html#createovertakingreroutespy">createOvertakingReroutes.py</a>.</p>
+<h3 id="computing_the_time_saved_by_an_overtaking_maneuver">Computing the time saved by an overtaking maneuver<a class="headerlink" href="#computing_the_time_saved_by_an_overtaking_maneuver" title="Permanent link">#</a></h3>
+<p>To be overtaken, a train A must be followed by a <strong>faster</strong> train B. Train B may not be delayed by more than a delay threshold. This threshold is configured with <a href="GenericParameters.html">generic param</a> <code>key="overtakingReroute.maxDelay"</code> (default 7200s). The savings computation compares two cases:</p>
+<ol>
+<li>train A continues along the main track and train B must follow until the routes of A and B diverge. This implies that the speed of train B is reduced to that of train A after train B has caught up.</li>
+<li>train B diverges onto the siding and waits until train B has caught up and passed the main edges. Train A can continue at it's full speed and potentially reaches it's destination faster whereas train B must wait at the exit signal of the siding and suffers timeLoss</li>
+</ol>
+<p>When comparing both cases, train A may save some time while train B typically loses some time in case 2. The savings and timeLoss are weighted according to the respective train priorities defined with <a href="GenericParameters.html">generic param</a> <code>key="overtakingReroute.prio"</code> (which defaults to <em>1</em> for the faster train and to <em>0.001</em> for the slower train).
+The net saving is computed as:</p>
+<div class="codehilite"><pre><span></span><code>netSaving = prioFast <span class="gs">* (savingFast - accelTimeLossFast) - prioSlow *</span> (lossSlow + accelTimeLossSlow);
+</code></pre></div>
+
+<p>The value of <em>accelTimeLossFast</em> is non-zero, only if the faster train reaches the signal block of the slow train before that latter has fully entered the siding. The value of <em>accelTimeLossSlow</em> is non-zero if the fast train has not left the main section before the slow train reaches the siding signal (this ignores the impact of the length of the block after the siding).</p>
+<h2 id="rerouting_to_an_alternative_stop_of_the_same_station">Rerouting to an alternative stop of the same station<a class="headerlink" href="#rerouting_to_an_alternative_stop_of_the_same_station" title="Permanent link">#</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;rerouter&gt;</span>
+<span class="w">   </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;&lt;BEGIN_TIME&gt;&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;&lt;END_TIME&gt;&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;stationReroute</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ts_5&quot;</span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;stationReroute</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ts_5b&quot;</span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;stationReroute</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ts_5c&quot;</span><span class="nt">/&gt;</span><span class="w">      </span>
+<span class="w">   </span><span class="nt">&lt;/interval&gt;</span>
+<span class="nt">&lt;/rerouter&gt;</span>
+</code></pre></div>
+
 <h1 id="vehicle_behavior_when_closing_a_street">Vehicle Behavior when closing a street<a class="headerlink" href="#vehicle_behavior_when_closing_a_street" title="Permanent link">#</a></h1>
 <p>The interaction of vehicles with reroutes is complex and depends on many
 different factors. Below we give a description of each of the factors and then
@@ -922,6 +1000,16 @@ along their route (other vehicles are not affected directly).</p>
 <h2 id="departure_on_a_closed_edge">Departure on a closed edge<a class="headerlink" href="#departure_on_a_closed_edge" title="Permanent link">#</a></h2>
 <p>When the departure edge for a vehicle is closed, vehicles will ignore this for
 'soft' closing. For a 'hard' closing the simulation will raise an error. If <strong>--ignore-route-errors</strong> is set, the vehicle will be discarded with a warning.</p>
+<h2 id="skipping_stops_and_optimizing_reached_stops">Skipping stops and optimizing reached stops<a class="headerlink" href="#skipping_stops_and_optimizing_reached_stops" title="Permanent link">#</a></h2>
+<p>When a vehicle reroutes that has one or more remainign stops on it's route, The default behavior is to find a route that reaches all stops. If some stops are unreachable, rerouting fails and the vehicle must wait at the closed edge until the closing ends.
+By setting attribute <code>priority</code> in the <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#stops_and_waypoints">stop definitions</a> of the vehicle, an algorithm that optimizes reachable stops is activated:</p>
+<ul>
+<li>stops with priority &gt;= 0 are skipped if they cannot be reached anymore</li>
+<li>stops that define attribute <code>arrival</code> and which cannot be reached with an arrivalDelay below a configurable threshold (due to the required detour) are skipped. The threshold is configurable with a <a href="GenericParameters.html">generic vehicle param</a> <code>key="closingReroute.maxDelay"</code> and defaults to 7200s</li>
+<li>the chosen route minimizes the total priority value of all stops that can be reached within the delay threshold</li>
+<li>stops without priority may never be skipped</li>
+<li>a warning is issued for every stop that is skipped in this way</li>
+</ul>
                 </div>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -929,7 +1017,7 @@ along their route (other vehicles are not affected directly).</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 30 March 2026</i></small>
+            <br><small><i>This page was last edited on: 02 April 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

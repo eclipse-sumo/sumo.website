@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 30 March 2026 13:03:48
-Last edit: 30 March 2026
+Build Date UTC : 02 April 2026 19:25:01
+Last edit: 02 April 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -2936,6 +2936,13 @@ head to lane <code>end_1</code> and pass that point at 13.89 m/s before terminat
 <td>vehicle id</td>
 <td>must be set to the id of a vehicle that stops with <code>triggered="join"</code>. <a href="Simulation/Railways.html#joining_two_trains">Joins this train to another</a> upn reaching the stop</td>
 </tr>
+<tr>
+<td>priority</td>
+<td>float</td>
+<td></td>
+<td>-1</td>
+<td>When set to a positive value, the stop may be skipped when encountering a <a href="Simulation/Rerouter.html#closing_a_street">closingReroute</a>. Rerouting around closure will maximize the total priority of skippable stops</td>
+</tr>
 </tbody>
 </table>
 <ul>
@@ -3099,7 +3106,7 @@ defining them for the vehicle or the vehicle type in the following way:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 30 March 2026</i></small>
+            <br><small><i>This page was last edited on: 02 April 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

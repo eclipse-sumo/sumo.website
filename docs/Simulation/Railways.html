@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 30 March 2026 13:03:49
-Last edit: 30 March 2026
+Build Date UTC : 02 April 2026 19:25:01
+Last edit: 02 April 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -657,15 +657,13 @@ met:</p>
 <li>The train does not have any further stops on the current edge</li>
 <li>The succeeding edges in the train's route are the reverse-direction
   edges of those it is currently on</li>
-<li>
-<p>There is a "turn-around" connection from the current train edge to
-  the reverse direction edge</p>
+<li>There is a "turn-around" connection from the current train edge to
+  the reverse direction edge</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When netconvert has loaded public transport stops (either during OSM import or from option <strong>--ptstop-files</strong>) then option <strong>--railway.topology.repair.stop-turn</strong> can be used to add a turn-around connection at every rail public transport stop and thus make it possible for trains to reverse at each stop.</p>
 </div>
-</li>
-</ul>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Undesirable train reversals may occur due to invalid stop assignment (i.e. assigning the reverse stop). The tool <a href="../Tools/Railways.html#checkreversalspy">checkReversals.py</a> can be used to search for unexpected reversals.</p>
@@ -795,12 +793,12 @@ To make use of this, the following elements can be loaded from an additional fil
 <p>Constraints can be generated using the tool <a href="../Tools/Railways.html#generaterailsignalconstraintspy">generateRailSignalConstraints.py</a> by using a route file with <a href="Public_Transport.html#public_transport_schedules">stops that define a schedule</a>.</p>
 <h1 id="tram_simulation">Tram Simulation<a class="headerlink" href="#tram_simulation" title="Permanent link">#</a></h1>
 <h2 id="tram_behavior">Tram Behavior<a class="headerlink" href="#tram_behavior" title="Permanent link">#</a></h2>
-<p>Operationally, there are many similarities between tram and conventional/heavy rail operations with regard to track networks and signaling at conflict points. 
+<p>Operationally, there are many similarities between tram and conventional/heavy rail operations with regard to track networks and signaling at conflict points.
 The main difference is that trams are not separated by blocks when following each other. To reflect this in sumo, rail signals on tram tracks are automatically put into <a href="#moving_block_mode">moving block mode</a> (This is configured with option <strong>--railsignal.moving-block.default-classes</strong>). Tram rail signals are still needed to regulate bidirectional access to single-track sections and they can be used to guard crossing and merging conflicts. However, fewer rail signals are needed compared to a convential rail simulation because block length is not a critical efficiency factor in one-directional operations.</p>
 <h2 id="tram_network_modelling">Tram Network modelling<a class="headerlink" href="#tram_network_modelling" title="Permanent link">#</a></h2>
 <p>In many parts of the world, OSM data does not provide information of signaling infrastructure for tram networks. To achieve smooth operations at conflict points without rail signals, <a href="../netconvert.html">netconvert</a> sets merging conflicts to junction type 'zipper'. The vehicle classes elible for this behavior are configured with netconvert option <strong>--railway.signal.permit-unsignalized</strong> (default <em>tram,cable_car</em>).</p>
-<p>For many tram networks (i.e. with single track sections), this type of conflict handling is not sufficient and rail signals must be added. This can be done manually with netedit or with the tool 
-<a href="../Tools/Railways.html#patchrailconflictspy">patchRailConflicts.py</a>. </p>
+<p>For many tram networks (i.e. with single track sections), this type of conflict handling is not sufficient and rail signals must be added. This can be done manually with netedit or with the tool
+<a href="../Tools/Railways.html#patchrailconflictspy">patchRailConflicts.py</a>.</p>
 <p>To simplify tram simulations where rail signals have been added selectively and some conflicts are regulared with zipper junctions, sumo option <strong>--railsignal.moving-block.max-dist</strong> (default <em>200</em>) can be used. Rail signal in moving block mode will disregard conflicts at junction type <code>zipper</code> if they are beyond the configured maximum distance.</p>
 <h1 id="deadlocks">Deadlocks<a class="headerlink" href="#deadlocks" title="Permanent link">#</a></h1>
 <p>If the graph of relationships between trains that wait for another train ever forms a circle, then no train can ever advance and the simulation is in a state of deadlock.
@@ -1076,6 +1074,8 @@ used. The attribute <code>source</code> must be set to the ID of the junction th
 <li>The tool <a href="../Tools/Railways.html#schedulestatspy">scheduleStats.py</a> can be used to check how closely simulated train behavior conforms to a loaded rail schedule w.r.t. punctuality and expected traveltimes between stops.</li>
 <li>The tool <a href="../Tools/Railways.html#checkreversalspy">checkReversals.py</a> counts reversals per vehicle and per edge to identify potentially problematic train routes.</li>
 <li>The tool <a href="../Tools/Railways.html#patchrailconflictspy">patchRailConflicts.py</a> adds missing rail signals to a network (intended for tram simulation)</li>
+<li>The tool <a href="../Tools/Railways.html#patchrailprioritiespy">patchRailPriorities.py</a> helps find sensible train routes on single-track lines that make use of passing loops (sidings) by adapting the <a href="Routing.html#routing_by_travel_time_and_routingtype">routingType</a> of railway-edges so that trains in different directions use different tracks when possible.</li>
+<li>The tool <a href="../Tools/Railways.html#createovertakingreroutespy">createOvertakingReroutes.py</a> is used to generate <a href="Rerouter.html#rerouting_to_a_railroad_siding_to_be_overtaken_by_a_faster_train">rerouter definitions for automatic train overtaking</a></li>
 <li>The tool <a href="../Tools/Railways.html#plotstopspy">plotStops.py</a> can render schedule diagrams for a given route</li>
 </ul>
 <p><img src="../images/S46_actual.png" width="800px"/></p>
@@ -1096,7 +1096,7 @@ used. The attribute <code>source</code> must be set to the ID of the junction th
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 30 March 2026</i></small>
+            <br><small><i>This page was last edited on: 02 April 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

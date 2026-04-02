@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 30 March 2026 13:03:49
-Last edit: 30 March 2026
+Build Date UTC : 02 April 2026 19:25:01
+Last edit: 02 April 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -191,6 +191,9 @@ Last edit: 30 March 2026
                     <a href="#routing_mode_traciconstantsrouting_mode_aggregated" class="nav-link">• Routing Mode traci.constants.ROUTING_MODE_AGGREGATED</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#routing_mode_traciconstantsrouting_mode_aggregated_custom" class="nav-link">• Routing Mode traci.constants.ROUTING_MODE_AGGREGATED_CUSTOM</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
                     <a href="#randomized_travel_times" class="nav-link">• Randomized travel times</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
@@ -301,9 +304,17 @@ By setting a vehicle routing mode that includes bit-flag <em>traci.constants.ROU
 </ul>
 <h1 id="travel-time_values_for_routing">Travel-time values for routing<a class="headerlink" href="#travel-time_values_for_routing" title="Permanent link">#</a></h1>
 <p>By default, the route with the least travel time is chosen. The travel
-time depends on the current routing mode (configurable via
-<em>traci.vehicle.setRoutingMode</em>) or via the explicit <em>routingMode</em>
-argument to <em>traci.simulation.findRoute</em>.</p>
+time depends on the current routing mode which is set via any of the following:</p>
+<ul>
+<li><em>traci.vehicle.setRoutingMode</em></li>
+<li>the explicit <em>routingMode</em> argument to <em>traci.simulation.findRoute</em>.</li>
+<li><a href="GenericParameters.html">generic vehicle param</a> <code>key="device.rerouting.mode"</code></li>
+<li>option <strong>--device.rerouting.mode</strong></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>when a vehicle is using ROUTING_MODE_AGGREGATED or ROUTING_MODE_AGGREGATED_CUSTOM, collection of <a href="../Demand/Automatic_Routing.html#edge_weights">aggregated/smoothed travel times</a> will be activated and used for <a href="Rerouter.html">location triggered rerouting</a> and <a href="Stationfinder.html">event triggered rerouting</a>.</p>
+</div>
 <h2 id="routing_mode_traciconstantsrouting_mode_default">Routing Mode <em>traci.constants.ROUTING_MODE_DEFAULT</em><a class="headerlink" href="#routing_mode_traciconstantsrouting_mode_default" title="Permanent link">#</a></h2>
 <p>The following order of steps is taken to retrieve the travel time for each edge. If a step provides data, this is used, otherwise the next step is attempted:</p>
 <ol>
@@ -323,6 +334,14 @@ argument to <em>traci.simulation.findRoute</em>.</p>
 <h2 id="routing_mode_traciconstantsrouting_mode_aggregated">Routing Mode <em>traci.constants.ROUTING_MODE_AGGREGATED</em><a class="headerlink" href="#routing_mode_traciconstantsrouting_mode_aggregated" title="Permanent link">#</a></h2>
 <p>The <a href="../Demand/Automatic_Routing.html#edge_weights">smoothed travel times</a> computed for
 the <em>rerouting device</em> are used. Note, that these can also be modified via TraCI.</p>
+<h2 id="routing_mode_traciconstantsrouting_mode_aggregated_custom">Routing Mode <em>traci.constants.ROUTING_MODE_AGGREGATED_CUSTOM</em><a class="headerlink" href="#routing_mode_traciconstantsrouting_mode_aggregated_custom" title="Permanent link">#</a></h2>
+<p>The <a href="../Demand/Automatic_Routing.html#edge_weights">smoothed travel times</a> computed for
+the <em>rerouting device</em> are used. Note, that these can also be modified via TraCI. Additionally, the following features are applied if configured:</p>
+<ul>
+<li><strong>--weights.random-factor</strong> (randomized noise for traveltimes)</li>
+<li><strong>--weights.priority-factor</strong> (<a href="#routing_by_travel_time_and_edge_priority">factoring edge priority into route choice</a>)</li>
+<li>using edge routingType according to <a href="#routing_by_travel_time_and_routingtype">routing preferences</a></li>
+</ul>
 <h2 id="randomized_travel_times">Randomized travel times<a class="headerlink" href="#randomized_travel_times" title="Permanent link">#</a></h2>
 <p><a href="../sumo.html">Sumo</a> and <a href="../duarouter.html">duarouter</a> support option <strong>--weights.random-factor FLOAT</strong>. When this option is set, edge weights (i.e. travel times) for routing are dynamically disturbed by a random factor drawn uniformly from <code>[1,FLOAT)</code>. The value of FLOAT thereby sets an upper bound on the difference in travel time between the actual fastest path and the routing result. With a value of <code>2</code>. The result will have twice the travel time / cost of the optimal path in the worst case (In the unlikely event where all edges of the fastest path happen to get a disturbance factor of 2).</p>
 <p>Randomized edge weights can be useful in grid networks where there are many paths have the same (or almost the same) travel cost and the default routing algorithm would send all vehicles on the same path. It can also be used to model imperfection in travel time estimation.</p>
@@ -517,7 +536,7 @@ enabling routing in multi modal scenarios</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 30 March 2026</i></small>
+            <br><small><i>This page was last edited on: 02 April 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

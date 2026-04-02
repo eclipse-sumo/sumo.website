@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 30 March 2026 13:03:49
-Last edit: 30 March 2026
+Build Date UTC : 02 April 2026 19:25:01
+Last edit: 02 April 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -199,7 +199,9 @@ Last edit: 30 March 2026
             <li class="nav-item main"><a href="#schedulestatspy">scheduleStats.py</a></li>
             <li class="nav-item main"><a href="#checkreversalspy">checkReversals.py</a></li>
             <li class="nav-item main"><a href="#plotstopspy">plotStops.py</a></li>
+            <li class="nav-item main"><a href="#createovertakingreroutespy">createOvertakingReroutes.py</a></li>
             <li class="nav-item main"><a href="#patchrailconflictspy">patchRailConflicts.py</a></li>
+            <li class="nav-item main"><a href="#patchrailprioritiespy">patchRailPriorities.py</a></li>
         </ul>
     </div>
 
@@ -242,6 +244,7 @@ Last edit: 30 March 2026
                   
                   
 
+<p>This page lists tools that are useful for <a href="../Simulation/Railways.html">railway simulation</a>.</p>
 <h1 id="generaterailsignalconstraintspy">generateRailSignalConstraints.py<a class="headerlink" href="#generaterailsignalconstraintspy" title="Permanent link">#</a></h1>
 <p>Generate <a href="../Simulation/Railways.html#schedule_constraints">constraints that enforce a given railway schedule</a>.
 Example:</p>
@@ -415,12 +418,29 @@ Such a file is loaded by adding the option <strong>-s, --stopinfo-file</strong> 
 </code></pre></div>
 
 <p><img src="../images/S46_actual.png" width="800px"/></p>
+<h1 id="createovertakingreroutespy">createOvertakingReroutes.py<a class="headerlink" href="#createovertakingreroutespy" title="Permanent link">#</a></h1>
+<p>Parses a network and routefile to find overtaking locations and create <overtakingReroute> elements
+This tool is meant to generate rerouter definitions for automated and dynamic <a href="../Simulation/Rerouter.html#rerouting_to_a_railroad_siding_to_be_overtaken_by_a_faster_train">train-overtaking</a>.</p>
+<p>Example call</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">trigger</span><span class="o">/</span><span class="n">createOvertakingReroutes</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">input_routes</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">out</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span>
+</code></pre></div>
+
+<p>The tool analyzes the rail network along loaded routes to find passing loops (sidings) that match a range of criteria:</p>
+<ul>
+<li>there must be a signal that guards the exit of the siding</li>
+<li>the total length of the siding may not exceed a configurable threshold (<strong>--max-length</strong>)</li>
+<li>the length of the siding before the signal must have a minimum track length (<strong>----min-length</strong>)</li>
+<li>the may not be used by oncoming traffic (configurable with <strong>--exclude-reverse-usage</strong>)</li>
+<li>they may not be used heavily by the loaded routes (configurable with <strong>--exclude-usage</strong>)</li>
+<li>the sequence of tracks that form the siding may not include a train reversal (configurable with <strong>--reversal-penalty</strong>)</li>
+</ul>
+<p>For every siding that is found an new rerouter element is created. Since trains that can be overtaken may elect to wait at downstream siding, each rerouter may have more than one <code>&lt;overtakingReroute&gt;</code>-definition. This permits a runtime choice of using the current or a later siding (which may again present another choice).</p>
 <h1 id="patchrailconflictspy">patchRailConflicts.py<a class="headerlink" href="#patchrailconflictspy" title="Permanent link">#</a></h1>
 <p>This tool modifies junction types, edge offsets and connection attributes in a network to ensure that conflicts between different tracks are guarded by rail signals. It's main use is for patching tram networks where real-world data on signal infrastructure is often lacking.
 The tool works by identifiyng conflict junctions (i.e. switches and crossings) and change their type <code>rail_signal</code> and optionally shifting the waiting position to be somewhat ahead of the conflict.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>Using this tool for convential rail operations is not recommended as these typically have signals well in advance of switches and crossings to account for overrun distance (<em>Durchrutschweg</em>)</p>
+<p>When using this tool for convential rail operations, option <strong>--split-offset</strong> should be set to ensure that signals are created well in advance of switches and crossings to account for overrun distance (<em>Durchrutschweg</em>).</p>
 </div>
 <p>Example call</p>
 <div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">patchRailConflicts</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">input_net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">output_net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span>
@@ -433,6 +453,17 @@ The tool works by identifiyng conflict junctions (i.e. switches and crossings) a
 <li><strong>-e</strong>, <strong>--end-offset</strong> (default <em>0</em>): If set, the waiting position of trains will be moved back from the conflict point by setting <a href="../Networks/PlainXML.html#edge_descriptions">edge attribute <code>endOffset</code></a>.</li>
 <li><strong>-j</strong>, <strong>--join-distance</strong> (default <em>200</em>): Identifies clusters of conflict points within the given range and only guards connections that enter the cluster from the outside</li>
 </ul>
+<h1 id="patchrailprioritiespy">patchRailPriorities.py<a class="headerlink" href="#patchrailprioritiespy" title="Permanent link">#</a></h1>
+<p>Identifies single-track rail lines that are used in both directions and attempts to find sidings for passing in
+opposite directions. For found sidings
+- the routingType and priorities in the network are patched so that trains prefer driving on the right
+- if there is a ptStop on the main line but not on the siding, a new ptStop is added
+- if the new stop is not guarded by rail signals, new signals are added to the network</p>
+<p>Example call</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">patchRailConflicts</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">input_net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">input_routes</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="n">input_stops</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">output_net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="n">output_stops</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">stop</span><span class="o">-</span><span class="n">signals</span>
+</code></pre></div>
+
+<p>The algorithm for finding and filtering sidings uses the same options as <a href="#createovertakingreroutespy">createOvertakingReroutes.py</a>. If option <strong>--add-stop-signals</strong> is set, sidings are also accepted if they do not have a signal yet.</p>
                 </div>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -440,7 +471,7 @@ The tool works by identifiyng conflict junctions (i.e. switches and crossings) a
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 30 March 2026</i></small>
+            <br><small><i>This page was last edited on: 02 April 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

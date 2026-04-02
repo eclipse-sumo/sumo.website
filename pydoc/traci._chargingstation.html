@@ -201,6 +201,10 @@ Returns&nbsp;the&nbsp;name&nbsp;of&nbsp;this&nbsp;stop</span></dd></dl>
 &nbsp;<br>
 The&nbsp;starting&nbsp;position&nbsp;of&nbsp;the&nbsp;stop&nbsp;along&nbsp;the&nbsp;lane&nbsp;measured&nbsp;in&nbsp;m.</span></dd></dl>
 
+<dl><dt><a name="ChargingStationDomain-getTotalPower"><strong>getTotalPower</strong></a>(self, stopID)</dt><dd><span class="code"><a href="#ChargingStationDomain-getTotalPower">getTotalPower</a>(string)&nbsp;-&gt;&nbsp;double<br>
+&nbsp;<br>
+Get&nbsp;the&nbsp;total&nbsp;charging&nbsp;power&nbsp;limit&nbsp;for&nbsp;all&nbsp;vehicles.</span></dd></dl>
+
 <dl><dt><a name="ChargingStationDomain-getVehicleCount"><strong>getVehicleCount</strong></a>(self, stopID)</dt><dd><span class="code"><a href="#ChargingStationDomain-getVehicleCount">getVehicleCount</a>(string)&nbsp;-&gt;&nbsp;integer<br>
 &nbsp;<br>
 Get&nbsp;the&nbsp;total&nbsp;number&nbsp;of&nbsp;vehicles&nbsp;stopped&nbsp;at&nbsp;the&nbsp;named&nbsp;charging&nbsp;station.</span></dd></dl>
@@ -213,7 +217,7 @@ Get&nbsp;the&nbsp;IDs&nbsp;of&nbsp;vehicles&nbsp;stopped&nbsp;at&nbsp;the&nbsp;n
 &nbsp;<br>
 Sets&nbsp;the&nbsp;charge&nbsp;delay&nbsp;in&nbsp;this&nbsp;charging&nbsp;station.</span></dd></dl>
 
-<dl><dt><a name="ChargingStationDomain-setChargeInTransit"><strong>setChargeInTransit</strong></a>(self, stopID, inTransit)</dt><dd><span class="code"><a href="#ChargingStationDomain-setEfficiency">setEfficiency</a>(string,&nbsp;integer)&nbsp;-&gt;&nbsp;None<br>
+<dl><dt><a name="ChargingStationDomain-setChargeInTransit"><strong>setChargeInTransit</strong></a>(self, stopID, inTransit)</dt><dd><span class="code"><a href="#ChargingStationDomain-setChargeInTransit">setChargeInTransit</a>(string,&nbsp;integer)&nbsp;-&gt;&nbsp;None<br>
 &nbsp;<br>
 Sets&nbsp;whether&nbsp;this&nbsp;charging&nbsp;station&nbsp;allows&nbsp;charging&nbsp;while&nbsp;still&nbsp;driving&nbsp;(0=no,&nbsp;1=yes).</span></dd></dl>
 
@@ -224,6 +228,10 @@ Sets&nbsp;the&nbsp;charging&nbsp;power&nbsp;in&nbsp;this&nbsp;charging&nbsp;stat
 <dl><dt><a name="ChargingStationDomain-setEfficiency"><strong>setEfficiency</strong></a>(self, stopID, efficiency)</dt><dd><span class="code"><a href="#ChargingStationDomain-setEfficiency">setEfficiency</a>(string,&nbsp;double)&nbsp;-&gt;&nbsp;None<br>
 &nbsp;<br>
 Sets&nbsp;the&nbsp;efficiency&nbsp;in&nbsp;this&nbsp;charging&nbsp;station.</span></dd></dl>
+
+<dl><dt><a name="ChargingStationDomain-setTotalPower"><strong>setTotalPower</strong></a>(self, stopID, totalPower)</dt><dd><span class="code"><a href="#ChargingStationDomain-setTotalPower">setTotalPower</a>(string,&nbsp;double)&nbsp;-&gt;&nbsp;None<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;total&nbsp;charging&nbsp;power&nbsp;limit&nbsp;for&nbsp;all&nbsp;vehicles&nbsp;in&nbsp;this&nbsp;charging&nbsp;station.</span></dd></dl>
 
 <hr>
 Methods inherited from <a href="traci.domain.html#Domain">traci.domain.Domain</a>:<br>
