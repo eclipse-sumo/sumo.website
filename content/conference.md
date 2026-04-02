@@ -235,7 +235,7 @@ During the conference, a series of workshops will take place in dedicated rooms 
 <h3><span class="badge badge-info">W1</span> Simulating Connected and Automated Mobility</h3>
 <small><i class="fas fa-calendar-alt"></i> Monday June 01, 15:30 - 17:30
 <br>
-<i><i class="fa-solid fa-user-group"></i> Confirmed participation from DLR Institute of Transportation Systems, University of Trento</i>
+<i><i class="fa-solid fa-user-group"></i> Confirmed participation from DLR Institute of Transportation Systems, University of Trento, FZI Research Center for Information Technology</i>
 <br><br>
 </small>
 
@@ -257,7 +257,7 @@ Large-scale events create complex interactions between vehicular traffic and ped
 <h3><span class="badge badge-info">W3</span> Digital Twins and Traffic Management in Cities</h3>
 <small><i class="fas fa-calendar-alt"></i> Tuesday June 02, 15:30 - 17:30
 <br>
-<i><i class="fa-solid fa-user-group"></i> Confirmed participation from Transcality, Infrest GmbH, Stadt Ulm, Stadt Mannheim, Stadt München, City of Bratislava</i>
+<i><i class="fa-solid fa-user-group"></i> Confirmed participation from Transcality, Berliner Wasserbetriebe, Infrest GmbH, Stadt Ulm, Stadt Mannheim, Stadt München, City of Bratislava, BearingPoint</i>
 <br><br>
 </small>
 
