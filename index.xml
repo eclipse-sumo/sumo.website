@@ -265,8 +265,64 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;we have now parsable metadata&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>SUMO Developer Meetings 2026</title><link>https://eclipse.dev/sumo/minutes/2026/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/minutes/2026/</guid><description>&lt;h1 id="2026-03-12"&gt;2026-03-12&lt;/h1&gt;
+&lt;/ul&gt;</description></item><item><title>SUMO Developer Meetings 2026</title><link>https://eclipse.dev/sumo/minutes/2026/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/minutes/2026/</guid><description>&lt;h1 id="2026-04-09"&gt;2026-04-09&lt;/h1&gt;
 &lt;h2 id="attendees"&gt;Attendees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
+&lt;li&gt;Sasan Amini (transcality)&lt;/li&gt;
+&lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
+&lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
+&lt;li&gt;Vassileios Karagounis (CERTH)&lt;/li&gt;
+&lt;li&gt;Daniel Krajzewicz (DLR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="topics"&gt;Topics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;some netedit regressions&lt;/li&gt;
+&lt;li&gt;release scheduled in two weeks seems possible
+&lt;ul&gt;
+&lt;li&gt;tutorial still pending&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Issues&lt;/li&gt;
+&lt;li&gt;differences in edge lenghts between networks with and without internal links&lt;/li&gt;
+&lt;li&gt;DATEX2 network format&lt;/li&gt;
+&lt;li&gt;optionally respect internal lanes in meso&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="2026-03-26"&gt;2026-03-26&lt;/h1&gt;
+&lt;h2 id="attendees-1"&gt;Attendees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
+&lt;li&gt;Sasan Amini (transcality)&lt;/li&gt;
+&lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
+&lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
+&lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
+&lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
+&lt;li&gt;Robert Hilbrich (DLR)&lt;/li&gt;
+&lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="topics-1"&gt;Topics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OSM tiles
+&lt;ul&gt;
+&lt;li&gt;referer problems&lt;/li&gt;
+&lt;li&gt;tileGet improvements&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Analysis Overture Maps
+&lt;ul&gt;
+&lt;li&gt;striving for global building identifiers&lt;/li&gt;
+&lt;li&gt;claim to have only 40% OSM data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Data formats for traffic counts
+&lt;ul&gt;
+&lt;li&gt;internal discussion with KeepMoving is on&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Issues&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="2026-03-12"&gt;2026-03-12&lt;/h1&gt;
+&lt;h2 id="attendees-2"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
@@ -277,7 +333,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;li&gt;Mario Krumnow (Schlothauer + Wauer)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-2"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Regression netedit&lt;/li&gt;
 &lt;li&gt;Branding guide in preparation by Angelo&lt;/li&gt;
@@ -289,7 +345,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-02-26"&gt;2026-02-26&lt;/h1&gt;
-&lt;h2 id="attendees-1"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-3"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
 &lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
@@ -299,7 +355,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-1"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-3"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Release Feedback
 &lt;ul&gt;
@@ -327,7 +383,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-02-12"&gt;2026-02-12&lt;/h1&gt;
-&lt;h2 id="attendees-2"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-4"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Sasan Amini (Transcality)&lt;/li&gt;
@@ -341,7 +397,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-2"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-4"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;release 1.26.0 feedback
 &lt;ul&gt;
@@ -369,7 +425,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-01-29"&gt;2026-01-29&lt;/h1&gt;
-&lt;h2 id="attendees-3"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-5"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
@@ -382,7 +438,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-3"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-5"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;release 1.26.0
 &lt;ul&gt;
@@ -412,7 +468,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-01-15"&gt;2026-01-15&lt;/h1&gt;
-&lt;h2 id="attendees-4"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-6"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
@@ -429,7 +485,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;li&gt;Mirko Barthauer (mouver)&lt;/li&gt;
 &lt;li&gt;Sasan Amini (Transcality)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-4"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-6"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;next release 1.26.0 may still work on the 26th of January&lt;/li&gt;
 &lt;li&gt;explaining the python wheels&lt;/li&gt;

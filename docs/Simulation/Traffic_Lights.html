@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 02 April 2026 19:25:01
-Last edit: 02 April 2026
+Build Date UTC : 09 April 2026 09:19:14
+Last edit: 09 April 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -429,15 +429,18 @@ visually in <a href="../Netedit/editModesNetwork.html#traffic_lights">netedit</a
   <a href="#type_actuated">Actuated Traffic Lights</a>
   by setting the option <strong>--tls.default-type</strong>. This will generated the same signal plans as
   above but with green phases that have a variable length of 5s-50s
-  (both values can be set using the options <strong>--tls.min-dur, --tls.max-dur</strong>).
-    - default type <strong>actuated</strong>: traffic light actuation is based on gaps measured by automatically generated induction loops
-    - default type <strong>delay_based</strong>: actuation is based on vehicle delays</li>
+  (both values can be set using the options <strong>--tls.min-dur, --tls.max-dur</strong>).<ul>
+<li>default type <strong>actuated</strong>: traffic light actuation is based on gaps measured by automatically generated induction loops</li>
+<li>default type <strong>delay_based</strong>: actuation is based on vehicle delays</li>
+</ul>
+</li>
 <li>The generated phase layout can be selected setting option <strong>--tls.layout</strong> to
   <em>opposites</em> (default) or <em>incoming</em> (see below).</li>
 <li>The generated phase layout is also influenced by the <a href="../Networks/PlainXML.html#node_types">node
   type</a> which may be either
   <em>traffic_light</em> or <em>traffic_light_right_on_red</em> (explained
   below)</li>
+<li>by default, generated programs will have a fixed phase sequence and only vary in timing (for tlType <em>actuated</em> and <em>delay_based</em>). As an exception, when the only point of conflict is a <a href="Pedestrians.html#generating_a_network_with_crossings_and_walkingareas">pedestrian crossing</a> and the tlType is <em>actuated</em>, a program with <a href="#dynamic_phase_selection_phase_skipping">dynamic phase selection</a> is generated where the pedestrian crossing phase is only activated once pedestrians are waiting at the crossing.</li>
 </ul>
 <h2 id="default_4-arm_intersection_layout_opposites">Default 4-arm intersection (layout <em>opposites</em>)<a class="headerlink" href="#default_4-arm_intersection_layout_opposites" title="Permanent link">#</a></h2>
 <p>By default, programs are generated with 4 green phases:</p>
@@ -1568,7 +1571,7 @@ The top row contains the phase index but it is possible to change this so it sho
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 02 April 2026</i></small>
+            <br><small><i>This page was last edited on: 09 April 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
