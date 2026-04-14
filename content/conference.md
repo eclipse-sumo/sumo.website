@@ -246,7 +246,7 @@ Connected and Automated Mobility (CAM) relies on advanced and interoperable simu
 <h3><span class="badge badge-info">W2</span> Navigating Complexity: Leveraging SUMO for Traffic Planning at Major Events</h3>
 <small><i class="fas fa-calendar-alt"></i> Monday June 01, 15:30 - 17:30
 <br>
-<i><i class="fa-solid fa-user-group"></i> Confirmed participation from Forschungszentrum Jülich</i>
+<i><i class="fa-solid fa-user-group"></i> Confirmed participation from Accurate, DLR Institute of Transportation Systems, Forschungszentrum Jülich, University of Wuppertal, University of Regensburg</i>
 <br><br>
 </small>
 
@@ -257,7 +257,7 @@ Large-scale events create complex interactions between vehicular traffic and ped
 <h3><span class="badge badge-info">W3</span> Digital Twins and Traffic Management in Cities</h3>
 <small><i class="fas fa-calendar-alt"></i> Tuesday June 02, 15:30 - 17:30
 <br>
-<i><i class="fa-solid fa-user-group"></i> Confirmed participation from Transcality, Berliner Wasserbetriebe, Infrest GmbH, Stadt Ulm, Stadt Mannheim, Stadt München, City of Bratislava, BearingPoint</i>
+<i><i class="fa-solid fa-user-group"></i> Confirmed participation from BearingPoint, Berliner Wasserbetriebe, City of Bratislava, Eclipse Foundation, Infrest GmbH, City of Mannheim, City of München, City of Ulm, Tracasa Instrumental, Transcality</i>
 <br><br>
 </small>
 
