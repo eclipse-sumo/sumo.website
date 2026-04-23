@@ -131,7 +131,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 For papers:
 - ✅ ~~Recommended title and abstract submission deadline: **Sunday, January 11, 2026.**~~
 - ✅ ~~Paper submission deadline: **Sunday, March 01, 2026.**~~
-- Notification of acceptance/rejection: **First week of April 2026.**
+- ✅ ~~Notification of acceptance/rejection: **First week of April 2026.**~~
 - Camera-ready paper deadline: **Sunday, May 10, 2026.**
 
 For posters:
