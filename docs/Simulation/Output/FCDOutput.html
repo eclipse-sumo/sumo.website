@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 14 April 2026 08:59:37
-Last edit: 14 April 2026
+Build Date UTC : 23 April 2026 08:40:01
+Last edit: 23 April 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -319,14 +319,14 @@ To delay output (i.e. until some warm-up time has passed), the option <strong>--
 <td>m or longitude</td>
 <td>x</td>
 <td>x</td>
-<td>The absolute X coordinate of the vehicle (center of front bumper). The value depends on the given geographic projection</td>
+<td>The absolute X coordinate of the vehicle (center of front bumper). The value depends on the given geographic projection. With the option <strong>--fcd-output.utm</strong>, the value is given in UTM coordinates, taking the network offset into account. If the network has no TUM projection (check the line containing "location netOffset" in the network file), you need to reprojected it, e.g. using netconvert. With the option <strong>--fcd-output.geo</strong>, the longitude is given (WGS84).</td>
 </tr>
 <tr>
 <td>y</td>
 <td>m or latitude</td>
 <td>x</td>
 <td>x</td>
-<td>The absolute Y coordinate of the vehicle (center of front bumper). The value depends on the given geographic projection</td>
+<td>The absolute Y coordinate of the vehicle (center of front bumper). The value depends on the given geographic projection. With the option <strong>--fcd-output.utm</strong>, the value is given in UTM coordinates, taking the network offset into account (see the info above regarding the projection issue). With the option <strong>--fcd-output.geo</strong>, the lattitude is given (WGS84).</td>
 </tr>
 <tr>
 <td>z</td>
@@ -355,6 +355,13 @@ To delay output (i.e. until some warm-up time has passed), the option <strong>--
 <td>x</td>
 <td>x</td>
 <td>The speed of the vehicle</td>
+</tr>
+<tr>
+<td>speedVec</td>
+<td>m/s</td>
+<td>x</td>
+<td>x</td>
+<td>The speed vector of the vehicle:speed_x,speed_y</td>
 </tr>
 <tr>
 <td>pos</td>
@@ -404,6 +411,13 @@ To delay output (i.e. until some warm-up time has passed), the option <strong>--
 <td></td>
 <td></td>
 <td>The lateral acceleration (only with enabled sublane model)</td>
+</tr>
+<tr>
+<td>accelerationVec</td>
+<td>m/s<sup>2&lt;/sup</td>
+<td></td>
+<td></td>
+<td>The acceleration vector of the vehicle: acceleration_x,acceleration_y</td>
 </tr>
 <tr>
 <td>distance</td>
@@ -646,7 +660,7 @@ Earth</a>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 14 April 2026</i></small>
+            <br><small><i>This page was last edited on: 23 April 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
