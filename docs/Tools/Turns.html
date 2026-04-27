@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 23 April 2026 08:56:27
-Last edit: 23 April 2026
+Build Date UTC : 27 April 2026 15:25:48
+Last edit: 27 April 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -377,8 +377,8 @@ You can put any number of counting attributes in the same <code>&lt;edgeRelation
 <li><strong>--min-distance</strong>: restricting short routes increases the chance that routes passing multiple counting locations are generated</li>
 <li><strong>--speed-exponent</strong>, <strong>--lanes</strong>: both options can be used to increase routes starting and ending on "important" roads. This combines well with the <strong>--fringe-factor</strong>-option to generate many routes that enter and leave the network on major roads.</li>
 <li><strong>--random-routing-factor</strong>: randomly disturb the route choice so that trips with the same origin and destination may use different routes. Values must be larger than 1. A value of 2 may change the apparent travel time on an edge by up to to between 100% and 200% of its empty-network-travel-time. This ensures that the resulting routes take at most twice as long as the "fastest" route. The value is randomized anew for each vehicle so there are no systematic biases.</li>
-<li><strong>--edge-type-file</strong>: Load edge-type specific probabilities for generating origins and destinations</li>
-<li><strong>--marouter</strong>: compute routes with macroscopic assignment. These routes consider traffic conditions and therefore give more variety computed to default duarouter outputs (fastes-routes-in-empty-network).</li>
+<li><strong>--edge-type-file</strong>: Load edge-type / routingType specific probabilities for generating origins and destinations</li>
+<li><strong>--marouter</strong>: compute routes with macroscopic assignment. These routes consider traffic conditions and therefore give more variety computed to default duarouter outputs (fastest-routes-in-empty-network).</li>
 </ul>
 <p>The most realistic routes are those that result from <a href="../Demand/Dynamic_User_Assignment.html">dynamic user assignment</a>. Even when starting with random traffic demand, such routes will cover a better variaty of plausible routes through the network.</p>
 <p>Example:</p>
@@ -527,12 +527,13 @@ When setting option <strong>--optimize full</strong>. No constraints on the rout
 <h3 id="problem_areas">Problem areas<a class="headerlink" href="#problem_areas" title="Permanent link">#</a></h3>
 <ul>
 <li>Selecting a set of routes to match a given set of counts is generally an underdetermined problem which means there is of not a unique solution. If there are insufficient constraints on the solution space (not enough counts), the chosen solution may appear implausible</li>
-<li>Input routes are not representative of the real routes
-     - not covering the counting locations
-     - containing unlikely routes</li>
-<li>Temporal patterns are not captured by the given interval data (i.e. by only having counts for the whole day)</li>
-<li>Traffic counts are not stationary within an interval (i.e. a single vehicle passing a long a list of widely spaced counting locations and each interval registers a different location). In this case the route that covers all counting locations will not be sampled. (Longer intervals must be chosen in this case).</li>
-<li>Inconsistency in the counting data</li>
+<li>Input routes are not representative of the real routes (see <a href="#obtaining_initial_routes">here</a> for helpful options)
+     - not covering the counting locations     <br />
+     - containing unlikely routes
+     - having routes in unrealistic proportions (which then biases the sampling algorithm towards unlikely routes)</li>
+<li>Temporal patterns are not captured by the given interval data (i.e. by only having counts for the whole day). This can be mitigated by option <strong>--depart-distribution</strong>.</li>
+<li>Traffic counts are not stationary within an interval (i.e. a single vehicle passing a long a list of widely spaced counting locations and each interval registers a different location). In this case the route that covers all counting locations will not be sampled. (Longer intervals must be chosen in this case). Even for hourly interval length, there will always be a few vehicles that drive over the begin- or end-time boundary of an internval and can lead to unequal counts along their route. Both kinds of boundary-vehicles can cancel out if there is sufficient traffic but will create greater relative errors in low-traffic conditions.</li>
+<li>Inconsistency in the counting data: It's best to find these with <strong>--mismatch-output</strong> and look for areas of high-mismatch bordered by locations with no or low mismatch.</li>
 <li>Many short routes (can be prevented by setting option <strong>--min-count</strong>)</li>
 </ul>
 <h3 id="textual_quality_metrics">Textual quality metrics<a class="headerlink" href="#textual_quality_metrics" title="Permanent link">#</a></h3>
@@ -635,7 +636,7 @@ Then it calls jtrrouter in the background.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 23 April 2026</i></small>
+            <br><small><i>This page was last edited on: 27 April 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

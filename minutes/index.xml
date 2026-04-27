@@ -178,7 +178,7 @@
 &lt;ul&gt;
 &lt;li&gt;Conference Agenda published tomorrow&lt;/li&gt;
 &lt;li&gt;Intermittent tile issues with osmWebWizard reported from Mexico&lt;/li&gt;
-&lt;li&gt;OpenGL/XQwartz issue still bother people&lt;/li&gt;
+&lt;li&gt;OpenGL/XQuartz issue still bother people&lt;/li&gt;
 &lt;li&gt;Latest Arrow requires C++20 whereas we use C++17
 &lt;ul&gt;
 &lt;li&gt;pin older arrow / upgrade compiler?&lt;/li&gt;

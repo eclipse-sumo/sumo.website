@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 23 April 2026 08:56:27
-Last edit: 23 April 2026
+Build Date UTC : 27 April 2026 15:25:47
+Last edit: 27 April 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -279,7 +279,8 @@ Last edit: 23 April 2026
 <h3 id="bugfixes">Bugfixes<a class="headerlink" href="#bugfixes" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
-<li>Invalid separator in allow/disallow now results in error instead of warning again (regression in 1.21.0) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17709" title="GitHub Issue eclipse-sumo/sumo #17709">#17709</a>    </li>
+<li>Invalid separator in allow/disallow now results in error instead of warning again (regression in 1.21.0) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17709" title="GitHub Issue eclipse-sumo/sumo #17709">#17709</a></li>
+<li>Fixed bug where vehicles that are blocked from entering a stopping place do not collect enough timeLoss <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17914" title="GitHub Issue eclipse-sumo/sumo #17914">#17914</a> (regression in 1.26.0)</li>
 <li>Stopping on a long busStop before reaching the designated spot due to jamming now permits passengers to exit if the vehicle is fully within the busStop <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17635" title="GitHub Issue eclipse-sumo/sumo #17635">#17635</a>  </li>
 <li>Fixed invalid parking positions in network with <a href="Simulation/Distances.html#length-geometry-mismatch">length-geometry mismatch</a> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17640" title="GitHub Issue eclipse-sumo/sumo #17640">#17640</a></li>
 <li>Fixed bug where imprecise driving caused vehicles to enter a slower lane with excessive speed (this could cause negative timeLoss). <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/15435" title="GitHub Issue eclipse-sumo/sumo #15435">#15435</a></li>
@@ -291,11 +292,13 @@ Last edit: 23 April 2026
 <li>Fixed crash when setting <strong>--default.departlane best</strong> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17854" title="GitHub Issue eclipse-sumo/sumo #17854">#17854</a></li>
 <li>Fixed infinite loop when specifying invalid default depart lane <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17850" title="GitHub Issue eclipse-sumo/sumo #17850">#17850</a></li>
 <li>Fixed bug where rerouting after parkingAreaReroute fails to add stops when input contains vias <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17892" title="GitHub Issue eclipse-sumo/sumo #17892">#17892</a></li>
+<li>Fixed where vehicles that stop on the end of the lane take one extra step to continue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17916" title="GitHub Issue eclipse-sumo/sumo #17916">#17916</a></li>
+<li>Fixed invalid timeLoss computation for stopping vehicles <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17915" title="GitHub Issue eclipse-sumo/sumo #17915">#17915</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17916" title="GitHub Issue eclipse-sumo/sumo #17916">#17916</a></li>
 <li>State-Loading:<ul>
 <li>Fixed invalid signal state when loading from saved state and using WAUT <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17675" title="GitHub Issue eclipse-sumo/sumo #17675">#17675</a></li>
 <li>Lanechanging state is now restored after loading <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/2380" title="GitHub Issue eclipse-sumo/sumo #2380">#2380</a></li>
 <li>Fixed bugs that caused actuated traffic lights to differ in behavior after loading state <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17849" title="GitHub Issue eclipse-sumo/sumo #17849">#17849</a></li>
-<li>Fixed miscellaneous bugs that were causing simulations to diverge after loading state <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17532" title="GitHub Issue eclipse-sumo/sumo #17532">#17532</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17887" title="GitHub Issue eclipse-sumo/sumo #17887">#17887</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17895" title="GitHub Issue eclipse-sumo/sumo #17895">#17895</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17897" title="GitHub Issue eclipse-sumo/sumo #17897">#17897</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17902" title="GitHub Issue eclipse-sumo/sumo #17902">#17902</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17900" title="GitHub Issue eclipse-sumo/sumo #17900">#17900</a></li>
+<li>Fixed miscellaneous bugs that were causing simulations to diverge after loading state <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17532" title="GitHub Issue eclipse-sumo/sumo #17532">#17532</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17887" title="GitHub Issue eclipse-sumo/sumo #17887">#17887</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17889" title="GitHub Issue eclipse-sumo/sumo #17889">#17889</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17895" title="GitHub Issue eclipse-sumo/sumo #17895">#17895</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17897" title="GitHub Issue eclipse-sumo/sumo #17897">#17897</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17902" title="GitHub Issue eclipse-sumo/sumo #17902">#17902</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17900" title="GitHub Issue eclipse-sumo/sumo #17900">#17900</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17920" title="GitHub Issue eclipse-sumo/sumo #17920">#17920</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17921" title="GitHub Issue eclipse-sumo/sumo #17921">#17921</a></li>
 <li>Past stops are now present in vehroute output after loading state <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17886" title="GitHub Issue eclipse-sumo/sumo #17886">#17886</a></li>
 <li>Fixed superfluous startPos, endPos in vehroute-output after loading state <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17888" title="GitHub Issue eclipse-sumo/sumo #17888">#17888</a></li>
 <li>Fixed error when loading state with persons that were saved during an access stage <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17896" title="GitHub Issue eclipse-sumo/sumo #17896">#17896</a></li>
@@ -306,6 +309,7 @@ Last edit: 23 April 2026
 <li>Fixed failure to group taxi passengers when the dispatch-period is low <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17644" title="GitHub Issue eclipse-sumo/sumo #17644">#17644</a>    </li>
 <li>Fixed invalid taxi device warnings <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17864" title="GitHub Issue eclipse-sumo/sumo #17864">#17864</a></li>
 <li>Fixed failure in stop assignment <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17893" title="GitHub Issue eclipse-sumo/sumo #17893">#17893</a></li>
+<li>Taxis no longer block the road when idling if their passenger stops are defined as not-parking <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17904" title="GitHub Issue eclipse-sumo/sumo #17904">#17904</a></li>
 </ul>
 </li>
 <li>Railways:<ul>
@@ -328,6 +332,7 @@ Last edit: 23 April 2026
 <li>Fixed missing text in lane and vehicle dialogs (lane permissions, stop attributes and current driveways) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17700" title="GitHub Issue eclipse-sumo/sumo #17700">#17700</a> (regression in 1.21.0)</li>
 <li>Fixed crash when drawing persons <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17616" title="GitHub Issue eclipse-sumo/sumo #17616">#17616</a></li>
 <li>Fixed rare crash when vehicle parameter dialog is open while a vehicle exits the simulation <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17637" title="GitHub Issue eclipse-sumo/sumo #17637">#17637</a></li>
+<li>Fixed crash in simulation with rerouting and sorted vehroute-output <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17918" title="GitHub Issue eclipse-sumo/sumo #17918">#17918</a></li>
 <li>Fixed invalid lane color when switching from (meso) segment colors to functional color (i.e. TAZ) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17704" title="GitHub Issue eclipse-sumo/sumo #17704">#17704</a></li>
 <li>Shift-click to select lanes now reliably activates edge annotations that are restricted to "only for selected" <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17734" title="GitHub Issue eclipse-sumo/sumo #17734">#17734</a></li>
 <li>Fixed misleading rail signal visualization when trams share a multi-lane road with cars <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17846" title="GitHub Issue eclipse-sumo/sumo #17846">#17846</a></li>
@@ -380,6 +385,7 @@ Last edit: 23 April 2026
 </ul>
 <ul>
 <li>meso<ul>
+<li>Fixed bug that prevented taxi simulation from terminating <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17908" title="GitHub Issue eclipse-sumo/sumo #17908">#17908</a> (regression in 1.13.0)</li>
 <li>parking vehicles that cannot enter the road now collect waitingTime <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17797" title="GitHub Issue eclipse-sumo/sumo #17797">#17797</a></li>
 <li>fixed crash when loading state with parked vehicle <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17805" title="GitHub Issue eclipse-sumo/sumo #17805">#17805</a></li>
 <li>Fixed crash in rail simulation after teleport <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17836" title="GitHub Issue eclipse-sumo/sumo #17836">#17836</a></li>
@@ -1934,7 +1940,7 @@ Last edit: 23 April 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 23 April 2026</i></small>
+            <br><small><i>This page was last edited on: 27 April 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

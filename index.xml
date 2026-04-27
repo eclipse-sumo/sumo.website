@@ -59,9 +59,15 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
  &lt;br&gt;
  &lt;small&gt;&lt;b&gt;Please keep in mind that the registration will close on May 15, 2026 (at 23:59 CEST).&lt;/b&gt;&lt;/small&gt;
 &lt;/div&gt;
-&lt;h1 id="save-the-date"&gt;Save the Date!&lt;/h1&gt;
-&lt;p&gt;June 01-04, 2026, in Berlin.&lt;/p&gt;
-&lt;p&gt;The SUMO Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.&lt;/p&gt;</description></item><item><title>SUMO Conference Proceedings</title><link>https://eclipse.dev/sumo/proceedings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/proceedings/</guid><description>&lt;p&gt;Read more information about the SUMO Conference Proceedings (SCP) Series &lt;a href="https://www.tib-op.org/ojs/index.php/scp/about"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- # Save the Date!
+
+June 01-04, 2026, in Berlin.
+
+The SUMO Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
+
+The conference offers opportunities to learn about new features, connect with other users, engage with the developers, exchange ideas, and even start new collaborations. --&gt;
+&lt;h1 id="agenda"&gt;Agenda&lt;/h1&gt;
+&lt;p&gt;&lt;small&gt;🕓 &lt;i&gt;Schedule given in Central European Summer Time (CEST) (UTC+2) - This agenda may be subject to change&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;</description></item><item><title>SUMO Conference Proceedings</title><link>https://eclipse.dev/sumo/proceedings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/proceedings/</guid><description>&lt;p&gt;Read more information about the SUMO Conference Proceedings (SCP) Series &lt;a href="https://www.tib-op.org/ojs/index.php/scp/about"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id="proceedings"&gt;Proceedings&lt;/h1&gt;
 &lt;hr&gt;
 &lt;h2 id="current-volume"&gt;Current Volume&lt;/h2&gt;
@@ -279,7 +285,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;ul&gt;
 &lt;li&gt;Conference Agenda published tomorrow&lt;/li&gt;
 &lt;li&gt;Intermittent tile issues with osmWebWizard reported from Mexico&lt;/li&gt;
-&lt;li&gt;OpenGL/XQwartz issue still bother people&lt;/li&gt;
+&lt;li&gt;OpenGL/XQuartz issue still bother people&lt;/li&gt;
 &lt;li&gt;Latest Arrow requires C++20 whereas we use C++17
 &lt;ul&gt;
 &lt;li&gt;pin older arrow / upgrade compiler?&lt;/li&gt;
