@@ -18,113 +18,395 @@ aliases:
   <small><b>Please keep in mind that the registration will close on May 15, 2026 (at 23:59 CEST).</b></small>
 </div>
 
-# Save the Date!
+<!-- # Save the Date!
 
 June 01-04, 2026, in Berlin.
 
 The SUMO Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
 
-The conference offers opportunities to learn about new features, connect with other users, engage with the developers, exchange ideas, and even start new collaborations.
+The conference offers opportunities to learn about new features, connect with other users, engage with the developers, exchange ideas, and even start new collaborations. -->
 
-<!--
-# Call for Papers
+# Agenda
 
-The conference focuses on presenting new and unique results in the field of mobility simulation and modelling using openly available tools and data. We expect a large variety of research topics and usage approaches.
-Possible areas of interest include (but are not limited to):
+<small>&#128339; <i>Schedule given in Central European Summer Time (CEST) (UTC+2) - This agenda may be subject to change</i></small>
 
-- AI-based traffic modelling / AI-assisted simulation
-- Data-driven calibration and validation
-- Intermodal transport and shared mobility
-- Simulation for traffic safety and risk assessment
-- Real-time traffic prediction and control
-- Large-scale simulation and high-performance computing
-- Mobility and demand modelling
-- Open tools and open data
-- Traffic management solutions
-- Sustainable urban traffic planning
-- Autonomous driving
-- Goods traffic and logistics simulation
-- Digital twins in Intelligent transportation systems
-- E-Mobility
-- Vehicular communication
+<table class="agenda"><thead>
+  <tr>
+    <th colspan="3">Monday, June 01, 2026</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td rowspan="2">12:30 - 13:00</td>
+    <td colspan="2" rowspan="2">Registration</td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+    <td>13:00 - 13:15</td>
+    <td colspan="2">Opening</td>
+  </tr>
+  <tr>
+    <td rowspan="4">13:15 - 14:15</td>
+    <td colspan="2" rowspan="4"><b>SUMO Tutorial</b></td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+    <td rowspan="4">14:15 - 15:15</td>
+    <td colspan="2" rowspan="4"><b>Ask us Anything</b></td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+    <td>15:15 - 15:30</td>
+    <td colspan="2"><i>Coffee Break</i> &#x2615;</td>
+  </tr>
+  <tr>
+    <td rowspan="8">15:30 - 17:30</td>
+    <td rowspan="8"><small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
+    <b>Workshop 1</b><br>Simulating Connected and Automated Mobility<br><a style="color:#0645ad; cursor:pointer;" href="#workshop1">Read more <i class="fas fa-angle-down"></i></a></td>
+    <td rowspan="8"><small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Newton-Kabinett</span></small><br>
+    <b>Workshop 2</b><br>Navigating Complexity: Leveraging SUMO for Traffic Planning at Major Events<br><a style="color:#0645ad; cursor:pointer;" href="#workshop2">Read more <i class="fas fa-angle-down"></i></a></td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td rowspan="10">18:30 - 21:00</td>
+    <td colspan="2" rowspan="10"><b>Evening Program - Social Event</b><br>
+   Boat tour<br>
+<a style="color:#0645ad; cursor:pointer;" href="#social-event">Read more <i class="fas fa-angle-down"></i></a></td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+</tbody></table>
 
-# Submissions
+<table class="agenda">
+  <thead>
+    <tr>
+      <th colspan="3">Tuesday, June 02, 2026</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>09:00 - 09:15</td>
+      <td colspan="2">
+        <b>Opening Address</b><br>
+        Sascha Knake-Langhorst <i><small>(Head of Department at DLR-TS)</small></i>
+        and Michael Behrisch <i><small>(SUMO Project Lead)</small></i>
+      </td>
+    </tr>
+    <tr>
+      <td>09:15 - 10:45<br><br>Session 1
+        <p style="font-size:60%">Session chair:</p>
+      </td>
+      <td colspan="2">
+       <b>sumoITScontrol</b><br><small>Kevin Riehl, Anastasios Kouvelas and Michail A. Makridis</small>
+       <hr>
+       <b>VRU-Aware GLOSA: Integrating VRUs into Green Light Optimized Speed Advisory for Right-Turn Conflicts at Signalized Intersections</b><br><small>Pushkar Mahajan, Anna-Lena Schlamp and Stefanie Schmidtner</small>
+       <hr>
+       <b>Radar-Based Evaluation of Car-Following Behavior and Fuel Consumption Across Vehicle Categories in SUMO</b><br><small>Joshua Bittle and Mahdi Al Abdraboh</small>
+      </td>
+    </tr>
+    <tr>
+      <td>10:45 - 11:00</td>
+      <td colspan="2"><i>Coffee Break</i> ☕</td>
+    </tr>
+    <tr>
+      <td>11:00 - 12:00<br><br>Poster Session 1</td>
+      <td colspan="2">
+      <ul>
+        <li>Modelling approach for cargo bikes in rural areas as logistic carriers - <small>Isabel Bruns</small></li>
+        <li>Smart Urban Mobility Simulation: A Case Study of Hradec Králové - <small>Michal Michna, Jan Hladěna, Kamila Štekerová, Pavel Čech</small></li>
+        <li>Integrating Elevation Data in SUMO models for detailed estimation of Energy consumption by Electric Vehicle in large networks - <small>Francesco Deflorio, Matteo Ferraro, Giuseppe Calcagno, Amirehsan Charlang Bakhtyari, Lorenzo Sica, Angela Carboni</small></li>
+        <li>Towards Empathic Vehicles: Simulator-Based Induction of Affective States for Emotion Recognition - <small>Niklas Fraissl et al.</small></li>
+        <li>A Multi-Scenario Simulation Approach for Climate-Neutral Urban Corridors - <small>Evangelos Mintsis, S. Kontorinis, V. Mizaras, E. Mitsakis, and G. Ayfantopoulou</small></li>
+        <li>Coordinate-based Lane-Specific Detector Map Matching in SUMO - <small>Niklas Gritsch, Mario Ilic, Prof. Dr.-Ing. Klaus Bogenberger </small></li>
+        <li>Bridging Communities: Advancing JuPedSim for Pedestrian Dynamics and Urban Mobility Research - <small>Jette Degenhardt, Mohcine Chraibi and Ralf Leibold</small></li>
+        <li>Sustainable Routing for Next-Generation Mobility: Linking Evolutionary Game Theory and SUMO - <small>Andrea Bertolini, Lorenzo Castelli </small></li>
+        <li>Testing Adaptive Lane-Change Planners in Realistic Traffic: A Co-Simulation Framework using SUMO, Simulink, and RoadRunner - <small>Philipp Hafemann et al.</small></li>
+        <li>Environmental Impact Analysis for a New Urban Development - <small>Aya Aly, Paulo Moura</small></li>
+        <li>Network Performance Analysis of Car-Following Models and Traffic Signal Light Configurations using SUMO - <small>Arya Karnik, Mounika Raj Kavadi, Joshua Bittle</small></li>
+        <li>Causality-Aware Energy Forecasting and Adaptive Task Control in Edge-Assisted Autonomous Vehicular Networks - <small>Maha Alruwaili</small></li>
+        <li>Analysis and comparison of Multimodal Link Transmission Model and SUMO in urban networks - <small>Ning Xie, Meng Wang</small></li>
+        <li>Instantania, the fast, parallelized traffic microsimulator for large scale transport digital twins - <small>Joerg Schweizer</small></li>
+        <li>KISLEK - KI zur Steuerung verbundener Verkehrsknoten - <small>Lukas Klein</small></li>
+        <!-- <li>SESAM - <small></small></li> -->
+      </ul>
+      </td>
+    </tr>
+    <tr style="background-color:#d9f1ff">
+      <td>12:00 - 13:00</td>
+      <td colspan="2" style="text-align:center"><i><b>Lunch</b></i> 🥗</td>
+    </tr>
+    <tr>
+      <td>13:00 - 14:00</td>
+      <td colspan="2">
+        <b>Keynote: Traffic simulation modeling: combining generative modeling with transportation science to achieve scalability</b><br>
+        Prof. Dr. Carolina Osorio <i><small>(Google Research and HEC Montreal)</small></i><br>
+        <a href="#keynote1" style="color:#0645ad;">Read more <i class="fas fa-angle-down"></i></a>
+      </td>
+    </tr>
+    <tr>
+      <td>14:00 - 14:30</td>
+      <td colspan="2"><i>Coffee Break</i> ☕</td>
+    </tr>
+    <!-- Parallel block -->
+    <tr>
+      <td>14:30 - 15:30</td>
+      <td>
+        <small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Bunsen-Saal</span></small><br>
+        <b>Session 2</b>
+        <p style="font-size:60%">Session chair:</p>
+        <br>
+      <b>Enabling Non-Lane-Based Cycling Behavior for Mass Bicycle Traffic Flow Simulation in SUMO</b><br><small>Ying-Chuan Ni, Thomas Ramseier, Junzhe Cao, Anastasios Kouvelas and Michail Makridis </small>
+       <hr>
+       <b>A Cycle-Level Distribution-Based Calibration of Microscopic Intersection Models Using UAV Trajectories</b><br><small>Charalambos Tsioutis, Konstantinos Pourgourides and Stelios Timotheou</small>
+      </td>
+      <td>
+        <small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
+        <b>Workshop 3</b><br>
+        Digital Twins and Traffic Management in Cities<br>
+        <a href="#workshop3" style="color:#0645ad;">Read more <i class="fas fa-angle-down"></i></a>
+      </td>
+    </tr>
+    <tr>
+      <td>15:30 - 15:45</td>
+      <td colspan="2"><i>Coffee Break</i> ☕</td>
+    </tr>
+    <!-- Parallel continuation -->
+    <tr>
+      <td>15:45 - 17:30</td>
+      <td>
+        <small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Bunsen-Saal</span></small><br>
+        <b>Session 3</b>
+        <p style="font-size:60%">Session chair:</p>
+        <br>
+        <b>Improving SUMO for Motorcycles</b><br><small>Gnanambica Chouta and Christian Facchi</small>
+       <hr>
+       <b>Framework for Generating Activity-Based Travel Demand Using Aggregated Mobility and Land-Use Big Data</b><br><small>Joerg Schweizer, Ngoc-An Nguyen, Cristian Poliziani and Federico Rupi</small>
+       <hr>
+       <b>A Dynamic Traffic Calibration Framework for SUMO Based on Historical Real-World Speed Data</b><br><small>Finn Guist, Andreas Freymann, Sandro Lipinski, Emanuel Reichsöllner and Mirko Sonntag</small>
+      </td>
+      <td>
+        <small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
+        <b>(cont.) Workshop 3</b><br>
+        Digital Twins and Traffic Management in Cities<br>
+        <a href="#workshop3" style="color:#0645ad;">Read more <i class="fas fa-angle-down"></i></a>
+      </td>
+    </tr>
+    <tr>
+      <td>18:00 - 20:00</td>
+      <td colspan="2" style="text-align:center">
+        <b>Evening Program - Barbecue</b> 🍖
+      </td>
+    </tr>
 
-This year, there are three types of submission:
+  </tbody>
+</table>
 
----
 
-**1. Scientific Papers**
-   - All accepted scientific papers must be presented at the conference.
-   - Papers will be reviewed by at least two reviewers.
-   - All accepted papers will be published in the [SUMO Conference Proceedings (SCP)](https://www.tib-op.org/ojs/index.php/scp/index).
-   - Papers should be 5-20 pages long.
-   - ~~Recommended: Submit the title and a short abstract (up to 300 words) in advance to receive initial feedback. Do this by Sunday, January 11, 2026 - 23:59 UTC.~~
+<table class="agenda">
+  <thead>
+    <tr>
+      <th colspan="3">Wednesday, June 03, 2026</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>09:00 - 10:30<br><br>Session 4<br>
+      <p style="font-size:60%">Session chair:</p>
+    </td>
+    <td>
+    <b>Integrating Synthetic Populations and Activity Chains for Individual Emission Assessment in SUMO</b><br><small>Alix NGARI LENDOYE, Corwin Fèvre, Tatiana Graindorge and Alain Bouju</small>
+       <hr>
+       <b>EfaSim - A Prototype for a SUMO-driven Emergency Vehicle Driving Simulator</b><br><small>Rebecca Ahmed, Cristian Cubides-Herrera, Fabian Schuhmann and Markus Lienkamp</small>
+       <hr>
+       <b>Energy- and Emission-Conscious Extension of TAPAS-SUMO Coupling - A Case Study in Delmenhorst</b><br><small>Yun-Pang Flötteröd, Michael Behrisch and Knut M. Heidemann</small>
+       </td>
+    <td rowspan="3">
+<small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
+  <b>Workshop 4</b> (10:00 - 12:00)
+  <br>
+  Using SUMO for simulating innovative public transportation systems + Using SUMO for Railway simulations<br>
+  <a href="#workshop4" style="color:#0645ad;">Read more <i class="fas fa-angle-down"></i></a>
+    </td>
+  </tr>
 
-<div class="alert alert-info" role="alert">
-  Authors are required to use the <a href="../documents/2025-08-25_Word-template-TIB-Open-Publishing-Conference.docx">Word</a> or <a href="../documents/TIBOpenPublishing_LaTeX-template.zip">LaTeX</a> template provided by TIB Open Publishing.<br>
-  <b>Submissions that do not adhere to the specified template will not be considered.</b>
-</div>
+  <tr>
+    <td>10:30 - 10:45</td>
+    <td><i>Coffee Break</i> ☕</td>
+  </tr>
 
-   - **The paper must be submitted in LaTeX or Word before Sunday, ~~February 22, 2026~~ March 01, 2026 - 23:59 UTC.**
+  <tr>
+    <td>10:45 - 12:15<br><br>Session 5<br>
+      <p style="font-size:60%">Session chair:</p>
+    </td>
+    <td>
+        <b>Simulation of Real DACH-Standard Traffic Signal Control Systems in SUMO</b><br><small>Markus Runhao Zhou, Johann Krüger and Meng Wang</small>
+       <hr>
+       <b>ATSUM: An Attlas-SUMO Middleware</b><br><small>Rodolfo Valentim, Tiago Pinheiro, Vincen Santaella, Artur Souza, João Cleverales, Fernando Martinelli and Víctor Martínez</small>
+       <hr>
+       <b>Investigating Traffic Effects of Control Transitions in Level 3 Conditional Driving with SUMO</b><br><small>Robert Alms and Peter Wagner</small>
+    </td>
+  </tr>
+    <tr style="background-color:#d9f1ff">
+      <td>12:15 - 13:00</td>
+      <td colspan="2" style="text-align:center"><i><b>Lunch</b></i> 🥗</td>
+    </tr>
+    <tr>
+      <td>13:00 - 14:00<br><br>Poster Session 2</td>
+      <td colspan="2">
+      <ul>
+      <li>QI-TraSiCo – Quantum-Inspired Traffic Signal Control - <small>Elisabeth Wagner et al.</small></li>
+      <li>Intelligent Ship Traffic Management for the Port of Bremerhaven - <small>Laura Bieker-Walz et al.</small></li>
+      <li>Towards Adaptive Traffic Pattern Clustering Reinforcement Learning in Traffic Signal Control - <small>Lukas Klein</small></li>
+      <li>Integrating Macroscopic and Microscopic Road Traffic Simulations for Impact Assessment of Flood-Related Disruptions - <small>Amirehsan Charlang Bakhtyari, Francesco Deflorio, Matteo Ferraro, Michele Amaddii, Fabio Castelli, Chiara Arrighi</small></li>
+      <li>Systematic Integration of Heterogeneous Urban Demand Data into a Microscopic SUMO Simulation - <small>Mario Ilic, Niklas Gritsch, Prof. Dr.-Ing. Klaus Bogenberger</small></li>
+      <li>Revisiting Mesoscopic Traffic Flow Simulation in SUMO: Limitations, Analysis, and a Link-based Alternative - <small>Ying-Chuan Ni, Alina Akopian, Anastasios Kouvelas, Michail A. Makridis</small></li>
+      <li>Realistic and Scalable Floating Car Observer Detection in SUMO Derived from Co-Simulation - <small>Jeremias Gerner, Klaus Bogenberger, and Stefanie Schmidtner </small></li>
+      <li>BikeZ-ETH: Mass bicycle traffic flow simulation API and cycling trajectory dataset - <small>Thomas Ramseier, Ying-Chuan Ni, Shaimaa K. El-Baklish, Kevin Riehl, Anastasios Kouvelas, Michail A. Makridis</small></li>
+      <li>LLM-Driven Agents for Evacuation Simulation in SUMO - <small>Michael Jones</small></li>
+      <li>Simulation of Unknown Motion - <small>Andreas Richter et al.</small></li>
+      <li>How much do emissions differ? Testing three calculation methods - <small>Addina Shafiyya Ediansjah, Jens Borken-Kleefeld, Meng Wang</small></li>
+      <li>Multi-modal safety-optimized traffic management system using incident-informed rerouting and adaptive signal control: a SUMO application - <small>Nikolaos Geroliminis,
+Dimitris Tsitsokas</small></li>
+      <li>sumo3Dviz - A three dimensional traffic visualisation - <small>Kevin Riehl, Michail Makridis, Julius Schlapback, Anastasios Kouvelas</small></li>
+      <li>Toward an Agentic AI Framework for Integrated MATSim-SUMO Policy Evaluation - <small>David Micallef, Luca Bondin, Alexiei Dingli</small></li>
+      <li>Fluidity: Algorithm to infer Traffic Light Rhythms from GPS Positioning Data - <small>Gaston Laplagne</small></li>
+      <!-- <li>abc - <small>Sumaira Shaheen</small></li> -->
+      </ul></td>
+    </tr>
+    <tr>
+      <td>14:00 - 14:15</td>
+      <td colspan="2"><i>Coffee Break</i> ☕</td>
+    </tr>
+    <tr>
+      <td>14:15 - 15:15</td>
+      <td colspan="2">
+        <b>Keynote: SUMO and I – 25 years later...</b><br>
+        Prof. Dr. Peter Wagner <i><small>(German Aerospace Center (DLR))</small></i><br>
+        <a href="#keynote2" style="color:#0645ad;">Read more <i class="fas fa-angle-down"></i></a>
+      </td>
+    </tr>
+    <tr>
+      <td>15:15 - 16:00</td>
+      <td colspan="2">Remarks</td>
+    </tr>
+    <tr>
+      <td>16:00 - 16:30</td>
+      <td colspan="2"><i>Conference Photo</i> 📷 + <i>Coffee Break</i> ☕</td>
+    </tr>
+    <tr>
+      <td>16:30 - 18:00</td>
+      <td colspan="2">Special Anniversary Session: Celebrating 25 years of SUMO</td>
+    </tr>
+    <tr>
+      <td>18:00 - 19:30</td>
+      <td colspan="2" style="text-align:center"><i><b>Dinner</b></i> 🥗</td>
+    </tr>
+  </tbody>
+</table>
 
-<div class="text-center"><img src="../images/presentation.jpeg" style="width:60%;" alt="Presentation" class="img-responsive"/></div>
+<table class="agenda">
+  <thead>
+    <tr>
+      <th colspan="3">Thursday, June 04, 2026</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>09:00 - 10:30<br><br>Session 6<br>
+      <p style="font-size:60%">Session chair:</p></td>
+      <td colspan="2">
+      <b>Energy Optimized Green Light Assist in Varying Traffic Scenarios Using Reinforcement Learning</b><br><small>Johan Kolms, Kai M. Blum, Michael Than, Tamás Kurczveil and Dirk J. Lehmann</small>
+       <hr>
+       <b>Reconstruction of Public Transport Routes Based on Imperfect GTFS and OpenStreetMap Data</b><br><small>Alexander Kaiser and Alexander Schmaus</small>
+       <hr>
+       <b>Driver Models in SUMO and Elsewhere</b><br><small>Peter Wagner</small>
+      </td>
+    </tr>
+    <tr>
+      <td>10:30 - 10:45</td>
+      <td colspan="2"><i>Coffee Break</i> ☕</td>
+    </tr>
+    <tr>
+      <td>10:45 - 12:15<br><br>Session 7<br>
+      <p style="font-size:60%">Session chair:</p></td>
+      <td colspan="2">
+      <b>C-ITS services for light rail systems</b><br><small>Paula von der Heide</small>
+       <hr>
+       <b>GROSS: German Rail Open-Source SUMO Simulation</b><br><small>Juri Penell and Damian Dailisan</small>
+       <hr>
+       <b>SUMO for Railway Applications</b><br><small>Christian Rahmig, Jakob Erdmann, Jakob Geischberger and Larissa Zhuchyi</small>
+      </td>
+    </tr>
+    <tr style="background-color:#d9f1ff">
+      <td>12:15 - 13:00</td>
+      <td colspan="2" style="text-align:center"><i><b>Lunch</b></i> 🥗</td>
+    </tr>
+    <tr>
+      <td>13:00 - 13:45<br><br>Session 8<br>
+      <p style="font-size:60%">Session chair:</p></td>
+      <td colspan="2">
+             <b>Reproducing Weekly Crash Patterns Using a Minimalist Driver Error Model</b><br><small>Ronald Nippold, Andreas Leich and Peter Wagner</small>
+       <hr>
+       <b>Towards Smarter Intersections Through Digital Twins - The Coupling of SUMO and SCENIMINI</b><br><small>Yun-Pang Flötteröd, Lars Klitzke and Peter Wagner</small>
+      </td>
+    </tr>
+    <tr>
+      <td>13:45 - 14:15</td>
+      <td colspan="2">Closing Session</td>
+    </tr>
+  </tbody>
+</table>
 
----
+<small>Last update: <a href="#lastMod">see end of page</a></small>
 
-<br>
 
-**2. Posters**
-  - The SUMO conference offers the opportunity to present your work during the poster session.
-  - A scientific paper is not required.
-  - Posters may present:
-    - Bachelor's or Master's thesis results
-    - Live Demos
-    - SUMO use cases
-    - Project presentations
-    - Work in progress that would benefit from community feedback
-  - Posters must be formatted in A0 size (841 x 1189 mm / 33.1 x 46.8 in). No specific template is required.
-  - We will print your poster and provide a display panel, chair, and table.
-  - Changes are allowed after the submission deadline, but we cannot reprint revised posters; you will need to bring the updated version yourself.
-  - You may bring a laptop or device for demos or supplementary material (please bring your own equipment).
-  - **Submit the title and a short abstract (up to 300 words) by Sunday, ~~February 22, 2026~~ March 01, 2026 - 23:59 UTC.**
+<!-- ## Ethics and Malpractice Statement
 
-<div class="text-center"><img src="../images/poster_session.jpeg" style="width:60%;" alt="Poster session" class="img-responsive"/></div>
-
----
-
-<br>
-
-**3. SUMO Moments**
-
-To celebrate 25 years of SUMO, we invite the community to share *"SUMO Moments"* - short reflections, anecdotes, or milestones from your work with the software and the people around it. These stories can highlight technical breakthroughs, memorable challenges, or personal experiences that shaped your connection to SUMO.
-
-- You are welcome to share:
-  - Your first encounter with the SUMO community - for example your first ticket, bug report, or mailing list message
-  - A key moment in a research project or application where SUMO played an important role
-  - A surprising result, a lesson learned, or a simulation mishap that taught you something
-  - Encounters with users, developers, or collaborators who influenced your work
-  - Any memory that shows what SUMO has meant to you, your project, or your career
-- Contributors will be able to register under the *Authors & Project Partners* special rate.
-- **Submit a description (up to 300 words) until Sunday, ~~February 22, 2026~~ March 01, 2026 - 23:59 UTC.**
-
-Selected submissions will be featured as brief presentations during the conference as part of the 25-year anniversary program. The goal is to capture the human side of the SUMO journey - the challenges, discoveries, and community interactions that have shaped the project over the past decades.
-
----
-
-## Submission links
-
-- Paper submissions: https://www.tib-op.org/ojs/index.php/scp/about/submissions<br>
-<small>Login or register and then click on <b>"Make a new Conference Proceedings Submission"</b>.</small>
-<br>
-- Poster submissions: Send us an E-Mail with the subject **`Poster Submission - SUMO 2026`** to sumo-conference@dlr.de. Include the title and abstract in the body of the E-Mail.
-- SUMO moments: Send us an E-Mail with the subject **`SUMO Moment - SUMO 2026`** to sumo-conference@dlr.de. Include the description in the body of the E-Mail.
-
--->
-
-## Ethics and Malpractice Statement
-
-You can read our *[Publication Ethics and Publication Malpractice Statement](../documents/SUMOPublicationEthics.pdf)*, where we list the responsibilities of editors, reviewers, and authors.
+You can read our *[Publication Ethics and Publication Malpractice Statement](../documents/SUMOPublicationEthics.pdf)*, where we list the responsibilities of editors, reviewers, and authors. -->
 
 # Important Dates
 
@@ -189,6 +471,7 @@ Accommodation is not included within the registration fee and must be pre-booked
 
 # Keynotes
 
+<span id="keynote1"></span> <!-- hidden anchor -->
 <h3><i>Traffic simulation modeling: combining generative modeling with transportation science to achieve scalability</i></h3>
 <img src="../images/Carolina_Osorio.jpg" alt="picture of Carolina Osorio" style="width:150px; border-radius: 50%; margin-bottom:10px;">
 <br>
@@ -208,6 +491,7 @@ Osorio is a Full Professor at HEC Montreal, where Osorio holds the SCALE AI Rese
 
 ---
 
+<span id="keynote2"></span> <!-- hidden anchor -->
 <h3><i>SUMO and I – 25 years later...</i></h3>
 <img src="../images/Peter_Wagner.jpg" alt="picture of Prof. Dr. Peter Wagner" style="width:150px; border-radius: 50%; margin-bottom:10px;">
 <br>
@@ -265,25 +549,18 @@ This 2-hour workshop explores the potential of Digital Twins in urban traffic ma
 
 ---
 <span id="workshop4"></span> <!-- hidden anchor -->
-<h3><span class="badge badge-info">W4</span> Using SUMO for simulating innovative public transportation systems</h3>
+<h3><span class="badge badge-info">W4</span> Using SUMO for simulating innovative public transportation systems + Using SUMO for Railway simulations</h3>
 <small><i class="fas fa-calendar-alt"></i> Wednesday June 03, 10:00 - 12:00
 <!-- <br>
 <i><i class="fa-solid fa-user-group"></i> Confirmed participation from </i> -->
 <br><br>
 </small>
 
-Traffic simulation is the major tool to convince technical people and communities alike to follow different paths in enhancing their public transportation systems. SUMO supports them with the ability to model rail, road and water based transportation modes, importing existing networks and schedules and editing them in a flexible way. The resulting simulations cover the whole trip chain of the people involved showing bottlenecks and accumulating delays due to congestion on roads but also on train platforms and how to avoid them. The topic of the workshop will be to evaluate the strengths and room for improvements of SUMO in public transportation research and which new modes still need more coverage. The goal is share insights, inspire new projects and shape the future development trajectory.
+Traffic simulation serves as a critical tool for convincing technical experts and communities to pursue different paths in enhancing public transportation systems. SUMO supports this mission with the ability to model rail, road, and water-based transportation modes, importing existing networks and schedules while allowing flexible editing. The resulting simulations capture the complete trip chain of passengers, revealing bottlenecks and accumulating delays caused by congestion on roads as well as on train platforms, and exploring strategies to mitigate them.
 
----
-<span id="workshop5"></span> <!-- hidden anchor -->
-<h3><span class="badge badge-info">W5</span> Using SUMO for Railway simulations</h3>
-<small><i class="fas fa-calendar-alt"></i> Thursday June 04, 10:00 - 12:00
-<!-- <br>
-<i><i class="fa-solid fa-user-group"></i> Confirmed participation from </i> -->
-<br><br>
-</small>
+SUMO further supports signal infrastructure models, train dynamics, and automated operational response mechanisms such as overtaking, track changes, and stop cancellations. This workshop aims to evaluate the strengths and limitations of SUMO's current features in the context of railway research, strategic planning, and operational decision-making. Participants will discuss which new modes still require better coverage and how existing capabilities align with emerging simulation needs.
 
-SUMO supports signal infrastructure models, train dynamics and automated operational response mechanisms such as overtaking, track changes and stop cancellations. How do the current Features and Limitation fit into the simulation needs in railway research and strategic and operational planning. The goal is share insights, inspire new projects and shape the future development trajectory.
+The goal is to share insights, inspire new projects, and collectively shape the future development trajectory of SUMO for public transportation applications.
 
 ---
 
@@ -300,7 +577,9 @@ SUMO supports signal infrastructure models, train dynamics and automated operati
   </div>
   <div class="col-12 col-md-6">
   <h3 class="mt-0">Boat Tour</h3>
-<small><i class="fas fa-calendar-alt"></i> Monday June 01, 18:00 - 20:30</small>
+<small><i class="fas fa-calendar-alt"></i> Monday June 01, 18:15 - 21:00</small>
+<br><br>
+We'll set off from Ernst-Ruska-Ufer and navigate the Teltowkanal, Dahme, and Müggelspree, arriving at the Müggelsee - Berlin's largest lake. After spending some time on the lake, the journey will then loop back to our original starting point.
 <br><br>
 <b>Limited capacity.</b>
 During registration, you will be asked to indicate whether you plan to attend the social event.

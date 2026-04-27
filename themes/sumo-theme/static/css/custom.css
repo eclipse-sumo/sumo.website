@@ -581,3 +581,38 @@ border-radius: 4px;
 .bg-color2 { background:#17412F; }
 .bg-color3 { background:#BEE4C0; }
 .bg-color4 { background:#F8F8F8; }
+
+table.agenda {
+border: 2px solid #bbb;
+margin-bottom: 25px;
+}
+
+table.agenda th {
+text-align: center;
+}
+
+table.agenda td:first-child {
+text-align: right;
+}
+
+table.agenda {
+  width: 100%;
+  table-layout: auto;
+}
+
+table.agenda td:first-child,
+table.agenda th:first-child {
+  white-space: nowrap;
+}
+
+table.agenda td:nth-child(2),
+table.agenda th:nth-child(2),
+table.agenda td:nth-child(3),
+table.agenda th:nth-child(3) {
+  width: 50%;
+}
+
+table.agenda td[colspan="2"],
+table.agenda th[colspan="2"] {
+  width: auto;
+}
