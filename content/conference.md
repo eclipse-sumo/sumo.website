@@ -308,7 +308,7 @@ Dimitris Tsitsokas</small></li>
       <li>sumo3Dviz - A three dimensional traffic visualisation - <small>Kevin Riehl, Michail Makridis, Julius Schlapback, Anastasios Kouvelas</small></li>
       <li>Toward an Agentic AI Framework for Integrated MATSim-SUMO Policy Evaluation - <small>David Micallef, Luca Bondin, Alexiei Dingli</small></li>
       <li>Fluidity: Algorithm to infer Traffic Light Rhythms from GPS Positioning Data - <small>Gaston Laplagne</small></li>
-      <!-- <li>SESAM - <small></small></li> -->
+      <li>SESAM: Mobility Simulations in the Cloud - <small>Robert Hilbrich, Angelo Banse</small></li>
       <!-- <li>abc - <small>Sumaira Shaheen</small></li> -->
       </ul></td>
     </tr>
