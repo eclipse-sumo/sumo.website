@@ -171,7 +171,7 @@ The conference offers opportunities to learn about new features, connect with ot
         <li>Analysis and comparison of Multimodal Link Transmission Model and SUMO in urban networks - <small>Ning Xie, Meng Wang</small></li>
         <li>Instantania, the fast, parallelized traffic microsimulator for large scale transport digital twins - <small>Joerg Schweizer</small></li>
         <li>KISLEK - KI zur Steuerung verbundener Verkehrsknoten - <small>Lukas Klein</small></li>
-        <!-- <li>SESAM - <small></small></li> -->
+        <li>Revisiting Mesoscopic Traffic Flow Simulation in SUMO: Limitations, Analysis, and a Link-based Alternative - <small>Ying-Chuan Ni, Alina Akopian, Anastasios Kouvelas, Michail A. Makridis</small></li>
       </ul>
       </td>
     </tr>
@@ -303,7 +303,6 @@ The conference offers opportunities to learn about new features, connect with ot
       <li>Towards Adaptive Traffic Pattern Clustering Reinforcement Learning in Traffic Signal Control - <small>Lukas Klein</small></li>
       <li>Integrating Macroscopic and Microscopic Road Traffic Simulations for Impact Assessment of Flood-Related Disruptions - <small>Amirehsan Charlang Bakhtyari, Francesco Deflorio, Matteo Ferraro, Michele Amaddii, Fabio Castelli, Chiara Arrighi</small></li>
       <li>Systematic Integration of Heterogeneous Urban Demand Data into a Microscopic SUMO Simulation - <small>Mario Ilic, Niklas Gritsch, Prof. Dr.-Ing. Klaus Bogenberger</small></li>
-      <li>Revisiting Mesoscopic Traffic Flow Simulation in SUMO: Limitations, Analysis, and a Link-based Alternative - <small>Ying-Chuan Ni, Alina Akopian, Anastasios Kouvelas, Michail A. Makridis</small></li>
       <li>Realistic and Scalable Floating Car Observer Detection in SUMO Derived from Co-Simulation - <small>Jeremias Gerner, Klaus Bogenberger, and Stefanie Schmidtner </small></li>
       <li>BikeZ-ETH: Mass bicycle traffic flow simulation API and cycling trajectory dataset - <small>Thomas Ramseier, Ying-Chuan Ni, Shaimaa K. El-Baklish, Kevin Riehl, Anastasios Kouvelas, Michail A. Makridis</small></li>
       <li>LLM-Driven Agents for Evacuation Simulation in SUMO - <small>Michael Jones</small></li>
@@ -314,6 +313,7 @@ Dimitris Tsitsokas</small></li>
       <li>sumo3Dviz - A three dimensional traffic visualisation - <small>Kevin Riehl, Michail Makridis, Julius Schlapback, Anastasios Kouvelas</small></li>
       <li>Toward an Agentic AI Framework for Integrated MATSim-SUMO Policy Evaluation - <small>David Micallef, Luca Bondin, Alexiei Dingli</small></li>
       <li>Fluidity: Algorithm to infer Traffic Light Rhythms from GPS Positioning Data - <small>Gaston Laplagne</small></li>
+      <!-- <li>SESAM - <small></small></li> -->
       <!-- <li>abc - <small>Sumaira Shaheen</small></li> -->
       </ul></td>
     </tr>
