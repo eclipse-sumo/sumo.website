@@ -391,7 +391,7 @@ Dimitris Tsitsokas</small></li>
       <td colspan="2">
              <b>Reproducing Weekly Crash Patterns Using a Minimalist Driver Error Model</b><br><small>Ronald Nippold, Andreas Leich and Peter Wagner</small>
        <hr>
-       <b>Towards Smarter Intersections Through Digital Twins - The Coupling of SUMO and SCENIMINI</b><br><small>Yun-Pang Flötteröd, Lars Klitzke and Peter Wagner</small>
+       <b>Towards Smarter Intersections Through Digital Twins - The Coupling of SUMO and SCENIMINI</b><br><small>Lars Klitzke, Yun-Pang Flötteröd and Peter Wagner</small>
       </td>
     </tr>
     <tr>
