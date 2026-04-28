@@ -91,11 +91,6 @@ The conference offers opportunities to learn about new features, connect with ot
   <tr>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
     <td rowspan="10">18:30 - 21:00</td>
     <td colspan="2" rowspan="10"><b>Evening Program - Social Event</b><br>
    Boat tour<br>
@@ -161,7 +156,7 @@ The conference offers opportunities to learn about new features, connect with ot
         <li>Integrating Elevation Data in SUMO models for detailed estimation of Energy consumption by Electric Vehicle in large networks - <small>Francesco Deflorio, Matteo Ferraro, Giuseppe Calcagno, Amirehsan Charlang Bakhtyari, Lorenzo Sica, Angela Carboni</small></li>
         <li>Towards Empathic Vehicles: Simulator-Based Induction of Affective States for Emotion Recognition - <small>Niklas Fraissl et al.</small></li>
         <li>A Multi-Scenario Simulation Approach for Climate-Neutral Urban Corridors - <small>Evangelos Mintsis, S. Kontorinis, V. Mizaras, E. Mitsakis, and G. Ayfantopoulou</small></li>
-        <li>Coordinate-based Lane-Specific Detector Map Matching in SUMO - <small>Niklas Gritsch, Mario Ilic, Prof. Dr.-Ing. Klaus Bogenberger </small></li>
+        <li>Instantania, the fast, parallelized traffic microsimulator for large scale transport digital twins - <small>Joerg Schweizer</small></li>
         <li>Bridging Communities: Advancing JuPedSim for Pedestrian Dynamics and Urban Mobility Research - <small>Jette Degenhardt, Mohcine Chraibi and Ralf Leibold</small></li>
         <li>Sustainable Routing for Next-Generation Mobility: Linking Evolutionary Game Theory and SUMO - <small>Andrea Bertolini, Lorenzo Castelli </small></li>
         <li>Testing Adaptive Lane-Change Planners in Realistic Traffic: A Co-Simulation Framework using SUMO, Simulink, and RoadRunner - <small>Philipp Hafemann et al.</small></li>
@@ -298,11 +293,11 @@ The conference offers opportunities to learn about new features, connect with ot
       <td>13:00 - 14:00<br><br>Poster Session 2</td>
       <td colspan="2">
       <ul>
-      <li>Instantania, the fast, parallelized traffic microsimulator for large scale transport digital twins - <small>Joerg Schweizer</small></li>
       <li>Intelligent Ship Traffic Management for the Port of Bremerhaven - <small>Laura Bieker-Walz et al.</small></li>
       <li>Towards Adaptive Traffic Pattern Clustering Reinforcement Learning in Traffic Signal Control - <small>Lukas Klein</small></li>
       <li>Integrating Macroscopic and Microscopic Road Traffic Simulations for Impact Assessment of Flood-Related Disruptions - <small>Amirehsan Charlang Bakhtyari, Francesco Deflorio, Matteo Ferraro, Michele Amaddii, Fabio Castelli, Chiara Arrighi</small></li>
       <li>Systematic Integration of Heterogeneous Urban Demand Data into a Microscopic SUMO Simulation - <small>Mario Ilic, Niklas Gritsch, Prof. Dr.-Ing. Klaus Bogenberger</small></li>
+      <li>Coordinate-based Lane-Specific Detector Map Matching in SUMO - <small>Niklas Gritsch, Mario Ilic, Prof. Dr.-Ing. Klaus Bogenberger </small></li>
       <li>Realistic and Scalable Floating Car Observer Detection in SUMO Derived from Co-Simulation - <small>Jeremias Gerner, Klaus Bogenberger, and Stefanie Schmidtner </small></li>
       <li>BikeZ-ETH: Mass bicycle traffic flow simulation API and cycling trajectory dataset - <small>Thomas Ramseier, Ying-Chuan Ni, Shaimaa K. El-Baklish, Kevin Riehl, Anastasios Kouvelas, Michail A. Makridis</small></li>
       <li>LLM-Driven Agents for Evacuation Simulation in SUMO - <small>Michael Jones</small></li>
