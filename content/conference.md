@@ -169,9 +169,9 @@ The conference offers opportunities to learn about new features, connect with ot
         <li>Network Performance Analysis of Car-Following Models and Traffic Signal Light Configurations using SUMO - <small>Arya Karnik, Mounika Raj Kavadi, Joshua Bittle</small></li>
         <li>Causality-Aware Energy Forecasting and Adaptive Task Control in Edge-Assisted Autonomous Vehicular Networks - <small>Maha Alruwaili</small></li>
         <li>Analysis and comparison of Multimodal Link Transmission Model and SUMO in urban networks - <small>Ning Xie, Meng Wang</small></li>
-        <li>Instantania, the fast, parallelized traffic microsimulator for large scale transport digital twins - <small>Joerg Schweizer</small></li>
         <li>KISLEK - KI zur Steuerung verbundener Verkehrsknoten - <small>Lukas Klein</small></li>
         <li>Revisiting Mesoscopic Traffic Flow Simulation in SUMO: Limitations, Analysis, and a Link-based Alternative - <small>Ying-Chuan Ni, Alina Akopian, Anastasios Kouvelas, Michail A. Makridis</small></li>
+        <li>QI-TraSiCo – Quantum-Inspired Traffic Signal Control - <small>Elisabeth Wagner et al.</small></li>
       </ul>
       </td>
     </tr>
@@ -298,7 +298,7 @@ The conference offers opportunities to learn about new features, connect with ot
       <td>13:00 - 14:00<br><br>Poster Session 2</td>
       <td colspan="2">
       <ul>
-      <li>QI-TraSiCo – Quantum-Inspired Traffic Signal Control - <small>Elisabeth Wagner et al.</small></li>
+      <li>Instantania, the fast, parallelized traffic microsimulator for large scale transport digital twins - <small>Joerg Schweizer</small></li>
       <li>Intelligent Ship Traffic Management for the Port of Bremerhaven - <small>Laura Bieker-Walz et al.</small></li>
       <li>Towards Adaptive Traffic Pattern Clustering Reinforcement Learning in Traffic Signal Control - <small>Lukas Klein</small></li>
       <li>Integrating Macroscopic and Microscopic Road Traffic Simulations for Impact Assessment of Flood-Related Disruptions - <small>Amirehsan Charlang Bakhtyari, Francesco Deflorio, Matteo Ferraro, Michele Amaddii, Fabio Castelli, Chiara Arrighi</small></li>
