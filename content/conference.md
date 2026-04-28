@@ -536,7 +536,7 @@ Large-scale events create complex interactions between vehicular traffic and ped
 <h3><span class="badge badge-info">W3</span> Digital Twins and Traffic Management in Cities</h3>
 <small><i class="fas fa-calendar-alt"></i> Tuesday June 02, 15:30 - 17:30
 <br>
-<i><i class="fa-solid fa-user-group"></i> Confirmed participation from BearingPoint, Berliner Wasserbetriebe, City of Bratislava, Eclipse Foundation, Infrest GmbH, City of Mannheim, City of München, City of Ulm, Tracasa Instrumental, Transcality</i>
+<i><i class="fa-solid fa-user-group"></i> Confirmed participation from BearingPoint, Berliner Wasserbetriebe, City of Bratislava, Eclipse Foundation, Forschungsinstitut für Kraftfahrwesen und Fahrzeugmotoren Stuttgart (FKFS), Infrest GmbH, City of Mannheim, City of München, City of Ulm, Schlothauer & Wauer, Tracasa Instrumental, Transcality</i>
 <br><br>
 </small>
 
