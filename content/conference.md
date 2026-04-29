@@ -301,7 +301,7 @@ The conference offers opportunities to learn about new features, connect with ot
       <li>Realistic and Scalable Floating Car Observer Detection in SUMO Derived from Co-Simulation - <small>Jeremias Gerner, Klaus Bogenberger, and Stefanie Schmidtner </small></li>
       <li>BikeZ-ETH: Mass bicycle traffic flow simulation API and cycling trajectory dataset - <small>Thomas Ramseier, Ying-Chuan Ni, Shaimaa K. El-Baklish, Kevin Riehl, Anastasios Kouvelas, Michail A. Makridis</small></li>
       <li>LLM-Driven Agents for Evacuation Simulation in SUMO - <small>Michael Jones</small></li>
-      <li>Simulation of Unknown Motion - <small>Andreas Richter et al.</small></li>
+      <li>Simulation of Unknown Motion - <small>Marius Dupuis, Andreas Richter</small></li>
       <li>How much do emissions differ? Testing three calculation methods - <small>Addina Shafiyya Ediansjah, Jens Borken-Kleefeld, Meng Wang</small></li>
       <li>Multi-modal safety-optimized traffic management system using incident-informed rerouting and adaptive signal control: a SUMO application - <small>Dimitrios Tsitsokas, Georgios Matsioris, Emmanouil Barmpounakis, Ioannis Papamichail, Nikolas Geroliminis</small></li>
       <li>sumo3Dviz - A three dimensional traffic visualisation - <small>Kevin Riehl, Michail Makridis, Julius Schlapback, Anastasios Kouvelas</small></li>
