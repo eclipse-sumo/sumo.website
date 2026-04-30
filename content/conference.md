@@ -252,37 +252,30 @@ The conference offers opportunities to learn about new features, connect with ot
     <td>09:00 - 10:30<br><br>Session 4<br>
       <p style="font-size:60%">Session chair:</p>
     </td>
-    <td>
+    <td colspan="2">
     <b>Integrating Synthetic Populations and Activity Chains for Individual Emission Assessment in SUMO</b><br><small>Alix NGARI LENDOYE, Corwin Fèvre, Tatiana Graindorge and Alain Bouju</small>
        <hr>
-       <b>EfaSim - A Prototype for a SUMO-driven Emergency Vehicle Driving Simulator</b><br><small>Rebecca Ahmed, Cristian Cubides-Herrera, Fabian Schuhmann and Markus Lienkamp</small>
+       <b>Reconstruction of Public Transport Routes Based on Imperfect GTFS and OpenStreetMap Data</b><br><small>Alexander Kaiser and Alexander Schmaus</small>
        <hr>
        <b>Energy- and Emission-Conscious Extension of TAPAS-SUMO Coupling - A Case Study in Delmenhorst</b><br><small>Yun-Pang Flötteröd, Michael Behrisch and Knut M. Heidemann</small>
        </td>
-    <td rowspan="3">
-<small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
-  <b>Workshop 4</b> (10:00 - 12:00)
-  <br>
-  Using SUMO for simulating innovative public transportation systems + Using SUMO for Railway simulations<br>
-  <a href="#workshop4" style="color:#0645ad;">Read more <i class="fas fa-angle-down"></i></a>
-    </td>
   </tr>
 
   <tr>
     <td>10:30 - 10:45</td>
-    <td><i>Coffee Break</i> ☕</td>
+    <td colspan="2"><i>Coffee Break</i> ☕</td>
   </tr>
 
   <tr>
     <td>10:45 - 12:15<br><br>Session 5<br>
       <p style="font-size:60%">Session chair:</p>
     </td>
-    <td>
-        <b>Simulation of Real DACH-Standard Traffic Signal Control Systems in SUMO</b><br><small>Markus Runhao Zhou, Johann Krüger and Meng Wang</small>
+    <td colspan="2">
+      <b>C-ITS services for light rail systems</b><br><small>Paula von der Heide</small>
        <hr>
-       <b>ATSUM: An Attlas-SUMO Middleware</b><br><small>Rodolfo Valentim, Tiago Pinheiro, Vincen Santaella, Artur Souza, João Cleverales, Fernando Martinelli and Víctor Martínez</small>
+       <b>GROSS: German Rail Open-Source SUMO Simulation</b><br><small>Juri Penell and Damian Dailisan</small>
        <hr>
-       <b>Investigating Traffic Effects of Control Transitions in Level 3 Conditional Driving with SUMO</b><br><small>Robert Alms and Peter Wagner</small>
+       <b>SUMO for Railway Applications</b><br><small>Christian Rahmig, Jakob Erdmann, Jakob Geischberger and Larissa Zhuchyi</small>
     </td>
   </tr>
     <tr style="background-color:#d9f1ff">
@@ -352,27 +345,34 @@ The conference offers opportunities to learn about new features, connect with ot
     <tr>
       <td>09:00 - 10:30<br><br>Session 6<br>
       <p style="font-size:60%">Session chair:</p></td>
-      <td colspan="2">
+      <td>
       <b>Energy Optimized Green Light Assist in Varying Traffic Scenarios Using Reinforcement Learning</b><br><small>Johan Kolms, Kai M. Blum, Michael Than, Tamás Kurczveil and Dirk J. Lehmann</small>
        <hr>
-       <b>Reconstruction of Public Transport Routes Based on Imperfect GTFS and OpenStreetMap Data</b><br><small>Alexander Kaiser and Alexander Schmaus</small>
+              <b>EfaSim - A Prototype for a SUMO-driven Emergency Vehicle Driving Simulator</b><br><small>Rebecca Ahmed, Cristian Cubides-Herrera, Fabian Schuhmann and Markus Lienkamp</small>
        <hr>
        <b>Driver Models in SUMO and Elsewhere</b><br><small>Peter Wagner</small>
       </td>
+          <td rowspan="3">
+<small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
+  <b>Workshop 4</b> (10:00 - 12:00)
+  <br>
+  Using SUMO for simulating innovative public transportation systems + Using SUMO for Railway simulations<br>
+  <a href="#workshop4" style="color:#0645ad;">Read more <i class="fas fa-angle-down"></i></a>
+    </td>
     </tr>
     <tr>
       <td>10:30 - 10:45</td>
-      <td colspan="2"><i>Coffee Break</i> ☕</td>
+      <td><i>Coffee Break</i> ☕</td>
     </tr>
     <tr>
       <td>10:45 - 12:15<br><br>Session 7<br>
       <p style="font-size:60%">Session chair:</p></td>
-      <td colspan="2">
-      <b>C-ITS services for light rail systems</b><br><small>Paula von der Heide</small>
+      <td>
+               <b>Simulation of Real DACH-Standard Traffic Signal Control Systems in SUMO</b><br><small>Markus Runhao Zhou, Johann Krüger and Meng Wang</small>
        <hr>
-       <b>GROSS: German Rail Open-Source SUMO Simulation</b><br><small>Juri Penell and Damian Dailisan</small>
+       <b>ATSUM: An Attlas-SUMO Middleware</b><br><small>Rodolfo Valentim, Tiago Pinheiro, Vincen Santaella, Artur Souza, João Cleverales, Fernando Martinelli and Víctor Martínez</small>
        <hr>
-       <b>SUMO for Railway Applications</b><br><small>Christian Rahmig, Jakob Erdmann, Jakob Geischberger and Larissa Zhuchyi</small>
+       <b>Investigating Traffic Effects of Control Transitions in Level 3 Conditional Driving with SUMO</b><br><small>Robert Alms and Peter Wagner</small>
       </td>
     </tr>
     <tr style="background-color:#d9f1ff">
@@ -544,7 +544,7 @@ This 2-hour workshop explores the potential of Digital Twins in urban traffic ma
 ---
 <span id="workshop4"></span> <!-- hidden anchor -->
 <h3><span class="badge badge-info">W4</span> Using SUMO for simulating innovative public transportation systems + Using SUMO for Railway simulations</h3>
-<small><i class="fas fa-calendar-alt"></i> Wednesday June 03, 10:00 - 12:00
+<small><i class="fas fa-calendar-alt"></i> Thursday June 04, 10:00 - 12:00
 <!-- <br>
 <i><i class="fa-solid fa-user-group"></i> Confirmed participation from </i> -->
 <br><br>
