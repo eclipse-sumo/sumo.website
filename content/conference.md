@@ -297,7 +297,7 @@ The conference offers opportunities to learn about new features, connect with ot
       <li>Simulation of Unknown Motion - <small>Marius Dupuis, Andreas Richter</small></li>
       <li>How much do emissions differ? Testing three calculation methods - <small>Addina Shafiyya Ediansjah, Jens Borken-Kleefeld, Meng Wang</small></li>
       <li>Multi-modal safety-optimized traffic management system using incident-informed rerouting and adaptive signal control: a SUMO application - <small>Dimitrios Tsitsokas, Georgios Matsioris, Emmanouil Barmpounakis, Ioannis Papamichail, Nikolas Geroliminis</small></li>
-      <li>sumo3Dviz - A three dimensional traffic visualisation - <small>Kevin Riehl, Michail Makridis, Julius Schlapback, Anastasios Kouvelas</small></li>
+      <li>sumo3Dviz - A three dimensional traffic visualisation - <small>Kevin Riehl, Michail Makridis, Julius Schlapbach, Anastasios Kouvelas</small></li>
       <li>Toward an Agentic AI Framework for Integrated MATSim-SUMO Policy Evaluation - <small>David Micallef, Luca Bondin, Alexiei Dingli</small></li>
       <li>Fluidity: Algorithm to infer Traffic Light Rhythms from GPS Positioning Data - <small>Gaston Laplagne</small></li>
       <li>SESAM: Mobility Simulations in the Cloud - <small>Robert Hilbrich, Angelo Banse</small></li>
