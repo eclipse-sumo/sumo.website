@@ -133,7 +133,7 @@ The conference offers opportunities to learn about new features, connect with ot
     </tr>
     <tr>
       <td>09:15 - 10:45<br><br>Session 1
-        <p style="font-size:60%">Session chair:</p>
+        <p style="font-size:60%">Session chair:<br>Robert Hilbrich</p>
       </td>
       <td colspan="2">
        <b>sumoITScontrol</b><br><small>Kevin Riehl, Anastasios Kouvelas and Michail A. Makridis</small>
@@ -192,7 +192,7 @@ The conference offers opportunities to learn about new features, connect with ot
       <td>
         <small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Bunsen-Saal</span></small><br>
         <b>Session 2</b>
-        <p style="font-size:60%">Session chair:</p>
+        <p style="font-size:60%">Session chair: Ronald Nippold</p>
         <br>
       <b>Enabling Non-Lane-Based Cycling Behavior for Mass Bicycle Traffic Flow Simulation in SUMO</b><br><small>Ying-Chuan Ni, Thomas Ramseier, Junzhe Cao, Anastasios Kouvelas and Michail Makridis </small>
        <hr>
@@ -215,7 +215,7 @@ The conference offers opportunities to learn about new features, connect with ot
       <td>
         <small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Bunsen-Saal</span></small><br>
         <b>Session 3</b>
-        <p style="font-size:60%">Session chair:</p>
+        <p style="font-size:60%">Session chair: Peter Wagner</p>
         <br>
         <b>Improving SUMO for Motorcycles</b><br><small>Gnanambica Chouta and Christian Facchi</small>
        <hr>
@@ -250,7 +250,7 @@ The conference offers opportunities to learn about new features, connect with ot
   <tbody>
   <tr>
     <td>09:00 - 10:30<br><br>Session 4<br>
-      <p style="font-size:60%">Session chair:</p>
+      <p style="font-size:60%">Session chair:<br>Michael Behrisch</p>
     </td>
     <td colspan="2">
     <b>Integrating Synthetic Populations and Activity Chains for Individual Emission Assessment in SUMO</b><br><small>Alix NGARI LENDOYE, Corwin Fèvre, Tatiana Graindorge and Alain Bouju</small>
@@ -268,7 +268,7 @@ The conference offers opportunities to learn about new features, connect with ot
 
   <tr>
     <td>10:45 - 12:15<br><br>Session 5<br>
-      <p style="font-size:60%">Session chair:</p>
+      <p style="font-size:60%">Session chair:<br>Jakob Erdmann</p>
     </td>
     <td colspan="2">
       <b>C-ITS services for light rail systems</b><br><small>Paula von der Heide</small>
@@ -344,7 +344,7 @@ The conference offers opportunities to learn about new features, connect with ot
   <tbody>
     <tr>
       <td>09:00 - 10:30<br><br>Session 6<br>
-      <p style="font-size:60%">Session chair:</p></td>
+      <p style="font-size:60%">Session chair:<br>Ronald Nippold</p></td>
       <td>
       <b>Energy Optimized Green Light Assist in Varying Traffic Scenarios Using Reinforcement Learning</b><br><small>Johan Kolms, Kai M. Blum, Michael Than, Tamás Kurczveil and Dirk J. Lehmann</small>
        <hr>
@@ -366,7 +366,7 @@ The conference offers opportunities to learn about new features, connect with ot
     </tr>
     <tr>
       <td>10:45 - 12:15<br><br>Session 7<br>
-      <p style="font-size:60%">Session chair:</p></td>
+      <p style="font-size:60%">Session chair:<br>Yun-Pang Flötteröd</p></td>
       <td>
                <b>Simulation of Real DACH-Standard Traffic Signal Control Systems in SUMO</b><br><small>Markus Runhao Zhou, Johann Krüger and Meng Wang</small>
        <hr>
@@ -381,7 +381,7 @@ The conference offers opportunities to learn about new features, connect with ot
     </tr>
     <tr>
       <td>13:00 - 13:45<br><br>Session 8<br>
-      <p style="font-size:60%">Session chair:</p></td>
+      <p style="font-size:60%">Session chair: Robert Hilbrich</p></td>
       <td colspan="2">
              <b>Reproducing Weekly Crash Patterns Using a Minimalist Driver Error Model</b><br><small>Ronald Nippold, Andreas Leich and Peter Wagner</small>
        <hr>
