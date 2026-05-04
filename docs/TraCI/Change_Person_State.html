@@ -1,6 +1,6 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 04 May 2026 07:13:40
+Build Date UTC : 04 May 2026 07:48:55
 Last edit: 04 May 2026
 -->
 <!DOCTYPE html>
@@ -267,85 +267,85 @@ Last edit: 04 May 2026
 <td>add (0x80)</td>
 <td>complex see below</td>
 <td>Inserts a new person to the simulation at the given edge, position and time (in s). This function should be followed by appending Stages or the person will immediately vanish on departure.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-add">add</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.add">add</a></td>
 </tr>
 <tr>
 <td>append stage (0xc4)</td>
 <td>complex see below</td>
 <td>Appends a stage (stageObject, waiting, walking or driving) to the plan of the given person.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-appendStage">appendStage</a><br><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-appendDrivingStage">appendDrivingStage</a><br><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-appendWaitingStage">appendWaitingStage</a><br><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-appendWalkingStage">appendWalkingStage</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.appendStage">appendStage</a><br><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.appendDrivingStage">appendDrivingStage</a><br><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.appendWaitingStage">appendWaitingStage</a><br><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.appendWalkingStage">appendWalkingStage</a></td>
 </tr>
 <tr>
 <td>replace stage (0xcd)</td>
 <td>complex see below</td>
 <td>Replaces the nth next stage with the given stage object</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-replaceStage">replaceStage</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.replaceStage">replaceStage</a></td>
 </tr>
 <tr>
 <td>remove stage (0xc5)</td>
 <td>int</td>
 <td>Removes the nth next stage. nextStageIndex must be lower then value of getRemainingStages(personID). nextStageIndex 0 immediately aborts the current stage and proceeds to the next stage. When removing all stages, stage 0 should be removed last (the python function removeStages does this automatically).</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-removeStage">removeStage</a><br><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-removeStages">removeStages</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.removeStage">removeStage</a><br><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.removeStages">removeStages</a></td>
 </tr>
 <tr>
 <td>remove (0x81)</td>
 <td>int</td>
 <td>Removes the person from the simulation instantly.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-remove">remove</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.remove">remove</a></td>
 </tr>
 <tr>
 <td>reroute (compute new route) by travel time (0x90)</td>
 <td>compound (&lt;empty&gt;)</td>
 <td>Computes a new route to the current destination that minimizes travel time. The assumed values for each edge in the network can be customized in various ways. See <a href="../Simulation/Routing.html#travel-time_values_for_routing">Simulation/Routing#Travel-time_values_for_routing</a>. Replaces the current route by the found route.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-rerouteTraveltime">rerouteTraveltime</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.rerouteTraveltime">rerouteTraveltime</a></td>
 </tr>
 <tr>
 <td>move to XY (0xb4)</td>
 <td>compound (edgeID, x, y, angle, keepRoute) (see below)</td>
 <td>Moves the person to a new position after normal movements have taken place. Also forces the angle of the person to the given value (navigational angle in degree). <a href="Change_Person_State.html#move_to_xy_0xb4">See below for additional details</a></td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-moveToXY">moveToXY</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.moveToXY">moveToXY</a></td>
 </tr>
 <tr>
 <td>color (0x45)</td>
 <td>ubyte,ubyte,ubyte,ubyte (RGBA)</td>
 <td>sets color for person with the given ID. i.e. (255,0,0,255) for the color red.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-setColor">setColor</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.setColor">setColor</a></td>
 </tr>
 <tr>
 <td>height (0xbc)</td>
 <td>double</td>
 <td>Sets the height in m for this person.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-setHeight">setHeight</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.setHeight">setHeight</a></td>
 </tr>
 <tr>
 <td>length (0x44)</td>
 <td>double</td>
 <td>Sets the length in m for the given person.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-setLength">setLength</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.setLength">setLength</a></td>
 </tr>
 <tr>
 <td>min gap (0x4c)</td>
 <td>double</td>
 <td>Sets the offset (gap to front person if halting) for this vehicle.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-setMinGap">setMinGap</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.setMinGap">setMinGap</a></td>
 </tr>
 <tr>
 <td>speed (0x5e)</td>
 <td>double</td>
 <td>Sets the maximum speed in m/s for the named person for subsequent step.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-setSpeed">setSpeed</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.setSpeed">setSpeed</a></td>
 </tr>
 <tr>
 <td>type (0x4f)</td>
 <td>string (id)</td>
 <td>Sets the id of the type for the named person.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-setType">setType</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.setType">setType</a></td>
 </tr>
 <tr>
 <td>width (0x4d)</td>
 <td>double</td>
 <td>Sets the width in m for this person.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-setWidth">setWidth</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.setWidth">setWidth</a></td>
 </tr>
 </tbody>
 </table>

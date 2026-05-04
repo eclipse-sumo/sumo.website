@@ -1,6 +1,6 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 04 May 2026 07:13:40
+Build Date UTC : 04 May 2026 07:48:55
 Last edit: 04 May 2026
 -->
 <!DOCTYPE html>
@@ -250,25 +250,25 @@ table.</p>
 <td>clear pending vehicles (0x94)</td>
 <td>string <em>routeID</em></td>
 <td>Discards all loaded vehicles with a depart time below the current time step which could not be inserted yet. If the given <em>routeID</em> has non-zero length, only vehicles that have this routeID are discarded.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-clearPending">clearPending</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_simulation.html#SimulationDomain.clearPending">clearPending</a></td>
 </tr>
 <tr>
 <td>save state (0x95)</td>
 <td>string <em>filename</em></td>
 <td>Saves current simulation state to the given <em>filename</em>.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-saveState">saveState</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_simulation.html#SimulationDomain.saveState">saveState</a></td>
 </tr>
 <tr>
 <td>load state (0x96)</td>
 <td>string <em>filename</em></td>
 <td>Quick-loads <a href="../Simulation/SaveAndLoad.html">simulation state</a> from the given <em>filename</em>. This is faster than simulation.load since the network and additional objects are retained. Caution: Vehicles from an incrementally loaded route file as well as flow-vehicles may be missing when loading the state this way. If all route input is in <code>&lt;vehicle&gt;</code> or &lt;<code>trip&gt;</code> format and loaded with option <strong>--additional-files</strong> (non-incremental loading), traffic is guaranteed to be complete.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-loadState">loadStateState</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_simulation.html#SimulationDomain.loadState">loadStateState</a></td>
 </tr>
 <tr>
 <td>scale (0x8e)</td>
 <td>double</td>
 <td>Set traffic scaling factor</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-setScale">setScale</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_simulation.html#SimulationDomain.setScale">setScale</a></td>
 </tr>
 </tbody>
 </table>

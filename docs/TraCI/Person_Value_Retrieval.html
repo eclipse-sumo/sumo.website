@@ -1,6 +1,6 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 04 May 2026 07:13:40
+Build Date UTC : 04 May 2026 07:48:55
 Last edit: 04 May 2026
 -->
 <!DOCTYPE html>
@@ -258,121 +258,121 @@ and just implemented as a retrieval function because it needs a return value.</p
 <td>id list (0x00)</td>
 <td>stringList</td>
 <td>Returns a list of ids of all persons currently running within the scenario (the given person ID is ignored)</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getIDList">getIDList</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getIDList">getIDList</a></td>
 </tr>
 <tr>
 <td>count (0x01)</td>
 <td>int</td>
 <td>Returns the number of persons currently running within the scenario (the given person ID is ignored)</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getIDCount">getIDCount</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getIDCount">getIDCount</a></td>
 </tr>
 <tr>
 <td>speed (0x40)</td>
 <td>double</td>
 <td>Returns the speed of the named person within the last step [m/s]; error value: -2^30</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getSpeed">getSpeed</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getSpeed">getSpeed</a></td>
 </tr>
 <tr>
 <td>position (0x42)</td>
 <td>position</td>
 <td>Returns the position(two doubles) of the named person within the last step [m,m]; error value: [-2^30, -2^30].</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getPosition">getPosition</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getPosition">getPosition</a></td>
 </tr>
 <tr>
 <td>position 3D (0x39)</td>
 <td>position</td>
 <td>Returns the 3D-position(three doubles) of the named vehicle (center of the front bumper) within the last step [m,m,m]; error value: [-2^30, -2^30, -2^30].</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getPosition3D">getPosition3D</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getPosition3D">getPosition3D</a></td>
 </tr>
 <tr>
 <td>angle (0x43)</td>
 <td>double</td>
 <td>Returns the angle of the named person within the last step [°]; error value: -2^30</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getAngle">getAngle</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getAngle">getAngle</a></td>
 </tr>
 <tr>
 <td>slope (0x36)</td>
 <td>double</td>
 <td>Retrieves the slope at the current person position in degrees</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getSlope">getSlope</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getSlope">getSlope</a></td>
 </tr>
 <tr>
 <td>road id (0x50)</td>
 <td>string</td>
 <td>Returns the id of the edge the named person was at within the last step; error value: ""</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getRoadID">getRoadID</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getRoadID">getRoadID</a></td>
 </tr>
 <tr>
 <td>type id (0x4f)</td>
 <td>string</td>
 <td>Returns the id of the type of the named person</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getTypeID">getTypeID</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getTypeID">getTypeID</a></td>
 </tr>
 <tr>
 <td>color (0x45)</td>
 <td>ubyte,ubyte,ubyte,ubyte</td>
 <td>Returns the person's color (RGBA).</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getColor">getColor</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getColor">getColor</a></td>
 </tr>
 <tr>
 <td>edge position (0x56)</td>
 <td>double</td>
 <td>The position of the person along the edge (in [m]); error value: -2^30</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getLanePosition">getLanePosition</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getLanePosition">getLanePosition</a></td>
 </tr>
 <tr>
 <td>length (0x44)</td>
 <td>double</td>
 <td>Returns the length of the persons [m]</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getLength">getLength</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getLength">getLength</a></td>
 </tr>
 <tr>
 <td>minGap (0x4c)</td>
 <td>double</td>
 <td>Returns the offset (gap to front person if halting) of this person [m]</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getMinGap">getMinGap</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getMinGap">getMinGap</a></td>
 </tr>
 <tr>
 <td>width (0x4d)</td>
 <td>double</td>
 <td>Returns the width of this person [m]</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getWidth">getWidth</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getWidth">getWidth</a></td>
 </tr>
 <tr>
 <td>waiting time (0x7a)</td>
 <td>double</td>
 <td>Returns the waiting time [s]</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getWaitingTime">getWaitingTime</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getWaitingTime">getWaitingTime</a></td>
 </tr>
 <tr>
 <td>next edge (0xc1)</td>
 <td>string</td>
 <td>Returns the next edge on the persons route while it is walking. If there is no further edge or the person is in another stage, returns the empty string.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getNextEdge">getNextEdge</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getNextEdge">getNextEdge</a></td>
 </tr>
 <tr>
 <td>remaining stages (0xc2)</td>
 <td>int</td>
 <td>Returns the number of remaining stages for the given person including the current stage.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getStage">getRemainingStages</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getStage">getRemainingStages</a></td>
 </tr>
 <tr>
 <td>vehicle (0xc3)</td>
 <td>string</td>
 <td>Returns the id of the vehicle if the person is in stage driving and has entered a vehicle.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getVehicle">getVehicle</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getVehicle">getVehicle</a></td>
 </tr>
 <tr>
 <td>taxi reservations (0xc6)</td>
 <td>list(Reservation) (see below)</td>
 <td>Returns all reservations. If onlyNew is 1, each reservation is returned only once.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getTaxiReservations">getTaxiReservations</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getTaxiReservations">getTaxiReservations</a></td>
 </tr>
 <tr>
 <td>split taxi reservations (0xc7)</td>
 <td>string</td>
 <td>Splits persons from the given reservation and creates a new one for them. Returns the new reservation id.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-splitTaxiReservation">splitTaxiReservation</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.splitTaxiReservation">splitTaxiReservation</a></td>
 </tr>
 </tbody>
 </table>
@@ -448,14 +448,14 @@ and just implemented as a retrieval function because it needs a return value.</p
 <td>next stage index (int)</td>
 <td><a href="Change_Person_State.html#append_stage_0xc4">TraCIStage</a></td>
 <td>Returns the a compound object that describes nth next stage. Index 0 retrieves the value for the current stage. The given index must be lower than the value of 'remaining stages'.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getStage">getStage</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getStage">getStage</a></td>
 </tr>
 <tr>
 <td>edges (0x54)</td>
 <td>next stage index (int)</td>
 <td>stringList</td>
 <td>Returns the edges of the nth next stage. Index 0 retrieves the value for the current stage. The given index must be lower than the value of 'remaining stages'. For driving stages only origin and destination edge are returned.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getEdges">getEdges</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_person.html#PersonDomain.getEdges">getEdges</a></td>
 </tr>
 </tbody>
 </table>

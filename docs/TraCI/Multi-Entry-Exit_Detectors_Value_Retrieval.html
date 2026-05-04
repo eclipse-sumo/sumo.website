@@ -1,6 +1,6 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 04 May 2026 07:13:40
+Build Date UTC : 04 May 2026 07:48:55
 Last edit: 04 May 2026
 -->
 <!DOCTYPE html>
@@ -258,85 +258,85 @@ be retrieved, the type of the return value is also shown in the table.</p>
 <td>id list (0x00)</td>
 <td>stringList</td>
 <td>Returns a list of ids of all multi-entry/multi-exit detectors within the scenario (the given DetectorID is ignored)</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._multientryexit.html#MultiEntryExitDomain-getIDList">getIDList</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_multientryexit.html#MultiEntryExitDomain.getIDList">getIDList</a></td>
 </tr>
 <tr>
 <td>count (0x01)</td>
 <td>int</td>
 <td>Returns the number of multi-entry/multi-exit detectors within the scenario (the given DetectorID is ignored)</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._multientryexit.html#MultiEntryExitDomain-getIDCount">getIDCount</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_multientryexit.html#MultiEntryExitDomain.getIDCount">getIDCount</a></td>
 </tr>
 <tr>
 <td>entry lanes (0x30)</td>
 <td>stringList</td>
 <td>Returns a list of ids of the multi-entry/multi-exit detector's entry lanes</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._multientryexit.html#MultiEntryExitDomain-getEntryLanes">getEntryLanes</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_multientryexit.html#MultiEntryExitDomain.getEntryLanes">getEntryLanes</a></td>
 </tr>
 <tr>
 <td>exit lanes (0x31)</td>
 <td>stringList</td>
 <td>Returns a list of ids of the multi-entry/multi-exit detector's exit lanes</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._multientryexit.html#MultiEntryExitDomain-getExitLanes">getExitLanes</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_multientryexit.html#MultiEntryExitDomain.getExitLanes">getExitLanes</a></td>
 </tr>
 <tr>
 <td>entry positions (0x42)</td>
 <td>doubleList</td>
 <td>Returns a list of lane positions (in meters) of the multi-entry/multi-exit detector's entry positions</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._multientryexit.html#MultiEntryExitDomain-getEntryPositions">getEntryPositions</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_multientryexit.html#MultiEntryExitDomain.getEntryPositions">getEntryPositions</a></td>
 </tr>
 <tr>
 <td>exit positions (0x43)</td>
 <td>doubleList</td>
 <td>Returns a list of lane positions (in meters) of the multi-entry/multi-exit detector's exit positions</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._multientryexit.html#MultiEntryExitDomain-getExitPositions">getExitPositions</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_multientryexit.html#MultiEntryExitDomain.getExitPositions">getExitPositions</a></td>
 </tr>
 <tr>
 <td>last step vehicle number (0x10)</td>
 <td>int</td>
 <td>Returns the number of vehicles that have been within the named multi-entry/multi-exit detector within the last simulation step [#];<br><br><strong>Note:</strong> If the interval length for the detector is equal to the timestep length, this value corresponds to the <em>vehicleSumWithin</em> measure of <a href="../Simulation/Output/Multi-Entry-Exit_Detectors_%28E3%29.html">multi-entry/multi-exit detectors</a>.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._multientryexit.html#MultiEntryExitDomain-getLastStepVehicleNumber">getLastStepVehicleNumber</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_multientryexit.html#MultiEntryExitDomain.getLastStepVehicleNumber">getLastStepVehicleNumber</a></td>
 </tr>
 <tr>
 <td>last step mean speed (0x11)</td>
 <td>double</td>
 <td>Returns the mean speed of vehicles that have been within the named multi-entry/multi-exit detector within the last simulation step [m/s]<br><br><strong>Note:</strong> If the interval length for the detector is equal to the timestep length, this value corresponds to the <em>meanSpeedWithin</em> measure of <a href="../Simulation/Output/Multi-Entry-Exit_Detectors_%28E3%29.html">multi-entry/multi-exit detectors</a>.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._multientryexit.html#MultiEntryExitDomain-getLastStepMeanSpeed">getLastStepMeanSpeed</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_multientryexit.html#MultiEntryExitDomain.getLastStepMeanSpeed">getLastStepMeanSpeed</a></td>
 </tr>
 <tr>
 <td>last step vehicle ids (0x12)</td>
 <td>stringList</td>
 <td>Returns the list of ids of vehicles that have been within the named multi-entry/multi-exit detector in the last simulation step</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._multientryexit.html#MultiEntryExitDomain-getLastStepVehicleIDs">getLastStepVehicleIDs</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_multientryexit.html#MultiEntryExitDomain.getLastStepVehicleIDs">getLastStepVehicleIDs</a></td>
 </tr>
 <tr>
 <td>last step halting vehicles number (0x14)</td>
 <td>int</td>
 <td>Returns the number of vehicles which were halting during the last time step</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._multientryexit.html#MultiEntryExitDomain-getLastStepHaltingNumber">getLastStepHaltingNumber</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_multientryexit.html#MultiEntryExitDomain.getLastStepHaltingNumber">getLastStepHaltingNumber</a></td>
 </tr>
 <tr>
 <td>last interval travel time (0x58)</td>
 <td>double</td>
 <td>Returns the average travel time of vehicles that passed the detector in the last complete measurement interval</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._multientryexit.html#MultiEntryExitDomain-getLastIntervalMeanTravelTime">getLastIntervalMeanTravelTime</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_multientryexit.html#MultiEntryExitDomain.getLastIntervalMeanTravelTime">getLastIntervalMeanTravelTime</a></td>
 </tr>
 <tr>
 <td>last interval halts per vehicle (0x20)</td>
 <td>double</td>
 <td>Returns the average number of halts of vehicles that passed the detector in the last complete measurement interval</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._multientryexit.html#MultiEntryExitDomain-getLastIntervalMeanHaltsPerVehicle">getLastIntervalMeanHaltsPerVehicle</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_multientryexit.html#MultiEntryExitDomain.getLastIntervalMeanHaltsPerVehicle">getLastIntervalMeanHaltsPerVehicle</a></td>
 </tr>
 <tr>
 <td>last interval time loss (0x8c)</td>
 <td>double</td>
 <td>Returns the average time loss of vehicles that passed the detector in the last complete measurement interval</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._multientryexit.html#MultiEntryExitDomain-getLastIntervalMeanTimeLoss">getLastInervalMeanTimeLoss</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_multientryexit.html#MultiEntryExitDomain.getLastIntervalMeanTimeLoss">getLastInervalMeanTimeLoss</a></td>
 </tr>
 <tr>
 <td>last interval vehicles (0x21)</td>
 <td>int</td>
 <td>Returns the number of vehicles that passed the detector in the last complete measurement interval</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._multientryexit.html#MultiEntryExitDomain-getLastStepHaltingNumber">getLastStepHaltingNumber</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_multientryexit.html#MultiEntryExitDomain.getLastStepHaltingNumber">getLastStepHaltingNumber</a></td>
 </tr>
 </tbody>
 </table>

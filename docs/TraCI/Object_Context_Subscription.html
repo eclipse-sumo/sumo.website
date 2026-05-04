@@ -1,6 +1,6 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 04 May 2026 07:13:40
+Build Date UTC : 04 May 2026 07:48:55
 Last edit: 04 May 2026
 -->
 <!DOCTYPE html>
@@ -541,70 +541,70 @@ Count).</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://sumo.dlr.de/pydoc/traci._vehicle.html#VehicleDomain-addSubscriptionFilterLanes">lanes</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_vehicle.html#VehicleDomain.addSubscriptionFilterLanes">lanes</a></td>
 <td style="text-align: center;">0x01</td>
 <td style="text-align: center;">list(byte)</td>
 <td>only return vehicles on list of lanes relative to ego vehicle</td>
 <td style="text-align: center;">no</td>
 </tr>
 <tr>
-<td><a href="https://sumo.dlr.de/pydoc/traci._vehicle.html#VehicleDomain-addSubscriptionFilterNoOpposite">no-opposite</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_vehicle.html#VehicleDomain.addSubscriptionFilterNoOpposite">no-opposite</a></td>
 <td style="text-align: center;">0x02</td>
 <td style="text-align: center;">-</td>
 <td>exclude vehicles on opposite (and other) lanes</td>
 <td style="text-align: center;">yes</td>
 </tr>
 <tr>
-<td><a href="https://sumo.dlr.de/pydoc/traci._vehicle.html#VehicleDomain-addSubscriptionFilterDownstreamDistance">downstream distance</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_vehicle.html#VehicleDomain.addSubscriptionFilterDownstreamDistance">downstream distance</a></td>
 <td style="text-align: center;">0x03</td>
 <td style="text-align: center;">double</td>
 <td>only return vehicles within the given downstream distance</td>
 <td style="text-align: center;">no</td>
 </tr>
 <tr>
-<td><a href="https://sumo.dlr.de/pydoc/traci._vehicle.html#VehicleDomain-addSubscriptionFilterUpstreamDistance">upstream distance</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_vehicle.html#VehicleDomain.addSubscriptionFilterUpstreamDistance">upstream distance</a></td>
 <td style="text-align: center;">0x04</td>
 <td style="text-align: center;">double</td>
 <td>only return vehicles within the given maximal upstream distance</td>
 <td style="text-align: center;">no</td>
 </tr>
 <tr>
-<td><a href="https://sumo.dlr.de/pydoc/traci._vehicle.html#VehicleDomain-addSubscriptionFilterLeadFollow">leader/follower</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_vehicle.html#VehicleDomain.addSubscriptionFilterLeadFollow">leader/follower</a></td>
 <td style="text-align: center;">0x05</td>
 <td style="text-align: center;">-</td>
 <td>only return leader and follower on the specified lanes (requires 'lanes' filter)</td>
 <td style="text-align: center;">no</td>
 </tr>
 <tr>
-<td><a href="https://sumo.dlr.de/pydoc/traci._vehicle.html#VehicleDomain-addSubscriptionFilterTurn">turn</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_vehicle.html#VehicleDomain.addSubscriptionFilterTurn">turn</a></td>
 <td style="text-align: center;">0x07</td>
 <td style="text-align: center;">-</td>
 <td>only return foes on upcoming junctions</td>
 <td style="text-align: center;">no</td>
 </tr>
 <tr>
-<td><a href="https://sumo.dlr.de/pydoc/traci._vehicle.html#VehicleDomain-addSubscriptionFilterVClass">vClass</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_vehicle.html#VehicleDomain.addSubscriptionFilterVClass">vClass</a></td>
 <td style="text-align: center;">0x08</td>
 <td style="text-align: center;">list(string)</td>
 <td>only return vehicles of the given vClass(es)</td>
 <td style="text-align: center;">yes</td>
 </tr>
 <tr>
-<td><a href="https://sumo.dlr.de/pydoc/traci._vehicle.html#VehicleDomain-addSubscriptionFilterVType">vType</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_vehicle.html#VehicleDomain.addSubscriptionFilterVType">vType</a></td>
 <td style="text-align: center;">0x09</td>
 <td style="text-align: center;">list(string)</td>
 <td>only return vehicles of the given vType(s)</td>
 <td style="text-align: center;">yes</td>
 </tr>
 <tr>
-<td><a href="https://sumo.dlr.de/pydoc/traci._vehicle.html#VehicleDomain-addSubscriptionFilterFieldOfVision">field of vision</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_vehicle.html#VehicleDomain.addSubscriptionFilterFieldOfVision">field of vision</a></td>
 <td style="text-align: center;">0x0A</td>
 <td style="text-align: center;">double</td>
 <td>only return vehicles within field of vision (angle in degrees)</td>
 <td style="text-align: center;">yes</td>
 </tr>
 <tr>
-<td><a href="https://sumo.dlr.de/pydoc/traci._vehicle.html#VehicleDomain-addSubscriptionFilterLateralDistance">lateral distance</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_vehicle.html#VehicleDomain.addSubscriptionFilterLateralDistance">lateral distance</a></td>
 <td style="text-align: center;">0x0B</td>
 <td style="text-align: center;">double</td>
 <td>only return vehicles within the given lateral distance</td>
@@ -622,7 +622,7 @@ Consequently, a combination of, e.g., the field-of-vision and lateral distance f
   library</a>,
   all domains support the methods <a href="https://sumo.dlr.de/pydoc/traci.domain.html#Domain"><em>subscribeContext</em> and
   <em>unsubscribeContext</em></a></li>
-<li>For the python client several <a href="https://sumo.dlr.de/pydoc/traci._vehicle.html#VehicleDomain-addSubscriptionFilterCFManeuver">methods for adding context filters
+<li>For the python client several <a href="https://sumo.dlr.de/pydoc/traci/_vehicle.html#VehicleDomain.addSubscriptionFilterCFManeuver">methods for adding context filters
   for vehicle-to-vehicle context
   subscriptions</a>
   are included.</li>

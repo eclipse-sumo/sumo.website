@@ -1,6 +1,6 @@
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 04 May 2026 07:13:40
+Build Date UTC : 04 May 2026 07:48:55
 Last edit: 04 May 2026
 -->
 <!DOCTYPE html>
@@ -269,49 +269,49 @@ given is also shown in the table.</p>
 <td>state (light/priority tuple) (0x20)</td>
 <td>string</td>
 <td>Sets the phase definition to the given. Assumes the given string is a tuple of light definitions from rRgGyYoO, for red, green, yellow, off, where lower case letters mean that the stream has to decelerate. After this call the program-ID of the traffic light will be set to "online" and the state will be maintained until the next call of setRedYellowGreenState() or until setting another program with setProgram().</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-setRedYellowGreenState">setRedYellowGreenState</a> <a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-setLinkState">setLinkState</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_trafficlight.html#TrafficLightDomain.setRedYellowGreenState">setRedYellowGreenState</a> <a href="https://sumo.dlr.de/pydoc/traci/_trafficlight.html#TrafficLightDomain.setLinkState">setLinkState</a></td>
 </tr>
 <tr>
 <td>phase index (0x22)</td>
 <td>integer</td>
 <td>Sets the phase of the traffic light to the given. The given index must be valid for the current program of the traffic light, this means it must be between 0 and the number of phases known to the current program of the tls - 1.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-setPhase">setPhase</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_trafficlight.html#TrafficLightDomain.setPhase">setPhase</a></td>
 </tr>
 <tr>
 <td>program (0x23)</td>
 <td>string</td>
 <td>Switches the traffic light to the given program. No WAUT algorithm is used, the program is directly instantiated. The index of the traffic light stays the same as before.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-setProgram">setProgram</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_trafficlight.html#TrafficLightDomain.setProgram">setProgram</a></td>
 </tr>
 <tr>
 <td>phase duration (0x24)</td>
 <td>double</td>
 <td>Sets the remaining duration of the current phase in seconds.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-setPhaseDuration">setPhaseDuration</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_trafficlight.html#TrafficLightDomain.setPhaseDuration">setPhaseDuration</a></td>
 </tr>
 <tr>
 <td>complete program definition (0x2c)</td>
 <td>compound (see below)</td>
 <td>Inserts a completely new program.</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-setProgramLogic">setProgramLogic</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_trafficlight.html#TrafficLightDomain.setProgramLogic">setProgramLogic</a></td>
 </tr>
 <tr>
 <td>add constraint (0x37)</td>
 <td>compound (tripId, foeSignal, foeId, type, limit)</td>
 <td>Add the given constraint</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-addConstraint">addConstraint</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_trafficlight.html#TrafficLightDomain.addConstraint">addConstraint</a></td>
 </tr>
 <tr>
 <td>remove constraint (0x35)</td>
 <td>compound (tripId, foeSignal, foeId)</td>
 <td>Remove the given constraint</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-removeConstraint">removeConstraint</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_trafficlight.html#TrafficLightDomain.removeConstraint">removeConstraint</a></td>
 </tr>
 <tr>
 <td>update constraints (0x36)</td>
 <td>compound (vehID, tripId)</td>
 <td>Removes all constraints that can no longer be met because the route of vehID does not pass the signal involved in the constraint with the given tripId. This includes constraints on tripId as well as constraints where tripId is the foeId</td>
-<td><a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-updateConstraints">updateConstraints</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_trafficlight.html#TrafficLightDomain.updateConstraints">updateConstraints</a></td>
 </tr>
 </tbody>
 </table>
