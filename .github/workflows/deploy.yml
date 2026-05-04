@@ -105,3 +105,5 @@ jobs:
       with:
         fail: true
         args: --accept-timeouts --accept 200,403,500 -c lychee.toml --no-progress --root-dir ${{ github.workspace }} .
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
