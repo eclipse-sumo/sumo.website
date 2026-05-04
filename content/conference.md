@@ -381,7 +381,7 @@ The conference offers opportunities to learn about new features, connect with ot
     </tr>
     <tr>
       <td>13:00 - 13:45<br><br>Session 8<br>
-      <p style="font-size:60%">Session chair: Robert Hilbrich</p></td>
+      <p style="font-size:60%">Session chair:<br>Robert Hilbrich</p></td>
       <td colspan="2">
              <b>Reproducing Weekly Crash Patterns Using a Minimalist Driver Error Model</b><br><small>Ronald Nippold, Andreas Leich and Peter Wagner</small>
        <hr>
