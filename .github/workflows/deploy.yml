@@ -88,6 +88,7 @@ jobs:
         git clean -df
 
         # Restore files from backup
+        rm -rf docs pydoc
         rsync -av $HOME/temp/* . --exclude=$HOME/temp/.git
         rm -rf $HOME/temp
 
