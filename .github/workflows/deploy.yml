@@ -101,6 +101,9 @@ jobs:
         git commit -m "Deploying: $COMMIT_MESSAGE"
         git push origin main
 
+        # Switch back to source for the link checker
+        git checkout source
+
     - name: Lychee Link Checker
       uses: lycheeverse/lychee-action@master  # to be removed once --accept-timeouts got released
       with:
