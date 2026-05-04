@@ -7,5 +7,8 @@ insecure = true
 # Remap URI matching pattern to different URI.
 #remap = ['%7B%7BVersion%7D%7D 1.19.0']
 
+# mkdocs generates sitemaps and rss but the links should have been checked elsewhere
+exclude_path = ["**/*.xml"]
+
 # Exclude URLs and mail addresses from checking (supports regex).
 exclude = ['github\.com', 'instagram\.com', 'linkedin\.com', 'researchgate\.net', 'scholar\.google\.de', 'twitter\.com', 'vector\.com', 'http://localhost:', 'https://www.bgu.tum.de/en/vt/home/', 'https://sumo-dlr-de\.translate\.goog/']
