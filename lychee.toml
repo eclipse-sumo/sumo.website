@@ -11,4 +11,4 @@ remap = ['%7B%7BVersion%7D%7D 1.23.1']
 exclude_path = ['\.xml$']
 
 # Exclude URLs and mail addresses from checking (supports regex).
-exclude = ['%7B%7BSource%7D%7D', 'github\.com', 'instagram\.com', 'linkedin\.com', 'researchgate\.net', 'scholar\.google\.de', 'twitter\.com', 'vector\.com', 'http://localhost:', 'https://www.bgu.tum.de/en/vt/home/', 'https://sumo-dlr-de\.translate\.goog/']
+exclude = ['%7B%7BSource%7D%7D', '/sumo/images/logos/sumo-logo-white\.svg', 'github\.com', 'instagram\.com', 'linkedin\.com', 'researchgate\.net', 'scholar\.google\.de', 'twitter\.com', 'vector\.com', 'http://localhost:', 'https://www.bgu.tum.de/en/vt/home/', 'https://sumo-dlr-de\.translate\.goog/']
