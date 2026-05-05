@@ -317,20 +317,24 @@ The conference offers opportunities to learn about new features, connect with ot
       </td>
     </tr>
     <tr>
-      <td>15:15 - 16:00</td>
-      <td colspan="2">Remarks</td>
-    </tr>
-    <tr>
-      <td>16:00 - 16:30</td>
-      <td colspan="2"><i>Conference Photo</i> 📷 + <i>Coffee Break</i> ☕</td>
-    </tr>
-    <tr>
-      <td>16:30 - 18:00</td>
+      <td>15:15 - 16:15</td>
       <td colspan="2">Special Anniversary Session: Celebrating 25 years of SUMO</td>
     </tr>
     <tr>
+      <td>16:15 - 16:30</td>
+      <td colspan="2"><i>Coffee Break</i> ☕</td>
+    </tr>
+    <tr>
+      <td>16:30 - 17:30</td>
+      <td colspan="2">(cont.) Special Anniversary Session: Celebrating 25 years of SUMO</td>
+    </tr>
+    <tr>
+      <td>17:30 - 18:00</td>
+      <td colspan="2">Reflections and Remarks</td>
+    </tr>
+    <tr>
       <td>18:00 - 19:30</td>
-      <td colspan="2" style="text-align:center"><i><b>Dinner</b></i> 🥗</td>
+      <td colspan="2" style="text-align:center"><i>Conference Photo</i> 📷 + <b>Dinner</b></i> 🥗</td>
     </tr>
   </tbody>
 </table>
