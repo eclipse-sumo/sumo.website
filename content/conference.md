@@ -286,7 +286,7 @@ The conference offers opportunities to learn about new features, connect with ot
       <td>13:00 - 14:00<br><br>Poster Session 2</td>
       <td colspan="2">
       <ul>
-      <li>Intelligent Ship Traffic Management for the Port of Bremerhaven - <small>Laura Bieker-Walz et al.</small></li>
+      <li>Coupling Vessel Operations and Hinterland Traffic with SUMO and PySeidon - <small>Franck Majeste Silatsa Dogmo, Jordan Guimfack Jeuna, Junior Lesage Ekane Njoh, Laura Bieker-Walz, Lennart Steffen, Nelly Lesly Matchio Kuete, Rima Mkhalalati, Vanelle Leslie Ngeufa Leumalieu, Zidane Kenfack Fouape, Johannes Heidtmann, Philipp Schur</small></li>
       <li>Towards Adaptive Traffic Pattern Clustering Reinforcement Learning in Traffic Signal Control - <small>Lukas Klein</small></li>
       <li>Integrating Macroscopic and Microscopic Road Traffic Simulations for Impact Assessment of Flood-Related Disruptions - <small>Amirehsan Charlang Bakhtyari, Francesco Deflorio, Matteo Ferraro, Michele Amaddii, Fabio Castelli, Chiara Arrighi</small></li>
       <li>Systematic Integration of Heterogeneous Urban Demand Data into a Microscopic SUMO Simulation - <small>Mario Ilic, Niklas Gritsch, Prof. Dr.-Ing. Klaus Bogenberger</small></li>
