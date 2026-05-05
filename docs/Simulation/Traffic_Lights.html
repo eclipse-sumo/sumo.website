@@ -933,6 +933,7 @@ Otherwise, the rightmost phase in the next-list is used.</p>
 <li>'z:DETID': returns the time gap since the last vehicle detection for inductionLoop detector with id 'DETID' or id 'TLSID_PROGRAMID_DETID' (DETID may omit the <a href="#detectors">prefix 'TLSID_PROGRAMID_'</a>)</li>
 <li>'a:DETID': returns number of vehicles on detector with id 'DETID'. Supports inductionLoop and laneAreaDetectors. Also supports omitting the prefix of the detector id. (see 'z:')</li>
 <li>'w:DETID': returns longest individual waiting time in seconds for vehicles on detector with id 'DETID'. Supports inductionLoop and laneAreaDetectors. Also supports omitting the prefix of the detector id. (see 'z:')</li>
+<li>'d:DETID': returns maximum stop arrival delay in seconds for public transport vehicles on detector with id 'DETID'. Supports inductionLoop and laneAreaDetectors. Also supports omitting the prefix of the detector id. (see 'z:')</li>
 <li>'g:TLSINDEX': returns current green duration in seconds for link with the given index</li>
 <li>'r:TLSINDEX': returns current red duration in seconds for link with the given index</li>
 <li>'p:TLSINDEX': returns the number of persons that are on a waiting area and intending to cross the pedestrian crossing with the given tls link index</li>
