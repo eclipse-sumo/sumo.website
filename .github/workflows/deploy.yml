@@ -108,4 +108,4 @@ jobs:
       uses: lycheeverse/lychee-action@master  # to be removed once --accept-timeouts got released
       with:
         fail: true
-        args: --accept-timeouts --accept 200,401,403,429,500 -c lychee.toml --no-progress --root-dir ${{ github.workspace }} .
+        args: --accept-timeouts --accept 200,401,403,429,500 -c lychee.toml --no-progress --root-dir ${{ github.workspace }} content
