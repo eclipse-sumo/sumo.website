@@ -159,7 +159,7 @@ The conference offers opportunities to learn about new features, connect with ot
         <li>Instantania, the fast, parallelized traffic microsimulator for large scale transport digital twins - <small>Joerg Schweizer</small></li>
         <li>Bridging Communities: Advancing JuPedSim for Pedestrian Dynamics and Urban Mobility Research - <small>Jette Degenhardt, Mohcine Chraibi and Ralf Leibold</small></li>
         <li>Sustainable Routing for Next-Generation Mobility: Linking Evolutionary Game Theory and SUMO - <small>Andrea Bertolini, Lorenzo Castelli </small></li>
-        <li>Testing Adaptive Lane-Change Planners in Realistic Traffic: A Co-Simulation Framework using SUMO, Simulink, and RoadRunner - <small>Philipp Hafemann et al.</small></li>
+        <li>Testing Adaptive Lane-Change Planners in Realistic Traffic: A Co-Simulation Framework using SUMO, Simulink, and RoadRunner - <small>Philipp Hafemann, Anusha Ailuri, Surya Talluri, Simone Hämmerle, Naga Pemmaraju</small></li>
         <li>Environmental Impact Analysis for a New Urban Development - <small>Aya Aly, Paulo Moura</small></li>
         <li>Network Performance Analysis of Car-Following Models and Traffic Signal Light Configurations using SUMO - <small>Arya Karnik, Mounika Raj Kavadi, Joshua Bittle</small></li>
         <li>Causality-Aware Energy Forecasting and Adaptive Task Control in Edge-Assisted Autonomous Vehicular Networks - <small>Maha Alruwaili</small></li>
@@ -178,7 +178,7 @@ The conference offers opportunities to learn about new features, connect with ot
       <td>13:00 - 14:00</td>
       <td colspan="2">
         <b>Keynote: Traffic simulation modeling: combining generative modeling with transportation science to achieve scalability</b><br>
-        Prof. Dr. Carolina Osorio <i><small>(Google Research and HEC Montreal)</small></i><br>
+        Prof. Dr. Carolina Osorio <i><small>(Google Research and HEC Montréal)</small></i><br>
         <a href="#keynote1" style="color:#0645ad;">Read more <i class="fas fa-angle-down"></i></a>
       </td>
     </tr>
