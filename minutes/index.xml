@@ -164,8 +164,57 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;we have now parsable metadata&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>SUMO Developer Meetings 2026</title><link>https://eclipse.dev/sumo/minutes/2026/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/minutes/2026/</guid><description>&lt;h1 id="2026-04-23"&gt;2026-04-23&lt;/h1&gt;
+&lt;/ul&gt;</description></item><item><title>SUMO Developer Meetings 2026</title><link>https://eclipse.dev/sumo/minutes/2026/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/minutes/2026/</guid><description>&lt;h1 id="2026-05-07"&gt;2026-05-07&lt;/h1&gt;
 &lt;h2 id="attendees"&gt;Attendees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
+&lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
+&lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
+&lt;li&gt;Vassileios Karagounis (CERTH)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="topics"&gt;Topics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;new Copert device is in test&lt;/li&gt;
+&lt;li&gt;Intermittent tile / download issues with osmWebWizard reported from Mexico
+&lt;ul&gt;
+&lt;li&gt;Useragent ahs been fixed by Jakob&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;OpenGL/XQuartz issue still bother people
+&lt;ul&gt;
+&lt;li&gt;fox does not run natively on wayland and wayland does not run on macOS&lt;/li&gt;
+&lt;li&gt;some effort for native macOS GUI
+&lt;ul&gt;
+&lt;li&gt;it is on GitHub &lt;a href="https://github.com/christofilojohn/sumoMacGUI"&gt;https://github.com/christofilojohn/sumoMacGUI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Latest Arrow requires C++20 whereas we use C++17
+&lt;ul&gt;
+&lt;li&gt;pin older arrow -&amp;gt; Docs needed -&amp;gt; Micha&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;pdoc
+&lt;ul&gt;
+&lt;li&gt;replaces old pydoc, looks much better structured&lt;/li&gt;
+&lt;li&gt;domain and connection are still missing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Badges
+&lt;ul&gt;
+&lt;li&gt;rather reduce number of tests behind the badges but add some GUI tests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Release
+&lt;ul&gt;
+&lt;li&gt;next week is still feasible&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Issues&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="2026-04-23"&gt;2026-04-23&lt;/h1&gt;
+&lt;h2 id="attendees-1"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
@@ -174,7 +223,7 @@
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-1"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Conference Agenda published tomorrow&lt;/li&gt;
 &lt;li&gt;Intermittent tile issues with osmWebWizard reported from Mexico&lt;/li&gt;
@@ -187,7 +236,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-04-09"&gt;2026-04-09&lt;/h1&gt;
-&lt;h2 id="attendees-1"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-2"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Sasan Amini (transcality)&lt;/li&gt;
@@ -196,7 +245,7 @@
 &lt;li&gt;Vassileios Karagounis (CERTH)&lt;/li&gt;
 &lt;li&gt;Daniel Krajzewicz (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-1"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-2"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;some netedit regressions&lt;/li&gt;
 &lt;li&gt;release scheduled in two weeks seems possible
@@ -210,7 +259,7 @@
 &lt;li&gt;optionally respect internal lanes in meso&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-03-26"&gt;2026-03-26&lt;/h1&gt;
-&lt;h2 id="attendees-2"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-3"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Sasan Amini (transcality)&lt;/li&gt;
@@ -221,7 +270,7 @@
 &lt;li&gt;Robert Hilbrich (DLR)&lt;/li&gt;
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-2"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-3"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;OSM tiles
 &lt;ul&gt;
@@ -243,7 +292,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-03-12"&gt;2026-03-12&lt;/h1&gt;
-&lt;h2 id="attendees-3"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-4"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
@@ -254,7 +303,7 @@
 &lt;li&gt;Mario Krumnow (Schlothauer + Wauer)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-3"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-4"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Regression netedit&lt;/li&gt;
 &lt;li&gt;Branding guide in preparation by Angelo&lt;/li&gt;
@@ -266,7 +315,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-02-26"&gt;2026-02-26&lt;/h1&gt;
-&lt;h2 id="attendees-4"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-5"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
 &lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
@@ -276,7 +325,7 @@
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-4"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-5"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Release Feedback
 &lt;ul&gt;
@@ -304,7 +353,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-02-12"&gt;2026-02-12&lt;/h1&gt;
-&lt;h2 id="attendees-5"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-6"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Sasan Amini (Transcality)&lt;/li&gt;
@@ -318,7 +367,7 @@
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-5"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-6"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;release 1.26.0 feedback
 &lt;ul&gt;
@@ -346,7 +395,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-01-29"&gt;2026-01-29&lt;/h1&gt;
-&lt;h2 id="attendees-6"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-7"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
@@ -359,7 +408,7 @@
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-6"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-7"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;release 1.26.0
 &lt;ul&gt;
@@ -389,7 +438,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-01-15"&gt;2026-01-15&lt;/h1&gt;
-&lt;h2 id="attendees-7"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-8"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
@@ -406,7 +455,7 @@
 &lt;li&gt;Mirko Barthauer (mouver)&lt;/li&gt;
 &lt;li&gt;Sasan Amini (Transcality)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-7"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-8"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;next release 1.26.0 may still work on the 26th of January&lt;/li&gt;
 &lt;li&gt;explaining the python wheels&lt;/li&gt;

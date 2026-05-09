@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 May 2026
+Last edit: 09 May 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -168,7 +168,7 @@ Last edit: 06 May 2026
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary toc-scroll toc">
         <ul class="nav flex-column bs-sidenav">
             <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
-            <li class="nav-item main"><a href="#git_main">Git Main</a></li>
+            <li class="nav-item main"><a href="#git_main_nightly_development_builds">Git Main (nightly development builds)</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#bugfixes" class="nav-link">• Bugfixes</a>
                 </li>
@@ -275,7 +275,7 @@ Last edit: 06 May 2026
                   
                   
 
-<h2 id="git_main">Git Main<a class="headerlink" href="#git_main" title="Permanent link">#</a></h2>
+<h2 id="git_main_nightly_development_builds">Git Main (<a href="https://sumo.dlr.de/docs/Downloads.php#nightly_snapshots">nightly development builds</a>)<a class="headerlink" href="#git_main_nightly_development_builds" title="Permanent link">#</a></h2>
 <h3 id="bugfixes">Bugfixes<a class="headerlink" href="#bugfixes" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
@@ -348,7 +348,9 @@ Last edit: 06 May 2026
 <li>Adding a "smart" next phase in the TLS editor now works even if a program has only a single phase <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17680" title="GitHub Issue eclipse-sumo/sumo #17680">#17680</a> (regression in 1.6.0)</li>
 <li>Editing custom lane and junction shapes on top of edges is working again <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17806" title="GitHub Issue eclipse-sumo/sumo #17806">#17806</a> (regression in 1.20.0)</li>
 <li>edgedata mode: clicking on intervals works again <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17686" title="GitHub Issue eclipse-sumo/sumo #17686">#17686</a> (regression in 1.22.0)</li>
+<li>It is now possible to select edges that belong to a TAZ using selection mode <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17701" title="GitHub Issue eclipse-sumo/sumo #17701">#17701</a> (regression in 1.22.0)</li>
 <li>taz mode: clicking edge for membership toggle works again <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17697" title="GitHub Issue eclipse-sumo/sumo #17697">#17697</a> (regression in 1.23.0)</li>
+<li>Errors when loading additionals from the command line, are now visible in the message window again <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17819" title="GitHub Issue eclipse-sumo/sumo #17819">#17819</a> (regression in 1.23.0)</li>
 <li>python tool dialogs now permit selecting multiple files <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17615" title="GitHub Issue eclipse-sumo/sumo #17615">#17615</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17619" title="GitHub Issue eclipse-sumo/sumo #17619">#17619</a> (regression in 1.25.0)</li>
 <li>Fixed crash when calling python tool and using the 'back' button <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17618" title="GitHub Issue eclipse-sumo/sumo #17618">#17618</a> (regression in 1.25.0)</li>
 <li>Fixed crash after deleting an object from a group of overlapped objects <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17795" title="GitHub Issue eclipse-sumo/sumo #17795">#17795</a> (regression in 1.25.0)</li>
@@ -356,10 +358,13 @@ Last edit: 06 May 2026
 <li>The network file name shows up in the window title again <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17662" title="GitHub Issue eclipse-sumo/sumo #17662">#17662</a> (regression in 1.26.0)</li>
 <li>Fixed failure to load sumocfg in subfolder from command line <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17673" title="GitHub Issue eclipse-sumo/sumo #17673">#17673</a> (regression in 1.26.0)</li>
 <li>Fixed invalid default extension when saving plain-xml <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17778" title="GitHub Issue eclipse-sumo/sumo #17778">#17778</a> (regression in 1.26.0)</li>
+<li>Fixed invalid save-sumocfg button state after saving the sumocfg <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17938" title="GitHub Issue eclipse-sumo/sumo #17938">#17938</a> (regression in 1.26.0)</li>
 <li>Transparent junctions no longer show up as white in view <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17751" title="GitHub Issue eclipse-sumo/sumo #17751">#17751</a></li>
 <li>Fixed invalid error when loading stop that ends on lane end <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17818" title="GitHub Issue eclipse-sumo/sumo #17818">#17818</a></li>
 <li>Custom Shape colour gui setting now takes effect <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17828" title="GitHub Issue eclipse-sumo/sumo #17828">#17828</a></li>
 <li>Fixed bug where deleting connections from a multi-lane turn could create an invalid network <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17876" title="GitHub Issue eclipse-sumo/sumo #17876">#17876</a></li>
+<li>Setting log output file in sumo options editor is now working <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17948" title="GitHub Issue eclipse-sumo/sumo #17948">#17948</a></li>
+<li>Defining multiple files in sumocfg options editor (i.e. additional-files) is now working <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17949" title="GitHub Issue eclipse-sumo/sumo #17949">#17949</a></li>
 </ul>
 </li>
 </ul>
@@ -440,6 +445,7 @@ Last edit: 06 May 2026
 <h3 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
+<li>Cars no longer enter a bidi-edge if it is occupied or already being approached from a higher-priority road <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/10941" title="GitHub Issue eclipse-sumo/sumo #10941">#10941</a></li>
 <li>parkingAreas with <code>onRoad="true"</code> are now filled from the downstream end if overtaking is not possible (i.e. on rails) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17627" title="GitHub Issue eclipse-sumo/sumo #17627">#17627</a>  </li>
 <li>Added parkingArea attribute <code>reservable</code> (<a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a>) which avoids multiple vehicles from targeting the same spot when <a href="Simulation/Rerouter.html#rerouting_to_an_alternative_parking_area">cruising for parking</a> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17628" title="GitHub Issue eclipse-sumo/sumo #17628">#17628</a>  </li>
 <li>carFollowModel <em>ACC</em> now supports driverstate device (but it is only active when setting vType attribute <code>applyDriverState="1"</code>) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17633" title="GitHub Issue eclipse-sumo/sumo #17633">#17633</a></li>
@@ -453,6 +459,7 @@ Last edit: 06 May 2026
 <li>Stop-output now include actType if non-empty <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17891" title="GitHub Issue eclipse-sumo/sumo #17891">#17891</a></li>
 <li>Added option <strong>--fcd-output.utm</strong> which write raw UTM coordinates when simulating in geo-referenced networks <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17878" title="GitHub Issue eclipse-sumo/sumo #17878">#17878</a></li>
 <li>When option <strong>--vehroute-output.cost</strong> is set, attribute <code>savings</code> now reports the detour cost for a closingReroute <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17924" title="GitHub Issue eclipse-sumo/sumo #17924">#17924</a></li>
+<li>Actuated tls with custom conditions now supports expression <code>p:DETID</code> to retrieve the public transport delay of vehicles on the detector <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17229" title="GitHub Issue eclipse-sumo/sumo #17229">#17229</a></li>
 <li>Taxis:<ul>
 <li>Intermodal routing now works with taxis of arbitrary vClass. The vClasses that are used for routing depend on all the vehicles with taxi device previously loaded. The default can be set with option <strong>--device.taxi.vclasses</strong> (default <em>taxi</em>) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/9812" title="GitHub Issue eclipse-sumo/sumo #9812">#9812</a></li>
 <li>Taxis with idle algorithm <code>taxistand</code> now advance in queue when parking with <code>onRoad="true"</code> and overtaking is not possible <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17632" title="GitHub Issue eclipse-sumo/sumo #17632">#17632</a></li>
@@ -1947,7 +1954,7 @@ Last edit: 06 May 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 May 2026</i></small>
+            <br><small><i>This page was last edited on: 09 May 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
