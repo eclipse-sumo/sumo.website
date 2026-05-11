@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 09 May 2026
+Last edit: 11 May 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -296,6 +296,7 @@ Last edit: 09 May 2026
 <li>Fixed where vehicles that stop on the end of the lane take one extra step to continue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17916" title="GitHub Issue eclipse-sumo/sumo #17916">#17916</a></li>
 <li>Fixed invalid timeLoss computation for stopping vehicles <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17915" title="GitHub Issue eclipse-sumo/sumo #17915">#17915</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17916" title="GitHub Issue eclipse-sumo/sumo #17916">#17916</a></li>
 <li>Fixed failure when loading routes with edges that have extended ascii characters in their id (also for duarouter) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17935" title="GitHub Issue eclipse-sumo/sumo #17935">#17935</a></li>
+<li>Fixed unsafe insertion at zipper link <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17972" title="GitHub Issue eclipse-sumo/sumo #17972">#17972</a></li>
 <li>State-Loading:<ul>
 <li>Fixed invalid signal state when loading from saved state and using WAUT <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17675" title="GitHub Issue eclipse-sumo/sumo #17675">#17675</a></li>
 <li>Lanechanging state is now restored after loading <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/2380" title="GitHub Issue eclipse-sumo/sumo #2380">#2380</a></li>
@@ -312,6 +313,7 @@ Last edit: 09 May 2026
 <li>Fixed invalid taxi device warnings <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17864" title="GitHub Issue eclipse-sumo/sumo #17864">#17864</a></li>
 <li>Fixed failure in stop assignment <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17893" title="GitHub Issue eclipse-sumo/sumo #17893">#17893</a></li>
 <li>Taxis no longer block the road when idling if their passenger stops are defined as not-parking <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17904" title="GitHub Issue eclipse-sumo/sumo #17904">#17904</a></li>
+<li>Fixed unsafe insertion before junction when using idle-algorithm <em>randomCircling</em> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17973" title="GitHub Issue eclipse-sumo/sumo #17973">#17973</a></li>
 </ul>
 </li>
 <li>Railways:<ul>
@@ -346,6 +348,7 @@ Last edit: 09 May 2026
 <ul>
 <li>netedit<ul>
 <li>Adding a "smart" next phase in the TLS editor now works even if a program has only a single phase <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17680" title="GitHub Issue eclipse-sumo/sumo #17680">#17680</a> (regression in 1.6.0)</li>
+<li>background color for busStop id/name labels is now working <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17965" title="GitHub Issue eclipse-sumo/sumo #17965">#17965</a> (regression in 1.8.0)</li>
 <li>Editing custom lane and junction shapes on top of edges is working again <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17806" title="GitHub Issue eclipse-sumo/sumo #17806">#17806</a> (regression in 1.20.0)</li>
 <li>edgedata mode: clicking on intervals works again <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17686" title="GitHub Issue eclipse-sumo/sumo #17686">#17686</a> (regression in 1.22.0)</li>
 <li>It is now possible to select edges that belong to a TAZ using selection mode <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17701" title="GitHub Issue eclipse-sumo/sumo #17701">#17701</a> (regression in 1.22.0)</li>
@@ -365,6 +368,7 @@ Last edit: 09 May 2026
 <li>Fixed bug where deleting connections from a multi-lane turn could create an invalid network <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17876" title="GitHub Issue eclipse-sumo/sumo #17876">#17876</a></li>
 <li>Setting log output file in sumo options editor is now working <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17948" title="GitHub Issue eclipse-sumo/sumo #17948">#17948</a></li>
 <li>Defining multiple files in sumocfg options editor (i.e. additional-files) is now working <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17949" title="GitHub Issue eclipse-sumo/sumo #17949">#17949</a></li>
+<li>Fixed problems when setting vehicle attribute departEdge / arrivalEdge <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17967" title="GitHub Issue eclipse-sumo/sumo #17967">#17967</a></li>
 </ul>
 </li>
 </ul>
@@ -422,6 +426,7 @@ Last edit: 09 May 2026
 <li>gtfs2pt.py: fixed invalid error when block_id is missing <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17750" title="GitHub Issue eclipse-sumo/sumo #17750">#17750</a> (regression in 1.26.0)</li>
 <li>gtfs2pt.py: fixed missing rail edges when mapping routes <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17749" title="GitHub Issue eclipse-sumo/sumo #17749">#17749</a></li>
 <li>gtfs2pt.py: fixed invalid output when gtfs input contains double hyphen in stop name <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17791" title="GitHub Issue eclipse-sumo/sumo #17791">#17791</a></li>
+<li>gtfs2pt.py: fixed invalid stop mapping on looped route <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17953" title="GitHub Issue eclipse-sumo/sumo #17953">#17953</a></li>
 <li>osmWebWizard.py: fixed various platform issues that prevent running. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17503" title="GitHub Issue eclipse-sumo/sumo #17503">#17503</a></li>
 <li>osmWebWizard.py: starting two instances at the same time is now working <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16663" title="GitHub Issue eclipse-sumo/sumo #16663">#16663</a></li>
 <li>osmWebWizard.py: fixed bug that was causing OSM data download to fail <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17941" title="GitHub Issue eclipse-sumo/sumo #17941">#17941</a></li>
@@ -439,6 +444,7 @@ Last edit: 09 May 2026
 <li>edgeDataDiff.py: fixed invalid output when inputs have different interval times <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17716" title="GitHub Issue eclipse-sumo/sumo #17716">#17716</a></li>
 <li>sumollib.net.getShortestPath: fixed bug where no path was found when a route had to loop back to the starting edge <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17759" title="GitHub Issue eclipse-sumo/sumo #17759">#17759</a></li>
 <li>generateStationEdges.py: Fixed invalid output when stops have spaces in their name <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17932" title="GitHub Issue eclipse-sumo/sumo #17932">#17932</a></li>
+<li>createScreenshotSequence.py can now handle human-readable time <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17964" title="GitHub Issue eclipse-sumo/sumo #17964">#17964</a></li>
 </ul>
 </li>
 </ul>
@@ -484,6 +490,7 @@ Last edit: 09 May 2026
 <li>Edge attribute routingType is now supported <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17095" title="GitHub Issue eclipse-sumo/sumo #17095">#17095</a></li>
 <li>Element context menu for multiple objects at the same spot now shows selection status (also in sumo-gui) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17731" title="GitHub Issue eclipse-sumo/sumo #17731">#17731</a></li>
 <li>Phase attribute "next" automaticalyy updates when adding new phases <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16488" title="GitHub Issue eclipse-sumo/sumo #16488">#16488</a></li>
+<li>Added 18 more tools to the menu <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17950" title="GitHub Issue eclipse-sumo/sumo #17950">#17950</a></li>
 </ul>
 </li>
 </ul>
@@ -550,7 +557,9 @@ Last edit: 09 May 2026
 <li>gtfs2pt.py: Added option <strong>--rail-priority-factor</strong> to consider routingType when mapmatching railways <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17560" title="GitHub Issue eclipse-sumo/sumo #17560">#17560</a></li>
 <li>gtfs2pt.py: Added option <strong>--poi-output</strong> to visualize loaded stop coordinates as pois <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17812" title="GitHub Issue eclipse-sumo/sumo #17812">#17812</a></li>
 <li>gtfs2pt.py: Added option <strong>--distance-penalty</strong> which makes the (exponent) of the penalty for matching accuracy configurable. The penalty is now also active when using option <strong>--stops</strong> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17813" title="GitHub Issue eclipse-sumo/sumo #17813">#17813</a></li>
-<li><a href="Tools/Railways.html#patchrailprioritiespy">patchRailPriorities.py</a>: added tool to patch edge routingType in rail networks (and optionally add stops and signals) to ensure smooth operations on single track lines with passing loops. This tools works well as a preparatory stage before <strong>gtfs2pt.py</strong> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17766" title="GitHub Issue eclipse-sumo/sumo #17766">#17766</a></li>
+<li>gtfs2pt.py: Added option <strong>--join-blocks</strong> to import circulations (block_id) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17541" title="GitHub Issue eclipse-sumo/sumo #17541">#17541</a></li>
+<li>gtfs2pt.py: Added option <strong>--parking-threshold</strong> to remove vehicles from roads/tracks if they have consecutive stops in the same location with a long in-between time <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17960" title="GitHub Issue eclipse-sumo/sumo #17960">#17960</a></li>
+<li><a href="Tools/Railways.html#patchrailprioritiespy">patchRailPriorities.py</a>: added tool to patch edge routingType in rail networks (and optionally add stops and signals) to ensure smooth operations on single track lines with passing loops. This tools works well as a preparatory stage before <strong>gtfs2pt.py</strong> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17766" title="GitHub Issue eclipse-sumo/sumo #17766">#17766</a>  </li>
 </ul>
 </li>
 </ul>
@@ -1954,7 +1963,7 @@ Last edit: 09 May 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 09 May 2026</i></small>
+            <br><small><i>This page was last edited on: 11 May 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
