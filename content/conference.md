@@ -225,7 +225,7 @@ The conference offers opportunities to learn about new features, connect with ot
     <td colspan="2">
       <b>C-ITS services for light rail systems</b><br><small>Paula von der Heide</small>
        <hr>
-       <b>GROSS: German Rail Open-Source SUMO Simulation</b><br><small>Juri Penell and Damian Dailisan</small>
+       <b>GROSS: German Rail Open-Source SUMO Scenario</b><br><small>Juri Penell and Damian Dailisan</small>
        <hr>
        <b>SUMO for Railway Applications</b><br><small>Christian Rahmig, Jakob Erdmann, Jakob Geischberger and Larissa Zhuchyi</small>
     </td>
