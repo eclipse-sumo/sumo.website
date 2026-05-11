@@ -36,83 +36,35 @@ The conference offers opportunities to learn about new features, connect with ot
   </tr></thead>
 <tbody>
   <tr>
-    <td rowspan="2">12:30 - 13:00</td>
-    <td colspan="2" rowspan="2">Registration</td>
-  </tr>
-  <tr>
+    <td>12:30 - 13:00</td>
+    <td colspan="2">Registration</td>
   </tr>
   <tr>
     <td>13:00 - 13:15</td>
     <td colspan="2">Opening</td>
   </tr>
   <tr>
-    <td rowspan="4">13:15 - 14:15</td>
-    <td colspan="2" rowspan="4"><b>SUMO Tutorial</b></td>
+    <td>13:15 - 14:15</td>
+    <td colspan="2"><b>SUMO Tutorial</b></td>
   </tr>
   <tr>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-    <td rowspan="4">14:15 - 15:15</td>
-    <td colspan="2" rowspan="4"><b>Ask us Anything</b></td>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
+    <td>14:15 - 15:15</td>
+    <td colspan="2"><b>Ask us Anything</b></td>
   </tr>
   <tr>
     <td>15:15 - 15:30</td>
     <td colspan="2"><i>Coffee Break</i> &#x2615;</td>
   </tr>
   <tr>
-    <td rowspan="8">15:30 - 17:30</td>
-    <td rowspan="8"><small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
+    <td>15:30 - 17:30</td>
+    <td colspan="2"><small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
     <b>Workshop 1</b><br>Simulating Connected and Automated Mobility<br><a style="color:#0645ad; cursor:pointer;" href="#workshop1">Read more <i class="fas fa-angle-down"></i></a></td>
-    <td rowspan="8"><small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Newton-Kabinett</span></small><br>
-    <b>Workshop 2</b><br>Navigating Complexity: Leveraging SUMO for Traffic Planning at Major Events<br><a style="color:#0645ad; cursor:pointer;" href="#workshop2">Read more <i class="fas fa-angle-down"></i></a></td>
   </tr>
   <tr>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-    <td rowspan="10">18:30 - 21:00</td>
-    <td colspan="2" rowspan="10"><b>Evening Program - Social Event</b><br>
+    <td>18:30 - 21:00</td>
+    <td colspan="2"><b>Evening Program - Social Event</b><br>
    Boat tour<br>
 <a style="color:#0645ad; cursor:pointer;" href="#social-event">Read more <i class="fas fa-angle-down"></i></a></td>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
   </tr>
 </tbody></table>
 
@@ -358,10 +310,10 @@ The conference offers opportunities to learn about new features, connect with ot
       </td>
           <td rowspan="3">
 <small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
-  <b>Workshop 4</b> (10:00 - 12:00)
+  <b>Workshop 2</b> (09:00 - 12:00)
   <br>
-  Using SUMO for simulating innovative public transportation systems + Using SUMO for Railway simulations<br>
-  <a href="#workshop4" style="color:#0645ad;">Read more <i class="fas fa-angle-down"></i></a>
+  Using SUMO for simulating innovative public transportation systems + Using SUMO for Railway simulations + Navigating Complexity: Leveraging SUMO for Traffic Planning at Major Events<br>
+  <a href="#workshop2" style="color:#0645ad;">Read more <i class="fas fa-angle-down"></i></a>
     </td>
     </tr>
     <tr>
@@ -401,27 +353,6 @@ The conference offers opportunities to learn about new features, connect with ot
 
 <small>Last update: <a href="#lastMod">see end of page</a></small>
 
-
-<!-- ## Ethics and Malpractice Statement
-
-You can read our *[Publication Ethics and Publication Malpractice Statement](../documents/SUMOPublicationEthics.pdf)*, where we list the responsibilities of editors, reviewers, and authors. -->
-
-# Important Dates
-
-For papers:
-- ✅ ~~Recommended title and abstract submission deadline: **Sunday, January 11, 2026.**~~
-- ✅ ~~Paper submission deadline: **Sunday, March 01, 2026.**~~
-- ✅ ~~Notification of acceptance/rejection: **First week of April 2026.**~~
-- Camera-ready paper deadline: **Sunday, May 10, 2026.**
-
-For posters:
-- ✅ ~~Mandatory title and abstract submission deadline: **Sunday, March 01, 2026.**~~
-- ✅ ~~Notification of acceptance/rejection: **Thursday, March 05, 2026.**~~
-- ✅ ~~Final poster upload deadline: **Sunday, May 03, 2026.**~~
-
-For SUMO moments:
-- ✅ ~~Description submission deadline: **Sunday, March 01, 2026.**~~
-- ✅ ~~Notification of acceptance/rejection: **Monday, March 09, 2026.**~~
 
 # Prices
 
@@ -525,14 +456,20 @@ Connected and Automated Mobility (CAM) relies on advanced and interoperable simu
 
 ---
 <span id="workshop2"></span> <!-- hidden anchor -->
-<h3><span class="badge badge-info">W2</span> Navigating Complexity: Leveraging SUMO for Traffic Planning at Major Events</h3>
-<small><i class="fas fa-calendar-alt"></i> Monday June 01, 15:30 - 17:30
+<span id="workshop4"></span> <!-- hidden anchor -->
+<h3><span class="badge badge-info">W2</span> Using SUMO for simulating innovative public transportation systems + Using SUMO for Railway simulations + Navigating Complexity: Leveraging SUMO for Traffic Planning at Major Events</h3>
+<small><i class="fas fa-calendar-alt"></i> Thursday June 04, 09:00 - 12:00
 <br>
 <i><i class="fa-solid fa-user-group"></i> Confirmed participation from Accurate, DLR Institute of Transportation Systems, Forschungszentrum Jülich, University of Wuppertal, University of Regensburg</i>
 <br><br>
 </small>
 
-Large-scale events create complex interactions between vehicular traffic and pedestrian flows that require holistic planning tools. This workshop explores the added value of coupling SUMO with JuPedSim to simulate both road networks and crowd dynamics simultaneously. We will discuss specific needs, data requirements, and pitfalls faced by authorities, event organizers, and transport providers in this context. Through interactive discussion, participants will collaboratively define best practices for using multi-modal simulation in approval workflows and operational planning.
+Traffic simulation serves as a critical tool for convincing technical experts and communities to pursue different paths in enhancing public transportation systems. SUMO supports this mission with the ability to model rail, road, and water-based transportation modes, importing existing networks and schedules while allowing flexible editing. The resulting simulations capture the complete trip chain of passengers, revealing bottlenecks and accumulating delays caused by congestion on roads as well as on train platforms, and exploring strategies to mitigate them.
+
+SUMO further supports signal infrastructure models, train dynamics, and automated operational response mechanisms such as overtaking, track changes, and stop cancellations. This workshop aims to evaluate the strengths and limitations of SUMO's current features in the context of railway research, strategic planning, and operational decision-making. Participants will discuss which new modes still require better coverage and how existing capabilities align with emerging simulation needs.
+
+Large-scale events create complex interactions between vehicular traffic and pedestrian flows that require holistic planning tools. This workshop also explores the added value of coupling SUMO with JuPedSim to simulate both road networks and crowd dynamics simultaneously. We will discuss specific needs, data requirements, and pitfalls faced by authorities, event organizers, and transport providers in this context. Through interactive discussion, participants will collaboratively define best practices for using multi-modal simulation in approval workflows and operational planning.
+
 
 ---
 <span id="workshop3"></span> <!-- hidden anchor -->
@@ -546,21 +483,7 @@ Large-scale events create complex interactions between vehicular traffic and ped
 This 2-hour workshop explores the potential of Digital Twins in urban traffic management. Participants will learn how real-time data integration and simulation models enable more adaptive, data-driven mobility systems. Interactive demonstrations highlight smart city case studies that use Digital Twins to optimise traffic flow, reduce environmental impact, and enhance safety. The session concludes with a discussion on technical challenges, scalability, and future directions within the SUMO ecosystem - defining practical next steps for intelligent urban mobility.
 
 ---
-<span id="workshop4"></span> <!-- hidden anchor -->
-<h3><span class="badge badge-info">W4</span> Using SUMO for simulating innovative public transportation systems + Using SUMO for Railway simulations</h3>
-<small><i class="fas fa-calendar-alt"></i> Thursday June 04, 10:00 - 12:00
-<!-- <br>
-<i><i class="fa-solid fa-user-group"></i> Confirmed participation from </i> -->
-<br><br>
-</small>
 
-Traffic simulation serves as a critical tool for convincing technical experts and communities to pursue different paths in enhancing public transportation systems. SUMO supports this mission with the ability to model rail, road, and water-based transportation modes, importing existing networks and schedules while allowing flexible editing. The resulting simulations capture the complete trip chain of passengers, revealing bottlenecks and accumulating delays caused by congestion on roads as well as on train platforms, and exploring strategies to mitigate them.
-
-SUMO further supports signal infrastructure models, train dynamics, and automated operational response mechanisms such as overtaking, track changes, and stop cancellations. This workshop aims to evaluate the strengths and limitations of SUMO's current features in the context of railway research, strategic planning, and operational decision-making. Participants will discuss which new modes still require better coverage and how existing capabilities align with emerging simulation needs.
-
-The goal is to share insights, inspire new projects, and collectively shape the future development trajectory of SUMO for public transportation applications.
-
----
 
 # Social Event
 
