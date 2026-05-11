@@ -85,7 +85,7 @@ The conference offers opportunities to learn about new features, connect with ot
     </tr>
     <tr>
       <td>09:15 - 10:45<br><br>Session 1
-        <p style="font-size:60%">Session chair:<br>Robert Hilbrich</p>
+        <p style="font-size:60%">Session chair:<br>Ronald Nippold</p>
       </td>
       <td colspan="2">
        <b>sumoITScontrol</b><br><small>Kevin Riehl, Anastasios Kouvelas and Michail A. Makridis</small>
@@ -300,7 +300,7 @@ The conference offers opportunities to learn about new features, connect with ot
   <tbody>
     <tr>
       <td>09:00 - 10:30<br><br>Session 6<br>
-      <p style="font-size:60%">Session chair:<br>Ronald Nippold</p></td>
+      <p style="font-size:60%">Session chair:<br>Robert Hilbrich</p></td>
       <td>
       <b>Energy Optimized Green Light Assist in Varying Traffic Scenarios Using Reinforcement Learning</b><br><small>Johan Kolms, Kai M. Blum, Michael Than, Tamás Kurczveil and Dirk J. Lehmann</small>
        <hr>
