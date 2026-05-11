@@ -324,7 +324,7 @@ The conference offers opportunities to learn about new features, connect with ot
       <td>10:45 - 12:15<br><br>Session 7<br>
       <p style="font-size:60%">Session chair:<br>Yun-Pang Flötteröd</p></td>
       <td>
-               <b>Simulation of Real DACH-Standard Traffic Signal Control Systems in SUMO</b><br><small>Markus Runhao Zhou, Johann Krüger and Meng Wang</small>
+               <b>Simulation of DACH-Style Detector-Actuated Traffic Signal Control in SUMO</b><br><small>Markus Runhao Zhou, Johann Krüger and Meng Wang</small>
        <hr>
        <b>ATSUM: An Attlas-SUMO Middleware</b><br><small>Rodolfo Valentim, Tiago Pinheiro, Vincen Santaella, Artur Souza, João Cleverales, Fernando Martinelli and Víctor Martínez</small>
        <hr>
