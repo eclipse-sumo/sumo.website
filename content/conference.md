@@ -185,7 +185,7 @@ The conference offers opportunities to learn about new features, connect with ot
     <tr>
       <td>18:00 - 20:00</td>
       <td colspan="2" style="text-align:center">
-        <b>Evening Program - Barbecue</b> 🍖
+        <b>Evening Program:</b> BBQ 🍖 & live music by <a href="https://www.prof-dr-dr-brinkmann.de/">Prof. Dr. Dr. Brinkmann</a> 🎸
       </td>
     </tr>
 
