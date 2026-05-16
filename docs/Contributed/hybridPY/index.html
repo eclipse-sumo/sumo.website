@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 12 May 2026
+Last edit: 15 May 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -214,9 +214,9 @@ Last edit: 12 May 2026
                   
 
 <p>This document describes the capabilities and basic usage of the software
-hybridPY. hybridPY is intended to expand the user-base of the traffic
+hybridPY (formerly known as SUMOPy). hybridPY is intended to expand the user-base of the traffic
 micro-simulator SUMO by providing a user-friendly, yet flexible
-simulation suite. The original publication related to hybridPY can be
+simulation suite. The original publication related to SUMOPy can be
 found at the <a href="https://web.archive.org/web/20181101145057/https://campus.unibo.it/200538/1/Research-A-Choudhry-657079-.pdf">University of Bologna</a>
 and in the <a href="https://sumo.dlr.de/2013/SUMO2013_15-17May%202013_Berlin-Adlershof.pdf">proceedings of the SUMO2013</a>.</p>
 <p>A further scope of hybridPY is to manage the huge amount of data necessary
@@ -264,10 +264,8 @@ distinguishing features are:</p>
 <li>hybridPY provides a library that greatly simplifies scripting.</li>
 </ul>
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h1>
-<p>hybridPY is a directory with python scripts. It is sufficient to unzip the
-latest version and copy it in a directory of your choice. Since
-SUMO-0.28, hybridPY is inside the SUMO distribution and located in
-<code>SUMOHOME/tools/contributed</code>.</p>
+<p>hybridPY is a directory with python scripts and is part of the SUMO distribution in
+<code>$SUMO_HOME/tools/contributed</code>.</p>
 <p>However, hybridPY makes extensive use of Python packages which need to be
 installed before. The <em>required</em> packages to be installed are:</p>
 <div class="codehilite"><pre><span></span><code>wxPython==4.2.1
@@ -281,15 +279,14 @@ pyproj
 pyshp
 networkx
 openpyxl
-pyproj 
 requests
 tqdm
 </code></pre></div>
 
 <p>The exact choice of package-versions and installation methods depend on
-the operating system. Compatibility problems between Numpy version &gt;= 2.x and wxWindows have been reported. </p>
+the operating system. Compatibility problems between Numpy version &gt;= 2.x and wxWindows have been reported.</p>
 <p>For Ubuntu distributions, all necessary packages can be installed by the one liner:</p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install  python3-wxgtk4.0 python3-wxgtk-webview4.0 python3-wxgtk-media4.0 python3-opengl python3-pil python3-matplotlib python3-pyproj python3-scipy python3-psutil python3-shapely  python3-pyshp python3-networkx python3-gdal python3-openpyxl python3-requests python3-tqdm
+<div class="codehilite"><pre><span></span><code>sudo apt-get install  python3-wxgtk4.0 python3-wxgtk-webview4.0 python3-wxgtk-media4.0 python3-opengl python3-pil python3-matplotlib python3-pyproj python3-scipy python3-psutil python3-shapely python3-pyshp python3-networkx python3-gdal python3-openpyxl python3-requests python3-tqdm
 </code></pre></div>
 
 <h1 id="getting_started">Getting started<a class="headerlink" href="#getting_started" title="Permanent link">#</a></h1>
@@ -311,7 +308,7 @@ information.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 12 May 2026</i></small>
+            <br><small><i>This page was last edited on: 15 May 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

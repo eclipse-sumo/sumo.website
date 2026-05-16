@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 12 May 2026
+Last edit: 15 May 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -427,7 +427,7 @@ visually in <a href="../Netedit/editModesNetwork.html#traffic_lights">netedit</a
   option <strong>--tls.allred.time</strong> can be used.</li>
 <li>It is also possible to generate
   <a href="#type_actuated">Actuated Traffic Lights</a>
-  by setting the option <strong>--tls.default-type</strong>. This will generated the same signal plans as
+  by setting the option <strong>--tls.default-type</strong>. This will generate the same signal plans as
   above but with green phases that have a variable length of 5s-50s
   (both values can be set using the options <strong>--tls.min-dur, --tls.max-dur</strong>).<ul>
 <li>default type <strong>actuated</strong>: traffic light actuation is based on gaps measured by automatically generated induction loops</li>
@@ -440,7 +440,7 @@ visually in <a href="../Netedit/editModesNetwork.html#traffic_lights">netedit</a
   type</a> which may be either
   <em>traffic_light</em> or <em>traffic_light_right_on_red</em> (explained
   below)</li>
-<li>by default, generated programs will have a fixed phase sequence and only vary in timing (for tlType <em>actuated</em> and <em>delay_based</em>). As an exception, when the only point of conflict is a <a href="Pedestrians.html#generating_a_network_with_crossings_and_walkingareas">pedestrian crossing</a> and the tlType is <em>actuated</em>, a program with <a href="#dynamic_phase_selection_phase_skipping">dynamic phase selection</a> is generated where the pedestrian crossing phase is only activated once pedestrians are waiting at the crossing.</li>
+<li>by default, generated programs will have a fixed phase sequence and only vary in timing (for tlType <em>actuated</em> and <em>delay_based</em>). As an exception, a program that can <em>skip</em> a phase is generated when the only point of conflict is a <a href="Pedestrians.html#generating_a_network_with_crossings_and_walkingareas">pedestrian crossing</a> and the tlType is <em>actuated</em>. This program uses <a href="#dynamic_phase_selection_phase_skipping">dynamic phase selection</a> so that the pedestrian crossing phase is only activated once pedestrians are waiting at the crossing.</li>
 </ul>
 <h2 id="default_4-arm_intersection_layout_opposites">Default 4-arm intersection (layout <em>opposites</em>)<a class="headerlink" href="#default_4-arm_intersection_layout_opposites" title="Permanent link">#</a></h2>
 <p>By default, programs are generated with 4 green phases:</p>
@@ -448,15 +448,15 @@ visually in <a href="../Netedit/editModesNetwork.html#traffic_lights">netedit</a
 <li>a straight phase</li>
 <li>a left-turning phase (only if there is a dedicated left-turn lane)</li>
 <li>a straight phase for the direction orthogonal to the first one</li>
-<li>a left-turning phase for the direction direction orthogonal to the
+<li>a left-turning phase for the direction orthogonal to the
     first one (only if there is a dedicated left-turn lane)</li>
 </ol>
 <p>Due to the default timings explained above, the green phases usually
 have a duration of 31s.</p>
 <p>If the node type is set to <em>traffic_light_right_on_red</em> rather than
 <em>traffic_light</em>, then right turns from all sides are permitted in all
-phases (after coming to a stop before entering the traffic stream that
-currently has the green light.</p>
+phases. Whenever a right-turn does not have the green light, it is treated like a priority stop: the vehicle must stop for a configurable time and then wait for a safe gap in traffic before turning right.
+The stopping duration is configurable with vType attribute <code>jmStopSignWait</code> and defaults to 1 simulation step.</p>
 <h2 id="phase_layout_incoming">Phase layout <em>incoming</em><a class="headerlink" href="#phase_layout_incoming" title="Permanent link">#</a></h2>
 <ul>
 <li>each incoming edge of the intersection gets a separate green phase
@@ -1572,7 +1572,7 @@ The top row contains the phase index but it is possible to change this so it sho
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 12 May 2026</i></small>
+            <br><small><i>This page was last edited on: 15 May 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
