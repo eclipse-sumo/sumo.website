@@ -12,12 +12,6 @@ aliases:
 - /2026
 ---
 
-<div class="alert alert-success" role="alert">
-  Registration is now open: <a href="https://sumo2026.welcome-manager.de/">https://sumo2026.welcome-manager.de/</a>
-  <br>
-  <small><b>Please keep in mind that the registration will close on May 15, 2026 (at 23:59 CEST).</b></small>
-</div>
-
 <!-- # Save the Date!
 
 June 01-04, 2026, in Berlin.
@@ -354,35 +348,6 @@ The conference offers opportunities to learn about new features, connect with ot
 <small>Last update: <a href="#lastMod">see end of page</a></small>
 
 
-# Prices
-
-- Regular Ticket: **575 EUR**
-- One-Day Ticket: **350 EUR**
-- Authors and Project Partners: **375 EUR**
-- Students & Invited Guests: **125 EUR** (limited) *
-
-<small>All prices excluding VAT.</small>
-
-*Please contact us via email at [sumo-conference@dlr.de](mailto:sumo-conference@dlr.de) to request a discount code for student registration.
-The availability is limited.
-
-# Registration
-
-Registration is now open: <a href="https://sumo2026.welcome-manager.de/">https://sumo2026.welcome-manager.de/</a>
-<br>
-<small><b>Please keep in mind that the registration will close on May 15, 2026 (at 23:59 CEST).</b></small>
-
-
-<div class="alert alert-secondary" role="alert">
-  <b>Authors:</b> Paper, poster and moments authors are required to register selecting the “Author & Project Partners” category.
-</div>
-
-<!-- The registration fee includes a two and a half day conference program with refreshments, lunch, proceedings and a social event in the evening. -->
-Accommodation is not included within the registration fee and must be pre-booked separately.
-
-<div class="alert alert-info" role="alert">
-  <b>Non-EU nationals:</b> Please register well in advance to facilitate internal procedures and (if necessary) ensure a smooth visa application process.
-</div>
 
 <!-- # FAQ
 
