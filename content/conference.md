@@ -101,8 +101,8 @@ The conference offers opportunities to learn about new features, connect with ot
         <li>Smart Urban Mobility Simulation: A Case Study of Hradec Králové - <small>Michal Michna, Jan Hladěna, Kamila Štekerová, Pavel Čech</small></li>
         <li>Integrating Elevation Data in SUMO models for detailed estimation of Energy consumption by Electric Vehicle in large networks - <small>Francesco Deflorio, Matteo Ferraro, Giuseppe Calcagno, Amirehsan Charlang Bakhtyari, Lorenzo Sica, Angela Carboni</small></li>
         <li>Towards Empathic Vehicles: Simulator-Based Induction of Affective States for Emotion Recognition - <small>Niklas Fraissl et al.</small></li>
-        <li>A Multi-Scenario Simulation Approach for Climate-Neutral Urban Corridors - <small>Evangelos Mintsis, S. Kontorinis, V. Mizaras, E. Mitsakis, and G. Ayfantopoulou</small></li>
-        <li>Instantania, the fast, parallelized traffic microsimulator for large scale transport digital twins - <small>Joerg Schweizer</small></li>
+        <li>A Multi-Scenario Simulation Approach for Climate-Neutral Urban Corridors - <small>Evangelos Mintsis, S. Kontorinis, V. Mizaras, E. Mitsakis, G. Ayfantopoulou</small></li>
+        <li>Instantania, the fast, parallelized traffic microsimulator for large scale transport digital twins - <small>Joerg Schweizer, Benyamin Heidary</small></li>
         <li>Bridging Communities: Advancing JuPedSim for Pedestrian Dynamics and Urban Mobility Research - <small>Jette Degenhardt, Mohcine Chraibi and Ralf Leibold</small></li>
         <li>Sustainable Routing for Next-Generation Mobility: Linking Evolutionary Game Theory and SUMO - <small>Andrea Bertolini, Lorenzo Castelli </small></li>
         <li>Testing Adaptive Lane-Change Planners in Realistic Traffic: A Co-Simulation Framework using SUMO, Simulink, and RoadRunner - <small>Philipp Hafemann, Anusha Ailuri, Surya Talluri, Simone Hämmerle, Naga Pemmaraju</small></li>
