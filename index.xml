@@ -61,7 +61,7 @@ June 01-04, 2026, in Berlin.
 The SUMO Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
 
 The conference offers opportunities to learn about new features, connect with other users, engage with the developers, exchange ideas, and even start new collaborations. --&gt;
-&lt;div class="d-flex align-items-center gap-3 justify-content-center mb-4"&gt;
+&lt;div class="d-flex flex-column flex-md-row align-items-center gap-3 justify-content-center mb-4"&gt;
  &lt;p class="mb-0" style="margin-right: 20px"&gt;
  This event is supported by
  &lt;/p&gt;</description></item><item><title>SUMO Conference Proceedings</title><link>https://eclipse.dev/sumo/proceedings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/proceedings/</guid><description>&lt;p&gt;Read more information about the SUMO Conference Proceedings (SCP) Series &lt;a href="https://www.tib-op.org/ojs/index.php/scp/about"&gt;here&lt;/a&gt;.&lt;/p&gt;
