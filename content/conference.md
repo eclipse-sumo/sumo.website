@@ -25,9 +25,9 @@ The conference offers opportunities to learn about new features, connect with ot
     <p class="mb-0" style="margin-right: 20px">
         This event is supported by
     </p>
-    <a href="https://www.dlr.de/en/ts" target="_blank"><img src="../images/logos/dlr_logo.svg" alt="DLR" class="img-fluid" style="height:40px;"></a>
-    <a href="https://www.transcality.com/" target="_blank"><img src="../images/logos/Transcality.png" alt="Transcality" class="img-fluid mx-4" style="height:40px;"></a>
-    <a href="https://co4e.com/" target="_blank"><img src="../images/logos/co4e.png" alt="co4e" class="img-fluid" style="height:40px;"></a>
+    <img src="../images/logos/dlr_logo.svg" alt="DLR" class="img-fluid" style="height:40px;">
+    <img src="../images/logos/Transcality.png" alt="Transcality" class="img-fluid mx-4" style="height:40px;">
+    <img src="../images/logos/co4e.png" alt="co4e" class="img-fluid" style="height:40px;">
 </div>
 
 # Agenda
