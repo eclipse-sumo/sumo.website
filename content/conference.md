@@ -21,7 +21,7 @@ The SUMO Conference, held every year in Berlin since 2013, is a must-attend even
 The conference offers opportunities to learn about new features, connect with other users, engage with the developers, exchange ideas, and even start new collaborations. -->
 
 
-<div class="d-flex align-items-center gap-3 justify-content-center mb-4">
+<div class="d-flex flex-column flex-md-row align-items-center gap-3 justify-content-center mb-4">
     <p class="mb-0" style="margin-right: 20px">
         This event is supported by
     </p>
