@@ -20,6 +20,16 @@ The SUMO Conference, held every year in Berlin since 2013, is a must-attend even
 
 The conference offers opportunities to learn about new features, connect with other users, engage with the developers, exchange ideas, and even start new collaborations. -->
 
+
+<div class="d-flex align-items-center gap-3 justify-content-center mb-4">
+    <p class="mb-0" style="margin-right: 20px">
+        This event is supported by
+    </p>
+    <a href="https://www.dlr.de/en/ts" target="_blank"><img src="../images/logos/dlr_logo.svg" alt="DLR" class="img-fluid" style="height:40px;"></a>
+    <a href="https://www.transcality.com/" target="_blank"><img src="../images/logos/Transcality.png" alt="Transcality" class="img-fluid mx-4" style="height:40px;"></a>
+    <a href="https://co4e.com/" target="_blank"><img src="../images/logos/co4e.png" alt="co4e" class="img-fluid" style="height:40px;"></a>
+</div>
+
 # Agenda
 
 <small>&#128339; <i>Schedule given in Central European Summer Time (CEST) (UTC+2) - This agenda may be subject to change</i></small>
@@ -467,12 +477,14 @@ This 2-hour workshop explores the potential of Digital Twins in urban traffic ma
 <br><br>
 We'll set off from Ernst-Ruska-Ufer and navigate the Teltowkanal, Dahme, and Müggelspree, arriving at the Müggelsee - Berlin's largest lake. After spending some time on the lake, the journey will then loop back to our original starting point.
 <br><br>
-<b>Limited capacity.</b>
-During registration, you will be asked to indicate whether you plan to attend the social event.
-Please note that your response is non-binding and serves only to help us estimate attendance - it does not guarantee a reserved spot.
-  </div>
+<b>Food & Drinks: </b>
+Complimentary finger food will be provided. Please note that drinks must be paid for individually, and only cash payments are accepted.
+</div>
 </div>
 
+# Registration
+
+If you have any questions regarding your registration, please contact us at sumo-conference@dlr.de
 
 # Language
 
