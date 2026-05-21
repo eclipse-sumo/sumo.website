@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 18 May 2026
+Last edit: 20 May 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -558,6 +558,10 @@ configuration:
 <td>Save the Floating Car Data using geo-coordinates (lon/lat); <em>default:</em> <strong>false</strong></td>
 </tr>
 <tr>
+<td><strong>--fcd-output.utm</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
+<td>Save the Floating Car Data using utm/unshifted coordinates (x/y); <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
 <td><strong>--fcd-output.signals</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
 <td>Add the vehicle signal state to the FCD output (brake lights etc.); <em>default:</em> <strong>false</strong></td>
 </tr>
@@ -568,6 +572,10 @@ configuration:
 <tr>
 <td><strong>--fcd-output.acceleration</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
 <td>Add acceleration to the FCD output; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--fcd-output.speed-relative</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
+<td>Add relative speed (vehicle speed / edge speed limit) to the FCD output; <em>default:</em> <strong>false</strong></td>
 </tr>
 <tr>
 <td><strong>--fcd-output.max-leader-distance</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a></td>
@@ -1065,11 +1073,11 @@ configuration:
 </tr>
 <tr>
 <td><strong>--default.departspeed</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a></td>
-<td>Select default depart speed; <em>default:</em> <strong>0</strong></td>
+<td>Select default depart speed; <em>default:</em> <strong>avg</strong></td>
 </tr>
 <tr>
 <td><strong>--default.departlane</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a></td>
-<td>Select default depart lane; <em>default:</em> <strong>first</strong></td>
+<td>Select default depart lane; <em>default:</em> <strong>best_prob</strong></td>
 </tr>
 <tr>
 <td><strong>--default.action-step-length</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a></td>
@@ -2138,6 +2146,10 @@ configuration:
 <td><strong>--device.taxi.idle-algorithm.output</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a></td>
 <td>Write information from the idling algorithm to FILE</td>
 </tr>
+<tr>
+<td><strong>--device.taxi.vclasses</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&lbrack; &rbrack;&gt;</em></a></td>
+<td>Network permissions that can be accessed by taxis; <em>default:</em> <strong>taxi</strong></td>
+</tr>
 </tbody>
 </table>
 <h3 id="glosa_device">Glosa Device<a class="headerlink" href="#glosa_device" title="Permanent link">#</a></h3>
@@ -2391,6 +2403,10 @@ configuration:
 <td><strong>--meso-recheck</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;TIME&gt;</em></a></td>
 <td>Time interval for rechecking insertion into the next segment after failure; <em>default:</em> <strong>0</strong></td>
 </tr>
+<tr>
+<td><strong>--meso-interpolate-pos</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
+<td>Enable mesoscopic position interpolation; <em>default:</em> <strong>false</strong></td>
+</tr>
 </tbody>
 </table>
 <h3 id="random_number">Random Number<a class="headerlink" href="#random_number" title="Permanent link">#</a></h3>
@@ -2580,7 +2596,7 @@ they may be grouped into multiple files as convenient.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 18 May 2026</i></small>
+            <br><small><i>This page was last edited on: 20 May 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 18 May 2026
+Last edit: 20 May 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -479,6 +479,9 @@ Last edit: 18 May 2026
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#sumo-gui_and_netedit_flickering" class="nav-link">• sumo-gui and netedit flickering</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#vehicles_flicker_while_being_tracked" class="nav-link">• Vehicles flicker while being tracked</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#missing_characters_in_parameter_dialogs_ie_chinese_street_names_on_linux" class="nav-link">• Missing Characters in Parameter Dialogs (i.e. Chinese Street names) on Linux</a>
@@ -1577,6 +1580,8 @@ to set the integrated graphics as preferred. (Thanks <a class="gh-link gh-mentio
 If scaling is greater than 100%, a flickering may appear in sumo-gui and netedit during mouse movement.
 The only known solution is leaving Scaling at 100%. Another cause is the use of a modern graphics card.
 If your computer supports it, run SUMO using the integrated graphics card (Control panel-&gt;NVidia Control Panel-&gt;Select integrated graphic card-&gt;apply)</p>
+<h3 id="vehicles_flicker_while_being_tracked">Vehicles flicker while being tracked<a class="headerlink" href="#vehicles_flicker_while_being_tracked" title="Permanent link">#</a></h3>
+<p>Set a higher gui delay to avoid desynchronization of gui and simulation (drawing and simulating run concurrently).</p>
 <h3 id="missing_characters_in_parameter_dialogs_ie_chinese_street_names_on_linux">Missing Characters in Parameter Dialogs (i.e. Chinese Street names) on Linux<a class="headerlink" href="#missing_characters_in_parameter_dialogs_ie_chinese_street_names_on_linux" title="Permanent link">#</a></h3>
 <p>Install the <a href="https://en.wikipedia.org/wiki/Noto_fonts">Noto Fonts</a> package for your distribution.</p>
 <h3 id="how_can_i_change_the_color_theme_of_sumo-gui_or_netedit">How can I change the color theme of sumo-gui or netedit?<a class="headerlink" href="#how_can_i_change_the_color_theme_of_sumo-gui_or_netedit" title="Permanent link">#</a></h3>
@@ -1708,7 +1713,7 @@ As a work-around you can <a href="https://askubuntu.com/questions/1399383/how-to
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 18 May 2026</i></small>
+            <br><small><i>This page was last edited on: 20 May 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

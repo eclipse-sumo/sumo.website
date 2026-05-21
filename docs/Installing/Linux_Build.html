@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 18 May 2026
+Last edit: 20 May 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -262,7 +262,7 @@ packages</a> instead.</p>
 <span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="o">--</span><span class="n">recursive</span><span class="w"> </span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">eclipse</span><span class="o">-</span><span class="n">sumo</span><span class="o">/</span><span class="n">sumo</span>
 <span class="n">cd</span><span class="w"> </span><span class="n">sumo</span>
 <span class="k">export</span><span class="w"> </span><span class="n">SUMO_HOME</span><span class="o">=</span><span class="s2">&quot;$PWD&quot;</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">cat</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">build_req_deb</span><span class="o">.</span><span class="n">txt</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">tools_req_deb</span><span class="o">.</span><span class="n">txt</span><span class="p">)</span>
+<span class="n">sudo</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">install_dependencies</span><span class="o">.</span><span class="n">sh</span><span class="w">  </span><span class="c1"># this will also add repositories for parquet, download and build jupedsim from source</span>
 <span class="n">cmake</span><span class="w"> </span><span class="o">-</span><span class="n">B</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">.</span>
 <span class="n">cmake</span><span class="w"> </span><span class="o">--</span><span class="n">build</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">-</span><span class="n">j</span><span class="o">$</span><span class="p">(</span><span class="n">nproc</span><span class="p">)</span>
 </code></pre></div>
@@ -304,10 +304,14 @@ alternatives below.</p>
 </ul>
 </li>
 </ul>
-<p>The package names above are for openSUSE, for ubuntu the call to get the most important optional libraries and tools is:</p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install ccache libavformat-dev libswscale-dev libopenscenegraph-dev python3-pip python3-build
-sudo apt-get install libgtest-dev gettext tkdiff xvfb flake8 astyle python3-autopep8 python3-gi-cairo gir1.2-gtk-3.0
-sudo apt-get install python3-pyproj python3-rtree python3-pandas python3-pulp python3-ezdxf
+<p>The package names above are for openSUSE, on a debian/ubuntu system the packages can be installed using:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">cat</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">build_req_deb</span><span class="o">.</span><span class="n">txt</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">tools_req_deb</span><span class="o">.</span><span class="n">txt</span><span class="p">)</span>
+</code></pre></div>
+
+<p>In contrast to the install script this will not include jupedsim and parquet.
+Some larger dependencies need to be added manually if needed (for a description see the section above):</p>
+<div class="codehilite"><pre><span></span><code>sudo apt-get install libavformat-dev libswscale-dev libopenscenegraph-dev
+sudo apt-get install python3-gi-cairo gir1.2-gtk-3.0
 python3 -m pip install texttest
 </code></pre></div>
 
@@ -318,7 +322,7 @@ everything using pip do <code>python3 -m pip install -r tools/requirements.txt -
 <div class="codehilite"><pre><span></span><code><span class="nx">wget</span><span class="w"> </span><span class="nx">https</span><span class="p">:</span><span class="c1">//packages.apache.org/artifactory/arrow/$(lsb_release --id --short | tr &#39;A-Z&#39; &#39;a-z&#39;)/apache-arrow-apt-source-latest-$(lsb_release --codename --short).deb</span>
 <span class="nx">sudo</span><span class="w"> </span><span class="nx">apt</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="o">-</span><span class="nx">y</span><span class="w"> </span><span class="o">-</span><span class="nx">V</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="nx">apache</span><span class="o">-</span><span class="nx">arrow</span><span class="o">-</span><span class="nx">apt</span><span class="o">-</span><span class="nx">source</span><span class="o">-</span><span class="nx">latest</span><span class="o">-</span><span class="err">$</span><span class="p">(</span><span class="nx">lsb_release</span><span class="w"> </span><span class="o">--</span><span class="nx">codename</span><span class="w"> </span><span class="o">--</span><span class="nx">short</span><span class="p">).</span><span class="nx">deb</span>
 <span class="nx">sudo</span><span class="w"> </span><span class="nx">apt</span><span class="w"> </span><span class="nx">update</span>
-<span class="nx">sudo</span><span class="w"> </span><span class="nx">apt</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="o">-</span><span class="nx">y</span><span class="w"> </span><span class="o">-</span><span class="nx">V</span><span class="w"> </span><span class="nx">libarrow</span><span class="o">-</span><span class="nx">dev</span><span class="w"> </span><span class="nx">libparquet</span><span class="o">-</span><span class="nx">dev</span>
+<span class="nx">PARQUET_VERSION</span><span class="p">=</span><span class="err">$</span><span class="p">(</span><span class="nx">apt</span><span class="o">-</span><span class="nx">cache</span><span class="w"> </span><span class="nx">policy</span><span class="w"> </span><span class="nx">libparquet</span><span class="o">-</span><span class="nx">dev</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">grep</span><span class="w"> </span><span class="o">-</span><span class="nx">o</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">23</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">.</span><span class="o">-</span><span class="p">]</span><span class="o">*</span><span class="err">&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">head</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="nx">apt</span><span class="o">-</span><span class="nx">get</span><span class="w"> </span><span class="o">-</span><span class="nx">y</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">libarrow</span><span class="o">-</span><span class="nx">dev</span><span class="p">=</span><span class="err">$</span><span class="nx">PARQUET_VERSION</span><span class="w"> </span><span class="nx">libparquet</span><span class="o">-</span><span class="nx">dev</span><span class="p">=</span><span class="err">$</span><span class="nx">PARQUET_VERSION</span>
 </code></pre></div>
 
 <h2 id="getting_the_source_code">Getting the source code<a class="headerlink" href="#getting_the_source_code" title="Permanent link">#</a></h2>
@@ -340,7 +344,7 @@ pwd
 local project history.</p>
 <h3 id="release_version_or_nightly_tarball">release version or nightly tarball<a class="headerlink" href="#release_version_or_nightly_tarball" title="Permanent link">#</a></h3>
 <p>Download
-<a href="https://sumo.dlr.de/releases/1.26.0/sumo-src-1.26.0.tar.gz">sumo-src-1.26.0.tar.gz</a> or <a href="https://sumo.dlr.de/daily/sumo-src-git.tar.gz">https://sumo.dlr.de/daily/sumo-src-git.tar.gz</a></p>
+<a href="https://sumo.dlr.de/releases/1.27.0/sumo-src-1.27.0.tar.gz">sumo-src-1.27.0.tar.gz</a> or <a href="https://sumo.dlr.de/daily/sumo-src-git.tar.gz">https://sumo.dlr.de/daily/sumo-src-git.tar.gz</a></p>
 <div class="codehilite"><pre><span></span><code>tar xzf sumo-src-&lt;version&gt;.tar.gz
 cd sumo-&lt;version&gt;/
 pwd
@@ -526,7 +530,7 @@ improve build speed.</p>
 
 <p>Note that this will clone the full repository, including the latest version of JuPedSim. <strong>We strongly recommend to build the latest release of JuPedSim (not the master branch), which is officially supported by SUMO.</strong> You can consult the <a href="https://github.com/PedestrianDynamics/jupedsim#readme">JuPedSim build procedure</a>; hereafter we propose a similar procedure. First check which is the <a href="https://github.com/PedestrianDynamics/jupedsim/releases">latest release</a> then in the cloned directory checkout to the latest release and do a regular cmake build. For example, for JuPedSim release v1.3.1, you would need to type:</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>jupedsim
-git<span class="w"> </span>checkout<span class="w"> </span>v1.3.1
+git<span class="w"> </span>checkout<span class="w"> </span>v1.4.1
 cmake<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>.
 cmake<span class="w"> </span>--build<span class="w"> </span>build
 sudo<span class="w"> </span>cmake<span class="w"> </span>--install<span class="w"> </span>build
@@ -591,7 +595,7 @@ contains</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 18 May 2026</i></small>
+            <br><small><i>This page was last edited on: 20 May 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

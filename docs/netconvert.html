@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 18 May 2026
+Last edit: 20 May 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -1035,6 +1035,10 @@ Files</a>.</p>
 <td>The default turning radius of intersections; <em>default:</em> <strong>4</strong></td>
 </tr>
 <tr>
+<td><strong>-j</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a><br> <strong>--default.junctions.type</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a></td>
+<td>[traffic_light,priority,right_before_left,left_before_right,traffic_light_right_on_red,priority_stop,allway_stop,...] Determines default junction type (see docs/Networks/PlainXML#node_types)</td>
+</tr>
+<tr>
 <td><strong>--default.connection-length</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a></td>
 <td>The default length when overriding connection lengths; <em>default:</em> <strong>-1</strong></td>
 </tr>
@@ -1434,6 +1438,10 @@ Files</a>.</p>
 <td>Joins junctions that have similar coordinates even if not connected; <em>default:</em> <strong>-1</strong></td>
 </tr>
 <tr>
+<td><strong>--junctions.join-reset</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
+<td>Reset connections for joined junctions; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
 <td><strong>--junctions.attach-removed</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a></td>
 <td>Attach junction to the closest edge within FLOAT distance that has it's id in param removedNodeIDs (for joining networks); <em>default:</em> <strong>-1</strong></td>
 </tr>
@@ -1639,6 +1647,10 @@ Files</a>.</p>
 <td>Set edge priority values based on estimated main direction; <em>default:</em> <strong>false</strong></td>
 </tr>
 <tr>
+<td><strong>--railway.topology.ptline-priority</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&lbrack; &rbrack;&gt;</em></a></td>
+<td>Set edge priority values based on public transport lines for the given list of vClasses</td>
+</tr>
+<tr>
 <td><strong>--railway.topology.extend-priority</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
 <td>Extend loaded edge priority values based on estimated main direction; <em>default:</em> <strong>false</strong></td>
 </tr>
@@ -1649,6 +1661,10 @@ Files</a>.</p>
 <tr>
 <td><strong>--railway.signal.guess.by-stops</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
 <td>Guess signals that guard public transport stops; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--railway.signal.guess.by-stops.split</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
+<td>Split edges to improve positioning of guessed signals and prevent switches as rail_signals; <em>default:</em> <strong>false</strong></td>
 </tr>
 <tr>
 <td><strong>--railway.signal.permit-unsignalized</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&lbrack; &rbrack;&gt;</em></a></td>
@@ -2146,7 +2162,7 @@ may be issued during network building.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 18 May 2026</i></small>
+            <br><small><i>This page was last edited on: 20 May 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

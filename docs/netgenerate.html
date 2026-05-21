@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 18 May 2026
+Last edit: 20 May 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -870,6 +870,10 @@ the offsets given).</p>
 <td>The default turning radius of intersections; <em>default:</em> <strong>4</strong></td>
 </tr>
 <tr>
+<td><strong>-j</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a><br> <strong>--default.junctions.type</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a></td>
+<td>[traffic_light,priority,right_before_left,left_before_right,traffic_light_right_on_red,priority_stop,allway_stop,...] Determines default junction type (see docs/Networks/PlainXML#node_types)</td>
+</tr>
+<tr>
 <td><strong>--default.connection-length</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a></td>
 <td>The default length when overriding connection lengths; <em>default:</em> <strong>-1</strong></td>
 </tr>
@@ -880,10 +884,6 @@ the offsets given).</p>
 <tr>
 <td><strong>--default.right-of-way</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a></td>
 <td>The default algorithm for computing right of way rules ('default', 'edgePriority'); <em>default:</em> <strong>default</strong></td>
-</tr>
-<tr>
-<td><strong>-j</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a><br> <strong>--default-junction-type</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a></td>
-<td>[traffic_light,priority,right_before_left,left_before_right,traffic_light_right_on_red,priority_stop,allway_stop,...] Determines junction type (see docs/Networks/PlainXML#node_types)</td>
 </tr>
 </tbody>
 </table>
@@ -1178,6 +1178,10 @@ the offsets given).</p>
 <td>Joins junctions that have similar coordinates even if not connected; <em>default:</em> <strong>-1</strong></td>
 </tr>
 <tr>
+<td><strong>--junctions.join-reset</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
+<td>Reset connections for joined junctions; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
 <td><strong>--max-join-ids</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;INT&gt;</em></a></td>
 <td>Abbreviate junction or TLS id if it joins more than INT junctions; <em>default:</em> <strong>4</strong></td>
 </tr>
@@ -1437,7 +1441,7 @@ Options</a>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 18 May 2026</i></small>
+            <br><small><i>This page was last edited on: 20 May 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
