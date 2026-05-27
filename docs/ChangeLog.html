@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 21 May 2026
+Last edit: 27 May 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -281,6 +281,27 @@ Last edit: 21 May 2026
 
 <h2 id="git_main_nightly_development_builds">Git Main (<a href="https://sumo.dlr.de/docs/Downloads.php#nightly_snapshots">nightly development builds</a>)<a class="headerlink" href="#git_main_nightly_development_builds" title="Permanent link">#</a></h2>
 <h3 id="bugfixes">Bugfixes<a class="headerlink" href="#bugfixes" title="Permanent link">#</a></h3>
+<ul>
+<li>sumo<ul>
+<li>Fixed crash in sublane simulation with unusual turning lanes <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18030" title="GitHub Issue eclipse-sumo/sumo #18030">#18030</a> (regression in 1.27.0)</li>
+<li>Fixed invalid strategic lane choice when connections have reduced permissions <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18034" title="GitHub Issue eclipse-sumo/sumo #18034">#18034</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>sumo-gui<ul>
+<li>Fixed invalid meso segment markers in network with length/geometry mismatch <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18036" title="GitHub Issue eclipse-sumo/sumo #18036">#18036</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>meso<ul>
+<li>traffic light type "delay_based" (unsupported by meso) now gives a warning <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18026" title="GitHub Issue eclipse-sumo/sumo #18026">#18026</a></li>
+<li>fixed unsafe rail insertion <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18028" title="GitHub Issue eclipse-sumo/sumo #18028">#18028</a></li>
+<li>fixed invalid rail signal state in network with internal links <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/6990" title="GitHub Issue eclipse-sumo/sumo #6990">#6990</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18027" title="GitHub Issue eclipse-sumo/sumo #18027">#18027</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="version_1270_21052026">Version 1.27.0 (21.05.2026)<a class="headerlink" href="#version_1270_21052026" title="Permanent link">#</a></h2>
 <h3 id="bugfixes_1">Bugfixes<a class="headerlink" href="#bugfixes_1" title="Permanent link">#</a></h3>
 <ul>
@@ -1996,7 +2017,7 @@ Last edit: 21 May 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 21 May 2026</i></small>
+            <br><small><i>This page was last edited on: 27 May 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
