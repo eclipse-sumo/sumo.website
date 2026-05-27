@@ -62,7 +62,7 @@ The conference offers opportunities to learn about new features, connect with ot
   <tr>
     <td>15:30 - 17:30</td>
     <td colspan="2"><small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
-    <b>Workshop 1</b><br>Simulating Connected and Automated Mobility<br><a style="color:#0645ad; cursor:pointer;" href="#workshop1">Read more <i class="fas fa-angle-down"></i></a></td>
+    <b>Workshop 1</b><br>Simulating Connected and Automated Mobility<br><a style="color:#0645ad; cursor:pointer;" href="#workshop1">Read more (+ Agenda) <i class="fas fa-angle-down"></i></a></td>
   </tr>
   <tr>
     <td>18:30 - 21:00</td>
@@ -158,7 +158,7 @@ The conference offers opportunities to learn about new features, connect with ot
         <small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
         <b>Workshop 3</b><br>
         Digital Twins and Traffic Management in Cities<br>
-        <a href="#workshop3" style="color:#0645ad;">Read more <i class="fas fa-angle-down"></i></a>
+        <a href="#workshop3" style="color:#0645ad;">Read more (+ Agenda)<i class="fas fa-angle-down"></i></a>
       </td>
     </tr>
     <tr>
@@ -183,7 +183,7 @@ The conference offers opportunities to learn about new features, connect with ot
         <small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
         <b>(cont.) Workshop 3</b><br>
         Digital Twins and Traffic Management in Cities<br>
-        <a href="#workshop3" style="color:#0645ad;">Read more <i class="fas fa-angle-down"></i></a>
+        <a href="#workshop3" style="color:#0645ad;">Read more (+ Agenda) <i class="fas fa-angle-down"></i></a>
       </td>
     </tr>
     <tr>
@@ -317,7 +317,7 @@ The conference offers opportunities to learn about new features, connect with ot
   <b>Workshop 2</b> (09:00 - 12:00)
   <br>
   Using SUMO for simulating innovative public transportation systems + Using SUMO for Railway simulations + Navigating Complexity: Leveraging SUMO for Traffic Planning at Major Events<br>
-  <a href="#workshop2" style="color:#0645ad;">Read more <i class="fas fa-angle-down"></i></a>
+  <a href="#workshop2" style="color:#0645ad;">Read more (+ Agenda)<i class="fas fa-angle-down"></i></a>
     </td>
     </tr>
     <tr>
@@ -419,6 +419,12 @@ Being a physicists by training, I have worked in transport for over 30 years, fo
 
 During the conference, a series of workshops will take place in dedicated rooms alongside the main program. These sessions offer participants the opportunity to engage more deeply with specific topics in a smaller, interactive setting.
 
+<div class="alert alert-success" role="alert">
+  All participants are invited to take part in the workshops.
+  <br>
+  If you would like to give a presentation, please reach out to us at sumo-conference@dlr.de
+</div>
+
 <span id="workshop1"></span> <!-- hidden anchor -->
 <h3><span class="badge badge-info">W1</span> Simulating Connected and Automated Mobility</h3>
 <small><i class="fas fa-calendar-alt"></i> Monday June 01, 15:30 - 17:30
@@ -428,6 +434,35 @@ During the conference, a series of workshops will take place in dedicated rooms 
 </small>
 
 Connected and Automated Mobility (CAM) relies on advanced and interoperable simulation frameworks to evaluate communication, cooperation, and automated driving functions in realistic traffic scenarios. This workshop presents current developments and applications based on Eclipse MOSAIC, Eclipse SUMO, Eclipse ADORe, as well as specialized CAM use cases implemented with SUMO’s libtraci interface. Short impulse talks and live demonstrations by tool developers provide practical insights into architectures, coupling strategies, and communication modeling (e.g., CAMs/CPMs, platooning). The session is designed to stimulate exchange between developers and users and to discuss integration strategies and future directions for CAM simulation toolchains.
+
+<details>
+<br>
+  <summary>Agenda</summary>
+  <table>
+<tbody>
+  <tr>
+    <td><b>PLEXE and other tools</b><br><small>Michele Segata (University of Trento)</small></td>
+  </tr>
+  <tr>
+    <td><b>Eclipse ADORe</b><br><small>Matthias Nichting (DLR)</small></td>
+  </tr>
+  <tr>
+    <td><b>SUMO Coupling</b><br><small>Mihai Kocsis (FZI)</small></td>
+  </tr>
+    <tr>
+    <td><b>Simulating CAMs / CPMs with SUMO & Libtraci</b><br><small>Daniel Wesemeyer (DLR)</small></td>
+  </tr>
+    <tr>
+    <td><b>MOSAIC Demo and BeST Scenario</b><br><small>Karl Schrab</small></td>
+  </tr>
+      <tr>
+    <td><i>Discussions</i></td>
+  </tr>
+</tbody>
+</table>
+</details>
+
+<br>
 
 ---
 <span id="workshop2"></span> <!-- hidden anchor -->
@@ -445,6 +480,34 @@ SUMO further supports signal infrastructure models, train dynamics, and automate
 
 Large-scale events create complex interactions between vehicular traffic and pedestrian flows that require holistic planning tools. This workshop also explores the added value of coupling SUMO with JuPedSim to simulate both road networks and crowd dynamics simultaneously. We will discuss specific needs, data requirements, and pitfalls faced by authorities, event organizers, and transport providers in this context. Through interactive discussion, participants will collaboratively define best practices for using multi-modal simulation in approval workflows and operational planning.
 
+<details>
+<br>
+  <summary>Agenda</summary>
+  <table>
+<tbody>
+  <tr>
+    <td><b>Selective overview on existing rail transport simulations</b><br><small>TH Wildau</small></td>
+  </tr>
+  <tr>
+    <td><b>How to simulate the Berlin S-Bahn-Ring including passenger induced delays</b><br><small>DLR</small></td>
+  </tr>
+  <tr>
+    <td><b>PodCars as next generation public transport system</b><br><small>4Dialog</small></td>
+  </tr>
+    <tr>
+    <td><b>SUMO scenarios in Berlin public transport</b><br><small>BVG</small></td>
+  </tr>
+    <tr>
+    <td><b>RailML and beyond</b><br><small>DLR, railML.org</small></td>
+  </tr>
+      <tr>
+    <td><i>Discussions</i></td>
+  </tr>
+</tbody>
+</table>
+</details>
+
+<br>
 
 ---
 <span id="workshop3"></span> <!-- hidden anchor -->
@@ -456,6 +519,78 @@ Large-scale events create complex interactions between vehicular traffic and ped
 </small>
 
 This 2-hour workshop explores the potential of Digital Twins in urban traffic management. Participants will learn how real-time data integration and simulation models enable more adaptive, data-driven mobility systems. Interactive demonstrations highlight smart city case studies that use Digital Twins to optimise traffic flow, reduce environmental impact, and enhance safety. The session concludes with a discussion on technical challenges, scalability, and future directions within the SUMO ecosystem - defining practical next steps for intelligent urban mobility.
+
+<details>
+<br>
+  <summary>Agenda</summary>
+  <table><thead>
+  <tr>
+    <th>Block 1: Public Entitites</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>City of Bratislava</td>
+  </tr>
+  <tr>
+    <td>City of Ulm</td>
+  </tr>
+  <tr>
+    <td>Tracasa Instrumental</td>
+  </tr>
+    <tr>
+    <td>BVG</td>
+  </tr>
+    <tr>
+    <td>Berliner Wasserbetriebe</td>
+  </tr>
+      <tr>
+    <td>Uni Mannheim</td>
+  </tr>
+</tbody>
+</table>
+
+<br>
+
+  <table><thead>
+  <tr>
+    <th>Block 2: Solution Providers & Research</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>Eclipse Foundation</td>
+  </tr>
+  <tr>
+    <td>Forschungsinstitut für Kraftfahrwesen und Fahrzeugmotoren Stuttgart (FKFS)</td>
+  </tr>
+  <tr>
+    <td>atSTAKE</td>
+  </tr>
+    <tr>
+    <td>Bearing Point + Robert Alms (DLR)</td>
+  </tr>
+    <tr>
+    <td>Schlothauer & Wauer</td>
+  </tr>
+  <tr>
+    <td>Transcality</td>
+  </tr>
+    <tr>
+    <td>Kentyou</td>
+  </tr>
+</tbody>
+</table>
+
+<br>
+
+  <table><thead>
+  <tr>
+    <th><i>Discussions</i></th>
+  </tr></thead>
+</table>
+
+</details>
+
+<br>
 
 ---
 
