@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 27 May 2026
+Last edit: 28 May 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -1012,18 +1012,6 @@ parameters are described in the following.</p>
 <td>The maximal physically possible deceleration for the vehicle (in m/s^2).</td>
 </tr>
 <tr>
-<td>maxAccelProfile</td>
-<td>list of speed-accel pairs</td>
-<td>"0.0 accel, 2778 accel"</td>
-<td>The maximal physically possible acceleration for the vehicle, depending on the speed (in m/s m/s^2).</td>
-</tr>
-<tr>
-<td>desAccelProfile</td>
-<td>list of speed-accel pairs</td>
-<td>"0.0 accel, 2778 accel"</td>
-<td>The maximal desired acceleration for the vehicle, depending on the speed (in m/s m/s^2).</td>
-</tr>
-<tr>
 <td>startupDelay</td>
 <td>float &gt;= 0</td>
 <td>0</td>
@@ -1788,21 +1776,21 @@ lists which parameter are used by which model(s). <a href="Car-Following-Models/
 <tr>
 <td>speedTable</td>
 <td>-</td>
-<td>list of float &gt;= 0</td>
+<td>list of float &gt;= 0 with at least 2 entries</td>
 <td>list of speed values to be used together with any of the following attributes: <code>resistanceTable</code>, <code>tractionTable</code>, <code>maxAccelProfile</code>, <code>desAccelProfile</code></td>
 <td></td>
 </tr>
 <tr>
 <td>maxAccelProfile</td>
 <td>-</td>
-<td>list of float &gt;= 0</td>
+<td>list of float &gt;= 0 with at least 2 entries</td>
 <td>The maximal physically possible acceleration for the vehicle corresponding to the same index in <code>speedTable</code> (in m/s m/s^2)</td>
 <td>all models</td>
 </tr>
 <tr>
 <td>desAccelProfile</td>
 <td>-</td>
-<td>list of float &gt;= 0</td>
+<td>list of float &gt;= 0 with at least 2 entries</td>
 <td>The maximal desired acceleration for the vehicle corresponding to the same index in <code>speedTable</code> (in m/s m/s^2)</td>
 <td>all models</td>
 </tr>
@@ -3106,7 +3094,7 @@ defining them for the vehicle or the vehicle type in the following way:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 27 May 2026</i></small>
+            <br><small><i>This page was last edited on: 28 May 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
