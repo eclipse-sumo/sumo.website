@@ -286,7 +286,7 @@ The conference offers opportunities to learn about new features, connect with ot
       <td colspan="2">Reflections and Remarks</td>
     </tr>
     <tr>
-      <td>18:00 - 20:00</td>
+      <td>18:00 - 19:30</td>
       <td colspan="2" style="text-align:center"><i>Conference Photo</i> 📷 + <b>Dinner</b></i> 🥗</td>
     </tr>
   </tbody>
