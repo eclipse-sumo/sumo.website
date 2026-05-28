@@ -337,7 +337,7 @@ The conference offers opportunities to learn about new features, connect with ot
       <td colspan="2" style="text-align:center"><i><b>Lunch</b></i> 🥗</td>
     </tr>
     <tr>
-      <td>13:00 - 13:45<br><br>Session 8<br>
+      <td>13:00 - 14:00<br><br>Session 8<br>
       <p style="font-size:60%">Session chair:<br>Robert Hilbrich</p></td>
       <td colspan="2">
              <b>Reproducing Weekly Crash Patterns Using a Minimalist Driver Error Model</b><br><small>Ronald Nippold, Andreas Leich and Peter Wagner</small>
@@ -346,7 +346,7 @@ The conference offers opportunities to learn about new features, connect with ot
       </td>
     </tr>
     <tr>
-      <td>13:45 - 14:15</td>
+      <td>14:00 - 14:15</td>
       <td colspan="2">Closing Session</td>
     </tr>
   </tbody>
