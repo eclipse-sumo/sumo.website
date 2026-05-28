@@ -118,7 +118,6 @@ The conference offers opportunities to learn about new features, connect with ot
         <li>Testing Adaptive Lane-Change Planners in Realistic Traffic: A Co-Simulation Framework using SUMO, Simulink, and RoadRunner - <small>Philipp Hafemann, Anusha Ailuri, Surya Talluri, Simone Hämmerle, Naga Pemmaraju</small></li>
         <li>Environmental Impact Analysis for a New Urban Development - <small>Aya Aly, Paulo Moura</small></li>
         <li>Network Performance Analysis of Car-Following Models and Traffic Signal Light Configurations using SUMO - <small>Arya Karnik, Mounika Raj Kavadi, Joshua Bittle</small></li>
-        <li>Causality-Aware Energy Forecasting and Adaptive Task Control in Edge-Assisted Autonomous Vehicular Networks - <small>Maha Alruwaili</small></li>
         <li>Analysis and comparison of Multimodal Link Transmission Model and SUMO in urban networks - <small>Ning Xie, Meng Wang</small></li>
         <li>KISLEK - KI zur Steuerung verbundener Verkehrsknoten - <small>Lukas Klein</small></li>
         <li>Revisiting Mesoscopic Traffic Flow Simulation in SUMO: Limitations, Analysis, and an Alternative - <small>Ying-Chuan Ni, Alina Akopian, Anastasios Kouvelas, Michail A. Makridis</small></li>
@@ -255,9 +254,7 @@ The conference offers opportunities to learn about new features, connect with ot
       <li>Multi-modal safety-optimized traffic management system using incident-informed rerouting and adaptive signal control: a SUMO application - <small>Dimitrios Tsitsokas, Georgios Matsioris, Emmanouil Barmpounakis, Ioannis Papamichail, Nikolas Geroliminis</small></li>
       <li>sumo3Dviz - A three dimensional traffic visualisation - <small>Kevin Riehl, Julius Schlapbach, Anastasios Kouvelas, Michail Makridis</small></li>
       <li>Toward an Agentic AI Framework for Integrated MATSim-SUMO Policy Evaluation - <small>David Micallef, Luca Bondin, Alexiei Dingli</small></li>
-      <li>Fluidity: Algorithm to infer Traffic Light Rhythms from GPS Positioning Data - <small>Gaston Laplagne</small></li>
       <li>SESAM: Mobility Simulations in the Cloud - <small>Robert Hilbrich, Angelo Banse</small></li>
-      <!-- <li>abc - <small>Sumaira Shaheen</small></li> -->
       </ul></td>
     </tr>
     <tr>
