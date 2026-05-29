@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 28 May 2026
+Last edit: 29 May 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -172,12 +172,15 @@ Last edit: 28 May 2026
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#bugfixes" class="nav-link">• Bugfixes</a>
                 </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#enhancements" class="nav-link">• Enhancements</a>
+                </li>
             <li class="nav-item main"><a href="#version_1270_21052026">Version 1.27.0 (21.05.2026)</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#bugfixes_1" class="nav-link">• Bugfixes</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#enhancements" class="nav-link">• Enhancements</a>
+                    <a href="#enhancements_1" class="nav-link">• Enhancements</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#miscellaneous" class="nav-link">• Miscellaneous</a>
@@ -187,7 +190,7 @@ Last edit: 28 May 2026
                     <a href="#bugfixes_2" class="nav-link">• Bugfixes</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#enhancements_1" class="nav-link">• Enhancements</a>
+                    <a href="#enhancements_2" class="nav-link">• Enhancements</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#miscellaneous_1" class="nav-link">• Miscellaneous</a>
@@ -197,7 +200,7 @@ Last edit: 28 May 2026
                     <a href="#bugfixes_3" class="nav-link">• Bugfixes</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#enhancements_2" class="nav-link">• Enhancements</a>
+                    <a href="#enhancements_3" class="nav-link">• Enhancements</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#miscellaneous_2" class="nav-link">• Miscellaneous</a>
@@ -207,7 +210,7 @@ Last edit: 28 May 2026
                     <a href="#bugfixes_4" class="nav-link">• Bugfixes</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#enhancements_3" class="nav-link">• Enhancements</a>
+                    <a href="#enhancements_4" class="nav-link">• Enhancements</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#miscellaneous_3" class="nav-link">• Miscellaneous</a>
@@ -221,7 +224,7 @@ Last edit: 28 May 2026
                     <a href="#bugfixes_6" class="nav-link">• Bugfixes</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#enhancements_4" class="nav-link">• Enhancements</a>
+                    <a href="#enhancements_5" class="nav-link">• Enhancements</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#miscellaneous_4" class="nav-link">• Miscellaneous</a>
@@ -231,7 +234,7 @@ Last edit: 28 May 2026
                     <a href="#bugfixes_7" class="nav-link">• Bugfixes</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#enhancements_5" class="nav-link">• Enhancements</a>
+                    <a href="#enhancements_6" class="nav-link">• Enhancements</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#miscellaneous_5" class="nav-link">• Miscellaneous</a>
@@ -242,12 +245,6 @@ Last edit: 28 May 2026
 
     <div class="admonition conference" style="position: sticky; margin-top: 20px; margin-bottom:10px;">
         <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
-    </div>
-
-    <div class="admonition" style="position: sticky; margin-top: 20px; margin-bottom:10px; background-color: #d6cbb2; border-color: #c6b795; padding: 0;">
-        <center>
-            <a class="no-arrow-link" href="https://eclipse.dev/sumo/conference"><img src="images/SUMO2026.png" alt="SUMO User Conference 2025" class="img-fluid" style="max-height: 200px"></a>
-        </center>
     </div>
 
 </div>
@@ -285,6 +282,18 @@ Last edit: 28 May 2026
 <li>sumo<ul>
 <li>Fixed crash in sublane simulation with unusual turning lanes <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18030" title="GitHub Issue eclipse-sumo/sumo #18030">#18030</a> (regression in 1.27.0)</li>
 <li>Fixed invalid strategic lane choice when connections have reduced permissions <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18034" title="GitHub Issue eclipse-sumo/sumo #18034">#18034</a></li>
+<li>Fixed extreme reduction in simulation speed when setting high road speed limits in a dense road network <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18038" title="GitHub Issue eclipse-sumo/sumo #18038">#18038</a></li>
+<li>Fixed insufficient backward safety gaps with respect to minGap <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18042" title="GitHub Issue eclipse-sumo/sumo #18042">#18042</a></li>
+<li>Fixed insufficient backward safety gaps on lanes that are shared by road and rail traffic <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18041" title="GitHub Issue eclipse-sumo/sumo #18041">#18041</a></li>
+<li>loading state with an invalid begin time no longer results in an unexpected simulation start time <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18048" title="GitHub Issue eclipse-sumo/sumo #18048">#18048</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>netedit<ul>
+<li>Fixed invalid error message when loading a route with an unknown stopping place <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16333" title="GitHub Issue eclipse-sumo/sumo #16333">#16333</a></li>
+<li>TAZs with one shape point no longer writes an invalid center <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16845" title="GitHub Issue eclipse-sumo/sumo #16845">#16845</a></li>
+<li>selected connections now remain visible at high zoom when selection scaling is active <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17309" title="GitHub Issue eclipse-sumo/sumo #17309">#17309</a>  </li>
 </ul>
 </li>
 </ul>
@@ -299,6 +308,13 @@ Last edit: 28 May 2026
 <li>traffic light type "delay_based" (unsupported by meso) now gives a warning <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18026" title="GitHub Issue eclipse-sumo/sumo #18026">#18026</a></li>
 <li>fixed unsafe rail insertion <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18028" title="GitHub Issue eclipse-sumo/sumo #18028">#18028</a></li>
 <li>fixed invalid rail signal state in network with internal links <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/6990" title="GitHub Issue eclipse-sumo/sumo #6990">#6990</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18027" title="GitHub Issue eclipse-sumo/sumo #18027">#18027</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">#</a></h3>
+<ul>
+<li>tools<ul>
+<li>createScreenshotSequence.py: Added option <strong>--relative</strong> which interprets zoom/rotate/offset values relatively to the previous state <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17974" title="GitHub Issue eclipse-sumo/sumo #17974">#17974</a></li>
 </ul>
 </li>
 </ul>
@@ -492,7 +508,7 @@ Last edit: 28 May 2026
 </ul>
 </li>
 </ul>
-<h3 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">#</a></h3>
+<h3 id="enhancements_1">Enhancements<a class="headerlink" href="#enhancements_1" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
 <li>Cars no longer enter a bidi-edge if it is occupied or already being approached from a higher-priority road <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/10941" title="GitHub Issue eclipse-sumo/sumo #10941">#10941</a></li>
@@ -748,7 +764,7 @@ Last edit: 28 May 2026
 <ul>
 <li>Options <strong>--output-prefix</strong> and <strong>--output-suffix</strong> can now be freely combined <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17545" title="GitHub Issue eclipse-sumo/sumo #17545">#17545</a></li>
 </ul>
-<h3 id="enhancements_1">Enhancements<a class="headerlink" href="#enhancements_1" title="Permanent link">#</a></h3>
+<h3 id="enhancements_2">Enhancements<a class="headerlink" href="#enhancements_2" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
 <li>Routing with randomized weights (<strong>--weights.random-factor</strong>) is now stable with respect to network changes, vehicle composition and state loading. The random noise for each edge only depends on the random seed and vehicle id (also applies to duarouter). If thew new option <strong>--weights.random-factor.dynamic</strong> is set, the randomness in the simulation also varies over time. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17325" title="GitHub Issue eclipse-sumo/sumo #17325">#17325</a></li>
@@ -981,7 +997,7 @@ Last edit: 28 May 2026
 </ul>
 </li>
 </ul>
-<h3 id="enhancements_2">Enhancements<a class="headerlink" href="#enhancements_2" title="Permanent link">#</a></h3>
+<h3 id="enhancements_3">Enhancements<a class="headerlink" href="#enhancements_3" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
 <li>Option <strong>--max-num-persons 0</strong> can now be used to run a simulation without persons. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16965" title="GitHub Issue eclipse-sumo/sumo #16965">#16965</a></li>
@@ -1209,7 +1225,7 @@ Last edit: 28 May 2026
 </ul>
 </li>
 </ul>
-<h3 id="enhancements_3">Enhancements<a class="headerlink" href="#enhancements_3" title="Permanent link">#</a></h3>
+<h3 id="enhancements_4">Enhancements<a class="headerlink" href="#enhancements_4" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
 <li>Files ending with <em>.parquet</em> are now written in <a href="https://en.wikipedia.org/wiki/Apache_Parquet">Apache Parquet format</a>. This can also be activated with option <strong>--output.format parquet</strong>. Further applicable options are <strong>--output.compression</strong>, <strong>--output.column-header</strong>. Feature is in <a href="TabularOutputs.html#limitations">experimental stage</a> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/14694" title="GitHub Issue eclipse-sumo/sumo #14694">#14694</a></li>
@@ -1470,7 +1486,7 @@ Last edit: 28 May 2026
 </ul>
 </li>
 </ul>
-<h3 id="enhancements_4">Enhancements<a class="headerlink" href="#enhancements_4" title="Permanent link">#</a></h3>
+<h3 id="enhancements_5">Enhancements<a class="headerlink" href="#enhancements_5" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
 <li><code>departPos=stop</code> now works for any departLane on the stop edge <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16133" title="GitHub Issue eclipse-sumo/sumo #16133">#16133</a></li>
@@ -1829,7 +1845,7 @@ Last edit: 28 May 2026
 </ul>
 </li>
 </ul>
-<h3 id="enhancements_5">Enhancements<a class="headerlink" href="#enhancements_5" title="Permanent link">#</a></h3>
+<h3 id="enhancements_6">Enhancements<a class="headerlink" href="#enhancements_6" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
 <li>Added new <a href="Simulation/Stationfinder.html">stationfinder device</a> which reroutes electric vehicles to a chargingStation depending on it's state of charge <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/9663" title="GitHub Issue eclipse-sumo/sumo #9663">#9663</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/15871" title="GitHub Issue eclipse-sumo/sumo #15871">#15871</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/15931" title="GitHub Issue eclipse-sumo/sumo #15931">#15931</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/15980" title="GitHub Issue eclipse-sumo/sumo #15980">#15980</a></li>
@@ -2017,7 +2033,7 @@ Last edit: 28 May 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 28 May 2026</i></small>
+            <br><small><i>This page was last edited on: 29 May 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
