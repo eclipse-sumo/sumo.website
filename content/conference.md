@@ -614,10 +614,6 @@ Complimentary finger food will be provided. Please note that drinks must be paid
 </div>
 </div>
 
-# Registration
-
-If you have any questions regarding your registration, please contact us at sumo-conference@dlr.de
-
 # Language
 
 The conference language is English.
