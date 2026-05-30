@@ -61,7 +61,7 @@ The conference offers opportunities to learn about new features, connect with ot
   </tr>
   <tr>
     <td>15:30 - 17:30</td>
-    <td colspan="2"><small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
+    <td colspan="2"><small><span class="badge badge-warning"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
     <b>Workshop 1</b><br>Simulating Connected and Automated Mobility<br><a style="color:#0645ad; cursor:pointer;" href="#workshop1">Read more (+ Agenda) <i class="fas fa-angle-down"></i></a></td>
   </tr>
   <tr>
@@ -92,10 +92,13 @@ The conference offers opportunities to learn about new features, connect with ot
         <p style="font-size:60%">Session chair:<br>Ronald Nippold</p>
       </td>
       <td colspan="2">
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3284.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
        <b>sumoITScontrol</b><br><small>Kevin Riehl, Anastasios Kouvelas and Michail A. Makridis</small>
        <hr>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3277.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
        <b>VRU-Aware GLOSA: Integrating VRUs into Green Light Optimized Speed Advisory for Right-Turn Conflicts at Signalized Intersections</b><br><small>Pushkar Mahajan, Anna-Lena Schlamp and Stefanie Schmidtner</small>
        <hr>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3320.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
        <b>Radar-Based Evaluation of Car-Following Behavior and Fuel Consumption Across Vehicle Categories in SUMO</b><br><small>Joshua Bittle and Mahdi Al Abdraboh</small>
       </td>
     </tr>
@@ -145,16 +148,18 @@ The conference offers opportunities to learn about new features, connect with ot
     <tr>
       <td>14:30 - 15:30</td>
       <td>
-        <small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Bunsen-Saal</span></small><br>
+        <small><span class="badge badge-warning"><i class="fa-solid fa-location-dot"></i> Bunsen-Saal</span></small><br>
         <b>Session 2</b>
         <p style="font-size:60%">Session chair: Ronald Nippold</p>
         <br>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3222.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
       <b>Enabling Non-Lane-Based Cycling Behavior for Mass Bicycle Traffic Flow Simulation in SUMO</b><br><small>Ying-Chuan Ni, Thomas Ramseier, Junzhe Cao, Anastasios Kouvelas and Michail Makridis </small>
        <hr>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3289.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
        <b>A Cycle-Level Distribution-Based Calibration of Microscopic Intersection Models Using UAV Trajectories</b><br><small>Charalambos Tsioutis, Konstantinos Pourgourides and Stelios Timotheou</small>
       </td>
       <td>
-        <small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
+        <small><span class="badge badge-warning"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
         <b>Workshop 3</b><br>
         Digital Twins and Traffic Management in Cities<br>
         <a href="#workshop3" style="color:#0645ad;">Read more (+ Agenda)<i class="fas fa-angle-down"></i></a>
@@ -168,18 +173,20 @@ The conference offers opportunities to learn about new features, connect with ot
     <tr>
       <td>15:45 - 17:30</td>
       <td>
-        <small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Bunsen-Saal</span></small><br>
+        <small><span class="badge badge-warning"><i class="fa-solid fa-location-dot"></i> Bunsen-Saal</span></small><br>
         <b>Session 3</b>
         <p style="font-size:60%">Session chair: Peter Wagner</p>
         <br>
         <b>Improving SUMO for Motorcycles</b><br><small>Gnanambica Chouta and Christian Facchi</small>
        <hr>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3274.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
        <b>Framework for Generating Activity-Based Travel Demand Using Aggregated Mobility and Land-Use Big Data</b><br><small>Joerg Schweizer, Ngoc-An Nguyen, Cristian Poliziani and Federico Rupi</small>
        <hr>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3321.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
        <b>A Dynamic Traffic Calibration Framework for SUMO Based on Historical Real-World Speed Data</b><br><small>Finn Guist, Andreas Freymann, Sandro Lipinski, Emanuel Reichsöllner and Mirko Sonntag</small>
       </td>
       <td>
-        <small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
+        <small><span class="badge badge-warning"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
         <b>(cont.) Workshop 3</b><br>
         Digital Twins and Traffic Management in Cities<br>
         <a href="#workshop3" style="color:#0645ad;">Read more (+ Agenda) <i class="fas fa-angle-down"></i></a>
@@ -208,10 +215,13 @@ The conference offers opportunities to learn about new features, connect with ot
       <p style="font-size:60%">Session chair:<br>Michael Behrisch</p>
     </td>
     <td colspan="2">
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3322.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
     <b>Integrating Synthetic Populations and Activity Chains for Individual Emission Assessment in SUMO</b><br><small>Alix NGARI LENDOYE, Corwin Fèvre, Tatiana Graindorge and Alain Bouju</small>
        <hr>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3240.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
        <b>Reconstruction of Public Transport Routes Based on Imperfect GTFS and OpenStreetMap Data</b><br><small>Alexander Kaiser and Alexander Schmaus</small>
        <hr>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3293.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
        <b>Energy- and Emission-Conscious Extension of TAPAS-SUMO Coupling - A Case Study in Delmenhorst</b><br><small>Yun-Pang Flötteröd, Michael Behrisch and Knut M. Heidemann</small>
        </td>
   </tr>
@@ -226,10 +236,13 @@ The conference offers opportunities to learn about new features, connect with ot
       <p style="font-size:60%">Session chair:<br>Jakob Erdmann</p>
     </td>
     <td colspan="2">
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3318.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
       <b>C-ITS services for light rail systems</b><br><small>Paula von der Heide</small>
        <hr>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3324.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
        <b>GROSS: German Rail Open-Source SUMO Scenario</b><br><small>Juri Penell and Damian Dailisan</small>
        <hr>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3326.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
        <b>SUMO for Railway Applications</b><br><small>Christian Rahmig, Jakob Erdmann, Jakob Geischberger and Larissa Zhuchyi</small>
     </td>
   </tr>
@@ -303,14 +316,17 @@ The conference offers opportunities to learn about new features, connect with ot
       <td>09:00 - 10:30<br><br>Session 6<br>
       <p style="font-size:60%">Session chair:<br>Robert Hilbrich</p></td>
       <td>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3227.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
       <b>Energy Optimized Green Light Assist in Varying Traffic Scenarios Using Reinforcement Learning</b><br><small>Johan Kolms, Kai M. Blum, Michael Than, Tamás Kurczveil and Dirk J. Lehmann</small>
        <hr>
-              <b>EfaSim - A Prototype for a SUMO-driven Emergency Vehicle Driving Simulator</b><br><small>Rebecca Ahmed, Cristian Cubides-Herrera, Fabian Schuhmann and Markus Lienkamp</small>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3323.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
+        <b>EfaSim - A Prototype for a SUMO-driven Emergency Vehicle Driving Simulator</b><br><small>Rebecca Ahmed, Cristian Cubides-Herrera, Fabian Schuhmann and Markus Lienkamp</small>
        <hr>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3290.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
        <b>Driver Models in SUMO and Elsewhere</b><br><small>Peter Wagner</small>
       </td>
           <td rowspan="3">
-<small><span class="badge badge-secondary"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
+<small><span class="badge badge-warning"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
   <b>Workshop 2</b> (09:00 - 12:00)
   <br>
   Using SUMO for simulating innovative public transportation systems + Using SUMO for Railway simulations + Navigating Complexity: Leveraging SUMO for Traffic Planning at Major Events<br>
@@ -325,10 +341,12 @@ The conference offers opportunities to learn about new features, connect with ot
       <td>10:45 - 12:15<br><br>Session 7<br>
       <p style="font-size:60%">Session chair:<br>Yun-Pang Flötteröd</p></td>
       <td>
-               <b>Simulation of DACH-Style Detector-Actuated Traffic Signal Control in SUMO</b><br><small>Markus Runhao Zhou, Johann Krüger and Meng Wang</small>
+      <b>Simulation of DACH-Style Detector-Actuated Traffic Signal Control in SUMO</b><br><small>Markus Runhao Zhou, Johann Krüger and Meng Wang</small>
        <hr>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3234.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
        <b>ATSUM: An Attlas-SUMO Middleware</b><br><small>Rodolfo Valentim, Tiago Pinheiro, Vincen Santaella, Artur Souza, João Cleverales, Fernando Martinelli and Víctor Martínez</small>
        <hr>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3287.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
        <b>Investigating Traffic Effects of Control Transitions in Level 3 Conditional Driving with SUMO</b><br><small>Robert Alms and Peter Wagner</small>
       </td>
     </tr>
@@ -340,8 +358,10 @@ The conference offers opportunities to learn about new features, connect with ot
       <td>13:00 - 14:00<br><br>Session 8<br>
       <p style="font-size:60%">Session chair:<br>Robert Hilbrich</p></td>
       <td colspan="2">
-             <b>Reproducing Weekly Crash Patterns Using a Minimalist Driver Error Model</b><br><small>Ronald Nippold, Andreas Leich and Peter Wagner</small>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3232.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
+      <b>Reproducing Weekly Crash Patterns Using a Minimalist Driver Error Model</b><br><small>Ronald Nippold, Andreas Leich and Peter Wagner</small>
        <hr>
+      <a target="_blank" href="https://sumo.dlr.de/preprints/pre-print-3301.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Preprint</span></a>
        <b>Towards Smarter Intersections Through Digital Twins - The Coupling of SUMO and SCENIMINI</b><br><small>Lars Klitzke, Yun-Pang Flötteröd and Peter Wagner</small>
       </td>
     </tr>
