@@ -595,6 +595,9 @@ This 2-hour workshop explores the potential of Digital Twins in urban traffic ma
     <tr>
     <td>Kentyou</td>
   </tr>
+  <tr>
+    <td>co4e GmbH - SESAM: Mobility Simulations in the Cloud</td>
+  </tr>
 </tbody>
 </table>
 
