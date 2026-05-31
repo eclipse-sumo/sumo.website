@@ -125,6 +125,7 @@ The conference offers opportunities to learn about new features, connect with ot
         <li>KISLEK - KI zur Steuerung verbundener Verkehrsknoten - <small>Lukas Klein</small></li>
         <li>Revisiting Mesoscopic Traffic Flow Simulation in SUMO: Limitations, Analysis, and an Alternative - <small>Ying-Chuan Ni, Alina Akopian, Anastasios Kouvelas, Michail A. Makridis</small></li>
         <li>QI-TraSiCo – Quantum-Inspired Traffic Signal Control - <small>Elisabeth Wagner et al.</small></li>
+        <li>Causality-Aware Energy Forecasting and Adaptive Task Control in Edge-Assisted Autonomous Vehicular Networks<small>Maha Alruwaili</small></li>
       </ul>
       </td>
     </tr>
