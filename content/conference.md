@@ -110,21 +110,21 @@ The conference offers opportunities to learn about new features, connect with ot
       <td>11:00 - 12:00<br><br>Poster Session 1</td>
       <td colspan="2">
       <ul>
-        <li>Modelling approach for cargo bikes in rural areas as logistic carriers - <small>Isabel Bruns</small></li>
-        <li>Smart Urban Mobility Simulation: A Case Study of Hradec Králové - <small>Michal Michna, Jan Hladěna, Kamila Štekerová, Pavel Čech</small></li>
-        <li>Integrating Elevation Data in SUMO models for detailed estimation of Energy consumption by Electric Vehicle in large networks - <small>Francesco Deflorio, Matteo Ferraro, Giuseppe Calcagno, Amirehsan Charlang Bakhtyari, Lorenzo Sica, Angela Carboni</small></li>
-        <li>Towards Empathic Vehicles: Simulator-Based Induction of Affective States for Emotion Recognition - <small>Niklas Fraissl et al.</small></li>
-        <li>A Multi-Scenario Simulation Approach for Climate-Neutral Urban Corridors - <small>Evangelos Mintsis, S. Kontorinis, V. Mizaras, E. Mitsakis, G. Ayfantopoulou</small></li>
-        <li>Instantania, the fast, parallelized traffic microsimulator for large scale transport digital twins - <small>Joerg Schweizer, Benyamin Heidary</small></li>
+        <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-1.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> Modelling approach for cargo bikes in rural areas as logistic carriers - <small>Isabel Bruns</small></li>
+        <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-2.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> Smart Urban Mobility Simulation: A Case Study of Hradec Králové - <small>Michal Michna, Jan Hladěna, Kamila Štekerová, Pavel Čech</small></li>
+        <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-6.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> Integrating Elevation Data in SUMO models for detailed estimation of Energy consumption by Electric Vehicle in large networks - <small>Francesco Deflorio, Matteo Ferraro, Giuseppe Calcagno, Amirehsan Charlang Bakhtyari, Lorenzo Sica, Angela Carboni</small></li>
+        <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-8.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> Towards Empathic Vehicles: Simulator-Based Induction of Affective States for Emotion Recognition - <small>Niklas Fraissl et al.</small></li>
+        <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-9.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> A Multi-Scenario Simulation Approach for Climate-Neutral Urban Corridors - <small>Evangelos Mintsis, S. Kontorinis, V. Mizaras, E. Mitsakis, G. Ayfantopoulou</small></li>
+        <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-25.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> Instantania, the fast, parallelized traffic microsimulator for large scale transport digital twins - <small>Joerg Schweizer, Benyamin Heidary</small></li>
         <li>Bridging Communities: Advancing JuPedSim for Pedestrian Dynamics and Urban Mobility Research - <small>Jette Degenhardt, Mohcine Chraibi and Ralf Leibold</small></li>
         <li>Sustainable Routing for Next-Generation Mobility: Linking Evolutionary Game Theory and SUMO - <small>Andrea Bertolini, Lorenzo Castelli </small></li>
-        <li>Testing Adaptive Lane-Change Planners in Realistic Traffic: A Co-Simulation Framework using SUMO, Simulink, and RoadRunner - <small>Philipp Hafemann, Anusha Ailuri, Surya Talluri, Simone Hämmerle, Naga Pemmaraju</small></li>
-        <li>Environmental Impact Analysis for a New Urban Development - <small>Aya Aly, Paulo Moura</small></li>
+        <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-16.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> Testing Adaptive Lane-Change Planners in Realistic Traffic: A Co-Simulation Framework using SUMO, Simulink, and RoadRunner - <small>Philipp Hafemann, Anusha Ailuri, Surya Talluri, Simone Hämmerle, Naga Pemmaraju</small></li>
+        <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-18.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> Environmental Impact Analysis for a New Urban Development - <small>Aya Aly, Paulo Moura</small></li>
         <li>Network Performance Analysis of Car-Following Models and Traffic Signal Light Configurations using SUMO - <small>Arya Karnik, Mounika Raj Kavadi, Joshua Bittle</small></li>
-        <li>Analysis and comparison of Multimodal Link Transmission Model and SUMO in urban networks - <small>Ning Xie, Meng Wang</small></li>
+        <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-24.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> Analysis and comparison of Multimodal Link Transmission Model and SUMO in urban networks - <small>Ning Xie, Meng Wang</small></li>
         <li>KISLEK - KI zur Steuerung verbundener Verkehrsknoten - <small>Lukas Klein</small></li>
-        <li>Revisiting Mesoscopic Traffic Flow Simulation in SUMO: Limitations, Analysis, and an Alternative - <small>Ying-Chuan Ni, Alina Akopian, Anastasios Kouvelas, Michail A. Makridis</small></li>
-        <li>QI-TraSiCo – Quantum-Inspired Traffic Signal Control - <small>Elisabeth Wagner et al.</small></li>
+        <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-14.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> Revisiting Mesoscopic Traffic Flow Simulation in SUMO: Limitations, Analysis, and an Alternative - <small>Ying-Chuan Ni, Alina Akopian, Anastasios Kouvelas, Michail A. Makridis</small></li>
+        <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-3.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> QI-TraSiCo – Quantum-Inspired Traffic Signal Control - <small>Elisabeth Wagner et al.</small></li>
         <li>Causality-Aware Energy Forecasting and Adaptive Task Control in Edge-Assisted Autonomous Vehicular Networks<small>Maha Alruwaili</small></li>
       </ul>
       </td>
@@ -255,20 +255,20 @@ The conference offers opportunities to learn about new features, connect with ot
       <td>13:00 - 14:00<br><br>Poster Session 2</td>
       <td colspan="2">
       <ul>
-      <li>Coupling Vessel Operations and Hinterland Traffic with SUMO and PySeidon - <small>Franck Majeste Silatsa Dogmo, Jordan Guimfack Jeuna, Junior Lesage Ekane Njoh, Laura Bieker-Walz, Lennart Steffen, Nelly Lesly Matchio Kuete, Rima Mkhalalati, Vanelle Leslie Ngeufa Leumalieu, Zidane Kenfack Fouape, Johannes Heidtmann, Philipp Schur</small></li>
-      <li>Towards Adaptive Traffic Pattern Clustering Reinforcement Learning in Traffic Signal Control - <small>Lukas Klein</small></li>
-      <li>Integrating Macroscopic and Microscopic Road Traffic Simulations for Impact Assessment of Flood-Related Disruptions - <small>Amirehsan Charlang Bakhtyari, Francesco Deflorio, Matteo Ferraro, Michele Amaddii, Fabio Castelli, Chiara Arrighi</small></li>
+      <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-4.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> Coupling Vessel Operations and Hinterland Traffic with SUMO and PySeidon - <small>Franck Majeste Silatsa Dogmo, Jordan Guimfack Jeuna, Junior Lesage Ekane Njoh, Laura Bieker-Walz, Lennart Steffen, Nelly Lesly Matchio Kuete, Rima Mkhalalati, Vanelle Leslie Ngeufa Leumalieu, Zidane Kenfack Fouape, Johannes Heidtmann, Philipp Schur</small></li>
+      <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-5.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> Towards Adaptive Traffic Pattern Clustering Reinforcement Learning in Traffic Signal Control - <small>Lukas Klein</small></li>
+      <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-7.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> Integrating Macroscopic and Microscopic Road Traffic Simulations for Impact Assessment of Flood-Related Disruptions - <small>Amirehsan Charlang Bakhtyari, Francesco Deflorio, Matteo Ferraro, Michele Amaddii, Fabio Castelli, Chiara Arrighi</small></li>
       <li>Systematic Integration of Heterogeneous Urban Demand Data into a Microscopic SUMO Simulation - <small>Mario Ilic, Niklas Gritsch, Prof. Dr.-Ing. Klaus Bogenberger</small></li>
       <li>Coordinate-based Lane-Specific Detector Map Matching in SUMO - <small>Niklas Gritsch, Mario Ilic, Prof. Dr.-Ing. Klaus Bogenberger </small></li>
-      <li>Realistic and Scalable Floating Car Observer Detection in SUMO Derived from Co-Simulation - <small>Jeremias Gerner, Klaus Bogenberger, and Stefanie Schmidtner </small></li>
-      <li>BikeZ-ETH: Mass bicycle traffic flow simulation API and cycling trajectory dataset - <small>Thomas Ramseier, Ying-Chuan Ni, Shaimaa K. El-Baklish, Kevin Riehl, Anastasios Kouvelas, Michail A. Makridis</small></li>
-      <li>LLM-Driven Agents for Evacuation Simulation in SUMO - <small>Michael Jones</small></li>
-      <li>Simulation of Unknown Motion - <small>Marius Dupuis, Andreas Richter</small></li>
+      <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-15.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> Realistic and Scalable Floating Car Observer Detection in SUMO Derived from Co-Simulation - <small>Jeremias Gerner, Klaus Bogenberger, and Stefanie Schmidtner </small></li>
+      <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-17.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> BikeZ-ETH: Mass bicycle traffic flow simulation API and cycling trajectory dataset - <small>Thomas Ramseier, Ying-Chuan Ni, Shaimaa K. El-Baklish, Kevin Riehl, Anastasios Kouvelas, Michail A. Makridis</small></li>
+      <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-19.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> LLM-Driven Agents for Evacuation Simulation in SUMO - <small>Michael Jones</small></li>
+      <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-20.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> Simulation of Unknown Motion - <small>Marius Dupuis, Andreas Richter</small></li>
       <li>How much do emissions differ? Testing three calculation methods - <small>Addina Shafiyya Ediansjah, Jens Borken-Kleefeld, Meng Wang</small></li>
-      <li>Multi-modal safety-optimized traffic management system using incident-informed rerouting and adaptive signal control: a SUMO application - <small>Dimitrios Tsitsokas, Georgios Matsioris, Emmanouil Barmpounakis, Ioannis Papamichail, Nikolas Geroliminis</small></li>
-      <li>sumo3Dviz - A three dimensional traffic visualisation - <small>Kevin Riehl, Julius Schlapbach, Anastasios Kouvelas, Michail Makridis</small></li>
+      <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-28.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> Multi-modal safety-optimized traffic management system using incident-informed rerouting and adaptive signal control: a SUMO application - <small>Dimitrios Tsitsokas, Georgios Matsioris, Emmanouil Barmpounakis, Ioannis Papamichail, Nikolas Geroliminis</small></li>
+      <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-29.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> sumo3Dviz - A three dimensional traffic visualisation - <small>Kevin Riehl, Julius Schlapbach, Anastasios Kouvelas, Michail Makridis</small></li>
       <li>Toward an Agentic AI Framework for Integrated MATSim-SUMO Policy Evaluation - <small>David Micallef, Luca Bondin, Alexiei Dingli</small></li>
-      <li>SESAM: Mobility Simulations in the Cloud - <small>Robert Hilbrich, Angelo Banse</small></li>
+      <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-32.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> SESAM: Mobility Simulations in the Cloud - <small>Robert Hilbrich, Angelo Banse</small></li>
       </ul></td>
     </tr>
     <tr>
@@ -628,7 +628,7 @@ This 2-hour workshop explores the potential of Digital Twins in urban traffic ma
   <h3 class="mt-0">Boat Tour</h3>
 <small><i class="fas fa-calendar-alt"></i> Monday June 01, 18:15 - 21:00</small>
 <br><br>
-We'll set off from Ernst-Ruska-Ufer and navigate the Teltowkanal, Dahme, and Müggelspree, arriving at the Müggelsee - Berlin's largest lake. After spending some time on the lake, the journey will then loop back to our original starting point.
+We'll set off from Ernst-Ruska-Ufer and navigate the Teltowkanal, Dahme, and Müggelspree, arriving at the Müggelsee - Berlin's largest lake. After spending some time on the lake, the journey will then loop back to our original <a href="https://maps.app.goo.gl/TUekdU4n8sfZZrJo8">starting point</a>.
 <br><br>
 <b>Food & Drinks: </b>
 Complimentary finger food will be provided. Please note that drinks must be paid for individually, and only cash payments are accepted.
