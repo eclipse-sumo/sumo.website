@@ -49,7 +49,7 @@ The conference offers opportunities to learn about new features, connect with ot
   </tr>
   <tr>
     <td>13:15 - 14:15</td>
-    <td colspan="2"><b>SUMO Tutorial</b></td>
+    <td colspan="2"><a target="_blank" href="../documents/2026/sumo2026_tutorial.zip"><span class="badge badge-secondary"><i class="far fa-file-archive"></i> Tutorial files</span></a>  <b>SUMO Tutorial</b></td>
   </tr>
   <tr>
     <td>14:15 - 15:15</td>
