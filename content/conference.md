@@ -125,7 +125,6 @@ The conference offers opportunities to learn about new features, connect with ot
         <li>KISLEK - KI zur Steuerung verbundener Verkehrsknoten - <small>Lukas Klein</small></li>
         <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-14.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> Revisiting Mesoscopic Traffic Flow Simulation in SUMO: Limitations, Analysis, and an Alternative - <small>Ying-Chuan Ni, Alina Akopian, Anastasios Kouvelas, Michail A. Makridis</small></li>
         <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-3.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> QI-TraSiCo – Quantum-Inspired Traffic Signal Control - <small>Elisabeth Wagner et al.</small></li>
-        <li>Causality-Aware Energy Forecasting and Adaptive Task Control in Edge-Assisted Autonomous Vehicular Networks - <small>Maha Alruwaili</small></li>
       </ul>
       </td>
     </tr>
@@ -269,6 +268,7 @@ The conference offers opportunities to learn about new features, connect with ot
       <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-29.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> sumo3Dviz - A three dimensional traffic visualisation - <small>Kevin Riehl, Julius Schlapbach, Anastasios Kouvelas, Michail Makridis</small></li>
       <li>Toward an Agentic AI Framework for Integrated MATSim-SUMO Policy Evaluation - <small>David Micallef, Luca Bondin, Alexiei Dingli</small></li>
       <li><a target="_blank" href="https://sumo.dlr.de/poster/poster-32.pdf"><span class="badge badge-secondary"><i class="fa-solid fa-file"></i> Poster</span></a> SESAM: Mobility Simulations in the Cloud - <small>Robert Hilbrich, Angelo Banse</small></li>
+      <li>Causality-Aware Energy Forecasting and Adaptive Task Control in Edge-Assisted Autonomous Vehicular Networks - <small>Maha Alruwaili</small></li>
       </ul></td>
     </tr>
     <tr>
