@@ -65,7 +65,7 @@ The conference offers opportunities to learn about new features, connect with ot
     <b>Workshop 1</b><br>Simulating Connected and Automated Mobility<br><a style="color:#0645ad; cursor:pointer;" href="#workshop1">Read more (+ Agenda) <i class="fas fa-angle-down"></i></a></td>
   </tr>
   <tr>
-    <td>18:30 - 21:00</td>
+    <td>18:15 - 21:00</td>
     <td colspan="2"><b>Evening Program - Social Event</b><br>
    Boat tour<br>
 <a style="color:#0645ad; cursor:pointer;" href="#social-event">Read more <i class="fas fa-angle-down"></i></a></td>
