@@ -159,7 +159,7 @@ The conference offers opportunities to learn about new features, connect with ot
        <b>A Cycle-Level Distribution-Based Calibration of Microscopic Intersection Models Using UAV Trajectories</b><br><small>Charalambos Tsioutis, Konstantinos Pourgourides and Stelios Timotheou</small>
       </td>
       <td>
-        <small><span class="badge badge-warning"><i class="fa-solid fa-location-dot"></i> Einstein-Kabinett</span></small><br>
+        <small><span class="badge badge-warning"><i class="fa-solid fa-location-dot"></i> Newton-Kabinett</span></small><br>
         <b>Workshop 3</b><br>
         Digital Twins and Traffic Management in Cities<br>
         <a href="#workshop3" style="color:#0645ad;">Read more (+ Agenda)<i class="fas fa-angle-down"></i></a>
