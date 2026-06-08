@@ -1,4 +1,8 @@
 conferences:
+  - year: 2026
+    location: "Berlin"
+    date: "June 01-04"
+    banner: "banner_2026.png"
   - year: 2025
     location: "Berlin"
     date: "May 12-14"

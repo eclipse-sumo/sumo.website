@@ -1,5 +1,5 @@
 ---
-title: "Previous SUMO User Conferences"
+title: "Previous SUMO Conferences"
 description : "Read more about the previous editions of the conference"
 layout: "single"
 draft: false
