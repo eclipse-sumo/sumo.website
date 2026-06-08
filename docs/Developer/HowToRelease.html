@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 01 June 2026
+Last edit: 08 June 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -185,6 +185,9 @@ Last edit: 01 June 2026
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#after-release_cleanup" class="nav-link">• After-release cleanup</a>
                 </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#the_day_after" class="nav-link">• The day after</a>
+                </li>
         </ul>
     </div>
 
@@ -339,15 +342,15 @@ distribution build can be achieved via "make dist".) The
 following things need to be in the S:\daily directory:</p>
 <ul>
 <li>the platform independent part of the distribution;<ul>
-<li>source and all inclusive distributions (.tar.gz, .zip) ("make dist")</li>
+<li>plain source and "special" debian source distributions with docs (.tar.gz, .zip) ("make dist")</li>
 </ul>
 </li>
 <li>the binary part of the distribution<ul>
 <li>windows binary distribution (zip, unzip the x64 file and run at least sumo-gui)</li>
-<li>windows installer (msi, Win32 and x64, includes docs)</li>
+<li>windows installer (msi, includes docs)</li>
 </ul>
 </li>
-<li>check the wheels in S:\daily\wheels<ul>
+<li>check the wheels in S:\daily\ciwheels<ul>
 <li>eclipse-sumo and libsumo for Windows, macOS, Linux x64 and Linux aarch64 (libsumo for all current python versions)</li>
 <li>sumolib, traci</li>
 </ul>
@@ -398,8 +401,7 @@ following things need to be in the S:\daily directory:</p>
 <li>upload using <code>dput -f ppa:sumo/stable ../sumo_1.27.0*_source.changes</code></li>
 </ul>
 </li>
-<li>start a pull request against <a href="https://github.com/microsoft/winget-pkgs/tree/master/manifests/e/EclipseFoundation/SUMO">winget</a></li>
-<li>upload the wheels to PyPI using <code>twine upload /s/daily/wheels/*1.27.0*.whl</code><ul>
+<li>upload the wheels to PyPI using <code>twine upload /s/daily/ciwheels/*1.27.0*.whl</code><ul>
 <li>you might need to do this with an up to date twine in a virtual environment, see <a href="https://github.com/pypi/warehouse/issues/15611">https://github.com/pypi/warehouse/issues/15611</a></li>
 </ul>
 </li>
@@ -422,12 +424,17 @@ following things need to be in the S:\daily directory:</p>
 <h3 id="after-release_cleanup">After-release cleanup<a class="headerlink" href="#after-release_cleanup" title="Permanent link">#</a></h3>
 <p>The trunk is now open for changes again.</p>
 <ul>
-<li>wait for the automated <a href="https://github.com/flathub/org.eclipse.sumo">flatpak</a> pull request to appear and built, then accept it</li>
 <li>re-enable HAVE_VERSION_H in src/config.h.cmake</li>
 <li>rename version to "git" in CMakeLists.txt</li>
 <li>insert a new empty "Git Main" section at the top of the <a href="../ChangeLog.html">ChangeLog</a></li>
 <li>commit changes</li>
 <li>drink your favorite beverage and/or eat cake</li>
+</ul>
+<h3 id="the_day_after">The day after<a class="headerlink" href="#the_day_after" title="Permanent link">#</a></h3>
+<ul>
+<li>check for a successful build of the automated <a href="https://github.com/flathub/org.eclipse.sumo">flatpak</a> pull request, then accept it</li>
+<li>check whether the automated <a href="https://github.com/microsoft/winget-pkgs/tree/master/manifests/e/EclipseFoundation/SUMO">winget</a> update was successful (also for the extra package)</li>
+<li>more cake</li>
 </ul>
                 </div>
           </div>
@@ -436,7 +443,7 @@ following things need to be in the S:\daily directory:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 01 June 2026</i></small>
+            <br><small><i>This page was last edited on: 08 June 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

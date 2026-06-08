@@ -43,7 +43,7 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;br&gt;
-&lt;p&gt;To &lt;strong&gt;unsubscribe&lt;/strong&gt; visit the same link(s) as given above for subscription.&lt;/p&gt;</description></item><item><title>Previous SUMO User Conferences</title><link>https://eclipse.dev/sumo/archive/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/archive/</guid><description>&lt;p&gt;The SUMO Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.&lt;/p&gt;
+&lt;p&gt;To &lt;strong&gt;unsubscribe&lt;/strong&gt; visit the same link(s) as given above for subscription.&lt;/p&gt;</description></item><item><title>Previous SUMO Conferences</title><link>https://eclipse.dev/sumo/archive/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/archive/</guid><description>&lt;p&gt;The SUMO Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.&lt;/p&gt;
 &lt;p&gt;The conference offers opportunities to learn about new features, connect with other users, engage with the developers, exchange ideas, and even start new collaborations.&lt;/p&gt;
 
 
@@ -51,20 +51,66 @@ Archive: &lt;a href="https://www.eclipse.org/lists/sumo-dev/"&gt;Eclipse Archive
  &lt;div class="row" style="display:flex; flex-wrap: wrap; align-items: stretch;"&gt;
  &lt;div class="col-md-4 mb-4 d-flex flex-column"&gt;
  &lt;div class="contact-div flex-fill"&gt;
- &lt;img src="../images/banner_2025.png" class="card-img-top" alt="Card image"&gt;
+ &lt;img src="../images/banner_2026.png" class="card-img-top" alt="Card image"&gt;
  &lt;div class="card-body"&gt;
- &lt;h5 class="card-title"&gt;2025&lt;/h5&gt;
- &lt;p class="card-text"&gt;May 12-14 • Berlin&lt;/p&gt;</description></item><item><title>SUMO Conference 2026</title><link>https://eclipse.dev/sumo/conference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/conference/</guid><description>&lt;!-- # Save the Date!
-
-June 01-04, 2026, in Berlin.
-
-The SUMO Conference, held every year in Berlin since 2013, is a must-attend event for anyone involved with SUMO. It gathers international participants from the industry, research and public institutions - to present (among others) projects, studies and advancements all around traffic, simulation and SUMO.
-
-The conference offers opportunities to learn about new features, connect with other users, engage with the developers, exchange ideas, and even start new collaborations. --&gt;
-&lt;div class="d-flex flex-column flex-md-row align-items-center gap-3 justify-content-center mb-4"&gt;
- &lt;p class="mb-0" style="margin-right: 20px"&gt;
- This event is supported by
- &lt;/p&gt;</description></item><item><title>SUMO Conference Proceedings</title><link>https://eclipse.dev/sumo/proceedings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/proceedings/</guid><description>&lt;p&gt;Read more information about the SUMO Conference Proceedings (SCP) Series &lt;a href="https://www.tib-op.org/ojs/index.php/scp/about"&gt;here&lt;/a&gt;.&lt;/p&gt;
+ &lt;h5 class="card-title"&gt;2026&lt;/h5&gt;
+ &lt;p class="card-text"&gt;June 01-04 • Berlin&lt;/p&gt;</description></item><item><title>SUMO Conference 2026</title><link>https://eclipse.dev/sumo/2026/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/2026/</guid><description>&lt;h1 id="agenda"&gt;Agenda&lt;/h1&gt;
+&lt;p&gt;&lt;small&gt;🕓 &lt;i&gt;Schedule given in Central European Summer Time (CEST) (UTC+2) - This agenda may be subject to change&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;table class="agenda"&gt;&lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th colspan="3"&gt;Monday, June 01, 2026&lt;/th&gt;
+ &lt;/tr&gt;&lt;/thead&gt;
+&lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;12:30 - 13:00&lt;/td&gt;
+ &lt;td colspan="2"&gt;Registration&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;13:00 - 13:15&lt;/td&gt;
+ &lt;td colspan="2"&gt;Opening&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;13:15 - 14:15&lt;/td&gt;
+ &lt;td colspan="2"&gt;&lt;a target="_blank" href="../documents/2026/sumo2026_tutorial.zip"&gt;&lt;span class="badge badge-secondary"&gt;&lt;i class="far fa-file-archive"&gt;&lt;/i&gt; Tutorial files&lt;/span&gt;&lt;/a&gt; &lt;b&gt;SUMO Tutorial&lt;/b&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;14:15 - 15:15&lt;/td&gt;
+ &lt;td colspan="2"&gt;&lt;b&gt;Ask us Anything&lt;/b&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;15:15 - 15:30&lt;/td&gt;
+ &lt;td colspan="2"&gt;&lt;i&gt;Coffee Break&lt;/i&gt; &amp;#x2615;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;15:30 - 17:30&lt;/td&gt;
+ &lt;td colspan="2"&gt;&lt;small&gt;&lt;span class="badge badge-warning"&gt;&lt;i class="fa-solid fa-location-dot"&gt;&lt;/i&gt; Einstein-Kabinett&lt;/span&gt;&lt;/small&gt;&lt;br&gt;
+ &lt;b&gt;Workshop 1&lt;/b&gt;&lt;br&gt;Simulating Connected and Automated Mobility&lt;br&gt;&lt;a style="color:#0645ad; cursor:pointer;" href="#workshop1"&gt;Read more (+ Agenda) &lt;i class="fas fa-angle-down"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;18:15 - 21:00&lt;/td&gt;
+ &lt;td colspan="2"&gt;&lt;b&gt;Evening Program - Social Event&lt;/b&gt;&lt;br&gt;
+ Boat tour&lt;br&gt;
+&lt;a style="color:#0645ad; cursor:pointer;" href="#social-event"&gt;Read more &lt;i class="fas fa-angle-down"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;table class="agenda"&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th colspan="3"&gt;Tuesday, June 02, 2026&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;09:00 - 09:15&lt;/td&gt;
+ &lt;td colspan="2"&gt;
+ &lt;b&gt;Opening Address&lt;/b&gt;&lt;br&gt;
+ Sascha Knake-Langhorst &lt;i&gt;&lt;small&gt;(Head of Department at DLR-TS)&lt;/small&gt;&lt;/i&gt;
+ and Michael Behrisch &lt;i&gt;&lt;small&gt;(SUMO Project Lead)&lt;/small&gt;&lt;/i&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;09:15 - 10:45&lt;br&gt;&lt;br&gt;Session 1
+ &lt;p style="font-size:60%"&gt;Session chair:&lt;br&gt;Ronald Nippold&lt;/p&gt;</description></item><item><title>SUMO Conference Proceedings</title><link>https://eclipse.dev/sumo/proceedings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/proceedings/</guid><description>&lt;p&gt;Read more information about the SUMO Conference Proceedings (SCP) Series &lt;a href="https://www.tib-op.org/ojs/index.php/scp/about"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id="proceedings"&gt;Proceedings&lt;/h1&gt;
 &lt;hr&gt;
 &lt;h2 id="current-volume"&gt;Current Volume&lt;/h2&gt;

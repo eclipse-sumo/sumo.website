@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 01 June 2026
+Last edit: 08 June 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -2069,6 +2069,104 @@ lists which parameter are used by which model(s). <a href="Car-Following-Models/
 <td>Rail</td>
 </tr>
 <tr>
+<td>tractionTable</td>
+<td>depends on trainType</td>
+<td>list of FLOAT</td>
+<td>traction values for each speed givein in speedTable</td>
+<td>Rail</td>
+</tr>
+<tr>
+<td>resistanceTable</td>
+<td>depends on trainType</td>
+<td>list of FLOAT</td>
+<td>resistance values for each speed givein in speedTable</td>
+<td>Rail</td>
+</tr>
+<tr>
+<td>massFactor</td>
+<td>1.04 - 1.1 depending on trainType</td>
+<td>&gt; 0</td>
+<td>factor for train mass to compute rotational weight</td>
+<td>Rail</td>
+</tr>
+<tr>
+<td>maxPower</td>
+<td></td>
+<td>&gt; 0</td>
+<td>parameter for <a href="Simulation/Railways.html#custom_dynamics_model_with_parameterized_curves">modelling train dynamics with parameterized curve</a></td>
+<td>Rail</td>
+</tr>
+<tr>
+<td>maxTraction</td>
+<td></td>
+<td>&gt; 0</td>
+<td>parameter for <a href="Simulation/Railways.html#custom_dynamics_model_with_parameterized_curves">modelling train dynamics with parameterized curve</a></td>
+<td>Rail</td>
+</tr>
+<tr>
+<td>resCoef_constant</td>
+<td></td>
+<td>&gt; 0</td>
+<td>parameter for <a href="Simulation/Railways.html#custom_dynamics_model_with_parameterized_curves">modelling train dynamics with parameterized curve</a></td>
+<td>Rail</td>
+</tr>
+<tr>
+<td>resCoef_linear</td>
+<td></td>
+<td>&gt; 0</td>
+<td>parameter for <a href="Simulation/Railways.html#custom_dynamics_model_with_parameterized_curves">modelling train dynamics with parameterized curve</a></td>
+<td>Rail</td>
+</tr>
+<tr>
+<td>resCoef_quadratic</td>
+<td></td>
+<td>&gt; 0</td>
+<td>parameter for <a href="Simulation/Railways.html#custom_dynamics_model_with_parameterized_curves">modelling train dynamics with parameterized curve</a></td>
+<td>Rail</td>
+</tr>
+<tr>
+<td>curveResistance</td>
+<td></td>
+<td>&gt; 0</td>
+<td>parameter for <a href="Simulation/Railways.html#curve_resistance">modelling train dynamics with parameterized curve</a></td>
+<td>Rail</td>
+</tr>
+<tr>
+<td>roeckl_sharp_radius</td>
+<td></td>
+<td>&gt; 0</td>
+<td>parameter for <a href="Simulation/Railways.html#curve_resistance">modelling train dynamics with parameterized curve</a></td>
+<td>Rail</td>
+</tr>
+<tr>
+<td>roeckl_numerator</td>
+<td></td>
+<td>&gt; 0</td>
+<td>parameter for <a href="Simulation/Railways.html#curve_resistance">modelling train dynamics with parameterized curve</a></td>
+<td>Rail</td>
+</tr>
+<tr>
+<td>roeckl_numerator_sharp</td>
+<td></td>
+<td>&gt; 0</td>
+<td>parameter for <a href="Simulation/Railways.html#curve_resistance">modelling train dynamics with parameterized curve</a></td>
+<td>Rail</td>
+</tr>
+<tr>
+<td>roeckl_offset</td>
+<td></td>
+<td>&gt; 0</td>
+<td>parameter for <a href="Simulation/Railways.html#curve_resistance">modelling train dynamics with parameterized curve</a></td>
+<td>Rail</td>
+</tr>
+<tr>
+<td>roeckl_offset_sharp</td>
+<td></td>
+<td>&gt; 0</td>
+<td>parameter for <a href="Simulation/Railways.html#curve_resistance">modelling train dynamics with parameterized curve</a></td>
+<td>Rail</td>
+</tr>
+<tr>
 <td>tpreview</td>
 <td>4.00</td>
 <td>&gt;= 1</td>
@@ -2097,7 +2195,7 @@ lists which parameter are used by which model(s). <a href="Car-Following-Models/
 <td>EIDM</td>
 </tr>
 <tr>
-<td>ccoolness</td>
+<td>coolness</td>
 <td>0.99</td>
 <td>[0,1]</td>
 <td>Coolness Parameter, the driver takes the acceleration of the leading vehicle into account. How cool the driver reacts to lane changes, which reduce the gap to the next leading vehicle. 0 means that this term is not used at all. (originally from <a href="https://doi.org/10.1098/rsta.2010.0084">Enhanced Intelligent Driver Model</a> (-)</td>
@@ -3088,7 +3186,7 @@ defining them for the vehicle or the vehicle type in the following way:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 01 June 2026</i></small>
+            <br><small><i>This page was last edited on: 08 June 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

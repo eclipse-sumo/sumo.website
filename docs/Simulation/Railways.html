@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 01 June 2026
+Last edit: 08 June 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -236,6 +236,9 @@ Last edit: 01 June 2026
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#custom_dynamics_model_with_parameterized_curves" class="nav-link">• Custom dynamics model with parameterized curves</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#curve_resistance" class="nav-link">• Curve Resistance</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#effects_of_train_length" class="nav-link">• Effects of train length</a>
@@ -630,6 +633,53 @@ The speeds must be given in m/s whereas the traction and resistance forces are i
 <span class="w">        </span><span class="na">resCoef_quadratic=</span><span class="s">&quot;0.00028&quot;</span><span class="w"> </span><span class="na">resCoef_linear=</span><span class="s">&quot;0.00003&quot;</span><span class="w"> </span><span class="na">resCoef_constant=</span><span class="s">&quot;1.670&quot;</span><span class="nt">/&gt;</span>
 </code></pre></div>
 
+<h2 id="curve_resistance">Curve Resistance<a class="headerlink" href="#curve_resistance" title="Permanent link">#</a></h2>
+<p>Resistance computation for curves is disabled by default because a give network model may not be accurate enough to allow computing sensible values (i.e. abstract networks with sharp 45 degree switches).
+To enable computation, set vType attribute <code>curveResistance="1"</code>
+The formula is computed from vType attributes as follows:</p>
+<div class="codehilite"><pre><span></span><code>  mass * roeckl_numerator / (curveRadius - roeckl_offset)
+</code></pre></div>
+
+<p>For a curve radius below attribute <code>roeckl_sharp_radius</code>, the values <code>roeckl_numerator_sharp</code> and <code>roeckl_offset_sharp</code> are used instead.
+All defaults are given below. They are tailored to mainline rail on a gauge of 1,435mmm</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>For rail networks with lower gauge and very shape turns (or rolling stock with short wheel base), the values should be adapted. Attempting to compute resistance for a radius below the offset value will raise a warning.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>curveResistance</td>
+<td>0</td>
+</tr>
+<tr>
+<td>roeckl_sharp_radius</td>
+<td>300</td>
+</tr>
+<tr>
+<td>roeckl_numerator</td>
+<td>6380</td>
+</tr>
+<tr>
+<td>roeckl_numerator_sharp</td>
+<td>4910</td>
+</tr>
+<tr>
+<td>roeckl_offset</td>
+<td>55</td>
+</tr>
+<tr>
+<td>roeckl_offset_sharp</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
 <h2 id="effects_of_train_length">Effects of train length<a class="headerlink" href="#effects_of_train_length" title="Permanent link">#</a></h2>
 <p>The length of a train has several imporant effects on a railway simulation:</p>
 <ul>
@@ -1102,7 +1152,7 @@ used. The attribute <code>source</code> must be set to the ID of the junction th
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 01 June 2026</i></small>
+            <br><small><i>This page was last edited on: 08 June 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
