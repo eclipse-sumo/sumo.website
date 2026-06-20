@@ -1441,6 +1441,10 @@
          <lastmod>1970-01-01</lastmod>
     </url>
     <url>
+         <loc>https://sumo.dlr.de/docs/Tutorials/2026.html</loc>
+         <lastmod>1970-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://sumo.dlr.de/docs/Tutorials/Autobahn.html</loc>
          <lastmod>1970-01-01</lastmod>
     </url>
@@ -1565,7 +1569,15 @@
          <lastmod>1970-01-01</lastmod>
     </url>
     <url>
+         <loc>https://sumo.dlr.de/docs/Tutorials/Jupedsim/JuPedSim_Intro.html</loc>
+         <lastmod>1970-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://sumo.dlr.de/docs/Tutorials/Jupedsim/crossing-simulation.html</loc>
+         <lastmod>1970-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://sumo.dlr.de/docs/Tutorials/Jupedsim/routing.html</loc>
          <lastmod>1970-01-01</lastmod>
     </url>
     <url>

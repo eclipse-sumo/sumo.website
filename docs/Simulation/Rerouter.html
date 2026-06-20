@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 June 2026
+Last edit: 19 June 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -452,11 +452,15 @@ until the defined interval ends. This may be used to simulate traffic
 jams, caused by spontaneous road closing.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>When using modified permissions, it may be necessary to use the option <strong>--ignore-route-errors</strong> as vehicles which are inserted while the closing is active may raise a route error otherwise. Furthermore, permissions may cause emergency braking. This can be mitigated by placing <a href="Variable_Speed_Signs.html">VariableSpeedSigns</a> ahead of the closing and slowing down traffic briefly before the closing.</p>
+<p>When using modified permissions, one of the options <strong>--ignore-route-errors</strong> or <strong>--device.rerouting-mode 8</strong> must be set. Otherwise, vehicles which are inserted while the closing is active may raise a route error. Ignoring all route errors runs the risk of masking problems that are not related to rerouters, and thus mode=8 is recommended. It is also possible to set the rerouting mode with <a href="GenericParameters.html">generic parameters</a>.</p>
 </div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>When using modified permissions together with option/param <strong>device.rerouting.mode=8</strong>, there should be at most one rerouter definition at any one time in the simulation that contains all closings. Otherwise vehicles may loop endlessly between two closed edges (because all closings other than the current rerouter are ignored).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Closing lanes or edges by setting attribute 'allow' or 'disallow' may cause emergency braking. This can be mitigated by placing <a href="Variable_Speed_Signs.html">VariableSpeedSigns</a> ahead of the closing and slowing down traffic briefly before the closing.</p>
 </div>
 <h2 id="closing_a_lane">Closing a Lane<a class="headerlink" href="#closing_a_lane" title="Permanent link">#</a></h2>
 <p>A "closingLaneReroute" forces the rerouter to close the lane &lt;LANE_ID&gt;
@@ -1011,7 +1015,7 @@ By setting attribute <code>priority</code> in the <a href="../Definition_of_Vehi
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 June 2026</i></small>
+            <br><small><i>This page was last edited on: 19 June 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

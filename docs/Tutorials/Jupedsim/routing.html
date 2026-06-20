@@ -1,0 +1,367 @@
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 01 January 1970 00:00:00
+Last edit: 19 June 2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta property="og:image" content="../../images/image-facebook.jpg">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="1080">
+        <meta property="og:image:height" content="1080">
+
+        
+        
+        <link rel="canonical" href="https://sumo.dlr.de/docs/Tutorials/Jupedsim/routing.html">
+        <link rel="shortcut icon" href="../../images/favicon.ico">
+        <title>Routing - SUMO Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-3.7.0.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+
+      <script>
+        // DARK MODE
+        function detectColorScheme(){
+          var theme="light";
+
+          if(localStorage.getItem("sumo-docs-theme")){
+              if(localStorage.getItem("sumo-docs-theme") == "dark"){
+                  var theme = "dark";
+              }
+          } else if(!window.matchMedia) {
+              return false;
+          } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+              var theme = "dark";
+          }
+
+          if (theme=="dark") {
+              document.documentElement.setAttribute("data-theme", "dark");
+          }
+        }
+        detectColorScheme();
+      </script>
+
+    </head>
+
+    <body>
+
+    <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-center">
+    <div class="container-fluid">
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li class="navitem">
+                        <a href="../../index.html" class="nav-link">Documentation</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../index.html" class="nav-link">Tutorials</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../../FAQ.html" class="nav-link">FAQ</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../../Downloads.html" class="nav-link">Downloads</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../../Publications.html" class="nav-link">Publications</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../../Developer/index.html" class="nav-link">Developer</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="../../ChangeLog.html" class="nav-link">ChangeLog</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="https://eclipse.dev/sumo/contact/" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa-solid fa-magnifying-glass"></i> <u>S</u>earch
+                    </a>
+                </li>
+                    <li class="nav-item">
+                        <a rel="edit" href="https://github.com/eclipse-sumo/sumo/edit/main/docs/web/docs/Tutorials/Jupedsim/routing.md" class="nav-link"><i class="fa-brands fa-github"></i> <u>E</u>dit on GitHub</a>
+                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    More <i class="fa-solid fa-circle-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item no-arrow-link" href="https://github.com/eclipse/sumo/issues">Report a Bug / Issue / Typo</a>
+                    <a class="dropdown-item" href="../../Editing_Articles.html">Help on editing articles</a>
+                    <a class="dropdown-item" href="https://github.com/eclipse/sumo/commits/main/docs/web">Recent documentation changes</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#mkdocs_keyboard_modal">Keyboard Shortcuts</a>
+                    <a class="dropdown-item no-arrow-link" href="https://sumo.dlr.de/sumo_documentation.zip">Download the Documentation</a>
+                    <span class="dropdown-item" id="dark-mode-div">Dark mode <label id="theme-switch" class="theme-switch" for="checkbox_theme">
+                        <input type="checkbox" id="checkbox_theme">
+                    </label></span>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="languagedrop" data-toggle="dropdown">
+                    <i class="fa-solid fa-language"></i> Languages <i class="fa-solid fa-circle-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                    <span class="dropdown-item">
+                        Translations are generated automatically by Google Translate:
+                    </span>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/routing.html?_x_tr_sl=en&_x_tr_tl=de">Deutsch</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/routing.html?_x_tr_sl=en&_x_tr_tl=es">Español</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/routing.html?_x_tr_sl=en&_x_tr_tl=pt">Português</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/routing.html?_x_tr_sl=en&_x_tr_tl=fr">Français</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/routing.html?_x_tr_sl=en&_x_tr_tl=it">Italiano</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/routing.html?_x_tr_sl=en&_x_tr_tl=zh-CN">简体中文</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/routing.html?_x_tr_sl=en&_x_tr_tl=zh-TW">繁體中文</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/routing.html?_x_tr_sl=en&_x_tr_tl=tr">Türkçe</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/routing.html?_x_tr_sl=en&_x_tr_tl=ja">日本語</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/routing.html?_x_tr_sl=en&_x_tr_tl=ko">한국어</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Tutorials/Jupedsim/routing.html?_x_tr_sl=auto&_x_tr_tl=en"><i class="fa-solid fa-arrow-right"></i> Other languages</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container-fluid">
+          <div class="row">
+                <div class="col-md-3">
+                  <div class="text-center"><a href="../../index.html" style="display: inline-block; margin: 5px 15px;"><img src="../../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a>
+                <a href="https://www.jupedsim.org" class="no-arrow-link" style="display: inline-block; margin-top: 5px;"><img src="../../images/jupedsim-logo.svg" alt="SUMO Logo" width="120px"></a></div>
+                  
+<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
+            <span class="fa-solid fa-angle-down"></span>
+        </button>
+    </div>
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary toc-scroll toc">
+        <ul class="nav flex-column bs-sidenav">
+            <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
+            <li class="nav-item main"><a href="#definition_of_routes_for_pedestrian_flows">Definition of routes for pedestrian flows</a></li>
+            <li class="nav-item main"><a href="#background">Background</a></li>
+            <li class="nav-item main"><a href="#definition_of_routes_in_walkable_areas">Definition of routes in walkable areas</a></li>
+            <li class="nav-item main"><a href="#routing_in_sumo_network_vs_explicit_jupedsim_areas">Routing in SUMO network vs. explicit JuPedSim areas</a></li>
+        </ul>
+    </div>
+
+    <div class="admonition conference" style="position: sticky; margin-top: 20px; margin-bottom:10px;">
+        <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
+    </div>
+
+</div>
+                </div>
+                <div class="col-md-9 main-area" role="main">
+                   <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
+                  <ul class="breadcrumbs">
+    <script>
+        var pagePath = "/docs/Tutorials/Jupedsim/routing.html";
+        var splitUrl = pagePath.split("/");
+        splitUrl.pop();
+        splitUrl.shift();
+        if (splitUrl[0] == 'docs') splitUrl.shift();
+        var homeLink = "../../index.html";
+        document.write('<li class="breadcrumb-item"><a href="' + homeLink + '"><i class="fa-solid fa-house"></i></a></li>');
+        var prev = '';
+
+        var dirLink = splitUrl.map(function (el) {
+        el = prev + el; prev = el + '/'; return el;
+        });
+
+        for (let i = 0; i < splitUrl.length; i++) {
+            document.write("<li class=\"breadcrumb-item\"><a class=\"no-arrow-link\" href=\"../../" + dirLink[i] + "\">" + splitUrl[i] + "</a></li>");
+        }
+    </script>
+    <li class="breadcrumb-item active">Routing</li>
+</ul>
+                  <hTitles>Routing<hr style="border: 0.5px solid #338033; margin-top: 5px !important;"></hTitles>
+                  
+                  
+
+<h2 id="definition_of_routes_for_pedestrian_flows">Definition of routes for pedestrian flows<a class="headerlink" href="#definition_of_routes_for_pedestrian_flows" title="Permanent link">#</a></h2>
+<p>In this tutorial you will learn how to define routes for <em>JuPedSim</em> agents. You will get to know the different routing strategies that are running implicitly (<em>SUMO</em> routing and <em>JuPedSim</em> routing) and how this should be considered when defining routes for <em>JuPedSim</em> agents.</p>
+<p>The starting point for this scenario is the result of this <a href="walkable_areas.html">tutorial</a> with various walkable areas. The resulting <strong>configurations files</strong> from this tutorial can be found <a href="https://github.com/PedestrianDynamics/SUMO-JuPedSim-Simulations/tree/main/tutorials/routing">here</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We changed the spacing of the vehicle flow attributes to “Poisson” to configure the traffic more realistic. The Poisson distribution serves as a theoretical baseline for modeling traffic arrivals under free-flow conditions, where vehicles arrive approximately independently at a constant average rate. </p>
+</div>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">#</a></h2>
+<p>Routes of JuPedSim agents are defined by a series of stages that need to be reached/passed by the agents – so called journeys. For a simulation scenario, different journeys can be defined which can (re)use the same stages. Each journey usually ends with an exit where the agents are removed from the simulation scenario. Between the stages of a journey, the agents choose the shortest path. You can find more information on JuPedSim's routing concept <a href="https://www.jupedsim.org/stable/concepts/routing.html">here</a>.</p>
+<p>Please note that not all functionalities of JuPedSim regarding the stages can be configured in <em>SUMO-JuPedSim</em>, such as waiting areas/positions. However, the concept of waiting areas is implicitly used at crossings, when agents need to wait at traffic lights.</p>
+<h2 id="definition_of_routes_in_walkable_areas">Definition of routes in walkable areas<a class="headerlink" href="#definition_of_routes_in_walkable_areas" title="Permanent link">#</a></h2>
+<p><em>JuPedSim</em>’s waypoints of the pedestrian journey are defined by a series of <em>SUMO</em> edges. <em>Netedit</em> allows to define specific mini edges which can be used in 2D areas. In this way, <em>SUMO</em>’s routing concept can be utilized for <em>JuPedSim</em>.</p>
+<p>We extend the given scenario with two mini edges. In the <strong>Network supermode</strong>, enable the <em>Edge mode</em>. Define one edge for the source of the pedestrian flow and add another edge as an intermediate waypoint. Make sure that pedestrians are allowed on the defined edges.</p>
+<p><img alt="Creation of auxiliary routing edges" src="../../images/jps_routing_edges.png" /></p>
+<p>These edges do not need to be connected in the network as they are reachable via the walkable area. This is why you must enable "ignore routing errors" in the <em>SUMO</em> options.</p>
+<p>For better visualization and easier handling in <em>netedit</em>, you can reduce the size of junctions. Click on the colorwheel icon and adapt the size of the junctions according to your preference.</p>
+<p><img alt="Properties of routing edges" src="../../images/jps_routing_view.png" /></p>
+<p>Let’s create a source for pedestrians in the top-right area, let them pass through the intermediate waypoint/edge, and walk to a <em>SUMO</em> edge. In <strong>Demand supermode</strong>, create a person flow between the two just defined edges.</p>
+<p><img alt="Routing 1st edge" src="../../images/jps_routing_flow1.png" /></p>
+<p>In this example we spawn one agent every four seconds. To continue the journey of this flow we switch to <em>Person plan mode</em>. Choose the just defined flow (pf_3) in the menu. Click on the end edge of the just defined person trip and then on a near <em>SUMO</em> edge to connect it to the final goal.</p>
+<p><img alt="Routing last edge" src="../../images/jps_routing_flow1_person_plan.png" /></p>
+<p>Press Enter to create the person trip. The resulting configuration in <em>netedit</em> should look as shown in the following picture. You can see a list of the connected person trips in the left menu. Make sure to always connect the edges and not the junctions. All person trip elements in the list should start with an "E".</p>
+<p><img alt="Person plan" src="../../images/jps_routing_flow1_person_plan_result.png" /></p>
+<p>If you open the scenario with <em>sumo-gui</em>, you should see that the JuPedSim agents target one edge after the other.</p>
+<p><img alt="Person plan config 2nd flow" src="../../images/jps_routing_flow1_result.gif" /></p>
+<h2 id="routing_in_sumo_network_vs_explicit_jupedsim_areas">Routing in <em>SUMO</em> network vs. explicit <em>JuPedSim</em> areas<a class="headerlink" href="#routing_in_sumo_network_vs_explicit_jupedsim_areas" title="Permanent link">#</a></h2>
+<p>We let a second stream start at the source edge but lead them to another goal.
+We want to let them disappear in the top-left building – so we create an edge as target in the left building. We define the route analogously to the previous flow: add another flow to the source edge, create a person trip and a person plan.</p>
+<p><img alt="Delete person config" src="../../images/jps_routing_flow2_config.png" /></p>
+<p>You will notice in the simulation results that the traffic lights are not considered by the JuPedSim agents.</p>
+<p><img alt="Rerouting" src="../../images/jps_routing_flow2_result.gif" /></p>
+<p>This is because the agents are still in JuPedSim routing mode, are not aware of the "rules" in the <em>SUMO</em> network, and choose their next goal only based on the shortest path. <em>SUMO</em> routing is only enabled between two edges that are part of the <em>SUMO</em> network. Therefore, we need to add more edges in the route plan: one when entering the <em>SUMO</em> network, and one when leaving.</p>
+<p>You can do this by adding more person trips in the <em>Person plan mode</em> for flow “pf_4”.
+Firstly, delete the last person trip (right-click on the element in the list).</p>
+<p><img alt="Delete person flow" src="../../images/jps_routing_flow2_delete.png" /></p>
+<p>Add new person trips by clicking on the start edge, the end edge, and pressing Enter. Then repeat this for the remaining connection of edges.</p>
+<p><img alt="Routing flow2 persontrip1" src="../../images/jps_routing_flow2_persontrip1.png" />
+<img alt="Routing flow2 persontrip2" src="../../images/jps_routing_flow2_persontrip2.png" />
+<img alt="Routing flow2 persontrip3" src="../../images/jps_routing_flow2_persontrip3.png" />
+<img alt="Routing flow2 config" src="../../images/jps_routing_flow2_config2.png" /></p>
+<p>If you run the simulation again, you can see a different behavior of the agents. They wait at the traffic lights. Also, their actual chosen route is different as they target the center of a <em>SUMO</em> edge when they enter/leave the <em>SUMO</em> network.</p>
+<p><img alt="Routing flow2 config2 result" src="../../images/jps_routing_flow2_config2_result.gif" /></p>
+<p>The routing is according to the following logic: <em>JuPedSim</em> source &gt; shortest path to <em>JuPedSim</em> waypoint &gt; shortest path to <em>SUMO</em> edge (center) &gt; <em>SUMO</em> routing to <em>SUMO</em> edge (center) &gt; shortest path to <em>JuPedSim</em> exit.</p>
+<p>If you want to modify the transition from <em>SUMO</em> to <em>JuPedSim</em> routing, you can split an edge to create several edges to choose from. In the <strong>Network supermode</strong>, enable the <em>Inspect mode</em> and right-click on the edge where it should be split. Split the edge via <em>Edge operations &gt; Split edge here</em>. Now you have created another edge that can be used as a part of the journey.</p>
+<p><img alt="Split edges" src="../../images/jps_routing_split_edge.png" /></p>
+<p>Adapt the person plan accordingly using the newly created edge as intermediate goal before reaching the building.
+Then the simulation result should look like this:</p>
+<p><img alt="Routing flow2 result corrected" src="../../images/jps_routing_flow2_result_corrected.gif" /></p>
+<p>You can see a different behavior of the flow “pf_4” (orange) after they've passed the crossing and moved to the building.</p>
+                </div>
+          </div>
+          <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+        </div>
+
+        <footer class="col-md-12">
+          
+            <br><small><i>This page was last edited on: 19 June 2026</i></small>
+          
+          <hr>
+            <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
+          <p>Follow us on <a class="no-arrow-link" href="https://www.twitter.com/eclipsesumo/"><i class="fa-brands fa-x-twitter"></i></a> <a class="no-arrow-link" href="https://www.facebook.com/simulationofurbanmobility/"><i class="fa-brands fa-facebook"></i></a> <a class="no-arrow-link" href="https://www.instagram.com/eclipse.sumo/"><i class="fa-brands fa-instagram"></i></a> <a class="no-arrow-link" href="https://www.threads.net/@eclipse.sumo"><i class="fa-brands fa-threads"></i></a>
+          | Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a></p>
+        </footer>
+
+      <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="color: #495057 !important;">
+                <p>Enter your search terms:</p>
+                <script async src="https://cse.google.com/cse.js?cx=004302551366764109984:1kpgtzrm6kv"></script>
+                <div class="gcse-search"></div>
+            </div>
+        </div>
+    </div>
+</div>
+      <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("goToTop").style.display = "block";
+          } else {
+            document.getElementById("goToTop").style.display = "none";
+          }
+        }
+
+        function goTopFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+
+        var base_url = "../..",
+            shortcuts = {"edit": 69, "help": 191, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+
+        <script>
+          const toggleSwitch = document.querySelector('#theme-switch input[type="checkbox"]');
+
+          function switchTheme(e) {
+              if (e.target.checked) {
+                  localStorage.setItem('sumo-docs-theme', 'dark');
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                  toggleSwitch.checked = true;
+              } else {
+                  localStorage.setItem('sumo-docs-theme', 'light');
+                  document.documentElement.setAttribute('data-theme', 'light');
+                  toggleSwitch.checked = false;
+              }
+          }
+
+          toggleSwitch.addEventListener('change', switchTheme, false);
+
+          if (document.documentElement.getAttribute("data-theme") == "dark"){
+              toggleSwitch.checked = true;
+          }
+          </script>
+
+      <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Key</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody style="color: #495057 !important;">
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help dialog</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search the Documentation</td>
+                  </tr>
+                  <tr>
+                    <td class="edit shortcut"><kbd>e</kbd></td>
+                    <td>Edit current page on GitHub</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+</html>
