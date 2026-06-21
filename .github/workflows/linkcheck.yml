@@ -17,4 +17,4 @@ jobs:
     - name: Lychee Link Checker
       uses: lycheeverse/lychee-action@master  # to be replaced with a fixed version once --accept-timeouts got released
       with:
-        args: --accept-timeouts --accept 200,401,403,418,429,500,502 -c lychee.toml --no-progress --root-dir ${{ github.workspace }} .
+        args: --accept-timeouts --accept 200,202,401,403,418,429,500,502 -c lychee.toml --no-progress --root-dir ${{ github.workspace }} .
