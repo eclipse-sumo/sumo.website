@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 22 June 2026
+Last edit: 24 June 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -220,7 +220,7 @@ Last edit: 22 June 2026
     </script>
     <li class="breadcrumb-item active">HowToRelease</li>
 </ul>
-                  <hTitles>HowToRelease<hr style="border: 0.5px solid #338033; margin-top: 5px !important;"></hTitles>
+                  <h1 class="h-title">HowToRelease</h1>
                   
                   
 
@@ -309,7 +309,7 @@ assigned to a later milestone.</p>
 </li>
 <li>update the <a href="../ChangeLog.html">ChangeLog</a> again if necessary</li>
 <li>check the correct email address and list of current ubuntu releases in <code>tools/build_config/ubuntu_release.sh</code></li>
-<li>patch the version information using <code>tools/build_config/updateReleaseInfo.py 1.27.0</code> and double check changes<ul>
+<li>patch the version information using <code>tools/build_config/updateReleaseInfo.py 1.27.1</code> and double check changes<ul>
 <li>in src/config.h.cmake, also the HAVE_VERSION_H macro should be disabled</li>
 <li>in CMakeLists.txt</li>
 <li><a href="https://github.com/eclipse-sumo/sumo/blob/main/docs/web/mkdocs.yml">in mkdocs.yml</a> in the <strong>extra:</strong> section at the end
@@ -365,7 +365,7 @@ following things need to be in the S:\daily directory:</p>
 <ul>
 <li>make a new folder in S:\Releases</li>
 <li>make new sumo.dlr.de-release<ul>
-<li>copy the folder from S:\Releases to the releases dir <code>scp -r /s/Releases/1.27.0 delphi@ts-sim-front-ba.intra.dlr.de:docs/releases</code></li>
+<li>copy the folder from S:\Releases to the releases dir <code>scp -r /s/Releases/1.27.1 delphi@ts-sim-front-ba.intra.dlr.de:docs/releases</code></li>
 </ul>
 </li>
 <li>update the eclipse.dev/sumo website<ul>
@@ -373,17 +373,17 @@ following things need to be in the S:\daily directory:</p>
 </ul>
 </li>
 <li>make new sourceforge-release<ul>
-<li>Login on the web browser, create a new folder and upload the files at <a href="https://sourceforge.net/projects/sumo/files/sumo/version%201.27.0/">https://sourceforge.net/projects/sumo/files/sumo/version%201.27.0/</a><ul>
+<li>Login on the web browser, create a new folder and upload the files at <a href="https://sourceforge.net/projects/sumo/files/sumo/version%201.27.1/">https://sourceforge.net/projects/sumo/files/sumo/version%201.27.1/</a><ul>
 <li>you might need to do this in several rounds because of the size</li>
 </ul>
 </li>
 <li>change default download attributes by clicking on the circled "i" after each file<ul>
-<li>the default for Windows is sumo-win64extra-1.27.0.msi, for macOS sumo-1.27.0.pkg and for all the others sumo-src-1.27.0.tar.gz</li>
+<li>the default for Windows is sumo-win64extra-1.27.1.msi, for macOS sumo-1.27.1.pkg and for all the others sumo-src-1.27.1.tar.gz</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>finish the Zenodo version draft, by uploading the <code>sumo-src-1.27.0.tar.gz</code>, adding the release info (can also be done later) and publishing it</li>
+<li>finish the Zenodo version draft, by uploading the <code>sumo-src-1.27.1.tar.gz</code>, adding the release info (can also be done later) and publishing it</li>
 <li>Create a new Eclipse release at <a href="https://projects.eclipse.org/projects/automotive.sumo">https://projects.eclipse.org/projects/automotive.sumo</a> (after login there should be a "Create Release" button)</li>
 <li>create a new entry in <a href="https://elib.dlr.de/">elib</a><ul>
 <li>the easiest way to do it, is by going to <a href="https://elib.dlr.de/cgi/users/home?screen=Items">Einträge verwalten</a> and clicking on the magnifying-glass-icon for an old release, then going to the "Aktionen" tab and selecting "Als Vorlage verwenden"</li>
@@ -396,12 +396,12 @@ following things need to be in the S:\daily directory:</p>
 <li>update the ubuntu ppa (see
 <a href="https://askubuntu.com/questions/642632/how-to-bump-the-version-of-a-package-available-in-another-users-ppa">https://askubuntu.com/questions/642632/how-to-bump-the-version-of-a-package-available-in-another-users-ppa</a>)<ul>
 <li>this assumes you have the devscripts package as well as all sumo dependencies installed</li>
-<li>unzip the special source release <code>tar xzf sumo_1.27.0.orig.tar.gz</code></li>
-<li>run <code>cd sumo-1.27.0 &amp;&amp; tools/build_config/ubuntu_release.sh</code> and enter the release comment</li>
-<li>upload using <code>dput -f ppa:sumo/stable ../sumo_1.27.0*_source.changes</code></li>
+<li>unzip the special source release <code>tar xzf sumo_1.27.1.orig.tar.gz</code></li>
+<li>run <code>cd sumo-1.27.1 &amp;&amp; tools/build_config/ubuntu_release.sh</code> and enter the release comment</li>
+<li>upload using <code>dput -f ppa:sumo/stable ../sumo_1.27.1*_source.changes</code></li>
 </ul>
 </li>
-<li>upload the wheels to PyPI using <code>twine upload /s/daily/ciwheels/*1.27.0*.whl</code><ul>
+<li>upload the wheels to PyPI using <code>twine upload /s/daily/ciwheels/*1.27.1*.whl</code><ul>
 <li>you might need to do this with an up to date twine in a virtual environment, see <a href="https://github.com/pypi/warehouse/issues/15611">https://github.com/pypi/warehouse/issues/15611</a></li>
 </ul>
 </li>
@@ -443,7 +443,7 @@ following things need to be in the S:\daily directory:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 22 June 2026</i></small>
+            <br><small><i>This page was last edited on: 24 June 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
