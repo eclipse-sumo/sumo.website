@@ -53,6 +53,10 @@ jobs:
         cd sumo/docs/web
         SOURCE_DATE_EPOCH=0 mkdocs build --strict -d ../docs
         # mv ../docs/Downloads.html ../docs/Downloads.php
+
+        # Removing all php code blocks
+        perl -0777 -i -pe 's#<\?php.*?\?>##gs' ../docs/Downloads.html
+        
         ../../tools/build_config/buildPyDoc.py ../pydoc
 
     - name: Get Commit Message
