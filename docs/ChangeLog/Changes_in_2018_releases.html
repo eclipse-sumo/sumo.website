@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 24 June 2026
+Last edit: 02 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +156,10 @@ Last edit: 24 June 2026
 
         <div class="container-fluid">
           <div class="row">
-                <div class="col-md-3">
+                <aside class="col-md-3">
                   <div class="text-center"><a href="../index.html" style="display: inline-block; margin-top: 5px;"><img src="../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
                   
-<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<aside class="navbar-light navbar-expand-md bs-sidebar hidden-print affix">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
             <span class="fa-solid fa-angle-down"></span>
@@ -205,9 +205,9 @@ Last edit: 24 June 2026
         <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
     </div>
 
-</div>
-                </div>
-                <div class="col-md-9 main-area" role="main">
+</aside>
+                </aside>
+                <main class="col-md-9 main-area">
                    <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
                   <ul class="breadcrumbs">
     <script>
@@ -569,9 +569,9 @@ Last edit: 24 June 2026
 <li>Simulation<ul>
 <li>All car-following models now respect the vType-attribute
   <em>emergencyDecel</em> as an absolute bound on deceleration. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/3556" title="GitHub Issue eclipse-sumo/sumo #3556">#3556</a></li>
-<li>Fixed some issues when using <a href="../Simulation/SublaneModel.html#simple_continuous_lane-change_model">continous lane
+<li>Fixed some issues when using <a href="../Simulation/SublaneModel.html#simple_continuous_lane-change_model">continuous lane
   change</a>. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/3767" title="GitHub Issue eclipse-sumo/sumo #3767">#3767</a>, Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/3769" title="GitHub Issue eclipse-sumo/sumo #3769">#3769</a>, Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/3770" title="GitHub Issue eclipse-sumo/sumo #3770">#3770</a>, Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/3771" title="GitHub Issue eclipse-sumo/sumo #3771">#3771</a>, Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/4364" title="GitHub Issue eclipse-sumo/sumo #4364">#4364</a></li>
-<li>Fixed back-and-forth changing when using <a href="../Simulation/SublaneModel.html#simple_continuous_lane-change_model">continous lane
+<li>Fixed back-and-forth changing when using <a href="../Simulation/SublaneModel.html#simple_continuous_lane-change_model">continuous lane
   change</a>. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/4010" title="GitHub Issue eclipse-sumo/sumo #4010">#4010</a></li>
 <li>Fixed loading of teleporting vehicles from simulation state in
   <em>.sbx</em> format. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/3787" title="GitHub Issue eclipse-sumo/sumo #3787">#3787</a></li>
@@ -830,7 +830,7 @@ Last edit: 24 June 2026
 <li>Rerouters now support the attribute <em>vTypes</em> which restricts
   their effect to vehicles from the given list of vehicle type
   IDs. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/4031" title="GitHub Issue eclipse-sumo/sumo #4031">#4031</a></li>
-<li>Vehicles are forming a coridor for emergency vehicles Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/1967" title="GitHub Issue eclipse-sumo/sumo #1967">#1967</a></li>
+<li>Vehicles are forming a corridor for emergency vehicles Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/1967" title="GitHub Issue eclipse-sumo/sumo #1967">#1967</a></li>
 <li>Added option <strong>--default.speeddev</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a> to control the default speed deviation of all
   vehicle types that do not define it. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/4421" title="GitHub Issue eclipse-sumo/sumo #4421">#4421</a></li>
 <li>Added lane/edge-attribute stopOffset for defining vClass
@@ -1069,8 +1069,8 @@ Last edit: 24 June 2026
 </ul>
 <ul>
 <li>Simulation<ul>
-<li><code>&lt;vTypeProbe&gt;</code> is now deprecated in favour of FCD-output filtering</li>
-<li><code>&lt;vaporizer&gt;</code> is now deprecated in favour of calibrators.</li>
+<li><code>&lt;vTypeProbe&gt;</code> is now deprecated in favor of FCD-output filtering</li>
+<li><code>&lt;vaporizer&gt;</code> is now deprecated in favor of calibrators.</li>
 <li>The default arrival position for person walks is now the middle
   of the destination edge. This reduces the asymmetry from
   arriving in forward or backward direction. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/3843" title="GitHub Issue eclipse-sumo/sumo #3843">#3843</a></li>
@@ -1127,7 +1127,7 @@ Last edit: 24 June 2026
 <ul>
 <li>TraCI<ul>
 <li>TraCI Version is now 18</li>
-<li>Embedded python is now deprecated in favour of
+<li>Embedded python is now deprecated in favor of
   <a href="../Libsumo.html">Libsumo</a>.</li>
 <li>TraCI now consistently represents time in seconds as a double
   precision floating point. This affects all client
@@ -1188,14 +1188,14 @@ Last edit: 24 June 2026
 </ul>
 </li>
 </ul>
-                </div>
+                </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 24 June 2026</i></small>
+            <br><small><i>This page was last edited on: 02 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

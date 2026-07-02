@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 24 June 2026
+Last edit: 02 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +156,10 @@ Last edit: 24 June 2026
 
         <div class="container-fluid">
           <div class="row">
-                <div class="col-md-3">
+                <aside class="col-md-3">
                   <div class="text-center"><a href="index.html" style="display: inline-block; margin-top: 5px;"><img src="images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
                   
-<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<aside class="navbar-light navbar-expand-md bs-sidebar hidden-print affix">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
             <span class="fa-solid fa-angle-down"></span>
@@ -168,17 +168,14 @@ Last edit: 24 June 2026
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary toc-scroll toc">
         <ul class="nav flex-column bs-sidenav">
             <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
-            <li class="nav-item main"><a href="#version_1271_25062026_downloads">Version 1.27.1 (25.06.2026) (downloads)</a></li>
+            <li class="nav-item main"><a href="#git_main_nightly_development_builds">Git Main (nightly development builds)</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#bugfixes" class="nav-link">• Bugfixes</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#enhancements" class="nav-link">• Enhancements</a>
                 </li>
-                <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#miscellaneous" class="nav-link">• Miscellaneous</a>
-                </li>
-            <li class="nav-item main"><a href="#version_1270_21052026">Version 1.27.0 (21.05.2026)</a></li>
+            <li class="nav-item main"><a href="#version_1271_25062026_downloads">Version 1.27.1 (25.06.2026) (downloads)</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#bugfixes_1" class="nav-link">• Bugfixes</a>
                 </li>
@@ -186,14 +183,24 @@ Last edit: 24 June 2026
                     <a href="#enhancements_1" class="nav-link">• Enhancements</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#miscellaneous_1" class="nav-link">• Miscellaneous</a>
+                    <a href="#miscellaneous" class="nav-link">• Miscellaneous</a>
                 </li>
-            <li class="nav-item main"><a href="#version_1260_29012026">Version 1.26.0 (29.01.2026)</a></li>
+            <li class="nav-item main"><a href="#version_1270_21052026">Version 1.27.0 (21.05.2026)</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#bugfixes_2" class="nav-link">• Bugfixes</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#enhancements_2" class="nav-link">• Enhancements</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#miscellaneous_1" class="nav-link">• Miscellaneous</a>
+                </li>
+            <li class="nav-item main"><a href="#version_1260_29012026">Version 1.26.0 (29.01.2026)</a></li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#bugfixes_3" class="nav-link">• Bugfixes</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#enhancements_3" class="nav-link">• Enhancements</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#miscellaneous_2" class="nav-link">• Miscellaneous</a>
@@ -206,9 +213,9 @@ Last edit: 24 June 2026
         <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
     </div>
 
-</div>
-                </div>
-                <div class="col-md-9 main-area" role="main">
+</aside>
+                </aside>
+                <main class="col-md-9 main-area">
                    <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
                   <ul class="breadcrumbs">
     <script>
@@ -235,8 +242,53 @@ Last edit: 24 June 2026
                   
                   
 
-<h2 id="version_1271_25062026_downloads">Version 1.27.1 (25.06.2026) (<a href="https://sumo.dlr.de/docs/Downloads.php">downloads</a>)<a class="headerlink" href="#version_1271_25062026_downloads" title="Permanent link">#</a></h2>
+<h2 id="git_main_nightly_development_builds">Git Main (<a href="https://sumo.dlr.de/docs/Downloads.php#nightly_snapshots">nightly development builds</a>)<a class="headerlink" href="#git_main_nightly_development_builds" title="Permanent link">#</a></h2>
 <h3 id="bugfixes">Bugfixes<a class="headerlink" href="#bugfixes" title="Permanent link">#</a></h3>
+<ul>
+<li>sumo<ul>
+<li>Fixed invalid error when using idle-algorithm 'taxistand' with an initial stop <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18162" title="GitHub Issue eclipse-sumo/sumo #18162">#18162</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>meso<ul>
+<li>Fixed invalid error 'too close too brake' when inserting stop <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18163" title="GitHub Issue eclipse-sumo/sumo #18163">#18163</a></li>
+<li>Fixed crash when using idle-algorithm 'taxistand' <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18159" title="GitHub Issue eclipse-sumo/sumo #18159">#18159</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>netedit<ul>
+<li>Junction context menu operation 'clearing connections' no longer generates an invalid network if the junction had tls-controlled pedestrian crossings <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18145" title="GitHub Issue eclipse-sumo/sumo #18145">#18145</a> (regression in 1.27.0)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>netconvert<ul>
+<li>Fixed crash when rail signal connection link index is patched <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18142" title="GitHub Issue eclipse-sumo/sumo #18142">#18142</a></li>
+<li>OSM: no longer importing superfluous tls where tram runs on road <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18146" title="GitHub Issue eclipse-sumo/sumo #18146">#18146</a></li>
+<li>Fixed missed joins when using <strong>--edges.join-tram-dist</strong> on a network with joined junctions <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18154" title="GitHub Issue eclipse-sumo/sumo #18154">#18154</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">#</a></h3>
+<ul>
+<li>sumo<ul>
+<li>Added option <strong>--slope-centered</strong> to replicate simplified slope computation found in other simulators <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18111" title="GitHub Issue eclipse-sumo/sumo #18111">#18111</a></li>
+<li>In carFollowModel 'Rail', curvature is now computed by integrating over a configurable distance (default 100m) to smooth piecewise linear geometry. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18138" title="GitHub Issue eclipse-sumo/sumo #18138">#18138</a></li>
+<li>vehicle types can be initialized with values from another vType by using attribute <code>refId</code> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18144" title="GitHub Issue eclipse-sumo/sumo #18144">#18144</a></li>
+<li>Elements <code>&lt;edgeData&gt;</code> and <code>&lt;laneData&gt;</code> now support attribute <code>speedThresholdRelative</code> as an optional condition for recording <code>waitingTime</code> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18161" title="GitHub Issue eclipse-sumo/sumo #18161">#18161</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>meso<ul>
+<li>Now supports traffic light type 'actuated' <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/8735" title="GitHub Issue eclipse-sumo/sumo #8735">#8735</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="version_1271_25062026_downloads">Version 1.27.1 (25.06.2026) (<a href="https://sumo.dlr.de/docs/Downloads.php">downloads</a>)<a class="headerlink" href="#version_1271_25062026_downloads" title="Permanent link">#</a></h2>
+<h3 id="bugfixes_1">Bugfixes<a class="headerlink" href="#bugfixes_1" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
 <li>Fixed crash in sublane simulation with unusual turning lanes <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18030" title="GitHub Issue eclipse-sumo/sumo #18030">#18030</a> (regression in 1.27.0)</li>
@@ -312,7 +364,7 @@ Last edit: 24 June 2026
 </ul>
 </li>
 </ul>
-<h3 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">#</a></h3>
+<h3 id="enhancements_1">Enhancements<a class="headerlink" href="#enhancements_1" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
 <li>CarFollowModel "Rail', can now include train resistance due to curvature by setting vType attribute <code>curveResistance="1"</code>. The underlying Röckl model exposes 5 configuration parameters (i.e. to adapt to different gauges and wheel bases). <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18057" title="GitHub Issue eclipse-sumo/sumo #18057">#18057</a></li>
@@ -335,7 +387,7 @@ Last edit: 24 June 2026
 </ul>
 <ul>
 <li>od2trips<ul>
-<li>Added option <strong>--flow-output.poisson</strong> to generate poission distributed insertions when option <strong>--flow-output</strong> is set. refs <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18117" title="GitHub Issue eclipse-sumo/sumo #18117">#18117</a></li>
+<li>Added option <strong>--flow-output.poisson</strong> to generate poisson distributed insertions when option <strong>--flow-output</strong> is set. refs <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18117" title="GitHub Issue eclipse-sumo/sumo #18117">#18117</a></li>
 </ul>
 </li>
 </ul>
@@ -359,7 +411,7 @@ Last edit: 24 June 2026
 <li>Added new <a href="Tutorials/RailwayScenario.html">Railway scenario tutorial</a> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17929" title="GitHub Issue eclipse-sumo/sumo #17929">#17929</a></li>
 </ul>
 <h2 id="version_1270_21052026">Version 1.27.0 (21.05.2026)<a class="headerlink" href="#version_1270_21052026" title="Permanent link">#</a></h2>
-<h3 id="bugfixes_1">Bugfixes<a class="headerlink" href="#bugfixes_1" title="Permanent link">#</a></h3>
+<h3 id="bugfixes_2">Bugfixes<a class="headerlink" href="#bugfixes_2" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
 <li>Invalid separator in allow/disallow now results in error instead of warning again (regression in 1.21.0) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17709" title="GitHub Issue eclipse-sumo/sumo #17709">#17709</a></li>
@@ -548,7 +600,7 @@ Last edit: 24 June 2026
 </ul>
 </li>
 </ul>
-<h3 id="enhancements_1">Enhancements<a class="headerlink" href="#enhancements_1" title="Permanent link">#</a></h3>
+<h3 id="enhancements_2">Enhancements<a class="headerlink" href="#enhancements_2" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
 <li>Cars no longer enter a bidi-edge if it is occupied or already being approached from a higher-priority road <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/10941" title="GitHub Issue eclipse-sumo/sumo #10941">#10941</a></li>
@@ -590,7 +642,7 @@ Last edit: 24 June 2026
 <li>netedit<ul>
 <li>Edge attribute routingType is now supported <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17095" title="GitHub Issue eclipse-sumo/sumo #17095">#17095</a></li>
 <li>Element context menu for multiple objects at the same spot now shows selection status (also in sumo-gui) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17731" title="GitHub Issue eclipse-sumo/sumo #17731">#17731</a></li>
-<li>Phase attribute "next" automaticaly updates when adding new phases <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16488" title="GitHub Issue eclipse-sumo/sumo #16488">#16488</a></li>
+<li>Phase attribute "next" automatically updates when adding new phases <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16488" title="GitHub Issue eclipse-sumo/sumo #16488">#16488</a></li>
 <li>Added 18 more tools to the menu <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17950" title="GitHub Issue eclipse-sumo/sumo #17950">#17950</a></li>
 </ul>
 </li>
@@ -679,12 +731,12 @@ Last edit: 24 June 2026
 <li>Option <strong>--netstate-dump</strong> (also known as raw dump) is now deprecated. fcd-output has been upgraded to permit all attributes formerly only available in netstate dump. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16882" title="GitHub Issue eclipse-sumo/sumo #16882">#16882</a></li>
 <li>The OpenStreetMap Attribution of OSMWebWizard is no longer hidden behind the sidebar <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17743" title="GitHub Issue eclipse-sumo/sumo #17743">#17743</a></li>
 <li>Added link to <a href="Tutorials/index.html#external_courses_and_tutorials">A Free Educational Course Based on SUMO</a> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17742" title="GitHub Issue eclipse-sumo/sumo #17742">#17742</a></li>
-<li>The python modules <a href="https://sumo.dlr.de/pydoc/sumolib.html">sumolib</a> and <a href="https://sumo.dlr.de/pydoc/traci.html">traci</a> have now pdoc documentation.</li>
+<li>The python modules <a href="https://sumo.dlr.de/pydoc/sumolib.html">sumolib</a> and <a href="https://sumo.dlr.de/pydoc/traci.html">traci</a> have now pydoc documentation.</li>
 <li>The python module SUMOPy was superseded by hybridPY which extends the functionality and supports python 3 <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17365" title="GitHub Issue eclipse-sumo/sumo #17365">#17365</a></li>
 <li>The maximum Parquet/Arrow version to use is 23.0, newer versions require a newer compiler which needs to be enabled explicitly at build time</li>
 </ul>
 <h2 id="version_1260_29012026">Version 1.26.0 (29.01.2026)<a class="headerlink" href="#version_1260_29012026" title="Permanent link">#</a></h2>
-<h3 id="bugfixes_2">Bugfixes<a class="headerlink" href="#bugfixes_2" title="Permanent link">#</a></h3>
+<h3 id="bugfixes_3">Bugfixes<a class="headerlink" href="#bugfixes_3" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
 <li>Fixed deadlock in roundabout <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17330" title="GitHub Issue eclipse-sumo/sumo #17330">#17330</a> (regression in 1.24.0)</li>
@@ -804,7 +856,7 @@ Last edit: 24 June 2026
 <ul>
 <li>Options <strong>--output-prefix</strong> and <strong>--output-suffix</strong> can now be freely combined <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17545" title="GitHub Issue eclipse-sumo/sumo #17545">#17545</a></li>
 </ul>
-<h3 id="enhancements_2">Enhancements<a class="headerlink" href="#enhancements_2" title="Permanent link">#</a></h3>
+<h3 id="enhancements_3">Enhancements<a class="headerlink" href="#enhancements_3" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
 <li>Routing with randomized weights (<strong>--weights.random-factor</strong>) is now stable with respect to network changes, vehicle composition and state loading. The random noise for each edge only depends on the random seed and vehicle id (also applies to duarouter). If thew new option <strong>--weights.random-factor.dynamic</strong> is set, the randomness in the simulation also varies over time. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17325" title="GitHub Issue eclipse-sumo/sumo #17325">#17325</a></li>
@@ -907,14 +959,14 @@ Last edit: 24 June 2026
 <li><a href="ChangeLog/Changes_from_version_0.9.0_up_to_0.9.10.html">Changes in versions 0.9.0 up to 0.9.10</a></li>
 <li><a href="ChangeLog/Changes_from_version_pre0.8_up_to_0.8.3.html">Changes in versions pre0.8 up to 0.8.3</a></li>
 </ul>
-                </div>
+                </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 24 June 2026</i></small>
+            <br><small><i>This page was last edited on: 02 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 24 June 2026
+Last edit: 02 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +156,10 @@ Last edit: 24 June 2026
 
         <div class="container-fluid">
           <div class="row">
-                <div class="col-md-3">
+                <aside class="col-md-3">
                   <div class="text-center"><a href="../index.html" style="display: inline-block; margin-top: 5px;"><img src="../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
                   
-<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<aside class="navbar-light navbar-expand-md bs-sidebar hidden-print affix">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
             <span class="fa-solid fa-angle-down"></span>
@@ -189,9 +189,9 @@ Last edit: 24 June 2026
         <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
     </div>
 
-</div>
-                </div>
-                <div class="col-md-9 main-area" role="main">
+</aside>
+                </aside>
+                <main class="col-md-9 main-area">
                    <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
                   <ul class="breadcrumbs">
     <script>
@@ -263,14 +263,14 @@ time when their leader starts braking.</p>
 <p>The "safe" velocity for every simulation step is computed by the configured carFollowModel based on the leading vehicle as well as the right-of-way-rules. To ensure safe driving under various circumstances, the maximum braking capability of the leader vehicle is also taken into account. This value is taken from the <strong>apparentDecel</strong> attribute of the leader vehicle (which defaults to the same value as it's <strong>decel</strong> attribute).</p>
 <p>If for some reasons, reaching the safe velocity requires braking beyond the desired deceleration, the vehicle may do so up to a hard limit configured by the attribute <strong>emergencyDecel</strong>. The default emergency deceleration is 9 for passenger cars and takes a different <a href="../Vehicle_Type_Parameter_Defaults.html">default for other vehicle classes</a>. The global default can be changed with option <strong>--default.emergencydecel</strong>.</p>
 <p>An emergency braking warning is triggered if the braking strength exceeds a threshold value configured by <strong>----emergencydecel.warning-threshold</strong>. By default this threshold is set to <em>1</em> which triggers a warning when braking with 100% of <strong>emergencyDecel</strong>. The warnings can be disabled by setting the threshold to a value &gt; 1.</p>
-                </div>
+                </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 24 June 2026</i></small>
+            <br><small><i>This page was last edited on: 02 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

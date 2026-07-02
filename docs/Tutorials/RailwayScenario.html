@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 24 June 2026
+Last edit: 02 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +156,10 @@ Last edit: 24 June 2026
 
         <div class="container-fluid">
           <div class="row">
-                <div class="col-md-3">
+                <aside class="col-md-3">
                   <div class="text-center"><a href="../index.html" style="display: inline-block; margin-top: 5px;"><img src="../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
                   
-<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<aside class="navbar-light navbar-expand-md bs-sidebar hidden-print affix">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
             <span class="fa-solid fa-angle-down"></span>
@@ -180,9 +180,9 @@ Last edit: 24 June 2026
         <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
     </div>
 
-</div>
-                </div>
-                <div class="col-md-9 main-area" role="main">
+</aside>
+                </aside>
+                <main class="col-md-9 main-area">
                    <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
                   <ul class="breadcrumbs">
     <script>
@@ -234,8 +234,8 @@ based on network topology to improve rail routing and stop track assignment.</p>
 <ul>
 <li><strong>--ptstop-output osm.stops.xml</strong>: Required for guiding GTFS import</li>
 <li><strong>--ptline-output osm_ptlines.xml</strong>: Required for post-processing the network to find passing loops</li>
-<li><strong>--no-internal-links</strong>: speeds up simulationg and processing of large networks by removing details that are not needed for rail simulations</li>
-<li><strong>--railway.signal.guess.by-stops</strong>: heuristicaly add signals at stations (unless they already exist). This covers gaps in OSM signal coverage</li>
+<li><strong>--no-internal-links</strong>: speeds up simulation and processing of large networks by removing details that are not needed for rail simulations</li>
+<li><strong>--railway.signal.guess.by-stops</strong>: heuristically add signals at stations (unless they already exist). This covers gaps in OSM signal coverage</li>
 <li><strong>--railway.topology.all-bidi</strong>: Helps to cover track-direction errors in OSM</li>
 <li><strong>--ptline-clean-up</strong>: removes stops that were not used by public transport lines in the OSM data. Avoids bad track assignment</li>
 <li><strong>--railway.topology.ptline-priority rail,rail_urban</strong>: Assigns edge priorities according to use by trains and urban rail. This is critical for correct track assignment</li>
@@ -259,19 +259,19 @@ based on network topology to improve rail routing and stop track assignment.</p>
 
 <p>The relevant options are explained in the following</p>
 <ul>
-<li><strong>--time-to-teleport 1800</strong>: Trains may have to wait due to missing railway siginals. To avoid premature teleporting, it is useful to increase the default from 300s to 1800s.</li>
-<li><strong>--time-to-teleport.railsignal-deadlock  300</strong>: With this option, the simulation detectors circular infrastructure depenencies that cannot resolve themselves. </li>
-<li><strong>--railsignal.max-block-length 1e5</strong>: This option is relevant to prevent deadlocks on long single-track sections. It avoids deadlocks at the cost of extra computational time and memory. When simulationg at the country scale, a smaller value such as 1e5 should be used</li>
+<li><strong>--time-to-teleport 1800</strong>: Trains may have to wait due to missing railway signals. To avoid premature teleporting, it is useful to increase the default from 300s to 1800s.</li>
+<li><strong>--time-to-teleport.railsignal-deadlock  300</strong>: With this option, the simulation detectors circular infrastructure dependencies that cannot resolve themselves.</li>
+<li><strong>--railsignal.max-block-length 1e5</strong>: This option is relevant to prevent deadlocks on long single-track sections. It avoids deadlocks at the cost of extra computational time and memory. When simulating at the country scale, a smaller value such as 1e5 should be used</li>
 <li><strong>-H</strong>: human readable-times are friendlier in a simulation that covers a whole day</li>
 </ul>
-                </div>
+                </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 24 June 2026</i></small>
+            <br><small><i>This page was last edited on: 02 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

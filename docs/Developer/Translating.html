@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 24 June 2026
+Last edit: 02 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +156,10 @@ Last edit: 24 June 2026
 
         <div class="container-fluid">
           <div class="row">
-                <div class="col-md-3">
+                <aside class="col-md-3">
                   <div class="text-center"><a href="../index.html" style="display: inline-block; margin-top: 5px;"><img src="../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
                   
-<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<aside class="navbar-light navbar-expand-md bs-sidebar hidden-print affix">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
             <span class="fa-solid fa-angle-down"></span>
@@ -187,9 +187,9 @@ Last edit: 24 June 2026
         <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
     </div>
 
-</div>
-                </div>
-                <div class="col-md-9 main-area" role="main">
+</aside>
+                </aside>
+                <main class="col-md-9 main-area">
                    <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
                   <ul class="breadcrumbs">
     <script>
@@ -239,7 +239,7 @@ use <code>WRITE_MESSAGEF(TL("The vehicle '%' has a problem."), id);</code> (this
 <code>WRITE_WARNING</code> and <code>WRITE_ERROR</code> as well).</p>
 <p>Please be aware that changing a translatable string in the code (even if you just fix a typo)
 will invalidate (i.e. remove) all translations. This does not mean you should not do it, you
-should just review the changes to the translation files as well. In case you want to keep the translations 
+should just review the changes to the translation files as well. In case you want to keep the translations
 but fix a typo in the translatable string, please consider using <a href="#change_original_strings">our helper scripts</a> for that task.</p>
 <p>The translations should not be applied to debug and developer messages. This includes everything
 in src/foreign, src/libsumo, src/libtraci, src/traci_testclient and unittest.</p>
@@ -274,9 +274,9 @@ suppresses all translations. If you want the binaries to respect the environment
 <p>If you want to add a new language either <a href="https://github.com/eclipse-sumo/sumo/issues">open an issue</a> with your request
 or run <code>tools/build_config/i18n.py -l &lt;lang&gt;</code> and make a pull request with the resulting po files.</p>
 <h1 id="for_developers">For developers<a class="headerlink" href="#for_developers" title="Permanent link">#</a></h1>
-<p>The translated strings from Weblate are not pushed automatically to our github repo because automatic pushing
+<p>The translated strings from Weblate are not pushed automatically to our GitHub repo because automatic pushing
 is generally a bad idea and weblate does not have the rights. If you want to merge the commits in weblate into
-the main github you have to do the following in your local git clone of SUMO:</p>
+the main GitHub you have to do the following in your local git clone of SUMO:</p>
 <div class="codehilite"><pre><span></span><code>git pull  # make sure you are up to date and on the target branch (usually main)
 git remote add weblate https://hosted.weblate.org/git/eclipse-sumo/sumo-gui-netedit/  # add Weblate repo (only necessary once)
 git fetch weblate  # get new commits
@@ -291,14 +291,14 @@ the <a href="https://hosted.weblate.org/projects/eclipse-sumo/">Weblate</a> anym
 is preferable to use the python script <code>tools/build_config/updateMessageIDs.py</code> instead (see <a href="../Tools/Build.html#updatemessageidspy">updateMessageIDs.py help</a>).
 The script <code>tools/build_config/obsoleteTranslations.py</code> (see <a href="../Tools/Build.html#obsoletetranslationspy">obsoleteTranslations.py help</a>) can be used to
 print the obsolete translations and optionally remove them completely from the <code>.po</code> files.</p>
-                </div>
+                </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 24 June 2026</i></small>
+            <br><small><i>This page was last edited on: 02 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

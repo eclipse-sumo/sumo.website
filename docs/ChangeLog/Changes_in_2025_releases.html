@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 24 June 2026
+Last edit: 02 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +156,10 @@ Last edit: 24 June 2026
 
         <div class="container-fluid">
           <div class="row">
-                <div class="col-md-3">
+                <aside class="col-md-3">
                   <div class="text-center"><a href="../index.html" style="display: inline-block; margin-top: 5px;"><img src="../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
                   
-<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<aside class="navbar-light navbar-expand-md bs-sidebar hidden-print affix">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
             <span class="fa-solid fa-angle-down"></span>
@@ -219,9 +219,9 @@ Last edit: 24 June 2026
         <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
     </div>
 
-</div>
-                </div>
-                <div class="col-md-9 main-area" role="main">
+</aside>
+                </aside>
+                <main class="col-md-9 main-area">
                    <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
                   <ul class="breadcrumbs">
     <script>
@@ -356,7 +356,7 @@ Last edit: 24 June 2026
 <li>Vehicles on edges that are shorter than their geometrical length are no longer exaggerated lengthwise <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17074" title="GitHub Issue eclipse-sumo/sumo #17074">#17074</a></li>
 <li>Fixed crash when deleting last item of coloring/scaling scheme levels <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17138" title="GitHub Issue eclipse-sumo/sumo #17138">#17138</a> (also applies to netedit)</li>
 <li>Rerouter ids are now shown <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16715" title="GitHub Issue eclipse-sumo/sumo #16715">#16715</a></li>
-<li>JuPedSim obstacles are now shown at their configured z-coordinae in 3D-view <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17246" title="GitHub Issue eclipse-sumo/sumo #17246">#17246</a></li>
+<li>JuPedSim obstacles are now shown at their configured z-coordinate in 3D-view <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17246" title="GitHub Issue eclipse-sumo/sumo #17246">#17246</a></li>
 <li>Fixed crash after saving gui settings to registry under a new name <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17265" title="GitHub Issue eclipse-sumo/sumo #17265">#17265</a></li>
 </ul>
 </li>
@@ -409,8 +409,8 @@ Last edit: 24 June 2026
 <li>The junction model parameter <code>jmDriveRedSpeed</code> now takes effect when emergency vehicles with the bluelight device pass an intersection on red <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17120" title="GitHub Issue eclipse-sumo/sumo #17120">#17120</a></li>
 <li>Vehicles with the bluelight device can now pass a junction from the wrong turn lane without first reducing their speed to 0 <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17123" title="GitHub Issue eclipse-sumo/sumo #17123">#17123</a></li>
 <li>Vehicles that are driving outside their edge now permit increased lateral acceleration and lateral speed to return to the road <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17131" title="GitHub Issue eclipse-sumo/sumo #17131">#17131</a></li>
-<li>Added option <strong>--person-fcd-output</strong> to separate the outputs of vehicles and persons. This also leads to cleanar tabular outputs (csv, parqet) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16814" title="GitHub Issue eclipse-sumo/sumo #16814">#16814</a></li>
-<li>Actuated tls with custom conditions now supports expression <code>p:TLINDEX</code> to retrieve the number of pedestrions on approach to a crossing <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17229" title="GitHub Issue eclipse-sumo/sumo #17229">#17229</a></li>
+<li>Added option <strong>--person-fcd-output</strong> to separate the outputs of vehicles and persons. This also leads to cleaner tabular outputs (csv, parquet) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16814" title="GitHub Issue eclipse-sumo/sumo #16814">#16814</a></li>
+<li>Actuated tls with custom conditions now supports expression <code>p:TLINDEX</code> to retrieve the number of pedestrians on approach to a crossing <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17229" title="GitHub Issue eclipse-sumo/sumo #17229">#17229</a></li>
 <li>All insertion warnings/errors now report the failure time <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17259" title="GitHub Issue eclipse-sumo/sumo #17259">#17259</a></li>
 <li>summary-output now includes the number of discarded vehicles <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17282" title="GitHub Issue eclipse-sumo/sumo #17282">#17282</a></li>
 <li>When option <strong>--summary-output.period</strong> is set, summary-output will always include the final simulation step <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17283" title="GitHub Issue eclipse-sumo/sumo #17283">#17283</a></li>
@@ -457,7 +457,7 @@ Last edit: 24 June 2026
 </ul>
 <ul>
 <li>netconvert<ul>
-<li>Added option <strong>--output.removed-nodes</strong> which preserves ids of nodes that were removing during simplification withh <strong>--geometry.remove</strong> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16937" title="GitHub Issue eclipse-sumo/sumo #16937">#16937</a></li>
+<li>Added option <strong>--output.removed-nodes</strong> which preserves ids of nodes that were removing during simplification with <strong>--geometry.remove</strong> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16937" title="GitHub Issue eclipse-sumo/sumo #16937">#16937</a></li>
 <li>Added option <strong>--junctions.attach-removed</strong> which can be used to merge networks that were processed with option <strong>--output.removed-nodes</strong> and correctly re-attach at removed junctions <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16968" title="GitHub Issue eclipse-sumo/sumo #16968">#16968</a></li>
 <li>Option <strong>--junctions.join-same</strong> now supports setting the matching distance for joining <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16969" title="GitHub Issue eclipse-sumo/sumo #16969">#16969</a></li>
 <li>Added new edge attribute <code>routingType</code> which can be used to influence routing together with the new <code>&lt;preference&gt;</code> element <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17094" title="GitHub Issue eclipse-sumo/sumo #17094">#17094</a></li>
@@ -488,12 +488,12 @@ Last edit: 24 June 2026
 </ul>
 <h3 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">#</a></h3>
 <ul>
-<li>Option <strong>--junctions.join-same</strong> whas changed from type <em>BOOL</em> to type <em>FLOAT</em> and now requires a distance argument. The previous behavior can be approximated by setting a value of <em>0.01</em> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16969" title="GitHub Issue eclipse-sumo/sumo #16969">#16969</a></li>
+<li>Option <strong>--junctions.join-same</strong> was changed from type <em>BOOL</em> to type <em>FLOAT</em> and now requires a distance argument. The previous behavior can be approximated by setting a value of <em>0.01</em> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16969" title="GitHub Issue eclipse-sumo/sumo #16969">#16969</a></li>
 <li>sumo now warns when setting option <strong>--threads</strong> with an argument greater than 1 <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17057" title="GitHub Issue eclipse-sumo/sumo #17057">#17057</a></li>
 <li>Added warnings and errors for different problems with a configuration file <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17069" title="GitHub Issue eclipse-sumo/sumo #17069">#17069</a></li>
 <li>Command line output under Windows now uses UTF charset <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17093" title="GitHub Issue eclipse-sumo/sumo #17093">#17093</a></li>
 <li><a href="../Demand/Automatic_Routing.html">Automatic rerouting</a> will no longer take place if the new route has the same travel time as the old route. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/4635" title="GitHub Issue eclipse-sumo/sumo #4635">#4635</a></li>
-<li>Vehicles with the bluelight device no longer set prefered lateral alignment to <code>arbitrary</code> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17124" title="GitHub Issue eclipse-sumo/sumo #17124">#17124</a></li>
+<li>Vehicles with the bluelight device no longer set preferred lateral alignment to <code>arbitrary</code> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17124" title="GitHub Issue eclipse-sumo/sumo #17124">#17124</a></li>
 <li>duaIterate.py: option <strong>--binary</strong> was removed <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16777" title="GitHub Issue eclipse-sumo/sumo #16777">#16777</a></li>
 <li>The attribute order in the FCD output of persons was changed and is now similar to the vehicles (affects only the type attribute).</li>
 <li>The nightly sumogame now loads all 3D objects <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/3032" title="GitHub Issue eclipse-sumo/sumo #3032">#3032</a></li>
@@ -691,7 +691,7 @@ Last edit: 24 June 2026
 <li>net2sel.py: Added new tool to obtain selection file with junctions and edges from .net.xml <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16907" title="GitHub Issue eclipse-sumo/sumo #16907">#16907</a></li>
 <li>routeSampler.py: Named route output now always writes the usage count as route "probability" attribute <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16919" title="GitHub Issue eclipse-sumo/sumo #16919">#16919</a></li>
 <li>route2poly.py: when using <strong>--standalone</strong> with <strong>--scale-width</strong>, named routes are scaled by attribute probability  <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16920" title="GitHub Issue eclipse-sumo/sumo #16920">#16920</a></li>
-<li>route2poly.py: when using option <strong>--scale-width</strong>, routes are sorted by count/probability in descending order. Option <strong>--filter-count</strong> can be used to exlude routes with low count <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16921" title="GitHub Issue eclipse-sumo/sumo #16921">#16921</a></li>
+<li>route2poly.py: when using option <strong>--scale-width</strong>, routes are sorted by count/probability in descending order. Option <strong>--filter-count</strong> can be used to exclude routes with low count <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16921" title="GitHub Issue eclipse-sumo/sumo #16921">#16921</a></li>
 </ul>
 </li>
 </ul>
@@ -1373,7 +1373,7 @@ Last edit: 24 June 2026
 <li>randomTrips.py: Added option <strong>--marouter</strong> to write routes which take into account traffic load on the network <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/15881" title="GitHub Issue eclipse-sumo/sumo #15881">#15881</a></li>
 <li>randomTrips.py: option <strong>--flows</strong> can now be used together with <strong>--pedestrians</strong> or <strong>--persontrips</strong> to create personFlows <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/12791" title="GitHub Issue eclipse-sumo/sumo #12791">#12791</a></li>
 <li>randomTrips.py: Added option <strong>--poisson</strong> to generate poisson-distributed flows (with option <strong>--flows</strong>) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/13178" title="GitHub Issue eclipse-sumo/sumo #13178">#13178</a></li>
-<li>routeStats.py: Added option <strong>--edges-file</strong> for counting the number of times per route that a specific edge (i.e. a counting) location was passed) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/15900" title="GitHub Issue eclipse-sumo/sumo #15900">#15900</a></li>
+<li>routeStats.py: Added option <strong>--edges-file</strong> for counting the number of times per route that a specific edge (i.e. a counting) location was passed <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/15900" title="GitHub Issue eclipse-sumo/sumo #15900">#15900</a></li>
 <li>routeSampler.py: Added option <strong>--verbose.timing</strong> to print wall-clock-time performance statistics <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/15910" title="GitHub Issue eclipse-sumo/sumo #15910">#15910</a></li>
 <li>routeSampler.py: Major increase in processing speed for long routes <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/15911" title="GitHub Issue eclipse-sumo/sumo #15911">#15911</a></li>
 <li>routeSampler.py: Added option <strong>--depart-distribution</strong> to distribute departures within the counting data intervals <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/15909" title="GitHub Issue eclipse-sumo/sumo #15909">#15909</a></li>
@@ -1408,14 +1408,14 @@ Last edit: 24 June 2026
 <li>Option <strong>--device.rerouting.railsignal</strong> is now inactive by default <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/15597" title="GitHub Issue eclipse-sumo/sumo #15597">#15597</a></li>
 <li>If a turning movement has more than one lane and may wait within the intersection, the lanes after the <em>internal junction</em> are now joined into the same internal edge <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/14776" title="GitHub Issue eclipse-sumo/sumo #14776">#14776</a></li>
 </ul>
-                </div>
+                </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 24 June 2026</i></small>
+            <br><small><i>This page was last edited on: 02 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

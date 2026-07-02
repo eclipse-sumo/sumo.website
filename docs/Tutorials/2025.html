@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 24 June 2026
+Last edit: 02 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +156,10 @@ Last edit: 24 June 2026
 
         <div class="container-fluid">
           <div class="row">
-                <div class="col-md-3">
+                <aside class="col-md-3">
                   <div class="text-center"><a href="../index.html" style="display: inline-block; margin-top: 5px;"><img src="../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
                   
-<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<aside class="navbar-light navbar-expand-md bs-sidebar hidden-print affix">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
             <span class="fa-solid fa-angle-down"></span>
@@ -202,9 +202,9 @@ Last edit: 24 June 2026
         <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
     </div>
 
-</div>
-                </div>
-                <div class="col-md-9 main-area" role="main">
+</aside>
+                </aside>
+                <main class="col-md-9 main-area">
                    <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
                   <ul class="breadcrumbs">
     <script>
@@ -319,14 +319,14 @@ But if we go down, we find some instances of rerouting. We can actually search f
 <p>So we need to know its ID. And when it departed. 22.00. And now I'm doing something that might be useful to you as well. I want to run the simulation again, but I don't want to mess up my output files. If I run it now, the simulation starts writing again and all the files are overwritten. But I'm setting an output prefix. So this is just something that is prepended to all the written file names. So when I run the simulation now, the old files will be unchanged. And I'm writing to different files. And let's jump. What was the correct time? So this is our breakpoint. That's it. And now we can jump to the car. Lucky for you, we have all these hotkeys recorded.
 So I don't have to think about them too much. And here we have it. We have this car. And it has an initial route that goes there. But we know that at some time, later, the route was changed. To be precise, about two and a half minutes later. So let's follow this car around. And see what happens. We see the battery is already in the orange zone. So it's driving along. And there you have it. It decides to go somewhere else. Here. To this charging location here. And now let's track this car some more. So it's leaving the motorway. It's going to charge. You can see over the time, the color changes. And now it's charged to 30%. So you see it was almost at the destination. So here the reserve factor was very conservative. It would certainly have made it home. But not all cars would have. With the lower reserve factor. So some of those really needed charging. And to give you a bit more perspective on the charging taking place. I looked at the charging stations output. And I threw this in one of our visualization scripts. And here you see the number of cars charged at the different stations. So we had 53 charging stations overall in the network. 21 of them were used. Some were seeing very heavy use. And so you can do all kinds of analysis. Some scenarios of what if. What happens if I place my stations here. What happens if I increase or decrease the number of stations. And then you can build our bright future. Where we have electric cars everywhere. And they don't break down by running out of battery charge.
 Thank you very much.</p>
-                </div>
+                </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 24 June 2026</i></small>
+            <br><small><i>This page was last edited on: 02 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

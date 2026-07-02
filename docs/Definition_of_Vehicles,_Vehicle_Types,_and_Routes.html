@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 24 June 2026
+Last edit: 02 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +156,10 @@ Last edit: 24 June 2026
 
         <div class="container-fluid">
           <div class="row">
-                <div class="col-md-3">
+                <aside class="col-md-3">
                   <div class="text-center"><a href="index.html" style="display: inline-block; margin-top: 5px;"><img src="images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
                   
-<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<aside class="navbar-light navbar-expand-md bs-sidebar hidden-print affix">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
             <span class="fa-solid fa-angle-down"></span>
@@ -343,9 +343,9 @@ Last edit: 24 June 2026
         <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
     </div>
 
-</div>
-                </div>
-                <div class="col-md-9 main-area" role="main">
+</aside>
+                </aside>
+                <main class="col-md-9 main-area">
                    <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
                   <ul class="breadcrumbs">
     <script>
@@ -982,6 +982,12 @@ parameters are described in the following.</p>
 <td>The name of the vehicle type</td>
 </tr>
 <tr>
+<td>refId</td>
+<td>id (string)</td>
+<td>-</td>
+<td>The name of the vehicle type used for initializing the new type's default values</td>
+</tr>
+<tr>
 <td>accel</td>
 <td>float</td>
 <td>2.6</td>
@@ -1216,6 +1222,11 @@ one can find definitions of the assigned vehicles' shapes, emissions,
 and assignment to abstract vehicle classes. These concepts will be
 described in the following. Also, you may find further descriptions of
 implemented car-following models in the subsection <a href="#car-following_models">#Car-Following Models</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The refId is evaluated when reading the vType definition, so if you reference a vTypeDistribution here,
+the new vType will always evaluate to the same value later.</p>
+</div>
 <h2 id="speed_distributions">Speed Distributions<a class="headerlink" href="#speed_distributions" title="Permanent link">#</a></h2>
 <h3 id="individual_speed_factor">Individual Speed Factor<a class="headerlink" href="#individual_speed_factor" title="Permanent link">#</a></h3>
 <p>The desired driving speed usually varies among the vehicle of a fleet.
@@ -2126,42 +2137,49 @@ lists which parameter are used by which model(s). <a href="Car-Following-Models/
 </tr>
 <tr>
 <td>curveResistance</td>
-<td></td>
+<td>0</td>
+<td>&gt; 0</td>
+<td>parameter for <a href="Simulation/Railways.html#curve_resistance">modelling train dynamics with parameterized curve</a></td>
+<td>Rail</td>
+</tr>
+<tr>
+<td>curveIntegration</td>
+<td>100</td>
 <td>&gt; 0</td>
 <td>parameter for <a href="Simulation/Railways.html#curve_resistance">modelling train dynamics with parameterized curve</a></td>
 <td>Rail</td>
 </tr>
 <tr>
 <td>roeckl_sharp_radius</td>
-<td></td>
+<td>300</td>
 <td>&gt; 0</td>
 <td>parameter for <a href="Simulation/Railways.html#curve_resistance">modelling train dynamics with parameterized curve</a></td>
 <td>Rail</td>
 </tr>
 <tr>
 <td>roeckl_numerator</td>
-<td></td>
+<td>6380</td>
 <td>&gt; 0</td>
 <td>parameter for <a href="Simulation/Railways.html#curve_resistance">modelling train dynamics with parameterized curve</a></td>
 <td>Rail</td>
 </tr>
 <tr>
 <td>roeckl_numerator_sharp</td>
-<td></td>
+<td>4910</td>
 <td>&gt; 0</td>
 <td>parameter for <a href="Simulation/Railways.html#curve_resistance">modelling train dynamics with parameterized curve</a></td>
 <td>Rail</td>
 </tr>
 <tr>
 <td>roeckl_offset</td>
-<td></td>
+<td>55</td>
 <td>&gt; 0</td>
 <td>parameter for <a href="Simulation/Railways.html#curve_resistance">modelling train dynamics with parameterized curve</a></td>
 <td>Rail</td>
 </tr>
 <tr>
 <td>roeckl_offset_sharp</td>
-<td></td>
+<td>30</td>
 <td>&gt; 0</td>
 <td>parameter for <a href="Simulation/Railways.html#curve_resistance">modelling train dynamics with parameterized curve</a></td>
 <td>Rail</td>
@@ -3179,14 +3197,14 @@ defining them for the vehicle or the vehicle type in the following way:</p>
 <p class="admonition-title">Note</p>
 <p>The <code>&lt;param&gt;</code> of a vehicle has precedence over the <code>&lt;param&gt;</code> of the vehicle's type. Both have precedence over the assignment by options.</p>
 </div>
-                </div>
+                </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 24 June 2026</i></small>
+            <br><small><i>This page was last edited on: 02 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

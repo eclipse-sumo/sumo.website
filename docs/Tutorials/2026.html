@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 24 June 2026
+Last edit: 02 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +156,10 @@ Last edit: 24 June 2026
 
         <div class="container-fluid">
           <div class="row">
-                <div class="col-md-3">
+                <aside class="col-md-3">
                   <div class="text-center"><a href="../index.html" style="display: inline-block; margin-top: 5px;"><img src="../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
                   
-<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<aside class="navbar-light navbar-expand-md bs-sidebar hidden-print affix">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
             <span class="fa-solid fa-angle-down"></span>
@@ -217,9 +217,9 @@ Last edit: 24 June 2026
         <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
     </div>
 
-</div>
-                </div>
-                <div class="col-md-9 main-area" role="main">
+</aside>
+                </aside>
+                <main class="col-md-9 main-area">
                    <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
                   <ul class="breadcrumbs">
     <script>
@@ -316,14 +316,14 @@ So lots of options for post-processing where you don't have to program everythin
 <p>There are actually two things there. The first is a new attribute for the edges that's called routing type. It can be an arbitrary string. If you don't set it, it's just the edge type. You know from OpenStreetMap, every edge already has a type like highway motorway or highway residential or cycleway. But maybe this is not the correct granularity for you. So you can set your own routing type if you need it. In this case, I just defined the routing type as cycleway to suggest what it's about. And then there's something that you define in an additional file. It's the preference structure. And here are two examples. So there's a preference for specific to the routing type cycleway. And if you have vehicle class bicycle, then you give to this priority 2. So baseline is priority 1. Priority 2 is basically saying it's twice as I like this twice as much. And practically what it means is the travel time is divided by the priority. So in this extreme case, I would be willing to drive almost twice as long if I get to satisfy my preference of this routing type. Just maybe a bit of an extreme example, but it's just to show the point. And likewise, you could define some roads that have a bad surface and that cars could drive, but maybe they would like to avoid it. And if you set the priority to 0.5, then they wouldn't use them even if they are twice as theoretically twice as fast there. So anything above zero you can put in there just divides the travel time. And you can either define this per vehicle class or by list of classes or by list of types. So it's very you can be very specific about preferences for the participants of the simulation. Very fine grain if you need it. And the only sad thing here is that you cannot yet define preferences in netedit. So you actually have to type this out, copy this out and put it in the XML files. I'm sure this will change in the inversion 1.28.0. But as of today, I couldn't show it in netedit, how you define preferences. So if you do this and if you put this in an additional file and load it in your SUMO configuration as additional file, then you will see that in this case of a minor detour, the bike would prefer the cycle way. I hope you find this useful. At least now you know that it's there as a feature. I'm using this extensively in railway simulation where you have two tracks running in parallel. But one is the preferred direction because the trains should not be in conflict. So depending on the country, they they prefer to ride on the right track, on other countries always on the left track in running direction. And so with these preferences you can say which is the preferred track, even though from a pure routing point of view, they would be almost equal distance or maybe the inside curve would be better, but it would still be the wrong track. So they are already useful.</p>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">#</a></h2>
 <p>In conclusion to this tutorial, even if you want put cars, use Web Wizard to get a quick start, at least for existing installations. If you still don't know all the tools that SUMO brings, you can use netedit to find them. And also, from personal experiences, it's not a bad idea to use large language models to get an overview of capabilities and components. The documentation can be quite large, but LLMs are more than up to the task of reading the documentation for you. But don't trust every word that they generate, so double-check. But still, I find them useful. Another thing to figure out how stuff works is to extract tests. So we have thousands of tests running every night and every commit, actually. And you can get small input examples out of our test suite with a small script that is on our website (<a href="https://sumo.dlr.de/extractTest.php">https://sumo.dlr.de/extractTest.php</a>). So you just put down the path of the test, and then you get a folder with a simulation that you can run. Don't forget to read the documentation. Please do report bugs. We don't mind if it's on the mailing list or on GitHub. Nowadays, most of the reports come on GitHub. That's fine. Please do share your scenarios and results and talk to us. We're always happy to talk to you. Thank you.</p>
-                </div>
+                </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 24 June 2026</i></small>
+            <br><small><i>This page was last edited on: 02 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

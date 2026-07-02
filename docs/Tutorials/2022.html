@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 24 June 2026
+Last edit: 02 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +156,10 @@ Last edit: 24 June 2026
 
         <div class="container-fluid">
           <div class="row">
-                <div class="col-md-3">
+                <aside class="col-md-3">
                   <div class="text-center"><a href="../index.html" style="display: inline-block; margin-top: 5px;"><img src="../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
                   
-<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<aside class="navbar-light navbar-expand-md bs-sidebar hidden-print affix">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
             <span class="fa-solid fa-angle-down"></span>
@@ -212,9 +212,9 @@ Last edit: 24 June 2026
         <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
     </div>
 
-</div>
-                </div>
-                <div class="col-md-9 main-area" role="main">
+</aside>
+                </aside>
+                <main class="col-md-9 main-area">
                    <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
                   <ul class="breadcrumbs">
     <script>
@@ -278,14 +278,14 @@ So of course it takes a while to download the data and to build the scenario but
 <p>Now to the last part of the tutorial before we are running out of time, let's talk about something more advanced let's talk about traffic in search of parking. Right now our traffic has entered the simulation and then they've well basically disappeared on the final edge, either at the border of the network or somewhere within the network, and this time we want something different: we want them all to find a parking spot at the end of their route, at the end of their trip. So for this we need to have three things: we need to define infrastructure (parking areas) and of course we could define those manually in netedit, but today I'll show you a pipeline to do all this fully automatic. So we'll need parking areas in our network. The next thing we'll need is a change of plans. The cars, they have to stop at the end of their route and again we could add those in netedit, but here I'll show you how to do this automatically. And we'll need a final thing for our parking search: we'll need information about, well, about the presence of alternative parking areas in the area. So think of those as the little parking guidance signs. Sometimes it's just a sign that says parking this way and sometimes it's a real information sign that has a digital display for showing the current occupancy of the parking areas at the destination. And you can define either one. And this today will go for just the signs that tell there is parking to be had this way. So the cars have to guess the occupancy. So all this is happening with three scripts that are put in a batch file and I'll go over the options for these, the meaning of these script real quickly. The first one generates parking areas for a whole network (<a href="../Tools/Misc.html#generateparkingareaspy">generateParkingAreas.py</a>). So basically here, it adds a parking capacity parking area to pretty much every edge. We can also add some randomization there. We find to the output files. This will hold the parking areas (<code>parking.add.xml</code>). It defines that each area has random capacity, and even if that should drop to zero, let's keep it anyway. So the parking areas will have capacity anywhere from one to a larger number. And let's not have any parking areas on motorways or motorway ramps. That would be sin. Okay. So the next script, it adds stops at the end of every trip (<a href="../Tools/Routes.html#addstops2routespy">addStops2Routes.py</a>). Again, it loads a network and it loads a demand file. These are all random passenger trips. And it also loads the parking areas and says, well, just not park anywhere, but park at the parking area for a duration of one hour. And finally, there's a script that generates the connectivity or visibility (<a href="../Tools/Misc.html#generateparkingarearerouterspy">generateParkingAreaRerouters.py</a>), it also needs the network, the parking areas, an output file, and in this case, it says, well, let's have the visibility, at least for the other side of the road. Going one way, you can see whether the parking areas on the other side of the road are occupied or not. And let's look for alternatives in an area of four kilometers. This is a bit extreme, but you'll see why we'll need this in a second. So all this is tied together in this batch file in the last part of the tutorial. So let's run this real quick. And it runs through all these stages. And then we can look at our simulation. So what do we see here? We see funny colors. I've colored the roads, streets or edges by the number of free parking spaces. So let's have a legend here. So somewhere between... up to maybe 20 or 40 parking spaces on some of that just know, but even more here. So let's run the simulation. And we have our cars this time I show them as circles and they're driving through the network, and what are they going to do? Well, let's look at one of those cars, and not one on the motorway, but one on the road. Let's show the route. So this car wants to stop there for 3,600 seconds. Well, then let's follow this car. I'll do a <kbd>Shift</kbd>-click on the car or its route and I'm in tracking mode. And so let's track where it's going. Well, it did find a parking spot and that's it. So to stop tracking the car, I can do a right click here and select "stop tracking", or I can just double click and now I'm free again. But let's not show this route anymore. And let's run the simulation for a little while longer to have the parking areas fill up. And as you can see, the colors change. They change to gray when there's no parking capacity left on an edge. So let's now follow some other car on its desperate search for parking. Track it. All right. So let's see how it goes. And as you can see, there were some jumps here. So it arrived at a point where there was no parking and it picked an alternative and then it finally found one. So the parking part of SUMO, it provides for a large number of options to configure the way these cars actually pick their alternatives. And then at the end, when we run this long enough, actually all the cars have find a parking spot. And if we wonder how long they took for this, well, we can just recolor them by the number of times that they changed their route. And as we can see, some cars took quite a number of attempts to do so. And some of them are actually still going, still looking. But in the end, everyone found their spot. All right. That's all I wanted to show you for today. We will be going on a break. And then we'll be ready for the "ask us anything" session, so to sum this up, I used osmWebWizard to get a quick start, don't forget to read the documentation, report any bugs you find, please share your scenarios and results (we are really happy when you do so). We are always looking forward to talk to people that want to do projects with us. Thank you for your attention!</p>
 <h1 id="other_conference_tutorials">Other conference tutorials<a class="headerlink" href="#other_conference_tutorials" title="Permanent link">#</a></h1>
 <p>Take a look at our other conference tutorials, <a href="index.html#sumo_user_conference_tutorials">here</a>.</p>
-                </div>
+                </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 24 June 2026</i></small>
+            <br><small><i>This page was last edited on: 02 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

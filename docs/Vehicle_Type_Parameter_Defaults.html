@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 24 June 2026
+Last edit: 02 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +156,10 @@ Last edit: 24 June 2026
 
         <div class="container-fluid">
           <div class="row">
-                <div class="col-md-3">
+                <aside class="col-md-3">
                   <div class="text-center"><a href="index.html" style="display: inline-block; margin-top: 5px;"><img src="images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
                   
-<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<aside class="navbar-light navbar-expand-md bs-sidebar hidden-print affix">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
             <span class="fa-solid fa-angle-down"></span>
@@ -191,9 +191,9 @@ Last edit: 24 June 2026
         <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
     </div>
 
-</div>
-                </div>
-                <div class="col-md-9 main-area" role="main">
+</aside>
+                </aside>
+                <main class="col-md-9 main-area">
                    <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
                   <ul class="breadcrumbs">
     <script>
@@ -242,7 +242,7 @@ modelled explicitly it is right, if not, you probably do not care about personCa
 but if you do please revisit your vType settings.</p>
 <h3 id="on_default_emission_classes">On default emission classes<a class="headerlink" href="#on_default_emission_classes" title="Permanent link">#</a></h3>
 <p>Note that with the transition to <a href="Models/Emissions/HBEFA4-based.html">HBEFA4</a> there are no more aggregated emission classes like <code>HDV</code> available.
-That means the default emission class for each vehicle class is usually the most frequent vehicle in the 2022 fleet composition as estimated in the HBEFA. This can vastly understimate real emissions which may be dominated by older vehicles, so if precision is important you are encouraged to use a distribution of vehicle types fitting your modelled vehicle fleet. It is also possible to go back to the <a href="Models/Emissions/HBEFA3-based.html">HBEFA3</a> classes.</p>
+That means the default emission class for each vehicle class is usually the most frequent vehicle in the 2022 fleet composition as estimated in the HBEFA. This can vastly underestimate real emissions which may be dominated by older vehicles, so if precision is important you are encouraged to use a distribution of vehicle types fitting your modelled vehicle fleet. It is also possible to go back to the <a href="Models/Emissions/HBEFA3-based.html">HBEFA3</a> classes.</p>
 <p>Please also note that the default emission class for all electric trains is <code>zero</code> and all other trains (and ships) still use the dirtiest diesel emissions of the HBEFA3 model. You are encouraged to model your train (and ship) explicitly if consumption is of interest. This includes adapting parameters like the mass (which means the empty vehicle mass) and loading.</p>
 <h2 id="pedestrians_and_two-wheelers">Pedestrians and Two-Wheelers<a class="headerlink" href="#pedestrians_and_two-wheelers" title="Permanent link">#</a></h2>
 <table>
@@ -929,14 +929,14 @@ The intended use is for any kind of new vehicle concept which should be visually
 <li>(50): <a href="https://de.wikipedia.org/wiki/Pendelbahn#Geschwindigkeit_und_F%C3%B6rderleistung">https://de.wikipedia.org/wiki/Pendelbahn#Geschwindigkeit_und_F%C3%B6rderleistung</a></li>
 <li>(*): estimated</li>
 </ul>
-                </div>
+                </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 24 June 2026</i></small>
+            <br><small><i>This page was last edited on: 02 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 24 June 2026
+Last edit: 02 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +156,10 @@ Last edit: 24 June 2026
 
         <div class="container-fluid">
           <div class="row">
-                <div class="col-md-3">
+                <aside class="col-md-3">
                   <div class="text-center"><a href="../index.html" style="display: inline-block; margin-top: 5px;"><img src="../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
                   
-<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<aside class="navbar-light navbar-expand-md bs-sidebar hidden-print affix">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
             <span class="fa-solid fa-angle-down"></span>
@@ -205,9 +205,9 @@ Last edit: 24 June 2026
         <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
     </div>
 
-</div>
-                </div>
-                <div class="col-md-9 main-area" role="main">
+</aside>
+                </aside>
+                <main class="col-md-9 main-area">
                    <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
                   <ul class="breadcrumbs">
     <script>
@@ -285,14 +285,14 @@ As you can see, the traffic all originated in one zone. And then it moves to ano
 And if you want the persons to actually use that public transport, then of course you have to tie that in when generating the persons. So, we had this batch script before that generates all kinds of traffic. And now if we're talking about the GTFS thing, we have to modify that batch script, at least for the persons, to make sure that it uses all those files that were just generated from the GTFS. So just be aware of that. Of course, there's a GTFS tutorial in the documentation, where you can look all that up. So, let's look at a simulation with that GTFS traffic. Well, actually no, because the time is up. So let's save some time.</p>
 <h2 id="gtfs-import_-_intermodal_journeys">GTFS-Import - Intermodal Journeys<a class="headerlink" href="#gtfs-import_-_intermodal_journeys" title="Permanent link">#</a></h2>
 <p>What we can do is we can look at the types of plans that are generated when the persons use that public transport. For that, we have the script analyzePersonPlans.py in the SUMO tools. And it will tell you that for the original OSM Web Wizard scenario, we have about, well, we have certain amount of walks, and then we have lots of trips that alternate between walking and public transport. Now, if we do the GTFS import, suddenly the number of walks goes up. And why is that? Well, the first thing that we have to recognize is that now suddenly times are important. Usually, we first generated our traffic from second zero to second 3600. This is shortly after midnight. And so there is not much public transport at that time of the day. So if you generate your persons, make sure they actually walk at a time that is more realistic. And then you'll have more walks. And the other thing you have to account for is that dates are important. So if you use the GTFS import tool, you have to set a reference date. And in the scenario in the very scenario that I showed, there's no tram service due to construction work at the moment. So when we naively use the current date, many persons that would have used the tram couldn't actually do this. So if you also set the appropriate date, then finally you reduce the number of walks again. If it's still more walks than in the WebWizard case, that may is very likely due to the synthetic schedules, there is a bunching of buses or trams, so there's too much service, and people use the tram too much. So look at the time, look at the date and then enjoy your GTFS schedules. This is all I wanted to show you today. If you have any questions, ask them on the mailing list, look at the documentation and report any bugs that you can find. Thank you very much.</p>
-                </div>
+                </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 24 June 2026</i></small>
+            <br><small><i>This page was last edited on: 02 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

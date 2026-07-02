@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 24 June 2026
+Last edit: 02 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +156,10 @@ Last edit: 24 June 2026
 
         <div class="container-fluid">
           <div class="row">
-                <div class="col-md-3">
+                <aside class="col-md-3">
                   <div class="text-center"><a href="../index.html" style="display: inline-block; margin-top: 5px;"><img src="../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
                   
-<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<aside class="navbar-light navbar-expand-md bs-sidebar hidden-print affix">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
             <span class="fa-solid fa-angle-down"></span>
@@ -191,9 +191,9 @@ Last edit: 24 June 2026
         <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
     </div>
 
-</div>
-                </div>
-                <div class="col-md-9 main-area" role="main">
+</aside>
+                </aside>
+                <main class="col-md-9 main-area">
                    <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
                   <ul class="breadcrumbs">
     <script>
@@ -243,14 +243,14 @@ Let's follow the speeds. Another thing we can do is we can track the person. Let
 <p>Next step. We have to define the stops. Well, we would like to call them air stop, but we don't have that in SUMO, so it's a bus stop, basically, for an air bus, a flying bus. So we place a bus stop on each of these edges. This can be done here in the additional mode -&gt; bus stop -&gt; click. And then we have to connect it to the pedestrian network by defining an access element. So we first click on the bus stop. And then on the sidewalk. And this is our access. And we do this for all the landing and takeoff edges. And then save the bus stops to a file. And now the third thing we want to do. There is no flying mode yet in SUMO. So we will create plane edges that connect each point, well, each landing and takeoff edge with each other of these edges. And there's also a Python script for that, too. To building a fully connected graph between particular edges. And this is another batch file in the folder. Actually, it's buildnet2. Which runs the build full graph, so it's buildnet2.bat. All right. This is the third step. For the fourth step, we define the taxis. Well, the flying taxis that run through the network. This is, again, the demand mode. And we define vehicles. Well, first of all, we define a new vehicle type. So we create a new type here. And we change the attribute. So let's have this be a taxi. But let's have it at least look like an aircraft. There. And maybe we want to better fit the width to that of an aircraft. See which values did I want. The length and width. Six meters. It's a small. All right. And now we have our taxi type. And we can create the vehicle of that type. And we place it here. Notice that all the edges that permit this taxi to drive are green and all the ones that don't permit it cyan. That's a conflict. Place this here, press enter and there we have it. And of course I can do this multiple times, if I want to have multiple aircraft in the network. So now, the fifth step. We want all the persons to be able to make use of the new taxi mode. So far they can only walk and use public transport. But taxi is something else because it doesn't run on the schedule. So we have to change the file that generates the traffic demand, the build batch file. And I've highlighted here all the changes that we do. In the attributes for the persons we add the mode taxi. And in the additional files that are being loaded, we add the bus stops, air stops, and we save to a file. And then we need to set two more options that define where people can enter and leave a taxi. And so we set this to the value of ptStops, which means all public transport stops like bus stops. And of course we need to also adapt the network name because when we patched the network, we gave it a new name. And then we can generate the new Pedestrian demand. Let's see how that looks like after running the batch file. And as we can see, there are some persons. Now that want to walk and then ride with a taxi. So let's have a look at the simulation. And best of all, make the Persons big. So you can see the first air taxi here. You can see persons, that are being picked up and flown to the destination. Weee! And they fly around. Well, are we happy? Not quite. Once the simulation finishes. First of all, we see that there's actually jamming. Look at this jam. But the most important thing we see is, that at the end of the simulation, there are lots of persons that aborted waiting for the taxi. Some stop. So. What is the reason for this? Let's discuss this. In the setting we now used, each taxi only transported one passenger, and there was just not enough transport capacity. This means many passengers had to abort their flight at the end of the simulation, had to abort their wait for a flight. So what can we do? We can allow ride pooling. So let's have at least four persons per taxi. And the way to do this is either by defining for individual persons a group, and everybody who's in the same group may share a taxi. But we can simply set a default group for all the persons. So they're all in the same group, and they can all do ride sharing. And if we do this, it runs much nicer. We have only 12 people that couldn't get on their flight. So it's a lot more efficient. But there is something else we can do. Because the default dispatch algorithm for the taxis, it tries to be very fair. It tries to service the persons in the order in which they arrived at the stop. So first come, first serve. And this may lead to wasteful flights. Because an airplane may take off empty to get to another person that came first. So we can change the dispatch algorithm to the one that's called greedy closest. And this is more efficient on the taxi resource, because it lets every taxi pick up the closest person. And if we do this, then almost everybody catches their flight. And on top of that, the service is so much more efficient, that the average waiting time for flight goes down by 3 minutes. So you can see there's a number of things you can do to have an efficient taxi service. We can also get this from the outputs. If the simulation writes trip info files, then we can use this tool that comes with SUMO, the attributeStats.py tool, which tells us how the travel times are distributed for the persons. And so we can see that not only is the average overall travel time going down, but also the maximum travel time goes down because all the persons that would have taken a long walk can now take a quick flight. And also we can get a little plot, there's another Python tool that comes with SUMO that makes these plots out of the output files, if you want to look at how it works there is a batch file in the tutorial folder, that calls this tool, and here we can see on the x-axis the travel time and on the y-axis the count. So how often did which travel time occur? And we see that the version without taxis had plenty of high travel times, whereas the one with the taxis has more of those medium-sized travel times. And this is the reason why the maximum and the mean values have improved with the flying taxi simulation. So in conclusion, flying taxis are great if you can get them. And I wish you a lot of fun and success with using SUMO tools to develop your simulations. Make sure to read the documentation before you ask any questions. But if you have questions or if you find any bugs, then report them at this address or open up an issue on GitHub. And talk to us. We're always looking for project partners. Thanks.</p>
 <h1 id="other_conference_tutorials">Other conference tutorials<a class="headerlink" href="#other_conference_tutorials" title="Permanent link">#</a></h1>
 <p>Take a look at our other conference tutorials, <a href="index.html#sumo_user_conference_tutorials">here</a>.</p>
-                </div>
+                </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 24 June 2026</i></small>
+            <br><small><i>This page was last edited on: 02 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

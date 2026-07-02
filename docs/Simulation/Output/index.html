@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 24 June 2026
+Last edit: 02 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +156,10 @@ Last edit: 24 June 2026
 
         <div class="container-fluid">
           <div class="row">
-                <div class="col-md-3">
+                <aside class="col-md-3">
                   <div class="text-center"><a href="../../index.html" style="display: inline-block; margin-top: 5px;"><img src="../../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
                   
-<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<aside class="navbar-light navbar-expand-md bs-sidebar hidden-print affix">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
             <span class="fa-solid fa-angle-down"></span>
@@ -218,9 +218,9 @@ Last edit: 24 June 2026
         <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
     </div>
 
-</div>
-                </div>
-                <div class="col-md-9 main-area" role="main">
+</aside>
+                </aside>
+                <main class="col-md-9 main-area">
                    <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
                   <ul class="breadcrumbs">
     <script>
@@ -259,9 +259,9 @@ information</a>, and <a href="Summary.html">simulation
 state statistics</a>) are triggered
 using command line options, the others have to be defined within <a href="/docs/sumo.html#format_of_additional_files"><em>additional-files</em></a>.</p>
 <h2 id="converting_outputs">Converting Outputs<a class="headerlink" href="#converting_outputs" title="Permanent link">#</a></h2>
-<p>All output files written by SUMO are in XML-format by default. However, by setting the file extension <em>.csv</em> or <em>.parqet</em> files will instead by written <a href="../../TabularOutputs.html">tabular output</a> instead.
+<p>All output files written by SUMO are in XML-format by default. However, by setting the file extension <em>.csv</em> or <em>.parquet</em> files will instead by written <a href="../../TabularOutputs.html">tabular output</a> instead.
 It is also possible to convert existing XML output files with the python tool <a href="../../Tools/Xml.html#xml2csvpy">xml2csv.py</a> to a flat-file (CSV) format which can be opened
-with most spread-sheet software. </p>
+with most spread-sheet software.</p>
 <p>The file endings <em>.xml.gz</em> or <em>.csv.gz</em> will automatically switch to gzip-compressed output files.
 Note, that <em>.xml.gz</em> files are also accepted as input by all SUMO applications.</p>
 <h2 id="separating_outputs_of_repeated_runs">Separating outputs of repeated runs<a class="headerlink" href="#separating_outputs_of_repeated_runs" title="Permanent link">#</a></h2>
@@ -549,14 +549,14 @@ following output will be added:</p>
 network parameter dialog will also show a running average for these
 traffic measures (The dialog is accessible by right-clicking on the
 network background).</p>
-                </div>
+                </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 24 June 2026</i></small>
+            <br><small><i>This page was last edited on: 02 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

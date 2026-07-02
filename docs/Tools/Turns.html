@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 24 June 2026
+Last edit: 02 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +156,10 @@ Last edit: 24 June 2026
 
         <div class="container-fluid">
           <div class="row">
-                <div class="col-md-3">
+                <aside class="col-md-3">
                   <div class="text-center"><a href="../index.html" style="display: inline-block; margin-top: 5px;"><img src="../images/sumo-logo.png" class="sumoLogo" alt="SUMO Logo" width="120px"></a></div>
                   
-<div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<aside class="navbar-light navbar-expand-md bs-sidebar hidden-print affix">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed mb-1" data-toggle="collapse" data-target="#toc-collapse" title="Contents">
             <span class="fa-solid fa-angle-down"></span>
@@ -253,9 +253,9 @@ Last edit: 24 June 2026
         <p>visit <a class="no-arrow-link" href="https://eclipse.dev/sumo">eclipse.dev/sumo</a></p>
     </div>
 
-</div>
-                </div>
-                <div class="col-md-9 main-area" role="main">
+</aside>
+                </aside>
+                <main class="col-md-9 main-area">
                    <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
                   <ul class="breadcrumbs">
     <script>
@@ -508,7 +508,7 @@ It is often desirable to find an optimized solution that is close to the initial
 <p>By setting option <strong>--optimize <code>&lt;INT&gt;</code></strong>. The number of times that a route is used can be changed by up to <strong><code>&lt;INT&gt;</code></strong> times. This defines a trade-off between using routes in the same distribution as found in the input and optimizing the counts.
 When setting option <strong>--optimize full</strong>. No constraints on the route distribution are set and any route can be used as often as needed to reach the counts.</p>
 <p>The option <strong>--minimize-vehicles <FLOAT></strong> can be used to configure a weighting term for simultaneously minimizing the total number of used routes (vehicles).
-  A higher value, favours solutions with few vehicles that pass multiple counting locations rather than more vehicles that pass fewer locations. Hard constraints on the minimum number of counting locations passed by each route can also be set with option <strong>-min-count</strong>.</p>
+  A higher value, favors solutions with few vehicles that pass multiple counting locations rather than more vehicles that pass fewer locations. Hard constraints on the minimum number of counting locations passed by each route can also be set with option <strong>-min-count</strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Optimization requires <a href="https://www.scipy.org/">scipy</a>.</p>
@@ -522,7 +522,7 @@ When setting option <strong>--optimize full</strong>. No constraints on the rout
 <ul>
 <li>Selecting a set of routes to match a given set of counts is generally an underdetermined problem which means there is of not a unique solution. If there are insufficient constraints on the solution space (not enough counts), the chosen solution may appear implausible</li>
 <li>Input routes are not representative of the real routes (see <a href="#obtaining_initial_routes">here</a> for helpful options)
-     - not covering the counting locations     <br />
+     - not covering the counting locations
      - containing unlikely routes
      - having routes in unrealistic proportions (which then biases the sampling algorithm towards unlikely routes)</li>
 <li>Temporal patterns are not captured by the given interval data (i.e. by only having counts for the whole day). This can be mitigated by option <strong>--depart-distribution</strong>.</li>
@@ -623,14 +623,14 @@ Then it calls jtrrouter in the background.</p>
 <span class="w">  </span><span class="nt">&lt;/interval&gt;</span>
 <span class="nt">&lt;/data&gt;</span>
 </code></pre></div>
-                </div>
+                </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 24 June 2026</i></small>
+            <br><small><i>This page was last edited on: 02 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
