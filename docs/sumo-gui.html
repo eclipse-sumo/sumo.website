@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 02 July 2026
+Last edit: 10 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -343,6 +343,9 @@ Last edit: 02 July 2026
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#coloring_by_data" class="nav-link">• Coloring by Data</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#coloring_by_lane_data" class="nav-link">• Coloring by lane data</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#scaling_by_data" class="nav-link">• Scaling by Data</a>
@@ -1833,18 +1836,28 @@ This will always show the current aggregation interval (so the collected data is
 By using the option <strong>--edgedata-output FILE</strong> or <strong>--lanedata-output FILE</strong> you can quickly configure a data collection that aggregates over the whole simulation.</p>
 <h2 id="coloring_by_data">Coloring by Data<a class="headerlink" href="#coloring_by_data" title="Permanent link">#</a></h2>
 <p>To make use of the loaded data, street coloring must be set to <strong>color by
-edgeData</strong> in the visualization settings dialog.
-The button <em>Recalibrate Rainbow</em> can be used to generate a
-coloring scheme that spans the loaded data range for the selected attribute.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In the gui-settings dialog, the function 'Recalibrate Rainbow' can be used to adapt the coloring to the data range of the current attribute.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+edgeData</strong> in the visualization settings dialog.</p>
+<p>The button <em>Recalibrate Rainbow</em> can be used to generate a
+coloring scheme that spans the loaded data range for the selected attribute.
+Using the checkboxes min, max, center and 'fix range' it is also possible make the colors span a custom range.
+When defining a color scheme, a dedicated color for missing data ('No Data') can always be configured.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
 <p>edgeData is time based so it will only be shown when the simulation time has advance to the begin time of the respective data interval. Make sure to advance the simulation to time 0 (step once) or to whatever begin time was used for edgeData generation before using <em>Recalibrate Rainbow</em>. To see further data frames, advance the simulation by using delay or breakpoints.</p>
 </div>
-<p>When defining a color scheme, a dedicated color for missing data ('No Data') can always be configured.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to efficiently step through a range of data intervals, it is helpful to set a custom simulaton <strong>--step-length</strong>. (i.e. 3600 for hourly data). In this way, pressing the simulation step button once, will advance to the next interval.</p>
+</div>
+<h2 id="coloring_by_lane_data">Coloring by lane data<a class="headerlink" href="#coloring_by_lane_data" title="Permanent link">#</a></h2>
+<p>The color scheme "by param (numerical, lanewise)" permits coloring individual lanes by their custom <a href="Simulation/GenericParameters.html">parameters</a> as long as the values can be interpreted as numbers.
+While it is possible to define such params with <a href="Netedit/index.html">netedit</a> or to load them into the network from <a href="Networks/PlainXML.html">plain-xml</a> it is often desirable to show values that are independent of the <em>.net.xml</em> file.</p>
+<p>This can be accomplished by using <a href="TraCI/index.html">Traci</a>:</p>
+<ol>
+<li><code>traci.lane.setParameter(lane, "customAttribute", str(value))</code></li>
+<li>in sumo-gui set street coloring to "by param (numerical, lanewise)" and select "customAttribute" in the little dropdown menu that says "LANE_KEY"</li>
+<li>press the "Recalibrate Rainbow" button to set up a color scheme for the value range</li>
+</ol>
 <h2 id="scaling_by_data">Scaling by Data<a class="headerlink" href="#scaling_by_data" title="Permanent link">#</a></h2>
 <p>To make use of the loaded data for increasing the visual width of the roads, street scaling must be set to <strong>scale width by
 edgeData</strong> in the visualization settings dialog. After the scaling scheme has been selected, an attribute selection element becomes active which lists all the available edgeData attributes and must be used to pick the desired attribute for scaling.</p>
@@ -1930,7 +1943,7 @@ highlighted.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 02 July 2026</i></small>
+            <br><small><i>This page was last edited on: 10 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
@@ -1970,7 +1983,7 @@ highlighted.</p>
         }
 
         var base_url = ".",
-            shortcuts = {"edit": 69, "help": 191, "search": 83};
+            shortcuts = {"edit": "e", "help": "?", "search": "s"};
         </script>
         <script src="js/base.js" defer></script>
 

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 02 July 2026
+Last edit: 10 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -259,15 +259,27 @@ Last edit: 02 July 2026
 </ul>
 <ul>
 <li>netedit<ul>
+<li>The menu function for saving .sumocfg with save-as is working again <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18150" title="GitHub Issue eclipse-sumo/sumo #18150">#18150</a> (regression in 1.26.0)</li>
+<li>The button for saving the .sumocfg is now functional again after loading a network <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18151" title="GitHub Issue eclipse-sumo/sumo #18151">#18151</a> (regression in 1.26.0)</li>
 <li>Junction context menu operation 'clearing connections' no longer generates an invalid network if the junction had tls-controlled pedestrian crossings <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18145" title="GitHub Issue eclipse-sumo/sumo #18145">#18145</a> (regression in 1.27.0)</li>
+<li>setting "random" as color value for vehicles is now working <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18014" title="GitHub Issue eclipse-sumo/sumo #18014">#18014</a></li>
 </ul>
 </li>
 </ul>
 <ul>
 <li>netconvert<ul>
+<li>Fixed missing connections in networks with dedicated bus lanes <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18181" title="GitHub Issue eclipse-sumo/sumo #18181">#18181</a> (regression in 1.23.0)</li>
 <li>Fixed crash when rail signal connection link index is patched <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18142" title="GitHub Issue eclipse-sumo/sumo #18142">#18142</a></li>
 <li>OSM: no longer importing superfluous tls where tram runs on road <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18146" title="GitHub Issue eclipse-sumo/sumo #18146">#18146</a></li>
 <li>Fixed missed joins when using <strong>--edges.join-tram-dist</strong> on a network with joined junctions <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18154" title="GitHub Issue eclipse-sumo/sumo #18154">#18154</a></li>
+<li>When option <strong>--sidewalks.guess</strong> is set, high-speed edges without sidewalks are no longer modelled as shared space <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18170" title="GitHub Issue eclipse-sumo/sumo #18170">#18170</a></li>
+<li>Setting optionts <strong>--plain-output-prefix</strong> and <strong>--output.format</strong> now writes files with <em>.csv</em> extension <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18171" title="GitHub Issue eclipse-sumo/sumo #18171">#18171</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>tools<ul>
+<li>drtOnline.py: fixed failure to dispatch vehicles that have an underscore ('_') in their id. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18167" title="GitHub Issue eclipse-sumo/sumo #18167">#18167</a></li>
 </ul>
 </li>
 </ul>
@@ -278,12 +290,27 @@ Last edit: 02 July 2026
 <li>In carFollowModel 'Rail', curvature is now computed by integrating over a configurable distance (default 100m) to smooth piecewise linear geometry. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18138" title="GitHub Issue eclipse-sumo/sumo #18138">#18138</a></li>
 <li>vehicle types can be initialized with values from another vType by using attribute <code>refId</code> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18144" title="GitHub Issue eclipse-sumo/sumo #18144">#18144</a></li>
 <li>Elements <code>&lt;edgeData&gt;</code> and <code>&lt;laneData&gt;</code> now support attribute <code>speedThresholdRelative</code> as an optional condition for recording <code>waitingTime</code> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18161" title="GitHub Issue eclipse-sumo/sumo #18161">#18161</a></li>
+<li>vTypeDistribution can now reference an existing vType using attribute <code>refId</code> without creating a new type (similar to routeDistributions). This fixes a problem with vTypeDistributions created by netedit being unusable since version 1.25.0 <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18178" title="GitHub Issue eclipse-sumo/sumo #18178">#18178</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>duarouter<ul>
+<li>vTypeDistribution can now reference an existing vType using attribute <code>refId</code> without creating a new type (similar to routeDistributions) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18178" title="GitHub Issue eclipse-sumo/sumo #18178">#18178</a></li>
 </ul>
 </li>
 </ul>
 <ul>
 <li>meso<ul>
 <li>Now supports traffic light type 'actuated' <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/8735" title="GitHub Issue eclipse-sumo/sumo #8735">#8735</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>tools<ul>
+<li>instantOutToEdgeData.py: added option <strong>--poi-output</strong> to visualize extra values and aid in debugging <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18166" title="GitHub Issue eclipse-sumo/sumo #18166">#18166</a></li>
+<li>edgeDataFromFlow.py: added option <strong>--turn-output</strong> to write edgeRelations for detectors that have a unique sucessor edge <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17955" title="GitHub Issue eclipse-sumo/sumo #17955">#17955</a></li>
+<li>edgeDataFromFlow.py: added option <strong>--skip-incomplete</strong> to exclude data from incomplete cross-sections <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18182" title="GitHub Issue eclipse-sumo/sumo #18182">#18182</a></li>
 </ul>
 </li>
 </ul>
@@ -966,7 +993,7 @@ Last edit: 02 July 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 02 July 2026</i></small>
+            <br><small><i>This page was last edited on: 10 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
@@ -1006,7 +1033,7 @@ Last edit: 02 July 2026
         }
 
         var base_url = ".",
-            shortcuts = {"edit": 69, "help": 191, "search": 83};
+            shortcuts = {"edit": "e", "help": "?", "search": "s"};
         </script>
         <script src="js/base.js" defer></script>
 

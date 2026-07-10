@@ -45,7 +45,7 @@ $(document).ready(function() {
     // Keyboard navigation
     document.addEventListener("keydown", function(e) {
         if ($(e.target).is(':input')) return true;
-        const key = e.key;
+        const key = e.key.toLowerCase();
         let page;
         switch (key) {
             case shortcuts.search:
@@ -94,8 +94,8 @@ $('body').scrollspy({
 });
 
 /* Prevent disabled links from causing a page reload */
-$("li.disabled a").click(function() {
-    event.preventDefault();
+$("li.disabled a").on( "click", function() {
+    return false;
 });
 
 const keyCodes = {
@@ -161,6 +161,7 @@ const keyCodes = {
   '-': 'subtract',
   '.': '&period;',
   '/': '&quest;',
+  '?': '&quest;',
   F1: 'f1',
   F2: 'f2',
   F3: 'f3',

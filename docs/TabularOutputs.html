@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 02 July 2026
+Last edit: 10 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -280,18 +280,21 @@ from Parquet instead of XML using Python's pandas library (see <a href="#perform
 |---|---|
 | <strong>--output.compression</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a> | Defines the standard compression algorithm (currently only for parquet output: 'uncompressed', 'gzip', 'bz2', 'zstd'); <em>default:</em> <strong>uncompressed</strong> |
 | <strong>--output.format</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a> | Defines the standard output format if not derivable from the file name ('xml', 'csv', 'parquet'); <em>default:</em> <strong>xml</strong> |
-| <strong>--output.column-header</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a> | How to derive column headers from attribute names ('none', 'tag', 'auto', 'plain'); <em>default:</em> <strong>tag</strong> |
+| <strong>--output.column-header</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a> | How to derive column headers from attribute names ('none', 'tag', 'auto', 'plain', 'full'); <em>default:</em> <strong>auto</strong> |
 | <strong>--output.column-separator</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a> | Separator in CSV output; <em>default:</em> <strong>;</strong> |</p>
 <p>The <strong>--output.format</strong> option is only being used when the format cannot be derived from the filename so it is mostly useful when writing to stdout or to a socket
 or if for any reason you need give a file ending which is not "xml", "csv", "parquet", "xml.gz", or "csv.gz".</p>
 <p>For <strong>--output.compression</strong> please note that this will currently only be applied to parquet files and this is an internal compression algorithm applied to every column.
 So you will not be able to uncompress a parquet file with gzip compression using a gzip tool on the command line. Furthermore we do not support specifying different
 compression methods for different columns yet. Compression support may also depend on the way SUMO (or rather the Arrow / Parquet library it depends on) has been compiled.</p>
-<p>By default the column names are derived by connecting the element name with the attribute using "_". This can be changed by setting the option <strong>--output.column-header</strong> to one of the following values:
-  - 'none': no header is written in CSV (parquet still uses the default header)
-  - 'tag': the default behavior using element name and attribute name
-  - 'auto': use only the attribute name unless there is a name clash. If there is a clash use the 'tag' strategy for the clashing column names (except for the first one).
-  - 'plain': always use the attribute name only</p>
+<p>The format of the column names can be changed by setting the option <strong>--output.column-header</strong> to one of the following values:
+  - 'none': no header is written
+  - 'tag': the current element name and attribute name are concatenated by "<em>"
+  - 'full': concatenate all parent elements, the current element name and the attribute name by "</em>"
+  - 'auto': use 'tag' unless there is a name clash. If there is a clash use 'full' for all columns. (This is the default.)
+  - 'plain': always use the attribute name only
+There will be no warnings emitted if there are multiple columns with the same name (a name clash).
+Please be aware that "auto" became the default (with changed semantics) for SUMO 1.28.0.</p>
 <h1 id="parquet_data_types">Parquet data types<a class="headerlink" href="#parquet_data_types" title="Permanent link">#</a></h1>
 <p>For Parquet every column needs to have a data type. The current mapping is as follows:
   - If the given <strong>--precision</strong> is 2 (the default) or less, 32 bit floats are used for all floating point values, higher precision values trigger the use of 64 bit (double) values.
@@ -350,10 +353,11 @@ compression methods for different columns yet. Compression support may also depe
 </tbody>
 </table>
 <h1 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">#</a></h1>
-<p>Columns are currently determined by the first fully closed (innermost) element. This means the following structures are not supported:</p>
+<p>Most of the simulation outputs got at least initial support, so we verified for a simple scenario
+that the tabular outputs are equivalent to the XML. Things still needing our attention are:</p>
 <ul>
-<li>elements with optional attributes (i.e. edgeData defaults)</li>
-<li>different elements on the same level (i.e. elements <code>&lt;walk&gt;</code> and <code>&lt;ride&gt;</code> of a persons plan)</li>
+<li>vehicle routes</li>
+<li>mesoscopic outputs</li>
 </ul>
                 </main>
           </div>
@@ -362,7 +366,7 @@ compression methods for different columns yet. Compression support may also depe
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 02 July 2026</i></small>
+            <br><small><i>This page was last edited on: 10 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
@@ -402,7 +406,7 @@ compression methods for different columns yet. Compression support may also depe
         }
 
         var base_url = ".",
-            shortcuts = {"edit": 69, "help": 191, "search": 83};
+            shortcuts = {"edit": "e", "help": "?", "search": "s"};
         </script>
         <script src="js/base.js" defer></script>
 
