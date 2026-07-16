@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 10 July 2026
+Last edit: 15 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -189,6 +189,7 @@ Last edit: 10 July 2026
             <li class="nav-item main"><a href="#edgedatafromflowpy">edgeDataFromFlow.py</a></li>
             <li class="nav-item main"><a href="#filterflowspy">filterFlows.py</a></li>
             <li class="nav-item main"><a href="#mapdetectorspy">mapDetectors.py</a></li>
+            <li class="nav-item main"><a href="#flow2poipy">flow2POI.py</a></li>
         </ul>
     </div>
 
@@ -307,7 +308,7 @@ It requires the use of an input flow file and then performs a comparison between
 </code></pre></div>
 
 <h1 id="edgedatafromflowpy">edgeDataFromFlow.py<a class="headerlink" href="#edgedatafromflowpy" title="Permanent link">#</a></h1>
-<p>This script converts <a href="../Demand/Routes_from_Observation_Points.html#computing_flows">detector flow files</a> to into <a href="../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures.html#edge-based_network_states">edgeData format</a> (i.e. to be used by <a href="Turns.html#edge_counts">routeSampler.py</a> or for <a href="../sumo-gui.html#visualizing_edge-related_data">visualization in sumo-gui</a>)
+<p>This script converts <a href="../Demand/Routes_from_Observation_Points.html#computing_flows">detector flow files</a> to <a href="../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures.html#edge-based_network_states">edgeData format</a> (i.e. to be used by <a href="Turns.html#edge_counts">routeSampler.py</a> or for <a href="../sumo-gui.html#visualizing_edge-related_data">visualization in sumo-gui</a>)
 Example:</p>
 <div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">detector</span><span class="o">/</span><span class="n">edgeDataFromFlow</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="n">input_detectors</span><span class="o">.</span><span class="n">det</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">input_flows</span><span class="o">.</span><span class="n">txt</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">edgedata</span><span class="o">.</span><span class="n">xml</span>
 </code></pre></div>
@@ -327,6 +328,13 @@ det2;52.432373;13.496142
 <p>It can be turned into a file with detectors with:</p>
 <div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">detector</span><span class="o">/</span><span class="n">mapDetectors</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w">  </span><span class="n">det</span><span class="o">.</span><span class="n">csv</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">det</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span>
 </code></pre></div>
+
+<h1 id="flow2poipy">flow2POI.py<a class="headerlink" href="#flow2poipy" title="Permanent link">#</a></h1>
+<p>This script converts <a href="../Demand/Routes_from_Observation_Points.html#computing_flows">detector flow files</a> to <a href="../Simulation/Shapes.html#poi_point_of_interest_definitions">POIs</a>.
+The total traffic count will be written into tye <code>type</code> attribute of the poi for streamlined visualization of localized flow values.
+Aggregated traffic values (i.e. hourly) will be written as <code>&lt;param</code>&gt; elements of the respective POI which makes it easy to show the respective value using gui-setting <em>Show poi text param</em>.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">detector</span><span class="o">/</span><span class="n">flow2POI</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="n">input_detectors</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">input_flows</span><span class="o">.</span><span class="n">txt</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">pois</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="mi">60</span>
+</code></pre></div>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -334,7 +342,7 @@ det2;52.432373;13.496142
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 10 July 2026</i></small>
+            <br><small><i>This page was last edited on: 15 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

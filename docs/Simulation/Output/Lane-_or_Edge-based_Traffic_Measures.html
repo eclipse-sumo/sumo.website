@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 10 July 2026
+Last edit: 15 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -353,8 +353,8 @@ possibilities to constrain the outputs are given.</p>
 </tr>
 <tr>
 <td>aggregate</td>
-<td>bool</td>
-<td>Whether the traffic statistic of all edges shall be aggregated into a single value (edge id will be <code>AGGREGATED</code>).</td>
+<td>bool or "taz"</td>
+<td>Whether the traffic statistic of edges shall be aggregated. If set to "true" the data for all edges (potentially a subset configured with <code>edges</code> or <code>edgesFiles</code>) will be aggregated into a single value and the output edge id will be <code>AGGREGATED</code>). If set to "taz" then the statistics for all edges in a loaded TAZ will be aggregated into a single value and the output edge id will be the TAZ-id. This feature is also compatible with option <strong>--junction-taz</strong> to obtain aggregated output for every junction.</td>
 </tr>
 </tbody>
 </table>
@@ -664,7 +664,7 @@ vehicle only once but they include/exclude some special cases.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 10 July 2026</i></small>
+            <br><small><i>This page was last edited on: 15 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

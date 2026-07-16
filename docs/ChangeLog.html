@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 10 July 2026
+Last edit: 15 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -175,6 +175,9 @@ Last edit: 10 July 2026
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#enhancements" class="nav-link">• Enhancements</a>
                 </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#miscellaneous" class="nav-link">• Miscellaneous</a>
+                </li>
             <li class="nav-item main"><a href="#version_1271_25062026_downloads">Version 1.27.1 (25.06.2026) (downloads)</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#bugfixes_1" class="nav-link">• Bugfixes</a>
@@ -183,7 +186,7 @@ Last edit: 10 July 2026
                     <a href="#enhancements_1" class="nav-link">• Enhancements</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#miscellaneous" class="nav-link">• Miscellaneous</a>
+                    <a href="#miscellaneous_1" class="nav-link">• Miscellaneous</a>
                 </li>
             <li class="nav-item main"><a href="#version_1270_21052026">Version 1.27.0 (21.05.2026)</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
@@ -193,7 +196,7 @@ Last edit: 10 July 2026
                     <a href="#enhancements_2" class="nav-link">• Enhancements</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#miscellaneous_1" class="nav-link">• Miscellaneous</a>
+                    <a href="#miscellaneous_2" class="nav-link">• Miscellaneous</a>
                 </li>
             <li class="nav-item main"><a href="#version_1260_29012026">Version 1.26.0 (29.01.2026)</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
@@ -203,7 +206,7 @@ Last edit: 10 July 2026
                     <a href="#enhancements_3" class="nav-link">• Enhancements</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#miscellaneous_2" class="nav-link">• Miscellaneous</a>
+                    <a href="#miscellaneous_3" class="nav-link">• Miscellaneous</a>
                 </li>
             <li class="nav-item main"><a href="#older_versions">Older Versions</a></li>
         </ul>
@@ -259,6 +262,7 @@ Last edit: 10 July 2026
 </ul>
 <ul>
 <li>netedit<ul>
+<li>Fixed invalid connection shapes after computing the network for the first time <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16885" title="GitHub Issue eclipse-sumo/sumo #16885">#16885</a> (regression in 1.22.0)</li>
 <li>The menu function for saving .sumocfg with save-as is working again <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18150" title="GitHub Issue eclipse-sumo/sumo #18150">#18150</a> (regression in 1.26.0)</li>
 <li>The button for saving the .sumocfg is now functional again after loading a network <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18151" title="GitHub Issue eclipse-sumo/sumo #18151">#18151</a> (regression in 1.26.0)</li>
 <li>Junction context menu operation 'clearing connections' no longer generates an invalid network if the junction had tls-controlled pedestrian crossings <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18145" title="GitHub Issue eclipse-sumo/sumo #18145">#18145</a> (regression in 1.27.0)</li>
@@ -273,7 +277,9 @@ Last edit: 10 July 2026
 <li>OSM: no longer importing superfluous tls where tram runs on road <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18146" title="GitHub Issue eclipse-sumo/sumo #18146">#18146</a></li>
 <li>Fixed missed joins when using <strong>--edges.join-tram-dist</strong> on a network with joined junctions <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18154" title="GitHub Issue eclipse-sumo/sumo #18154">#18154</a></li>
 <li>When option <strong>--sidewalks.guess</strong> is set, high-speed edges without sidewalks are no longer modelled as shared space <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18170" title="GitHub Issue eclipse-sumo/sumo #18170">#18170</a></li>
-<li>Setting optionts <strong>--plain-output-prefix</strong> and <strong>--output.format</strong> now writes files with <em>.csv</em> extension <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18171" title="GitHub Issue eclipse-sumo/sumo #18171">#18171</a></li>
+<li>Setting options <strong>--plain-output-prefix</strong> and <strong>--output.format csv</strong> now writes files with <em>.csv</em> extension <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18171" title="GitHub Issue eclipse-sumo/sumo #18171">#18171</a></li>
+<li>Fixed crash when using <strong>--plain-output-prefix</strong> and <strong>--output.format parquet</strong> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18179" title="GitHub Issue eclipse-sumo/sumo #18179">#18179</a></li>
+<li>Fixed several issues that caused invalid content to be written when using options <strong>--plain-output-prefix</strong> and <strong>--output.format csv</strong> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18180" title="GitHub Issue eclipse-sumo/sumo #18180">#18180</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18175" title="GitHub Issue eclipse-sumo/sumo #18175">#18175</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18197" title="GitHub Issue eclipse-sumo/sumo #18197">#18197</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18189" title="GitHub Issue eclipse-sumo/sumo #18189">#18189</a></li>
 </ul>
 </li>
 </ul>
@@ -295,6 +301,14 @@ Last edit: 10 July 2026
 </li>
 </ul>
 <ul>
+<li>netedit<ul>
+<li>Added visualization toggle switch for showing start and end symbols (S, E) for polygons <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17911" title="GitHub Issue eclipse-sumo/sumo #17911">#17911</a></li>
+<li>edgeData / laneData attribute <code>aggregate</code> now permits the special value <code>taz</code> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17342" title="GitHub Issue eclipse-sumo/sumo #17342">#17342</a></li>
+<li>data mode: Dragging the mouse will ctrl is held, now moves the view <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17139" title="GitHub Issue eclipse-sumo/sumo #17139">#17139</a></li>
+</ul>
+</li>
+</ul>
+<ul>
 <li>duarouter<ul>
 <li>vTypeDistribution can now reference an existing vType using attribute <code>refId</code> without creating a new type (similar to routeDistributions) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18178" title="GitHub Issue eclipse-sumo/sumo #18178">#18178</a></li>
 </ul>
@@ -311,8 +325,13 @@ Last edit: 10 July 2026
 <li>instantOutToEdgeData.py: added option <strong>--poi-output</strong> to visualize extra values and aid in debugging <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18166" title="GitHub Issue eclipse-sumo/sumo #18166">#18166</a></li>
 <li>edgeDataFromFlow.py: added option <strong>--turn-output</strong> to write edgeRelations for detectors that have a unique sucessor edge <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17955" title="GitHub Issue eclipse-sumo/sumo #17955">#17955</a></li>
 <li>edgeDataFromFlow.py: added option <strong>--skip-incomplete</strong> to exclude data from incomplete cross-sections <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18182" title="GitHub Issue eclipse-sumo/sumo #18182">#18182</a></li>
+<li>flow2POI.poi: added <a href="Tools/Detector.html#flow2poipy">new tool</a> for visualizing detector flow <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18193" title="GitHub Issue eclipse-sumo/sumo #18193">#18193</a></li>
 </ul>
 </li>
+</ul>
+<h3 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">#</a></h3>
+<ul>
+<li>traci.lane.getAllowed() now returns the complete list of allowed vehicle classes if all classes are allowed. This avoids ambiguity between having "all" or "nothing" allowed <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18201" title="GitHub Issue eclipse-sumo/sumo #18201">#18201</a></li>
 </ul>
 <h2 id="version_1271_25062026_downloads">Version 1.27.1 (25.06.2026) (<a href="https://sumo.dlr.de/docs/Downloads.php">downloads</a>)<a class="headerlink" href="#version_1271_25062026_downloads" title="Permanent link">#</a></h2>
 <h3 id="bugfixes_1">Bugfixes<a class="headerlink" href="#bugfixes_1" title="Permanent link">#</a></h3>
@@ -429,7 +448,7 @@ Last edit: 10 July 2026
 </ul>
 </li>
 </ul>
-<h3 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">#</a></h3>
+<h3 id="miscellaneous_1">Miscellaneous<a class="headerlink" href="#miscellaneous_1" title="Permanent link">#</a></h3>
 <ul>
 <li>Changing the view (mouse move, zoom and pan) are now disabled in gaming mode <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/11112" title="GitHub Issue eclipse-sumo/sumo #11112">#11112</a></li>
 <li>Fixed code signing issues for libsumo on macOS <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18021" title="GitHub Issue eclipse-sumo/sumo #18021">#18021</a></li>
@@ -749,7 +768,7 @@ Last edit: 10 July 2026
 </ul>
 </li>
 </ul>
-<h3 id="miscellaneous_1">Miscellaneous<a class="headerlink" href="#miscellaneous_1" title="Permanent link">#</a></h3>
+<h3 id="miscellaneous_2">Miscellaneous<a class="headerlink" href="#miscellaneous_2" title="Permanent link">#</a></h3>
 <ul>
 <li>The default values for options <strong>--default.departspeed</strong> was changed from "0" to "avg". Also, the default of option <strong>--default.departlane</strong> was changed from "first" to "best_prob". This generally leads to higher insertion flow and using all available lanes. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16888" title="GitHub Issue eclipse-sumo/sumo #16888">#16888</a></li>
 <li>Simulation of railway-taxis with vClass "taxi" no longer triggers rail signals (this is a consequence of <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17862" title="GitHub Issue eclipse-sumo/sumo #17862">#17862</a>). Instead railway-taxis can now be defined as vClass "rail" and taxi behavior will work as expected (<a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/9812" title="GitHub Issue eclipse-sumo/sumo #9812">#9812</a>). Alternatively, option <strong>--railsignal.default-classes taxi</strong> can be set to enable rail signal switching for vClass "taxi".</li>
@@ -955,7 +974,7 @@ Last edit: 10 July 2026
 </ul>
 </li>
 </ul>
-<h3 id="miscellaneous_2">Miscellaneous<a class="headerlink" href="#miscellaneous_2" title="Permanent link">#</a></h3>
+<h3 id="miscellaneous_3">Miscellaneous<a class="headerlink" href="#miscellaneous_3" title="Permanent link">#</a></h3>
 <ul>
 <li>Fixed invalid meta data in python wheels</li>
 <li>Started Korean Language translation <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17420" title="GitHub Issue eclipse-sumo/sumo #17420">#17420</a></li>
@@ -993,7 +1012,7 @@ Last edit: 10 July 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 10 July 2026</i></small>
+            <br><small><i>This page was last edited on: 15 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

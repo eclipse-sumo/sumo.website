@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 10 July 2026
+Last edit: 15 July 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -350,7 +350,8 @@ found by following its link.</p>
   or separate the approaching edges and to include or exclude the
   junction interior. (area-based detection on edges)</li>
 </ul>
-<p>Alternatively, the <a href="#values_for_edges_or_lanes">values for edges or lanes</a> can be aggregated to obtain the flow at a junction by using edgeData attribute <code>edges</code> and <code>aggregate="true"</code>.</p>
+<p>Alternatively, the <a href="#values_for_edges_or_lanes">values for edges or lanes</a> can be aggregated to obtain the flow at a specific junction by using edgeData attribute <code>edges</code> and <code>aggregate="true"</code>.
+Getting output for each junction can be streamlined by setting edgeData attribute <code>aggregate="taz"</code> and sumo option <strong>--junction-taz</strong>.</p>
 <h2 id="vehicle-based_information">vehicle-based information<a class="headerlink" href="#vehicle-based_information" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="TripInfo.html">trip information</a>:
@@ -556,7 +557,7 @@ network background).</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 10 July 2026</i></small>
+            <br><small><i>This page was last edited on: 15 July 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

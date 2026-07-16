@@ -164,8 +164,52 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;we have now parsable metadata&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>SUMO Developer Meetings 2026</title><link>https://eclipse.dev/sumo/minutes/2026/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/minutes/2026/</guid><description>&lt;h1 id="2026-06-18"&gt;2026-06-18&lt;/h1&gt;
+&lt;/ul&gt;</description></item><item><title>SUMO Developer Meetings 2026</title><link>https://eclipse.dev/sumo/minutes/2026/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eclipse.dev/sumo/minutes/2026/</guid><description>&lt;h1 id="2026-07-16"&gt;2026-07-16&lt;/h1&gt;
 &lt;h2 id="attendees"&gt;Attendees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
+&lt;li&gt;Sasan Amini (transcality)&lt;/li&gt;
+&lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
+&lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
+&lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="topics"&gt;Topics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Lift
+&lt;ul&gt;
+&lt;li&gt;first beta implementation&lt;/li&gt;
+&lt;li&gt;gaps are not discrete but use vehicle / segment length&lt;/li&gt;
+&lt;li&gt;tau_ff is default headway&lt;/li&gt;
+&lt;li&gt;insertion checks on jammed segments changed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Meso
+&lt;ul&gt;
+&lt;li&gt;vehicles on internal lanes&lt;/li&gt;
+&lt;li&gt;maybe ignore simple splits&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;JuPedSim
+&lt;ul&gt;
+&lt;li&gt;Behavior is now identical but the new model is slower&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;RIS (Roadwork Impact Simulator)
+&lt;ul&gt;
+&lt;li&gt;3D model is running&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Visualization tools
+&lt;ul&gt;
+&lt;li&gt;kepler.gl&lt;/li&gt;
+&lt;li&gt;maplibre&lt;/li&gt;
+&lt;li&gt;deck.gl / pydeck&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Issues&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="2026-06-18"&gt;2026-06-18&lt;/h1&gt;
+&lt;h2 id="attendees-1"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Sasan Amini (transcality)&lt;/li&gt;
@@ -175,7 +219,7 @@
 &lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
 &lt;li&gt;Vassileios Karagounis (CERTH)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-1"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Platform dependent results
 &lt;ul&gt;
@@ -229,7 +273,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-05-21"&gt;2026-05-21&lt;/h1&gt;
-&lt;h2 id="attendees-1"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-2"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Sasan Amini (transcality)&lt;/li&gt;
@@ -241,7 +285,7 @@
 &lt;li&gt;Daniel Krajzewicz (DLR)&lt;/li&gt;
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-1"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-2"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Release 1.27.0
 &lt;ul&gt;
@@ -263,7 +307,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-05-07"&gt;2026-05-07&lt;/h1&gt;
-&lt;h2 id="attendees-2"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-3"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Michael Behrisch (DLR)&lt;/li&gt;
 &lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
@@ -271,7 +315,7 @@
 &lt;li&gt;Vassileios Karagounis (CERTH)&lt;/li&gt;
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-2"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-3"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;new Copert device is in test&lt;/li&gt;
 &lt;li&gt;Intermittent tile / download issues with osmWebWizard reported from Mexico
@@ -313,7 +357,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-04-23"&gt;2026-04-23&lt;/h1&gt;
-&lt;h2 id="attendees-3"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-4"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
@@ -322,7 +366,7 @@
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-3"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-4"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Conference Agenda published tomorrow&lt;/li&gt;
 &lt;li&gt;Intermittent tile issues with osmWebWizard reported from Mexico&lt;/li&gt;
@@ -335,7 +379,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-04-09"&gt;2026-04-09&lt;/h1&gt;
-&lt;h2 id="attendees-4"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-5"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Sasan Amini (transcality)&lt;/li&gt;
@@ -344,7 +388,7 @@
 &lt;li&gt;Vassileios Karagounis (CERTH)&lt;/li&gt;
 &lt;li&gt;Daniel Krajzewicz (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-4"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-5"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;some netedit regressions&lt;/li&gt;
 &lt;li&gt;release scheduled in two weeks seems possible
@@ -358,7 +402,7 @@
 &lt;li&gt;optionally respect internal lanes in meso&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-03-26"&gt;2026-03-26&lt;/h1&gt;
-&lt;h2 id="attendees-5"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-6"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Sasan Amini (transcality)&lt;/li&gt;
@@ -369,7 +413,7 @@
 &lt;li&gt;Robert Hilbrich (DLR)&lt;/li&gt;
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-5"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-6"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;OSM tiles
 &lt;ul&gt;
@@ -391,7 +435,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-03-12"&gt;2026-03-12&lt;/h1&gt;
-&lt;h2 id="attendees-6"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-7"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
@@ -402,7 +446,7 @@
 &lt;li&gt;Mario Krumnow (Schlothauer + Wauer)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-6"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-7"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Regression netedit&lt;/li&gt;
 &lt;li&gt;Branding guide in preparation by Angelo&lt;/li&gt;
@@ -414,7 +458,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-02-26"&gt;2026-02-26&lt;/h1&gt;
-&lt;h2 id="attendees-7"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-8"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Jakob Erdmann (DLR)&lt;/li&gt;
 &lt;li&gt;Yun-Pang Flötteröd (DLR)&lt;/li&gt;
@@ -424,7 +468,7 @@
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-7"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-8"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Release Feedback
 &lt;ul&gt;
@@ -452,7 +496,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-02-12"&gt;2026-02-12&lt;/h1&gt;
-&lt;h2 id="attendees-8"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-9"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Sasan Amini (Transcality)&lt;/li&gt;
@@ -466,7 +510,7 @@
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-8"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-9"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;release 1.26.0 feedback
 &lt;ul&gt;
@@ -494,7 +538,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-01-29"&gt;2026-01-29&lt;/h1&gt;
-&lt;h2 id="attendees-9"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-10"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
@@ -507,7 +551,7 @@
 &lt;li&gt;Ronald Nippold (DLR)&lt;/li&gt;
 &lt;li&gt;Peter Wagner (DLR)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-9"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-10"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;release 1.26.0
 &lt;ul&gt;
@@ -537,7 +581,7 @@
 &lt;li&gt;Issues&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="2026-01-15"&gt;2026-01-15&lt;/h1&gt;
-&lt;h2 id="attendees-10"&gt;Attendees&lt;/h2&gt;
+&lt;h2 id="attendees-11"&gt;Attendees&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Pablo Alvarez Lopez (DLR)&lt;/li&gt;
 &lt;li&gt;Angelo Banse (DLR)&lt;/li&gt;
@@ -554,7 +598,7 @@
 &lt;li&gt;Mirko Barthauer (mouver)&lt;/li&gt;
 &lt;li&gt;Sasan Amini (Transcality)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="topics-10"&gt;Topics&lt;/h2&gt;
+&lt;h2 id="topics-11"&gt;Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;next release 1.26.0 may still work on the 26th of January&lt;/li&gt;
 &lt;li&gt;explaining the python wheels&lt;/li&gt;
