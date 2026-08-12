@@ -109,7 +109,7 @@ jobs:
         git checkout source
 
     - name: Lychee Link Checker
-      uses: lycheeverse/lychee-action@master  # to be removed once --accept-timeouts got released
+      uses: lycheeverse/lychee-action@v2
       with:
         fail: true
-        args: --accept-timeouts --accept 200,401,403,418,429,500,502 -c lychee.toml --no-progress --root-dir ${{ github.workspace }} content
+        args: --accept-timeouts --accept 200,202,401,403,415,418,429,500,502,503 -c lychee.toml --no-progress --root-dir ${{ github.workspace }} content
