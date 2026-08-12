@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 15 July 2026
+Last edit: 10 August 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -170,48 +170,6 @@ Last edit: 15 July 2026
             <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
             <li class="nav-item main"><a href="#instantiating_within_the_simulation">Instantiating within the Simulation</a></li>
             <li class="nav-item main"><a href="#generated_output">Generated Output</a></li>
-                <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#emission_attributes" class="nav-link">• Emission Attributes</a>
-                </li>
-                <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#precision" class="nav-link">• Precision</a>
-                </li>
-            <li class="nav-item main"><a href="#person_and_container_output">Person and Container Output</a></li>
-            <li class="nav-item main"><a href="#filtering_restricting_output">Filtering / Restricting Output</a></li>
-                <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#restricting_the_set_of_vehicles_that_generate_output" class="nav-link">• Restricting the set of vehicles that generate output</a>
-                </li>
-                <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#restricting_the_set_of_persons_and_containers_that_generate_output" class="nav-link">• Restricting the set of persons and containers that generate output</a>
-                </li>
-                <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#restricting_the_locations" class="nav-link">• Restricting the locations</a>
-                </li>
-                <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#restricting_the_locations_by_shape" class="nav-link">• Restricting the locations by shape</a>
-                </li>
-                <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#restricting_output_by_sensor_range" class="nav-link">• Restricting output by sensor range</a>
-                </li>
-            <li class="nav-item main"><a href="#changing_the_written_attributes">Changing the written attributes</a></li>
-            <li class="nav-item main"><a href="#further_options">Further Options</a></li>
-            <li class="nav-item main"><a href="#notes">NOTES</a></li>
-            <li class="nav-item main"><a href="#visualization_example">Visualization example</a></li>
-                <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#accelerations_versus_distances" class="nav-link">• Accelerations versus distances</a>
-                </li>
-                <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#all_trajectories_over_time" class="nav-link">• All trajectories over time</a>
-                </li>
-                <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#selected_trajectories_over_time" class="nav-link">• Selected trajectories over time</a>
-                </li>
-                <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#fcd_based_speeds_over_time" class="nav-link">• FCD based speeds over time</a>
-                </li>
-                <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#time-space-plot" class="nav-link">• Time-Space-Plot</a>
-                </li>
         </ul>
     </div>
 
@@ -408,245 +366,13 @@ To delay output (i.e. until some warm-up time has passed), the option <strong>--
 </tr>
 <tr>
 <td>accelerationVec</td>
-<td>m/s<sup>2&lt;/sup</td>
+<td>m/s<sup>2</td>
 <td></td>
 <td></td>
-<td>The acceleration vector of the vehicle: acceleration_x,acceleration_y</td>
-</tr>
-<tr>
-<td>distance</td>
-<td>m</td>
 <td></td>
-<td>x</td>
-<td>The <a href="../Railways.html#kilometrage_mileage_chainage">kilometrage / mileage position</a> of the vehicle.</td>
-</tr>
-<tr>
-<td>odometer</td>
-<td>m</td>
-<td></td>
-<td>x</td>
-<td>The odometer value (distance driven since departure).</td>
-</tr>
-<tr>
-<td>vehicle</td>
-<td>id</td>
-<td></td>
-<td>x</td>
-<td>The id of the vehicle the person is currently riding (only available for persons)</td>
-</tr>
-<tr>
-<td>posLat</td>
-<td>m</td>
-<td></td>
-<td></td>
-<td>The <a href="../SublaneModel.html#lateral_resolution_and_vehicle_position">lateral position</a> on the lane</td>
-</tr>
-<tr>
-<td>speedLat</td>
-<td>m/s</td>
-<td></td>
-<td></td>
-<td>The lateral speed (negative if the vehicle moves to the right)</td>
-</tr>
-<tr>
-<td>leaderID</td>
-<td>id</td>
-<td></td>
-<td></td>
-<td>The id of the leading vehicle</td>
-</tr>
-<tr>
-<td>leaderSpeed</td>
-<td>m/s</td>
-<td></td>
-<td></td>
-<td>The speed of the leader</td>
-</tr>
-<tr>
-<td>leaderGap</td>
-<td>m</td>
-<td></td>
-<td></td>
-<td>The gap to the leader</td>
-</tr>
-<tr>
-<td>segment</td>
-<td>m</td>
-<td></td>
-<td>x</td>
-<td>The <a href="../Meso.html#longitudinal_model">segment index within the current edge</a></td>
-</tr>
-<tr>
-<td>queue</td>
-<td>m</td>
-<td></td>
-<td>x</td>
-<td>The <a href="../Meso.html#longitudinal_model">queue index within the current edge</a></td>
-</tr>
-<tr>
-<td>entryTime</td>
-<td>m</td>
-<td></td>
-<td>x</td>
-<td>The time at which the vehicle entered the current segment</td>
-</tr>
-<tr>
-<td>eventTime</td>
-<td>m</td>
-<td></td>
-<td>x</td>
-<td>The earliest time at which the vehicle can leave the current segment</td>
-</tr>
-<tr>
-<td>blockTime</td>
-<td>m</td>
-<td></td>
-<td>x</td>
-<td>The time at which the vehicle was blocked from leaving the current segment (or -1 if not blocked)</td>
-</tr>
-<tr>
-<td>tag</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Whether a vehicle, container or person is being written (mainly useful for tabular output)</td>
 </tr>
 </tbody>
 </table>
-<h3 id="emission_attributes">Emission Attributes<a class="headerlink" href="#emission_attributes" title="Permanent link">#</a></h3>
-<p>All attributes from the <a href="EmissionOutput.html">emission output</a> can be added to the FCD output as well.
-They need to be enabled by using the option <strong>--fcd-output.attributes</strong>, see below.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">  </span>...
-<span class="w">  </span><span class="nt">&lt;output&gt;</span>
-<span class="w">    </span><span class="nt">&lt;fcd-output.attributes</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;eclass,CO2,CO,HC,NOx,PMx,fuel,electricity,noise&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/output&gt;</span>
-<span class="w">  </span>...
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
-<p>When the option <strong>--fcd-output.geo</strong> is set, the written (x,y)-coordinates will be the
-lon/lat geo-coordinates.</p>
-<h3 id="precision">Precision<a class="headerlink" href="#precision" title="Permanent link">#</a></h3>
-<p>By default fcd-output returns location values in meter with a precision
-of 1cm. (changeable by setting option <strong>--precision</strong>). If you set option
---fcd-output.geo the values are lon,lat as decimal values with a
-precision of 6 decimal places (changeable by setting option <strong>--precision.geo</strong>)</p>
-<h2 id="person_and_container_output">Person and Container Output<a class="headerlink" href="#person_and_container_output" title="Permanent link">#</a></h2>
-<p>Any persons or container in the simulation will cause output of he
-following form:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;fcd-export&gt;</span>
-
-<span class="w">  </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;&lt;TIME_STEP&gt;&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="err">...</span><span class="nt">/&gt;</span>
-<span class="w">      </span>...
-<span class="w">      </span><span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span>...
-<span class="w">      </span><span class="nt">&lt;container</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span>...
-<span class="w">  </span><span class="nt">&lt;/timestep&gt;</span>
-
-<span class="w">  </span>...<span class="w"> </span>next<span class="w"> </span>timestep<span class="w"> </span>...
-
-<span class="nt">&lt;/fcd-export&gt;</span>
-</code></pre></div>
-
-<p>If persons or containers are transported within a vehicle, their
-respective <code>&lt;person&gt;</code> and <code>&lt;container&gt;</code> elements will be written as child elements of that
-vehicle.</p>
-<p>Person and container output can be written to a separate file using the option <strong>--person-fcd-output</strong>.
-If this option is given, the specified file will only contain containers and persons while the fcd-output
-will contain only vehicles.</p>
-<h2 id="filtering_restricting_output">Filtering / Restricting Output<a class="headerlink" href="#filtering_restricting_output" title="Permanent link">#</a></h2>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>The generated output files can become quite large. To write <a href="https://en.wikipedia.org/wiki/Gzip">gzipped</a> output files, simply name the output file with an <code>.gz</code> extension. You can also write <a href="../../TabularOutputs.html">CSV or Parquet output</a>.</p>
-</div>
-<h3 id="restricting_the_set_of_vehicles_that_generate_output">Restricting the set of vehicles that generate output<a class="headerlink" href="#restricting_the_set_of_vehicles_that_generate_output" title="Permanent link">#</a></h3>
-<p>Output can be restricted to specific vehicle types or vehicle ids by <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#devices">controlling the set of vehicles that are equipped</a>   with the <strong>fcd</strong>-device. The following example restricts output to a
-  single vehicle called <em>ego</em>:</p>
-<div class="codehilite"><pre><span></span><code>--device.fcd.explicit ego
-</code></pre></div>
-
-<p>The following example restricts fcd-output to a single flow out of the whole simulation</p>
-<div class="codehilite"><pre><span></span><code>--device.fcd.probability 0 ...
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;flow</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.fcd.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/flow&gt;</span>
-</code></pre></div>
-
-<h3 id="restricting_the_set_of_persons_and_containers_that_generate_output">Restricting the set of persons and containers that generate output<a class="headerlink" href="#restricting_the_set_of_persons_and_containers_that_generate_output" title="Permanent link">#</a></h3>
-<p>Output can be restricted to specific person or container types or person/container ids by <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#devices">controlling the set of persons that are equipped</a>   with the <strong>fcd</strong>-(person)-device. The following example restricts output to a
-  single person called <em>ego</em>:</p>
-<div class="codehilite"><pre><span></span><code>--person-device.fcd.explicit ego
-</code></pre></div>
-
-<p>The following example restricts fcd-output to a single personFlow out of the whole simulation</p>
-<div class="codehilite"><pre><span></span><code>--person-device.fcd.probability 0 ...
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;personFlow</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.fcd.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/personFlow&gt;</span>
-</code></pre></div>
-
-<h3 id="restricting_the_locations">Restricting the locations<a class="headerlink" href="#restricting_the_locations" title="Permanent link">#</a></h3>
-<p>Output can be restricted to a specific set of edges by loading a list of edges from a file with option <strong>--fcd-output.filter-edges.input-file</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a>. The file format for
-this is the same as the one when saving selections in  <a href="../../Netedit/index.html">netedit</a>:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">edge</span><span class="o">:</span><span class="n">id1</span>
-<span class="n">edge</span><span class="o">:</span><span class="n">id2</span>
-<span class="o">...</span>
-</code></pre></div>
-
-<h3 id="restricting_the_locations_by_shape">Restricting the locations by shape<a class="headerlink" href="#restricting_the_locations_by_shape" title="Permanent link">#</a></h3>
-<p>Output can be restricted to vehicles within a specified area by setting a list of <code>&lt;poly&gt;</code> ids with option <strong>--fcd-output.filter-shapes</strong>.
-The <a href="../Shapes.html">polygon shapes</a> must have been loaded from an additional file.</p>
-<h3 id="restricting_output_by_sensor_range">Restricting output by sensor range<a class="headerlink" href="#restricting_output_by_sensor_range" title="Permanent link">#</a></h3>
-<p>When not all vehicles are equipped with an <strong>fcd</strong>-device, other vehicles and persons in a radius around the equipped vehicles can be included in the output by setting option <strong>--device.fcd.radius</strong> to the desired range in m.</p>
-<h2 id="changing_the_written_attributes">Changing the written attributes<a class="headerlink" href="#changing_the_written_attributes" title="Permanent link">#</a></h2>
-<p>The option <strong>--fcd-output.attributes ATTR1,ATTR2,...</strong> restricts / extends the written attributes to the given list to customize output (can be any combination of the attributes above). By default all the values with a marker in the "on" column are written.
-The value <strong>all</strong> enables all attributes (including emission output). There are also some predefined attribute sets:
-- <strong>location</strong> refers to all location attributes enabled by default
-- <strong>emissions</strong> all direct emission values (CO, CO2 etc.)
-- <strong>misc</strong> all values in the table above which are not selected by default (and not in the emission output)</p>
-<h2 id="further_options">Further Options<a class="headerlink" href="#further_options" title="Permanent link">#</a></h2>
-<ul>
-<li><strong>--fcd-output.geo</strong> will toggle output coordinates to WGS84 (for
-  geo-referenced networks)</li>
-<li><strong>--fcd-output.signals</strong> will add <a href="../../TraCI/Vehicle_Signalling.html">signal state
-  information</a> to the output</li>
-<li><strong>--fcd-output.distance</strong> will add <a href="../Railways.html#kilometrage_mileage_chainage">kilometrage</a> information to the output</li>
-<li><strong>--fcd-output.acceleration</strong> will add acceleration data to the output (also lateral acceleration when using the <a href="../SublaneModel.html">sublane model</a>)</li>
-<li><strong>--fcd-output.max-leader-distance FLOAT</strong> will add attributes leaderGap, leaderSpeed, leaderID whenever a vehicle has a leader within the given distance. Otherwise, leaderID will be "" and leaderGap, leaderSpeed will be -1.</li>
-<li><strong>--fcd-output.params KEY1,KEY2,...</strong> adds <a href="../GenericParameters.html">generic parameters</a> to the output (supports device and car-following model parameters as well as arbitrary user-define values)</li>
-</ul>
-<h2 id="notes">NOTES<a class="headerlink" href="#notes" title="Permanent link">#</a></h2>
-<p>In combination with the given geometry of the vehicles (shapes) you can
-build some nice animations, e.g <a href="https://worldwind.arc.nasa.gov/java/">NASA
-WorldWind</a> or <a href="https://earth.google.com">Google
-Earth</a>.</p>
-<h2 id="visualization_example">Visualization example<a class="headerlink" href="#visualization_example" title="Permanent link">#</a></h2>
-<h3 id="accelerations_versus_distances">Accelerations versus distances<a class="headerlink" href="#accelerations_versus_distances" title="Permanent link">#</a></h3>
-<p><img src="../../images/Plot_trajectories.png" width="500px"/></p>
-<p>Generated with <a href="../../Tools/Visualization.html#accelerations_versus_distances">plot_trajectories.py</a>.</p>
-<h3 id="all_trajectories_over_time">All trajectories over time<a class="headerlink" href="#all_trajectories_over_time" title="Permanent link">#</a></h3>
-<p><img src="../../images/allXY_output.png" width="500px"/></p>
-<p>Generated with <a href="../../Tools/Visualization.html#all_trajectories_over_time_1">plotXMLAttributes.py</a>.</p>
-<p><img src="../../images/allLocations_output.png" width="500px"/></p>
-<p>Generated with <a href="../../Tools/Visualization.html#all_trajectories_over_time_2">plot_trajectories.py</a>.</p>
-<h3 id="selected_trajectories_over_time">Selected trajectories over time<a class="headerlink" href="#selected_trajectories_over_time" title="Permanent link">#</a></h3>
-<p><img src="../../images/vehLocations_output.png" width="500px"/></p>
-<p>Generated with <a href="../../Tools/Visualization.html#selected_trajectories_over_time_1">plotXMLAttributes.py</a>.</p>
-<p><img src="../../images/selectXY_output.png" width="500px"/></p>
-<p>Generated with <a href="../../Tools/Visualization.html#selected_trajectories_over_time_2">plot_trajectories.py</a>.</p>
-<h3 id="fcd_based_speeds_over_time">FCD based speeds over time<a class="headerlink" href="#fcd_based_speeds_over_time" title="Permanent link">#</a></h3>
-<p><img src="../../images/timeSpeed_output.png" width="500px"/></p>
-<p>Generated with <a href="../../Tools/Visualization.html#fcd_based_speeds_over_time">plot_trajectories.py</a>.</p>
-<h3 id="time-space-plot">Time-Space-Plot<a class="headerlink" href="#time-space-plot" title="Permanent link">#</a></h3>
-<p><img src="../../images/timespace.png" width="500px"/></p>
-<p>Generated with <a href="../../Tools/Visualization.html#time-space-plot">plotXMLAttributes.py</a>.</p>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -654,7 +380,7 @@ Earth</a>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 15 July 2026</i></small>
+            <br><small><i>This page was last edited on: 10 August 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

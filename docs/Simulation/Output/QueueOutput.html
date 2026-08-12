@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 15 July 2026
+Last edit: 10 August 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -169,7 +169,10 @@ Last edit: 15 July 2026
         <ul class="nav flex-column bs-sidenav">
             <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
             <li class="nav-item main"><a href="#instantiating_within_the_simulation">Instantiating within the Simulation</a></li>
+            <li class="nav-item main"><a href="#data_format">Data Format</a></li>
             <li class="nav-item main"><a href="#generated_output">Generated Output</a></li>
+            <li class="nav-item main"><a href="#mesoscopic_simulation">Mesoscopic Simulation</a></li>
+            <li class="nav-item main"><a href="#aggregated_output">Aggregated Output</a></li>
             <li class="nav-item main"><a href="#notes">Notes</a></li>
             <li class="nav-item main"><a href="#visualization_example">Visualization example</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
@@ -219,6 +222,10 @@ using the end of the last standing vehicle.</p>
 the name of the file the output will be written to. Any other file with
 this name will be overwritten, the destination folder must exist. Using the option <strong>--qeue-output.period</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;TIME&gt;</em></a>, the times 
 the queue lengths will be written can be restricted to the given period. Then, the other time steps will be skipped.</p>
+<p>The speed below which a vehicle is counted as queued can be configured with the option <strong>--queue-output.speed-threshold</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a> (default 1.39 m/s, i.e. 5 km/h).</p>
+<p>By default a (possibly empty) record is written for every time step (or interval). With the option <strong>--queue-output.skip-empty</strong> time steps / intervals that contain no queue are omitted.</p>
+<h2 id="data_format">Data Format<a class="headerlink" href="#data_format" title="Permanent link">#</a></h2>
+<p>The output file format is determined by the file extension (or the option <strong>--output.format</strong>). Besides XML, the <a href="../../Other/File_Extensions.html">column based formats</a> CSV (<code>.csv</code>) and Parquet (<code>.parquet</code>) are supported. Because these formats require a homogeneous set of columns, the option <strong>--queue-output.skip-empty</strong> must be set when using them (otherwise empty time steps would create rows without queue data).</p>
 <h2 id="generated_output">Generated Output<a class="headerlink" href="#generated_output" title="Permanent link">#</a></h2>
 <p>The generated XML file looks like this:</p>
 <div class="codehilite"><pre><span></span><code><span class="nt">&lt;queue-export&gt;</span>
@@ -276,6 +283,52 @@ the queue lengths will be written can be restricted to the given period. Then, t
 </tr>
 </tbody>
 </table>
+<h2 id="mesoscopic_simulation">Mesoscopic Simulation<a class="headerlink" href="#mesoscopic_simulation" title="Permanent link">#</a></h2>
+<p>When running with <a href="../Meso.html">mesoscopic simulation</a>, queues are
+measured per segment queue instead of per lane. Vehicles within a
+segment queue are ordered by their entry time and the queue length (in
+vehicles) is the position of the last queued vehicle, counted from the
+head of the queue. A vehicle counts as queued if the slope of its
+(interpolated) position trajectory lies below the speed threshold.
+This slope is derived from the earliest exit times chained along the
+queue (the same computation used by
+<a href="../Meso.html"><strong>--meso-interpolate-pos</strong></a>) and therefore reflects
+blocked vehicles further ahead, whereas the plain vehicle speed in
+mesosim only drops once a vehicle becomes the queue head. The
+generated <code>lane</code> elements carry the additional attributes <code>segment</code>
+(index of the segment within the edge) and <code>queueing_count</code> (queue
+length in vehicles). The attribute <code>queueing_length</code> gives the
+distance from the segment end to the back of the last queued vehicle
+when <strong>--meso-interpolate-pos</strong> is active and the summed vehicle
+lengths (including minGap) up to the last queued vehicle otherwise.</p>
+<h2 id="aggregated_output">Aggregated Output<a class="headerlink" href="#aggregated_output" title="Permanent link">#</a></h2>
+<p>When setting the option <strong>--queue-output.aggregation</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;TIME&gt;</em></a>, per-timestep
+data is replaced by per-edge queue length statistics aggregated over
+the given period (typically a traffic light cycle):</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;queue-export&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;&lt;BEGIN&gt;&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;&lt;END&gt;&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;EDGE_ID&gt;&quot;</span><span class="w"> </span><span class="na">samples=</span><span class="s">&quot;&lt;NUM_SAMPLES&gt;&quot;</span>
+<span class="w">      </span><span class="na">maxQueueLengthInVehicles=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">medianQueueLengthInVehicles=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">percentileQueueLengthInVehicles=</span><span class="s">&quot;...&quot;</span>
+<span class="w">      </span><span class="na">maxQueueLengthInMeters=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">medianQueueLengthInMeters=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">percentileQueueLengthInMeters=</span><span class="s">&quot;...&quot;</span><span class="nt">/&gt;</span>
+
+<span class="w">    </span>...<span class="w"> </span>next<span class="w"> </span>edge<span class="w"> </span>...
+
+<span class="w">  </span><span class="nt">&lt;/interval&gt;</span>
+
+<span class="w">  </span>...<span class="w"> </span>next<span class="w"> </span>interval<span class="w"> </span>...
+
+<span class="nt">&lt;/queue-export&gt;</span>
+</code></pre></div>
+
+<p>Each lane (or meso segment queue) with at least one queued vehicle
+contributes one sample per recorded time step. The <code>median</code> and
+<code>percentile</code> values are computed over all samples of the interval with
+linear interpolation between order statistics (matching
+<code>numpy.percentile</code>). The reported percentile defaults to the 95th and
+can be configured with the option <strong>--queue-output.percentile</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a>
+(a value between 0 and 100). Edges without any queued vehicles during
+the interval are omitted.</p>
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h2>
 <p>This output option should offer some information about the queues in
 front of the junctions, which can be used in cases of routing or V2X
@@ -291,7 +344,7 @@ communications.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 15 July 2026</i></small>
+            <br><small><i>This page was last edited on: 10 August 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
