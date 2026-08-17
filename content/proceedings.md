@@ -158,8 +158,8 @@ Prof. Dr. **Peter Wagner**, Institute of Transportation Systems, German Aerospac
 - Dr. **Mario Krumnow**, Traffic Solution & Innovation Management, SCHLOTHAUER & WAUER, Germany
   <small>[[ORCID](https://orcid.org/0000-0002-3356-7834)] [[ResearchGate](https://www.researchgate.net/profile/Mario-Krumnow-2)]</small>
 
-- Dr. **Duo Li**, School of Engineering, Newcastle University, United Kingdom
-  <small>[[ORCID](https://orcid.org/0000-0003-0142-9290)] [[Website](https://www.ncl.ac.uk/engineering/staff/profile/duoli.html)]</small>
+- Dr. **Duo Li**, Huazhong University of Science and Technology, China
+  <small>[[ORCID](https://orcid.org/0000-0003-0142-9290)] [[Website](https://faculty.hust.edu.cn/liduo123/en/index.htm)]</small>
 
 - **Ronald Nippold**, Institute of Transportation Systems, German Aerospace Center, Germany
   <small>[[ORCID](https://orcid.org/0000-0003-4837-8021)] [[ResearchGate](https://www.researchgate.net/profile/Ronald-Nippold)]</small>
