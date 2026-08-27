@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 17 August 2026
+Last edit: 27 August 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -262,6 +262,11 @@ shall be generated in must exist.</p>
 <td>string</td>
 <td>space separated list of vehicle type ids to consider, "" means all; default "".</td>
 </tr>
+<tr>
+<td>nextEdges</td>
+<td>stringList</td>
+<td>list of edge ids that must all be part of the future route of the vehicle to qualify for detection (default <em>empty</em>). Instead of giving one or more "normal" edges it is permitted to give a single internal edge. In this case, the vehicle will be detected if it drives over that internal edge immediately after the detector edge.</td>
+</tr>
 </tbody>
 </table>
 <div class="admonition note">
@@ -403,7 +408,7 @@ teleported a leave event without occupancy is generated.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 17 August 2026</i></small>
+            <br><small><i>This page was last edited on: 27 August 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

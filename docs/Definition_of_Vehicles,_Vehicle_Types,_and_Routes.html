@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 17 August 2026
+Last edit: 27 August 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -1725,6 +1725,11 @@ following table.</p>
 <td><a href="Car-Following-Models/ACC.html">Car following model by Milanés V. and Shladover S.E.</a></td>
 </tr>
 <tr>
+<td>carFollowing-NaSch</td>
+<td>NaSch</td>
+<td>Discretized cellular-automaton model by Nagel and Schreckenberg (1992); speeds are rounded to multiples of the "cell size" implied by <strong>accel</strong> and only the gap (not the leader's speed) bounds the safe speed</td>
+</tr>
+<tr>
 <td>carFollowing-CACC</td>
 <td>CACC</td>
 <td><a href="Car-Following-Models/CACC.html">Car following model by Milanés V. and Shladover S.E.</a></td>
@@ -2453,6 +2458,21 @@ lists which parameter are used by which model(s).</p>
 <tr>
 <td>lcCooperativeSpeed</td>
 <td>Factor for cooperative speed adjustments. <em>default: lcCooperative, range [0-1]</em></td>
+<td>LC2013, SL2015</td>
+</tr>
+<tr>
+<td>lcCooperativeHelpTime</td>
+<td>Time threshold for yielding to any downstream vehicles that are blocked from strategic lane changing for too long. A negative value disables time-based yielding. <em>default: 60s</em></td>
+<td>LC2013, SL2015</td>
+</tr>
+<tr>
+<td>lcCooperativeHelpThreshold</td>
+<td>Only cooperatively yield for vehicles that are blocked from strategic lane changing if the speed difference is below the given threshold. The speed threshold is ignored for vehicles that have been waiting long enough (<code>lcCooperativeHelpTime</code>). A negative value yields always. <em>default -1</em></td>
+<td>LC2013, SL2015</td>
+</tr>
+<tr>
+<td>lcCooperativeMinSpeed</td>
+<td>Only cooperatively yield for vehicles that are blocked from strategic lane changing if the yielding vehicle is driving at least that given FACTOR of it's desired speed. The speed threshold is ignored for vehicles that have been waiting long enough (<code>lcCooperativeHelpTime</code>). <em>default 0, range [0-1]</em></td>
 <td>LC2013, SL2015</td>
 </tr>
 <tr>
@@ -3204,7 +3224,7 @@ defining them for the vehicle or the vehicle type in the following way:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 17 August 2026</i></small>
+            <br><small><i>This page was last edited on: 27 August 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

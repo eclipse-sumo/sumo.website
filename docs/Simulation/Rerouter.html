@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 17 August 2026
+Last edit: 27 August 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -515,15 +515,18 @@ this:</p>
 <p>Two <code>closingLaneReroute</code> definitions may be used to simulate a reversible lane in the following way:</p>
 <ul>
 <li>Define two edges in reverse directions with at least 2 lanes each</li>
-<li><a href="../Netedit/editModesCommon.html#inspecting_lanes">prohibit driving on one of the central lanes</a> (disallow="all")</li>
 <li>and modify the edge geometry so that the central lanes occupy the same space.<ul>
 <li>by shifting geometry of <a href="../Netedit/editModesCommon.html#frame_operation">both edges sideways (-1.6 for default lane width)</a></li>
 <li>or by <a href="../Netedit/neteditUsageExamples.html#specifying_the_complete_geometry_of_an_edge_including_endpoints">setting the geometry directly</a></li>
 </ul>
 </li>
 </ul>
-<p>To change their direction for a specific duration, the following rerouter may be used:</p>
+<p>Use a rerouter interval to prohibit one direction of the central overlapping lanes and then further intervals to change the direction:</p>
 <div class="codehilite"><pre><span></span><code><span class="nt">&lt;rerouter</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;example&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;E1 -E1&quot;</span><span class="nt">&gt;</span>
+<span class="w">     </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0:0:0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;7:00:0&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;closingLaneReroute</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;E1_1&quot;</span><span class="w"> </span><span class="na">disallow=</span><span class="s">&quot;all&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;closingLaneReroute</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;-E1_1&quot;</span><span class="w"> </span><span class="na">allow=</span><span class="s">&quot;all&quot;</span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/interval&gt;</span>
 <span class="w">      </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;7:0:0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;8:30:0&quot;</span><span class="nt">&gt;</span>
 <span class="w">            </span><span class="nt">&lt;closingLaneReroute</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;E1_1&quot;</span><span class="w"> </span><span class="na">allow=</span><span class="s">&quot;all&quot;</span><span class="nt">/&gt;</span>
 <span class="w">            </span><span class="nt">&lt;closingLaneReroute</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;-E1_1&quot;</span><span class="w"> </span><span class="na">disallow=</span><span class="s">&quot;all&quot;</span><span class="nt">/&gt;</span>
@@ -533,6 +536,10 @@ this:</p>
 </code></pre></div>
 
 <p>Alternatively to changing lane permissions with a rerouter, the traci functions <a href="../TraCI/Change_Lane_State.html"><code>traci.lane.setAllowed</code> and <code>setDisallowed</code></a> may also be used.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>When using rerouters to extend the original permissions of a network (allowing more vehicles than permitted by default) requires explicit handling of <a href="Intersections.html#internal_links">internal edges</a>. For this reason it is easier to allow both lanes in the network and set the initial restriction with a rerouter.</p>
+</div>
 <h2 id="assigning_a_new_destination">Assigning a new Destination<a class="headerlink" href="#assigning_a_new_destination" title="Permanent link">#</a></h2>
 <p>A "destProbReroute" forces the rerouter to assign a new route to
 vehicles that pass one of the edges defined in the edges-attribute of
@@ -1015,7 +1022,7 @@ By setting attribute <code>priority</code> in the <a href="../Definition_of_Vehi
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 17 August 2026</i></small>
+            <br><small><i>This page was last edited on: 27 August 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
