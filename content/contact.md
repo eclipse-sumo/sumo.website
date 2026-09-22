@@ -85,7 +85,7 @@ SUMO developer at the German Aerospace Center (DLR) since 2007, researcher, stra
 <div class="col-sm-6" id="hilbrich">
 <img src="https://avatars.githubusercontent.com/roberthilbrich" alt="picture of Robert Hilbrich" style="width:100px; border-radius: 50%; margin-bottom:10px;">
 <h5>Robert Hilbrich</h5>
-SUMO team lead at the German Aerospace Center (DLR) in Berlin, responsible for business development and strategy, member of Eclipse Board of Directors and Chair of Eclipse openMobility.
+SUMO team lead at the German Aerospace Center (DLR) in Berlin, responsible for business development and strategy, member of the Eclipse Board of Directors.
 <br><br>
 <a href="mailto:sumo@dlr.de" class="btn btn-sm btn-outline-info">Email</a> <a href="https://x.com/roberthilbrich" class="btn btn-sm btn-outline-info"><i class="fab fa-x-twitter"></i></a> <a href="https://linkedin.com/in/roberthilbrich" class="btn btn-sm btn-outline-info"><i class="fab fa-linkedin"></i></a>
 </div>
