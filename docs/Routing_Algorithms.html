@@ -19,9 +19,9 @@ Last edit: 22 September 2026
 
         
         
-        <link rel="canonical" href="https://sumo.dlr.de/docs/Versioning.html">
+        <link rel="canonical" href="https://sumo.dlr.de/docs/Routing_Algorithms.html">
         <link rel="shortcut icon" href="images/favicon.ico">
-        <title>Versioning - SUMO Documentation</title>
+        <title>Routing Algorithms - SUMO Documentation</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/fontawesome.all.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
@@ -111,7 +111,7 @@ Last edit: 22 September 2026
                     </a>
                 </li>
                     <li class="nav-item">
-                        <a rel="edit" href="https://github.com/eclipse-sumo/sumo/edit/main/docs/web/docs/Versioning.md" class="nav-link"><i class="fa-brands fa-github"></i> <u>E</u>dit on GitHub</a>
+                        <a rel="edit" href="https://github.com/eclipse-sumo/sumo/edit/main/docs/web/docs/Routing_Algorithms.md" class="nav-link"><i class="fa-brands fa-github"></i> <u>E</u>dit on GitHub</a>
                     </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -136,17 +136,17 @@ Last edit: 22 September 2026
                     <span class="dropdown-item">
                         Translations are generated automatically by Google Translate:
                     </span>
-                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Versioning.html?_x_tr_sl=en&_x_tr_tl=de">Deutsch</a>
-                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Versioning.html?_x_tr_sl=en&_x_tr_tl=es">Español</a>
-                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Versioning.html?_x_tr_sl=en&_x_tr_tl=pt">Português</a>
-                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Versioning.html?_x_tr_sl=en&_x_tr_tl=fr">Français</a>
-                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Versioning.html?_x_tr_sl=en&_x_tr_tl=it">Italiano</a>
-                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Versioning.html?_x_tr_sl=en&_x_tr_tl=zh-CN">简体中文</a>
-                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Versioning.html?_x_tr_sl=en&_x_tr_tl=zh-TW">繁體中文</a>
-                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Versioning.html?_x_tr_sl=en&_x_tr_tl=tr">Türkçe</a>
-                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Versioning.html?_x_tr_sl=en&_x_tr_tl=ja">日本語</a>
-                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Versioning.html?_x_tr_sl=en&_x_tr_tl=ko">한국어</a>
-                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Versioning.html?_x_tr_sl=auto&_x_tr_tl=en"><i class="fa-solid fa-arrow-right"></i> Other languages</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Routing_Algorithms.html?_x_tr_sl=en&_x_tr_tl=de">Deutsch</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Routing_Algorithms.html?_x_tr_sl=en&_x_tr_tl=es">Español</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Routing_Algorithms.html?_x_tr_sl=en&_x_tr_tl=pt">Português</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Routing_Algorithms.html?_x_tr_sl=en&_x_tr_tl=fr">Français</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Routing_Algorithms.html?_x_tr_sl=en&_x_tr_tl=it">Italiano</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Routing_Algorithms.html?_x_tr_sl=en&_x_tr_tl=zh-CN">简体中文</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Routing_Algorithms.html?_x_tr_sl=en&_x_tr_tl=zh-TW">繁體中文</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Routing_Algorithms.html?_x_tr_sl=en&_x_tr_tl=tr">Türkçe</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Routing_Algorithms.html?_x_tr_sl=en&_x_tr_tl=ja">日本語</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Routing_Algorithms.html?_x_tr_sl=en&_x_tr_tl=ko">한국어</a>
+                    <a class="dropdown-item" href="https://sumo-dlr-de.translate.goog/docs/Routing_Algorithms.html?_x_tr_sl=auto&_x_tr_tl=en"><i class="fa-solid fa-arrow-right"></i> Other languages</a>
                     </div>
                 </li>
             </ul>
@@ -168,32 +168,26 @@ Last edit: 22 September 2026
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary toc-scroll toc">
         <ul class="nav flex-column bs-sidenav">
             <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
-            <li class="nav-item main"><a href="#sumo_version_numbers_and_their_meaning">SUMO version numbers and their meaning</a></li>
+            <li class="nav-item main"><a href="#routing_algorithms">Routing Algorithms</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#release_version" class="nav-link">• Release version</a>
+                    <a href="#dijkstra_dijkstra" class="nav-link">• Dijkstra (dijkstra)</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#developer_version" class="nav-link">• Developer version</a>
+                    <a href="#a_astar" class="nav-link">• A* (astar)</a>
+                </li>
+                <li class="nav-item" style="text-indent: 25px;">
+                    <a href="#alt" class="nav-link">&rarr; ALT</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#network_version" class="nav-link">• Network version</a>
+                    <a href="#ch_contraction_hierarchies" class="nav-link">• CH (Contraction Hierarchies)</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#traci_version" class="nav-link">• TraCI version</a>
-                </li>
-            <li class="nav-item main"><a href="#backwards_compatibility">Backwards compatibility</a></li>
-                <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#input" class="nav-link">• Input</a>
+                    <a href="#chwrapper" class="nav-link">• CHWrapper</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#processing" class="nav-link">• Processing</a>
+                    <a href="#cch_customizable_contraction_hierarchies" class="nav-link">• CCH (Customizable Contraction Hierarchies)</a>
                 </li>
-                <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#output" class="nav-link">• Output</a>
-                </li>
-                <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#gui" class="nav-link">• GUI</a>
-                </li>
+            <li class="nav-item main"><a href="#routing_feature_support_by_algorithm">Routing feature support by algorithm</a></li>
         </ul>
     </div>
 
@@ -207,7 +201,7 @@ Last edit: 22 September 2026
                    <!-- page.is_homepage seems to be broken in Mkdocs > 1.1.0 -->
                   <ul class="breadcrumbs">
     <script>
-        var pagePath = "/docs/Versioning.html";
+        var pagePath = "/docs/Routing_Algorithms.html";
         var splitUrl = pagePath.split("/");
         splitUrl.pop();
         splitUrl.shift();
@@ -224,55 +218,197 @@ Last edit: 22 September 2026
             document.write("<li class=\"breadcrumb-item\"><a class=\"no-arrow-link\" href=\"" + dirLink[i] + "\">" + splitUrl[i] + "</a></li>");
         }
     </script>
-    <li class="breadcrumb-item active">Versioning</li>
+    <li class="breadcrumb-item active">Routing Algorithms</li>
 </ul>
-                  <h1 class="h-title">Versioning</h1>
+                  <h1 class="h-title">Routing Algorithms</h1>
                   
                   
 
-<h1 id="sumo_version_numbers_and_their_meaning">SUMO version numbers and their meaning<a class="headerlink" href="#sumo_version_numbers_and_their_meaning" title="Permanent link">#</a></h1>
-<p>SUMO has version numbers in many places, namely</p>
+<h1 id="routing_algorithms">Routing Algorithms<a class="headerlink" href="#routing_algorithms" title="Permanent link">#</a></h1>
+<p>Applications that perform routing (<a href="sumo.html">sumo</a>,
+<a href="sumo-gui.html">sumo-gui</a>, <a href="duarouter.html">duarouter</a>,
+<a href="marouter.html">marouter</a>) support the option <strong>--routing-algorithm</strong> for selecting among
+the following values:</p>
+<h2 id="dijkstra_dijkstra">Dijkstra (<code>dijkstra</code>)<a class="headerlink" href="#dijkstra_dijkstra" title="Permanent link">#</a></h2>
+<p><a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's</a>
+algorithm is the simplest and slowest routing algorithm. It is
+well suited to routing in time-dependent networks (i.e. when the
+travel time on an edge depends on the time of day).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is the default algorithm</p>
+</div>
+<h2 id="a_astar">A* (<code>astar</code>)<a class="headerlink" href="#a_astar" title="Permanent link">#</a></h2>
+<p>The <a href="https://en.wikipedia.org/wiki/A*_search_algorithm">A*</a> routing
+algorithm uses a metric for bounding travel time to direct the
+search and is often faster than dijkstra. Here, the metric <em>euclidean distance / maximumVehicleSpeed</em>) is used.</p>
+<h3 id="alt">ALT<a class="headerlink" href="#alt" title="Permanent link">#</a></h3>
+<p>By using <em>astar</em> together with the option <strong>--astar.landmark-distances</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a> the ALT-Algorithm is activated.
+The name ALT stands for: <strong>A</strong>*, <strong>L</strong>andmarks, <strong>t</strong>riangle inequality.
+It uses a precomputed distance table to selected network edges (so-called landmarks) to speed up the search, often by a significant factor.</p>
 <ul>
-<li>the release version (visible in releases when calling <code>sumo -V</code> or in the about dialog of the GUI applications), something like 1.6.0</li>
-<li>the developer version (visible in the same places for a nightly build or a self compiled developer version), something like v1_6_0+1520-cb474809f6</li>
-<li>the network version (visible in the beginning of every .net.xml as <code>&lt;net version="1.0" ...</code>)</li>
-<li>the TraCI version returned by TraCI's or libsumo's <a href="TraCI/Control-related_commands.html">getVersion</a> command</li>
+<li>A lookup table can be generated by creating a file with one landmark edge id per line (e.g. landmarks.txt)
+and then setting the options <strong>--astar.landmark-distances landmarks.txt --astar.save-landmark-distances lookuptable.txt</strong>.<ul>
+<li>an alternative input for generating a distance table is one geo-coordinate in the form <code>LON LAT</code> per line</li>
+<li>the tool <a href="Tools/Misc.html#generatelandmarkspy">generateLandmarks.py</a> can be used to generate a landmark input file by distributing edges around the rim of the network in all directions</li>
 </ul>
-<h2 id="release_version">Release version<a class="headerlink" href="#release_version" title="Permanent link">#</a></h2>
-<p>SUMO loosely follows <a href="https://semver.org">Semantic Versioning</a> which distinguishes major releases (the first number changes),
-minor releases (the second number changes) and patch or bugfix releases (third number).
-We release approximately three or four times a year and most of the time we ship a minor release.
-The amount of changes is relatively high (1000+ commits between successive releases)
-so there is always some additional feature justifying a new minor version.
-Due to the relatively high frequency and the availability of nightly builds we only ship bugfix releases
-if the minor release has a severe bug.
-Major releases are very rare (we only did this once since 2001) and are more or less a political decision.</p>
-<p>We do not release service versions (e.g. a 1.5.1 when a 1.6.0 is already out) or maintain separate release tracks or branches.
-There is only one line of development.</p>
-<h2 id="developer_version">Developer version<a class="headerlink" href="#developer_version" title="Permanent link">#</a></h2>
-<p>It is denoted by a string consisting of a "v", the last release (e.g. "1_6_0"), a plus sign with the number of
-commits since last release (e.g. "+1520") and a minus followed by the first letters of the hash of the last commit to
-the main branch on GitHub (e.g. "-cb474809f6"). For the python packages this is translated into "1.6.0.post1520" to be compliant
-with PEP440.</p>
-<h2 id="network_version">Network version<a class="headerlink" href="#network_version" title="Permanent link">#</a></h2>
-<p>This is also a "major.minor" version number simply denoting the SUMO release when this format has been introduced. The <a href="netconvert.html">netconvert</a>
-tool can usually parse older networks as well (at least back to when the versioning scheme in networks has been introduced with 0.25.0 in 2015)
-and translate them to the current format.</p>
-<h2 id="traci_version">TraCI version<a class="headerlink" href="#traci_version" title="Permanent link">#</a></h2>
-<p>Please see the <a href="TraCI/Control-related_commands.html">description of the relevant command</a>.</p>
-<h1 id="backwards_compatibility">Backwards compatibility<a class="headerlink" href="#backwards_compatibility" title="Permanent link">#</a></h1>
-<h2 id="input">Input<a class="headerlink" href="#input" title="Permanent link">#</a></h2>
-<p>The main input files like the network and the routes are quite stable and we usually only add new elements or attributes there.</p>
-<h2 id="processing">Processing<a class="headerlink" href="#processing" title="Permanent link">#</a></h2>
-<p>When introducing new features or changing behavior we usually try to provide options to get the old behavior back
-unless we consider the old variant a bug. Since all the models are still under very dynamic development
-(and the main development is for research purposes) it may be hard to get identical behavior in complex
-traffic situations with very different SUMO versions. If you ship a scenario to someone it is always a good idea
-to mention the SUMO version it is intended to be run with. The version is also mentioned in all output files.</p>
-<h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">#</a></h2>
-<p>Output formats are also quite stable but are of course subject to changes in vehicle behavior and general bug fixing.</p>
-<h2 id="gui">GUI<a class="headerlink" href="#gui" title="Permanent link">#</a></h2>
-<p>This gets the least attention concerning stability of user experience although we always try not to confuse the user (honestly!).</p>
+</li>
+<li>As a rule of thumb using 8-16 edges distributed around the main roads that border the network achieve good ALT-performance. Using more edges is not recommended because each landmark adds a fixed overhead.</li>
+<li>by using <em>astar</em> together with the option <strong>--astar.all-distances</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a> the A* algorithm is
+  used together with a complete (and often huge) distance table to allow for blazing fast search. This is only recommended for medium sized networks with a high number of routing queries</li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>pre-computed distance tables are not useful when planning to perform routing with either one of the options <strong>--weights.priority-factor</strong> or <strong>--weights.random-factor</strong> as these change the actual distances.</p>
+</div>
+<h2 id="ch_contraction_hierarchies">CH (Contraction Hierarchies)<a class="headerlink" href="#ch_contraction_hierarchies" title="Permanent link">#</a></h2>
+<p><a href="https://en.wikipedia.org/wiki/Contraction_hierarchies">Contraction Hierarchies</a>
+is a preprocessing-based routing algorithm. This is very efficient
+when a large number of queries is expected. The algorithm does not
+consider time-dependent weights. Instead, new preprocessing can be
+performed for time-slices of fixed size by setting the option <strong>--weight-period</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;TIME&gt;</em></a>.</p>
+<p>When loading a network with edge permissions, a separate preprocessing is triggered for every vehicle class encountered in a routing task (by automatically switching to <a href="#chwrapper">CHWrapper</a>).</p>
+<h2 id="chwrapper">CHWrapper<a class="headerlink" href="#chwrapper" title="Permanent link">#</a></h2>
+<p>This works like <em>CH</em> but performs separate preprocessing for every vehicle class that is encountered, thereby
+enabling routing in multi modal scenarios.</p>
+<h2 id="cch_customizable_contraction_hierarchies">CCH (Customizable Contraction Hierarchies)<a class="headerlink" href="#cch_customizable_contraction_hierarchies" title="Permanent link">#</a></h2>
+<p><a href="https://doi.org/10.1145/2886843">Customizable Contraction Hierarchies</a>
+(CCH) is a preprocessing-based routing algorithm, available in
+<a href="sumo.html">sumo</a>, <a href="duarouter.html">duarouter</a> and <a href="marouter.html">marouter</a>. It
+splits Contraction Hierarchies into a one-time, weight-independent topology
+build (the nested dissection order) and a much cheaper "customization" step
+that recomputes edge weights over that fixed topology. This makes it
+attractive when edge weights change repeatedly over a simulation run or an
+assignment (unlike plain <em>CH</em>, which must rebuild the whole hierarchy for
+every <strong>--weight-period</strong>).</p>
+<p>In all three applications one metric is customized per vehicle <em>type</em> (not per
+vehicle class). Everything the travel time function reads from the type is
+therefore exact per metric: the type's maximum speed, vClass-specific edge
+speed limits, <a href="Simulation/Routing.html#routing_by_travel_time_and_routingtype">routing preferences</a>
+and <strong>--weights.priority-factor</strong>. Only the individual speed factor of the
+vehicles within a type is approximated by the type's reference vehicle, and
+<strong>--weights.random-factor</strong> freezes one random realization into each metric
+(the same approximation <em>CHWrapper</em> makes when building its hierarchies,
+instead of a fresh draw per query as with <em>dijkstra</em> and <em>astar</em>).</p>
+<ul>
+<li>In <strong>sumo</strong>, CCH replaces the periodic hierarchy rebuild of <em>CH</em>/<em>CHWrapper</em>
+  with a metric re-customization that runs whenever the <a href="Demand/Automatic_Routing.html">rerouting
+  device</a> adapts edge weights
+  (<strong>--device.rerouting.adaptation-interval</strong>), so the metrics always reflect
+  the device's current edge weights (<strong>--device.rerouting.bike-speeds</strong>
+  included, through the metrics of the bicycle types). The re-customization
+  is partial: an edge is only propagated into the metric once its weight has
+  moved by more than <strong>--device.rerouting.cch-update-threshold.factor</strong>
+  (relative) and <strong>--device.rerouting.cch-update-threshold.constant</strong>
+  (absolute, in seconds) since it was last applied; the defaults (1 and 0)
+  propagate every change. <strong>--device.rerouting.cch-ensemble</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;INT&gt;</em></a> keeps
+  that many metrics per type, each with its own frozen
+  <strong>--weights.random-factor</strong> realization, and assigns every vehicle to one of
+  them by a stable hash of its id, which restores the route diversity of the
+  random factor at the cost of more customization work. A query for a type
+  without a metric yet, or a query carrying a per-request prohibition (e.g. a
+  <a href="Simulation/Rerouter.html">rerouter</a> closure) that is not already a live
+  permission change, transparently falls back to an embedded A* search.</li>
+<li>In <strong>duarouter</strong>, CCH supports <strong>--weight-files</strong> / <strong>--weight-period</strong>
+  (one metric per vehicle type and weight period, built lazily on first use)
+  and <strong>--restriction-params</strong> (the restricted edges are masked to infinite
+  weight per affected vehicle type).</li>
+<li>In <strong>marouter</strong>, one metric is customized for the default vehicle type and
+  re-customized whenever an assignment iteration has updated the travel
+  times, so every iteration routes on the same travel times a <em>dijkstra</em> run
+  would use (<em>CH</em> rebuilds its whole hierarchy at that point instead). As
+  with <em>CH</em>, the metric does not see the k shortest path penalties of
+  <strong>--paths</strong>, so a warning is issued for <strong>--paths</strong> greater than 1.</li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>CCH support differs meaningfully between sumo and duarouter; see the
+feature matrix below before assuming a given combination of options works.</p>
+</div>
+<h1 id="routing_feature_support_by_algorithm">Routing feature support by algorithm<a class="headerlink" href="#routing_feature_support_by_algorithm" title="Permanent link">#</a></h1>
+<p>The table below summarizes which routing features are supported by each
+<strong>--routing-algorithm</strong> value. "partial" means the feature is only supported
+by some of the applications that implement CCH (<a href="sumo.html">sumo</a>,
+<a href="duarouter.html">duarouter</a>, <a href="marouter.html">marouter</a>); see the
+<a href="#cch-customizable-contraction-hierarchies">CCH</a> section above for the exact split.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>dijkstra</th>
+<th>astar / ALT</th>
+<th>CH</th>
+<th>CHWrapper</th>
+<th>CCH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time-dependent weights (<strong>--weight-files</strong>, <strong>--weight-period</strong>)</td>
+<td>yes</td>
+<td>yes</td>
+<td>no (rebuilds per period)</td>
+<td>no (rebuilds per period)</td>
+<td>partial (duarouter only)</td>
+</tr>
+<tr>
+<td>Edge permissions / vClass restrictions</td>
+<td>yes</td>
+<td>yes</td>
+<td>no (use CHWrapper)</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><strong>--restriction-params</strong></td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+<td>yes</td>
+<td>partial (duarouter only)</td>
+</tr>
+<tr>
+<td>Per-query prohibitions (rerouter / TraCI closures not already reflected as a live permission change)</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>falls back to embedded A*</td>
+</tr>
+<tr>
+<td><strong>--weights.priority-factor</strong></td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><strong>--weights.random-factor</strong></td>
+<td>yes (exact, per query)</td>
+<td>yes (exact, per query)</td>
+<td>not supported</td>
+<td>not supported</td>
+<td>approximated: one frozen realization per metric (sumo keeps several with <strong>--device.rerouting.cch-ensemble</strong>)</td>
+</tr>
+<tr>
+<td>Routing preferences</td>
+<td>yes</td>
+<td>yes</td>
+<td>not supported</td>
+<td>not supported</td>
+<td>yes (exact, metrics are keyed by vehicle type)</td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.bike-speeds</strong> (sumo only)</td>
+<td>yes</td>
+<td>yes</td>
+<td>not supported</td>
+<td>not supported</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>

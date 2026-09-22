@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 27 August 2026
+Last edit: 22 September 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -488,8 +488,8 @@ known:</p>
 </tr>
 <tr>
 <td>period*</td>
-<td>float(s)</td>
-<td>insert equally spaced persons at that period</td>
+<td>float(s) or "exp(X)" where x is float</td>
+<td>if float is given, insert equally spaced persons at that period. If exp(X) is given, insert persons with exponentially distributed time gaps. This turns insertion into a <a href="https://en.wikipedia.org/wiki/Poisson_point_process">Poisson process</a> with an expected value of <em>X</em> insertions per second. (not together with personsPerHour or probability), see also <a href="../Simulation/Randomness.html#flows_with_a_random_number_of_vehicles">Simulation/Randomness</a></td>
 </tr>
 <tr>
 <td>probability*</td>
@@ -1051,7 +1051,7 @@ placeholder <code>&lt;DEVICENAME&gt;</code> below:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 27 August 2026</i></small>
+            <br><small><i>This page was last edited on: 22 September 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

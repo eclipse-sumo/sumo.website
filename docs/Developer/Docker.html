@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 27 August 2026
+Last edit: 22 September 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -217,7 +217,12 @@ Last edit: 27 August 2026
 <h2 id="dockerized_sumo">Dockerized SUMO<a class="headerlink" href="#dockerized_sumo" title="Permanent link">#</a></h2>
 <p>Building and installing SUMO from source is not an easy task for beginner users.
 Docker is a popular tool to solve this issue.
-SUMO provides <a href="https://github.com/eclipse-sumo/sumo/blob/main/build_config/docker">Dockerfiles</a> and <a href="https://github.com/eclipse-sumo/sumo/pkgs/container/sumo/versions">prebuilt Docker images</a> to use.</p>
+SUMO provides <a href="https://github.com/eclipse-sumo/sumo/blob/main/build_config/docker">Dockerfiles</a> and <a href="https://github.com/eclipse-sumo/sumo/pkgs/container/sumo">prebuilt Docker images</a> to use.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The tags for the containers v1_23_0, v1_23_1, v1_24_0, v1_25_0 and v1_26_0 point to containers which are either broken or contain the wrong version.
+To make sure you use the correct version use the version tags 1.23.0 etc.</p>
+</div>
 <h3 id="available_dockerfiles">Available Dockerfiles<a class="headerlink" href="#available_dockerfiles" title="Permanent link">#</a></h3>
 <p>There are several Dockerfiles available in the SUMO repository.
 To build them, check out <a href="https://github.com/eclipse-sumo/sumo">the SUMO repository</a> and use the following command while in the <code>build_config/docker</code> directory of the repository:</p>
@@ -265,7 +270,7 @@ To build them, check out <a href="https://github.com/eclipse-sumo/sumo">the SUMO
 <td>Environment for building SUMO on Jenkins. Installs all packages required to build SUMO, but does not contain any SUMO binaries.</td>
 </tr>
 <tr>
-<td><code>Dockerfile.manylinux2014</code></td>
+<td><code>Dockerfile.manylinux</code></td>
 <td>Build environment for creating <a href="https://github.com/pypa/manylinux">manylinux</a> python wheels, adapted with additional preinstalled packages.</td>
 </tr>
 </tbody>
@@ -286,18 +291,19 @@ The published images are built from the <code>Dockerfile.ubuntu.git</code> Docke
 <tbody>
 <tr>
 <td><code>main</code> <code>nightly</code></td>
-<td>Nightly build containing the current version of SUMO from the repository.</td>
+<td>Nightly build containing the current version of SUMO from the repository (<code>`main</code> may be more recent if a build has been triggered manually).</td>
 </tr>
 <tr>
-<td><code>vX_Y_Z</code> (e.g. <code>v1_21_0</code>)</td>
+<td><code>vX_Y_Z</code>, <code>X.Y.Z</code> (e.g. <code>v1_21_0</code>, <code>1.21.0</code>)</td>
 <td>A version of the image created alongside the respective release. Contains SUMO in the matching stable version.</td>
 </tr>
 <tr>
 <td><code>latest</code></td>
-<td>References the image of the latest stable release (e.g. <code>v1_21_0</code>)</td>
+<td>References the image of the latest stable release (e.g. <code>1.21.0</code>)</td>
 </tr>
 </tbody>
 </table>
+<p>The tag without the <code>v</code> is the more reliable one, see the note at the top of the page.</p>
 <h3 id="how_to_use_dockerized_sumo">How to use dockerized SUMO<a class="headerlink" href="#how_to_use_dockerized_sumo" title="Permanent link">#</a></h3>
 <p>A complete example is available in <a href="../Tutorials/Containerized_SUMO.html">the tutorial on containerized SUMO</a>.</p>
 <p>A quick example for running a prepared simulation looks like this:</p>
@@ -319,7 +325,7 @@ Therefore, we cannot provide specific instructions here.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 27 August 2026</i></small>
+            <br><small><i>This page was last edited on: 22 September 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

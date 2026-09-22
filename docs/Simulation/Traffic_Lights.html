@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 27 August 2026
+Last edit: 22 September 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -724,10 +724,6 @@ By default the phase sequence will be in order of the phase elements in the inpu
 The order of the phases can be changed by defining attribute <code>next</code> for some or all phases (if multiple indices are defined in <code>next</code>, the first entry is used and all others are ignored).</p>
 <h1 id="traffic_lights_that_respond_to_traffic">Traffic Lights that respond to traffic<a class="headerlink" href="#traffic_lights_that_respond_to_traffic" title="Permanent link">#</a></h1>
 <p>Generally, the designation "actuated" refers to traffic lights that switch in response to traffic (or lack thereof). The different controllers and their features are described below. SUMO supports several algorithms with this property and they are described below.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><a href="Meso.html">Mesoscopic simulation</a> does not support actuated traffic lights.</p>
-</div>
 <h2 id="type_actuated">Type 'actuated'<a class="headerlink" href="#type_actuated" title="Permanent link">#</a></h2>
 <p>SUMO supports <em>gap-based</em> actuated traffic control. This control scheme
 is common in Germany and works by prolonging traffic phases whenever a
@@ -827,6 +823,10 @@ selecting the corresponding menu entry.</p>
 <p class="admonition-title">Caution</p>
 <p>Custom detectors only work when the 'tlLogic' is loaded from an additional file.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using custom detectors in <a href="Meso.html">meso</a>, only works if the inductionLoop sets attribute <code>mesoTLS="true"</code></p>
+</div>
 <p>Custom detector activation states can optionally be written to the <a href="Output/Traffic_Lights.html#optional_output">TLS output</a>.</p>
 <p>To include further detectors in the output and in the <a href="#track_phases">phase tracker dialog</a> (i.e. when a custom logic uses laneArea detectors or multiple detectors on the same lane) the following declaration can be used to list all extra detectors:</p>
 <div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;extra-detectors&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;customDetector1 customDetector2 ...&quot;</span><span class="nt">/&gt;</span>
@@ -887,11 +887,11 @@ phase run more than once in the same cycle (this only happens when param
 <p>The helper script <a href="../Tools/tls.html#buildtransitionspy">buildTransitions.py</a> can be used to generate such logics from simplified definitions.</p>
 <h4 id="exampe_left-turn_phases_can_be_skipped">Exampe: left-turn phases can be skipped<a class="headerlink" href="#exampe_left-turn_phases_can_be_skipped" title="Permanent link">#</a></h4>
 <div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;actuated&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;P1&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;33&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;GgrrGgrr&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;8 1&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;33&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;GgrrGgrr&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;1 8&quot;</span><span class="nt">/&gt;</span>
 <span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;ygrrygrr&quot;</span><span class="nt">/&gt;</span>
 <span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rGrrrGrr&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 <span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;ryrrryrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;33&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrGgrrGg&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;9 5&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;33&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrGgrrGg&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;5 9&quot;</span><span class="nt">/&gt;</span>
 <span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrygrryg&quot;</span><span class="nt">/&gt;</span>
 <span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrrGrrrG&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 <span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrryrrry&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
@@ -1566,7 +1566,7 @@ The top row contains the phase index but it is possible to change this so it sho
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 27 August 2026</i></small>
+            <br><small><i>This page was last edited on: 22 September 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

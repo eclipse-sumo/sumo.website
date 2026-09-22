@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 27 August 2026
+Last edit: 22 September 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -190,6 +190,7 @@ Last edit: 27 August 2026
             <li class="nav-item main"><a href="#filterflowspy">filterFlows.py</a></li>
             <li class="nav-item main"><a href="#mapdetectorspy">mapDetectors.py</a></li>
             <li class="nav-item main"><a href="#flow2poipy">flow2POI.py</a></li>
+            <li class="nav-item main"><a href="#flowconservationpy">flowConservation.py</a></li>
         </ul>
     </div>
 
@@ -335,6 +336,11 @@ The total traffic count will be written into tye <code>type</code> attribute of 
 Aggregated traffic values (i.e. hourly) will be written as <code>&lt;param</code>&gt; elements of the respective POI which makes it easy to show the respective value using gui-setting <em>Show poi text param</em>.</p>
 <div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">detector</span><span class="o">/</span><span class="n">flow2POI</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="n">input_detectors</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">input_flows</span><span class="o">.</span><span class="n">txt</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">pois</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="mi">60</span>
 </code></pre></div>
+
+<h1 id="flowconservationpy">flowConservation.py<a class="headerlink" href="#flowconservationpy" title="Permanent link">#</a></h1>
+<p>This script reads a network and an <a href="../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures.html#edge-based_network_states">edgeData file</a> to find data that violates conservation of flow at each junction where enough data is available to determine this.  The algorithm looks upstream and downstream to estimate missing values (i.e. if only incoming flow is available from traffic light detectors). By setting option <strong>--symmetry-threshold</strong> missing values can estimated from the reverse direction for edges with traffic below the given threshold. </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">detector</span><span class="o">/</span><span class="n">flowConservation</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="n">input_edgedata</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span>
+</code></pre></div>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -342,7 +348,7 @@ Aggregated traffic values (i.e. hourly) will be written as <code>&lt;param</code
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 27 August 2026</i></small>
+            <br><small><i>This page was last edited on: 22 September 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

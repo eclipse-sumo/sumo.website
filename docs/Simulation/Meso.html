@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 27 August 2026
+Last edit: 22 September 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -188,6 +188,9 @@ Last edit: 27 August 2026
                 </li>
                 <li class="nav-item" style="text-indent: 25px;">
                     <a href="#jam-resolution" class="nav-link">&rarr; Jam-Resolution</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#ltm_alternative_longitudinal_model" class="nav-link">• LTM: alternative longitudinal model</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#lateral_model" class="nav-link">• Lateral Model</a>
@@ -378,6 +381,20 @@ controlled by <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.
 On multi-lane edges, <a href="#lateral_model">overtaking can be enabled</a> to reduce this slow-down effect.</p>
 <h3 id="jam-resolution">Jam-Resolution<a class="headerlink" href="#jam-resolution" title="Permanent link">#</a></h3>
 <p>The option <strong>--meso-recheck</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;TIME&gt;</em></a> can be used to delay traffic flow into a fully occupied segment. Whenever a vehicle cannot move into the next segment because it is full, the given value acts as a time delay before checking again whether the segment has capacity to receive another vehicle. By default this delay is set to 0.</p>
+<h2 id="ltm_alternative_longitudinal_model">LTM: alternative longitudinal model<a class="headerlink" href="#ltm_alternative_longitudinal_model" title="Permanent link">#</a></h2>
+<p>When setting option <strong>--meso-ltm</strong>, an alternative longitudinal model (the mesoscopic <strong>L</strong>ink <strong>T</strong>ransmission <strong>M</strong>odel) is activated. This model is based on a <a href="https://www.sciencedirect.com/science/article/pii/S1569190X26000018">publications</a> by Ying-Chuan Ni et. al.</p>
+<p>Instead of classifying segments as jammed/free based on <strong>--meso-jam-threshold</strong>, this model achieves jam dynamics by tracking gaps between cars that travel upstream when a car exists a segment.
+Whereas the other model achieves increased headway whenever a car travels from a "jammed" segment into another "jammed" segment, the meso-LTM model achieves increased headway whenever a segment is filled with a combination of cars and gaps. As soon as gaps reach the upstream end of the segment they disappear and thus free up capacity for vehicles from the upstream segment.
+The following parameters are used by the model:</p>
+<ul>
+<li><strong>meso-tauff</strong>: minimum headway when traveling (default <em>1.13</em>), also the time for a gap to travel backwards by 7.5m if a car was traveling at free flow speed</li>
+<li><strong>meso-taujf</strong>: minimum headway when traveling after the vehicle was blocked (waitingTime &gt; 0)</li>
+<li><strong>meso-taujj</strong>: the time for a gap to travel backwards by 7.5m if a car was <em>not</em> traveling at free flow speed (default <em>1.4</em>)</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The meso-LTM model achieves more realistic simulation for urban queuing dynamics. The original meso model (Eissfeldt) achieves instant propagation of gaps when queued traffic starts to flow again (i.e. at a traffic light). In contrast, the meso-LTM model distinguishes between a queue that has space at the upstream end and a queue that has space ad the downstream end.</p>
+</div>
 <h2 id="lateral_model">Lateral Model<a class="headerlink" href="#lateral_model" title="Permanent link">#</a></h2>
 <p>Lateral movement is not modelled explicitly. Vehicles may overtake each
 other (swap their position) if the option <strong>--meso-overtaking</strong> is enabled. This is a
@@ -480,8 +497,6 @@ differ somewhat:</p>
 <h2 id="limitations_compared_to_sumo">Limitations compared to SUMO<a class="headerlink" href="#limitations_compared_to_sumo" title="Permanent link">#</a></h2>
 <p>The following SUMO features are not supported:</p>
 <ul>
-<li><a href="Traffic_Lights.html#type_actuated">Actuated traffic lights</a></li>
-<li>Electric model</li>
 <li>Wireless model</li>
 <li>Opposite-direction driving</li>
 <li>Sublane-model</li>
@@ -507,7 +522,7 @@ different when running the mesoscopic model as well.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 27 August 2026</i></small>
+            <br><small><i>This page was last edited on: 22 September 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

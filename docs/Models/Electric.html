@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 27 August 2026
+Last edit: 22 September 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -261,7 +261,9 @@ all vehicles. Alternatively, the device may be specified using <a href="../Defin
 vehicle parameters</a>.</p>
 <p>Additional properties of the vehicle and its electrical components must
 then be defined via <a href="../Simulation/GenericParameters.html">parameters of the vehicle or its
-type</a>. Some property can only be defined for the vehicle type.</p>
+type</a>.
+Note, that some parameters are specific to the battery device and thus carry the <code>device.battery</code> prefix. These can be defined either in the <code>&lt;vType&gt;</code> or the <code>&lt;vehicle</code>. 
+Other parameters are more general and also used by other models (i.e. emission models) and thus carry no prefix. All of the later must be defined in the <code>&lt;vType&gt;</code>.</p>
 <p>These values have the following meanings (the defaults are from the Kia below):</p>
 <table>
 <thead>
@@ -278,6 +280,24 @@ type</a>. Some property can only be defined for the vehicle type.</p>
 <td>float</td>
 <td>35000 (Wh)</td>
 <td>Maximum battery capacity <em>E<sub>max</sub></em></td>
+</tr>
+<tr>
+<td>device.battery.maximumChargeRate</td>
+<td>float</td>
+<td>150000 (W)</td>
+<td>Maximum charging rate of the battery</td>
+</tr>
+<tr>
+<td>device.battery.chargeLevelTable</td>
+<td>float list</td>
+<td></td>
+<td>Ordered list of state of charge values (from 0 to 1) for which maximum charge rates are defined in <code>device.battery.chargeCurveTable</code></td>
+</tr>
+<tr>
+<td>device.battery.chargeCurveTable</td>
+<td>float list</td>
+<td></td>
+<td>Corresponding maximum charge rates to each state of charge value in <code>device.battery.chargeLevelTable</code></td>
 </tr>
 <tr>
 <td>maximumPower</td>
@@ -350,24 +370,6 @@ type</a>. Some property can only be defined for the vehicle type.</p>
 <td>float</td>
 <td>0.1 (m/s)</td>
 <td>Maximum velocity to start charging</td>
-</tr>
-<tr>
-<td>device.battery.maximumChargeRate</td>
-<td>float</td>
-<td>150000 (W)</td>
-<td>Maximum charging rate of the battery</td>
-</tr>
-<tr>
-<td>device.battery.chargeLevelTable</td>
-<td>float list</td>
-<td></td>
-<td>Ordered list of state of charge values (from 0 to 1) for which maximum charge rates are defined in <code>device.battery.chargeCurveTable</code></td>
-</tr>
-<tr>
-<td>device.battery.chargeCurveTable</td>
-<td>float list</td>
-<td></td>
-<td>Corresponding maximum charge rates to each state of charge value in <code>device.battery.chargeLevelTable</code></td>
 </tr>
 </tbody>
 </table>
@@ -985,7 +987,7 @@ Heidelberg
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 27 August 2026</i></small>
+            <br><small><i>This page was last edited on: 22 September 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

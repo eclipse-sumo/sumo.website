@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 27 August 2026
+Last edit: 22 September 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -457,6 +457,9 @@ they use public transport, a personal car or walking.<ul>
 be generated using the option <strong>--intermediate</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;INT&gt;</em></a>. This will add the given number of
 <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#incomplete_routes_trips_and_flows">via-edges</a>
 to the trip definitions.</p>
+<p>The option <strong>--return-to-origin</strong> ends each trip on the opposite-direction edge of its starting edge,
+if one exists. Otherwise, the starting edge is used as the destination edge. It must be used together
+with <strong>--intermediate</strong>.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>If the network contains disconnected components, the probability of generating invalid trips grows with the number of intermediate waypoints (since a trip is invalid if any intermediate part is invalid). To avoid this, <a href="../netconvert.html#edge_removal">make sure your network has only a single component</a>.</p>
@@ -517,7 +520,7 @@ random destinations, use</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 27 August 2026</i></small>
+            <br><small><i>This page was last edited on: 22 September 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
