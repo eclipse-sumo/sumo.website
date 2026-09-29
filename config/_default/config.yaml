@@ -16,7 +16,7 @@ frontmatter:
     - date
 
 params:
-  favicon: "images/favicon.ico"
+  favicon: "images/favicon.svg"
   logo: "images/logos/sumo-logo-white.svg"
   docsURL: "https://sumo.dlr.de/docs"
   githubEditURL: "https://github.com/eclipse-sumo/sumo.website/edit/source/content/"
