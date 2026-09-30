@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 25 September 2026
+Last edit: 30 September 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,7 @@ Last edit: 25 September 2026
         
         
         <link rel="canonical" href="https://sumo.dlr.de/docs/Simulation/Rerouter.html">
-        <link rel="shortcut icon" href="../images/favicon.ico">
+        <link rel="shortcut icon" href="../images/favicon.svg" type="image/svg+xml">
         <title>Rerouter - SUMO Documentation</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
@@ -192,6 +192,9 @@ Last edit: 25 September 2026
                 </li>
                 <li class="nav-item" style="text-indent: 25px;">
                     <a href="#special_destination_values" class="nav-link">&rarr; Special Destination Values</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#assigning_an_intermediate_waypoint" class="nav-link">• Assigning an intermediate waypoint</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#assigning_a_new_route" class="nav-link">• Assigning a new Route</a>
@@ -602,6 +605,61 @@ first applicable value is used):</p>
 <li><em>terminateRoute</em>: the vehicle immediately leaves the simulation and
    counts as arrived at its current position on the rerouter edge</li>
 </ul>
+<h2 id="assigning_an_intermediate_waypoint">Assigning an intermediate waypoint<a class="headerlink" href="#assigning_an_intermediate_waypoint" title="Permanent link">#</a></h2>
+<p>A "viaProbReroute" forces the rerouter to assign an intermediate (via) edge to
+vehicles that pass one of the edges defined in the edges-attribute of
+the rerouter's declaration. A probability distribution of multiple via edges is defined as follows (only one will be chosen per vehicle):</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;rerouter&gt;</span>
+<span class="w">   </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;&lt;BEGIN_TIME&gt;&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;&lt;END_TIME&gt;&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;viaProbReroute</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;EDGE_ID1&gt;&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;&lt;PROBABILITY1&gt;&quot;</span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;viaProbReroute</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;EDGE_ID2&gt;&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;&lt;PROBABILITY2&gt;&quot;</span><span class="nt">/&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/interval&gt;</span>
+
+<span class="w">   </span>...<span class="w"> </span>further<span class="w"> </span>intervals<span class="w"> </span>...
+
+<span class="nt">&lt;/rerouter&gt;</span>
+</code></pre></div>
+
+<p>The fastest route is computed automatically using the Dijkstra-algorithm
+and starting at the edge the vehicle is located at, to the chosen via edge and ending at the original destination.
+The following travel times are considered for routing (the
+first applicable value is used):</p>
+<ul>
+<li>the current (smoothed) travel times in the network are used if the
+   vehicle is equipped with a <a href="../Demand/Automatic_Routing.html">rerouting
+   device</a></li>
+<li>subjective edge costs for the current vehicle if set via <a href="../TraCI/Change_Vehicle_State.html#change_edge_travel_time_information_0x58">TraCI
+   command <em>change edge travel time
+   information</em></a></li>
+<li>edge weights loaded via the <a href="../sumo.html">sumo</a> option <strong>--weight-files</strong></li>
+<li>travel times in the empty network</li>
+</ul>
+<p>The attributes used within a viaProbReroute are:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>The id of the via edge; the id must be the id of an edge within the network</td>
+</tr>
+<tr>
+<td><strong>probability</strong></td>
+<td>float (should be between 0 and 1)</td>
+<td>The probability with which a vehicle will use the given edge as intermediate waypoint; the probabilities are automatically normalized to sum to 1</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is possible to combine <strong>closingReroute</strong> and <strong>viaProbReroute</strong> within the same interval. In this case, only vehicles which cannot use their original route because it passed one of the closed edges draw a via edge from the probability distribution.</p>
+</div>
 <h2 id="assigning_a_new_route">Assigning a new Route<a class="headerlink" href="#assigning_a_new_route" title="Permanent link">#</a></h2>
 <p>A "routeProbReroute" forces the rerouter to assign a new route to
 vehicles which pass one of the edges defined in the edges-attribute of
@@ -1022,7 +1080,7 @@ By setting attribute <code>priority</code> in the <a href="../Definition_of_Vehi
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 25 September 2026</i></small>
+            <br><small><i>This page was last edited on: 30 September 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 25 September 2026
+Last edit: 30 September 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,7 @@ Last edit: 25 September 2026
         
         
         <link rel="canonical" href="https://sumo.dlr.de/docs/Netedit/attribute_help.html">
-        <link rel="shortcut icon" href="../images/favicon.ico">
+        <link rel="shortcut icon" href="../images/favicon.svg" type="image/svg+xml">
         <title>Netedit attribute help - SUMO Documentation</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
@@ -1507,6 +1507,11 @@ Last edit: 25 September 2026
 <td>Angle of rendered image in degree <em>default:</em> <strong>0.00</strong></td>
 </tr>
 <tr>
+<td>height</td>
+<td>non-negative float</td>
+<td>Height of polygonin meters <em>default:</em> <strong>0.00</strong></td>
+</tr>
+<tr>
 <td>geo</td>
 <td>boolean</td>
 <td>Enable or disable GEO attributes <em>default:</em> <strong>0</strong></td>
@@ -2589,8 +2594,8 @@ Last edit: 25 September 2026
 </tr>
 <tr>
 <td>aggregate</td>
-<td>boolean</td>
-<td>Whether the traffic statistic of all edges shall be aggregated into a single value <em>default:</em> <strong>0</strong></td>
+<td>discrete</td>
+<td>Whether the traffic statistic of all edges shall be aggregated into a single value <em>default:</em> <strong>false</strong></td>
 </tr>
 </tbody>
 </table>
@@ -2691,8 +2696,8 @@ Last edit: 25 September 2026
 </tr>
 <tr>
 <td>aggregate</td>
-<td>boolean</td>
-<td>Whether the traffic statistic of all edges shall be aggregated into a single value <em>default:</em> <strong>0</strong></td>
+<td>discrete</td>
+<td>Whether the traffic statistic of all edges shall be aggregated into a single value <em>default:</em> <strong>false</strong></td>
 </tr>
 </tbody>
 </table>
@@ -2945,6 +2950,11 @@ Last edit: 25 September 2026
 <td>The id of the route the vehicle shall drive along</td>
 </tr>
 <tr>
+<td>routeProbe</td>
+<td>string</td>
+<td>The id of the routeProbe element from which to determine the route distribution for generated vehicles</td>
+</tr>
+<tr>
 <td>vehsPerHour</td>
 <td>integer</td>
 <td>Number of vehicles per hour, equally spaced <em>default:</em> <strong>1800</strong></td>
@@ -2962,7 +2972,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departLane</td>
 <td>string</td>
-<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>first</strong></td>
+<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>best_prob</strong></td>
 </tr>
 <tr>
 <td>departPos</td>
@@ -2972,7 +2982,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departSpeed</td>
 <td>string</td>
-<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>0</strong></td>
+<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>avg</strong></td>
 </tr>
 <tr>
 <td>arrivalLane</td>
@@ -3528,7 +3538,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departLane</td>
 <td>string</td>
-<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>first</strong></td>
+<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>best_prob</strong></td>
 </tr>
 <tr>
 <td>departPos</td>
@@ -3538,7 +3548,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departSpeed</td>
 <td>string</td>
-<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>0</strong></td>
+<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>avg</strong></td>
 </tr>
 <tr>
 <td>arrivalLane</td>
@@ -3640,7 +3650,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departLane</td>
 <td>string</td>
-<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>first</strong></td>
+<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>best_prob</strong></td>
 </tr>
 <tr>
 <td>departPos</td>
@@ -3650,7 +3660,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departSpeed</td>
 <td>string</td>
-<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>0</strong></td>
+<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>avg</strong></td>
 </tr>
 <tr>
 <td>arrivalLane</td>
@@ -3752,7 +3762,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departLane</td>
 <td>string</td>
-<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>first</strong></td>
+<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>best_prob</strong></td>
 </tr>
 <tr>
 <td>departPos</td>
@@ -3762,7 +3772,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departSpeed</td>
 <td>string</td>
-<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>0</strong></td>
+<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>avg</strong></td>
 </tr>
 <tr>
 <td>arrivalLane</td>
@@ -3859,7 +3869,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departLane</td>
 <td>string</td>
-<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>first</strong></td>
+<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>best_prob</strong></td>
 </tr>
 <tr>
 <td>departPos</td>
@@ -3869,7 +3879,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departSpeed</td>
 <td>string</td>
-<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>0</strong></td>
+<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>avg</strong></td>
 </tr>
 <tr>
 <td>arrivalLane</td>
@@ -3961,7 +3971,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departLane</td>
 <td>string</td>
-<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>first</strong></td>
+<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>best_prob</strong></td>
 </tr>
 <tr>
 <td>departPos</td>
@@ -3971,7 +3981,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departSpeed</td>
 <td>string</td>
-<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>0</strong></td>
+<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>avg</strong></td>
 </tr>
 <tr>
 <td>arrivalLane</td>
@@ -4078,7 +4088,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departLane</td>
 <td>string</td>
-<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>first</strong></td>
+<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>best_prob</strong></td>
 </tr>
 <tr>
 <td>departPos</td>
@@ -4088,7 +4098,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departSpeed</td>
 <td>string</td>
-<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>0</strong></td>
+<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>avg</strong></td>
 </tr>
 <tr>
 <td>arrivalLane</td>
@@ -4230,7 +4240,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departLane</td>
 <td>string</td>
-<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>first</strong></td>
+<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>best_prob</strong></td>
 </tr>
 <tr>
 <td>departPos</td>
@@ -4240,7 +4250,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departSpeed</td>
 <td>string</td>
-<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>0</strong></td>
+<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>avg</strong></td>
 </tr>
 <tr>
 <td>arrivalLane</td>
@@ -4382,7 +4392,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departLane</td>
 <td>string</td>
-<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>first</strong></td>
+<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>best_prob</strong></td>
 </tr>
 <tr>
 <td>departPos</td>
@@ -4392,7 +4402,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departSpeed</td>
 <td>string</td>
-<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>0</strong></td>
+<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>avg</strong></td>
 </tr>
 <tr>
 <td>arrivalLane</td>
@@ -6720,7 +6730,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departLane</td>
 <td>string</td>
-<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>first</strong></td>
+<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>best_prob</strong></td>
 </tr>
 <tr>
 <td>departPos</td>
@@ -6730,7 +6740,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departSpeed</td>
 <td>string</td>
-<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>0</strong></td>
+<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>avg</strong></td>
 </tr>
 <tr>
 <td>arrivalLane</td>
@@ -6862,7 +6872,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departLane</td>
 <td>string</td>
-<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>first</strong></td>
+<td>The lane on which the vehicle shall be inserted <em>default:</em> <strong>best_prob</strong></td>
 </tr>
 <tr>
 <td>departPos</td>
@@ -6872,7 +6882,7 @@ Last edit: 25 September 2026
 <tr>
 <td>departSpeed</td>
 <td>string</td>
-<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>0</strong></td>
+<td>The speed with which the vehicle shall enter the network <em>default:</em> <strong>avg</strong></td>
 </tr>
 <tr>
 <td>arrivalLane</td>
@@ -16637,7 +16647,7 @@ Last edit: 25 September 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 25 September 2026</i></small>
+            <br><small><i>This page was last edited on: 30 September 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

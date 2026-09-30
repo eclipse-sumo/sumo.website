@@ -33,6 +33,15 @@
             <li>
                     <a class="class" href="#MeanDataDomain">MeanDataDomain</a>
                             <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#MeanDataDomain.getAttributeValue">getAttributeValue</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#MeanDataDomain.getIDs">getIDs</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#MeanDataDomain.getAttributeValues">getAttributeValues</a>
+                        </li>
                 </ul>
 
             </li>
@@ -85,6 +94,27 @@
 </span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a>        <span class="n">Domain</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;meandata&quot;</span><span class="p">,</span> <span class="n">tc</span><span class="o">.</span><span class="n">CMD_GET_MEANDATA_VARIABLE</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a>                        <span class="n">tc</span><span class="o">.</span><span class="n">CMD_SUBSCRIBE_MEANDATA_VARIABLE</span><span class="p">,</span> <span class="n">tc</span><span class="o">.</span><span class="n">RESPONSE_SUBSCRIBE_MEANDATA_VARIABLE</span><span class="p">,</span>
 </span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a>                        <span class="n">tc</span><span class="o">.</span><span class="n">CMD_SUBSCRIBE_MEANDATA_CONTEXT</span><span class="p">,</span> <span class="n">tc</span><span class="o">.</span><span class="n">RESPONSE_SUBSCRIBE_MEANDATA_CONTEXT</span><span class="p">)</span>
+</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a>
+</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a>    <span class="k">def</span> <span class="nf">getAttributeValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">,</span> <span class="n">laneID</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+</span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;getAttributeValue(string, string, string) -&gt; double</span>
+</span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a><span class="sd">        Return the requested attribute for the give laneID as collected by the named laneData or edgeData definition</span>
+</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a><span class="sd">        If the id belongs to edgeData, then any lane of the edge may be used.</span>
+</span><span id="L-34"><a href="#L-34"><span class="linenos">34</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-35"><a href="#L-35"><span class="linenos">35</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getUniversal</span><span class="p">(</span><span class="n">tc</span><span class="o">.</span><span class="n">VAR_MEANDATA_LANE</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">,</span> <span class="s2">&quot;tss&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">laneID</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+</span><span id="L-36"><a href="#L-36"><span class="linenos">36</span></a>
+</span><span id="L-37"><a href="#L-37"><span class="linenos">37</span></a>    <span class="k">def</span> <span class="nf">getIDs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">):</span>
+</span><span id="L-38"><a href="#L-38"><span class="linenos">38</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;getAttributeValue(string) -&gt; tuple(string)</span>
+</span><span id="L-39"><a href="#L-39"><span class="linenos">39</span></a><span class="sd">        Return the list of edge ids (for edgeData) or lane ids (for laneData) for which data is being collected</span>
+</span><span id="L-40"><a href="#L-40"><span class="linenos">40</span></a><span class="sd">        This is the order corresponding to the data returned by getAttributeValues</span>
+</span><span id="L-41"><a href="#L-41"><span class="linenos">41</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-42"><a href="#L-42"><span class="linenos">42</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getUniversal</span><span class="p">(</span><span class="n">tc</span><span class="o">.</span><span class="n">VAR_MEANDATA_IDS</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">)</span>
+</span><span id="L-43"><a href="#L-43"><span class="linenos">43</span></a>
+</span><span id="L-44"><a href="#L-44"><span class="linenos">44</span></a>    <span class="k">def</span> <span class="nf">getAttributeValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+</span><span id="L-45"><a href="#L-45"><span class="linenos">45</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;getAttributeValue(string, string) -&gt; tuple(double)</span>
+</span><span id="L-46"><a href="#L-46"><span class="linenos">46</span></a><span class="sd">        Return the requested attribute for all edges (edgeData) or all lanes</span>
+</span><span id="L-47"><a href="#L-47"><span class="linenos">47</span></a><span class="sd">        (laneData). The order corresponds to the list of ids returned by getIDs</span>
+</span><span id="L-48"><a href="#L-48"><span class="linenos">48</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-49"><a href="#L-49"><span class="linenos">49</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getUniversal</span><span class="p">(</span><span class="n">tc</span><span class="o">.</span><span class="n">VAR_MEANDATA_VALUES</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -106,11 +136,113 @@
 </span><span id="MeanDataDomain-27"><a href="#MeanDataDomain-27"><span class="linenos">27</span></a>        <span class="n">Domain</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;meandata&quot;</span><span class="p">,</span> <span class="n">tc</span><span class="o">.</span><span class="n">CMD_GET_MEANDATA_VARIABLE</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="MeanDataDomain-28"><a href="#MeanDataDomain-28"><span class="linenos">28</span></a>                        <span class="n">tc</span><span class="o">.</span><span class="n">CMD_SUBSCRIBE_MEANDATA_VARIABLE</span><span class="p">,</span> <span class="n">tc</span><span class="o">.</span><span class="n">RESPONSE_SUBSCRIBE_MEANDATA_VARIABLE</span><span class="p">,</span>
 </span><span id="MeanDataDomain-29"><a href="#MeanDataDomain-29"><span class="linenos">29</span></a>                        <span class="n">tc</span><span class="o">.</span><span class="n">CMD_SUBSCRIBE_MEANDATA_CONTEXT</span><span class="p">,</span> <span class="n">tc</span><span class="o">.</span><span class="n">RESPONSE_SUBSCRIBE_MEANDATA_CONTEXT</span><span class="p">)</span>
+</span><span id="MeanDataDomain-30"><a href="#MeanDataDomain-30"><span class="linenos">30</span></a>
+</span><span id="MeanDataDomain-31"><a href="#MeanDataDomain-31"><span class="linenos">31</span></a>    <span class="k">def</span> <span class="nf">getAttributeValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">,</span> <span class="n">laneID</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+</span><span id="MeanDataDomain-32"><a href="#MeanDataDomain-32"><span class="linenos">32</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;getAttributeValue(string, string, string) -&gt; double</span>
+</span><span id="MeanDataDomain-33"><a href="#MeanDataDomain-33"><span class="linenos">33</span></a><span class="sd">        Return the requested attribute for the give laneID as collected by the named laneData or edgeData definition</span>
+</span><span id="MeanDataDomain-34"><a href="#MeanDataDomain-34"><span class="linenos">34</span></a><span class="sd">        If the id belongs to edgeData, then any lane of the edge may be used.</span>
+</span><span id="MeanDataDomain-35"><a href="#MeanDataDomain-35"><span class="linenos">35</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="MeanDataDomain-36"><a href="#MeanDataDomain-36"><span class="linenos">36</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getUniversal</span><span class="p">(</span><span class="n">tc</span><span class="o">.</span><span class="n">VAR_MEANDATA_LANE</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">,</span> <span class="s2">&quot;tss&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">laneID</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+</span><span id="MeanDataDomain-37"><a href="#MeanDataDomain-37"><span class="linenos">37</span></a>
+</span><span id="MeanDataDomain-38"><a href="#MeanDataDomain-38"><span class="linenos">38</span></a>    <span class="k">def</span> <span class="nf">getIDs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">):</span>
+</span><span id="MeanDataDomain-39"><a href="#MeanDataDomain-39"><span class="linenos">39</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;getAttributeValue(string) -&gt; tuple(string)</span>
+</span><span id="MeanDataDomain-40"><a href="#MeanDataDomain-40"><span class="linenos">40</span></a><span class="sd">        Return the list of edge ids (for edgeData) or lane ids (for laneData) for which data is being collected</span>
+</span><span id="MeanDataDomain-41"><a href="#MeanDataDomain-41"><span class="linenos">41</span></a><span class="sd">        This is the order corresponding to the data returned by getAttributeValues</span>
+</span><span id="MeanDataDomain-42"><a href="#MeanDataDomain-42"><span class="linenos">42</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="MeanDataDomain-43"><a href="#MeanDataDomain-43"><span class="linenos">43</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getUniversal</span><span class="p">(</span><span class="n">tc</span><span class="o">.</span><span class="n">VAR_MEANDATA_IDS</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">)</span>
+</span><span id="MeanDataDomain-44"><a href="#MeanDataDomain-44"><span class="linenos">44</span></a>
+</span><span id="MeanDataDomain-45"><a href="#MeanDataDomain-45"><span class="linenos">45</span></a>    <span class="k">def</span> <span class="nf">getAttributeValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+</span><span id="MeanDataDomain-46"><a href="#MeanDataDomain-46"><span class="linenos">46</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;getAttributeValue(string, string) -&gt; tuple(double)</span>
+</span><span id="MeanDataDomain-47"><a href="#MeanDataDomain-47"><span class="linenos">47</span></a><span class="sd">        Return the requested attribute for all edges (edgeData) or all lanes</span>
+</span><span id="MeanDataDomain-48"><a href="#MeanDataDomain-48"><span class="linenos">48</span></a><span class="sd">        (laneData). The order corresponds to the list of ids returned by getIDs</span>
+</span><span id="MeanDataDomain-49"><a href="#MeanDataDomain-49"><span class="linenos">49</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="MeanDataDomain-50"><a href="#MeanDataDomain-50"><span class="linenos">50</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getUniversal</span><span class="p">(</span><span class="n">tc</span><span class="o">.</span><span class="n">VAR_MEANDATA_VALUES</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
 </span></pre></div>
 
 
     
 
+                            <div id="MeanDataDomain.getAttributeValue" class="classattr">
+                                        <input id="MeanDataDomain.getAttributeValue-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">getAttributeValue</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">meanDataID</span>, </span><span class="param"><span class="n">laneID</span>, </span><span class="param"><span class="n">attr</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="MeanDataDomain.getAttributeValue-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#MeanDataDomain.getAttributeValue"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="MeanDataDomain.getAttributeValue-31"><a href="#MeanDataDomain.getAttributeValue-31"><span class="linenos">31</span></a>    <span class="k">def</span> <span class="nf">getAttributeValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">,</span> <span class="n">laneID</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+</span><span id="MeanDataDomain.getAttributeValue-32"><a href="#MeanDataDomain.getAttributeValue-32"><span class="linenos">32</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;getAttributeValue(string, string, string) -&gt; double</span>
+</span><span id="MeanDataDomain.getAttributeValue-33"><a href="#MeanDataDomain.getAttributeValue-33"><span class="linenos">33</span></a><span class="sd">        Return the requested attribute for the give laneID as collected by the named laneData or edgeData definition</span>
+</span><span id="MeanDataDomain.getAttributeValue-34"><a href="#MeanDataDomain.getAttributeValue-34"><span class="linenos">34</span></a><span class="sd">        If the id belongs to edgeData, then any lane of the edge may be used.</span>
+</span><span id="MeanDataDomain.getAttributeValue-35"><a href="#MeanDataDomain.getAttributeValue-35"><span class="linenos">35</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="MeanDataDomain.getAttributeValue-36"><a href="#MeanDataDomain.getAttributeValue-36"><span class="linenos">36</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getUniversal</span><span class="p">(</span><span class="n">tc</span><span class="o">.</span><span class="n">VAR_MEANDATA_LANE</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">,</span> <span class="s2">&quot;tss&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">laneID</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>getAttributeValue(string, string, string) -> double
+Return the requested attribute for the give laneID as collected by the named laneData or edgeData definition
+If the id belongs to edgeData, then any lane of the edge may be used.</p>
+</div>
+
+
+                            </div>
+                            <div id="MeanDataDomain.getIDs" class="classattr">
+                                        <input id="MeanDataDomain.getIDs-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">getIDs</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">meanDataID</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="MeanDataDomain.getIDs-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#MeanDataDomain.getIDs"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="MeanDataDomain.getIDs-38"><a href="#MeanDataDomain.getIDs-38"><span class="linenos">38</span></a>    <span class="k">def</span> <span class="nf">getIDs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">):</span>
+</span><span id="MeanDataDomain.getIDs-39"><a href="#MeanDataDomain.getIDs-39"><span class="linenos">39</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;getAttributeValue(string) -&gt; tuple(string)</span>
+</span><span id="MeanDataDomain.getIDs-40"><a href="#MeanDataDomain.getIDs-40"><span class="linenos">40</span></a><span class="sd">        Return the list of edge ids (for edgeData) or lane ids (for laneData) for which data is being collected</span>
+</span><span id="MeanDataDomain.getIDs-41"><a href="#MeanDataDomain.getIDs-41"><span class="linenos">41</span></a><span class="sd">        This is the order corresponding to the data returned by getAttributeValues</span>
+</span><span id="MeanDataDomain.getIDs-42"><a href="#MeanDataDomain.getIDs-42"><span class="linenos">42</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="MeanDataDomain.getIDs-43"><a href="#MeanDataDomain.getIDs-43"><span class="linenos">43</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getUniversal</span><span class="p">(</span><span class="n">tc</span><span class="o">.</span><span class="n">VAR_MEANDATA_IDS</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>getAttributeValue(string) -> tuple(string)
+Return the list of edge ids (for edgeData) or lane ids (for laneData) for which data is being collected
+This is the order corresponding to the data returned by getAttributeValues</p>
+</div>
+
+
+                            </div>
+                            <div id="MeanDataDomain.getAttributeValues" class="classattr">
+                                        <input id="MeanDataDomain.getAttributeValues-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">getAttributeValues</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">meanDataID</span>, </span><span class="param"><span class="n">attr</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="MeanDataDomain.getAttributeValues-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#MeanDataDomain.getAttributeValues"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="MeanDataDomain.getAttributeValues-45"><a href="#MeanDataDomain.getAttributeValues-45"><span class="linenos">45</span></a>    <span class="k">def</span> <span class="nf">getAttributeValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+</span><span id="MeanDataDomain.getAttributeValues-46"><a href="#MeanDataDomain.getAttributeValues-46"><span class="linenos">46</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;getAttributeValue(string, string) -&gt; tuple(double)</span>
+</span><span id="MeanDataDomain.getAttributeValues-47"><a href="#MeanDataDomain.getAttributeValues-47"><span class="linenos">47</span></a><span class="sd">        Return the requested attribute for all edges (edgeData) or all lanes</span>
+</span><span id="MeanDataDomain.getAttributeValues-48"><a href="#MeanDataDomain.getAttributeValues-48"><span class="linenos">48</span></a><span class="sd">        (laneData). The order corresponds to the list of ids returned by getIDs</span>
+</span><span id="MeanDataDomain.getAttributeValues-49"><a href="#MeanDataDomain.getAttributeValues-49"><span class="linenos">49</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="MeanDataDomain.getAttributeValues-50"><a href="#MeanDataDomain.getAttributeValues-50"><span class="linenos">50</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getUniversal</span><span class="p">(</span><span class="n">tc</span><span class="o">.</span><span class="n">VAR_MEANDATA_VALUES</span><span class="p">,</span> <span class="n">meanDataID</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>getAttributeValue(string, string) -> tuple(double)
+Return the requested attribute for all edges (edgeData) or all lanes
+(laneData). The order corresponds to the list of ids returned by getIDs</p>
+</div>
+
+
+                            </div>
                             <div class="inherited">
                                 <h5>Inherited Members</h5>
                                 <dl>

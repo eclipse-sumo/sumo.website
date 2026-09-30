@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 25 September 2026
+Last edit: 30 September 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,7 @@ Last edit: 25 September 2026
         
         
         <link rel="canonical" href="https://sumo.dlr.de/docs/sumo.html">
-        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="shortcut icon" href="images/favicon.svg" type="image/svg+xml">
         <title>sumo - SUMO Documentation</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/fontawesome.all.min.css" rel="stylesheet">
@@ -457,7 +457,7 @@ configuration:
 </tr>
 <tr>
 <td><strong>--output.column-header</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a></td>
-<td>How to derive column headers from attribute names ('none', 'tag', 'auto', 'plain'); <em>default:</em> <strong>tag</strong></td>
+<td>How to derive column headers from attribute names ('none', 'tag', 'auto', 'plain', 'full'); <em>default:</em> <strong>auto</strong></td>
 </tr>
 <tr>
 <td><strong>--output.column-separator</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a></td>
@@ -614,6 +614,22 @@ configuration:
 <tr>
 <td><strong>--queue-output.period</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;TIME&gt;</em></a></td>
 <td>Save vehicle queues with the given period; <em>default:</em> <strong>-1</strong></td>
+</tr>
+<tr>
+<td><strong>--queue-output.aggregation</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;TIME&gt;</em></a></td>
+<td>Write aggregated queue length statistics (max, median, 95th percentile) per edge for the given period (e.g. a traffic light cycle) instead of per-timestep data; <em>default:</em> <strong>-1</strong></td>
+</tr>
+<tr>
+<td><strong>--queue-output.speed-threshold</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Maximum speed for counting a vehicle as queued; <em>default:</em> <strong>1.38889</strong></td>
+</tr>
+<tr>
+<td><strong>--queue-output.percentile</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The percentile (0-100) to report as percentileQueueLength in aggregated queue output; <em>default:</em> <strong>95</strong></td>
+</tr>
+<tr>
+<td><strong>--queue-output.skip-empty</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
+<td>Do not save data for time steps / intervals which have no queue (required for column based output formats); <em>default:</em> <strong>false</strong></td>
 </tr>
 <tr>
 <td><strong>--vtk-output</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a></td>
@@ -1066,6 +1082,10 @@ configuration:
 <td>List vehicle classes that uses block-based insertion checks even when the network has no rail signals for them; <em>default:</em> <strong>rail,rail_fast,rail_electric,rail_urban,subway</strong></td>
 </tr>
 <tr>
+<td><strong>--slope-centered</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
+<td>Compute slope at the vehicle center of mass instead of integrating over front and back; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
 <td><strong>--time-to-impatience</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;TIME&gt;</em></a></td>
 <td>Specify how long a vehicle may wait until impatience grows from 0 to 1, defaults to 300, non-positive values disable impatience growth; <em>default:</em> <strong>180</strong></td>
 </tr>
@@ -1246,7 +1266,7 @@ configuration:
 <tbody>
 <tr>
 <td><strong>--routing-algorithm</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a></td>
-<td>Select among routing algorithms ['dijkstra', 'astar', 'CH', 'CHWrapper']; <em>default:</em> <strong>dijkstra</strong></td>
+<td>Select among routing algorithms ['dijkstra', 'astar', 'CH', 'CHWrapper', 'CCH']; <em>default:</em> <strong>dijkstra</strong></td>
 </tr>
 <tr>
 <td><strong>--weights.random-factor</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a></td>
@@ -1349,12 +1369,28 @@ configuration:
 <td>The interval for updating the edge weights; <em>default:</em> <strong>1</strong></td>
 </tr>
 <tr>
+<td><strong>--device.rerouting.cch-update-threshold.factor</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Only propagate an arc weight into the CCH metric if it changed by more than the given factor; <em>default:</em> <strong>1</strong></td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.cch-update-threshold.constant</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;TIME&gt;</em></a></td>
+<td>Only propagate an arc weight into the CCH metric if it changed by more than the given TIME; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.cch-ensemble</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;INT&gt;</em></a></td>
+<td>Keep this many frozen weights.random-factor realizations (CCH metrics) per vehicle type and assign vehicles to them by a stable id hash; <em>default:</em> <strong>1</strong></td>
+</tr>
+<tr>
 <td><strong>--device.rerouting.threshold.factor</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a></td>
 <td>Only reroute if the new route is faster than the current route by the given factor; <em>default:</em> <strong>1</strong></td>
 </tr>
 <tr>
 <td><strong>--device.rerouting.threshold.constant</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;TIME&gt;</em></a></td>
 <td>Only reroute if the new route is faster than the current route by the given TIME; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.invalidation</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
+<td>Only perform a periodic reroute when the current route's remaining cost has drifted beyond the threshold (cheap re-scoring gate before the full reroute); <em>default:</em> <strong>false</strong></td>
 </tr>
 <tr>
 <td><strong>--device.rerouting.with-taz</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
@@ -1667,10 +1703,6 @@ configuration:
 <tr>
 <td><strong>--device.stationfinder.repeat</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;TIME&gt;</em></a></td>
 <td>When to trigger a new search if no station has been found; <em>default:</em> <strong>60</strong></td>
-</tr>
-<tr>
-<td><strong>--device.stationfinder.maxChargePower</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a></td>
-<td>The maximum charging speed of the vehicle battery; <em>default:</em> <strong>100000</strong></td>
 </tr>
 <tr>
 <td><strong>--device.stationfinder.chargeType</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a></td>
@@ -2300,8 +2332,12 @@ configuration:
 <td>The 'fcd-replay' devices are set deterministic using a fraction of 1000; <em>default:</em> <strong>false</strong></td>
 </tr>
 <tr>
-<td><strong>--device.fcd-replay.file</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a></td>
-<td>FCD file to read</td>
+<td><strong>--device.fcd-replay.files</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a></td>
+<td>FCD files to read</td>
+</tr>
+<tr>
+<td><strong>--device.fcd-replay.consistency</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&lbrack; &rbrack;&gt;</em></a></td>
+<td>Values to use when replaying ('all' or any combination of 'x', 'y', 'edge', 'lane', 'speed', 'position', 'angle', 'type'); <em>default:</em> <strong>all</strong></td>
 </tr>
 </tbody>
 </table>
@@ -2336,6 +2372,10 @@ configuration:
 <tr>
 <td><strong>--mesosim</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
 <td>Enables mesoscopic simulation; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--meso-ltm</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
+<td>Enables the meso-LTM (LIFT) model; <em>default:</em> <strong>false</strong></td>
 </tr>
 <tr>
 <td><strong>--meso-edgelength</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a></td>
@@ -2594,7 +2634,7 @@ they may be grouped into multiple files as convenient.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 25 September 2026</i></small>
+            <br><small><i>This page was last edited on: 30 September 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
