@@ -7,6 +7,7 @@ draft: false
 
 <!-- YouTube Tutorial -->
 <a data-youtube href="https://www.youtube.com/watch?v=zrMRpP47T_M"></a>
+<small>(Get the tutorial files and transcript <a href="https://sumo.dlr.de/docs/Tutorials/2026.html">here</a>)</small>
 
 <!-- Short text -->
 SUMO allows modelling of intermodal traffic systems including road vehicles, public transport and pedestrians. Included with SUMO is a wealth of supporting tools which handle tasks such as route finding, visualization, network import and emission calculation. SUMO can be enhanced with custom models and provides various APIs to remotely control the simulation.   
