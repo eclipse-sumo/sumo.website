@@ -153,6 +153,33 @@
             <li>
                     <a class="function" href="#simulationStep">simulationStep</a>
             </li>
+            <li>
+                    <a class="function" href="#setConnectHook">setConnectHook</a>
+            </li>
+            <li>
+                    <a class="function" href="#connect">connect</a>
+            </li>
+            <li>
+                    <a class="function" href="#init">init</a>
+            </li>
+            <li>
+                    <a class="function" href="#isLibsumo">isLibsumo</a>
+            </li>
+            <li>
+                    <a class="function" href="#isLibtraci">isLibtraci</a>
+            </li>
+            <li>
+                    <a class="function" href="#hasGUI">hasGUI</a>
+            </li>
+            <li>
+                    <a class="function" href="#isLoaded">isLoaded</a>
+            </li>
+            <li>
+                    <a class="function" href="#addStepListener">addStepListener</a>
+            </li>
+            <li>
+                    <a class="function" href="#removeStepListener">removeStepListener</a>
+            </li>
     </ul>
 
 
@@ -204,36 +231,38 @@ traci    </h1>
 </span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a>           <span class="s1">&#39;multientryexit&#39;</span><span class="p">,</span> <span class="s1">&#39;overheadwire&#39;</span><span class="p">,</span> <span class="s1">&#39;parkingarea&#39;</span><span class="p">,</span> <span class="s1">&#39;person&#39;</span><span class="p">,</span> <span class="s1">&#39;poi&#39;</span><span class="p">,</span> <span class="s1">&#39;polygon&#39;</span><span class="p">,</span> <span class="s1">&#39;rerouter&#39;</span><span class="p">,</span> <span class="s1">&#39;route&#39;</span><span class="p">,</span>
 </span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a>           <span class="s1">&#39;routeprobe&#39;</span><span class="p">,</span> <span class="s1">&#39;simulation&#39;</span><span class="p">,</span> <span class="s1">&#39;trafficlight&#39;</span><span class="p">,</span> <span class="s1">&#39;variablespeedsign&#39;</span><span class="p">,</span> <span class="s1">&#39;vehicle&#39;</span><span class="p">,</span> <span class="s1">&#39;vehicletype&#39;</span><span class="p">,</span>
 </span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a>           <span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="s1">&#39;constants&#39;</span><span class="p">,</span> <span class="s1">&#39;domain&#39;</span><span class="p">,</span> <span class="s1">&#39;exceptions&#39;</span><span class="p">,</span>
-</span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a>           <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;close&#39;</span><span class="p">,</span> <span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="s1">&#39;executeMove&#39;</span><span class="p">,</span> <span class="s1">&#39;getVersion&#39;</span><span class="p">,</span> <span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="s1">&#39;setOrder&#39;</span><span class="p">,</span> <span class="s1">&#39;simulationStep&#39;</span><span class="p">]</span>
-</span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a>
-</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a><span class="k">try</span><span class="p">:</span>
-</span><span id="L-34"><a href="#L-34"><span class="linenos">34</span></a>    <span class="c1"># this tries to determine the version number of an installed wheel</span>
-</span><span id="L-35"><a href="#L-35"><span class="linenos">35</span></a>    <span class="kn">import</span> <span class="nn">importlib.metadata</span>  <span class="c1"># noqa</span>
-</span><span id="L-36"><a href="#L-36"><span class="linenos">36</span></a>    <span class="n">__version__</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-</span><span id="L-37"><a href="#L-37"><span class="linenos">37</span></a><span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-</span><span id="L-38"><a href="#L-38"><span class="linenos">38</span></a>    <span class="c1"># this is the fallback version, it gets replaced with the current version on &quot;make install&quot; or &quot;make dist&quot;</span>
-</span><span id="L-39"><a href="#L-39"><span class="linenos">39</span></a>    <span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.0.0&quot;</span>
-</span><span id="L-40"><a href="#L-40"><span class="linenos">40</span></a>
-</span><span id="L-41"><a href="#L-41"><span class="linenos">41</span></a><span class="c1"># the pure python version needs to be the first variant to help IDEs finding the docstrings</span>
-</span><span id="L-42"><a href="#L-42"><span class="linenos">42</span></a><span class="k">if</span> <span class="s1">&#39;LIBSUMO_AS_TRACI&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span> <span class="ow">and</span> <span class="s1">&#39;LIBTRACI_AS_TRACI&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-</span><span id="L-43"><a href="#L-43"><span class="linenos">43</span></a>    <span class="kn">from</span> <span class="nn">.main</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa</span>
-</span><span id="L-44"><a href="#L-44"><span class="linenos">44</span></a><span class="k">else</span><span class="p">:</span>
-</span><span id="L-45"><a href="#L-45"><span class="linenos">45</span></a>    <span class="k">try</span><span class="p">:</span>
-</span><span id="L-46"><a href="#L-46"><span class="linenos">46</span></a>        <span class="k">if</span> <span class="s1">&#39;LIBSUMO_AS_TRACI&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-</span><span id="L-47"><a href="#L-47"><span class="linenos">47</span></a>            <span class="kn">from</span> <span class="nn">libsumo</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa</span>
-</span><span id="L-48"><a href="#L-48"><span class="linenos">48</span></a>            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;LIBSUMO_AS_TRACI&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;quiet&quot;</span><span class="p">:</span>
-</span><span id="L-49"><a href="#L-49"><span class="linenos">49</span></a>                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using libsumo as traci as requested by environment variable.&quot;</span><span class="p">)</span>
-</span><span id="L-50"><a href="#L-50"><span class="linenos">50</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="L-51"><a href="#L-51"><span class="linenos">51</span></a>            <span class="kn">from</span> <span class="nn">libtraci</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa</span>
-</span><span id="L-52"><a href="#L-52"><span class="linenos">52</span></a>            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;LIBTRACI_AS_TRACI&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;quiet&quot;</span><span class="p">:</span>
-</span><span id="L-53"><a href="#L-53"><span class="linenos">53</span></a>                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using libtraci as traci as requested by environment variable.&quot;</span><span class="p">)</span>
-</span><span id="L-54"><a href="#L-54"><span class="linenos">54</span></a>    <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-</span><span id="L-55"><a href="#L-55"><span class="linenos">55</span></a>        <span class="k">if</span> <span class="s1">&#39;LIBSUMO_AS_TRACI&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-</span><span id="L-56"><a href="#L-56"><span class="linenos">56</span></a>            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Could not import libsumo using </span><span class="si">%s</span><span class="s2">, falling back to pure python traci (</span><span class="si">%s</span><span class="s2">).&quot;</span> <span class="o">%</span>
-</span><span id="L-57"><a href="#L-57"><span class="linenos">57</span></a>                          <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span>
-</span><span id="L-58"><a href="#L-58"><span class="linenos">58</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="L-59"><a href="#L-59"><span class="linenos">59</span></a>            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Could not import libtraci, falling back to pure python traci (</span><span class="si">%s</span><span class="s2">).&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
-</span><span id="L-60"><a href="#L-60"><span class="linenos">60</span></a>        <span class="kn">from</span> <span class="nn">.main</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa</span>
+</span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a>           <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;close&#39;</span><span class="p">,</span> <span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="s1">&#39;executeMove&#39;</span><span class="p">,</span> <span class="s1">&#39;getVersion&#39;</span><span class="p">,</span> <span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="s1">&#39;setOrder&#39;</span><span class="p">,</span> <span class="s1">&#39;simulationStep&#39;</span><span class="p">,</span>
+</span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a>           <span class="s1">&#39;setConnectHook&#39;</span><span class="p">,</span> <span class="s1">&#39;connect&#39;</span><span class="p">,</span> <span class="s1">&#39;init&#39;</span><span class="p">,</span> <span class="s1">&#39;isLibsumo&#39;</span><span class="p">,</span> <span class="s1">&#39;isLibtraci&#39;</span><span class="p">,</span> <span class="s1">&#39;hasGUI&#39;</span><span class="p">,</span> <span class="s1">&#39;isLoaded&#39;</span><span class="p">,</span>
+</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a>           <span class="s1">&#39;addStepListener&#39;</span><span class="p">,</span> <span class="s1">&#39;removeStepListener&#39;</span><span class="p">]</span>
+</span><span id="L-34"><a href="#L-34"><span class="linenos">34</span></a>
+</span><span id="L-35"><a href="#L-35"><span class="linenos">35</span></a><span class="k">try</span><span class="p">:</span>
+</span><span id="L-36"><a href="#L-36"><span class="linenos">36</span></a>    <span class="c1"># this tries to determine the version number of an installed wheel</span>
+</span><span id="L-37"><a href="#L-37"><span class="linenos">37</span></a>    <span class="kn">import</span> <span class="nn">importlib.metadata</span>  <span class="c1"># noqa</span>
+</span><span id="L-38"><a href="#L-38"><span class="linenos">38</span></a>    <span class="n">__version__</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span><span id="L-39"><a href="#L-39"><span class="linenos">39</span></a><span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+</span><span id="L-40"><a href="#L-40"><span class="linenos">40</span></a>    <span class="c1"># this is the fallback version, it gets replaced with the current version on &quot;make install&quot; or &quot;make dist&quot;</span>
+</span><span id="L-41"><a href="#L-41"><span class="linenos">41</span></a>    <span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.0.0&quot;</span>
+</span><span id="L-42"><a href="#L-42"><span class="linenos">42</span></a>
+</span><span id="L-43"><a href="#L-43"><span class="linenos">43</span></a><span class="c1"># the pure python version needs to be the first variant to help IDEs finding the docstrings</span>
+</span><span id="L-44"><a href="#L-44"><span class="linenos">44</span></a><span class="k">if</span> <span class="s1">&#39;LIBSUMO_AS_TRACI&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span> <span class="ow">and</span> <span class="s1">&#39;LIBTRACI_AS_TRACI&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+</span><span id="L-45"><a href="#L-45"><span class="linenos">45</span></a>    <span class="kn">from</span> <span class="nn">.main</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa</span>
+</span><span id="L-46"><a href="#L-46"><span class="linenos">46</span></a><span class="k">else</span><span class="p">:</span>
+</span><span id="L-47"><a href="#L-47"><span class="linenos">47</span></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="L-48"><a href="#L-48"><span class="linenos">48</span></a>        <span class="k">if</span> <span class="s1">&#39;LIBSUMO_AS_TRACI&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+</span><span id="L-49"><a href="#L-49"><span class="linenos">49</span></a>            <span class="kn">from</span> <span class="nn">libsumo</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa</span>
+</span><span id="L-50"><a href="#L-50"><span class="linenos">50</span></a>            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;LIBSUMO_AS_TRACI&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;quiet&quot;</span><span class="p">:</span>
+</span><span id="L-51"><a href="#L-51"><span class="linenos">51</span></a>                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using libsumo as traci as requested by environment variable.&quot;</span><span class="p">)</span>
+</span><span id="L-52"><a href="#L-52"><span class="linenos">52</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="L-53"><a href="#L-53"><span class="linenos">53</span></a>            <span class="kn">from</span> <span class="nn">libtraci</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa</span>
+</span><span id="L-54"><a href="#L-54"><span class="linenos">54</span></a>            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;LIBTRACI_AS_TRACI&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;quiet&quot;</span><span class="p">:</span>
+</span><span id="L-55"><a href="#L-55"><span class="linenos">55</span></a>                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using libtraci as traci as requested by environment variable.&quot;</span><span class="p">)</span>
+</span><span id="L-56"><a href="#L-56"><span class="linenos">56</span></a>    <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="L-57"><a href="#L-57"><span class="linenos">57</span></a>        <span class="k">if</span> <span class="s1">&#39;LIBSUMO_AS_TRACI&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+</span><span id="L-58"><a href="#L-58"><span class="linenos">58</span></a>            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Could not import libsumo using </span><span class="si">%s</span><span class="s2">, falling back to pure python traci (</span><span class="si">%s</span><span class="s2">).&quot;</span> <span class="o">%</span>
+</span><span id="L-59"><a href="#L-59"><span class="linenos">59</span></a>                          <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span>
+</span><span id="L-60"><a href="#L-60"><span class="linenos">60</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="L-61"><a href="#L-61"><span class="linenos">61</span></a>            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Could not import libtraci, falling back to pure python traci (</span><span class="si">%s</span><span class="s2">).&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</span><span id="L-62"><a href="#L-62"><span class="linenos">62</span></a>        <span class="kn">from</span> <span class="nn">.main</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa</span>
 </span></pre></div>
 
 
@@ -750,6 +779,252 @@ on numbering.</p>
 Make a simulation step and simulate up to the given second in sim time.
 If the given value is 0 or absent, exactly one step is performed.
 Values smaller than or equal to the current sim time result in no action.</p>
+</div>
+
+
+                </section>
+                <section id="setConnectHook">
+                            <input id="setConnectHook-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">setConnectHook</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">hookFunc</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="setConnectHook-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#setConnectHook"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="setConnectHook-80"><a href="#setConnectHook-80"><span class="linenos">80</span></a><span class="k">def</span> <span class="nf">setConnectHook</span><span class="p">(</span><span class="n">hookFunc</span><span class="p">):</span>
+</span><span id="setConnectHook-81"><a href="#setConnectHook-81"><span class="linenos">81</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="setConnectHook-82"><a href="#setConnectHook-82"><span class="linenos">82</span></a><span class="sd">    Set a function which is called whenever a new connection has been established.</span>
+</span><span id="setConnectHook-83"><a href="#setConnectHook-83"><span class="linenos">83</span></a><span class="sd">    The function should take a single parameter which is the connection object.</span>
+</span><span id="setConnectHook-84"><a href="#setConnectHook-84"><span class="linenos">84</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="setConnectHook-85"><a href="#setConnectHook-85"><span class="linenos">85</span></a>    <span class="n">connection</span><span class="o">.</span><span class="n">_connectHook</span> <span class="o">=</span> <span class="n">hookFunc</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Set a function which is called whenever a new connection has been established.
+The function should take a single parameter which is the connection object.</p>
+</div>
+
+
+                </section>
+                <section id="connect">
+                            <input id="connect-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">connect</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">port</span><span class="o">=</span><span class="mi">8813</span>,</span><span class="param">	<span class="n">numRetries</span><span class="o">=</span><span class="mi">60</span>,</span><span class="param">	<span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span>,</span><span class="param">	<span class="n">proc</span><span class="o">=</span><span class="kc">None</span>,</span><span class="param">	<span class="n">waitBetweenRetries</span><span class="o">=</span><span class="mi">1</span>,</span><span class="param">	<span class="n">traceFile</span><span class="o">=</span><span class="kc">None</span>,</span><span class="param">	<span class="n">traceGetters</span><span class="o">=</span><span class="kc">True</span>,</span><span class="param">	<span class="n">label</span><span class="o">=</span><span class="kc">None</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="connect-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#connect"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="connect-88"><a href="#connect-88"><span class="linenos"> 88</span></a><span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">8813</span><span class="p">,</span> <span class="n">numRetries</span><span class="o">=</span><span class="n">tc</span><span class="o">.</span><span class="n">DEFAULT_NUM_RETRIES</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">proc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">waitBetweenRetries</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+</span><span id="connect-89"><a href="#connect-89"><span class="linenos"> 89</span></a>            <span class="n">traceFile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">traceGetters</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="connect-90"><a href="#connect-90"><span class="linenos"> 90</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="connect-91"><a href="#connect-91"><span class="linenos"> 91</span></a><span class="sd">    Establish a connection to a TraCI-Server and return the</span>
+</span><span id="connect-92"><a href="#connect-92"><span class="linenos"> 92</span></a><span class="sd">    connection object. If label is not set, the connection is not saved in the pool and not</span>
+</span><span id="connect-93"><a href="#connect-93"><span class="linenos"> 93</span></a><span class="sd">    accessible via traci.switch. It should be safe to use different</span>
+</span><span id="connect-94"><a href="#connect-94"><span class="linenos"> 94</span></a><span class="sd">    connections established by this method in different threads.</span>
+</span><span id="connect-95"><a href="#connect-95"><span class="linenos"> 95</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="connect-96"><a href="#connect-96"><span class="linenos"> 96</span></a>    <span class="k">for</span> <span class="n">retry</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">numRetries</span> <span class="o">+</span> <span class="mi">2</span><span class="p">):</span>
+</span><span id="connect-97"><a href="#connect-97"><span class="linenos"> 97</span></a>        <span class="k">try</span><span class="p">:</span>
+</span><span id="connect-98"><a href="#connect-98"><span class="linenos"> 98</span></a>            <span class="k">return</span> <span class="n">connection</span><span class="o">.</span><span class="n">Connection</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">proc</span><span class="p">,</span> <span class="n">traceFile</span><span class="p">,</span> <span class="n">traceGetters</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+</span><span id="connect-99"><a href="#connect-99"><span class="linenos"> 99</span></a>        <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="connect-100"><a href="#connect-100"><span class="linenos">100</span></a>            <span class="k">if</span> <span class="n">proc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">proc</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="connect-101"><a href="#connect-101"><span class="linenos">101</span></a>                <span class="k">raise</span> <span class="n">TraCIException</span><span class="p">(</span><span class="s2">&quot;TraCI server already finished&quot;</span><span class="p">)</span>
+</span><span id="connect-102"><a href="#connect-102"><span class="linenos">102</span></a>            <span class="k">if</span> <span class="n">retry</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="connect-103"><a href="#connect-103"><span class="linenos">103</span></a>                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not connect to TraCI server at </span><span class="si">%s</span><span class="s2">:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">),</span> <span class="n">e</span><span class="p">)</span>
+</span><span id="connect-104"><a href="#connect-104"><span class="linenos">104</span></a>            <span class="k">if</span> <span class="n">retry</span> <span class="o">&lt;</span> <span class="n">numRetries</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="connect-105"><a href="#connect-105"><span class="linenos">105</span></a>                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Retrying in </span><span class="si">%s</span><span class="s2"> seconds&quot;</span> <span class="o">%</span> <span class="n">waitBetweenRetries</span><span class="p">)</span>
+</span><span id="connect-106"><a href="#connect-106"><span class="linenos">106</span></a>                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">waitBetweenRetries</span><span class="p">)</span>
+</span><span id="connect-107"><a href="#connect-107"><span class="linenos">107</span></a>    <span class="k">raise</span> <span class="n">FatalTraCIError</span><span class="p">(</span><span class="s2">&quot;Could not connect in </span><span class="si">%s</span><span class="s2"> tries&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">numRetries</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Establish a connection to a TraCI-Server and return the
+connection object. If label is not set, the connection is not saved in the pool and not
+accessible via traci.switch. It should be safe to use different
+connections established by this method in different threads.</p>
+</div>
+
+
+                </section>
+                <section id="init">
+                            <input id="init-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">init</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">port</span><span class="o">=</span><span class="mi">8813</span>,</span><span class="param">	<span class="n">numRetries</span><span class="o">=</span><span class="mi">60</span>,</span><span class="param">	<span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span>,</span><span class="param">	<span class="n">label</span><span class="o">=</span><span class="s1">&#39;default&#39;</span>,</span><span class="param">	<span class="n">proc</span><span class="o">=</span><span class="kc">None</span>,</span><span class="param">	<span class="n">doSwitch</span><span class="o">=</span><span class="kc">True</span>,</span><span class="param">	<span class="n">traceFile</span><span class="o">=</span><span class="kc">None</span>,</span><span class="param">	<span class="n">traceGetters</span><span class="o">=</span><span class="kc">True</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="init-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#init"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="init-110"><a href="#init-110"><span class="linenos">110</span></a><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">8813</span><span class="p">,</span> <span class="n">numRetries</span><span class="o">=</span><span class="n">tc</span><span class="o">.</span><span class="n">DEFAULT_NUM_RETRIES</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">proc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doSwitch</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="init-111"><a href="#init-111"><span class="linenos">111</span></a>         <span class="n">traceFile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">traceGetters</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span><span id="init-112"><a href="#init-112"><span class="linenos">112</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="init-113"><a href="#init-113"><span class="linenos">113</span></a><span class="sd">    Establish a connection to a TraCI-Server and store it under the given</span>
+</span><span id="init-114"><a href="#init-114"><span class="linenos">114</span></a><span class="sd">    label. This method is not thread-safe. It accesses the connection</span>
+</span><span id="init-115"><a href="#init-115"><span class="linenos">115</span></a><span class="sd">    pool concurrently.</span>
+</span><span id="init-116"><a href="#init-116"><span class="linenos">116</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="init-117"><a href="#init-117"><span class="linenos">117</span></a>    <span class="n">con</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">numRetries</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">proc</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">traceFile</span><span class="p">,</span> <span class="n">traceGetters</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+</span><span id="init-118"><a href="#init-118"><span class="linenos">118</span></a>    <span class="k">if</span> <span class="n">doSwitch</span><span class="p">:</span>
+</span><span id="init-119"><a href="#init-119"><span class="linenos">119</span></a>        <span class="n">switch</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+</span><span id="init-120"><a href="#init-120"><span class="linenos">120</span></a>    <span class="k">return</span> <span class="n">con</span><span class="o">.</span><span class="n">getVersion</span><span class="p">()</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Establish a connection to a TraCI-Server and store it under the given
+label. This method is not thread-safe. It accesses the connection
+pool concurrently.</p>
+</div>
+
+
+                </section>
+                <section id="isLibsumo">
+                            <input id="isLibsumo-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isLibsumo</span><span class="signature pdoc-code condensed">(<span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="isLibsumo-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#isLibsumo"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="isLibsumo-163"><a href="#isLibsumo-163"><span class="linenos">163</span></a><span class="k">def</span> <span class="nf">isLibsumo</span><span class="p">():</span>
+</span><span id="isLibsumo-164"><a href="#isLibsumo-164"><span class="linenos">164</span></a>    <span class="k">return</span> <span class="kc">False</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="isLibtraci">
+                            <input id="isLibtraci-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isLibtraci</span><span class="signature pdoc-code condensed">(<span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="isLibtraci-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#isLibtraci"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="isLibtraci-167"><a href="#isLibtraci-167"><span class="linenos">167</span></a><span class="k">def</span> <span class="nf">isLibtraci</span><span class="p">():</span>
+</span><span id="isLibtraci-168"><a href="#isLibtraci-168"><span class="linenos">168</span></a>    <span class="k">return</span> <span class="kc">False</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="hasGUI">
+                            <input id="hasGUI-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">hasGUI</span><span class="signature pdoc-code condensed">(<span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="hasGUI-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#hasGUI"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="hasGUI-171"><a href="#hasGUI-171"><span class="linenos">171</span></a><span class="k">def</span> <span class="nf">hasGUI</span><span class="p">():</span>
+</span><span id="hasGUI-172"><a href="#hasGUI-172"><span class="linenos">172</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="hasGUI-173"><a href="#hasGUI-173"><span class="linenos">173</span></a><span class="sd">    Return whether a GUI and the corresponding GUI commands are available for the current connection.</span>
+</span><span id="hasGUI-174"><a href="#hasGUI-174"><span class="linenos">174</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="hasGUI-175"><a href="#hasGUI-175"><span class="linenos">175</span></a>    <span class="k">return</span> <span class="n">connection</span><span class="o">.</span><span class="n">check</span><span class="p">()</span><span class="o">.</span><span class="n">hasGUI</span><span class="p">()</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Return whether a GUI and the corresponding GUI commands are available for the current connection.</p>
+</div>
+
+
+                </section>
+                <section id="isLoaded">
+                            <input id="isLoaded-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isLoaded</span><span class="signature pdoc-code condensed">(<span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="isLoaded-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#isLoaded"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="isLoaded-188"><a href="#isLoaded-188"><span class="linenos">188</span></a><span class="k">def</span> <span class="nf">isLoaded</span><span class="p">():</span>
+</span><span id="isLoaded-189"><a href="#isLoaded-189"><span class="linenos">189</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="isLoaded-190"><a href="#isLoaded-190"><span class="linenos">190</span></a><span class="sd">    Returns whether there is an active connection.</span>
+</span><span id="isLoaded-191"><a href="#isLoaded-191"><span class="linenos">191</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="isLoaded-192"><a href="#isLoaded-192"><span class="linenos">192</span></a>    <span class="k">return</span> <span class="n">connection</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Returns whether there is an active connection.</p>
+</div>
+
+
+                </section>
+                <section id="addStepListener">
+                            <input id="addStepListener-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">addStepListener</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">listener</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="addStepListener-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#addStepListener"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="addStepListener-222"><a href="#addStepListener-222"><span class="linenos">222</span></a><span class="k">def</span> <span class="nf">addStepListener</span><span class="p">(</span><span class="n">listener</span><span class="p">):</span>
+</span><span id="addStepListener-223"><a href="#addStepListener-223"><span class="linenos">223</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;addStepListener(traci.StepListener) -&gt; int</span>
+</span><span id="addStepListener-224"><a href="#addStepListener-224"><span class="linenos">224</span></a>
+</span><span id="addStepListener-225"><a href="#addStepListener-225"><span class="linenos">225</span></a><span class="sd">    Append the step listener (its step function is called at the end of every call to traci.simulationStep())</span>
+</span><span id="addStepListener-226"><a href="#addStepListener-226"><span class="linenos">226</span></a><span class="sd">    to the current connection.</span>
+</span><span id="addStepListener-227"><a href="#addStepListener-227"><span class="linenos">227</span></a><span class="sd">    Returns the ID assigned to the listener if it was added successfully, None otherwise.</span>
+</span><span id="addStepListener-228"><a href="#addStepListener-228"><span class="linenos">228</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="addStepListener-229"><a href="#addStepListener-229"><span class="linenos">229</span></a>    <span class="k">return</span> <span class="n">connection</span><span class="o">.</span><span class="n">check</span><span class="p">()</span><span class="o">.</span><span class="n">addStepListener</span><span class="p">(</span><span class="n">listener</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>addStepListener(traci.StepListener) -> int</p>
+
+<p>Append the step listener (its step function is called at the end of every call to <a href="#simulationStep">traci.simulationStep()</a>)
+to the current connection.
+Returns the ID assigned to the listener if it was added successfully, None otherwise.</p>
+</div>
+
+
+                </section>
+                <section id="removeStepListener">
+                            <input id="removeStepListener-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">removeStepListener</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">listenerID</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="removeStepListener-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#removeStepListener"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="removeStepListener-232"><a href="#removeStepListener-232"><span class="linenos">232</span></a><span class="k">def</span> <span class="nf">removeStepListener</span><span class="p">(</span><span class="n">listenerID</span><span class="p">):</span>
+</span><span id="removeStepListener-233"><a href="#removeStepListener-233"><span class="linenos">233</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;removeStepListener(traci.StepListener) -&gt; bool</span>
+</span><span id="removeStepListener-234"><a href="#removeStepListener-234"><span class="linenos">234</span></a>
+</span><span id="removeStepListener-235"><a href="#removeStepListener-235"><span class="linenos">235</span></a><span class="sd">    Remove the step listener from the current connection&#39;s step listener container.</span>
+</span><span id="removeStepListener-236"><a href="#removeStepListener-236"><span class="linenos">236</span></a><span class="sd">    Returns True if the listener was removed successfully, False if it wasn&#39;t registered.</span>
+</span><span id="removeStepListener-237"><a href="#removeStepListener-237"><span class="linenos">237</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="removeStepListener-238"><a href="#removeStepListener-238"><span class="linenos">238</span></a>    <span class="k">return</span> <span class="n">connection</span><span class="o">.</span><span class="n">check</span><span class="p">()</span><span class="o">.</span><span class="n">removeStepListener</span><span class="p">(</span><span class="n">listenerID</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>removeStepListener(traci.StepListener) -> bool</p>
+
+<p>Remove the step listener from the current connection's step listener container.
+Returns True if the listener was removed successfully, False if it wasn't registered.</p>
 </div>
 
 
