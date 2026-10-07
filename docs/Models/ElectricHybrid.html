@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -371,35 +372,33 @@ the following meanings:</p>
 motor. The rest of the parameters in the table are common for model of electric energy consumption and have the same meaning.</p>
 </div>
 <p>An example of a vehicle with hybrid electric attribute is almost identical with that of an electric vehicle:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;trolleybus&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;0.8&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;18.0&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">minGap=</span><span class="s">&quot;2.5&quot;</span>
-<span class="w">           </span><span class="na">emissionClass=</span><span class="s">&quot;Energy/unknown&quot;</span><span class="w">  </span><span class="na">vClass=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">guiShape=</span><span class="s">&quot;bus/trolley&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;0,1,0&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;maximumBatteryCapacity&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;50000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;overheadWireChargingPower&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;maximumPower&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;200000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;vehicleMass&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;frontSurfaceArea&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;7.5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;airDragCoefficient&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.59&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;rotatingMass&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;radialDragCoefficient&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;rollDragCoefficient&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.061&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;constantPowerIntake&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;5000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;propulsionEfficiency&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.9&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;recuperationEfficiency&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.9&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;recuperationEfficiencyByDecel&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vType&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vType id=&quot;trolleybus&quot; accel=&quot;0.8&quot; decel=&quot;1.0&quot; length=&quot;12&quot; maxSpeed=&quot;18.0&quot; sigma=&quot;0.0&quot; minGap=&quot;2.5&quot;
+           emissionClass=&quot;Energy/unknown&quot;  vClass=&quot;bus&quot; guiShape=&quot;bus/trolley&quot; color=&quot;0,1,0&quot;&gt;
+      &lt;param key=&quot;maximumBatteryCapacity&quot; value=&quot;50000&quot;/&gt;
+      &lt;param key=&quot;overheadWireChargingPower&quot; value=&quot;10000&quot;/&gt;
+      &lt;param key=&quot;maximumPower&quot; value=&quot;200000&quot;/&gt;
+      &lt;param key=&quot;vehicleMass&quot; value=&quot;10000&quot;/&gt;
+      &lt;param key=&quot;frontSurfaceArea&quot; value=&quot;7.5&quot;/&gt;
+      &lt;param key=&quot;airDragCoefficient&quot; value=&quot;0.59&quot;/&gt;
+      &lt;param key=&quot;rotatingMass&quot; value=&quot;100&quot;/&gt;
+      &lt;param key=&quot;radialDragCoefficient&quot; value=&quot;0.5&quot;/&gt;
+      &lt;param key=&quot;rollDragCoefficient&quot; value=&quot;0.061&quot;/&gt;
+      &lt;param key=&quot;constantPowerIntake&quot; value=&quot;5000&quot;/&gt;
+      &lt;param key=&quot;propulsionEfficiency&quot; value=&quot;0.9&quot;/&gt;
+      &lt;param key=&quot;recuperationEfficiency&quot; value=&quot;0.9&quot;/&gt;
+      &lt;param key=&quot;recuperationEfficiencyByDecel&quot; value=&quot;0.&quot;/&gt;
+      &lt;param key=&quot;&quot; value=&quot;&quot;/&gt;
+    &lt;/vType&gt;
+&lt;/routes&gt;
+</code></pre>
 <p>The initial energy content of the battery (by default 0.0 Wh) can be set in the vehicle definitions:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;trolleybus&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route1&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,0,0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;actualBatteryCapacity&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;5000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vehicle id=&quot;0&quot; type=&quot;trolleybus&quot; depart=&quot;0&quot; route=&quot;route1&quot; color=&quot;1,0,0&quot;&gt;
+        &lt;param key=&quot;actualBatteryCapacity&quot; value=&quot;5000&quot;/&gt;
+    &lt;/vehicle&gt;
+&lt;/routes&gt;
+</code></pre>
 <h2 id="traction_substation">Traction Substation<a class="headerlink" href="#traction_substation" title="Permanent link">#</a></h2>
 <p>A traction substation represents a transformer station that is responsible for powering a certain
 set of overhead wire circuits. The current implementation of this element is quite simple: the
@@ -440,11 +439,10 @@ that can be drawn from the feeder (this imposes a maximum power limit on that su
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additionals&gt;</span>
-<span class="w">    </span><span class="nt">&lt;tractionSubstation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;Sub1&quot;</span><span class="w"> </span><span class="na">voltage=</span><span class="s">&quot;600&quot;</span><span class="w"> </span><span class="na">currentLimit=</span><span class="s">&quot;1000&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/additionals&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additionals&gt;
+    &lt;tractionSubstation id=&quot;Sub1&quot; voltage=&quot;600&quot; currentLimit=&quot;1000&quot;/&gt;
+&lt;/additionals&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <code>currentLimit</code> parameter of the substation is silently ignored and does not trigger
@@ -525,18 +523,17 @@ in circuit simulation results.</p>
 </tbody>
 </table>
 <p>Overhead wire segments are defined in an additional file using the following format:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additionals&gt;</span>
-<span class="w">    </span><span class="nt">&lt;overheadWireSegment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ovrhdSgmnt_gneE0_0&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;gneE0_0&quot;</span><span class="w"> </span><span class="na">voltageSource=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;overheadWireSegment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ovrhdSgmnt_gneE1_0&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;gneE1_0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;overheadWireSegment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ovrhdSgmnt_gneE3_0&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;gneE3_0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;overheadWireSegment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ovrhdSgmnt_gneE4_0&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;gneE4_0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;overheadWireSegment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ovrhdSgmnt_gneE5_0&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;gneE5_0&quot;</span><span class="w"> </span><span class="na">voltageSource=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;overheadWireSegment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ovrhdSgmnt_-gneE3_0&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;-gneE3_0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;overheadWireSegment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ovrhdSgmnt_-gneE1_0&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;-gneE1_0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;overheadWireSegment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ovrhdSgmnt_-gneE0_0&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;-gneE0_0&quot;</span><span class="w">  </span><span class="na">startPos=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;40.&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/additionals&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additionals&gt;
+    &lt;overheadWireSegment id=&quot;ovrhdSgmnt_gneE0_0&quot; lane=&quot;gneE0_0&quot; voltageSource=&quot;true&quot; /&gt;
+    &lt;overheadWireSegment id=&quot;ovrhdSgmnt_gneE1_0&quot; lane=&quot;gneE1_0&quot; /&gt;
+    &lt;overheadWireSegment id=&quot;ovrhdSgmnt_gneE3_0&quot; lane=&quot;gneE3_0&quot; /&gt;
+    &lt;overheadWireSegment id=&quot;ovrhdSgmnt_gneE4_0&quot; lane=&quot;gneE4_0&quot; /&gt;
+    &lt;overheadWireSegment id=&quot;ovrhdSgmnt_gneE5_0&quot; lane=&quot;gneE5_0&quot; voltageSource=&quot;true&quot;/&gt;
+    &lt;overheadWireSegment id=&quot;ovrhdSgmnt_-gneE3_0&quot; lane=&quot;-gneE3_0&quot; /&gt;
+    &lt;overheadWireSegment id=&quot;ovrhdSgmnt_-gneE1_0&quot; lane=&quot;-gneE1_0&quot; /&gt;
+    &lt;overheadWireSegment id=&quot;ovrhdSgmnt_-gneE0_0&quot; lane=&quot;-gneE0_0&quot;  startPos=&quot;0.0&quot; endPos=&quot;40.&quot; /&gt;
+&lt;/additionals&gt;
+</code></pre>
 <p>We can also try to improve electric parameters of the circuit by specifying <em>overhead wire clamps</em> that interconnect
 selected overhead wire segments (these are typically overhead wire segments in the opposite directions on the same street):</p>
 <table>
@@ -582,12 +579,11 @@ selected overhead wire segments (these are typically overhead wire segments in t
 </table>
 <p>An example of using the <code>&lt;overheadWireClamp&gt;</code> element connecting the contact line segments on
 lanes <code>-gneE0_0</code> and <code>gneE0_0</code> is given below:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additionals&gt;</span>
-<span class="w">    </span><span class="nt">&lt;overheadWireClamp</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;clamp1&quot;</span><span class="w"> </span><span class="na">substationId=</span><span class="s">&quot;Sub1&quot;</span>
-<span class="w">        </span><span class="na">idSegmentStartClamp=</span><span class="s">&quot;ovrhdSgmnt_-gneE0_0&quot;</span><span class="w"> </span><span class="na">idSegmentEndClamp=</span><span class="s">&quot;ovrhdSgmnt_gneE0_0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/additionals&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additionals&gt;
+    &lt;overheadWireClamp id=&quot;clamp1&quot; substationId=&quot;Sub1&quot;
+        idSegmentStartClamp=&quot;ovrhdSgmnt_-gneE0_0&quot; idSegmentEndClamp=&quot;ovrhdSgmnt_gneE0_0&quot; /&gt;
+&lt;/additionals&gt;
+</code></pre>
 <p>Once the overhead wire segments (and overhead wire clamps) have been specified, an electric circuit can be defined
 using the <code>&lt;overheadWire&gt;</code> element with the following attributes:</p>
 <table>
@@ -631,12 +627,11 @@ using the <code>&lt;overheadWire&gt;</code> element with the following attribute
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additionals&gt;</span>
-<span class="w">    </span><span class="nt">&lt;overheadWire</span><span class="w"> </span><span class="na">segments=</span><span class="s">&quot;ovrhdSgmnt_gneE0_0 ovrhdSgmnt_gneE1_0 ovrhdSgmnt_gneE3_0 ovrhdSgmnt_gneE4_0 ovrhdSgmnt_gneE5_0 ovrhdSgmnt_-gneE3_0 ovrhdSgmnt_-gneE1_0 ovrhdSgmnt_-gneE0_0&quot;</span>
-<span class="w">                  </span><span class="na">substationId=</span><span class="s">&quot;Sub1&quot;</span><span class="w"> </span><span class="na">clamps=</span><span class="s">&quot;clamp1&quot;</span><span class="w"> </span><span class="na">forbiddenInnerLanes=</span><span class="s">&quot;:gneJ4_2_0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/additionals&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additionals&gt;
+    &lt;overheadWire segments=&quot;ovrhdSgmnt_gneE0_0 ovrhdSgmnt_gneE1_0 ovrhdSgmnt_gneE3_0 ovrhdSgmnt_gneE4_0 ovrhdSgmnt_gneE5_0 ovrhdSgmnt_-gneE3_0 ovrhdSgmnt_-gneE1_0 ovrhdSgmnt_-gneE0_0&quot;
+                  substationId=&quot;Sub1&quot; clamps=&quot;clamp1&quot; forbiddenInnerLanes=&quot;:gneJ4_2_0&quot; /&gt;
+&lt;/additionals&gt;
+</code></pre>
 <p>The overhead wire powering/charging system is represented in the graphical user interface as a two-wire system:</p>
 <p><img alt="" src="../images/overheadWire_gui_labeled.png" title="Representation of the overhead wire in GUI" />
 Representation of the overhead wire in GUI</p>
@@ -647,17 +642,16 @@ of connected ElecHybrid vehicles on that segment -- see image below.</p>
 Color of overhead wire in case that some power is supplied to a vehicle</p>
 <h2 id="simulation_setting">Simulation setting<a class="headerlink" href="#simulation_setting" title="Permanent link">#</a></h2>
 <p>It is possible to activate or deactivate overhead wire solver, enable or disable the recuperation of energy from vehicles to overhead wire, and apply or ignore substation's electric current limits in the overhead wire solver. The above mentioned properties are set in configuration file using the following format.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">    </span>...
-<span class="w">    </span><span class="nt">&lt;processing&gt;</span>
-<span class="w">        </span><span class="nt">&lt;overhead-wire-solver</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;overhead-wire-recuperation</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;overhead-wire-substation-current-limits</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/processing&gt;</span>
-<span class="w">    </span>...
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;configuration&gt;
+    ...
+    &lt;processing&gt;
+        &lt;overhead-wire-solver value=&quot;true&quot;/&gt;
+        &lt;overhead-wire-recuperation value=&quot;true&quot;/&gt;
+        &lt;overhead-wire-substation-current-limits value=&quot;true&quot;/&gt;
+    &lt;/processing&gt;
+    ...
+&lt;/configuration&gt;
+</code></pre>
 <p>All three mentioned values are set to "true" by default.</p>
 <h2 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link">#</a></h2>
 <p>The <em>device.elechybrid</em> and its related objects provide several output streams:
@@ -666,35 +660,33 @@ Color of overhead wire in case that some power is supplied to a vehicle</p>
 * electric hybrid vehicle output</p>
 <h3 id="overhead_wire_segments_output">Overhead wire segments output<a class="headerlink" href="#overhead_wire_segments_output" title="Permanent link">#</a></h3>
 <p>The option <code>--overheadwiresegments-output "overheadWires.out.xml"</code> or its config file equivalent</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;output&gt;</span>
-<span class="w">    </span><span class="nt">&lt;overheadwiresegments-output</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;overheadWires.out.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/output&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;output&gt;
+    &lt;overheadwiresegments-output value=&quot;overheadWires.out.xml&quot;/&gt;
+&lt;/output&gt;
+</code></pre>
 <p>generates a full report of energy provided by overhead wire segments.</p>
 <p>The output file <code>overheadWires.out.xml</code> has the following structure:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;overheadWireSegments-export&gt;</span>
-<span class="w">    </span><span class="nt">&lt;overheadWireSegment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ovrhdSgmnt_gneE0_0&quot;</span><span class="w"> </span><span class="na">tractionSubstationId=</span><span class="s">&quot;Sub1&quot;</span><span class="w"> </span><span class="na">totalEnergyCharged=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">chargingSteps=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;gneE0_0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;overheadWireSegment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ovrhdSgmnt_gneE1_0&quot;</span><span class="w"> </span><span class="na">tractionSubstationId=</span><span class="s">&quot;Sub1&quot;</span><span class="w"> </span><span class="na">totalEnergyCharged=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">chargingSteps=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;gneE1_0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span>...
-<span class="w">    </span><span class="nt">&lt;overheadWireSegment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ovrhdSgmnt_gneE5_0&quot;</span><span class="w"> </span><span class="na">tractionSubstationId=</span><span class="s">&quot;Sub1&quot;</span><span class="w"> </span><span class="na">totalEnergyCharged=</span><span class="s">&quot;250.92&quot;</span><span class="w"> </span><span class="na">chargingSteps=</span><span class="s">&quot;11&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;gneE5_0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;test1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;trolleybus&quot;</span><span class="w"> </span><span class="na">totalEnergyChargedIntoVehicle=</span><span class="s">&quot;250.92&quot;</span><span class="w"> </span><span class="na">chargingBegin=</span><span class="s">&quot;1.00&quot;</span><span class="w"> </span><span class="na">chargingEnd=</span><span class="s">&quot;11.00&quot;</span><span class="w"> </span><span class="na">maximumBatteryCapacity=</span><span class="s">&quot;46000.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;step</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;1.00&quot;</span><span class="w"> </span><span class="na">chargingStatus=</span><span class="s">&quot;charging&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;16.17&quot;</span><span class="w"> </span><span class="na">partialCharge=</span><span class="s">&quot;16.17&quot;</span><span class="w"> </span><span class="na">voltage=</span><span class="s">&quot;699.98&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;23011.11&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;step</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;2.00&quot;</span><span class="w"> </span><span class="na">chargingStatus=</span><span class="s">&quot;charging&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;20.66&quot;</span><span class="w"> </span><span class="na">partialCharge=</span><span class="s">&quot;36.83&quot;</span><span class="w"> </span><span class="na">voltage=</span><span class="s">&quot;699.94&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;23022.22&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span>...
-<span class="w">        </span><span class="nt">&lt;/vehicle&gt;</span>
-<span class="w">        </span>...
-<span class="w">    </span><span class="nt">&lt;/overheadWireSegment&gt;</span>
-<span class="w">    </span>...
-<span class="w">    </span><span class="nt">&lt;overheadWireSegment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ovrhd_inner_:gneJ1_0_1&quot;</span><span class="w"> </span><span class="na">tractionSubstationId=</span><span class="s">&quot;Sub2&quot;</span><span class="w"> </span><span class="na">totalEnergyCharged=</span><span class="s">&quot;30.15&quot;</span><span class="w"> </span><span class="na">chargingSteps=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;:gneJ1_0_1&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;test1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;trolleybus&quot;</span><span class="w"> </span><span class="na">totalEnergyChargedIntoVehicle=</span><span class="s">&quot;30.15&quot;</span><span class="w"> </span><span class="na">chargingBegin=</span><span class="s">&quot;12.00&quot;</span><span class="w"> </span><span class="na">chargingEnd=</span><span class="s">&quot;12.00&quot;</span><span class="w"> </span><span class="na">maximumBatteryCapacity=</span><span class="s">&quot;46000.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;step</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;12.00&quot;</span><span class="w"> </span><span class="na">chargingStatus=</span><span class="s">&quot;charging&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;30.15&quot;</span><span class="w"> </span><span class="na">partialCharge=</span><span class="s">&quot;30.15&quot;</span><span class="w"> </span><span class="na">voltage=</span><span class="s">&quot;698.54&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;23133.33&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/vehicle&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/overheadWireSegment&gt;</span>
-<span class="w">    </span>...
-<span class="nt">&lt;/overheadWireSegments-export&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;overheadWireSegments-export&gt;
+    &lt;overheadWireSegment id=&quot;ovrhdSgmnt_gneE0_0&quot; tractionSubstationId=&quot;Sub1&quot; totalEnergyCharged=&quot;0.00&quot; chargingSteps=&quot;0&quot; lane=&quot;gneE0_0&quot;/&gt;
+    &lt;overheadWireSegment id=&quot;ovrhdSgmnt_gneE1_0&quot; tractionSubstationId=&quot;Sub1&quot; totalEnergyCharged=&quot;0.00&quot; chargingSteps=&quot;0&quot; lane=&quot;gneE1_0&quot;/&gt;
+    ...
+    &lt;overheadWireSegment id=&quot;ovrhdSgmnt_gneE5_0&quot; tractionSubstationId=&quot;Sub1&quot; totalEnergyCharged=&quot;250.92&quot; chargingSteps=&quot;11&quot; lane=&quot;gneE5_0&quot;&gt;
+        &lt;vehicle id=&quot;test1&quot; type=&quot;trolleybus&quot; totalEnergyChargedIntoVehicle=&quot;250.92&quot; chargingBegin=&quot;1.00&quot; chargingEnd=&quot;11.00&quot; maximumBatteryCapacity=&quot;46000.00&quot;&gt;
+            &lt;step time=&quot;1.00&quot; chargingStatus=&quot;charging&quot; energyCharged=&quot;16.17&quot; partialCharge=&quot;16.17&quot; voltage=&quot;699.98&quot; actualBatteryCapacity=&quot;23011.11&quot;/&gt;
+            &lt;step time=&quot;2.00&quot; chargingStatus=&quot;charging&quot; energyCharged=&quot;20.66&quot; partialCharge=&quot;36.83&quot; voltage=&quot;699.94&quot; actualBatteryCapacity=&quot;23022.22&quot;/&gt;
+            ...
+        &lt;/vehicle&gt;
+        ...
+    &lt;/overheadWireSegment&gt;
+    ...
+    &lt;overheadWireSegment id=&quot;ovrhd_inner_:gneJ1_0_1&quot; tractionSubstationId=&quot;Sub2&quot; totalEnergyCharged=&quot;30.15&quot; chargingSteps=&quot;1&quot; lane=&quot;:gneJ1_0_1&quot;&gt;
+        &lt;vehicle id=&quot;test1&quot; type=&quot;trolleybus&quot; totalEnergyChargedIntoVehicle=&quot;30.15&quot; chargingBegin=&quot;12.00&quot; chargingEnd=&quot;12.00&quot; maximumBatteryCapacity=&quot;46000.00&quot;&gt;
+            &lt;step time=&quot;12.00&quot; chargingStatus=&quot;charging&quot; energyCharged=&quot;30.15&quot; partialCharge=&quot;30.15&quot; voltage=&quot;698.54&quot; actualBatteryCapacity=&quot;23133.33&quot;/&gt;
+        &lt;/vehicle&gt;
+    &lt;/overheadWireSegment&gt;
+    ...
+&lt;/overheadWireSegments-export&gt;
+</code></pre>
 <p>For the entire overhead wire segment described by the <code>&lt;overheadWireSegment&gt;</code> tag we output the following attributes:</p>
 <table>
 <thead>
@@ -832,22 +824,20 @@ Color of overhead wire in case that some power is supplied to a vehicle</p>
 </table>
 <h3 id="electric_substation_output">Electric Substation output<a class="headerlink" href="#electric_substation_output" title="Permanent link">#</a></h3>
 <p>Option <code>--substations-output "nameOfFile.xml"</code> generates a full report of energy provided by substations:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;output&gt;</span>
-<span class="w">    </span><span class="nt">&lt;substations-output</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;substations.out.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/output&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;output&gt;
+    &lt;substations-output value=&quot;substations.out.xml&quot;/&gt;
+&lt;/output&gt;
+</code></pre>
 <p>File <code>substations.out.xml</code> has the following structure:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;substations-export&gt;</span>
-<span class="w">    </span><span class="nt">&lt;tractionSubstation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;Sub1&quot;</span><span class="w"> </span><span class="na">totalEnergyCharged=</span><span class="s">&quot;-1360.85&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;316.63&quot;</span><span class="w"> </span><span class="na">numVoltageSources=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">numClamps=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">chargingSteps=</span><span class="s">&quot;50&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;step</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;1.00&quot;</span><span class="w"> </span><span class="na">vehicleIDs=</span><span class="s">&quot;elecHybrid_0&quot;</span><span class="w"> </span><span class="na">numVehicles=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">chargingStatus=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;-15.13&quot;</span><span class="w"> </span><span class="na">current=</span><span class="s">&quot;90.75&quot;</span><span class="w"> </span><span class="na">currents=</span><span class="s">&quot;80.1860 10.5661&quot;</span><span class="w"> </span><span class="na">voltage=</span><span class="s">&quot;600.00&quot;</span><span class="w"> </span><span class="na">alphaCircuitSolver=</span><span class="s">&quot;1.00&quot;</span><span class="w"> </span><span class="na">alphaFlag=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;step</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;2.00&quot;</span><span class="w"> </span><span class="na">vehicleIDs=</span><span class="s">&quot;elecHybrid_0&quot;</span><span class="w"> </span><span class="na">numVehicles=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">chargingStatus=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;-18.58&quot;</span><span class="w"> </span><span class="na">current=</span><span class="s">&quot;111.51&quot;</span><span class="w"> </span><span class="na">currents=</span><span class="s">&quot;96.9147 14.5929&quot;</span><span class="w"> </span><span class="na">voltage=</span><span class="s">&quot;600.00&quot;</span><span class="w"> </span><span class="na">alphaCircuitSolver=</span><span class="s">&quot;1.00&quot;</span><span class="w"> </span><span class="na">alphaFlag=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span>...
-<span class="w">    </span><span class="nt">&lt;/tractionSubstation&gt;</span>
-<span class="w">    </span>...
-<span class="nt">&lt;/substations-export&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;substations-export&gt;
+    &lt;tractionSubstation id=&quot;Sub1&quot; totalEnergyCharged=&quot;-1360.85&quot; length=&quot;316.63&quot; numVoltageSources=&quot;2&quot; numClamps=&quot;1&quot; chargingSteps=&quot;50&quot;&gt;
+        &lt;step time=&quot;1.00&quot; vehicleIDs=&quot;elecHybrid_0&quot; numVehicles=&quot;1&quot; chargingStatus=&quot;&quot; energyCharged=&quot;-15.13&quot; current=&quot;90.75&quot; currents=&quot;80.1860 10.5661&quot; voltage=&quot;600.00&quot; alphaCircuitSolver=&quot;1.00&quot; alphaFlag=&quot;0&quot;/&gt;
+        &lt;step time=&quot;2.00&quot; vehicleIDs=&quot;elecHybrid_0&quot; numVehicles=&quot;1&quot; chargingStatus=&quot;&quot; energyCharged=&quot;-18.58&quot; current=&quot;111.51&quot; currents=&quot;96.9147 14.5929&quot; voltage=&quot;600.00&quot; alphaCircuitSolver=&quot;1.00&quot; alphaFlag=&quot;0&quot;/&gt;
+        ...
+    &lt;/tractionSubstation&gt;
+    ...
+&lt;/substations-export&gt;
+</code></pre>
 <p>For the <code>&lt;tractionSubstation&gt;</code> entry representing a traction substation:</p>
 <table>
 <thead>
@@ -978,34 +968,32 @@ provided to them.</p>
 <h2 id="electrichybrid_output">ElectricHybrid output<a class="headerlink" href="#electrichybrid_output" title="Permanent link">#</a></h2>
 <p>There are three output parameters to be set in the SUMO configuration file to collect the statistics from the <em>device.elechybrid</em>.
 The typical usage will be</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">    </span>...
-<span class="w">    </span><span class="nt">&lt;output&gt;</span>
-<span class="w">        </span><span class="nt">&lt;elechybrid-output</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;trolleybus.elecHybrid.out.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;elechybrid-output.precision</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;elechybrid-output.aggregated</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;overheadwiresegments-output</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;overheadWires.out.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;substations-output</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;substations.out.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span>...
-<span class="w">    </span><span class="nt">&lt;/output&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;configuration&gt;
+    ...
+    &lt;output&gt;
+        &lt;elechybrid-output value=&quot;trolleybus.elecHybrid.out.xml&quot;/&gt;
+        &lt;elechybrid-output.precision value=&quot;4&quot;/&gt;
+        &lt;elechybrid-output.aggregated value=&quot;true&quot;/&gt;
+        &lt;overheadwiresegments-output value=&quot;overheadWires.out.xml&quot;/&gt;
+        &lt;substations-output value=&quot;substations.out.xml&quot;/&gt;
+        ...
+    &lt;/output&gt;
+&lt;/configuration&gt;
+</code></pre>
 <p>This declaration will activate an <em>aggregated</em> ElectricHybrid output into <code>trolleybus.elecHybrid.out.xml</code> file
 with floats being represented up to 4 decimal places:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;elecHybrid-export-aggregated&gt;</span>
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;0.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;test1&quot;</span><span class="w"> </span><span class="na">maximumBatteryCapacity=</span><span class="s">&quot;46000.0000&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;23000.0000&quot;</span><span class="w"> </span><span class="na">energyConsumed=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">power=</span><span class="s">&quot;-nan(ind)&quot;</span><span class="w"> </span><span class="na">overheadWireId=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">tractionSubstationId=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">current=</span><span class="s">&quot;-nan(ind)&quot;</span><span class="w"> </span><span class="na">circuitVoltage=</span><span class="s">&quot;-nan(ind)&quot;</span><span class="w"> </span><span class="na">alphaCircuitSolver=</span><span class="s">&quot;-nan(ind)&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">acceleration=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">distance=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-1.4500&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;46.3800&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;gneE0_0&quot;</span><span class="w"> </span><span class="na">posOnLane=</span><span class="s">&quot;0.0000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;test2&quot;</span><span class="w"> </span><span class="na">maximumBatteryCapacity=</span><span class="s">&quot;46000.0000&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;23000.0000&quot;</span><span class="w"> </span><span class="na">energyConsumed=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">power=</span><span class="s">&quot;-nan(ind)&quot;</span><span class="w"> </span><span class="na">overheadWireId=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">tractionSubstationId=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">current=</span><span class="s">&quot;-nan(ind)&quot;</span><span class="w"> </span><span class="na">circuitVoltage=</span><span class="s">&quot;-nan(ind)&quot;</span><span class="w"> </span><span class="na">alphaCircuitSolver=</span><span class="s">&quot;-nan(ind)&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">acceleration=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">distance=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;36.1600&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;33.7600&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;-gneE10_0&quot;</span><span class="w"> </span><span class="na">posOnLane=</span><span class="s">&quot;0.0000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/timestep&gt;</span>
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;1.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;test1&quot;</span><span class="w"> </span><span class="na">maximumBatteryCapacity=</span><span class="s">&quot;46000.0000&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;23011.1111&quot;</span><span class="w"> </span><span class="na">energyConsumed=</span><span class="s">&quot;5.0570&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;11.1111&quot;</span><span class="w"> </span><span class="na">power=</span><span class="s">&quot;58205.3716&quot;</span><span class="w"> </span><span class="na">overheadWireId=</span><span class="s">&quot;ovrhdSgmnt_gneE0_0_0&quot;</span><span class="w"> </span><span class="na">tractionSubstationId=</span><span class="s">&quot;trSubstation1&quot;</span><span class="w"> </span><span class="na">current=</span><span class="s">&quot;83.1523&quot;</span><span class="w"> </span><span class="na">circuitVoltage=</span><span class="s">&quot;699.9850&quot;</span><span class="w"> </span><span class="na">alphaCircuitSolver=</span><span class="s">&quot;1.0000&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;0.8000&quot;</span><span class="w"> </span><span class="na">acceleration=</span><span class="s">&quot;0.8000&quot;</span><span class="w"> </span><span class="na">distance=</span><span class="s">&quot;0.8000&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-0.6502&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;46.3729&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;gneE0_0&quot;</span><span class="w"> </span><span class="na">posOnLane=</span><span class="s">&quot;0.8000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;test2&quot;</span><span class="w"> </span><span class="na">maximumBatteryCapacity=</span><span class="s">&quot;46000.0000&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;23011.1111&quot;</span><span class="w"> </span><span class="na">energyConsumed=</span><span class="s">&quot;5.0570&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;11.1111&quot;</span><span class="w"> </span><span class="na">power=</span><span class="s">&quot;58205.3716&quot;</span><span class="w"> </span><span class="na">overheadWireId=</span><span class="s">&quot;ovrhdSgmnt_-gneE10_0_6&quot;</span><span class="w"> </span><span class="na">tractionSubstationId=</span><span class="s">&quot;trSubstation2&quot;</span><span class="w"> </span><span class="na">current=</span><span class="s">&quot;97.0738&quot;</span><span class="w"> </span><span class="na">circuitVoltage=</span><span class="s">&quot;599.5992&quot;</span><span class="w"> </span><span class="na">alphaCircuitSolver=</span><span class="s">&quot;1.0000&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;0.8000&quot;</span><span class="w"> </span><span class="na">acceleration=</span><span class="s">&quot;0.8000&quot;</span><span class="w"> </span><span class="na">distance=</span><span class="s">&quot;0.8000&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;36.1308&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;32.9604&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;-gneE10_0&quot;</span><span class="w"> </span><span class="na">posOnLane=</span><span class="s">&quot;0.8000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/timestep&gt;</span>
-<span class="w">    </span>...
-<span class="nt">&lt;/elecHybrid-export-aggregated&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;elecHybrid-export-aggregated&gt;
+    &lt;timestep time=&quot;0.00&quot;&gt;
+        &lt;vehicle id=&quot;test1&quot; maximumBatteryCapacity=&quot;46000.0000&quot; actualBatteryCapacity=&quot;23000.0000&quot; energyConsumed=&quot;0.0000&quot; energyCharged=&quot;0.0000&quot; power=&quot;-nan(ind)&quot; overheadWireId=&quot;&quot; tractionSubstationId=&quot;&quot; current=&quot;-nan(ind)&quot; circuitVoltage=&quot;-nan(ind)&quot; alphaCircuitSolver=&quot;-nan(ind)&quot; speed=&quot;0.0000&quot; acceleration=&quot;0.0000&quot; distance=&quot;0.0000&quot; x=&quot;-1.4500&quot; y=&quot;46.3800&quot; z=&quot;0.0000&quot; slope=&quot;0.0000&quot; lane=&quot;gneE0_0&quot; posOnLane=&quot;0.0000&quot;/&gt;
+        &lt;vehicle id=&quot;test2&quot; maximumBatteryCapacity=&quot;46000.0000&quot; actualBatteryCapacity=&quot;23000.0000&quot; energyConsumed=&quot;0.0000&quot; energyCharged=&quot;0.0000&quot; power=&quot;-nan(ind)&quot; overheadWireId=&quot;&quot; tractionSubstationId=&quot;&quot; current=&quot;-nan(ind)&quot; circuitVoltage=&quot;-nan(ind)&quot; alphaCircuitSolver=&quot;-nan(ind)&quot; speed=&quot;0.0000&quot; acceleration=&quot;0.0000&quot; distance=&quot;0.0000&quot; x=&quot;36.1600&quot; y=&quot;33.7600&quot; z=&quot;0.0000&quot; slope=&quot;0.0000&quot; lane=&quot;-gneE10_0&quot; posOnLane=&quot;0.0000&quot;/&gt;
+    &lt;/timestep&gt;
+    &lt;timestep time=&quot;1.00&quot;&gt;
+        &lt;vehicle id=&quot;test1&quot; maximumBatteryCapacity=&quot;46000.0000&quot; actualBatteryCapacity=&quot;23011.1111&quot; energyConsumed=&quot;5.0570&quot; energyCharged=&quot;11.1111&quot; power=&quot;58205.3716&quot; overheadWireId=&quot;ovrhdSgmnt_gneE0_0_0&quot; tractionSubstationId=&quot;trSubstation1&quot; current=&quot;83.1523&quot; circuitVoltage=&quot;699.9850&quot; alphaCircuitSolver=&quot;1.0000&quot; speed=&quot;0.8000&quot; acceleration=&quot;0.8000&quot; distance=&quot;0.8000&quot; x=&quot;-0.6502&quot; y=&quot;46.3729&quot; z=&quot;0.0000&quot; slope=&quot;0.0000&quot; lane=&quot;gneE0_0&quot; posOnLane=&quot;0.8000&quot;/&gt;
+        &lt;vehicle id=&quot;test2&quot; maximumBatteryCapacity=&quot;46000.0000&quot; actualBatteryCapacity=&quot;23011.1111&quot; energyConsumed=&quot;5.0570&quot; energyCharged=&quot;11.1111&quot; power=&quot;58205.3716&quot; overheadWireId=&quot;ovrhdSgmnt_-gneE10_0_6&quot; tractionSubstationId=&quot;trSubstation2&quot; current=&quot;97.0738&quot; circuitVoltage=&quot;599.5992&quot; alphaCircuitSolver=&quot;1.0000&quot; speed=&quot;0.8000&quot; acceleration=&quot;0.8000&quot; distance=&quot;0.8000&quot; x=&quot;36.1308&quot; y=&quot;32.9604&quot; z=&quot;0.0000&quot; slope=&quot;0.0000&quot; lane=&quot;-gneE10_0&quot; posOnLane=&quot;0.8000&quot;/&gt;
+    &lt;/timestep&gt;
+    ...
+&lt;/elecHybrid-export-aggregated&gt;
+</code></pre>
 <p>Time step parameters:</p>
 <table>
 <thead>
@@ -1159,18 +1147,16 @@ with floats being represented up to 4 decimal places:</p>
 <p>If a detailed output of the vehicles has been requested using <code>&lt;elecHybrid-output.aggregated value="false"/&gt;</code>,
 the ElectricHybrid output generates the number of files, corresponding to the number of vehicles equipped with
 <em>device.elechybrid</em>. The file names follow the rule:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n n-Quoted">`elechybrid-output`</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;_&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n n-Quoted">`id`</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">vehicle</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.xml&quot;</span><span class="p">.</span>
-</code></pre></div>
-
+<pre><code>filename = `elechybrid-output` value + &quot;_&quot; + `id` of vehicle + &quot;.xml&quot;.
+</code></pre>
 <p>The non-aggregated output files have the following structure:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;elecHybrid-export</span><span class="w"> </span><span class="na">vehicle=</span><span class="s">&quot;test1&quot;</span><span class="w"> </span><span class="na">maximumBatteryCapacity=</span><span class="s">&quot;46000.00&quot;</span><span class="w"> </span><span class="na">recuperationEnabled=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;23000.0000&quot;</span><span class="w"> </span><span class="na">energyConsumed=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">power=</span><span class="s">&quot;-nan(ind)&quot;</span><span class="w"> </span><span class="na">overheadWireId=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">tractionSubstationId=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">current=</span><span class="s">&quot;-nan(ind)&quot;</span><span class="w"> </span><span class="na">circuitVoltage=</span><span class="s">&quot;-nan(ind)&quot;</span><span class="w"> </span><span class="na">alphaCircuitSolver=</span><span class="s">&quot;-nan(ind)&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">acceleration=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">distance=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-1.4500&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;46.3800&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;gneE0_0&quot;</span><span class="w"> </span><span class="na">posOnLane=</span><span class="s">&quot;0.0000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;1.00&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;23011.1111&quot;</span><span class="w"> </span><span class="na">energyConsumed=</span><span class="s">&quot;5.0570&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;11.1111&quot;</span><span class="w"> </span><span class="na">power=</span><span class="s">&quot;58205.3716&quot;</span><span class="w"> </span><span class="na">overheadWireId=</span><span class="s">&quot;ovrhdSgmnt_gneE0_0_0&quot;</span><span class="w"> </span><span class="na">tractionSubstationId=</span><span class="s">&quot;trSubstation1&quot;</span><span class="w"> </span><span class="na">current=</span><span class="s">&quot;83.1523&quot;</span><span class="w"> </span><span class="na">circuitVoltage=</span><span class="s">&quot;699.9850&quot;</span><span class="w"> </span><span class="na">alphaCircuitSolver=</span><span class="s">&quot;1.0000&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;0.8000&quot;</span><span class="w"> </span><span class="na">acceleration=</span><span class="s">&quot;0.8000&quot;</span><span class="w"> </span><span class="na">distance=</span><span class="s">&quot;0.8000&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-0.6502&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;46.3729&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;gneE0_0&quot;</span><span class="w"> </span><span class="na">posOnLane=</span><span class="s">&quot;0.8000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;2.00&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;23022.2222&quot;</span><span class="w"> </span><span class="na">energyConsumed=</span><span class="s">&quot;9.5487&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;11.1111&quot;</span><span class="w"> </span><span class="na">power=</span><span class="s">&quot;74375.3992&quot;</span><span class="w"> </span><span class="na">overheadWireId=</span><span class="s">&quot;ovrhdSgmnt_gneE0_0_0&quot;</span><span class="w"> </span><span class="na">tractionSubstationId=</span><span class="s">&quot;trSubstation1&quot;</span><span class="w"> </span><span class="na">current=</span><span class="s">&quot;106.2593&quot;</span><span class="w"> </span><span class="na">circuitVoltage=</span><span class="s">&quot;699.9424&quot;</span><span class="w"> </span><span class="na">alphaCircuitSolver=</span><span class="s">&quot;1.0000&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;1.6000&quot;</span><span class="w"> </span><span class="na">acceleration=</span><span class="s">&quot;0.8000&quot;</span><span class="w"> </span><span class="na">distance=</span><span class="s">&quot;2.4000&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.9494&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;46.3586&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.0000&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;gneE0_0&quot;</span><span class="w"> </span><span class="na">posOnLane=</span><span class="s">&quot;2.4000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span>...
-<span class="nt">&lt;/elecHybrid-export&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;elecHybrid-export vehicle=&quot;test1&quot; maximumBatteryCapacity=&quot;46000.00&quot; recuperationEnabled=&quot;1&quot;&gt;
+    &lt;timestep time=&quot;0.00&quot; actualBatteryCapacity=&quot;23000.0000&quot; energyConsumed=&quot;0.0000&quot; energyCharged=&quot;0.0000&quot; power=&quot;-nan(ind)&quot; overheadWireId=&quot;&quot; tractionSubstationId=&quot;&quot; current=&quot;-nan(ind)&quot; circuitVoltage=&quot;-nan(ind)&quot; alphaCircuitSolver=&quot;-nan(ind)&quot; speed=&quot;0.0000&quot; acceleration=&quot;0.0000&quot; distance=&quot;0.0000&quot; x=&quot;-1.4500&quot; y=&quot;46.3800&quot; z=&quot;0.0000&quot; slope=&quot;0.0000&quot; lane=&quot;gneE0_0&quot; posOnLane=&quot;0.0000&quot;/&gt;
+    &lt;timestep time=&quot;1.00&quot; actualBatteryCapacity=&quot;23011.1111&quot; energyConsumed=&quot;5.0570&quot; energyCharged=&quot;11.1111&quot; power=&quot;58205.3716&quot; overheadWireId=&quot;ovrhdSgmnt_gneE0_0_0&quot; tractionSubstationId=&quot;trSubstation1&quot; current=&quot;83.1523&quot; circuitVoltage=&quot;699.9850&quot; alphaCircuitSolver=&quot;1.0000&quot; speed=&quot;0.8000&quot; acceleration=&quot;0.8000&quot; distance=&quot;0.8000&quot; x=&quot;-0.6502&quot; y=&quot;46.3729&quot; z=&quot;0.0000&quot; slope=&quot;0.0000&quot; lane=&quot;gneE0_0&quot; posOnLane=&quot;0.8000&quot;/&gt;
+    &lt;timestep time=&quot;2.00&quot; actualBatteryCapacity=&quot;23022.2222&quot; energyConsumed=&quot;9.5487&quot; energyCharged=&quot;11.1111&quot; power=&quot;74375.3992&quot; overheadWireId=&quot;ovrhdSgmnt_gneE0_0_0&quot; tractionSubstationId=&quot;trSubstation1&quot; current=&quot;106.2593&quot; circuitVoltage=&quot;699.9424&quot; alphaCircuitSolver=&quot;1.0000&quot; speed=&quot;1.6000&quot; acceleration=&quot;0.8000&quot; distance=&quot;2.4000&quot; x=&quot;0.9494&quot; y=&quot;46.3586&quot; z=&quot;0.0000&quot; slope=&quot;0.0000&quot; lane=&quot;gneE0_0&quot; posOnLane=&quot;2.4000&quot;/&gt;
+    ...
+&lt;/elecHybrid-export&gt;
+</code></pre>
 <p>Vehicle parameters:</p>
 <table>
 <thead>
@@ -1368,7 +1354,7 @@ energy storage. This functionality is however not yet supported.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

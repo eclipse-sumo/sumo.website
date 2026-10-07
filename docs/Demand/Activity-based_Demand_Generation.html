@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -263,9 +264,8 @@ activity-based traffic model. It supports the activities work, school,
 and free time and the conveyances walking, bike, car, and bus. Cars may
 have their start or stop location outside the map.</p>
 <h2 id="typical_command_line">Typical Command Line<a class="headerlink" href="#typical_command_line" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="nv">activitygen</span><span class="w"> </span><span class="o">--</span><span class="nv">net</span><span class="o">-</span><span class="nv">file</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">NET</span><span class="o">&gt;</span><span class="w"> </span><span class="o">--</span><span class="nv">stat</span><span class="o">-</span><span class="nv">file</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">STATISTICS</span><span class="o">&gt;</span><span class="w"> </span><span class="o">--</span><span class="nv">output</span><span class="o">-</span><span class="nv">file</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">TRIPS</span><span class="o">&gt;</span><span class="w"> </span><span class="o">--</span><span class="k">random</span>
-</code></pre></div>
-
+<pre><code>activitygen --net-file &lt;NET&gt; --stat-file &lt;STATISTICS&gt; --output-file &lt;TRIPS&gt; --random
+</code></pre>
 <p>&lt;NET&gt; is a map in form of a SUMO net file, &lt;STATISTICS&gt; contains the
 description of the population (described below), and &lt;TRIPS&gt; is the
 generated SUMO routes file (the demand).</p>
@@ -277,20 +277,19 @@ mainly to generate traffic demand for larger networks, this example
 features the small network shown in the image on the right. Download the
 files <a href="https://github.com/eclipse-sumo/sumo/blob/main/tests/activitygen/activitygen-example.net.xml"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/tests/activitygen/activitygen-example.net.xml</a> and <a href="https://github.com/eclipse-sumo/sumo/blob/main/tests/activitygen/activitygen-example.stat.xml"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/tests/activitygen/activitygen-example.stat.xml </a> to follow this example.</p>
 <p>To run this example, use the following commands:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">activitygen --net-file activitygen-example.net.xml \</span>
-<span class="n">            --stat-file activitygen-example.stat.xml \</span>
-<span class="n">            --output-file activitygen-example.trips.rou.xml \</span>
-<span class="n">            --random</span>
+<pre><code>activitygen --net-file activitygen-example.net.xml \
+            --stat-file activitygen-example.stat.xml \
+            --output-file activitygen-example.trips.rou.xml \
+            --random
 
-<span class="n">duarouter --net-file activitygen-example.net.xml \</span>
-<span class="n">          --route-files activitygen-example.trips.rou.xml \</span>
-<span class="n">          --output-file activitygen-example.rou.xml \</span>
-<span class="n">          --ignore-errors</span>
+duarouter --net-file activitygen-example.net.xml \
+          --route-files activitygen-example.trips.rou.xml \
+          --output-file activitygen-example.rou.xml \
+          --ignore-errors
 
-<span class="n">sumo --net-file activitygen-example.net.xml \</span>
-<span class="n">     --route-files activitygen-example.rou.xml</span>
-</code></pre></div>
-
+sumo --net-file activitygen-example.net.xml \
+     --route-files activitygen-example.rou.xml
+</code></pre>
 <p>The first command generates the net file from the node and edge
 description. The second command generates the routes file (the demand)
 from a description of the population in the stat file. The generated
@@ -310,28 +309,26 @@ done ad hoc based on the current network status. The benefit from this
 approach is better route choice since vehicles take the network state at
 the time of their departure into account during routing (see
 <a href="Automatic_Routing.html">Demand/Automatic_Routing</a>)</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sumo --net-file activitygen-example.net.xml \</span>
-<span class="n">     --route-files activitygen-example.trips.rou.xml</span>
-</code></pre></div>
-
+<pre><code>sumo --net-file activitygen-example.net.xml \
+     --route-files activitygen-example.trips.rou.xml
+</code></pre>
 <h2 id="the_statistics_file">The Statistics File<a class="headerlink" href="#the_statistics_file" title="Permanent link">#</a></h2>
 <h3 id="general_information">General information<a class="headerlink" href="#general_information" title="Permanent link">#</a></h3>
 <p>First of all we need general information over the city.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;city&gt;</span>
-<span class="w">    </span><span class="nt">&lt;general</span>
-<span class="w">        </span><span class="na">inhabitants=</span><span class="s">&quot;1000&quot;</span>
-<span class="w">        </span><span class="na">households=</span><span class="s">&quot;500&quot;</span>
-<span class="w">        </span><span class="na">childrenAgeLimit=</span><span class="s">&quot;18&quot;</span>
-<span class="w">        </span><span class="na">retirementAgeLimit=</span><span class="s">&quot;65&quot;</span>
-<span class="w">        </span><span class="na">carRate=</span><span class="s">&quot;0.58&quot;</span>
-<span class="w">        </span><span class="na">unemploymentRate=</span><span class="s">&quot;0.05&quot;</span>
-<span class="w">        </span><span class="na">footDistanceLimit=</span><span class="s">&quot;350&quot;</span>
-<span class="w">        </span><span class="na">incomingTraffic=</span><span class="s">&quot;200&quot;</span>
-<span class="w">        </span><span class="na">outgoingTraffic=</span><span class="s">&quot;50&quot;</span>
-<span class="w">    </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/city&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;city&gt;
+    &lt;general
+        inhabitants=&quot;1000&quot;
+        households=&quot;500&quot;
+        childrenAgeLimit=&quot;18&quot;
+        retirementAgeLimit=&quot;65&quot;
+        carRate=&quot;0.58&quot;
+        unemploymentRate=&quot;0.05&quot;
+        footDistanceLimit=&quot;350&quot;
+        incomingTraffic=&quot;200&quot;
+        outgoingTraffic=&quot;50&quot;
+    /&gt;
+&lt;/city&gt;
+</code></pre>
 <p>The meanings of all these attributes are described in the following
 table:</p>
 <table>
@@ -397,18 +394,17 @@ the city (events, behavior of the population...). They can also be
 useful for optimization: the mean speed can be observed afterwards; all
 values can be changed in order to meet validation criteria on the
 traffic.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;city&gt;</span>
-<span class="w">    </span><span class="nt">&lt;general</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;parameters</span>
-<span class="w">        </span><span class="na">carPreference=</span><span class="s">&quot;0.50&quot;</span>
-<span class="w">        </span><span class="na">meanTimePerKmInCity=</span><span class="s">&quot;360&quot;</span>
-<span class="w">        </span><span class="na">freeTimeActivityRate=</span><span class="s">&quot;0.15&quot;</span>
-<span class="w">        </span><span class="na">uniformRandomTraffic=</span><span class="s">&quot;0.20&quot;</span>
-<span class="w">        </span><span class="na">departureVariation=</span><span class="s">&quot;120&quot;</span>
-<span class="w">    </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/city&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;city&gt;
+    &lt;general ... /&gt;
+    &lt;parameters
+        carPreference=&quot;0.50&quot;
+        meanTimePerKmInCity=&quot;360&quot;
+        freeTimeActivityRate=&quot;0.15&quot;
+        uniformRandomTraffic=&quot;0.20&quot;
+        departureVariation=&quot;120&quot;
+    /&gt;
+&lt;/city&gt;
+</code></pre>
 <p>The meanings of all these attributes are described in the following
 table:</p>
 <table>
@@ -450,19 +446,18 @@ table:</p>
 <h3 id="populations_age_brackets">Population's Age Brackets<a class="headerlink" href="#populations_age_brackets" title="Permanent link">#</a></h3>
 <p>In order to distribute the population among households and in the city
 coherently, we need a precise age distribution of this population.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;city&gt;</span>
-<span class="w">    </span><span class="nt">&lt;general</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;parameters</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;city&gt;
+    &lt;general ... /&gt;
+    &lt;parameters ... /&gt;
 
-<span class="w">    </span><span class="nt">&lt;population&gt;</span>
-<span class="w">        </span><span class="nt">&lt;bracket</span><span class="w"> </span><span class="na">beginAge=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">endAge=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">peopleNbr=</span><span class="s">&quot;1745&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span>...
-<span class="w">        </span><span class="nt">&lt;bracket</span><span class="w"> </span><span class="na">beginAge=</span><span class="s">&quot;66&quot;</span><span class="w"> </span><span class="na">endAge=</span><span class="s">&quot;90&quot;</span><span class="w"> </span><span class="na">peopleNbr=</span><span class="s">&quot;978&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/population&gt;</span>
+    &lt;population&gt;
+        &lt;bracket beginAge=&quot;0&quot; endAge=&quot;4&quot; peopleNbr=&quot;1745&quot; /&gt;
+            ...
+        &lt;bracket beginAge=&quot;66&quot; endAge=&quot;90&quot; peopleNbr=&quot;978&quot; /&gt;
+    &lt;/population&gt;
 
-<span class="nt">&lt;/city&gt;</span>
-</code></pre></div>
-
+&lt;/city&gt;
+</code></pre>
 <p>Follows the description of all bracket attributes.</p>
 <table>
 <thead>
@@ -493,21 +488,20 @@ coherently, we need a precise age distribution of this population.</p>
 <h3 id="work_hours">Work Hours<a class="headerlink" href="#work_hours" title="Permanent link">#</a></h3>
 <p>We need to specify the opening and closing hours of all city's work
 positions.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;city&gt;</span>
-<span class="w">    </span><span class="nt">&lt;general</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;parameters</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;population&gt;</span><span class="w"> </span><span class="nt">&lt;bracket</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/population&gt;</span>
+<pre><code class="language-xml">&lt;city&gt;
+    &lt;general ... /&gt;
+    &lt;parameters ... /&gt;
+    &lt;population&gt; &lt;bracket ... /&gt; ... &lt;/population&gt;
 
-<span class="w">    </span><span class="nt">&lt;workHours&gt;</span>
-<span class="w">        </span><span class="nt">&lt;opening</span><span class="w"> </span><span class="na">hour=</span><span class="s">&quot;30600&quot;</span><span class="w"> </span><span class="na">proportion=</span><span class="s">&quot;0.30&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span>...
-<span class="w">        </span><span class="nt">&lt;closing</span><span class="w"> </span><span class="na">hour=</span><span class="s">&quot;43200&quot;</span><span class="w"> </span><span class="na">proportion=</span><span class="s">&quot;0.20&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span>...
-<span class="w">    </span><span class="nt">&lt;/workHours&gt;</span>
+    &lt;workHours&gt;
+        &lt;opening hour=&quot;30600&quot; proportion=&quot;0.30&quot; /&gt;
+            ...
+        &lt;closing hour=&quot;43200&quot; proportion=&quot;0.20&quot; /&gt;
+            ...
+    &lt;/workHours&gt;
 
-<span class="nt">&lt;/city&gt;</span>
-</code></pre></div>
-
+&lt;/city&gt;
+</code></pre>
 <p>Here are descriptions of all attributes of opening and closing elements:</p>
 <table>
 <thead>
@@ -533,20 +527,19 @@ positions.</p>
 <h3 id="population_and_work_position_distribution">Population and Work Position Distribution<a class="headerlink" href="#population_and_work_position_distribution" title="Permanent link">#</a></h3>
 <p>Now, we have to specify the density of people and work in each street of
 the city. (by street I meant edges which are even more precise)</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;city&gt;</span>
-<span class="w">    </span><span class="nt">&lt;general</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;parameters</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;population&gt;</span><span class="w"> </span><span class="nt">&lt;bracket</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/population&gt;</span>
-<span class="w">    </span><span class="nt">&lt;workHours&gt;</span><span class="w"> </span><span class="nt">&lt;opening</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;closing</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/workHours&gt;</span>
+<pre><code class="language-xml">&lt;city&gt;
+    &lt;general ... /&gt;
+    &lt;parameters ... /&gt;
+    &lt;population&gt; &lt;bracket ... /&gt; ... &lt;/population&gt;
+    &lt;workHours&gt; &lt;opening ... /&gt; ... &lt;closing ... /&gt; ... &lt;/workHours&gt;
 
-<span class="w">    </span><span class="nt">&lt;streets&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;abc123&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;2.5&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;10.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span>...
-<span class="w">    </span><span class="nt">&lt;/streets&gt;</span>
+    &lt;streets&gt;
+        &lt;street edge=&quot;abc123&quot; population=&quot;2.5&quot; workPosition=&quot;10.0&quot; /&gt;
+            ...
+    &lt;/streets&gt;
 
-<span class="nt">&lt;/city&gt;</span>
-</code></pre></div>
-
+&lt;/city&gt;
+</code></pre>
 <p>Here are the corresponding attribute descriptions:</p>
 <table>
 <thead>
@@ -578,22 +571,21 @@ the city. (by street I meant edges which are even more precise)</p>
 <p>In order to generate incoming and outgoing traffic, we need to specify
 gates to the city. Every gate will generate the same number of incoming
 (resp. outgoing) cars (the total number divided by the number of gates).</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;city&gt;</span>
-<span class="w">    </span><span class="nt">&lt;general</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;parameters</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;population&gt;</span><span class="w"> </span><span class="nt">&lt;bracket</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/population&gt;</span>
-<span class="w">    </span><span class="nt">&lt;workHours&gt;</span><span class="w"> </span><span class="nt">&lt;opening</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;closing</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/workHours&gt;</span>
-<span class="w">    </span><span class="nt">&lt;streets&gt;</span><span class="w"> </span><span class="nt">&lt;street</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/streets&gt;</span>
+<pre><code class="language-xml">&lt;city&gt;
+    &lt;general ... /&gt;
+    &lt;parameters ... /&gt;
+    &lt;population&gt; &lt;bracket ... /&gt; ... &lt;/population&gt;
+    &lt;workHours&gt; &lt;opening ... /&gt; ... &lt;closing ... /&gt; ... &lt;/workHours&gt;
+    &lt;streets&gt; &lt;street ... /&gt; ... &lt;/streets&gt;
 
-<span class="w">    </span><span class="nt">&lt;cityGates&gt;</span>
-<span class="w">        </span><span class="nt">&lt;entrance</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;abc123&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;243.67&quot;</span><span class="w"> </span><span class="na">incoming=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">outgoing=</span><span class="s">&quot;2.2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;entrance</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;abc234&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">incoming=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">outgoing=</span><span class="s">&quot;0.5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span>...
-<span class="w">    </span><span class="nt">&lt;/cityGates&gt;</span>
+    &lt;cityGates&gt;
+        &lt;entrance edge=&quot;abc123&quot; pos=&quot;243.67&quot; incoming=&quot;1.5&quot; outgoing=&quot;2.2&quot;/&gt;
+        &lt;entrance edge=&quot;abc234&quot; pos=&quot;0.00&quot; incoming=&quot;1.0&quot; outgoing=&quot;0.5&quot;/&gt;
+            ...
+    &lt;/cityGates&gt;
 
-<span class="nt">&lt;/city&gt;</span>
-</code></pre></div>
-
+&lt;/city&gt;
+</code></pre>
 <p>The corresponding attribute descriptions:</p>
 <table>
 <thead>
@@ -629,22 +621,21 @@ gates to the city. Every gate will generate the same number of incoming
 <h3 id="schools">Schools<a class="headerlink" href="#schools" title="Permanent link">#</a></h3>
 <p>Children don't go to work but to school. The particularity of schools is
 that they are exactly positioned and receive many pupils every day.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;city&gt;</span>
-<span class="w">    </span><span class="nt">&lt;general</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;parameters</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;population&gt;</span><span class="w"> </span><span class="nt">&lt;bracket</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/population&gt;</span>
-<span class="w">    </span><span class="nt">&lt;workHours&gt;</span><span class="w"> </span><span class="nt">&lt;opening</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;closing</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/workHours&gt;</span>
-<span class="w">    </span><span class="nt">&lt;streets&gt;</span><span class="w"> </span><span class="nt">&lt;street</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/streets&gt;</span>
-<span class="w">    </span><span class="nt">&lt;cityGates&gt;</span><span class="w"> </span><span class="nt">&lt;entrance</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/cityGates&gt;</span>
+<pre><code class="language-xml">&lt;city&gt;
+    &lt;general ... /&gt;
+    &lt;parameters ... /&gt;
+    &lt;population&gt; &lt;bracket ... /&gt; ... &lt;/population&gt;
+    &lt;workHours&gt; &lt;opening ... /&gt; ... &lt;closing ... /&gt; ... &lt;/workHours&gt;
+    &lt;streets&gt; &lt;street ... /&gt; ... &lt;/streets&gt;
+    &lt;cityGates&gt; &lt;entrance ... /&gt; ... &lt;/cityGates&gt;
 
-<span class="w">    </span><span class="nt">&lt;schools&gt;</span>
-<span class="w">        </span><span class="nt">&lt;school</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;123abc&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;23.0&quot;</span><span class="w"> </span><span class="na">beginAge=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">endAge=</span><span class="s">&quot;18&quot;</span><span class="w"> </span><span class="na">capacity=</span><span class="s">&quot;400&quot;</span><span class="w"> </span><span class="na">opening=</span><span class="s">&quot;32400&quot;</span><span class="w"> </span><span class="na">closing=</span><span class="s">&quot;64800&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span>...
-<span class="w">    </span><span class="nt">&lt;/schools&gt;</span>
+    &lt;schools&gt;
+        &lt;school edge=&quot;123abc&quot; pos=&quot;23.0&quot; beginAge=&quot;12&quot; endAge=&quot;18&quot; capacity=&quot;400&quot; opening=&quot;32400&quot; closing=&quot;64800&quot; /&gt;
+        ...
+    &lt;/schools&gt;
 
-<span class="nt">&lt;/city&gt;</span>
-</code></pre></div>
-
+&lt;/city&gt;
+</code></pre>
 <p>The corresponding attribute descriptions:</p>
 <table>
 <thead>
@@ -696,41 +687,40 @@ that they are exactly positioned and receive many pupils every day.</p>
 <p>People have a public bus line system to their disposition. This public
 transportation system is described by stations, different bus lines
 having their corresponding station for both directions and schedules.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;city&gt;</span>
-<span class="w">    </span><span class="nt">&lt;general</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;parameters</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;population&gt;</span><span class="w"> </span><span class="nt">&lt;bracket</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/population&gt;</span>
-<span class="w">    </span><span class="nt">&lt;workHours&gt;</span><span class="w"> </span><span class="nt">&lt;opening</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;closing</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/workHours&gt;</span>
-<span class="w">    </span><span class="nt">&lt;streets&gt;</span><span class="w"> </span><span class="nt">&lt;street</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/streets&gt;</span>
-<span class="w">    </span><span class="nt">&lt;cityGates&gt;</span><span class="w"> </span><span class="nt">&lt;entrance</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/cityGates&gt;</span>
-<span class="w">    </span><span class="nt">&lt;schools&gt;</span><span class="w"> </span><span class="nt">&lt;school</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/schools&gt;</span>
+<pre><code class="language-xml">&lt;city&gt;
+    &lt;general ... /&gt;
+    &lt;parameters ... /&gt;
+    &lt;population&gt; &lt;bracket ... /&gt; ... &lt;/population&gt;
+    &lt;workHours&gt; &lt;opening ... /&gt; ... &lt;closing ... /&gt; ... &lt;/workHours&gt;
+    &lt;streets&gt; &lt;street ... /&gt; ... &lt;/streets&gt;
+    &lt;cityGates&gt; &lt;entrance ... /&gt; ... &lt;/cityGates&gt;
+    &lt;schools&gt; &lt;school ... /&gt; ... &lt;/schools&gt;
 
-<span class="w">    </span><span class="nt">&lt;busStations&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;abc123&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;456&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;123cba&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;324&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span>...
-<span class="w">    </span><span class="nt">&lt;/busStations&gt;</span>
+    &lt;busStations&gt;
+        &lt;busStation id=&quot;1&quot; edge=&quot;abc123&quot; pos=&quot;456&quot; /&gt;
+        &lt;busStation id=&quot;2&quot; edge=&quot;123cba&quot; pos=&quot;324&quot; /&gt;
+            ...
+    &lt;/busStations&gt;
 
-<span class="w">    </span><span class="nt">&lt;busLines&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busLine</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;601&quot;</span><span class="w"> </span><span class="na">maxTripDuration=</span><span class="s">&quot;3000&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;stations&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                    </span>...
-<span class="w">            </span><span class="nt">&lt;/stations&gt;</span>
-<span class="w">            </span><span class="nt">&lt;revStations&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                    </span>...
-<span class="w">            </span><span class="nt">&lt;/revStations&gt;</span>
-<span class="w">            </span><span class="nt">&lt;frequencies&gt;</span>
-<span class="w">                </span><span class="nt">&lt;frequency</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;10000&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;25000&quot;</span><span class="w"> </span><span class="na">rate=</span><span class="s">&quot;1500&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                    </span>...
-<span class="w">            </span><span class="nt">&lt;/frequencies&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/busLine&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/busLines&gt;</span>
+    &lt;busLines&gt;
+        &lt;busLine id=&quot;601&quot; maxTripDuration=&quot;3000&quot;&gt;
+            &lt;stations&gt;
+                &lt;station refId=&quot;1&quot; /&gt;
+                    ...
+            &lt;/stations&gt;
+            &lt;revStations&gt;
+                &lt;station refId=&quot;2&quot; /&gt;
+                    ...
+            &lt;/revStations&gt;
+            &lt;frequencies&gt;
+                &lt;frequency begin=&quot;10000&quot; end=&quot;25000&quot; rate=&quot;1500&quot; /&gt;
+                    ...
+            &lt;/frequencies&gt;
+        &lt;/busLine&gt;
+    &lt;/busLines&gt;
 
-<span class="nt">&lt;/city&gt;</span>
-</code></pre></div>
-
+&lt;/city&gt;
+</code></pre>
 <p>The corresponding attribute descriptions of all elements:</p>
 <table>
 <thead>
@@ -775,162 +765,161 @@ having their corresponding station for both directions and schedules.</p>
 </table>
 <h3 id="final_aspect">Final Aspect<a class="headerlink" href="#final_aspect" title="Permanent link">#</a></h3>
 <p>Here is a complete example of a stat file:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;city&gt;</span>
-<span class="w">    </span><span class="nt">&lt;general</span><span class="w"> </span><span class="na">inhabitants=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="na">households=</span><span class="s">&quot;500&quot;</span><span class="w"> </span><span class="na">childrenAgeLimit=</span><span class="s">&quot;19&quot;</span><span class="w"> </span><span class="na">retirementAgeLimit=</span><span class="s">&quot;66&quot;</span><span class="w"> </span><span class="na">carRate=</span><span class="s">&quot;0.58&quot;</span><span class="w"> </span><span class="na">unemploymentRate=</span><span class="s">&quot;0.05&quot;</span>
-<span class="w">                    </span><span class="na">footDistanceLimit=</span><span class="s">&quot;250&quot;</span><span class="w"> </span><span class="na">incomingTraffic=</span><span class="s">&quot;200&quot;</span><span class="w"> </span><span class="na">outgoingTraffic=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;parameters</span><span class="w"> </span><span class="na">carPreference=</span><span class="s">&quot;0.50&quot;</span><span class="w"> </span><span class="na">meanTimePerKmInCity=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">freeTimeActivityRate=</span><span class="s">&quot;0.15&quot;</span><span class="w"> </span><span class="na">uniformRandomTraffic=</span><span class="s">&quot;0.20&quot;</span><span class="w"> </span><span class="na">departureVariation=</span><span class="s">&quot;300&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;city&gt;
+    &lt;general inhabitants=&quot;1000&quot; households=&quot;500&quot; childrenAgeLimit=&quot;19&quot; retirementAgeLimit=&quot;66&quot; carRate=&quot;0.58&quot; unemploymentRate=&quot;0.05&quot;
+                    footDistanceLimit=&quot;250&quot; incomingTraffic=&quot;200&quot; outgoingTraffic=&quot;50&quot; /&gt;
+    &lt;parameters carPreference=&quot;0.50&quot; meanTimePerKmInCity=&quot;6&quot; freeTimeActivityRate=&quot;0.15&quot; uniformRandomTraffic=&quot;0.20&quot; departureVariation=&quot;300&quot; /&gt;
 
-<span class="w">    </span><span class="nt">&lt;population&gt;</span>
-<span class="w">        </span><span class="nt">&lt;bracket</span><span class="w"> </span><span class="na">beginAge=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">endAge=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">peopleNbr=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;bracket</span><span class="w"> </span><span class="na">beginAge=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">endAge=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="na">peopleNbr=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;bracket</span><span class="w"> </span><span class="na">beginAge=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="na">endAge=</span><span class="s">&quot;90&quot;</span><span class="w"> </span><span class="na">peopleNbr=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/population&gt;</span>
+    &lt;population&gt;
+        &lt;bracket beginAge=&quot;0&quot; endAge=&quot;30&quot; peopleNbr=&quot;30&quot; /&gt;
+        &lt;bracket beginAge=&quot;30&quot; endAge=&quot;60&quot; peopleNbr=&quot;40&quot; /&gt;
+        &lt;bracket beginAge=&quot;60&quot; endAge=&quot;90&quot; peopleNbr=&quot;30&quot; /&gt;
+    &lt;/population&gt;
 
-<span class="w">    </span><span class="nt">&lt;workHours&gt;</span>
-<span class="w">        </span><span class="nt">&lt;opening</span><span class="w"> </span><span class="na">hour=</span><span class="s">&quot;30600&quot;</span><span class="w"> </span><span class="na">proportion=</span><span class="s">&quot;0.30&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;opening</span><span class="w"> </span><span class="na">hour=</span><span class="s">&quot;32400&quot;</span><span class="w"> </span><span class="na">proportion=</span><span class="s">&quot;0.70&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;closing</span><span class="w"> </span><span class="na">hour=</span><span class="s">&quot;43200&quot;</span><span class="w"> </span><span class="na">proportion=</span><span class="s">&quot;0.20&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;closing</span><span class="w"> </span><span class="na">hour=</span><span class="s">&quot;63000&quot;</span><span class="w"> </span><span class="na">proportion=</span><span class="s">&quot;0.20&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;closing</span><span class="w"> </span><span class="na">hour=</span><span class="s">&quot;64800&quot;</span><span class="w"> </span><span class="na">proportion=</span><span class="s">&quot;0.60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/workHours&gt;</span>
+    &lt;workHours&gt;
+        &lt;opening hour=&quot;30600&quot; proportion=&quot;0.30&quot; /&gt;
+        &lt;opening hour=&quot;32400&quot; proportion=&quot;0.70&quot; /&gt;
+        &lt;closing hour=&quot;43200&quot; proportion=&quot;0.20&quot; /&gt;
+        &lt;closing hour=&quot;63000&quot; proportion=&quot;0.20&quot; /&gt;
+        &lt;closing hour=&quot;64800&quot; proportion=&quot;0.60&quot; /&gt;
+    &lt;/workHours&gt;
 
-<span class="w">    </span><span class="nt">&lt;streets&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e01t11&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e11t12&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e12t13&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e13t14&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e11t21&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e12t22&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e13t23&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e14t24&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e21t22&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e22t23&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e23t24&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e21t31&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e22t32&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e23t33&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e24t34&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e31t32&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e32t33&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e33t34&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e31t41&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e32t42&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e33t43&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e34t44&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e41t42&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e42t43&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e43t44&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e44t51&quot;</span><span class="w"> </span><span class="na">population=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">workPosition=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/streets&gt;</span>
+    &lt;streets&gt;
+        &lt;street edge=&quot;e01t11&quot; population=&quot;10&quot; workPosition=&quot;100&quot; /&gt;
+        &lt;street edge=&quot;e11t12&quot; population=&quot;10&quot; workPosition=&quot;100&quot; /&gt;
+        &lt;street edge=&quot;e12t13&quot; population=&quot;10&quot; workPosition=&quot;100&quot; /&gt;
+        &lt;street edge=&quot;e13t14&quot; population=&quot;10&quot; workPosition=&quot;100&quot; /&gt;
+        &lt;street edge=&quot;e11t21&quot; population=&quot;10&quot; workPosition=&quot;100&quot; /&gt;
+        &lt;street edge=&quot;e12t22&quot; population=&quot;10&quot; workPosition=&quot;100&quot; /&gt;
+        &lt;street edge=&quot;e13t23&quot; population=&quot;10&quot; workPosition=&quot;100&quot; /&gt;
+        &lt;street edge=&quot;e14t24&quot; population=&quot;10&quot; workPosition=&quot;100&quot; /&gt;
+        &lt;street edge=&quot;e21t22&quot; population=&quot;10&quot; workPosition=&quot;100&quot; /&gt;
+        &lt;street edge=&quot;e22t23&quot; population=&quot;10&quot; workPosition=&quot;100&quot; /&gt;
+        &lt;street edge=&quot;e23t24&quot; population=&quot;10&quot; workPosition=&quot;100&quot; /&gt;
+        &lt;street edge=&quot;e21t31&quot; population=&quot;10&quot; workPosition=&quot;100&quot; /&gt;
+        &lt;street edge=&quot;e22t32&quot; population=&quot;100&quot; workPosition=&quot;10&quot; /&gt;
+        &lt;street edge=&quot;e23t33&quot; population=&quot;100&quot; workPosition=&quot;10&quot; /&gt;
+        &lt;street edge=&quot;e24t34&quot; population=&quot;100&quot; workPosition=&quot;10&quot; /&gt;
+        &lt;street edge=&quot;e31t32&quot; population=&quot;100&quot; workPosition=&quot;10&quot; /&gt;
+        &lt;street edge=&quot;e32t33&quot; population=&quot;100&quot; workPosition=&quot;10&quot; /&gt;
+        &lt;street edge=&quot;e33t34&quot; population=&quot;100&quot; workPosition=&quot;10&quot; /&gt;
+        &lt;street edge=&quot;e31t41&quot; population=&quot;100&quot; workPosition=&quot;10&quot; /&gt;
+        &lt;street edge=&quot;e32t42&quot; population=&quot;100&quot; workPosition=&quot;10&quot; /&gt;
+        &lt;street edge=&quot;e33t43&quot; population=&quot;100&quot; workPosition=&quot;10&quot; /&gt;
+        &lt;street edge=&quot;e34t44&quot; population=&quot;100&quot; workPosition=&quot;10&quot; /&gt;
+        &lt;street edge=&quot;e41t42&quot; population=&quot;100&quot; workPosition=&quot;10&quot; /&gt;
+        &lt;street edge=&quot;e42t43&quot; population=&quot;100&quot; workPosition=&quot;10&quot; /&gt;
+        &lt;street edge=&quot;e43t44&quot; population=&quot;100&quot; workPosition=&quot;10&quot; /&gt;
+        &lt;street edge=&quot;e44t51&quot; population=&quot;100&quot; workPosition=&quot;10&quot; /&gt;
+    &lt;/streets&gt;
 
-<span class="w">    </span><span class="nt">&lt;cityGates&gt;</span>
-<span class="w">        </span><span class="nt">&lt;entrance</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e01t11&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">incoming=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">outgoing=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;entrance</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e44t51&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;280&quot;</span><span class="w"> </span><span class="na">incoming=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">outgoing=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/cityGates&gt;</span>
+    &lt;cityGates&gt;
+        &lt;entrance edge=&quot;e01t11&quot; pos=&quot;1&quot; incoming=&quot;0.5&quot; outgoing=&quot;0.5&quot; /&gt;
+        &lt;entrance edge=&quot;e44t51&quot; pos=&quot;280&quot; incoming=&quot;0.5&quot; outgoing=&quot;0.5&quot; /&gt;
+    &lt;/cityGates&gt;
 
-<span class="w">    </span><span class="nt">&lt;schools&gt;</span>
-<span class="w">        </span><span class="nt">&lt;school</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e11t12&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">beginAge=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">endAge=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">capacity=</span><span class="s">&quot;200&quot;</span><span class="w"> </span><span class="na">opening=</span><span class="s">&quot;32400&quot;</span><span class="w"> </span><span class="na">closing=</span><span class="s">&quot;64800&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;school</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e33t34&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">beginAge=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">endAge=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">capacity=</span><span class="s">&quot;150&quot;</span><span class="w"> </span><span class="na">opening=</span><span class="s">&quot;30600&quot;</span><span class="w"> </span><span class="na">closing=</span><span class="s">&quot;64800&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;school</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e41t42&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="na">beginAge=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">endAge=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">capacity=</span><span class="s">&quot;300&quot;</span><span class="w"> </span><span class="na">opening=</span><span class="s">&quot;32400&quot;</span><span class="w"> </span><span class="na">closing=</span><span class="s">&quot;61200&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/schools&gt;</span>
+    &lt;schools&gt;
+        &lt;school edge=&quot;e11t12&quot; pos=&quot;20&quot; beginAge=&quot;0&quot; endAge=&quot;6&quot; capacity=&quot;200&quot; opening=&quot;32400&quot; closing=&quot;64800&quot; /&gt;
+        &lt;school edge=&quot;e33t34&quot; pos=&quot;100&quot; beginAge=&quot;3&quot; endAge=&quot;12&quot; capacity=&quot;150&quot; opening=&quot;30600&quot; closing=&quot;64800&quot; /&gt;
+        &lt;school edge=&quot;e41t42&quot; pos=&quot;50&quot; beginAge=&quot;10&quot; endAge=&quot;20&quot; capacity=&quot;300&quot; opening=&quot;32400&quot; closing=&quot;61200&quot; /&gt;
+    &lt;/schools&gt;
 
-<span class="w">    </span><span class="nt">&lt;busStations&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e11t12&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e12t13&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e13t14&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e14t24&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e24t23&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e23t33&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e33t32&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;8&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e32t31&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;9&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e31t21&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e21t11&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+    &lt;busStations&gt;
+        &lt;busStation id=&quot;1&quot; edge=&quot;e11t12&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;2&quot; edge=&quot;e12t13&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;3&quot; edge=&quot;e13t14&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;4&quot; edge=&quot;e14t24&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;5&quot; edge=&quot;e24t23&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;6&quot; edge=&quot;e23t33&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;7&quot; edge=&quot;e33t32&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;8&quot; edge=&quot;e32t31&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;9&quot; edge=&quot;e31t21&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;10&quot; edge=&quot;e21t11&quot; pos=&quot;10&quot; /&gt;
 
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;101&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e12t11&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;102&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e13t12&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;103&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e14t13&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;104&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e24t14&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;105&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e23t24&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;106&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e33t23&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;107&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e32t33&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;108&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e31t32&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;109&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e21t31&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;110&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e11t21&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+        &lt;busStation id=&quot;101&quot; edge=&quot;e12t11&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;102&quot; edge=&quot;e13t12&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;103&quot; edge=&quot;e14t13&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;104&quot; edge=&quot;e24t14&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;105&quot; edge=&quot;e23t24&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;106&quot; edge=&quot;e33t23&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;107&quot; edge=&quot;e32t33&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;108&quot; edge=&quot;e31t32&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;109&quot; edge=&quot;e21t31&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;110&quot; edge=&quot;e11t21&quot; pos=&quot;10&quot; /&gt;
 
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;11&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e12t22&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e22t32&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;13&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e32t42&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;14&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e42t41&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;15&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e41t31&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+        &lt;busStation id=&quot;11&quot; edge=&quot;e12t22&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;12&quot; edge=&quot;e22t32&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;13&quot; edge=&quot;e32t42&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;14&quot; edge=&quot;e42t41&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;15&quot; edge=&quot;e41t31&quot; pos=&quot;10&quot; /&gt;
 
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;111&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e22t12&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;112&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e32t22&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;113&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e42t32&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;114&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e41t42&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;115&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;e31t41&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/busStations&gt;</span>
+        &lt;busStation id=&quot;111&quot; edge=&quot;e22t12&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;112&quot; edge=&quot;e32t22&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;113&quot; edge=&quot;e42t32&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;114&quot; edge=&quot;e41t42&quot; pos=&quot;10&quot; /&gt;
+        &lt;busStation id=&quot;115&quot; edge=&quot;e31t41&quot; pos=&quot;10&quot; /&gt;
+    &lt;/busStations&gt;
 
-<span class="w">    </span><span class="nt">&lt;busLines&gt;</span>
-<span class="w">        </span><span class="nt">&lt;busLine</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;101&quot;</span><span class="w"> </span><span class="na">maxTripDuration=</span><span class="s">&quot;10&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;stations&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;8&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;9&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/stations&gt;</span>
-<span class="w">            </span><span class="nt">&lt;revStations&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;109&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;108&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;107&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;106&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;105&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;104&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;103&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;102&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/revStations&gt;</span>
-<span class="w">            </span><span class="nt">&lt;frequencies&gt;</span>
-<span class="w">                </span><span class="nt">&lt;frequency</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;21600&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;36000&quot;</span><span class="w"> </span><span class="na">rate=</span><span class="s">&quot;300&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;frequency</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;36000&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;57600&quot;</span><span class="w"> </span><span class="na">rate=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;frequency</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;57600&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;68400&quot;</span><span class="w"> </span><span class="na">rate=</span><span class="s">&quot;300&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;frequency</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;68400&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;86399&quot;</span><span class="w"> </span><span class="na">rate=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/frequencies&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/busLine&gt;</span>
+    &lt;busLines&gt;
+        &lt;busLine id=&quot;101&quot; maxTripDuration=&quot;10&quot;&gt;
+            &lt;stations&gt;
+                &lt;station refId=&quot;1&quot; /&gt;
+                &lt;station refId=&quot;3&quot; /&gt;
+                &lt;station refId=&quot;4&quot; /&gt;
+                &lt;station refId=&quot;5&quot; /&gt;
+                &lt;station refId=&quot;6&quot; /&gt;
+                &lt;station refId=&quot;7&quot; /&gt;
+                &lt;station refId=&quot;8&quot; /&gt;
+                &lt;station refId=&quot;9&quot; /&gt;
+            &lt;/stations&gt;
+            &lt;revStations&gt;
+                &lt;station refId=&quot;109&quot; /&gt;
+                &lt;station refId=&quot;108&quot; /&gt;
+                &lt;station refId=&quot;107&quot; /&gt;
+                &lt;station refId=&quot;106&quot; /&gt;
+                &lt;station refId=&quot;105&quot; /&gt;
+                &lt;station refId=&quot;104&quot; /&gt;
+                &lt;station refId=&quot;103&quot; /&gt;
+                &lt;station refId=&quot;102&quot; /&gt;
+            &lt;/revStations&gt;
+            &lt;frequencies&gt;
+                &lt;frequency begin=&quot;21600&quot; end=&quot;36000&quot; rate=&quot;300&quot; /&gt;
+                &lt;frequency begin=&quot;36000&quot; end=&quot;57600&quot; rate=&quot;1800&quot; /&gt;
+                &lt;frequency begin=&quot;57600&quot; end=&quot;68400&quot; rate=&quot;300&quot; /&gt;
+                &lt;frequency begin=&quot;68400&quot; end=&quot;86399&quot; rate=&quot;1800&quot; /&gt;
+            &lt;/frequencies&gt;
+        &lt;/busLine&gt;
 
-<span class="w">        </span><span class="nt">&lt;busLine</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;102&quot;</span><span class="w"> </span><span class="na">maxTripDuration=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;stations&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;15&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;9&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;11&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;13&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;14&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/stations&gt;</span>
-<span class="w">            </span><span class="nt">&lt;revStations&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;114&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;113&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;112&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;111&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;101&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;110&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;109&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;station</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;115&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/revStations&gt;</span>
-<span class="w">            </span><span class="nt">&lt;frequencies&gt;</span>
-<span class="w">                </span><span class="nt">&lt;frequency</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;28800&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;32400&quot;</span><span class="w"> </span><span class="na">rate=</span><span class="s">&quot;600&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;frequency</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;57600&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;64800&quot;</span><span class="w"> </span><span class="na">rate=</span><span class="s">&quot;600&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/frequencies&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/busLine&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/busLines&gt;</span>
+        &lt;busLine id=&quot;102&quot; maxTripDuration=&quot;7&quot;&gt;
+            &lt;stations&gt;
+                &lt;station refId=&quot;15&quot; /&gt;
+                &lt;station refId=&quot;9&quot; /&gt;
+                &lt;station refId=&quot;10&quot; /&gt;
+                &lt;station refId=&quot;1&quot; /&gt;
+                &lt;station refId=&quot;11&quot; /&gt;
+                &lt;station refId=&quot;12&quot; /&gt;
+                &lt;station refId=&quot;13&quot; /&gt;
+                &lt;station refId=&quot;14&quot; /&gt;
+            &lt;/stations&gt;
+            &lt;revStations&gt;
+                &lt;station refId=&quot;114&quot; /&gt;
+                &lt;station refId=&quot;113&quot; /&gt;
+                &lt;station refId=&quot;112&quot; /&gt;
+                &lt;station refId=&quot;111&quot; /&gt;
+                &lt;station refId=&quot;101&quot; /&gt;
+                &lt;station refId=&quot;110&quot; /&gt;
+                &lt;station refId=&quot;109&quot; /&gt;
+                &lt;station refId=&quot;115&quot; /&gt;
+            &lt;/revStations&gt;
+            &lt;frequencies&gt;
+                &lt;frequency begin=&quot;28800&quot; end=&quot;32400&quot; rate=&quot;600&quot; /&gt;
+                &lt;frequency begin=&quot;57600&quot; end=&quot;64800&quot; rate=&quot;600&quot; /&gt;
+            &lt;/frequencies&gt;
+        &lt;/busLine&gt;
+    &lt;/busLines&gt;
 
-<span class="nt">&lt;/city&gt;</span>
-</code></pre></div>
-
+&lt;/city&gt;
+</code></pre>
 <h2 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">#</a></h2>
 <p>ActivityGen takes into account two groups of activities, which are
 considered as most traffic-relevant: <strong>Work And School</strong> and <strong>Free
@@ -1038,7 +1027,7 @@ authors</a>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

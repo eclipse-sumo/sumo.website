@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="css/fontawesome.all.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="js/jquery-3.7.0.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -602,11 +603,10 @@ while pressing the "Control" key.</p>
 Selected" dialog available from the edit menu. The list contains entries
 of the form objectType:objectId with each of these entries on a separate
 line:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">edge</span><span class="o">:</span><span class="n">someEdge</span>
-<span class="n">edge</span><span class="o">:</span><span class="n">someOtherEdge</span>
-<span class="n">junction</span><span class="o">:</span><span class="n">myJunction</span>
-</code></pre></div>
-
+<pre><code>edge:someEdge
+edge:someOtherEdge
+junction:myJunction
+</code></pre>
 <p>Most network objects can be colored according to their selection status
 (<em>color by selection</em>) and selected network elements may be manipulated
 as a group in <a href="Netedit/index.html">netedit</a>.</p>
@@ -1504,9 +1504,8 @@ network-relative meter values.</p>
 button located in the dialog. Accordingly, previously saved decals can
 be loaded by pressing the "Load Decals" button.</p>
 <p>When defining decals in XML a single line which looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;decal</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;background.gif&quot;</span><span class="w"> </span><span class="na">centerX=</span><span class="s">&quot;550.00&quot;</span><span class="w"> </span><span class="na">centerY=</span><span class="s">&quot;1530.00&quot;</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;64.00&quot;</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;64.00&quot;</span><span class="w"> </span><span class="na">rotation=</span><span class="s">&quot;0.00&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;decal file=&quot;background.gif&quot; centerX=&quot;550.00&quot; centerY=&quot;1530.00&quot; width=&quot;64.00&quot; height=&quot;64.00&quot; rotation=&quot;0.00&quot;/&gt;
+</code></pre>
 <p>The following attributes are supported</p>
 <table>
 <thead>
@@ -1615,12 +1614,11 @@ you save a configuration file with default settings by calling <code>sumo --save
 </ul>
 <p>A sumo configuration that loads gui settings is shown below:</p>
 <p><em>example.sumocfg</em></p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;configuration&gt;</span>
-<span class="w">        </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;yournetwork.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;gui-settings-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;viewsettings.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">    &lt;configuration&gt;
+        &lt;net-file value=&quot;yournetwork.net.xml&quot;/&gt;
+        &lt;gui-settings-file value=&quot;viewsettings.xml&quot;/&gt;
+    &lt;/configuration&gt;
+</code></pre>
 <p>You may either load <em>example.sumocfg</em> using the <em>open simulation</em>-dialog
 or by using the command-line <code>sumo-gui -c example.sumocfg</code>.</p>
 <p>You may use a XML schema definition file for setting up a sumo-gui
@@ -1635,37 +1633,34 @@ save <img alt="icon_save.png" src="images/icon_save.png" title="Save" />.</p>
 information about the viewport (zoom and offset), delay, breakpoints and
 decals if the corresponding check-boxes are activated before saving.</p>
 <p><em>viewsettings.xml</em></p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;viewsettings&gt;</span>
-<span class="w">        </span><span class="nt">&lt;scheme</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
-<span class="w">           </span>...
-<span class="w">        </span><span class="nt">&lt;/scheme&gt;</span>
+<pre><code class="language-xml">    &lt;viewsettings&gt;
+        &lt;scheme name=&quot;...&quot;&gt;
+           ...
+        &lt;/scheme&gt;
 
-<span class="w">        </span><span class="nt">&lt;viewport</span><span class="w"> </span><span class="na">zoom=</span><span class="s">&quot;200&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;-100&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;0.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;delay</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;42&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;decal</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;background.gif&quot;</span><span class="w"> </span><span class="na">centerX=</span><span class="s">&quot;550.00&quot;</span><span class="w"> </span><span class="na">centerY=</span><span class="s">&quot;1530.00&quot;</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;64.00&quot;</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;64.00&quot;</span><span class="w"> </span><span class="na">rotation=</span><span class="s">&quot;0.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;breakpoint</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;42&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;breakpoint</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1337&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/viewsettings&gt;</span>
-</code></pre></div>
-
+        &lt;viewport zoom=&quot;200&quot; x=&quot;100&quot; y=&quot;-100&quot; angle=&quot;0.00&quot;/&gt;
+        &lt;delay value=&quot;42&quot;/&gt;
+        &lt;decal file=&quot;background.gif&quot; centerX=&quot;550.00&quot; centerY=&quot;1530.00&quot; width=&quot;64.00&quot; height=&quot;64.00&quot; rotation=&quot;0.00&quot;/&gt;
+        &lt;breakpoint value=&quot;42&quot;/&gt;
+        &lt;breakpoint value=&quot;1337&quot;/&gt;
+    &lt;/viewsettings&gt;
+</code></pre>
 <h2 id="minimal_settings_file">Minimal settings file<a class="headerlink" href="#minimal_settings_file" title="Permanent link">#</a></h2>
 <p>It possible to reference a predefined scheme by its name alone:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;viewsettings&gt;</span>
-<span class="w">    </span><span class="nt">&lt;scheme</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;real world&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/viewsettings&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;viewsettings&gt;
+    &lt;scheme name=&quot;real world&quot;/&gt;
+&lt;/viewsettings&gt;
+</code></pre>
 <p>The name may either be one of the "native" schemas ("standard", "real world", ...) or any schema <a href="#changing_the_appearancevisualisation_of_the_simulation">stored in the registry</a> by the user.</p>
 <h2 id="breakpoints_1">Breakpoints<a class="headerlink" href="#breakpoints_1" title="Permanent link">#</a></h2>
 <p>There are multiple ways to load pre-defined <a href="#breakpoints">breakpoints</a>.
 The breakpoint element can be included directly in a gui-settings file: <code>&lt;breakpoint value="1337"/&gt;</code></p>
 <p>Alternatively, a breakpoint-file definition can be specified in the gui-settings file:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;viewsettings&gt;</span>
-<span class="w">    </span>...
-<span class="w">    </span><span class="nt">&lt;breakpoints-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;breakpoints.txt&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/viewsettings&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;viewsettings&gt;
+    ...
+    &lt;breakpoints-file value=&quot;breakpoints.txt&quot;/&gt;
+&lt;/viewsettings&gt;
+</code></pre>
 <p>The breakpoints file should hold one time-value per line.
 A file, suitable for loading breakpoints can be obtained by setting
 breakpoints in the gui and using the menu-option for saving (Edit-&gt;Edit
@@ -1673,25 +1668,22 @@ Breakpoints-&gt;save).</p>
 <p>A further way to set breakpoints is by using the sumo option <strong>--breakpoints</strong> to load a comma-separated list of time values (shortcut <strong>-B</strong>). This circumvents the need for a gui-settings file.</p>
 <h2 id="tls_tracking">TLS Tracking<a class="headerlink" href="#tls_tracking" title="Permanent link">#</a></h2>
 <p>The <a href="Simulation/Traffic_Lights.html#track_phases">TLS phase tracker</a> for one or more traffic lights can be opened at simulation start by loading items of the following form</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;viewsettings&gt;</span>
-<span class="w">    </span>...
-<span class="w">    </span><span class="nt">&lt;tracker</span><span class="w"> </span><span class="na">tl=</span><span class="s">&quot;TLSID&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/viewsettings&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;viewsettings&gt;
+    ...
+    &lt;tracker tl=&quot;TLSID&quot;/&gt;
+&lt;/viewsettings&gt;
+</code></pre>
 <h2 id="screenshots_1">Screenshots<a class="headerlink" href="#screenshots_1" title="Permanent link">#</a></h2>
 <p>It is possible to take screenshots at predefined times by adding
 elements to the configuration:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;viewsettings&gt;</span>
-<span class="w">    </span><span class="nt">&lt;snapshot</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;myScreenshot.png&quot;</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;42&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/viewsettings&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;viewsettings&gt;
+    &lt;snapshot file=&quot;myScreenshot.png&quot; time=&quot;42&quot;/&gt;
+&lt;/viewsettings&gt;
+</code></pre>
 <h2 id="miscellaneous_view_settings">Miscellaneous View Settings<a class="headerlink" href="#miscellaneous_view_settings" title="Permanent link">#</a></h2>
 <p>3D Scene lighting can be defined via the following (indices 0 - 9 are supported):</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;light</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">centerX=</span><span class="s">&quot;671.02&quot;</span><span class="w"> </span><span class="na">centerY=</span><span class="s">&quot;639.20&quot;</span><span class="w"> </span><span class="na">centerZ=</span><span class="s">&quot;200&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;light index=&quot;0&quot; centerX=&quot;671.02&quot; centerY=&quot;639.20&quot; centerZ=&quot;200&quot;/&gt;
+</code></pre>
 <h1 id="multiple_views">Multiple Views<a class="headerlink" href="#multiple_views" title="Permanent link">#</a></h1>
 <p>Using the (<img alt="icon_new_window.png" src="images/icon_new_window.png" title="New view" />)-button, multiple viewing windows can be opened onto the same
 simulation. The visualization settings can be set
@@ -1868,15 +1860,13 @@ Simulation</a></p>
 <h2 id="display_arbitrary_text_in_the_simulation_view">Display Arbitrary Text in the Simulation View<a class="headerlink" href="#display_arbitrary_text_in_the_simulation_view" title="Permanent link">#</a></h2>
 <p>To display arbitrary text in the simulation view, the easiest way is to place a poi element with alpha channel 0 (invisible),
 set its type attribute to the text you wish to show and load gui settings that show poi types in the desired color and size.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;poi</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;textPlacement0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;my custom text&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;myX&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;myY&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;0,0,0,0&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;poi id=&quot;textPlacement0&quot; type=&quot;my custom text&quot; x=&quot;myX&quot; y=&quot;myY&quot; color=&quot;0,0,0,0&quot;/&gt;
+</code></pre>
 <p>To use another text size or color, you can use a poi parameter and pick that parameter next to the "show poi text param" checkbox:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;poi</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;textPlacement2&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;myX2&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;myY2&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;0,0,0,0&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;anykey&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;my custom text in another size or color&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;poi&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;poi id=&quot;textPlacement2&quot; x=&quot;myX2&quot; y=&quot;myY2&quot; color=&quot;0,0,0,0&quot;&gt;
+   &lt;param key=&quot;anykey&quot; value=&quot;my custom text in another size or color&quot;/&gt;
+&lt;poi&gt;
+</code></pre>
 <p>The same trick can be repeated for Polygons.</p>
 <p>You can also use <code>traci.simulation.writeMessage</code> to put custom messages into the bottom message window.</p>
 <h2 id="display_a_custom_logo_in_the_simulation_view">Display a custom Logo in the simulation View<a class="headerlink" href="#display_a_custom_logo_in_the_simulation_view" title="Permanent link">#</a></h2>
@@ -1943,7 +1933,7 @@ highlighted.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

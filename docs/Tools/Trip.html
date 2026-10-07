@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -274,9 +275,8 @@ defined by begin (option <strong>-b</strong>, default 0) and end time (option <s
 3600) in seconds. The number of trips is defined by the repetition rate
 (option <strong>-p</strong>, default 1) in seconds. Every trip has an id consisting of a
 prefix (option <strong>--prefix</strong>, default "") and a running number. Example call:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">randomTrips</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="n">net</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="mi">50</span>
-</code></pre></div>
-
+<pre><code>python tools/randomTrips.py -n &lt;net-file&gt; -e 50
+</code></pre>
 <p>The script does not check whether the chosen destination may be reached
 from the source. This task is performed by the router. If the network is
 not fully connected some of the trips may be discarded.</p>
@@ -319,9 +319,8 @@ The special value <strong>--fringe-factor max</strong> may be used to force all 
 <li>by edge type (option <strong>--edge-type-file</strong>)</li>
 </ul>
 <p>For additional ways to influence edge probabilities call</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">randomTrips</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">help</span>
-</code></pre></div>
-
+<pre><code>python tools/randomTrips.py --help
+</code></pre>
 <h2 id="traffic_volume_arrival_rate">Traffic Volume / Arrival rate<a class="headerlink" href="#traffic_volume_arrival_rate" title="Permanent link">#</a></h2>
 <p>The arrival rate (also known as the departure rate or the insertion rate) is controlled by option <strong>--period</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a> (<em>default 1</em>). By default this
 generates vehicles with a constant period and arrival rate of (1/period)
@@ -337,9 +336,8 @@ given by the argument to <strong>--binomial</strong> and the expected arrival ra
 <em>(this option is not yet available in version 0.23.0)</em>.</p>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h3>
 <p>To let <em>n</em> vehicles depart between times <em>t0</em> and <em>t1</em> set the options</p>
-<div class="codehilite"><pre><span></span><code>-b<span class="w"> </span>t0<span class="w"> </span>-e<span class="w"> </span>t1<span class="w"> </span>-p<span class="w"> </span><span class="o">((</span>t1<span class="w"> </span>-<span class="w"> </span>t0<span class="o">)</span><span class="w"> </span>/<span class="w"> </span>n<span class="o">)</span>
-</code></pre></div>
-
+<pre><code class="language-sh">-b t0 -e t1 -p ((t1 - t0) / n)
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The actual number of departures may be lower if the road capacity is <a href="../Simulation/VehicleInsertion.html#delayed_departure">insufficient to accommodate that number of vehicles</a> or if the network is not fully connected (in this case some of the generated trips will be invalid).</p>
@@ -366,10 +364,9 @@ into trips).</p>
 <h2 id="generating_vehicles_with_additional_parameters">Generating vehicles with additional parameters<a class="headerlink" href="#generating_vehicles_with_additional_parameters" title="Permanent link">#</a></h2>
 <p>With the option <strong>--trip-attributes</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a>, additional parameters can be given to the generated
 vehicles (note, usage of the quoting characters).</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">randomTrips</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="n">net</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
-<span class="w">  </span><span class="o">--</span><span class="n">trip</span><span class="o">-</span><span class="n">attributes</span><span class="o">=</span><span class="s2">&quot;departLane=</span><span class="se">\&quot;</span><span class="s2">best</span><span class="se">\&quot;</span><span class="s2"> departSpeed=</span><span class="se">\&quot;</span><span class="s2">max</span><span class="se">\&quot;</span><span class="s2"> departPos=</span><span class="se">\&quot;</span><span class="s2">random</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
-</code></pre></div>
-
+<pre><code>python tools/randomTrips.py -n &lt;net-file&gt;
+  --trip-attributes=&quot;departLane=\&quot;best\&quot; departSpeed=\&quot;max\&quot; departPos=\&quot;random\&quot;&quot;
+</code></pre>
 <p>This would make the random vehicles be distributed randomly on their
 starting edges and inserted with high speed on a reasonable lane.</p>
 <div class="admonition note">
@@ -380,17 +377,15 @@ starting edges and inserted with high speed on a reasonable lane.</p>
 <h3 id="setting_a_vehicle_type_from_an_external_file">Setting a vehicle type from an external file<a class="headerlink" href="#setting_a_vehicle_type_from_an_external_file" title="Permanent link">#</a></h3>
 <p>If the generated vehicles should have a specific vehicle type, an <a href="/docs/sumo.html#format_of_additional_files"><em>additional-file</em></a> needs
 to be prepared:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;myType&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;27&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;passenger&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;vType id=&quot;myType&quot; maxSpeed=&quot;27&quot; vClass=&quot;passenger&quot;/&gt;
+&lt;/additional&gt;
+</code></pre>
 <p>Then load this file (assume it was saved as <em>type.add.xml</em>) with the
 option --additional-file</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">randomTrips</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="n">net</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">--</span><span class="n">trip</span><span class="o">-</span><span class="n">attributes</span><span class="o">=</span><span class="s2">&quot;type=</span><span class="se">\&quot;</span><span class="s2">myType</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">--</span><span class="n">additional</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="o">&lt;</span><span class="n">add</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
-<span class="w">   </span><span class="o">--</span><span class="n">edge</span><span class="o">-</span><span class="n">permission</span><span class="w"> </span><span class="n">passenger</span>
-</code></pre></div>
-
+<pre><code>python tools/randomTrips.py -n &lt;net-file&gt; --trip-attributes=&quot;type=\&quot;myType\&quot;&quot; --additional-file &lt;add-file&gt;
+   --edge-permission passenger
+</code></pre>
 <p>Note the use of the option <strong>--edge-permission</strong> (deprecated alias: <strong>--vclass</strong>) which ensures that
 random start- and arrival-edges allow a specific vehicle class.</p>
 <p>To generate random pedestrian traffic instead of vehicular traffic, the
@@ -410,22 +405,18 @@ Different permissions can still be requested by using <strong>--edge-permission<
 <h3 id="automatically_generating_a_vehicle_type">Automatically generating a vehicle type<a class="headerlink" href="#automatically_generating_a_vehicle_type" title="Permanent link">#</a></h3>
 <p>By setting the option <strong>--vehicle-class</strong> a vehicle type definition that specifies vehicle
 class will be added to the output files. I.e.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">randomTrips</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">vehicle</span><span class="o">-</span><span class="k">class</span><span class="w"> </span><span class="n">bus</span><span class="w"> </span><span class="o">...</span>
-</code></pre></div>
-
+<pre><code>python tools/randomTrips.py --vehicle-class bus ...
+</code></pre>
 <p>will add</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;bus&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vType id=&quot;bus&quot; vClass=&quot;bus&quot;/&gt;
+</code></pre>
 <p>Any <strong>--trip-attributes</strong> that are applicable to a vehicle type rather than a vehicle will be
 placed in the generated <code>vType</code> definition automatically:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">randomTrips</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">vehicle</span><span class="o">-</span><span class="k">class</span><span class="w"> </span><span class="n">bus</span><span class="w"> </span><span class="o">--</span><span class="n">trip</span><span class="o">-</span><span class="n">attributes</span><span class="o">=</span><span class="s2">&quot;maxSpeed=</span><span class="se">\&quot;</span><span class="s2">27.8</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
-</code></pre></div>
-
+<pre><code>python tools/randomTrips.py --vehicle-class bus --trip-attributes=&quot;maxSpeed=\&quot;27.8\&quot;&quot;
+</code></pre>
 <p>will add</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;random&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vType id=&quot;bus&quot; vClass=&quot;bus&quot; maxSpeed=&quot;random&quot;/&gt;
+</code></pre>
 <p>Alternatively, after <em>randomTrips.py</em> has finished, the created <code>&lt;vType&gt;</code>-element
 can be edited to specify additional parameters. The downside of manual
 editing is that it must be repeated when running <em>randomTrips.py</em> again.</p>
@@ -499,18 +490,16 @@ will use the following defaults if same values are missing:</p>
 <h3 id="usage_example">Usage Example<a class="headerlink" href="#usage_example" title="Permanent link">#</a></h3>
 <p>To obtain trips from two specific locations (edges <em>a</em>, and <em>b</em>) to
 random destinations, use</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">randomTrips</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">weights</span><span class="o">-</span><span class="n">prefix</span><span class="w"> </span><span class="n">example</span><span class="w">  </span><span class="o">...&lt;</span><span class="n">other</span><span class="w"> </span><span class="n">options</span><span class="o">&gt;...</span>
-</code></pre></div>
-
+<pre><code>python tools/randomTrips.py --weights-prefix example  ...&lt;other options&gt;...
+</code></pre>
 <p>and define only the file <em>example.src.xml</em> as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;edgedata&gt;</span>
-<span class="w">  </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;b&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/interval&gt;</span>
-<span class="nt">&lt;/edgedata&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;edgedata&gt;
+  &lt;interval begin=&quot;0&quot; end=&quot;10&quot;/&gt;
+    &lt;edge id=&quot;a&quot; value=&quot;0.5&quot;/&gt;
+    &lt;edge id=&quot;b&quot; value=&quot;0.5&quot;/&gt;
+  &lt;/interval&gt;
+&lt;/edgedata&gt;
+</code></pre>
 <h2 id="forwarding_options_to_duarouter">Forwarding options to duarouter<a class="headerlink" href="#forwarding_options_to_duarouter" title="Permanent link">#</a></h2>
 <p>When generating the route <em>.rou.xml</em> file, duarouter is called. Some arguments are already passed to duarouter directly from arguments received by randomTrips. However, should you need so, you can directly pass an argument to duarouter with the syntax <code>--duarouter-option value</code>; for instance using <code>--duarouter-exit-times true</code> with randomTrips will forward the argument <code>--exit-times</code> to duarouter when it is called, and with the value <code>true</code>. Please note that it is compulsory to pass a value together with the option, for instance <code>--duarouter-exit-times</code> wouldn't be valid in this context.</p>
                 </main>
@@ -520,7 +509,7 @@ random destinations, use</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -233,9 +234,8 @@ Last edit: 06 October 2026
 <h2 id="saving_at_fixed_times">Saving at fixed times<a class="headerlink" href="#saving_at_fixed_times" title="Permanent link">#</a></h2>
 <p>To save the state at specified times during the simulation add the
 option <strong>--save-state.times</strong></p>
-<div class="codehilite"><pre><span></span><code>sumo --save-state.times TIME1,TIME2,TIME3
-</code></pre></div>
-
+<pre><code>sumo --save-state.times TIME1,TIME2,TIME3
+</code></pre>
 <p>By default the state will be written to files named <em>&lt;PREFIX&gt;_&lt;TIME&gt;&lt;SUFFIX&gt;</em> where <em>&lt;PREFIX&gt;</em> can be set via option <strong>--save-state.prefix</strong> (default <em>state</em>), <em>&lt;TIME&gt;</em> is the simulation time and <em>&lt;SUFFIX&gt;</em> is either one of <em>.xml.gz</em> or <em>.xml</em> as controlled by the option <strong>--save-state.suffix</strong> (default <em>.xml.gz</em>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -243,9 +243,8 @@ option <strong>--save-state.times</strong></p>
 </div>
 <p>When using the option <strong>--save-state.times</strong>, output files can also be specified by using the
 option <strong>--save-state.files</strong></p>
-<div class="codehilite"><pre><span></span><code>sumo --save-state.files FILE1,FILE2,FILE3
-</code></pre></div>
-
+<pre><code>sumo --save-state.files FILE1,FILE2,FILE3
+</code></pre>
 <p>to set the file names explicitly. In particular if a plain text xml-file
 is desired as output (instead of the compressed format .xml.gz) the file names
 should be given (with suffix .xml).</p>
@@ -321,7 +320,7 @@ CPU-cores to the VM).</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

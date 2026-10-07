@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -229,9 +230,8 @@ Last edit: 06 October 2026
 
 <h1 id="netdiffpy">netdiff.py<a class="headerlink" href="#netdiffpy" title="Permanent link">#</a></h1>
 <p>This script compares two <em>.net.xml</em> files. The call</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">netdiff</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">A</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="n">B</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="n">diff</span>
-</code></pre></div>
-
+<pre><code>python tools/net/netdiff.py A.net.xml B.net.xml diff
+</code></pre>
 <p>will produce 4 <a href="../Networks/PlainXML.html">plain-XML network</a> files:</p>
 <ul>
 <li>diff.nod.xml</li>
@@ -243,9 +243,8 @@ Last edit: 06 October 2026
 deleted, created, or modified and can be used to investigate differences
 between the two networks <strong><em>A</em></strong> and <strong><em>B</em></strong>. Furthermore, these files can be used to
 maintain change-sets for making repeatable modifications:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --sumo-net-file A.net.xml -n diff.nod.xml -e diff.edg.xml -x diff.con.xml -i diff.tll.xml -o B.net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --sumo-net-file A.net.xml -n diff.nod.xml -e diff.edg.xml -x diff.con.xml -i diff.tll.xml -o B.net.xml
+</code></pre>
 <p>The above call can be used to recreate network <strong><em>B</em></strong> based on <strong><em>A</em></strong> and the
 recorded change-set. Note, that for any modified elements (i.e. modified
 speed limit for an edge), the file <strong><em>diff.edg.xml</em></strong> only contains to
@@ -277,9 +276,8 @@ is accomplished by setting <strong>-i</strong> (<strong>--patch-on-import</stron
 <p>Sometimes it may be useful to apply the difference between networks <em>A</em> and <em>B</em> to another network <em>C</em> than differs slightly from <em>A</em>.
 In this case it may be useful to only consider some of the changes (i.e. only created elements).</p>
 <p>If only the newly created elements in <em>B</em> (relative to <em>A</em>) shall be considered, open each of the difference files (ie. diff.edg.xml, diff.nod.xml, diff.con.xml, diff.tll.xml) and keep only the elements below the heading</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;!--</span><span class="w"> </span><span class="n">Created</span><span class="w"> </span><span class="n">Elements</span><span class="w"> </span><span class="o">--&gt;</span><span class="s">&quot;</span>
-</code></pre></div>
-
+<pre><code>&lt;!-- Created Elements --&gt;&quot;
+</code></pre>
 <p>This way the patch should be applicable to network <em>C</em> regardless of how it differs from the original <em>A</em>.</p>
 <p>Sometimes, errors may occur due to inconsistent connections or traffic lights. In this case, it may be useful to only update <em>C</em> with 'diff.nod.xml and 'diff.edg.xml' and let netconvert guess
 the respective connections and traffic lights.</p>
@@ -291,9 +289,8 @@ To merge changes they may either patch B with the diff (A,C) or patch C with the
 If both users created new edges and junctions in different locations and using the same new ids (which easily happens due to the way netedit assigns new ids), this creates a conflict that can create massive distortions in the final network. This tool reports name clashes in diffs for junctions and edges.
 Assume that the diffs are generated by <code>netdiff.py A B diff</code> and <code>netdiff.py A C diff2</code>.</p>
 <p>Usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">diffMerge</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">diff</span><span class="w"> </span><span class="n">diff2</span>
-</code></pre></div>
-
+<pre><code>python tools/net/diffMerge.py diff diff2
+</code></pre>
 <p>It is advisable to modify either Network B or C by renaming junctions and edges so that id clashes in the (renewed) diffs are avoided.</p>
 <h1 id="createroundaboutconnectionspy">createRoundaboutConnections.py<a class="headerlink" href="#createroundaboutconnectionspy" title="Permanent link">#</a></h1>
 <p>This script generates additional connections for roundabouts from a
@@ -304,9 +301,8 @@ given network. The following connections are added:</p>
   lane if there are enough outgoing lanes.</li>
 </ul>
 <p>Usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">createRoundaboutConnections</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">&lt;</span><span class="n">net</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/net/createRoundaboutConnections.py &lt;net-file&gt;
+</code></pre>
 <p>This creates the output file <code>roundabout-connection.con.xml</code>, where the input network is <strong><em>&lt;net-file&gt;</em></strong>.</p>
 <h1 id="netcheckpy">netcheck.py<a class="headerlink" href="#netcheckpy" title="Permanent link">#</a></h1>
 <p>This tool checks the network (first parameter) for weak connectivity
@@ -315,9 +311,8 @@ regardless of edge direction) and prints the connected components if
 not.</p>
 <p>Additionally, you may run this script to discover which edges are
 reachable from a particular edge.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">netcheck</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">&lt;</span><span class="n">net</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">--</span><span class="n">source</span><span class="w"> </span><span class="o">&lt;</span><span class="n">edge_id</span><span class="o">&gt;</span><span class="w"> </span><span class="o">--</span><span class="n">selection</span><span class="o">-</span><span class="n">output</span><span class="w"> </span><span class="n">selection</span><span class="o">.</span><span class="n">txt</span>
-</code></pre></div>
-
+<pre><code>python tools/net/netcheck.py &lt;net-file&gt; --source &lt;edge_id&gt; --selection-output selection.txt
+</code></pre>
 <p>This will create a file called <code>selection.txt</code> which can be loaded in
 <a href="../sumo-gui.html">sumo-gui</a> to visualize the portion of the network
 reachable from <strong><em>&lt;edge_id&gt;</em></strong>. To visualize the selection, you must load the
@@ -341,10 +336,9 @@ component edge count distribution to the specified file.</p>
 <p>Both tools apply the given offset to the geometrical information of
 edges or nodes given in the input file. The results are written into
 &lt;XMLEDGES&gt;.mod.xml or &lt;XMLNODES&gt;.mod.xml, respectively.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">xmledges_applyOffset</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">&lt;</span><span class="n">XMLEDGES</span><span class="o">-</span><span class="n">FILE</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">X</span><span class="o">-</span><span class="n">OFFSET</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Y</span><span class="o">-</span><span class="n">OFFSET</span><span class="o">&gt;</span>
-<span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">xmlnodes_applyOffset</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">&lt;</span><span class="n">XMLNODES</span><span class="o">-</span><span class="n">FILE</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">X</span><span class="o">-</span><span class="n">OFFSET</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Y</span><span class="o">-</span><span class="n">OFFSET</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/net/xmledges_applyOffset.py &lt;XMLEDGES-FILE&gt; &lt;X-OFFSET&gt; &lt;Y-OFFSET&gt;
+python tools/net/xmlnodes_applyOffset.py &lt;XMLNODES-FILE&gt; &lt;X-OFFSET&gt; &lt;Y-OFFSET&gt;
+</code></pre>
 <ul>
 <li>&lt;XMLEDGES-FILE&gt;/&lt;XMLNODES-FILE&gt;: The edges/nodes file whose content shall be
   shifted</li>
@@ -354,14 +348,12 @@ edges or nodes given in the input file. The results are written into
 <h1 id="xmlconnections_mapedgespy">xmlconnections_mapEdges.py<a class="headerlink" href="#xmlconnections_mapedgespy" title="Permanent link">#</a></h1>
 <p>Reads edge id replacements from "edgemap.txt"; the format of this file
 is:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">OLD_EDGE_ID</span><span class="o">&gt;-&gt;&lt;</span><span class="n">NEW_EDGE_ID</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>&lt;OLD_EDGE_ID&gt;-&gt;&lt;NEW_EDGE_ID&gt;
+</code></pre>
 <p>Reads the given connections file &lt;CONNECTIONS-FILE&gt; and replaces old edge
 names by the new ones. The result is written to &lt;CONNECTIONS-FILE&gt;.mod.xml</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">xmlconnections_mapEdges</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">&lt;</span><span class="n">CONNECTIONS</span><span class="o">-</span><span class="n">FILE</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/net/xmlconnections_mapEdges.py &lt;CONNECTIONS-FILE&gt;
+</code></pre>
 <ul>
 <li>&lt;OLD_EDGE_ID&gt;: Id of an edge as used within &lt;CONNECTIONS-FILE&gt;</li>
 <li>&lt;NEW_EDGE_ID&gt;: Id of the edge to use instead</li>
@@ -369,9 +361,8 @@ names by the new ones. The result is written to &lt;CONNECTIONS-FILE&gt;.mod.xml
 </ul>
 <h1 id="net2kmlpy">net2kml.py<a class="headerlink" href="#net2kmlpy" title="Permanent link">#</a></h1>
 <p>converts '.net.xml' road geometries to <a href="https://en.wikipedia.org/wiki/Keyhole_Markup_Language">KML</a> format.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">net2kml</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="n">net</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">output</span><span class="o">.</span><span class="n">kml</span>
-</code></pre></div>
-
+<pre><code>python tools/net/net2kml.py -n &lt;net-file&gt; -o output.kml
+</code></pre>
 <p>By default, normal edge geometries will be exported. This can be changed with options</p>
 <ul>
 <li><strong>--lanes</strong>: write lane geometries</li>
@@ -382,9 +373,8 @@ names by the new ones. The result is written to &lt;CONNECTIONS-FILE&gt;.mod.xml
 </ul>
 <h1 id="net2geojsonpy">net2geojson.py<a class="headerlink" href="#net2geojsonpy" title="Permanent link">#</a></h1>
 <p>converts '.net.xml' road geometries to <a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a> format.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">net2geojson</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="n">net</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">output</span><span class="o">.</span><span class="n">geojson</span>
-</code></pre></div>
-
+<pre><code>python tools/net/net2geojson.py -n &lt;net-file&gt; -o output.geojson
+</code></pre>
 <p>By default, normal edge geometries will be exported. This can be changed with options</p>
 <ul>
 <li><strong>--lanes</strong>: write lane geometries</li>
@@ -394,9 +384,8 @@ names by the new ones. The result is written to &lt;CONNECTIONS-FILE&gt;.mod.xml
 <h1 id="split_at_stopspy">split_at_stops.py<a class="headerlink" href="#split_at_stopspy" title="Permanent link">#</a></h1>
 <p>Generates an .edg.xml patch file with <code>split</code> definitions to ensure that each public transport stop of the given type (default <code>&lt;trainStop&gt;</code>) is on a separate edge from every other stop. The tool also generates an updated <code>.net.xml</code> and stop file. Furthermore, it can adapt a route-file so it matches the updated network.</p>
 <p>Example call:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">split_at_stops</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">&lt;</span><span class="n">stopfile</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="n">net</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="n">route</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">&lt;</span><span class="n">output</span><span class="o">-</span><span class="n">net</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">--</span><span class="n">stop</span><span class="o">-</span><span class="n">output</span><span class="w"> </span><span class="o">&lt;</span><span class="n">output</span><span class="o">-</span><span class="n">stop</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">--</span><span class="n">route</span><span class="o">-</span><span class="n">output</span><span class="w"> </span><span class="o">&lt;</span><span class="n">output</span><span class="o">-</span><span class="n">route</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">--</span><span class="n">stop</span><span class="o">-</span><span class="n">type</span><span class="w"> </span><span class="n">busStop</span>
-</code></pre></div>
-
+<pre><code>python tools/net/split_at_stops.py &lt;stopfile&gt; -n &lt;net-file&gt; -r &lt;route-file&gt; -o &lt;output-net-file&gt; --stop-output &lt;output-stop-file&gt; --route-output &lt;output-route-file&gt; --stop-type busStop
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A similar functionality is achieved by <a href="District.html#stationdistrictspy">stationDistricts.py --split-output FILE</a> which splits edges at the midpoint between stops.</p>
@@ -406,13 +395,11 @@ names by the new ones. The result is written to &lt;CONNECTIONS-FILE&gt;.mod.xml
 If the network is segmented (with <a href="District.html#stationdistrictspy">stationDistricts.py</a>), the resulting network will be
 a hybrid of multiple schematic pieces being oriented in a roughly geodetical manner</p>
 <p>Example call:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">abstractRail</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">input_net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">stop</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">input_additional</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">region</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">stations</span><span class="o">.</span><span class="n">taz</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">prefix</span><span class="w"> </span><span class="n">abstract</span>
-</code></pre></div>
-
+<pre><code>python tools/net/abstractRail.py -n input_net.net.xml --stop-file input_additional.add.xml --region-file stations.taz.xml --output-prefix abstract
+</code></pre>
 <p>It is also possible to automatically segment the network:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">abstractRail</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">input_net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">stop</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">input_additional</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">split</span><span class="w"> </span><span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">prefix</span><span class="w"> </span><span class="n">abstract</span>
-</code></pre></div>
-
+<pre><code>python tools/net/abstractRail.py -n input_net.net.xml --stop-file input_additional.add.xml --split --output-prefix abstract
+</code></pre>
 <h2 id="further_options">Further options<a class="headerlink" href="#further_options" title="Permanent link">#</a></h2>
 <ul>
 <li><strong>--filter-regions</strong>: Only convert the given list of regions and delete everything else</li>
@@ -440,31 +427,27 @@ a hybrid of multiple schematic pieces being oriented in a roughly geodetical man
 </ul>
 <p>In case of changed lanes, permissions are taken into account to select a suitable replacement lane.</p>
 <p>Example call:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">remap_additionals</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">orig</span><span class="o">-</span><span class="n">net</span><span class="w"> </span><span class="n">input_net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">target</span><span class="o">-</span><span class="n">net</span><span class="w"> </span><span class="n">input_net2</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="n">input_additional</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">out</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/net/remap_additionals.py --orig-net input_net.net.xml --target-net input_net2.net.xml -a input_additional.add.xml -o out.add.xml
+</code></pre>
 <h1 id="remap_renamedpy">remap_renamed.py<a class="headerlink" href="#remap_renamedpy" title="Permanent link">#</a></h1>
 <p>Remap infrastructure, vehicles, routes or a selection file from one network to another if the new network has an <code>origId</code> param on every lane that reflects the edge id of the original network. A supported use case is converting the origial network with option <strong>--numerical-ids</strong> and then transforming other scenario file so that it can be used with the new network.</p>
 <p>Example calls:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">remap_additionals</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">input_net2</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">input_routes</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">out</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span>
-<span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">remap_additionals</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">input_net2</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="n">input_additionals</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">out</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span>
-<span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">remap_additionals</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">input_net2</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="n">input_selection</span><span class="o">.</span><span class="n">txt</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">selection</span><span class="o">.</span><span class="n">txt</span>
-</code></pre></div>
-
+<pre><code>python tools/net/remap_additionals.py -n input_net2.net.xml -r input_routes.rou.xml -o out.rou.xml
+python tools/net/remap_additionals.py -n input_net2.net.xml -a input_additionals.add.xml -o out.add.xml
+python tools/net/remap_additionals.py -n input_net2.net.xml -s input_selection.txt -o selection.txt
+</code></pre>
 <h1 id="remap_networkpy">remap_network.py<a class="headerlink" href="#remap_networkpy" title="Permanent link">#</a></h1>
 <p>Compute correspondence between two networks with somewhat similar geometry (but different splits, joins, ids etc). The output is a csv-file with an 1-to-n mapping of original edge to zero or more target edges. 
 For each target edge, the common length in m as well as the fraction of the target edge being covered by the original edge are listed. Output on the quality of the mapping is written to <strong>--success-output</strong>.</p>
 <p>Example call:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">remap_network</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">orig</span><span class="o">-</span><span class="n">net</span><span class="w"> </span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">target</span><span class="o">-</span><span class="n">net</span><span class="w"> </span><span class="n">net2</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">out</span><span class="o">.</span><span class="n">csv</span><span class="w"> </span><span class="o">--</span><span class="n">success</span><span class="o">-</span><span class="n">output</span><span class="w"> </span><span class="n">success</span><span class="o">.</span><span class="n">txt</span>
-</code></pre></div>
-
+<pre><code>python tools/net/remap_network.py --orig-net net.net.xml --target-net net2.net.xml -o out.csv --success-output success.txt
+</code></pre>
 <h1 id="generatestationedgespy">generateStationEdges.py<a class="headerlink" href="#generatestationedgespy" title="Permanent link">#</a></h1>
 <p>Generate pedestrian edges for every public transport stop to serve as access
 edge in otherwise pure railway networks. If a single edge is generated for all stops with the same name (option <strong>--join</strong>), persons starting on such an edge can automatically pick the stop (plattform) that best suits their journey.</p>
 <p>Example call:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">generateStationEdges</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">net</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">stop</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">stops</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">net2</span><span class="w"> </span><span class="o">--</span><span class="n">join</span><span class="w"> </span><span class="o">--</span><span class="n">build</span>
-</code></pre></div>
-
+<pre><code>python tools/net/generateStationEdges.py --net-file net.net.xml --stop-file stops.add.xml -o net2 --join --build
+</code></pre>
 <p>This tool generates <em>.edg.xml</em> and <em>.nod.xml</em> patch files for adding pedestrian edges at stations. These can be applied to the input network by calling netconvert again. The netconvert call happens automatically when option <strong>--build</strong> is set.
 If option <strong>--join</strong> is set, a single pedestrian edge will be generated for all busStops/trainStops with the same <code>name</code> attribute.</p>
                 </main>
@@ -474,7 +457,7 @@ If option <strong>--join</strong> is set, a single pedestrian edge will be gener
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

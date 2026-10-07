@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -297,9 +298,8 @@ or from GTFS, currently, only the following scenarios are possible:</p>
 <p>In this case, the route for each public transport vehicle will be defined by
 finding the fastest path between stops.</p>
 <p>If you have downloaded the network and the GTFS data (or have the URL) it is as easy as</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">import</span><span class="o">/</span><span class="n">gtfs</span><span class="o">/</span><span class="n">gtfs2pt</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">osm</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">gz</span><span class="w"> </span><span class="o">--</span><span class="n">gtfs</span><span class="w"> </span><span class="n">GTFS_VBB_Juni</span><span class="o">-</span><span class="n">Dezember</span><span class="o">-</span><span class="mf">2019.</span><span class="n">zip</span><span class="w"> </span><span class="o">--</span><span class="n">date</span><span class="w"> </span><span class="mi">20190904</span><span class="w"> </span><span class="o">--</span><span class="n">modes</span><span class="w"> </span><span class="n">bus</span>
-</code></pre></div>
-
+<pre><code>python tools/import/gtfs/gtfs2pt.py -n osm.net.xml.gz --gtfs GTFS_VBB_Juni-Dezember-2019.zip --date 20190904 --modes bus
+</code></pre>
 <p>The script runs for about five minutes and generates several subdirectories but in the end it provides three output files:</p>
 <ul>
 <li><code>pt_vtypes.xml</code></li>
@@ -309,17 +309,15 @@ finding the fastest path between stops.</p>
 <p>The vtypes output generates very simple vehicle type definitions for the different public transport modes in use. You are encouraged to modify this file and adapt
 it to the real situation especially concerning capacity (number of seats) for the different modes. You may of course also use vehicle types from another source and skip this output.</p>
 <p>In order to use them in a simulation you should pass them as additional files (not route files!) in the order given above.</p>
-<div class="codehilite"><pre><span></span><code><span class="nx">sumo</span><span class="o">-</span><span class="nx">gui</span><span class="w"> </span><span class="o">-</span><span class="nx">n</span><span class="w"> </span><span class="nx">osm</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">xml</span><span class="p">.</span><span class="nx">gz</span><span class="w"> </span><span class="o">--</span><span class="nx">additional</span><span class="w"> </span><span class="nx">vtypes</span><span class="p">.</span><span class="nx">xml</span><span class="p">,</span><span class="nx">gtfs_pt_stops</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">xml</span><span class="p">,</span><span class="nx">gtfs_pt_vehicles</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">xml</span>
-</code></pre></div>
-
+<pre><code>sumo-gui -n osm.net.xml.gz --additional vtypes.xml,gtfs_pt_stops.add.xml,gtfs_pt_vehicles.add.xml
+</code></pre>
 <h2 id="routes_from_osm">Routes from OSM<a class="headerlink" href="#routes_from_osm" title="Permanent link">#</a></h2>
 <p>In this case, the route for each vehicle is taken from OSM. When we imported the
 net with the osmWebWizard tool, we enable the option of "import public transport",
 which automatically generate the "osm_ptlines.xml" file with the public transport lines.</p>
 <p>The call is:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">import</span><span class="o">/</span><span class="n">gtfs</span><span class="o">/</span><span class="n">gtfs2pt</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">osm</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">gz</span><span class="w"> </span><span class="o">--</span><span class="n">gtfs</span><span class="w"> </span><span class="n">GTFS_VBB_Juni</span><span class="o">-</span><span class="n">Dezember</span><span class="o">-</span><span class="mf">2019.</span><span class="n">zip</span><span class="w"> </span><span class="o">--</span><span class="n">date</span><span class="w"> </span><span class="mi">20190904</span><span class="w"> </span><span class="o">--</span><span class="n">modes</span><span class="w"> </span><span class="n">bus</span><span class="w"> </span><span class="o">--</span><span class="n">osm</span><span class="o">-</span><span class="n">routes</span><span class="w"> </span><span class="n">osm_ptlines</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">repair</span>
-</code></pre></div>
-
+<pre><code>python tools/import/gtfs/gtfs2pt.py -n osm.net.xml.gz --gtfs GTFS_VBB_Juni-Dezember-2019.zip --date 20190904 --modes bus --osm-routes osm_ptlines.xml --repair
+</code></pre>
 <p>The option <strong>--repair</strong> is not mandatory, but helpful. It takes the given ptLines
 and tries to repair them using duarouter before the mapping. If some routes of the
 ptLines are not valid, they won't be used for the mapping.</p>
@@ -332,9 +330,8 @@ ptLines are not valid, they won't be used for the mapping.</p>
 <li><code>invalid_osm_routes.txt</code> contains the warnings and errors from the repair of the ptLines</li>
 </ul>
 <p>To run the simulation call:</p>
-<div class="codehilite"><pre><span></span><code><span class="nx">sumo</span><span class="o">-</span><span class="nx">gui</span><span class="w"> </span><span class="o">-</span><span class="nx">n</span><span class="w"> </span><span class="nx">osm</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">xml</span><span class="p">.</span><span class="nx">gz</span><span class="w"> </span><span class="o">--</span><span class="nx">additional</span><span class="w"> </span><span class="nx">vtypes</span><span class="p">.</span><span class="nx">xml</span><span class="p">,</span><span class="nx">gtfs_pt_stops</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">xml</span><span class="p">,</span><span class="nx">gtfs_pt_vehicles</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">xml</span>
-</code></pre></div>
-
+<pre><code>sumo-gui -n osm.net.xml.gz --additional vtypes.xml,gtfs_pt_stops.add.xml,gtfs_pt_vehicles.add.xml
+</code></pre>
 <h2 id="stops_from_osm">Stops from OSM<a class="headerlink" href="#stops_from_osm" title="Permanent link">#</a></h2>
 <p>In this case, the mapping of stops from (imprecise) GTFS coordinates to candidate network edges is guided buy using public transport stop locations from OSM. 
 This is useful when GTFS data has no shape information and provides two advantages:</p>
@@ -343,9 +340,8 @@ This is useful when GTFS data has no shape information and provides two advantag
 <li>mapping of public rail transport is greatly improved because OSM stops encode information about the typical usage direction of rail tracks (and thus stop track assignment at stations)</li>
 </ul>
 <p>The call is:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">import</span><span class="o">/</span><span class="n">gtfs</span><span class="o">/</span><span class="n">gtfs2pt</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">osm</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">gz</span><span class="w"> </span><span class="o">--</span><span class="n">gtfs</span><span class="w"> </span><span class="n">GTFS_VBB_Juni</span><span class="o">-</span><span class="n">Dezember</span><span class="o">-</span><span class="mf">2019.</span><span class="n">zip</span><span class="w"> </span><span class="o">--</span><span class="n">date</span><span class="w"> </span><span class="mi">20190904</span><span class="w"> </span><span class="o">--</span><span class="n">modes</span><span class="w"> </span><span class="n">bus</span><span class="w"> </span><span class="o">--</span><span class="n">stops</span><span class="w"> </span><span class="n">osm_stops</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/import/gtfs/gtfs2pt.py -n osm.net.xml.gz --gtfs GTFS_VBB_Juni-Dezember-2019.zip --date 20190904 --modes bus --stops osm_stops.add.xml
+</code></pre>
 <p>The generated simulation inputs are the same as <a href="#routes_from_osm">above</a> and thus the same call to sumo/sumo-gui can be used.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -361,7 +357,7 @@ This is useful when GTFS data has no shape information and provides two advantag
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -268,11 +269,11 @@ command</a> to disable intersection related safety checks.</li>
   (a value of 1.5 allows driving with 150% of the road speed limit).</li>
 </ul>
 <h1 id="example_configuration">Example Configuration<a class="headerlink" href="#example_configuration" title="Permanent link">#</a></h1>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;rescue&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;emergency&quot;</span><span class="w"> </span><span class="na">speedFactor=</span><span class="s">&quot;1.5&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.bluelight.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/vType&gt;</span>
-</code></pre></div>
+<pre><code class="language-xml">&lt;vType id=&quot;rescue&quot; vClass=&quot;emergency&quot; speedFactor=&quot;1.5&quot;&gt;
+   &lt;param key=&quot;has.bluelight.device&quot; value=&quot;true&quot;/&gt;
+&lt;/vType&gt;
 
+</code></pre>
 <h1 id="further_parameters">Further Parameters<a class="headerlink" href="#further_parameters" title="Permanent link">#</a></h1>
 <p>The following <a href="GenericParameters.html">generic parameters</a> can be used to configure a bluelight device:</p>
 <ul>
@@ -303,7 +304,7 @@ Vehicle-To-Vehicle Communication. Young Researchers Seminar, 8.-10. June
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -458,14 +459,13 @@ preferred side may be assigned a higher priority value (using edge attribute <co
 This value will be taken into account during routing when setting option <strong>--weights.priority-factor FLOAT</strong>  (applicable to
 <a href="../sumo.html">sumo</a> and <a href="../duarouter.html">duarouter</a>).</p>
 <p>At the default option value of 0. Edge priority is ignored when routing. When setting a positive value, the edges with the lowest priority receive a penalty factor to their estimated travel time of 1 + FLOAT (where FLOAT is the option argument) whereas the edges with the highest priority receive no penalty. Edges with medium priority will receive an intermediate penalty according to the following code:</p>
-<div class="codehilite"><pre><span></span><code> MinEdgePriority : minimum priority value of all edges
+<pre><code> MinEdgePriority : minimum priority value of all edges
  MaxEdgePriority : maximum priority value of all edges
  EdgePriorityRange = MaxEdgePriority - MinEdgePriority
 
  relativeInversePrio = 1 - ((edgePriority - MinEdgePriority) / EdgePriorityRange)
- effort =  traveltime <span class="gs">* (1 + relativeInversePrio *</span> PriorityFactor)
-</code></pre></div>
-
+ effort =  traveltime * (1 + relativeInversePrio * PriorityFactor)
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When either trains or road vehicles are routed only outside the simulation this method can also be used for combined simulations (by routing trains and cars separately and only using the option for train routing).</p>
@@ -477,25 +477,23 @@ It also permits distinguishing fine-grained routing preferences (i.e. between re
 <p>The effect that each <code>routingType</code> takes during routing is expressed by loading <code>&lt;preference&gt;</code> elements from an additional file:
 During routing, the estimated travelTime of an edge with the given <code>routingType</code> is divided by the given priority value for an applicable <code>vClass</code> <a href="Routing.html#routing_by_travel_time_and_routingtype">(or <code>vType</code>)</a>.</p>
 <p>The following example has the same effect as setting option <strong>weights.priority-factor 1</strong> (but only applies to vClass <em>rail</em>).</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional</span><span class="w"> </span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;preference</span><span class="w"> </span><span class="na">routingType=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">vClasses=</span><span class="s">&quot;rail&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;preference</span><span class="w"> </span><span class="na">routingType=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">vClasses=</span><span class="s">&quot;rail&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;0.8&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;preference</span><span class="w"> </span><span class="na">routingType=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">vClasses=</span><span class="s">&quot;rail&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;0.67&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;preference</span><span class="w"> </span><span class="na">routingType=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">vClasses=</span><span class="s">&quot;rail&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;0.57&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;preference</span><span class="w"> </span><span class="na">routingType=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">vClasses=</span><span class="s">&quot;rail&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;0.5&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional &gt;
+    &lt;preference routingType=&quot;4&quot; vClasses=&quot;rail&quot; priority=&quot;1&quot;/&gt;
+    &lt;preference routingType=&quot;3&quot; vClasses=&quot;rail&quot; priority=&quot;0.8&quot;/&gt;
+    &lt;preference routingType=&quot;2&quot; vClasses=&quot;rail&quot; priority=&quot;0.67&quot;/&gt;
+    &lt;preference routingType=&quot;1&quot; vClasses=&quot;rail&quot; priority=&quot;0.57&quot;/&gt;
+    &lt;preference routingType=&quot;0&quot; vClasses=&quot;rail&quot; priority=&quot;0.5&quot;/&gt;
+&lt;/additional&gt;
+</code></pre>
 <p>The following example has the same effect as setting option <strong>weights.priority-factor 3</strong> (but only applies to vTypes <em>train1</em> and <em>train2</em>).</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional</span><span class="w"> </span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;preference</span><span class="w"> </span><span class="na">routingType=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">vTypes=</span><span class="s">&quot;train1 train2&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;preference</span><span class="w"> </span><span class="na">routingType=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">vClasses=</span><span class="s">&quot;rail&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;0.57&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;preference</span><span class="w"> </span><span class="na">routingType=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">vClasses=</span><span class="s">&quot;rail&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;0.40&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;preference</span><span class="w"> </span><span class="na">routingType=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">vClasses=</span><span class="s">&quot;rail&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;0.31&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;preference</span><span class="w"> </span><span class="na">routingType=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">vClasses=</span><span class="s">&quot;rail&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;0.25&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional &gt;
+    &lt;preference routingType=&quot;4&quot; vTypes=&quot;train1 train2&quot; priority=&quot;1&quot;/&gt;
+    &lt;preference routingType=&quot;3&quot; vClasses=&quot;rail&quot; priority=&quot;0.57&quot;/&gt;
+    &lt;preference routingType=&quot;2&quot; vClasses=&quot;rail&quot; priority=&quot;0.40&quot;/&gt;
+    &lt;preference routingType=&quot;1&quot; vClasses=&quot;rail&quot; priority=&quot;0.31&quot;/&gt;
+    &lt;preference routingType=&quot;0&quot; vClasses=&quot;rail&quot; priority=&quot;0.25&quot;/&gt;
+&lt;/additional&gt;
+</code></pre>
 <h3 id="setting_edge_priority_and_routingtype">Setting edge priority and routingType<a class="headerlink" href="#setting_edge_priority_and_routingtype" title="Permanent link">#</a></h3>
 <p>The <code>priority</code> and corresponding <code>routingType</code> values can either be assigned by the user or computed heuristically by <a href="../netconvert.html">netconvert</a> as explained below.
 Note, that in both heuristics each railway edge will have their <code>priority</code> attribute set and it's <code>routingType</code> will be set equal the numerical priority value (converted to a string).</p>
@@ -583,18 +581,17 @@ Time values are in seconds.</p>
 <li>yellow-time : time for closing the crossing (default 3)</li>
 </ul>
 <p>When setting parameters, <code>id</code> indicates the id of the rail-crossing junction and <code>programID</code> is always '0'.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">    </span><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;time-gap&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;15.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;space-gap&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;-1.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;min-green-time&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;5.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;opening-delay&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;3.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;opening-time&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;3.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;yellow-time&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;5.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/tlLogic&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+    &lt;tlLogic id=&quot;C&quot; programID=&quot;0&quot;&gt;
+        &lt;param key=&quot;time-gap&quot; value=&quot;15.0&quot;/&gt;
+        &lt;param key=&quot;space-gap&quot; value=&quot;-1.0&quot;/&gt;
+        &lt;param key=&quot;min-green-time&quot; value=&quot;5.0&quot;/&gt;
+        &lt;param key=&quot;opening-delay&quot; value=&quot;3.0&quot;/&gt;
+        &lt;param key=&quot;opening-time&quot; value=&quot;3.0&quot;/&gt;
+        &lt;param key=&quot;yellow-time&quot; value=&quot;5.0&quot;/&gt;
+    &lt;/tlLogic&gt;
+&lt;/additional&gt;
+</code></pre>
 <h2 id="kilometrage_mileage_chainage">Kilometrage (Mileage, Chainage)<a class="headerlink" href="#kilometrage_mileage_chainage" title="Permanent link">#</a></h2>
 <p>Edges can be configured to take part in a <a href="https://en.wikipedia.org/wiki/Linear_referencing">linear
 referencing scheme</a> by setting their <a href="Distances.html#defining_and_using_linear_coordinates"><code>distance</code>-attribute</a>.
@@ -622,29 +619,26 @@ Alternatively, any other car following model may be used and configured with app
 Each attribute is interpreted as a table column where the rows defines the traction and resistance for the corresponding speed.
 The speeds must be given in m/s whereas the traction and resistance forces are in kN. Intermediate values are obtained by linear interpolation.</p>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;rail&quot;</span><span class="w"> </span><span class="na">carFollowModel=</span><span class="s">&quot;Rail&quot;</span><span class="w"> </span><span class="na">trainType=</span><span class="s">&quot;custom&quot;</span>
-<span class="w">           </span><span class="na">speedTable=</span><span class="s">&quot;0 2.78 5.56 8.33 11.11 13.89 16.67 19.44 22.22 25 27.78 30.56 33.33&quot;</span>
-<span class="w">           </span><span class="na">tractionTable=</span><span class="s">&quot;300 300 263 179 135 108 90 77 67.5 60 54 49 45&quot;</span>
-<span class="w">           </span><span class="na">resistanceTable=</span><span class="s">&quot;2 4 8.5 14 22 31 41.5 54 68 83.5 111 120 140&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">    &lt;vType id=&quot;0&quot; vClass=&quot;rail&quot; carFollowModel=&quot;Rail&quot; trainType=&quot;custom&quot;
+           speedTable=&quot;0 2.78 5.56 8.33 11.11 13.89 16.67 19.44 22.22 25 27.78 30.56 33.33&quot;
+           tractionTable=&quot;300 300 263 179 135 108 90 77 67.5 60 54 49 45&quot;
+           resistanceTable=&quot;2 4 8.5 14 22 31 41.5 54 68 83.5 111 120 140&quot;/&gt;
+</code></pre>
 <h2 id="custom_dynamics_model_with_parameterized_curves">Custom dynamics model with parameterized curves<a class="headerlink" href="#custom_dynamics_model_with_parameterized_curves" title="Permanent link">#</a></h2>
 <p>The vType attributes <code>maxPower</code> and <code>maxTraction</code> can be used to specify the traction curve for a given speed (in m/s) according to the formula:</p>
 <p><code>traction_kN = min(maxPower / speed, maxTraction)</code></p>
 <p>The vType attributes <code>resCoef_quadratic</code>, <code>resCoef_linear</code> and <code>resCoef_constant</code> can be used to specify the resistance curve for a given speed (in m/s) according to the formula:</p>
 <p><code>resistance_kN =  resCoef_quadratic * speed * speed + resCoef_linear * speed + resCoef_constant</code></p>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;rail&quot;</span><span class="w"> </span><span class="na">carFollowModel=</span><span class="s">&quot;Rail&quot;</span><span class="w"> </span><span class="na">trainType=</span><span class="s">&quot;custom&quot;</span><span class="w"> </span><span class="na">maxPower=</span><span class="s">&quot;2350&quot;</span><span class="w"> </span><span class="na">maxTraction=</span><span class="s">&quot;150&quot;</span>
-<span class="w">        </span><span class="na">resCoef_quadratic=</span><span class="s">&quot;0.00028&quot;</span><span class="w"> </span><span class="na">resCoef_linear=</span><span class="s">&quot;0.00003&quot;</span><span class="w"> </span><span class="na">resCoef_constant=</span><span class="s">&quot;1.670&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;vType id=&quot;0&quot; vClass=&quot;rail&quot; carFollowModel=&quot;Rail&quot; trainType=&quot;custom&quot; maxPower=&quot;2350&quot; maxTraction=&quot;150&quot;
+        resCoef_quadratic=&quot;0.00028&quot; resCoef_linear=&quot;0.00003&quot; resCoef_constant=&quot;1.670&quot;/&gt;
+</code></pre>
 <h2 id="curve_resistance">Curve Resistance<a class="headerlink" href="#curve_resistance" title="Permanent link">#</a></h2>
 <p>Resistance computation for curves is disabled by default because a give network model may not be accurate enough to allow computing sensible values (i.e. abstract networks with sharp 45 degree switches).
 To enable computation, set vType attribute <code>curveResistance="1"</code>
 The formula is computed from vType attributes as follows:</p>
-<div class="codehilite"><pre><span></span><code>  mass * roeckl_numerator / (curveRadius - roeckl_offset)
-</code></pre></div>
-
+<pre><code>  mass * roeckl_numerator / (curveRadius - roeckl_offset)
+</code></pre>
 <p>For a curve radius below attribute <code>roeckl_sharp_radius</code>, the values <code>roeckl_numerator_sharp</code> and <code>roeckl_offset_sharp</code> are used instead.
 All defaults are given below. They are tailored to mainline rail on a gauge of 1,435mmm</p>
 <p>By default, curvature will be integrated over at least <em>100m</em>. If the geometry data of the network is very sparse it may be nessary to set a larger value using vType attribute <code>curveIntegration</code>.</p>
@@ -738,16 +732,15 @@ met:</p>
 <p>Trains can be split and joined (divided and coupled) at stops. If a person or container travels in a train that is split or joined and wants to continue traveling in the new part, it requires a distinct <code>&lt;ride&gt;</code> or <code>&lt;transport&gt;</code> element in it's plan. No delay for boarding or loading will occur in the simulation for this.</p>
 <h2 id="splitting_a_train">Splitting a train<a class="headerlink" href="#splitting_a_train" title="Permanent link">#</a></h2>
 <p>To split a train, the following input definition can be used. The rear half of the train is defined as a new vehicle which depart value <strong>split</strong>. The train train that is being split must define the 'split' attribute in its stop definition referencing the id of the rear half.</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;train&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;rail&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;splitTrain&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;rail&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;50&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;t0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;train&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;c&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;B&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;60.00&quot;</span><span class="w"> </span><span class="na">split=</span><span class="s">&quot;t1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/trip&gt;</span>
-<span class="w">    </span><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;t1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;splitTrain&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;split&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;b&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;e&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;B&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;60.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/trip&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;vType id=&quot;train&quot; vClass=&quot;rail&quot;/&gt;
+    &lt;vType id=&quot;splitTrain&quot; vClass=&quot;rail&quot; length=&quot;50&quot;/&gt;
+    &lt;trip id=&quot;t0&quot; type=&quot;train&quot; depart=&quot;0.00&quot; from=&quot;a&quot; to=&quot;c&quot;&gt;
+        &lt;stop busStop=&quot;B&quot; duration=&quot;60.00&quot; split=&quot;t1&quot;/&gt;
+    &lt;/trip&gt;
+    &lt;trip id=&quot;t1&quot; type=&quot;splitTrain&quot; depart=&quot;split&quot; from=&quot;b&quot; to=&quot;e&quot;&gt;
+        &lt;stop busStop=&quot;B&quot; duration=&quot;60.00&quot;/&gt;
+    &lt;/trip&gt;
+</code></pre>
 <p>When defined this way, The rear part of the train will be created as a new simulation vehicle once the first part has reached the stop. After stopping, The front half of the train will continue with reduced length.
 If the vehicle that is split if (with <code>depart="split"</code>) uses attribute <code>departPos="splitFront"</code> it will instead be inserted at front and the part that keeps its id will be positioned in the rear.</p>
 <h2 id="joining_two_trains">Joining two trains<a class="headerlink" href="#joining_two_trains" title="Permanent link">#</a></h2>
@@ -767,16 +760,15 @@ The following conditions must be met for the joining operation to take place:</p
 </li>
 </ul>
 <p>The following is an example definition for joining two trains:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;train&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;rail&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;splitTrain&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;rail&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;50&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;t0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;splitTrain&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;c&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;B&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;60.00&quot;</span><span class="w"> </span><span class="na">triggered=</span><span class="s">&quot;join&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/trip&gt;</span>
-<span class="w">    </span><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;t1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;splitTrain&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;d&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;b&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;B&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;5.00&quot;</span><span class="w"> </span><span class="na">join=</span><span class="s">&quot;t0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/trip&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">    &lt;vType id=&quot;train&quot; vClass=&quot;rail&quot;/&gt;
+    &lt;vType id=&quot;splitTrain&quot; vClass=&quot;rail&quot; length=&quot;50&quot;/&gt;
+    &lt;trip id=&quot;t0&quot; type=&quot;splitTrain&quot; depart=&quot;0.00&quot; from=&quot;a&quot; to=&quot;c&quot;&gt;
+        &lt;stop busStop=&quot;B&quot; duration=&quot;60.00&quot; triggered=&quot;join&quot;/&gt;
+    &lt;/trip&gt;
+    &lt;trip id=&quot;t1&quot; type=&quot;splitTrain&quot; depart=&quot;30&quot; from=&quot;d&quot; to=&quot;b&quot;&gt;
+        &lt;stop busStop=&quot;B&quot; duration=&quot;5.00&quot; join=&quot;t0&quot;/&gt;
+    &lt;/trip&gt;
+</code></pre>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>if the joined train is in the front and covers multiple edges, then these must all match the route of the continuing train. Also the joining train should have the join-stop on the last edge of its route.</p>
@@ -792,13 +784,12 @@ The following conditions must be met for the joining operation to take place:</p
 <h2 id="moving_block_mode">Moving Block Mode<a class="headerlink" href="#moving_block_mode" title="Permanent link">#</a></h2>
 <p>Functionality <strong>a)</strong> corresponds to the "classic" safety behavior of rail signals (<a href="https://en.wikipedia.org/wiki/Punktf%C3%B6rmige_Zugbeeinflussung">PZB</a>). When option <strong>--railsignal-moving-block</strong> is set or individual signals are configured with parameter <em>moving-block</em> (see below), feature <strong>a)</strong> is disabled and trains will use their configured carFollowModel (i.e. 'Rail') for distance keeping. This is similar to the <a href="https://en.wikipedia.org/wiki/Linienzugbeeinflussung">LZB</a> safety system when used with extremely short virtual blocks.</p>
 <p>To switch a signal into moving-block-mode, the following additional file may be loaded:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.dlr.de/xsd/additional_file.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;gneJ8&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;moving-block&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/tlLogic&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.dlr.de/xsd/additional_file.xsd&quot;&gt;
+    &lt;tlLogic id=&quot;gneJ8&quot; programID=&quot;0&quot;&gt;
+        &lt;param key=&quot;moving-block&quot; value=&quot;true&quot;/&gt;
+    &lt;/tlLogic&gt;
+&lt;/additional&gt;
+</code></pre>
 <p>Parameter <em>moving-block</em> may also be updated at runtime with <code>traci.trafficlight.setParameter</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -807,13 +798,12 @@ The following conditions must be met for the joining operation to take place:</p
 <h2 id="schedule_constraints">Schedule Constraints<a class="headerlink" href="#schedule_constraints" title="Permanent link">#</a></h2>
 <p>Additionally, rail signals can enforce train ordering to ensure that a <a href="Public_Transport.html#public_transport_schedules">scheduled order at stations</a> can be kept.
 To make use of this, the following elements can be loaded from an additional file:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;railSignalConstraints</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;A&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;predecessor</span><span class="w"> </span><span class="na">tripId=</span><span class="s">&quot;t0&quot;</span><span class="w"> </span><span class="na">tl=</span><span class="s">&quot;D&quot;</span><span class="w"> </span><span class="na">foes=</span><span class="s">&quot;t1&quot;</span><span class="w"> </span><span class="na">limit=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;predecessor</span><span class="w"> </span><span class="na">tripId=</span><span class="s">&quot;t0&quot;</span><span class="w"> </span><span class="na">tl=</span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="na">foes=</span><span class="s">&quot;t2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;insertionPredecessor</span><span class="w"> </span><span class="na">tripId=</span><span class="s">&quot;t3&quot;</span><span class="w"> </span><span class="na">tl=</span><span class="s">&quot;E&quot;</span><span class="w"> </span><span class="na">foes=</span><span class="s">&quot;t4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/railSignalConstraints&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;railSignalConstraints id=&quot;A&quot;&gt;
+        &lt;predecessor tripId=&quot;t0&quot; tl=&quot;D&quot; foes=&quot;t1&quot; limit=&quot;2&quot;/&gt;
+        &lt;predecessor tripId=&quot;t0&quot; tl=&quot;C&quot; foes=&quot;t2&quot;/&gt;
+        &lt;insertionPredecessor tripId=&quot;t3&quot; tl=&quot;E&quot; foes=&quot;t4&quot;/&gt;
+    &lt;/railSignalConstraints&gt;
+</code></pre>
 <h3 id="predecessor_constraint">predecessor constraint<a class="headerlink" href="#predecessor_constraint" title="Permanent link">#</a></h3>
 <p>This constrain defines that a given vehicle id (or tripId) can only pass the current signal after some other vehicle ('foe') with the given id or tripId has passed signal 'tl'. The foe vehicle must have been the last vehicle to do so or it must have been one of the last 'limit' vehicles at the time of switching green.</p>
 <h3 id="insertionpredecessor_constraint">insertionPredecessor constraint<a class="headerlink" href="#insertionpredecessor_constraint" title="Permanent link">#</a></h3>
@@ -1163,7 +1153,7 @@ used. The attribute <code>source</code> must be set to the ID of the junction th
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

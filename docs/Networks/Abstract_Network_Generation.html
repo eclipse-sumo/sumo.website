@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -227,14 +228,12 @@ the given length at the boundary of the grid such that all crossings
 have four streets (It is not yet possible to have different attach
 lengths for x and y directions).</p>
 <p>An example usage for building could be:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netgenerate --grid --grid.number=10 --grid.length=400 --output-file=MySUMOFile.net.xml</span>
-</code></pre></div>
-
+<pre><code>netgenerate --grid --grid.number=10 --grid.length=400 --output-file=MySUMOFile.net.xml
+</code></pre>
 <p>or:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netgenerate --grid --grid.x-number=20 --grid.y-number=5 \</span>
-<span class="n"> --grid.y-length=40 --grid.x-length=200 --output-file=MySUMOFile.net.xml</span>
-</code></pre></div>
-
+<pre><code>netgenerate --grid --grid.x-number=20 --grid.y-number=5 \
+ --grid.y-length=40 --grid.x-length=200 --output-file=MySUMOFile.net.xml
+</code></pre>
 <p>These calls will generate the following networks, respectively:</p>
 <p><img alt="" src="../images/Netgen_grid1.gif" />
 <img alt="" src="../images/Netgen_grid2.gif" /></p>
@@ -250,20 +249,17 @@ meters, default is 100).</p>
 <p>Optionally, you can omit the central junction of the network by
 specifying <strong>--spider.omit-center</strong> or <strong>--nocenter</strong>. This also gives an easy way of generating a circle
 network. Using for instance</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netgenerate --spider --spider-omit-center --output-file=MySUMOFile.net.xml</span>
-</code></pre></div>
-
+<pre><code>netgenerate --spider --spider-omit-center --output-file=MySUMOFile.net.xml
+</code></pre>
 <p>will create a circle consisting of 13 elements with a radius of 100m.</p>
 <p>Two examples of usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netgenerate --spider --spider.arm-number=10 --spider.circle-number=10 \</span>
-<span class="n"> --spider.space-radius=100 --output-file=MySUMOFile.net.xml</span>
-</code></pre></div>
-
+<pre><code>netgenerate --spider --spider.arm-number=10 --spider.circle-number=10 \
+ --spider.space-radius=100 --output-file=MySUMOFile.net.xml
+</code></pre>
 <p>and:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netgenerate --spider --spider.arm-number=4 --spider.circle-number=3 \</span>
-<span class="n"> --spider.space-radius=100 --output-file=MySUMOFile.net.xml</span>
-</code></pre></div>
-
+<pre><code>netgenerate --spider --spider.arm-number=4 --spider.circle-number=3 \
+ --spider.space-radius=100 --output-file=MySUMOFile.net.xml
+</code></pre>
 <p>These calls will generate the following networks, respectively:</p>
 <p><img alt="" src="../images/Netgen_spider1.gif" />
 <img alt="" src="../images/Netgen_spider2.gif" /></p>
@@ -286,9 +282,8 @@ random networks. Several settings may be changed:</p>
 <li><strong>--rand.neighbor-dist6</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a>:</li>
 </ul>
 <p>An example:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netgenerate --rand -o MySUMOFile.net.xml --rand.iterations=200</span>
-</code></pre></div>
-
+<pre><code>netgenerate --rand -o MySUMOFile.net.xml --rand.iterations=200
+</code></pre>
 <p>This call will generate the following network:</p>
 <p><img alt="" src="../images/Netgen_random1.gif" /></p>
 <h2 id="random_grids">Random Grids<a class="headerlink" href="#random_grids" title="Permanent link">#</a></h2>
@@ -324,7 +319,7 @@ Many other netconvert options such as <strong>--lefthand</strong> are also suppo
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

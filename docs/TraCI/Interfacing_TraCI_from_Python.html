@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -257,25 +258,22 @@ to use <a href="../Libsumo.html">libsumo</a> instead of traci, which has the sam
 <h2 id="importing_traci_in_a_script">importing <strong>traci</strong> in a script<a class="headerlink" href="#importing_traci_in_a_script" title="Permanent link">#</a></h2>
 <p>To use the library, you can install it using <code>pip install traci</code> or add the <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools directory
 to your Python load path. This is typically done with a stanza like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="k">if</span> <span class="s1">&#39;SUMO_HOME&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;SUMO_HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;tools&#39;</span><span class="p">))</span>
-<span class="kn">import</span> <span class="nn">traci</span>
-</code></pre></div>
-
+<pre><code class="language-python">import os
+import sys
+if 'SUMO_HOME' in os.environ:
+    sys.path.append(os.path.join(os.environ['SUMO_HOME'], 'tools'))
+import traci
+</code></pre>
 <p>This assumes that the <a href="../Basics/Basic_Computer_Skills.html#sumo_home">environment variable
 <strong>SUMO_HOME</strong></a>
 is set before running the script. Alternatively, you can declare the
 path to <em>sumo/tools</em> directly as in the line</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;c:&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">&#39;whatever&#39;</span><span class="p">,</span> <span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">,</span> <span class="s1">&#39;sumo&#39;</span><span class="p">,</span> <span class="s1">&#39;tools&#39;</span><span class="p">))</span>
-</code></pre></div>
-
+<pre><code class="language-python">sys.path.append(os.path.join('c:', os.sep, 'whatever', 'path', 'to', 'sumo', 'tools'))
+</code></pre>
 <p>If you decide to switch to libsumo at a later stage or want to be flexible here,
 you can replace the import line later by:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">libsumo</span> <span class="k">as</span> <span class="nn">traci</span>
-</code></pre></div>
-
+<pre><code class="language-python">import libsumo as traci
+</code></pre>
 <h2 id="first_steps">First Steps<a class="headerlink" href="#first_steps" title="Permanent link">#</a></h2>
 <p>In general it is very easy to interface with SUMO from Python (the
 following example is a modification of
@@ -283,30 +281,27 @@ following example is a modification of
 <p>First you compose the command line to start either
 <a href="../sumo.html">sumo</a> or <a href="../sumo-gui.html">sumo-gui</a> (leaving out
 the option  which was needed before 0.28.0):</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sumoBinary</span> <span class="o">=</span> <span class="s2">&quot;/path/to/sumo-gui&quot;</span>
-<span class="n">sumoCmd</span> <span class="o">=</span> <span class="p">[</span><span class="n">sumoBinary</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;yourConfiguration.sumocfg&quot;</span><span class="p">]</span>
-</code></pre></div>
-
+<pre><code class="language-python">sumoBinary = &quot;/path/to/sumo-gui&quot;
+sumoCmd = [sumoBinary, &quot;-c&quot;, &quot;yourConfiguration.sumocfg&quot;]
+</code></pre>
 <p>Then you start the simulation and connect to it with your script:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">traci</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">sumoCmd</span><span class="p">)</span>
-<span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">step</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
-    <span class="n">traci</span><span class="o">.</span><span class="n">simulationStep</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">traci</span><span class="o">.</span><span class="n">inductionloop</span><span class="o">.</span><span class="n">getLastStepVehicleNumber</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">traci</span><span class="o">.</span><span class="n">trafficlight</span><span class="o">.</span><span class="n">setRedYellowGreenState</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;GrGr&quot;</span><span class="p">)</span>
-    <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
+<pre><code class="language-python">import traci
+traci.start(sumoCmd)
+step = 0
+while step &lt; 1000:
+    traci.simulationStep()
+    if traci.inductionloop.getLastStepVehicleNumber(&quot;0&quot;) &gt; 0:
+        traci.trafficlight.setRedYellowGreenState(&quot;0&quot;, &quot;GrGr&quot;)
+    step += 1
 
-<span class="n">traci</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-
+traci.close()
+</code></pre>
 <p>After connecting to the simulation, you can emit various commands and
 execute simulation steps until you want to finish by closing the
 connection. By default, the close command will wait until the sumo
 process really finishes. You can disable this by calling:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">traci</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code class="language-python">traci.close(False)
+</code></pre>
 <h2 id="subscriptions">Subscriptions<a class="headerlink" href="#subscriptions" title="Permanent link">#</a></h2>
 <p>Subscriptions can be thought of as a batch mode for retrieving
 variables. Instead of asking for the same variables over and over again,
@@ -316,19 +311,18 @@ can ask the module for the result of all current subscriptions after
 each time step. In order to subscribe for variables you need to know
 their variable ids which can be looked up in the traci/constants.py
 file.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">traci</span>
-<span class="kn">import</span> <span class="nn">traci.constants</span> <span class="k">as</span> <span class="nn">tc</span>
+<pre><code class="language-python">import traci
+import traci.constants as tc
 
-<span class="n">traci</span><span class="o">.</span><span class="n">start</span><span class="p">([</span><span class="s2">&quot;sumo&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;my.sumocfg&quot;</span><span class="p">])</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">vehID</span><span class="p">,</span> <span class="p">(</span><span class="n">tc</span><span class="o">.</span><span class="n">VAR_ROAD_ID</span><span class="p">,</span> <span class="n">tc</span><span class="o">.</span><span class="n">VAR_LANEPOSITION</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">getSubscriptionResults</span><span class="p">(</span><span class="n">vehID</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;step&quot;</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
-    <span class="n">traci</span><span class="o">.</span><span class="n">simulationStep</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">getSubscriptionResults</span><span class="p">(</span><span class="n">vehID</span><span class="p">))</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-
+traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;my.sumocfg&quot;])
+traci.vehicle.subscribe(vehID, (tc.VAR_ROAD_ID, tc.VAR_LANEPOSITION))
+print(traci.vehicle.getSubscriptionResults(vehID))
+for step in range(3):
+    print(&quot;step&quot;, step)
+    traci.simulationStep()
+    print(traci.vehicle.getSubscriptionResults(vehID))
+traci.close()
+</code></pre>
 <p>The values retrieved are always the ones from the last time step, it is
 not possible to retrieve older values.</p>
 <div class="admonition note">
@@ -350,19 +344,18 @@ which can be looked up in the traci/constants.py file. The domain id
 always has the form CMD_GET_&lt;DOMAIN&gt;_VARIABLE. The following code
 retrieves all vehicle speeds and waiting times within range (42m) of a
 junction (the vehicle ids are retrieved implicitly).</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">traci</span>
-<span class="kn">import</span> <span class="nn">traci.constants</span> <span class="k">as</span> <span class="nn">tc</span>
+<pre><code class="language-python">import traci
+import traci.constants as tc
 
-<span class="n">traci</span><span class="o">.</span><span class="n">start</span><span class="p">([</span><span class="s2">&quot;sumo&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;my.sumocfg&quot;</span><span class="p">])</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">junction</span><span class="o">.</span><span class="n">subscribeContext</span><span class="p">(</span><span class="n">junctionID</span><span class="p">,</span> <span class="n">tc</span><span class="o">.</span><span class="n">CMD_GET_VEHICLE_VARIABLE</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="p">[</span><span class="n">tc</span><span class="o">.</span><span class="n">VAR_SPEED</span><span class="p">,</span> <span class="n">tc</span><span class="o">.</span><span class="n">VAR_WAITING_TIME</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">traci</span><span class="o">.</span><span class="n">junction</span><span class="o">.</span><span class="n">getContextSubscriptionResults</span><span class="p">(</span><span class="n">junctionID</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;step&quot;</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
-    <span class="n">traci</span><span class="o">.</span><span class="n">simulationStep</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">traci</span><span class="o">.</span><span class="n">junction</span><span class="o">.</span><span class="n">getContextSubscriptionResults</span><span class="p">(</span><span class="n">junctionID</span><span class="p">))</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-
+traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;my.sumocfg&quot;])
+traci.junction.subscribeContext(junctionID, tc.CMD_GET_VEHICLE_VARIABLE, 42, [tc.VAR_SPEED, tc.VAR_WAITING_TIME])
+print(traci.junction.getContextSubscriptionResults(junctionID))
+for step in range(3):
+    print(&quot;step&quot;, step)
+    traci.simulationStep()
+    print(traci.junction.getContextSubscriptionResults(junctionID))
+traci.close()
+</code></pre>
 <p>The values retrieved are always the ones from the last time step, it is
 not possible to retrieve older values.</p>
 <div class="admonition note">
@@ -380,10 +373,9 @@ procedure is to equip a requested context subscription with the filter
 directly after the call to <code>subscribeContext()</code> by a successive call to
 <code>addSubscriptionFilter&lt;FILTER_ID&gt;()</code> as for instance in the following
 snippet:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">subscribeContext</span><span class="p">(</span><span class="s2">&quot;ego&quot;</span><span class="p">,</span> <span class="n">tc</span><span class="o">.</span><span class="n">CMD_GET_VEHICLE_VARIABLE</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="p">[</span><span class="n">tc</span><span class="o">.</span><span class="n">VAR_SPEED</span><span class="p">])</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">addSubscriptionFilterLanes</span><span class="p">(</span><span class="n">lanes</span><span class="p">,</span> <span class="n">noOpposite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">downstreamDist</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">upstreamDist</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code class="language-python">traci.vehicle.subscribeContext(&quot;ego&quot;, tc.CMD_GET_VEHICLE_VARIABLE, 0.0, [tc.VAR_SPEED])
+traci.vehicle.addSubscriptionFilterLanes(lanes, noOpposite=True, downstreamDist=100, upstreamDist=50)
+</code></pre>
 <p>The first line requests a context subscription for the speed of vehicles
 in the neighborhood of the reference vehicle with the ID <code>"ego"</code>. The
 range of the context subscription (which refers to the radial context
@@ -420,17 +412,16 @@ traci.simulationStep() is called, to let this happen automatically
 (always <em>after</em> each call to simulationStep()) it is possible to add a
 StepListener object 'listener' (more precisely an instance of a subclass
 of traci.StepListener) i.e.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">ExampleListener</span><span class="p">(</span><span class="n">traci</span><span class="o">.</span><span class="n">StepListener</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
-        <span class="c1"># do something after every call to simulationStep</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ExampleListener called with parameter </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">t</span><span class="p">)</span>
-        <span class="c1"># indicate that the step listener should stay active in the next step</span>
-        <span class="k">return</span> <span class="kc">True</span>
+<pre><code class="language-python">class ExampleListener(traci.StepListener):
+    def step(self, t):
+        # do something after every call to simulationStep
+        print(&quot;ExampleListener called with parameter %s.&quot; % t)
+        # indicate that the step listener should stay active in the next step
+        return True
 
-<span class="n">listener</span> <span class="o">=</span> <span class="n">ExampleListener</span><span class="p">()</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">addStepListener</span><span class="p">(</span><span class="n">listener</span><span class="p">)</span>
-</code></pre></div>
-
+listener = ExampleListener()
+traci.addStepListener(listener)
+</code></pre>
 <p>Please note that the listener is not activated for every simulation step
 but for every call to simulationStep (which may perform multiple steps up to the given time <em>t</em>).
 Furthermore the parameter <em>t</em> is not the current simulation time but exactly
@@ -445,64 +436,59 @@ the same time with a single script. The function <em>traci.start()</em> has an
 optional label argument which allows you to call it multiple times with
 different simulation instances and labels. The function <em>traci.switch()</em>
 can then be used to switch to any of the initialized labels:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">traci</span><span class="o">.</span><span class="n">start</span><span class="p">([</span><span class="s2">&quot;sumo&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;sim1.sumocfg&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;sim1&quot;</span><span class="p">)</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">start</span><span class="p">([</span><span class="s2">&quot;sumo&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;sim2.sumocfg&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;sim2&quot;</span><span class="p">)</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">switch</span><span class="p">(</span><span class="s2">&quot;sim1&quot;</span><span class="p">)</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">simulationStep</span><span class="p">()</span> <span class="c1"># run 1 step for sim1</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">switch</span><span class="p">(</span><span class="s2">&quot;sim2&quot;</span><span class="p">)</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">simulationStep</span><span class="p">()</span> <span class="c1"># run 1 step for sim2</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">switch</span><span class="p">(</span><span class="s2">&quot;sim1&quot;</span><span class="p">)</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">switch</span><span class="p">(</span><span class="s2">&quot;sim2&quot;</span><span class="p">)</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-python">traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;sim1.sumocfg&quot;], label=&quot;sim1&quot;)
+traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;sim2.sumocfg&quot;], label=&quot;sim2&quot;)
+traci.switch(&quot;sim1&quot;)
+traci.simulationStep() # run 1 step for sim1
+traci.switch(&quot;sim2&quot;)
+traci.simulationStep() # run 1 step for sim2
+traci.switch(&quot;sim1&quot;)
+traci.close()
+traci.switch(&quot;sim2&quot;)
+traci.close()
+</code></pre>
 <p>If you prefer a more object oriented approach you can also use
 connection objects to communicate with the simulation. They have the
 same interface as the static <em>traci.</em> calls but you will still need to
 start the simulation manually for them:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">traci</span><span class="o">.</span><span class="n">start</span><span class="p">([</span><span class="s2">&quot;sumo&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;sim1.sumocfg&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;sim1&quot;</span><span class="p">)</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">start</span><span class="p">([</span><span class="s2">&quot;sumo&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;sim2.sumocfg&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;sim2&quot;</span><span class="p">)</span>
-<span class="n">conn1</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">getConnection</span><span class="p">(</span><span class="s2">&quot;sim1&quot;</span><span class="p">)</span>
-<span class="n">conn2</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">getConnection</span><span class="p">(</span><span class="s2">&quot;sim2&quot;</span><span class="p">)</span>
-<span class="n">conn1</span><span class="o">.</span><span class="n">simulationStep</span><span class="p">()</span> <span class="c1"># run 1 step for sim1</span>
-<span class="n">conn2</span><span class="o">.</span><span class="n">simulationStep</span><span class="p">()</span> <span class="c1"># run 1 step for sim2</span>
-</code></pre></div>
-
+<pre><code class="language-python">traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;sim1.sumocfg&quot;], label=&quot;sim1&quot;)
+traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;sim2.sumocfg&quot;], label=&quot;sim2&quot;)
+conn1 = traci.getConnection(&quot;sim1&quot;)
+conn2 = traci.getConnection(&quot;sim2&quot;)
+conn1.simulationStep() # run 1 step for sim1
+conn2.simulationStep() # run 1 step for sim2
+</code></pre>
 <h2 id="controlling_the_same_simulation_from_multiple_clients">Controlling the same simulation from multiple clients<a class="headerlink" href="#controlling_the_same_simulation_from_multiple_clients" title="Permanent link">#</a></h2>
 <p>To connect with multiple clients, the number of clients must be known in
 advance and specified with sumo option <strong>--num-clients</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;INT&gt;</em></a>. Also, the connection port must
 be known to all clients. After deciding on a port it can be made
 available to the clients via arguments or configuration files. A free
 port can be obtained by</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">sumolib.miscutils</span> <span class="kn">import</span> <span class="n">getFreeSocketPort</span>
-<span class="n">port</span> <span class="o">=</span> <span class="n">sumolib</span><span class="o">.</span><span class="n">miscutils</span><span class="o">.</span><span class="n">getFreeSocketPort</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-python">from sumolib.miscutils import getFreeSocketPort
+port = sumolib.miscutils.getFreeSocketPort()
+</code></pre>
 <p>One client may use method <em>traci.start()</em> to start the simulation and
 connect to it at the same time while the other client only needs to
 connect. After establishing client order, each client must continuously
 call <em>simulationStep</em> to allow the simulation to advance:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">#client1</span>
-<span class="c1"># PORT = int(sys.argv[1]) # example</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">start</span><span class="p">([</span><span class="s2">&quot;sumo&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;sim.sumocfg&quot;</span><span class="p">,</span> <span class="s2">&quot;--num-clients&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">],</span> <span class="n">port</span><span class="o">=</span><span class="n">PORT</span><span class="p">)</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">setOrder</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># number can be anything</span>
-<span class="k">while</span> <span class="n">traci</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">getMinExpectedNumber</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">traci</span><span class="o">.</span><span class="n">simulationStep</span><span class="p">()</span>
-    <span class="c1"># more traci commands</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="c1"># client2</span>
-<span class="c1"># PORT = int(sys.argv[1]) # example</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">setOrder</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># number can be anything as long as each client gets its own number</span>
-<span class="k">while</span> <span class="n">traci</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">getMinExpectedNumber</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">traci</span><span class="o">.</span><span class="n">simulationStep</span><span class="p">()</span>
-    <span class="c1"># more traci commands</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-python">#client1
+# PORT = int(sys.argv[1]) # example
+traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;sim.sumocfg&quot;, &quot;--num-clients&quot;, &quot;2&quot;], port=PORT)
+traci.setOrder(1) # number can be anything
+while traci.simulation.getMinExpectedNumber() &gt; 0:
+    traci.simulationStep()
+    # more traci commands
+traci.close()
+</code></pre>
+<pre><code class="language-python"># client2
+# PORT = int(sys.argv[1]) # example
+traci.init(PORT)
+traci.setOrder(2) # number can be anything as long as each client gets its own number
+while traci.simulation.getMinExpectedNumber() &gt; 0:
+    traci.simulationStep()
+    # more traci commands
+traci.close()
+</code></pre>
 <h2 id="concurrent_access_to_the_same_traci_connection">Concurrent access to the same TraCI connection<a class="headerlink" href="#concurrent_access_to_the_same_traci_connection" title="Permanent link">#</a></h2>
 <p>Before SUMO 1.17.0 the pure Python client as well as the libtraci implementation
 will probably crash if you try to access the same connection from different
@@ -534,12 +520,11 @@ the traci library such as</p>
 <h3 id="determine_the_traci_library_being_loaded">Determine the traci library being loaded<a class="headerlink" href="#determine_the_traci_library_being_loaded" title="Permanent link">#</a></h3>
 <p>When working with different sumo versions it may happen that the call <code>import traci</code> loads the wrong library.
 The easiest way to debug this is to add the following lines after the import</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">traci</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LOADPATH:&quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TRACIPATH:&quot;</span><span class="p">,</span> <span class="n">traci</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-python">import traci
+print(&quot;LOADPATH:&quot;, '\n'.join(sys.path))
+print(&quot;TRACIPATH:&quot;, traci.__file__)
+sys.exit()
+</code></pre>
 <p>Make sure that the TRACIPATH corresponds to the sumo version that you wish to use.
 If it does not, then the order of directories in LOADPATH (sys.path) must be changed
 or the SUMO installation must be removed from any directories that come before the wanted directory.</p>
@@ -547,16 +532,14 @@ or the SUMO installation must be removed from any directories that come before t
 <p>Sometimes SUMO may crash while running a simulation with TraCI. The
 below steps make it simple to run sumo with traci in a debugger:</p>
 <p>1) Add the option <em>--save-configuration</em> to your traci script:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">traci</span><span class="o">.</span><span class="n">start</span><span class="p">([</span><span class="n">sumoBinary</span><span class="p">,</span> <span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;run.sumocfg&#39;</span><span class="p">,</span> <span class="s1">&#39;--save-configuration&#39;</span><span class="p">,</span> <span class="s1">&#39;debug.sumocfg&#39;</span><span class="p">])</span>
-</code></pre></div>
-
+<pre><code class="language-python">traci.start([sumoBinary, '-c', 'run.sumocfg', '--save-configuration', 'debug.sumocfg'])
+</code></pre>
 <p>2) Run your traci script. Instead of starting sumo it will just write
 the configuration with the chosen port but it will still try to connect
 repeatedly.</p>
 <p>3) Run</p>
-<div class="codehilite"><pre><span></span><code>gdb --args sumoD -c debug.sumocfg
-</code></pre></div>
-
+<pre><code>gdb --args sumoD -c debug.sumocfg
+</code></pre>
 <p>(where sumoD is sumo <a href="../Installing/Linux_Build.html#building_the_sumo_binaries_with_cmake">compiled in debug
 mode</a>)</p>
 <h3 id="generating_a_log_of_all_traci_commands">Generating a log of all traci commands<a class="headerlink" href="#generating_a_log_of_all_traci_commands" title="Permanent link">#</a></h3>
@@ -577,70 +560,63 @@ This allows re-running the scenario without the original runner script.</p>
 After the script fails to start, look into the written logfile and fix the error reported therein.</p>
 <h2 id="usage_examples">Usage Examples<a class="headerlink" href="#usage_examples" title="Permanent link">#</a></h2>
 <h3 id="run_a_simulation_until_all_vehicles_have_arrived">Run a simulation until all vehicles have arrived<a class="headerlink" href="#run_a_simulation_until_all_vehicles_have_arrived" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">while</span> <span class="n">traci</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">getMinExpectedNumber</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">traci</span><span class="o">.</span><span class="n">simulationStep</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-python">while traci.simulation.getMinExpectedNumber() &gt; 0:
+    traci.simulationStep()
+</code></pre>
 <h3 id="add_trips_incomplete_routes_dynamically">Add trips (incomplete routes) dynamically<a class="headerlink" href="#add_trips_incomplete_routes_dynamically" title="Permanent link">#</a></h3>
 <p>Define a route that consists of the start and destination edge:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">traci</span><span class="o">.</span><span class="n">route</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;trip&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;startEdge&quot;</span><span class="p">,</span> <span class="s2">&quot;endEdge&quot;</span><span class="p">])</span>
-</code></pre></div>
-
+<pre><code class="language-python">traci.route.add(&quot;trip&quot;, [&quot;startEdge&quot;, &quot;endEdge&quot;])
+</code></pre>
 <p>Then add the vehicle with that route</p>
-<div class="codehilite"><pre><span></span><code><span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;newVeh&quot;</span><span class="p">,</span> <span class="s2">&quot;trip&quot;</span><span class="p">,</span> <span class="n">typeID</span><span class="o">=</span><span class="s2">&quot;reroutingType&quot;</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code class="language-python">traci.vehicle.add(&quot;newVeh&quot;, &quot;trip&quot;, typeID=&quot;reroutingType&quot;)
+</code></pre>
 <p>This will cause the vehicle to compute a new route from startEdge to
 endEdge according to the estimated travel times in the network at the
 time of departure. For details of this mechanism see
 <a href="../Demand/Automatic_Routing.html">Demand/Automatic_Routing</a>.</p>
 <h3 id="coordinate_transformations">Coordinate transformations<a class="headerlink" href="#coordinate_transformations" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">getPosition</span><span class="p">(</span><span class="n">vehID</span><span class="p">)</span>
-<span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">convertGeo</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">convertGeo</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">fromGeo</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">edgeID</span><span class="p">,</span> <span class="n">lanePosition</span><span class="p">,</span> <span class="n">laneIndex</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">convertRoad</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">)</span>
-<span class="n">edgeID</span><span class="p">,</span> <span class="n">lanePosition</span><span class="p">,</span> <span class="n">laneIndex</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">convertRoad</span><span class="p">(</span><span class="n">lon2</span><span class="p">,</span> <span class="n">lat2</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code class="language-python">x, y = traci.vehicle.getPosition(vehID)
+lon, lat = traci.simulation.convertGeo(x, y)
+x2, y2 = traci.simulation.convertGeo(lon, lat, fromGeo=True)
+</code></pre>
+<pre><code class="language-python">edgeID, lanePosition, laneIndex = traci.simulation.convertRoad(x3, y3)
+edgeID, lanePosition, laneIndex = traci.simulation.convertRoad(lon2, lat2, True)
+</code></pre>
 <h3 id="retrieve_the_timeloss_for_all_vehicles_currently_in_the_network">Retrieve the timeLoss for all vehicles currently in the network<a class="headerlink" href="#retrieve_the_timeloss_for_all_vehicles_currently_in_the_network" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">traci</span>
-<span class="kn">import</span> <span class="nn">traci.constants</span> <span class="k">as</span> <span class="nn">tc</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">start</span><span class="p">([</span><span class="s2">&quot;sumo&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;my.sumocfg&quot;</span><span class="p">])</span>
-<span class="c1"># pick an arbitrary junction</span>
-<span class="n">junctionID</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">junction</span><span class="o">.</span><span class="n">getIDList</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-<span class="c1"># subscribe around that junction with a sufficiently large</span>
-<span class="c1"># radius to retrieve the speeds of all vehicles in every step</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">junction</span><span class="o">.</span><span class="n">subscribeContext</span><span class="p">(</span>
-    <span class="n">junctionID</span><span class="p">,</span> <span class="n">tc</span><span class="o">.</span><span class="n">CMD_GET_VEHICLE_VARIABLE</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">,</span>
-    <span class="p">[</span><span class="n">tc</span><span class="o">.</span><span class="n">VAR_SPEED</span><span class="p">,</span> <span class="n">tc</span><span class="o">.</span><span class="n">VAR_ALLOWED_SPEED</span><span class="p">]</span>
-<span class="p">)</span>
-<span class="n">stepLength</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">getDeltaT</span><span class="p">()</span>
-<span class="k">while</span> <span class="n">traci</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">getMinExpectedNumber</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">traci</span><span class="o">.</span><span class="n">simulationStep</span><span class="p">()</span>
-    <span class="n">scResults</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">junction</span><span class="o">.</span><span class="n">getContextSubscriptionResults</span><span class="p">(</span><span class="n">junctionID</span><span class="p">)</span>
-    <span class="n">halting</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">if</span> <span class="n">scResults</span><span class="p">:</span>
-        <span class="n">relSpeeds</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="n">tc</span><span class="o">.</span><span class="n">VAR_SPEED</span><span class="p">]</span> <span class="o">/</span> <span class="n">d</span><span class="p">[</span><span class="n">tc</span><span class="o">.</span><span class="n">VAR_ALLOWED_SPEED</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">scResults</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
-        <span class="c1"># compute values corresponding to summary-output</span>
-        <span class="n">running</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">relSpeeds</span><span class="p">)</span>
-        <span class="n">halting</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="mi">1</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">scResults</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">if</span> <span class="n">d</span><span class="p">[</span><span class="n">tc</span><span class="o">.</span><span class="n">VAR_SPEED</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">])</span>
-        <span class="n">meanSpeedRelative</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">relSpeeds</span><span class="p">)</span> <span class="o">/</span> <span class="n">running</span>
-        <span class="n">timeLoss</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">meanSpeedRelative</span><span class="p">)</span> <span class="o">*</span> <span class="n">running</span> <span class="o">*</span> <span class="n">stepLength</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">traci</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">getTime</span><span class="p">(),</span> <span class="n">timeLoss</span><span class="p">,</span> <span class="n">halting</span><span class="p">)</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-python">import traci
+import traci.constants as tc
+traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;my.sumocfg&quot;])
+# pick an arbitrary junction
+junctionID = traci.junction.getIDList()[0]
+# subscribe around that junction with a sufficiently large
+# radius to retrieve the speeds of all vehicles in every step
+traci.junction.subscribeContext(
+    junctionID, tc.CMD_GET_VEHICLE_VARIABLE, 1000000,
+    [tc.VAR_SPEED, tc.VAR_ALLOWED_SPEED]
+)
+stepLength = traci.simulation.getDeltaT()
+while traci.simulation.getMinExpectedNumber() &gt; 0:
+    traci.simulationStep()
+    scResults = traci.junction.getContextSubscriptionResults(junctionID)
+    halting = 0
+    if scResults:
+        relSpeeds = [d[tc.VAR_SPEED] / d[tc.VAR_ALLOWED_SPEED] for d in scResults.values()]
+        # compute values corresponding to summary-output
+        running = len(relSpeeds)
+        halting = len([1 for d in scResults.values() if d[tc.VAR_SPEED] &lt; 0.1])
+        meanSpeedRelative = sum(relSpeeds) / running
+        timeLoss = (1 - meanSpeedRelative) * running * stepLength
+    print(traci.simulation.getTime(), timeLoss, halting)
+traci.close()
+</code></pre>
 <h3 id="handling_exceptions">Handling Exceptions<a class="headerlink" href="#handling_exceptions" title="Permanent link">#</a></h3>
 <p>Sometimes commands raise an (recoverable) exception to indicate an error (unknown id, route not found etc.). These exceptions
 can be handled by your code as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
-    <span class="n">pos</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">getPosition</span><span class="p">(</span><span class="n">vehID</span><span class="p">)</span>
-<span class="k">except</span> <span class="n">traci</span><span class="o">.</span><span class="n">TraCIException</span><span class="p">:</span>
-    <span class="k">pass</span> <span class="c1"># or do something smarter</span>
-</code></pre></div>
-
+<pre><code class="language-python">try:
+    pos = traci.vehicle.getPosition(vehID)
+except traci.TraCIException:
+    pass # or do something smarter
+</code></pre>
 <h2 id="further_resources">Further Resources<a class="headerlink" href="#further_resources" title="Permanent link">#</a></h2>
 <ul>
 <li>The module <a href="../Simpla.html">Simpla</a> provides a library for
@@ -654,7 +630,7 @@ can be handled by your code as follows:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -242,16 +243,14 @@ their XML definitions:</p>
 <h1 id="xml_parameter_definition">XML Parameter Definition<a class="headerlink" href="#xml_parameter_definition" title="Permanent link">#</a></h1>
 <p>Parameters are always defined as child elements of the respective
 object:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;t0&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;12.3&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;last paint job&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1959&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/vType&gt;</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;v0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;answer to everything&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;42&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/vehicle&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vType id=&quot;t0&quot; maxSpeed=&quot;12.3&quot;&gt;
+  &lt;param key=&quot;last paint job&quot; value=&quot;1959&quot;/&gt;
+&lt;/vType&gt;
+</code></pre>
+<pre><code class="language-xml">&lt;vehicle id=&quot;v0&quot; route=&quot;route0&quot; depart=&quot;0&quot;&gt;
+  &lt;param key=&quot;answer to everything&quot; value=&quot;42&quot;/&gt;
+&lt;/vehicle&gt;
+</code></pre>
 <h1 id="special_parameters_that_affect_behavior">Special parameters that affect behavior<a class="headerlink" href="#special_parameters_that_affect_behavior" title="Permanent link">#</a></h1>
 <p>Some parameters are <em>special</em> and affect (or reflect) simulation behavior in the following ways:</p>
 <ul>
@@ -286,7 +285,7 @@ object:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

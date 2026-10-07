@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -243,9 +244,8 @@ Last edit: 06 October 2026
 documents. (eg. attribute <em>timeLoss</em> for element <em>tripinfo</em> in
 <a href="../Simulation/Output/TripInfo.html">tripinfo-output</a>) and writes the
 results to standard output. When the attribute contains time data in HH:MM:SS format, the values will automatically be converted to seconds.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">attributeStats</span><span class="w"> </span><span class="o">--</span><span class="n">element</span><span class="w"> </span><span class="n">tripinfo</span><span class="w"> </span><span class="o">--</span><span class="n">attribute</span><span class="w"> </span><span class="n">timeLoss</span><span class="w"> </span><span class="n">input</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/output/attributeStats --element tripinfo --attribute timeLoss input.xml
+</code></pre>
 <ul>
 <li>If option <strong>--element</strong> (<strong>-e</strong>) is set to a comma-separated list of elements, only these elements will be read. Otherwise all elements will be parsed</li>
 <li>If option <strong>--attribute</strong> (<strong>-a</strong>) is set to a comma-separated list of attributes, only these attributes will be read. Otherwise all attributes will be parsed</li>
@@ -263,9 +263,8 @@ results to standard output. When the attribute contains time data in HH:MM:SS fo
 <h2 id="attributediffpy">attributeDiff.py<a class="headerlink" href="#attributediffpy" title="Permanent link">#</a></h2>
 <p>Computes difference between numerical attributes in two xml files with the same structure (eg. attribute <em>timeLoss</em> for element <em>vehicleTripStatistics</em> in <a href="../Simulation/Output/StatisticOutput.html">statistic-output</a>) and writes the
 results to standard output. When the attribute contains time data in HH:MM:SS format, the values will automatically be converted to seconds.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">attributeDiff</span><span class="w"> </span><span class="n">file1</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="n">file2</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">xml</span><span class="o">-</span><span class="n">output</span><span class="w"> </span><span class="n">differences</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/output/attributeDiff file1.xml file2.xml --xml-output differences.xml
+</code></pre>
 <ul>
 <li>If option <strong>--element</strong> (<strong>-e</strong>) is set to a comma-separated list of elements, only these elements will be read. Otherwise all elements will be parsed</li>
 <li>If option <strong>--attribute</strong> (<strong>-a</strong>) is set to a comma-separated list of attributes, only these attributes will be read. Otherwise all attributes will be parsed</li>
@@ -275,17 +274,15 @@ results to standard output. When the attribute contains time data in HH:MM:SS fo
 </ul>
 <h3 id="grouping_attributes">grouping attributes<a class="headerlink" href="#grouping_attributes" title="Permanent link">#</a></h3>
 <p>If is often useful to compare files where the same elements occur multiple times but are distinguishable by some further attribute (i.e. vehicle id in <a href="../Simulation/Output/TripInfo.html">tripinfo-output</a>). To compare elements with similar ids, the option <strong>--id-attribute</strong> can be used to set a list of attributes. The following example calls computes the differences of all tripinfo attributes for each individual vehicle that occurred in both files (i.e. from two simulation runs with different seeds):</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">attributeDiff</span><span class="w"> </span><span class="n">tripinfos1</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="n">tripinfos2</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">xml</span><span class="o">-</span><span class="n">output</span><span class="w"> </span><span class="n">differences</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">id</span>
-</code></pre></div>
-
+<pre><code>python tools/output/attributeDiff tripinfos1.xml tripinfos2.xml --xml-output differences.xml -i id
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The tool <a href="#tripinfodiffpy">tripinfoDiff.py</a> serves the same special use case.</p>
 </div>
 <p>If a list of id attributes is set, those attributes may occur at different levels of the xml element hierarchy and parent values will be applied for the child element comparison. The following example makes use of this to compare edges with the same id and in the same time interval for <a href="../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures.html">edgedata-output</a>:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">attributeDiff</span><span class="w"> </span><span class="n">edgedata1</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="n">edgedata2</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">xml</span><span class="o">-</span><span class="n">output</span><span class="w"> </span><span class="n">differences</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">begin</span><span class="p">,</span><span class="n">id</span>
-</code></pre></div>
-
+<pre><code>python tools/output/attributeDiff edgedata1.xml edgedata2.xml --xml-output differences.xml -i begin,id
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The last example is very similar to <a href="#netdumpdiffpy">netdumpdiff.py</a> and <a href="#edgedatadiffpy">edgeDataDiff.py</a></p>
@@ -293,9 +290,8 @@ results to standard output. When the attribute contains time data in HH:MM:SS fo
 <h2 id="attributecomparepy">attributeCompare.py<a class="headerlink" href="#attributecomparepy" title="Permanent link">#</a></h2>
 <p>Computes statistics on numerical attributes in multiple xml files with the same structure (eg. attribute <em>timeLoss</em> for element <em>vehicleTripStatistics</em> in <a href="../Simulation/Output/StatisticOutput.html">statistic-output</a>) and writes the
 results to standard output. The tool works very similar to <a href="#attributediffpy">attributeDiff.py</a> but uses multiple files and computes a wide range of statistics instead of the difference between values.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">attributeCompare</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">file1</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="n">file2</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="n">file3</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">xml</span><span class="o">-</span><span class="n">output</span><span class="w"> </span><span class="n">compared</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/output/attributeCompare.py file1.xml file2.xml file3.xml --xml-output compared.xml
+</code></pre>
 <ul>
 <li>If option <strong>--element</strong> (<strong>-e</strong>) is set to a comma-separated list of elements, only these elements will be read. Otherwise all elements will be parsed</li>
 <li>If option <strong>--attribute</strong> (<strong>-a</strong>) is set to a comma-separated list of attributes, only these attributes will be read. Otherwise all attributes will be parsed</li>
@@ -336,26 +332,23 @@ option to get details about usage and available options.</p>
 <p>Script for generating <a href="../Simulation/Output/index.html#simulated_detectors">different detectors</a>
 for some or all lanes in the supplied network file.</p>
 <p>Example usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span>\<span class="n">output</span>\<span class="n">generateDetectors</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">detectors</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">detector</span><span class="o">-</span><span class="n">type</span><span class="w"> </span><span class="n">instantInductionLoop</span>
-</code></pre></div>
-
+<pre><code>python tools\output\generateDetectors.py -n .net.net.xml -o detectors.add.xml --detector-type instantInductionLoop
+</code></pre>
 <p>Execute the <em>generateDetectors.py</em> script with <em>--help</em> option to get details about additional options.</p>
 <h2 id="generatetlse1detectorspy">generateTLSE1Detectors.py<a class="headerlink" href="#generatetlse1detectorspy" title="Permanent link">#</a></h2>
 <p>Script for generating <a href="../Simulation/Output/Induction_Loops_Detectors_%28E1%29.html">E1 detectors (induction loops)</a>
 for each junction in the supplied network file.</p>
 <p>Example usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span>\<span class="n">output</span>\<span class="n">generateTLSE1Detectors</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">detectors</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools\output\generateTLSE1Detectors.py -n .net.net.xml -o detectors.add.xml
+</code></pre>
 <p>Execute the <em>generateTLSE1Detectors.py</em>script with <em>--help</em> option to
 get details about additional options.</p>
 <h2 id="generatetlse2detectorspy">generateTLSE2Detectors.py<a class="headerlink" href="#generatetlse2detectorspy" title="Permanent link">#</a></h2>
 <p>Script for generating <a href="../Simulation/Output/Lanearea_Detectors_%28E2%29.html">E2 detectors (lanearea detectors)</a> for
 each junction in the supplied network file.</p>
 <p>Example usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span>\<span class="n">output</span>\<span class="n">generateTLSE2Detectors</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">detectors</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools\output\generateTLSE2Detectors.py -n .net.net.xml -o detectors.add.xml
+</code></pre>
 <p>Execute the <em>generateTLSE2Detectors.py</em> script with <em>--help</em> option to
 get details about additional options.</p>
 <h2 id="generatetlse3detectorspy">generateTLSE3Detectors.py<a class="headerlink" href="#generatetlse3detectorspy" title="Permanent link">#</a></h2>
@@ -366,9 +359,8 @@ detector. When setting option <strong>--joined</strong> there will be one detect
 instead. When setting option <strong>--interior</strong>, delays within the intersection will be
 included as well.</p>
 <p>Example usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span>\<span class="n">output</span>\<span class="n">generateTLSE3Detectors</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">detectors</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools\output\generateTLSE3Detectors.py -n .net.net.xml -o detectors.add.xml
+</code></pre>
 <p>Execute the <em>generateTLSE3Detectors.py</em> script with <em>--help</em> option to
 get details about additional options.</p>
 <h2 id="netdumpdiffpy">netdumpdiff.py<a class="headerlink" href="#netdumpdiffpy" title="Permanent link">#</a></h2>
@@ -393,9 +385,8 @@ based on <a href="../Simulation/Output/RawDump.html">--netstate-dump</a> output.
 Output data also includes information about the number of lane changes
 for each vehicle.</p>
 <p>usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python vehLanes.py &lt;netstate_dump.xml&gt; &lt;output_file&gt;</span>
-</code></pre></div>
-
+<pre><code>python vehLanes.py &lt;netstate_dump.xml&gt; &lt;output_file&gt;
+</code></pre>
 <h2 id="edgedatadiffpy">edgeDataDiff.py<a class="headerlink" href="#edgedatadiffpy" title="Permanent link">#</a></h2>
 <p>Computes the numerical difference of
 <a href="../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures.html">edgeData</a>
@@ -403,60 +394,54 @@ values for each edge and interval. The resulting file can be used to
 <a href="../sumo-gui.html#visualizing_edge-related_data">visualize changes between two traffic scenarios</a>. Both
 input files must contain the same edges and intervals.</p>
 <p>usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python edgeDataDiff.py &lt;edgeData1.xml&gt; &lt;edgeData2.xml&gt; &lt;diffFile.xml&gt;</span>
-</code></pre></div>
-
+<pre><code>python edgeDataDiff.py &lt;edgeData1.xml&gt; &lt;edgeData2.xml&gt; &lt;diffFile.xml&gt;
+</code></pre>
 <h2 id="vehroutediffpy">vehrouteDiff.py<a class="headerlink" href="#vehroutediffpy" title="Permanent link">#</a></h2>
 <p>Computes the difference in travel times between two sets of <strong>--vehroute-output</strong> files. The
 files must contain the same vehicles and the same routes and may only
 differ in travel times. The must have been generated with the option <strong>--vehroute-output.exit-times</strong>
 for the script to work.</p>
 <p>usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python vehrouteDiff.py routes1.rou.xml routes2.rou.xml result.xml</span>
-</code></pre></div>
-
+<pre><code>python vehrouteDiff.py routes1.rou.xml routes2.rou.xml result.xml
+</code></pre>
 <h2 id="vehroutecountvalidationpy">vehrouteCountValidation.py<a class="headerlink" href="#vehroutecountvalidationpy" title="Permanent link">#</a></h2>
 <p>Computes the mismatch between counting data (in the same format as used by <a href="Turns.html#routesamplerpy">routeSampler.py</a>)
 and <strong>--vehroute-output</strong> files. If the vehroute-output was generated with option <strong>--vehroute-output.exit-times</strong>, then time of passing the respective edges is used for the validation of counting data time lines (counting data with multiple time intervals).
 Since typically, the total count of vehicles provided in the simulation <strong>--route-files</strong> passes the desired edges, the main value of this tools lies in evaluating the impact of delays (or delayed insertion) on replicating time-dependent counting data.</p>
 <p>usage (with turn counts):</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python vehrouteCountValidation.py -r routes.rou.xml -t input_turns.xml</span>
-</code></pre></div>
-
+<pre><code>python vehrouteCountValidation.py -r routes.rou.xml -t input_turns.xml
+</code></pre>
 <h2 id="tripinfodiffpy">tripinfoDiff.py<a class="headerlink" href="#tripinfodiffpy" title="Permanent link">#</a></h2>
 <p>Computes the difference in travel times, route length, time loss,
 departure- and arrival times between two sets of <strong>--tripinfo-output</strong> files. The files
 should contain the same vehicles.</p>
 <p>usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python tripinfoDiff.py tripinfos1.xml tripinfos2.xml result.xml</span>
-</code></pre></div>
-
+<pre><code>python tripinfoDiff.py tripinfos1.xml tripinfos2.xml result.xml
+</code></pre>
 <p>By default only <code>&lt;tripinfo&gt;</code> elements are considered. By setting option <strong>--persons</strong>, the
 difference for <code>&lt;personinfo&gt;</code> elements is computed instead.</p>
 <h2 id="tripinfobytazpy">tripinfoByTAZ.py<a class="headerlink" href="#tripinfobytazpy" title="Permanent link">#</a></h2>
 <p>Aggregates tripinfo data by origin/destination TAZ. The TAZ data can
 either by taken from the original input file (if it contains 'fromTaz'
 and 'toTaz' attributes) or from a TAZ file.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python tripinfoByTAZ.py -t tripinfos.xml -r trips.xml</span>
-<span class="n">python tripinfoByTAZ.py -t tripinfos.xml -z taz.axml</span>
-</code></pre></div>
-
+<pre><code>python tripinfoByTAZ.py -t tripinfos.xml -r trips.xml
+python tripinfoByTAZ.py -t tripinfos.xml -z taz.axml
+</code></pre>
 <p>By default traveltime (tripinfo attribute 'duration') is aggregated.
 Other attributes can be selected using option <strong>--attribute</strong> (e.g. 'routeLength').
 Output is given as plain text on the command line or in xml format if
 option <strong>--output</strong> is set.</p>
 <h2 id="tripinfobytypepy">tripinfoByType.py<a class="headerlink" href="#tripinfobytypepy" title="Permanent link">#</a></h2>
 <p>Aggregates tripinfo data by vType and person stage type for the given attribute</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python tripinfoByType.py -t tripinfos.xml -a timeLoss</span>
-</code></pre></div>
+<pre><code>python tripinfoByType.py -t tripinfos.xml -a timeLoss
 
+</code></pre>
 <p>Output is given as plain text on the command line or in xml format if option <strong>--output</strong> is set.</p>
 <h2 id="computecoordinationpy">computeCoordination.py<a class="headerlink" href="#computecoordinationpy" title="Permanent link">#</a></h2>
 <p>This tool reads fcd-output and a corridor definition. It computes the fraction of vehicles that passed the corridor without significant slow-down.</p>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">computeCoordination</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">fcd</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">fcd</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">filter</span><span class="o">-</span><span class="n">route</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">E</span><span class="w"> </span><span class="o">--</span><span class="n">entry</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="o">--</span><span class="nb">min</span><span class="o">-</span><span class="n">speed</span><span class="w"> </span><span class="mi">5</span>
-</code></pre></div>
-
+<pre><code>python tools/output/computeCoordination.py --fcd-file fcd.xml --filter-route B,C,D,E --entry C --min-speed 5
+</code></pre>
 <p>This computes the fraction of vehicles that passed the edges <em>B,C,D,E</em> in order (possibly with gaps) and were delayed after passing edge <em>C</em> to less then 5m/s.</p>
 <p>With option <strong>--full-output</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a> Each vehicle that passed the corridor is recorded with entry time and the time at which it was delayed (-1 it it was not delayed).</p>
 <h2 id="tripstatisticspy">tripStatistics.py<a class="headerlink" href="#tripstatisticspy" title="Permanent link">#</a></h2>
@@ -484,51 +469,45 @@ performance measures, t values, H values as well as functions for
 outputs are defined. The chi-square table and the t table are defined in
 the tables.py.</p>
 <p>An exemplary command is shown below.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">tripStatistics</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;</span><span class="n">tripinfo</span><span class="w"> </span><span class="n">files</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">&lt;</span><span class="n">output</span><span class="w"> </span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">e</span>
+<pre><code>python tools/output/tripStatistics.py -t &lt;tripinfo files&gt; -o &lt;output file&gt; -e
 
-<span class="n">where</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="p">:</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">files</span><span class="w"> </span><span class="n">containing</span><span class="w"> </span><span class="n">vehicle</span><span class="w"> </span><span class="n">information</span><span class="p">,</span><span class="w"> </span><span class="n">generated</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">SUMO</span>
-<span class="w">      </span><span class="o">-</span><span class="n">o</span><span class="p">:</span><span class="w"> </span><span class="n">define</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">name</span>
-<span class="w">      </span><span class="o">-</span><span class="n">e</span><span class="p">:</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="bp">true</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">applying</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="p">(</span><span class="n">default</span><span class="p">:</span><span class="w"> </span><span class="bp">false</span><span class="p">)</span>
-<span class="w">      </span><span class="o">-</span><span class="n">k</span><span class="p">:</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="bp">true</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">applying</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Kruskal</span><span class="o">-</span><span class="n">Wallis</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="p">(</span><span class="n">default</span><span class="p">:</span><span class="w"> </span><span class="bp">false</span><span class="p">)</span>
-</code></pre></div>
-
+where -t: name of output files containing vehicle information, generated by SUMO
+      -o: define the output file name
+      -e: set true for applying the t test (default: false)
+      -k: set true for applying the Kruskal-Wallis test (default: false)
+</code></pre>
 <h2 id="computestoppingplaceusagepy">computeStoppingPlaceUsage.py<a class="headerlink" href="#computestoppingplaceusagepy" title="Permanent link">#</a></h2>
 <p>This tool reads stop-output and tracks the number of stopped vehicles over time at stopping places (i.e. parkingArea).
 A distinct output file will be created for each stopping place.
 If option <strong>--only-changes</strong> is set, only time steps in which the number of stopped vehicles changes, are recorded.</p>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">computeStoppingPlaceUsage</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="n">stopinfos</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/output/computeStoppingPlaceUsage.py -s stopinfos.xml
+</code></pre>
 <h2 id="computepassengercountspy">computePassengerCounts.py<a class="headerlink" href="#computepassengercountspy" title="Permanent link">#</a></h2>
 <p>This tool reads stop-output and generates occupancy-over-time for vehicles
 A distinct output file will be created for each vehicle.</p>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">computePassengerCounts</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="n">stopinfos</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/output/computePassengerCounts.py -s stopinfos.xml
+</code></pre>
 <h2 id="parkingsearchtrafficpy">parkingSearchTraffic.py<a class="headerlink" href="#parkingsearchtrafficpy" title="Permanent link">#</a></h2>
 <p>This tool reads <a href="../Simulation/Output/VehRoutes.html">vehroute-output</a> with <a href="../Simulation/Output/VehRoutes.html#further_options">exit-times</a> and generates statistics for the time and the distance vehicles
 spent on searching parking locations as well as the length of the walking way back.
 It evaluates the time and distance between the first reroute and the arrival at the final stop.
 It currently outputs only basic statistics (mean, avg, quartiles etc.).</p>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">parkingSearchTraffic</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="n">vehroutes</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/output/parkingSearchTraffic.py net.net.xml vehroutes.xml
+</code></pre>
 <h2 id="aggregatebatteryoutputpy">aggregateBatteryOutput.py<a class="headerlink" href="#aggregatebatteryoutputpy" title="Permanent link">#</a></h2>
 <p>Script for aggregate battery outputs in intervals.</p>
 <p>Example usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span>\<span class="n">output</span>\<span class="n">aggregateBatteryOutput</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">battery</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">batteryAggregatedx</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">-</span><span class="n">v</span><span class="w"> </span><span class="n">veh0</span>
-</code></pre></div>
-
+<pre><code>python tools\output\aggregateBatteryOutput.py -i battery.xml -o batteryAggregatedx.xml -t 60 -v veh0
+</code></pre>
 <h2 id="fcddiffpy">fcdDiff.py<a class="headerlink" href="#fcddiffpy" title="Permanent link">#</a></h2>
 <p>Computes difference between two <a href="../Simulation/Output/FCDOutput.html">fcd-output files</a> with regard to their distance in space.
 Data points in the files are matched by time and by id (no time shifting is done).</p>
 <p>Statistical outputs are printed on the console. It is also possible to write all error values to an xml file.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">fcdDiff</span><span class="w"> </span><span class="n">fcd</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="n">fcd2</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/output/fcdDiff fcd.xml fcd2.xml
+</code></pre>
 <ul>
 <li>If option <strong>--grouped</strong> is set, separate statistics for each vehicle will be printed</li>
 <li>If option <strong>--tripId</strong> is set, vehicles will be matched by attribute <code>tripId</code> instead of <code>id</code> (requires <strong>--fcd-output.params tripId</strong> to be when generating the fcd-output)</li>
@@ -536,19 +515,16 @@ Data points in the files are matched by time and by id (no time shifting is done
 </ul>
 <h2 id="edgedepartdelaypy">edgeDepartDelay.py<a class="headerlink" href="#edgedepartdelaypy" title="Permanent link">#</a></h2>
 <p>Compute departDelay per edge from tripinfo-output</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">edgeDepartDelay</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="n">tripinfos</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">edgedata</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/output/edgeDepartDelay -t tripinfos.xml -o edgedata.xml
+</code></pre>
 <p>Attributes for each edge will be statistical measures:</p>
-<div class="codehilite"><pre><span></span><code>&lt;edge id=&quot;4/1to3/1&quot; count=&quot;4&quot; min=&quot;0.00&quot; minLabel=&quot;0&quot; max=&quot;3.00&quot; maxLabel=&quot;1&quot; mean=&quot;0.75&quot; Q1=&quot;0.00&quot; median=&quot;0.00&quot; Q3=&quot;3.00&quot; meanAbs=&quot;0.75&quot; medianAbs=&quot;0.00&quot;/&gt;
-</code></pre></div>
-
+<pre><code>&lt;edge id="4/1to3/1" count="4" min="0.00" minLabel="0" max="3.00" maxLabel="1" mean="0.75" Q1="0.00" median="0.00" Q3="3.00" meanAbs="0.75" medianAbs="0.00"/&gt;
+</code></pre>
 <p>The <em>maxLabel</em> attribute will hold the id of the vehicle with the maximum departDelay on a given edge.</p>
 <h2 id="instantoutdiffpy">instantOutDiff.py<a class="headerlink" href="#instantoutdiffpy" title="Permanent link">#</a></h2>
 <p>Compares two files with output of <a href="../Simulation/Output/Instantaneous_Induction_Loops_Detectors.html">instantInductionLoops</a> according to the number of detections for each matching detector and according to the time differences of detections.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">instantOutDiff</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">DETECTIONS1</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="n">DETECTIONS2</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="n">DIFF</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/output/instantOutDiff.py DETECTIONS1.xml DETECTIONS2.xml DIFF.xml
+</code></pre>
 <p>The third agument defines the output file which holds statistical measures for each detector. 
 For each detector in the first input file, the best-matching event in the second file is identified (without constraints on re-use) and the time difference is collected as a data point.
 The attribute <code>delta</code> is the difference in number of detected events of the two files.
@@ -560,7 +536,7 @@ Additional information on missing detectors is given as command line output</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -334,9 +335,8 @@ corresponding option is called <strong>--osm-files</strong> <a href="/docs/Basic
 <p>The following call to <a href="../../netconvert.html">netconvert</a> imports the
 road network stored in "berlin.osm.xml" and stores the SUMO-network
 generated from this data into "berlin.net.xml":</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --osm-files berlin.osm.xml -o berlin.net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --osm-files berlin.osm.xml -o berlin.net.xml
+</code></pre>
 <p>OSM-data always uses WGS84 geo coordinates, which are automatically
 transformed to UTM by netconvert (since sumo 0.11.1). Thus you only need
 explicit projection parameters if a different projection is needed.
@@ -348,9 +348,8 @@ conversion options.</p>
 </div>
 <p>The number of tiles given in both calls must match.</p>
 <h3 id="recommended_netconvert_options">Recommended <a href="../../netconvert.html">netconvert</a> Options<a class="headerlink" href="#recommended_netconvert_options" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="o">--</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">remove</span><span class="w"> </span><span class="o">--</span><span class="nx">ramps</span><span class="p">.</span><span class="nx">guess</span><span class="w"> </span><span class="o">--</span><span class="nx">junctions</span><span class="p">.</span><span class="nx">join</span><span class="w"> </span><span class="o">--</span><span class="nx">tls</span><span class="p">.</span><span class="nx">guess</span><span class="o">-</span><span class="nx">signals</span><span class="w"> </span><span class="o">--</span><span class="nx">tls</span><span class="p">.</span><span class="nx">discard</span><span class="o">-</span><span class="nx">simple</span><span class="w"> </span><span class="o">--</span><span class="nx">tls</span><span class="p">.</span><span class="nx">join</span><span class="w"> </span><span class="o">--</span><span class="nx">tls</span><span class="p">.</span><span class="k">default</span><span class="o">-</span><span class="k">type</span><span class="w"> </span><span class="nx">actuated</span>
-</code></pre></div>
-
+<pre><code> --geometry.remove --ramps.guess --junctions.join --tls.guess-signals --tls.discard-simple --tls.join --tls.default-type actuated
+</code></pre>
 <p>Rationale:</p>
 <ul>
 <li>--geometry.remove : Simplifies the network (saving space) without
@@ -426,64 +425,61 @@ imported using <a href="../../polyconvert.html">polyconvert</a> and then added t
 <code>sumo-gui</code>-configuration.</p>
 <p>To interpret the OSM-data an additional <em>typemap</em>-file is required (the
 example below is identical to <strong><em>&lt;SUMO_HOME&gt;</em></strong>/data/typemap/osmPolyconvert.typ.xml):</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;polygonTypes&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;waterway&quot;</span><span class="w">                </span><span class="na">name=</span><span class="s">&quot;water&quot;</span><span class="w">       </span><span class="na">color=</span><span class="s">&quot;.71,.82,.82&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;natural&quot;</span><span class="w">                 </span><span class="na">name=</span><span class="s">&quot;natural&quot;</span><span class="w">     </span><span class="na">color=</span><span class="s">&quot;.55,.77,.42&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;natural.water&quot;</span><span class="w">           </span><span class="na">name=</span><span class="s">&quot;water&quot;</span><span class="w">       </span><span class="na">color=</span><span class="s">&quot;.71,.82,.82&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;natural.wetland&quot;</span><span class="w">         </span><span class="na">name=</span><span class="s">&quot;water&quot;</span><span class="w">       </span><span class="na">color=</span><span class="s">&quot;.71,.82,.82&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;natural.wood&quot;</span><span class="w">            </span><span class="na">name=</span><span class="s">&quot;forest&quot;</span><span class="w">      </span><span class="na">color=</span><span class="s">&quot;.55,.77,.42&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;natural.land&quot;</span><span class="w">            </span><span class="na">name=</span><span class="s">&quot;land&quot;</span><span class="w">        </span><span class="na">color=</span><span class="s">&quot;.98,.87,.46&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-4&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;polygonTypes&gt;
+  &lt;polygonType id=&quot;waterway&quot;                name=&quot;water&quot;       color=&quot;.71,.82,.82&quot; layer=&quot;-4&quot;/&gt;
+  &lt;polygonType id=&quot;natural&quot;                 name=&quot;natural&quot;     color=&quot;.55,.77,.42&quot; layer=&quot;-4&quot;/&gt;
+  &lt;polygonType id=&quot;natural.water&quot;           name=&quot;water&quot;       color=&quot;.71,.82,.82&quot; layer=&quot;-4&quot;/&gt;
+  &lt;polygonType id=&quot;natural.wetland&quot;         name=&quot;water&quot;       color=&quot;.71,.82,.82&quot; layer=&quot;-4&quot;/&gt;
+  &lt;polygonType id=&quot;natural.wood&quot;            name=&quot;forest&quot;      color=&quot;.55,.77,.42&quot; layer=&quot;-4&quot;/&gt;
+  &lt;polygonType id=&quot;natural.land&quot;            name=&quot;land&quot;        color=&quot;.98,.87,.46&quot; layer=&quot;-4&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;landuse&quot;</span><span class="w">                 </span><span class="na">name=</span><span class="s">&quot;landuse&quot;</span><span class="w">     </span><span class="na">color=</span><span class="s">&quot;.76,.76,.51&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;landuse.forest&quot;</span><span class="w">          </span><span class="na">name=</span><span class="s">&quot;forest&quot;</span><span class="w">      </span><span class="na">color=</span><span class="s">&quot;.55,.77,.42&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;landuse.park&quot;</span><span class="w">            </span><span class="na">name=</span><span class="s">&quot;park&quot;</span><span class="w">        </span><span class="na">color=</span><span class="s">&quot;.81,.96,.79&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;landuse.residential&quot;</span><span class="w">     </span><span class="na">name=</span><span class="s">&quot;residential&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;.92,.92,.89&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;landuse.commercial&quot;</span><span class="w">      </span><span class="na">name=</span><span class="s">&quot;commercial&quot;</span><span class="w">  </span><span class="na">color=</span><span class="s">&quot;.82,.82,.80&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;landuse.industrial&quot;</span><span class="w">      </span><span class="na">name=</span><span class="s">&quot;industrial&quot;</span><span class="w">  </span><span class="na">color=</span><span class="s">&quot;.82,.82,.80&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;landuse.military&quot;</span><span class="w">        </span><span class="na">name=</span><span class="s">&quot;military&quot;</span><span class="w">    </span><span class="na">color=</span><span class="s">&quot;.60,.60,.36&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;landuse.farm&quot;</span><span class="w">            </span><span class="na">name=</span><span class="s">&quot;farm&quot;</span><span class="w">        </span><span class="na">color=</span><span class="s">&quot;.95,.95,.80&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;landuse.greenfield&quot;</span><span class="w">      </span><span class="na">name=</span><span class="s">&quot;farm&quot;</span><span class="w">        </span><span class="na">color=</span><span class="s">&quot;.95,.95,.80&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;landuse.village_green&quot;</span><span class="w">   </span><span class="na">name=</span><span class="s">&quot;farm&quot;</span><span class="w">        </span><span class="na">color=</span><span class="s">&quot;.95,.95,.80&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-3&quot;</span><span class="nt">/&gt;</span>
+  &lt;polygonType id=&quot;landuse&quot;                 name=&quot;landuse&quot;     color=&quot;.76,.76,.51&quot; layer=&quot;-3&quot;/&gt;
+  &lt;polygonType id=&quot;landuse.forest&quot;          name=&quot;forest&quot;      color=&quot;.55,.77,.42&quot; layer=&quot;-3&quot;/&gt;
+  &lt;polygonType id=&quot;landuse.park&quot;            name=&quot;park&quot;        color=&quot;.81,.96,.79&quot; layer=&quot;-3&quot;/&gt;
+  &lt;polygonType id=&quot;landuse.residential&quot;     name=&quot;residential&quot; color=&quot;.92,.92,.89&quot; layer=&quot;-3&quot;/&gt;
+  &lt;polygonType id=&quot;landuse.commercial&quot;      name=&quot;commercial&quot;  color=&quot;.82,.82,.80&quot; layer=&quot;-3&quot;/&gt;
+  &lt;polygonType id=&quot;landuse.industrial&quot;      name=&quot;industrial&quot;  color=&quot;.82,.82,.80&quot; layer=&quot;-3&quot;/&gt;
+  &lt;polygonType id=&quot;landuse.military&quot;        name=&quot;military&quot;    color=&quot;.60,.60,.36&quot; layer=&quot;-3&quot;/&gt;
+  &lt;polygonType id=&quot;landuse.farm&quot;            name=&quot;farm&quot;        color=&quot;.95,.95,.80&quot; layer=&quot;-3&quot;/&gt;
+  &lt;polygonType id=&quot;landuse.greenfield&quot;      name=&quot;farm&quot;        color=&quot;.95,.95,.80&quot; layer=&quot;-3&quot;/&gt;
+  &lt;polygonType id=&quot;landuse.village_green&quot;   name=&quot;farm&quot;        color=&quot;.95,.95,.80&quot; layer=&quot;-3&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;tourism&quot;</span><span class="w">                 </span><span class="na">name=</span><span class="s">&quot;tourism&quot;</span><span class="w">     </span><span class="na">color=</span><span class="s">&quot;.81,.96,.79&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;military&quot;</span><span class="w">                </span><span class="na">name=</span><span class="s">&quot;military&quot;</span><span class="w">    </span><span class="na">color=</span><span class="s">&quot;.60,.60,.36&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;sport&quot;</span><span class="w">                   </span><span class="na">name=</span><span class="s">&quot;sport&quot;</span><span class="w">       </span><span class="na">color=</span><span class="s">&quot;.31,.90,.49&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;leisure&quot;</span><span class="w">                 </span><span class="na">name=</span><span class="s">&quot;leisure&quot;</span><span class="w">     </span><span class="na">color=</span><span class="s">&quot;.81,.96,.79&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;leisure.park&quot;</span><span class="w">            </span><span class="na">name=</span><span class="s">&quot;tourism&quot;</span><span class="w">     </span><span class="na">color=</span><span class="s">&quot;.81,.96,.79&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;aeroway&quot;</span><span class="w">                 </span><span class="na">name=</span><span class="s">&quot;aeroway&quot;</span><span class="w">     </span><span class="na">color=</span><span class="s">&quot;.50,.50,.50&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;aerialway&quot;</span><span class="w">               </span><span class="na">name=</span><span class="s">&quot;aerialway&quot;</span><span class="w">   </span><span class="na">color=</span><span class="s">&quot;.20,.20,.20&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-2&quot;</span><span class="nt">/&gt;</span>
+  &lt;polygonType id=&quot;tourism&quot;                 name=&quot;tourism&quot;     color=&quot;.81,.96,.79&quot; layer=&quot;-2&quot;/&gt;
+  &lt;polygonType id=&quot;military&quot;                name=&quot;military&quot;    color=&quot;.60,.60,.36&quot; layer=&quot;-2&quot;/&gt;
+  &lt;polygonType id=&quot;sport&quot;                   name=&quot;sport&quot;       color=&quot;.31,.90,.49&quot; layer=&quot;-2&quot;/&gt;
+  &lt;polygonType id=&quot;leisure&quot;                 name=&quot;leisure&quot;     color=&quot;.81,.96,.79&quot; layer=&quot;-2&quot;/&gt;
+  &lt;polygonType id=&quot;leisure.park&quot;            name=&quot;tourism&quot;     color=&quot;.81,.96,.79&quot; layer=&quot;-2&quot;/&gt;
+  &lt;polygonType id=&quot;aeroway&quot;                 name=&quot;aeroway&quot;     color=&quot;.50,.50,.50&quot; layer=&quot;-2&quot;/&gt;
+  &lt;polygonType id=&quot;aerialway&quot;               name=&quot;aerialway&quot;   color=&quot;.20,.20,.20&quot; layer=&quot;-2&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;shop&quot;</span><span class="w">                    </span><span class="na">name=</span><span class="s">&quot;shop&quot;</span><span class="w">        </span><span class="na">color=</span><span class="s">&quot;.93,.78,1.0&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;historic&quot;</span><span class="w">                </span><span class="na">name=</span><span class="s">&quot;historic&quot;</span><span class="w">    </span><span class="na">color=</span><span class="s">&quot;.50,1.0,.50&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;man_made&quot;</span><span class="w">                </span><span class="na">name=</span><span class="s">&quot;building&quot;</span><span class="w">    </span><span class="na">color=</span><span class="s">&quot;1.0,.90,.90&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;building&quot;</span><span class="w">                </span><span class="na">name=</span><span class="s">&quot;building&quot;</span><span class="w">    </span><span class="na">color=</span><span class="s">&quot;1.0,.90,.90&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;amenity&quot;</span><span class="w">                 </span><span class="na">name=</span><span class="s">&quot;amenity&quot;</span><span class="w">     </span><span class="na">color=</span><span class="s">&quot;.93,.78,.78&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;amenity.parking&quot;</span><span class="w">         </span><span class="na">name=</span><span class="s">&quot;parking&quot;</span><span class="w">     </span><span class="na">color=</span><span class="s">&quot;.72,.72,.70&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;power&quot;</span><span class="w">                   </span><span class="na">name=</span><span class="s">&quot;power&quot;</span><span class="w">       </span><span class="na">color=</span><span class="s">&quot;.10,.10,.30&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-1&quot;</span><span class="w"> </span><span class="na">discard=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;highway&quot;</span><span class="w">                 </span><span class="na">name=</span><span class="s">&quot;highway&quot;</span><span class="w">     </span><span class="na">color=</span><span class="s">&quot;.10,.10,.10&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-1&quot;</span><span class="w"> </span><span class="na">discard=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;railway&quot;</span><span class="w">                 </span><span class="na">name=</span><span class="s">&quot;railway&quot;</span><span class="w">     </span><span class="na">color=</span><span class="s">&quot;.10,.10,.10&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;-1&quot;</span><span class="w"> </span><span class="na">discard=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+  &lt;polygonType id=&quot;shop&quot;                    name=&quot;shop&quot;        color=&quot;.93,.78,1.0&quot; layer=&quot;-1&quot;/&gt;
+  &lt;polygonType id=&quot;historic&quot;                name=&quot;historic&quot;    color=&quot;.50,1.0,.50&quot; layer=&quot;-1&quot;/&gt;
+  &lt;polygonType id=&quot;man_made&quot;                name=&quot;building&quot;    color=&quot;1.0,.90,.90&quot; layer=&quot;-1&quot;/&gt;
+  &lt;polygonType id=&quot;building&quot;                name=&quot;building&quot;    color=&quot;1.0,.90,.90&quot; layer=&quot;-1&quot;/&gt;
+  &lt;polygonType id=&quot;amenity&quot;                 name=&quot;amenity&quot;     color=&quot;.93,.78,.78&quot; layer=&quot;-1&quot;/&gt;
+  &lt;polygonType id=&quot;amenity.parking&quot;         name=&quot;parking&quot;     color=&quot;.72,.72,.70&quot; layer=&quot;-1&quot;/&gt;
+  &lt;polygonType id=&quot;power&quot;                   name=&quot;power&quot;       color=&quot;.10,.10,.30&quot; layer=&quot;-1&quot; discard=&quot;true&quot;/&gt;
+  &lt;polygonType id=&quot;highway&quot;                 name=&quot;highway&quot;     color=&quot;.10,.10,.10&quot; layer=&quot;-1&quot; discard=&quot;true&quot;/&gt;
+  &lt;polygonType id=&quot;railway&quot;                 name=&quot;railway&quot;     color=&quot;.10,.10,.10&quot; layer=&quot;-1&quot; discard=&quot;true&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;boundary&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;boundary&quot;</span><span class="w">    </span><span class="na">color=</span><span class="s">&quot;1.0,.33,.33&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">fill=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">discard=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;polygonType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;admin_level&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;admin_level&quot;</span><span class="w">    </span><span class="na">color=</span><span class="s">&quot;1.0,.33,.33&quot;</span><span class="w"> </span><span class="na">layer=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">fill=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">discard=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/polygonTypes&gt;</span>
-</code></pre></div>
-
+  &lt;polygonType id=&quot;boundary&quot; name=&quot;boundary&quot;    color=&quot;1.0,.33,.33&quot; layer=&quot;0&quot; fill=&quot;false&quot; discard=&quot;true&quot;/&gt;
+  &lt;polygonType id=&quot;admin_level&quot; name=&quot;admin_level&quot;    color=&quot;1.0,.33,.33&quot; layer=&quot;0&quot; fill=&quot;false&quot; discard=&quot;true&quot;/&gt;
+&lt;/polygonTypes&gt;
+</code></pre>
 <p>Using the typemap file <em>typemap.xml</em> the following call to
 <a href="../../polyconvert.html">polyconvert</a> imports polygons from OSM-data and
 produces a Sumo-polygon file.</p>
-<div class="codehilite"><pre><span></span><code><span class="nx">polyconvert</span><span class="w"> </span><span class="o">--</span><span class="nx">net</span><span class="o">-</span><span class="nx">file</span><span class="w"> </span><span class="nx">berlin</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">xml</span><span class="w"> </span><span class="o">--</span><span class="nx">osm</span><span class="o">-</span><span class="nx">files</span><span class="w"> </span><span class="nx">berlin</span><span class="p">.</span><span class="nx">osm</span><span class="w"> </span><span class="o">--</span><span class="k">type</span><span class="o">-</span><span class="nx">file</span><span class="w"> </span><span class="nx">typemap</span><span class="p">.</span><span class="nx">xml</span><span class="w"> </span><span class="o">-</span><span class="nx">o</span><span class="w"> </span><span class="nx">berlin</span><span class="p">.</span><span class="nx">poly</span><span class="p">.</span><span class="nx">xml</span>
-</code></pre></div>
-
+<pre><code>polyconvert --net-file berlin.net.xml --osm-files berlin.osm --type-file typemap.xml -o berlin.poly.xml
+</code></pre>
 <p>The created polygon file <em>berlin.poly.xml</em> can then be added to a
 <code>sumo-gui</code> configuration:</p>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="nt">&lt;configuration&gt;</span>
-<span class="w">     </span><span class="nt">&lt;input&gt;</span>
-<span class="w">         </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;berlin.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;additional-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;berlin.poly.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">     </span><span class="nt">&lt;/input&gt;</span>
-<span class="w"> </span><span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code> &lt;configuration&gt;
+     &lt;input&gt;
+         &lt;net-file value=&quot;berlin.net.xml&quot;/&gt;
+         &lt;additional-files value=&quot;berlin.poly.xml&quot;/&gt;
+     &lt;/input&gt;
+ &lt;/configuration&gt;
+</code></pre>
 <h2 id="railway-specific_objects">Railway-specific Objects<a class="headerlink" href="#railway-specific_objects" title="Permanent link">#</a></h2>
 <p>By using typemap <a href="https://github.com/eclipse-sumo/sumo/blob/main/data/typemap/osmPolyconvertRail.typ.xml"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/data/typemap/osmPolyconvertRail.typ.xml</a>, numerous railway-related POIs such as</p>
 <ul>
@@ -499,10 +495,9 @@ produces a Sumo-polygon file.</p>
 resulting file called "&lt;PREFIX&gt;.osm.xml" can then be imported using the
 script <em>osmBuild.Py</em>. Both scripts are located in <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools.</p>
 <p>The call is:</p>
-<div class="codehilite"><pre><span></span><code><span class="nx">osmGet</span><span class="p">.</span><span class="nx">py</span><span class="w"> </span><span class="o">--</span><span class="nx">bbox</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">BOUNDING_BOX</span><span class="p">&gt;</span><span class="w"> </span><span class="o">--</span><span class="nx">prefix</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">NAME</span><span class="p">&gt;</span>
-<span class="nx">osmBuild</span><span class="p">.</span><span class="nx">py</span><span class="w"> </span><span class="o">--</span><span class="nx">osm</span><span class="o">-</span><span class="nx">file</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">NAME</span><span class="p">&gt;.</span><span class="nx">osm</span><span class="p">.</span><span class="nx">xml</span><span class="w">  </span><span class="p">[</span><span class="o">--</span><span class="nx">vehicle</span><span class="o">-</span><span class="nx">classes</span><span class="w"> </span><span class="p">(</span><span class="nx">all</span><span class="o">|</span><span class="nx">road</span><span class="o">|</span><span class="nx">passenger</span><span class="p">)]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="k">type</span><span class="o">-</span><span class="nx">file</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">TYPEMAP_FILE</span><span class="p">&gt;]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="nx">netconvert</span><span class="o">-</span><span class="nx">options</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">OPT1</span><span class="p">,</span><span class="nx">OPT2</span><span class="p">,</span><span class="nx">OPT3</span><span class="p">&gt;]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="nx">polyconvert</span><span class="o">-</span><span class="nx">options</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">OPT1</span><span class="p">,</span><span class="nx">OPT2</span><span class="p">,</span><span class="nx">OPT3</span><span class="p">&gt;]</span>
-</code></pre></div>
-
+<pre><code>osmGet.py --bbox &lt;BOUNDING_BOX&gt; --prefix &lt;NAME&gt;
+osmBuild.py --osm-file &lt;NAME&gt;.osm.xml  [--vehicle-classes (all|road|passenger)] [--type-file &lt;TYPEMAP_FILE&gt;] [--netconvert-options &lt;OPT1,OPT2,OPT3&gt;] [--polyconvert-options &lt;OPT1,OPT2,OPT3&gt;]
+</code></pre>
 <p>If "road" is given as parameter, only roads usable by road vehicles are
 extracted, if "passenger" is given, only those accessible by passenger
 vehicles are.</p>
@@ -520,10 +515,9 @@ and <strong>-polyconvert-options</strong></p>
 <p>Note that the scripts also support a secondary syntax for loading even
 large areas by splitting them into multiple tiles and download requests.
 In this case the calls look like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nx">osmGet</span><span class="p">.</span><span class="nx">py</span><span class="w"> </span><span class="o">--</span><span class="nx">bbox</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">BOUNDING_BOX</span><span class="p">&gt;</span><span class="w"> </span><span class="o">--</span><span class="nx">prefix</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">NAME</span><span class="p">&gt;</span><span class="w"> </span><span class="o">--</span><span class="nx">oldapi</span><span class="w"> </span><span class="o">--</span><span class="nx">tiles</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">INT</span><span class="p">&gt;</span>
-<span class="nx">osmBuild</span><span class="p">.</span><span class="nx">py</span><span class="w"> </span><span class="o">--</span><span class="nx">oldapi</span><span class="o">-</span><span class="nx">prefix</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">NAME</span><span class="w"> </span><span class="o">--</span><span class="nx">tiles</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">INT</span><span class="p">&gt;</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="nx">vehicle</span><span class="o">-</span><span class="nx">classes</span><span class="w"> </span><span class="p">(</span><span class="nx">all</span><span class="o">|</span><span class="nx">road</span><span class="o">|</span><span class="nx">passenger</span><span class="p">),</span><span class="nx">ramps</span><span class="p">,</span><span class="nx">tls</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="k">type</span><span class="o">-</span><span class="nx">file</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">TYEPMAP_FILE</span><span class="p">&gt;]</span>
-</code></pre></div>
-
+<pre><code>osmGet.py --bbox &lt;BOUNDING_BOX&gt; --prefix &lt;NAME&gt; --oldapi --tiles &lt;INT&gt;
+osmBuild.py --oldapi-prefix &lt;NAME --tiles &lt;INT&gt; [--vehicle-classes (all|road|passenger),ramps,tls] [--type-file &lt;TYEPMAP_FILE&gt;]
+</code></pre>
 <h1 id="elevation_data">Elevation Data<a class="headerlink" href="#elevation_data" title="Permanent link">#</a></h1>
 <p>Incooperating z-coordinates in networks is still experimental so please
 report anything odd.</p>
@@ -625,15 +619,14 @@ your needs, you can strip it with <strong>--osm.discard-tls</strong> option in
 in a separate
 <a href="../PlainXML.html#node_descriptions">*.nod.xml</a>
 file in a second run of <a href="../../netconvert.html">netconvert</a>:</p>
-<div class="codehilite"><pre><span></span><code><span class="c"># 1. Import the OSM file to SUMO, discarding TLS information.</span>
-<span class="n">netconvert --osm-files berlin.osm.xml --output-file berlin-without-tls.net.xml \</span>
-<span class="n">   --osm.discard-tls</span>
+<pre><code># 1. Import the OSM file to SUMO, discarding TLS information.
+netconvert --osm-files berlin.osm.xml --output-file berlin-without-tls.net.xml \
+   --osm.discard-tls
 
-<span class="c"># 2. Set traffic light information.</span>
-<span class="n">netconvert --sumo-net-file berlin-without-tls.net.xml --node-files tls-controlled-nodes.nod.xml \</span>
-<span class="n">   --output-file berlin-with-tls.net.xml</span>
-</code></pre></div>
-
+# 2. Set traffic light information.
+netconvert --sumo-net-file berlin-without-tls.net.xml --node-files tls-controlled-nodes.nod.xml \
+   --output-file berlin-with-tls.net.xml
+</code></pre>
 <p>where <strong>tls-controlled-nodes.nod.xml</strong> overwrites the type of node to
 <strong>"traffic_light"</strong>. If the node already exists (which is usually the
 case) you don't have to provide any information other than the node's ID
@@ -645,9 +638,8 @@ option.</p>
 <h2 id="isolated_edges">Isolated Edges<a class="headerlink" href="#isolated_edges" title="Permanent link">#</a></h2>
 <p>When dealing with strictly vehicular scenarios it usually helps to add
 the option</p>
-<div class="codehilite"><pre><span></span><code>--remove-edges.isolated
-</code></pre></div>
-
+<pre><code>--remove-edges.isolated
+</code></pre>
 <p>To discard edges which have no predecessor and no successor edge.
 However, this often causes the removal of railways or waterways which is
 not desirable for multi-modal scenarios.</p>
@@ -675,9 +667,8 @@ deleting unwanted features). After you delete the part that does not
 interest you, you have to alter the file using xmlstarlet which actually
 deletes the nodes.</p>
 <p>xmlstarlet can be used like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">xmlstarlet</span><span class="w"> </span><span class="n">ed</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="ss">&quot;/osm/*[@action=&#39;delete&#39;]&quot;</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">input</span><span class="p">.</span><span class="n">osm</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">output</span><span class="p">.</span><span class="n">osm</span>
-</code></pre></div>
-
+<pre><code>xmlstarlet ed -d &quot;/osm/*[@action='delete']&quot; &lt; input.osm &gt; output.osm
+</code></pre>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Up to version 4279 of JOSM, nodes and ways created or modified by JOSM are assigned a negative ID. With each run of JOSM, these IDs are recalculated. Please do not rely on them in your SUMO files. If you decide not to upload your changes to OpenStreetMap, you can remove the minuses in the IDs, assure that IDs are unique and then safely refer to them in SUMO files.</p>
@@ -688,19 +679,17 @@ deletes the nodes.</p>
 can be used to filter out unwanted features from an OSM-file. The
 following command keeps motorways and motorway links while filtering out
 everything else:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">java -jar osmosis.jar --read-xml file=&quot;orginal.osm.xml&quot; --way-key-value \</span>
-<span class="n">    keyValueList=&quot;highway.motorway,highway.motorway_link&quot; \</span>
-<span class="n">    --used-node --write-xml file=&quot;filtered.osm.xml&quot;</span>
-</code></pre></div>
-
+<pre><code>java -jar osmosis.jar --read-xml file=&quot;orginal.osm.xml&quot; --way-key-value \
+    keyValueList=&quot;highway.motorway,highway.motorway_link&quot; \
+    --used-node --write-xml file=&quot;filtered.osm.xml&quot;
+</code></pre>
 <h2 id="osmfilter_osmconvert">osmfilter / osmconvert<a class="headerlink" href="#osmfilter_osmconvert" title="Permanent link">#</a></h2>
 <p><a href="https://wiki.openstreetmap.org/wiki/Osmfilter">osmfilter</a> is a command line tool used to filter OpenStreetMap data files.
 It can be used to preprocess the data and can save a lot of work for netconvert.
 With this tool it is possible to import the top-level roads for a whole country within minutes of processing time.
 It is recommended to use the associated tool <a href="https://wiki.openstreetmap.org/wiki/Osmconvert">osmconvert</a> to convert the data into the '.o5m' format and back to speed up the work on large datasets. The tools can also be used to cut an osm file to a boundary box like this (be aware that the order of coordinates is lon,lat):</p>
-<div class="codehilite"><pre><span></span><code><span class="n">osmconvert -b=10.54,52.257,10.545,52.26 fullnet.osm.xml &gt; myplace.osm.xml</span>
-</code></pre></div>
-
+<pre><code>osmconvert -b=10.54,52.257,10.545,52.26 fullnet.osm.xml &gt; myplace.osm.xml
+</code></pre>
 <h1 id="netconvert_details">netconvert Details<a class="headerlink" href="#netconvert_details" title="Permanent link">#</a></h1>
 <h2 id="road_types">Road Types<a class="headerlink" href="#road_types" title="Permanent link">#</a></h2>
 <p>When importing road networks, <a href="../../netconvert.html">netconvert</a>
@@ -738,15 +727,13 @@ exclude these edges from being imported using the
 <a href="../../netconvert.html">netconvert</a>-option <strong>--remove-edges.by-vclass</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a>[,<a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a>]*.</p>
 <p>For removing all edges which can not be used by passenger vehicles the
 call must be extended by:</p>
-<div class="codehilite"><pre><span></span><code>--remove-edges.by-vclass hov,taxi,bus,delivery,transport,lightrail,cityrail, \
+<pre><code>--remove-edges.by-vclass hov,taxi,bus,delivery,transport,lightrail,cityrail, \
   rail_slow,rail_fast,motorcycle,bicycle,pedestrian
-</code></pre></div>
-
+</code></pre>
 <p>For removing all edges which can not be used by road vehicles the call
 must be extended by:</p>
-<div class="codehilite"><pre><span></span><code>--remove-edges.by-vclass rail_slow,rail_fast,bicycle,pedestrian
-</code></pre></div>
-
+<pre><code>--remove-edges.by-vclass rail_slow,rail_fast,bicycle,pedestrian
+</code></pre>
 <h2 id="relationship_between_osm_ids_and_sumo-ids">Relationship between OSM ids and SUMO-ids<a class="headerlink" href="#relationship_between_osm_ids_and_sumo-ids" title="Permanent link">#</a></h2>
 <p>For the most part, the relationship between OSM and .net.xml is simple:</p>
 <ul>
@@ -759,9 +746,8 @@ must be extended by:</p>
 and the edges with prefix '-' are those in the opposite direction.</p>
 <p>By setting the option <strong>--output.original-names</strong>, each lane in the network will record the element
 name from the input network that it is derived from in a child element:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;origID&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;....&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;param key=&quot;origID&quot; value=&quot;....&quot;/&gt;
+</code></pre>
 <p>Some OSM elements may not appear in the created network because they are
 joined with other elements or converted to (unnamed) geometry points
 along an edge (due to option <strong>--geometry-remove</strong>).
@@ -819,18 +805,16 @@ whole of Scotland) but some precautions should be taken:</p>
 <ul>
 <li>reduce the network size with the following options</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="o">--</span><span class="nx">no</span><span class="o">-</span><span class="nx">internal</span><span class="o">-</span><span class="nx">links</span><span class="p">,</span><span class="w"> </span><span class="o">--</span><span class="nx">keep</span><span class="o">-</span><span class="nx">edges</span><span class="p">.</span><span class="nx">by</span><span class="o">-</span><span class="nx">vclass</span><span class="w"> </span><span class="nx">passenger</span><span class="p">,</span>
-<span class="w">  </span><span class="o">--</span><span class="nx">remove</span><span class="o">-</span><span class="nx">edges</span><span class="p">.</span><span class="nx">by</span><span class="o">-</span><span class="k">type</span><span class="w"> </span><span class="nx">highway</span><span class="p">.</span><span class="nx">track</span><span class="p">,</span><span class="nx">highway</span><span class="p">.</span><span class="nx">services</span><span class="p">,</span><span class="nx">highway</span><span class="p">.</span><span class="nx">unsurfaced</span>
-</code></pre></div>
-
+<pre><code>--no-internal-links, --keep-edges.by-vclass passenger,
+  --remove-edges.by-type highway.track,highway.services,highway.unsurfaced
+</code></pre>
 <ul>
 <li>if you only need major roads you can reduce the network further by
   setting the option</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="o">--</span><span class="nx">keep</span><span class="o">-</span><span class="nx">edges</span><span class="p">.</span><span class="nx">by</span><span class="o">-</span><span class="k">type</span>
-<span class="w">  </span><span class="nx">highway</span><span class="p">.</span><span class="nx">motorway</span><span class="p">,</span><span class="nx">highway</span><span class="p">.</span><span class="nx">motorway_link</span><span class="p">,</span><span class="nx">highway</span><span class="p">.</span><span class="nx">trunk</span><span class="p">,</span><span class="nx">highway</span><span class="p">.</span><span class="nx">trunk_link</span><span class="p">,</span><span class="nx">highway</span><span class="p">.</span><span class="nx">primary</span><span class="p">,</span><span class="nx">highway</span><span class="p">.</span><span class="nx">primary_link</span>
-</code></pre></div>
-
+<pre><code>--keep-edges.by-type
+  highway.motorway,highway.motorway_link,highway.trunk,highway.trunk_link,highway.primary,highway.primary_link
+</code></pre>
 <ul>
 <li>if your network is larger than ~500MB make sure you use the 64bit
   version of sumo and use a computer with plenty of RAM</li>
@@ -866,27 +850,25 @@ This ensures good sidewalk coverage but may lead to double-sidewalks if OSM mode
 <p>Another way to get OSM data is to query via the Overpass API, e.g. with
 python.</p>
 <p>Python Example (Get OSM River Data from OSM in BBox)</p>
-<div class="codehilite"><pre><span></span><code>   <span class="kn">import</span> <span class="nn">requests</span>
-   <span class="kn">import</span> <span class="nn">json</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">def</span><span class="w"> </span><span class="nt">getData</span><span class="o">(</span><span class="nt">lsouthern-most</span><span class="w"> </span><span class="nt">latitude</span><span class="o">,</span><span class="w"> </span><span class="nt">western-most</span><span class="w"> </span><span class="nt">longitude</span><span class="o">,</span><span class="w"> </span><span class="nt">northern-most</span><span class="w"> </span><span class="nt">latitude</span><span class="o">,</span><span class="w"> </span><span class="nt">eastern-most</span><span class="w"> </span><span class="nt">longitude</span><span class="o">):</span>
-<span class="w">     </span><span class="nt">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;way</span><span class="cp">[</span><span class="s2">&quot;waterway&quot;</span><span class="o">=</span><span class="s2">&quot;river&quot;</span><span class="cp">][</span><span class="s2">&quot;ship&quot;</span><span class="o">=</span><span class="s2">&quot;yes&quot;</span><span class="cp">]</span><span class="s1">(bbox:%s, %s, %s, %s)&#39;</span><span class="w"> </span><span class="o">%(</span><span class="nt">southern-most</span><span class="w"> </span><span class="nt">latitude</span><span class="o">,</span><span class="w"> </span><span class="nt">western-most</span><span class="w"> </span><span class="nt">longitude</span><span class="o">,</span><span class="w"> </span><span class="nt">northern-most</span><span class="w"> </span><span class="nt">latitude</span><span class="o">,</span><span class="w"> </span><span class="nt">eastern-most</span><span class="w"> </span><span class="nt">longitude</span><span class="o">)</span>
-<span class="w">     </span><span class="nt">overpass_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://overpass-api.de/api/interpreter&quot;</span>
-<span class="w">     </span><span class="nt">overpass_query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">     </span><span class="cp">[</span><span class="nx">out</span><span class="p">:</span><span class="nx">json</span><span class="cp">][</span><span class="nx">timeout</span><span class="p">:</span><span class="mi">25</span><span class="cp">]</span><span class="s2">;</span>
-<span class="s2">     (</span>
-<span class="s2">       &quot;&quot;&quot;</span><span class="o">+</span><span class="nt">query</span><span class="o">+</span><span class="s2">&quot;&quot;&quot;;</span>
-<span class="s2">     );</span>
-<span class="s2">     out body;</span>
-<span class="s2">     &gt;;</span>
-<span class="s2">     out skel qt;</span>
-<span class="s2">     &quot;&quot;&quot;</span>
-<span class="w">     </span><span class="nt">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">requests</span><span class="p">.</span><span class="nc">get</span><span class="o">(</span><span class="nt">overpass_url</span><span class="o">,</span><span class="w"> </span><span class="nt">params</span><span class="o">=</span><span class="p">{</span><span class="err">&#39;data&#39;:</span><span class="w"> </span><span class="err">overpass_query</span><span class="p">}</span><span class="o">)</span>
-<span class="w">     </span><span class="nt">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">response</span><span class="p">.</span><span class="nc">json</span><span class="o">()</span>
-<span class="w">     </span><span class="nt">return</span><span class="w"> </span><span class="nt">data</span><span class="o">,</span><span class="w"> </span><span class="nt">query</span>
-</code></pre></div>
-
+<pre><code>   import requests
+   import json
+</code></pre>
+<pre><code>   def getData(lsouthern-most latitude, western-most longitude, northern-most latitude, eastern-most longitude):
+     query = 'way[&quot;waterway&quot;=&quot;river&quot;][&quot;ship&quot;=&quot;yes&quot;](bbox:%s, %s, %s, %s)' %(southern-most latitude, western-most longitude, northern-most latitude, eastern-most longitude)
+     overpass_url = &quot;https://overpass-api.de/api/interpreter&quot;
+     overpass_query = &quot;&quot;&quot;
+     [out:json][timeout:25];
+     (
+       &quot;&quot;&quot;+query+&quot;&quot;&quot;;
+     );
+     out body;
+     &gt;;
+     out skel qt;
+     &quot;&quot;&quot;
+     response = requests.get(overpass_url, params={'data': overpass_query})
+     data = response.json()
+     return data, query
+</code></pre>
 <p>Caution: If the data volume is too large, the overpass API aborts.</p>
 <p>More information about the query syntax and a GUI for testing the queries
 can be found on the website <a href="https://overpass-turbo.eu/">https://overpass-turbo.eu/</a>.</p>
@@ -913,7 +895,7 @@ can be found on the website <a href="https://overpass-turbo.eu/">https://overpas
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

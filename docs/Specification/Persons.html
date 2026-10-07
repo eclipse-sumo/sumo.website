@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -270,15 +271,14 @@ connected sequence of <a href="#rides">ride</a>,
 <a href="#walks">walk</a> and
 <a href="#stops">stop</a> elements as described
 below. Each person must have at least one stage in its plan.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;foo&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;a b c&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;c&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;d&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;busline1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="err">...</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="err">...</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="err">...</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/person&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;person id=&quot;foo&quot; depart=&quot;0&quot;&gt;
+    &lt;walk edges=&quot;a b c&quot;/&gt;
+    &lt;ride from=&quot;c&quot; to=&quot;d&quot; lines=&quot;busline1&quot;/&gt;
+    &lt;ride .../&gt;
+    &lt;walk .../&gt;
+    &lt;stop .../&gt;
+&lt;/person&gt;
+</code></pre>
 <h2 id="available_person_attributes">Available Person Attributes<a class="headerlink" href="#available_person_attributes" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -505,20 +505,18 @@ known:</p>
 </table>
 <p>*: Only one of these attributes is allowed.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;personFlow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;p&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
-<span class="w">       </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;end&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/personFlow&gt;</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;personFlow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;person&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;80&quot;</span><span class="nt">&gt;</span>
-<span class="w">       </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2/3to1/3&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;1/3to0/3&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;55&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1/3to0/3&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0/4to1/4&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;train0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;0/4to1/4&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;1/4to2/4&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;45&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;1/4to2/4_0&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">actType=</span><span class="s">&quot;singing&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1/4to2/4&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;3/4to4/4&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;car0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/personFlow&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;personFlow id=&quot;p&quot; begin=&quot;0&quot; end=&quot;10&quot; period=&quot;2&quot;&gt;
+       &lt;walk from=&quot;beg&quot; to=&quot;end&quot;/&gt;
+   &lt;/personFlow&gt;
+</code></pre>
+<pre><code class="language-xml">   &lt;personFlow id=&quot;person&quot; begin=&quot;0&quot; end=&quot;1&quot; number=&quot;4&quot; departPos=&quot;80&quot;&gt;
+       &lt;walk from=&quot;2/3to1/3&quot; to=&quot;1/3to0/3&quot; arrivalPos=&quot;55&quot;/&gt;
+       &lt;ride from=&quot;1/3to0/3&quot; to=&quot;0/4to1/4&quot; lines=&quot;train0&quot;/&gt;
+       &lt;walk from=&quot;0/4to1/4&quot; to=&quot;1/4to2/4&quot; arrivalPos=&quot;45&quot;/&gt;
+       &lt;stop lane=&quot;1/4to2/4_0&quot; duration=&quot;20&quot; startPos=&quot;40&quot; actType=&quot;singing&quot;/&gt;
+       &lt;ride from=&quot;1/4to2/4&quot; to=&quot;3/4to4/4&quot; lines=&quot;car0&quot;/&gt;
+   &lt;/personFlow&gt;
+</code></pre>
 <h1 id="simulation_input">Simulation input<a class="headerlink" href="#simulation_input" title="Permanent link">#</a></h1>
 <p>The input for a person consists of a sequence of <em>stages</em> of the 3 types
 given below.</p>
@@ -836,25 +834,23 @@ If the personFlow is defined with attribute <code>number</code>, then all person
 If the personFlow is defined with attribute <code>period</code>, then the persons will be created with the indicated period and be put in the vehicle at a later time (and possibly different vehicles if a flow id was used in <code>lines</code>).</p>
 <h2 id="examples_1">Examples<a class="headerlink" href="#examples_1" title="Permanent link">#</a></h2>
 <p>Person <code>p0</code> starts within the vehicle defined by trip <code>v0</code> at edge <code>gneE0</code>. The ride ends at edge <code>gneE1</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;v0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;15.00&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;gneE0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;gneE2&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;gneE1_1&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;60.00&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/trip&gt;</span>
-<span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;p0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;triggered&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;gneE1&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;v0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;gneE3&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/person&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;trip id=&quot;v0&quot; depart=&quot;15.00&quot; from=&quot;gneE0&quot; to=&quot;gneE2&quot;&gt;
+    &lt;stop lane=&quot;gneE1_1&quot; duration=&quot;60.00&quot;/&gt;
+&lt;/trip&gt;
+&lt;person id=&quot;p0&quot; depart=&quot;triggered&quot;&gt;
+    &lt;ride to=&quot;gneE1&quot; lines=&quot;v0&quot;/&gt;
+    &lt;walk to=&quot;gneE3&quot;/&gt;
+&lt;/person&gt;
+</code></pre>
 <p>Persons defined by personFlow <code>p0</code> start within the vehicle defined by trip <code>v0</code> at edge <code>gneE0</code>. The ride ends at edge <code>gneE1</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;v0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;15.00&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;gneE0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;gneE2&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;gneE1_1&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;60.00&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/trip&gt;</span>
-<span class="nt">&lt;personFlow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;p0&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;triggered&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;gneE1&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;v0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;gneE3&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/person&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;trip id=&quot;v0&quot; depart=&quot;15.00&quot; from=&quot;gneE0&quot; to=&quot;gneE2&quot;&gt;
+    &lt;stop lane=&quot;gneE1_1&quot; duration=&quot;60.00&quot;/&gt;
+&lt;/trip&gt;
+&lt;personFlow id=&quot;p0&quot; begin=&quot;triggered&quot; number=&quot;2&quot;&gt;
+    &lt;ride to=&quot;gneE1&quot; lines=&quot;v0&quot;/&gt;
+    &lt;walk to=&quot;gneE3&quot;/&gt;
+&lt;/person&gt;
+</code></pre>
 <h1 id="router_input">Router input<a class="headerlink" href="#router_input" title="Permanent link">#</a></h1>
 <p>The following definitions can be processed with <a href="../duarouter.html">duarouter</a> and <a href="../sumo.html">sumo</a>.</p>
 <h2 id="persontrips">PersonTrips<a class="headerlink" href="#persontrips" title="Permanent link">#</a></h2>
@@ -965,42 +961,40 @@ possible to switch to a car or bicycle after a different mode except when adding
 <p>The following is an example for a person who walks to a train station,
 rides the train, alights and walks for a bit, then stops for an activity
 and finally gets into a car and drives away.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;person0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2/3to1/3&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;1/3to0/3&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;80&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;55&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1/3to0/3&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0/4to1/4&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;train0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;0/4to1/4&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;1/4to2/4&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;30&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;1/4to2/4_0&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">actType=</span><span class="s">&quot;singing&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1/4to2/4&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;3/4to4/4&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;car0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/person&gt;</span>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;person id=&quot;person0&quot; depart=&quot;0&quot;&gt;
+        &lt;walk from=&quot;2/3to1/3&quot; to=&quot;1/3to0/3&quot; departPos=&quot;80&quot; arrivalPos=&quot;55&quot;/&gt;
+        &lt;ride from=&quot;1/3to0/3&quot; to=&quot;0/4to1/4&quot; lines=&quot;train0&quot;/&gt;
+        &lt;walk from=&quot;0/4to1/4&quot; to=&quot;1/4to2/4&quot; arrivalPos=&quot;30&quot;/&gt;
+        &lt;stop lane=&quot;1/4to2/4_0&quot; duration=&quot;20&quot; startPos=&quot;40&quot; actType=&quot;singing&quot;/&gt;
+        &lt;ride from=&quot;1/4to2/4&quot; to=&quot;3/4to4/4&quot; lines=&quot;car0&quot;/&gt;
+    &lt;/person&gt;
 
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;train0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;50&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;1/4to1/3 1/3to0/3 0/3to0/4 0/4to1/4 1/4to1/3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop0&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;120&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop1&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;180&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
+    &lt;vehicle id=&quot;train0&quot; depart=&quot;50&quot;&gt;
+        &lt;route edges=&quot;1/4to1/3 1/3to0/3 0/3to0/4 0/4to1/4 1/4to1/3&quot;/&gt;
+        &lt;stop busStop=&quot;busStop0&quot; until=&quot;120&quot; duration=&quot;10&quot;/&gt;
+        &lt;stop busStop=&quot;busStop1&quot; until=&quot;180&quot; duration=&quot;10&quot;/&gt;
+    &lt;/vehicle&gt;
 
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;car0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;triggered&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;1/4to2/4 2/4to3/4 3/4to4/4&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;30&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;1/4to2/4_0&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;60&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
+    &lt;vehicle id=&quot;car0&quot; depart=&quot;triggered&quot;&gt;
+        &lt;route edges=&quot;1/4to2/4 2/4to3/4 3/4to4/4&quot; departPos=&quot;30&quot;/&gt;
+        &lt;stop lane=&quot;1/4to2/4_0&quot; duration=&quot;20&quot; startPos=&quot;40&quot; endPos=&quot;60&quot;/&gt;
+    &lt;/vehicle&gt;
 
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+&lt;/routes&gt;
+</code></pre>
 <p>You can omit the from attribute in the second and following movements
 and you can use bus stops as destinations. For trains the busStops
 should have access lanes. The movement of person0 in the example above
 could also be written as</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;person0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2/3to1/3&quot;</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop0&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;80&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;55&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop1&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;train0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;1/4to2/4&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;30&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;1/4to2/4_0&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">actType=</span><span class="s">&quot;singing&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1/4to2/4&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;3/4to4/4&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;car0&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/person&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;person id=&quot;person0&quot; depart=&quot;0&quot;&gt;
+    &lt;walk from=&quot;2/3to1/3&quot; busStop=&quot;busStop0&quot; departPos=&quot;80&quot; arrivalPos=&quot;55&quot;/&gt;
+    &lt;ride busStop=&quot;busStop1&quot; lines=&quot;train0&quot;/&gt;
+    &lt;walk to=&quot;1/4to2/4&quot; arrivalPos=&quot;30&quot;/&gt;
+    &lt;stop lane=&quot;1/4to2/4_0&quot; duration=&quot;20&quot; startPos=&quot;40&quot; actType=&quot;singing&quot;/&gt;
+    &lt;ride from=&quot;1/4to2/4&quot; to=&quot;3/4to4/4&quot; lines=&quot;car0&quot;/&gt;
+&lt;/person&gt;
+</code></pre>
 <h1 id="visualization">Visualization<a class="headerlink" href="#visualization" title="Permanent link">#</a></h1>
 <p>Persons are rendered in the GUI with the configured detail-level. When
 assigning a type with attribute <em>imgFile</em>, the person may be rendered
@@ -1051,7 +1045,7 @@ placeholder <code>&lt;DEVICENAME&gt;</code> below:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

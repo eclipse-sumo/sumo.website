@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="css/fontawesome.all.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="js/jquery-3.7.0.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -276,11 +277,10 @@ licensing (especially concerning the "extra" build which contains GPL code to su
 <a href="https://build.opensuse.org/project/show/science:dlr">open build service</a>.
 For a detailed list of repositories see below.</p>
 <p>To add the most recent sumo to your ubuntu from the launchpad repository you will need to do:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span><span class="w"> </span><span class="n">ppa</span><span class="p">:</span><span class="n">sumo</span><span class="o">/</span><span class="n">stable</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">update</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">sumo</span><span class="w"> </span><span class="n">sumo</span><span class="o">-</span><span class="n">tools</span><span class="w"> </span><span class="n">sumo</span><span class="o">-</span><span class="n">doc</span>
-</code></pre></div>
-
+<pre><code>sudo add-apt-repository ppa:sumo/stable
+sudo apt-get update
+sudo apt-get install sumo sumo-tools sumo-doc
+</code></pre>
 <h3 id="repositories">Repositories<a class="headerlink" href="#repositories" title="Permanent link">#</a></h3>
 <p>The build service provides <a href="https://software.opensuse.org//download.html?project=science%3Adlr&amp;package=sumo">instructions on installation</a> for every distribution.</p>
 <p>If the repositories do
@@ -334,11 +334,10 @@ launchpad project as well as an archlinux package:</p>
 <p>There is also a <a href="https://flathub.org/apps/org.eclipse.sumo">flatpak</a> available for SUMO.</p>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h3>
 <p>Adding the repository and installing (the quick and dirty way without checking GPG keys!) looks like this, for yum on CentOS 7:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">yum</span><span class="o">-</span><span class="n">config</span><span class="o">-</span><span class="n">manager</span><span class="w"> </span><span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">repo</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">opensuse</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">repositories</span><span class="o">/</span><span class="n">science</span><span class="p">:</span><span class="o">/</span><span class="n">dlr</span><span class="o">/</span><span class="n">CentOS_7</span><span class="o">/</span>
-<span class="n">yum</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="w"> </span><span class="o">--</span><span class="n">nogpgcheck</span><span class="w"> </span><span class="n">epel</span><span class="o">-</span><span class="n">release</span>
-<span class="n">yum</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="w"> </span><span class="o">--</span><span class="n">nogpgcheck</span><span class="w"> </span><span class="n">sumo</span><span class="o">-</span><span class="mf">1.27</span><span class="o">.</span><span class="mi">1</span>
-</code></pre></div>
-
+<pre><code>yum-config-manager --add-repo=https://download.opensuse.org/repositories/science:/dlr/CentOS_7/
+yum install -y --nogpgcheck epel-release
+yum install -y --nogpgcheck sumo-1.27.1
+</code></pre>
 <p>Please be aware, that all build service repos contain the latest nightly build
 and the current release, so make sure you specify the version if you do not want the latest build.</p>
 <p>To find out which versions are available on ubuntu use <code>apt show sumo -a</code>.</p>
@@ -366,12 +365,11 @@ solutions or Linux Makefiles. This download does not contain tests. Download as:
 (pip usually chooses the newest version compatible with your system, so unless you are still on CentOS 7 or openSUSE 15.x you should be fine).</p>
 <p>The applications are available for Python 2 and Python 3, libsumo only for Python 3.9 and above. This gives an easy way to test
 a new SUMO version via <a href="https://docs.python.org/3/library/venv.html">virtual environments</a> or a nightly build using the following commands (on Linux):</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">sumo_test</span>
-<span class="o">.</span> <span class="n">sumo_test</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">eclipse</span><span class="o">-</span><span class="n">sumo</span>
-<span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import sumo; print(&#39;SUMO_HOME=&#39; + sumo.SUMO_HOME)&quot;</span>
-</code></pre></div>
-
+<pre><code>python -m venv sumo_test
+. sumo_test/bin/activate
+pip install eclipse-sumo
+python -c &quot;import sumo; print('SUMO_HOME=' + sumo.SUMO_HOME)&quot;
+</code></pre>
 <p>The last line prints the value to set for the SUMO_HOME environment variable when using this virtual environment.</p>
 <div class="admonition caution">
 <p class="admonition-title">macOS dependencies</p>
@@ -414,9 +412,8 @@ see <a href="Downloads.html#note_on_licensing">the notes below</a>. The followin
 since they cover more different Python versions, especially for Windows and macOS. But if you prefer a binary from Berlin
 use the first source.
 To install the latest nightly version (it is strongly encouraged to do this in a virtual environment) use <a href="#python_packages_virtual_environments">the instructions above</a> replacing the install line with:</p>
-<div class="codehilite"><pre><span></span><code>pip install -f https://sumo.dlr.de/daily/ciwheels/ eclipse-sumo
-</code></pre></div>
-
+<pre><code>pip install -f https://sumo.dlr.de/daily/ciwheels/ eclipse-sumo
+</code></pre>
 <p>Although this is a python package, it contains all compiled SUMO binaries and should be fully functional (see the requirements in <a href="#python_packages_virtual_environments">the section above</a>).
 The nightly python wheels are also available for libsumo, sumolib and traci.</p>
 <p>The Linux <a href="#repositories">repositories</a> at the open build service contain a nightly build as well.</p>
@@ -542,7 +539,7 @@ video generation, download the "extra" build.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -236,9 +237,8 @@ definitions</a>. The tool
 requires the SUMO-network converted from VISUM, the turning
 probabilities from VISUM, and the name of the file into which the
 converted turning probabilities shall be written:</p>
-<div class="codehilite"><pre><span></span><code>visum_convertTurnPercentages.py &lt;SUMO_NET&gt; &lt;VISUM_TURNINGS&gt; &lt;OUTPUT&gt;
-</code></pre></div>
-
+<pre><code>visum_convertTurnPercentages.py &lt;SUMO_NET&gt; &lt;VISUM_TURNINGS&gt; &lt;OUTPUT&gt;
+</code></pre>
 <p>The script is located in <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools/import/visum. It is written in Python.</p>
 <h2 id="usability">Usability<a class="headerlink" href="#usability" title="Permanent link">#</a></h2>
 <p>It seems as using turning ratios for large areas would not make any
@@ -309,9 +309,8 @@ written. Additional options are shown in the following table:</p>
 </tbody>
 </table>
 <p>Example call:</p>
-<div class="codehilite"><pre><span></span><code>visum_convertRoutes.py -n &lt;SUMO_NET&gt; -r &lt;VISUM_ROUTES&gt; -o &lt;OUTPUT&gt; --uniform
-</code></pre></div>
-
+<pre><code>visum_convertRoutes.py -n &lt;SUMO_NET&gt; -r &lt;VISUM_ROUTES&gt; -o &lt;OUTPUT&gt; --uniform
+</code></pre>
 <p>The script is located in <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools/import/visum. It is written
 in Python.</p>
 <h2 id="usability_1">Usability<a class="headerlink" href="#usability_1" title="Permanent link">#</a></h2>
@@ -329,7 +328,7 @@ in Python.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

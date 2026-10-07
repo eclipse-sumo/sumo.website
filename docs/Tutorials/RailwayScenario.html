@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -219,17 +220,15 @@ The GTFS data is obtained from the
 <h1 id="filtering_osm">Filtering OSM<a class="headerlink" href="#filtering_osm" title="Permanent link">#</a></h1>
 <p>For our purpose we only require the railway specific OSM data. Filtering can be accomplished with <a href="https://wiki.openstreetmap.org/wiki/Osmconvert">osmconvert</a> and
 <a href="https://wiki.openstreetmap.org/wiki/Osmfilter">osmfilter</a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">osmconvert brandenburg-latest.osm.pbf -o=osm.o5m</span>
-<span class="n">osmfilter osm.o5m --keep-ways=railway= --keep-nodes= --keep-relations=route=train --keep-relations=route=light_rail --drop-author --drop-tags=&quot;note= old_name= source= name:etymology:wikidata= wikipedia=&quot; &gt; osm_rail.xml</span>
-</code></pre></div>
-
+<pre><code>osmconvert brandenburg-latest.osm.pbf -o=osm.o5m
+osmfilter osm.o5m --keep-ways=railway= --keep-nodes= --keep-relations=route=train --keep-relations=route=light_rail --drop-author --drop-tags=&quot;note= old_name= source= name:etymology:wikidata= wikipedia=&quot; &gt; osm_rail.xml
+</code></pre>
 <h1 id="importing_and_processing_the_rail_network">Importing and processing the rail network<a class="headerlink" href="#importing_and_processing_the_rail_network" title="Permanent link">#</a></h1>
 <p>The import consists of two stages: importing the OSM data with netconvert and then post-processing some edge-attributes
 based on network topology to improve rail routing and stop track assignment.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert</span><span class="w"> </span><span class="o">--</span><span class="n">osm</span><span class="o">-</span><span class="n">files</span><span class="w"> </span><span class="n">osm_rail</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">ptstop</span><span class="o">-</span><span class="n">output</span><span class="w"> </span><span class="n">osm</span><span class="o">.</span><span class="n">stops</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">ptline</span><span class="o">-</span><span class="n">output</span><span class="w"> </span><span class="n">osm_ptlines</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">gz</span><span class="w"> </span><span class="o">-</span><span class="n">l</span><span class="w"> </span><span class="n">osm</span><span class="o">.</span><span class="n">log</span><span class="w"> </span><span class="o">--</span><span class="n">keep</span><span class="o">-</span><span class="n">edges</span><span class="o">.</span><span class="n">by</span><span class="o">-</span><span class="n">vclass</span><span class="w"> </span><span class="n">rail</span><span class="p">,</span><span class="n">rail_urban</span><span class="w"> </span><span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">internal</span><span class="o">-</span><span class="n">links</span><span class="w"> </span><span class="o">--</span><span class="n">railway</span><span class="o">.</span><span class="k">signal</span><span class="o">.</span><span class="n">guess</span><span class="o">.</span><span class="n">by</span><span class="o">-</span><span class="n">stops</span><span class="w"> </span><span class="o">--</span><span class="n">railway</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">all</span><span class="o">-</span><span class="n">bidi</span><span class="w"> </span><span class="o">--</span><span class="n">ptline</span><span class="o">-</span><span class="n">clean</span><span class="o">-</span><span class="n">up</span><span class="w"> </span><span class="o">--</span><span class="n">railway</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">ptline</span><span class="o">-</span><span class="n">priority</span><span class="w"> </span><span class="n">rail</span><span class="p">,</span><span class="n">rail_urban</span><span class="w"> </span><span class="o">--</span><span class="n">output</span><span class="o">.</span><span class="n">street</span><span class="o">-</span><span class="n">names</span>
-<span class="n">python</span><span class="w"> </span><span class="o">$</span><span class="n">SUMO_HOME</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">patchRailPriorities</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">gz</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">net2</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">gz</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">osm_ptlines</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="n">osm</span><span class="o">.</span><span class="n">stops</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="n">osm</span><span class="o">.</span><span class="n">stops2</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">stop</span><span class="o">-</span><span class="n">signals</span>
-</code></pre></div>
-
+<pre><code>netconvert --osm-files osm_rail.xml --ptstop-output osm.stops.xml --ptline-output osm_ptlines.xml -o net.net.xml.gz -l osm.log --keep-edges.by-vclass rail,rail_urban --no-internal-links --railway.signal.guess.by-stops --railway.topology.all-bidi --ptline-clean-up --railway.topology.ptline-priority rail,rail_urban --output.street-names
+python $SUMO_HOME/tools/net/patchRailPriorities.py -n net.net.xml.gz -o net2.net.xml.gz -r osm_ptlines.xml -s osm.stops.xml -O osm.stops2.xml --add-stop-signals
+</code></pre>
 <p>The relevant netconvert options are explained in the following</p>
 <ul>
 <li><strong>--ptstop-output osm.stops.xml</strong>: Required for guiding GTFS import</li>
@@ -242,9 +241,8 @@ based on network topology to improve rail routing and stop track assignment.</p>
 <li><strong>--output.street-names</strong>: Assigns track numbers (line ids) in the network</li>
 </ul>
 <h1 id="importing_gtfs">Importing GTFS<a class="headerlink" href="#importing_gtfs" title="Permanent link">#</a></h1>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="o">$</span><span class="n">SUMO_HOME</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">import</span><span class="o">/</span><span class="n">gtfs</span><span class="o">/</span><span class="n">gtfs2pt</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">gtfs</span><span class="w"> </span><span class="n">GTFS</span><span class="o">.</span><span class="n">zip</span><span class="w"> </span><span class="o">--</span><span class="n">date</span><span class="w"> </span><span class="mi">20260622</span><span class="w"> </span><span class="o">-</span><span class="n">H</span><span class="w"> </span><span class="o">--</span><span class="n">stops</span><span class="w"> </span><span class="n">osm</span><span class="o">.</span><span class="n">stops2</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">sort</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">net2</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">gz</span><span class="w"> </span><span class="o">--</span><span class="n">modes</span><span class="w"> </span><span class="n">train</span><span class="p">,</span><span class="n">light_rail</span><span class="w"> </span><span class="o">--</span><span class="n">radius</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="o">--</span><span class="n">network</span><span class="o">-</span><span class="n">split</span><span class="o">-</span><span class="n">vclass</span><span class="w"> </span><span class="o">--</span><span class="n">rail</span><span class="o">-</span><span class="n">priority</span><span class="o">-</span><span class="n">factor</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">--</span><span class="n">remove</span><span class="o">-</span><span class="n">detour</span><span class="o">-</span><span class="n">factor</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">--</span><span class="n">maxcache</span><span class="w"> </span><span class="mi">2000</span>
-</code></pre></div>
-
+<pre><code>python $SUMO_HOME/tools/import/gtfs/gtfs2pt.py --gtfs GTFS.zip --date 20260622 -H --stops osm.stops2.xml --sort -n net2.net.xml.gz --modes train,light_rail --radius 500 --network-split-vclass --rail-priority-factor 5 --remove-detour-factor 5 --maxcache 2000
+</code></pre>
 <p>The relevant options are explained in the following</p>
 <ul>
 <li><strong>--date</strong>: The GTFS data from VBB is valid for the date of download an at least the subsequent two weeks. The argument for must be adapted accordingly</li>
@@ -255,9 +253,8 @@ based on network topology to improve rail routing and stop track assignment.</p>
 <li><strong>--maxxache 2000</strong>: Setting a larger cache can speed up routing in large scenarios. Experiment to find a value that does not exhaust your memory.</li>
 </ul>
 <h1 id="running_the_scenario">Running the Scenario<a class="headerlink" href="#running_the_scenario" title="Permanent link">#</a></h1>
-<div class="codehilite"><pre><span></span><code><span class="n">sumo</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">net2</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">gz</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="n">gtfs_pt_stops</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="p">,</span><span class="n">vtypes</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">gtfs_pt_vehicles</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">time</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">teleport</span><span class="w"> </span><span class="mi">1800</span><span class="w"> </span><span class="o">--</span><span class="n">time</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">teleport</span><span class="o">.</span><span class="n">railsignal</span><span class="o">-</span><span class="n">deadlock</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="o">--</span><span class="n">railsignal</span><span class="o">.</span><span class="n">max</span><span class="o">-</span><span class="n">block</span><span class="o">-</span><span class="n">length</span><span class="w"> </span><span class="mf">5e5</span><span class="w"> </span><span class="o">-</span><span class="n">H</span>
-</code></pre></div>
-
+<pre><code>sumo -n net2.net.xml.gz -a gtfs_pt_stops.add.xml,vtypes.xml -r gtfs_pt_vehicles.add.xml --time-to-teleport 1800 --time-to-teleport.railsignal-deadlock 300 -t --railsignal.max-block-length 5e5 -H
+</code></pre>
 <p>The relevant options are explained in the following</p>
 <ul>
 <li><strong>--time-to-teleport 1800</strong>: Trains may have to wait due to missing railway signals. To avoid premature teleporting, it is useful to increase the default from 300s to 1800s.</li>
@@ -272,7 +269,7 @@ based on network topology to improve rail routing and stop track assignment.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

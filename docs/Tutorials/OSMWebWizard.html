@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -230,9 +231,8 @@ in the sumo-gui.</p>
 under the directory <em>tools</em> in your sumo installation root. You start
 the OSM Web wizard by invoking the following command in the <em>tools</em>
 directory:</p>
-<div class="codehilite"><pre><span></span><code>python osmWebWizard.py
-</code></pre></div>
-
+<pre><code>python osmWebWizard.py
+</code></pre>
 <p>Windows users may also invoke the command by clicking <em>All Programs -&gt;
 SUMO -&gt; OSM Web Wizard</em>. Once the script is running, a web browser
 should open showing a map excerpt of central Berlin.</p>
@@ -319,19 +319,18 @@ intermediate files in a local directory with a name in the format of
 the data will be stored inside the <em>tools</em> directory. Otherwise, a new
 directory <em>~/SUMO/yyyy-mm-dd-hh-mm-ss</em> will be created to host the
 data. The contents of the directory look like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">   ➜  2016-10-17-14-54-30 ls</span>
-<span class="n">   build.bat                  osm.net.xml                osm.rail.rou.alt.xml       osm.tram.rou.alt.xml</span>
-<span class="n">   osm.bicycle.rou.alt.xml    osm.netccfg                osm.rail.rou.xml           osm.tram.rou.xml</span>
-<span class="n">   osm.bicycle.rou.xml        osm.passenger.rou.alt.xml  osm.rail.trips.xml         osm.tram.trips.xml</span>
-<span class="n">   osm.bicycle.trips.xml      osm.passenger.rou.xml      osm.rail_urban.rou.alt.xml osm.truck.rou.alt.xml</span>
-<span class="n">   osm.bus.rou.alt.xml        osm.passenger.trips.xml    osm.rail_urban.rou.xml     osm.truck.rou.xml</span>
-<span class="n">   osm.bus.rou.xml            osm.pedestrian.rou.alt.xml osm.rail_urban.trips.xml   osm.truck.trips.xml</span>
-<span class="n">   osm.bus.trips.xml          osm.pedestrian.rou.xml     osm.ship.rou.alt.xml       osm.view.xml</span>
-<span class="n">   osm.motorcycle.rou.alt.xml osm.pedestrian.trips.xml   osm.ship.rou.xml           osm_bbox.osm.xml</span>
-<span class="n">   osm.motorcycle.rou.xml     osm.poly.xml               osm.ship.trips.xml         run.bat</span>
-<span class="n">   osm.motorcycle.trips.xml   osm.polycfg                osm.sumocfg</span>
-</code></pre></div>
-
+<pre><code>   ➜  2016-10-17-14-54-30 ls
+   build.bat                  osm.net.xml                osm.rail.rou.alt.xml       osm.tram.rou.alt.xml
+   osm.bicycle.rou.alt.xml    osm.netccfg                osm.rail.rou.xml           osm.tram.rou.xml
+   osm.bicycle.rou.xml        osm.passenger.rou.alt.xml  osm.rail.trips.xml         osm.tram.trips.xml
+   osm.bicycle.trips.xml      osm.passenger.rou.xml      osm.rail_urban.rou.alt.xml osm.truck.rou.alt.xml
+   osm.bus.rou.alt.xml        osm.passenger.trips.xml    osm.rail_urban.rou.xml     osm.truck.rou.xml
+   osm.bus.rou.xml            osm.pedestrian.rou.alt.xml osm.rail_urban.trips.xml   osm.truck.trips.xml
+   osm.bus.trips.xml          osm.pedestrian.rou.xml     osm.ship.rou.alt.xml       osm.view.xml
+   osm.motorcycle.rou.alt.xml osm.pedestrian.trips.xml   osm.ship.rou.xml           osm_bbox.osm.xml
+   osm.motorcycle.rou.xml     osm.poly.xml               osm.ship.trips.xml         run.bat
+   osm.motorcycle.trips.xml   osm.polycfg                osm.sumocfg
+</code></pre>
 <p>You may now edit those files and re-run the simulation. To learn more
 about the SUMO scenario files, please consult the other
 <a href="index.html">Tutorials</a> as well.</p>
@@ -345,7 +344,7 @@ them in a text editor you will need to unzip them (for instance with gunzip or 7
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

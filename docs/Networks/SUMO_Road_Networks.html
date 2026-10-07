@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -410,18 +411,17 @@ one can use proj's function named pj_inv which performs the inverse
 transformation. proj has to be initialised with the projection
 parameters from <code>projParameter</code>, first. For
 proj-projected networks this would look like:</p>
-<div class="codehilite"><pre><span></span><code>Position2D cartesian = sumoXY(x, y);
+<pre><code>Position2D cartesian = sumoXY(x, y);
 projPJ myProjection = pj_init_plus(projParameter.c_str());
 cartesian.sub(netOffset);
 projUV p;
 p.u = cartesian.x();
 p.v = cartesian.y();
 p = pj_inv(p, myProjection);
-p.u <span class="gs">*= RAD_TO_DEG;</span>
-<span class="gs">p.v *</span>= RAD_TO_DEG;
+p.u *= RAD_TO_DEG;
+p.v *= RAD_TO_DEG;
 cartesian.set(p.u, p.v);
-</code></pre></div>
-
+</code></pre>
 <p>For networks with no projection
 (<code>projParameter</code>='!'), only the offset must
 be applied. For networks with "simple" projection
@@ -436,11 +436,10 @@ meant to correspond to north.</p>
 differ by the mandatory and used attributes.</p>
 <h4 id="normal_edges">Normal Edges<a class="headerlink" href="#normal_edges" title="Permanent link">#</a></h4>
 <p>A "normal" edge is a connection between two nodes ("junctions").</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;ID&gt;&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;&lt;FROM_NODE_ID&gt;&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;&lt;TO_NODE_ID&gt;&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;&lt;PRIORITY&gt;&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span>...<span class="w"> </span>one<span class="w"> </span>or<span class="w"> </span>more<span class="w"> </span>lanes<span class="w"> </span>...
-<span class="nt">&lt;/edge&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;edge id=&quot;&lt;ID&gt;&quot; from=&quot;&lt;FROM_NODE_ID&gt;&quot; to=&quot;&lt;TO_NODE_ID&gt;&quot; priority=&quot;&lt;PRIORITY&gt;&quot;&gt;
+    ... one or more lanes ...
+&lt;/edge&gt;
+</code></pre>
 <p>Here, the ID (<em>&lt;ID&gt;</em> in the example above) is an ID as read during the
 network import. Both the IDs of the begin and the end node are given
 within the attributes <code>from</code> and
@@ -508,12 +507,11 @@ assignment. The following purposes are defined:</p>
 <p>Each edge includes the definitions of lanes it consists of. The
 following example shows a single edge with two lanes. Note, that
 coordinates may be 2D as well as 3D.</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;ID&gt;&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;&lt;FROM_NODE_ID&gt;&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;&lt;TO_NODE_ID&gt;&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;&lt;PRIORITY&gt;&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;lane</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;ID&gt;_0&quot;</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;&lt;SPEED&gt;&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;&lt;LENGTH&gt;&quot;</span><span class="w"> </span><span class="na">shape=</span><span class="s">&quot;0.00,495.05 248.50,495.05&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;lane</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;ID&gt;_1&quot;</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;&lt;SPEED&gt;&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;&lt;LENGTH&gt;&quot;</span><span class="w"> </span><span class="na">shape=</span><span class="s">&quot;0.00,498.35,2.00 248.50,498.35,3.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/edge&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">    &lt;edge id=&quot;&lt;ID&gt;&quot; from=&quot;&lt;FROM_NODE_ID&gt;&quot; to=&quot;&lt;TO_NODE_ID&gt;&quot; priority=&quot;&lt;PRIORITY&gt;&quot;&gt;
+        &lt;lane id=&quot;&lt;ID&gt;_0&quot; index=&quot;0&quot; speed=&quot;&lt;SPEED&gt;&quot; length=&quot;&lt;LENGTH&gt;&quot; shape=&quot;0.00,495.05 248.50,495.05&quot;/&gt;
+        &lt;lane id=&quot;&lt;ID&gt;_1&quot; index=&quot;1&quot; speed=&quot;&lt;SPEED&gt;&quot; length=&quot;&lt;LENGTH&gt;&quot; shape=&quot;0.00,498.35,2.00 248.50,498.35,3.00&quot;/&gt;
+    &lt;/edge&gt;
+</code></pre>
 <p>As one can see, the id is composed by the ID of the edge the lane
 belongs to and a running number, both divided by an underline ('_').
 The running number starts at zero for the right-most lane. The same
@@ -572,11 +570,10 @@ network's parts have positive coordinates.</p>
 <em>normal</em> edge with an outgoing <em>normal</em> edge. Internal edges are not
 included if the network was built using the <strong>--no-internal-links</strong> option. An example of an
 internal edge may look like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;ID&gt;&quot;</span><span class="w"> </span><span class="na">function=</span><span class="s">&quot;internal&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span>...<span class="w"> </span>one<span class="w"> </span>lane<span class="w"> </span>...
-<span class="nt">&lt;/edge&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;edge id=&quot;&lt;ID&gt;&quot; function=&quot;internal&quot;&gt;
+    ... one lane ...
+&lt;/edge&gt;
+</code></pre>
 <p>The id of an internal edge is composed as :<em>&lt;NODE_ID&gt;</em>_<em>&lt;EDGE_INDEX&gt;</em>
 where <em>&lt;NODE_ID&gt;</em> is the ID of the node the edge is located within and
 <em>&lt;EDGE_INDEX&gt;</em> is a running number running clockwise around the node
@@ -622,14 +619,13 @@ stopping offset for vehicles of certain classes. This can be used to define a <a
 The exact syntax is explained at <a href="PlainXML.html#stop_offsets">stopOffset</a>.</p>
 <h3 id="traffic_light_programs">Traffic Light Programs<a class="headerlink" href="#traffic_light_programs" title="Permanent link">#</a></h3>
 <p>A traffic light program defines the phases of a traffic light.</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;ID&gt;&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;&lt;ALGORITHM_ID&gt;&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;&lt;PROGRAM_ID&gt;&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;&lt;TIME_OFFSET&gt;&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;&lt;DURATION#1&gt;&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;&lt;STATE#1&gt;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;&lt;DURATION#1&gt;&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;&lt;STATE#1&gt;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span>...<span class="w"> </span>further<span class="w"> </span>states<span class="w"> </span>...
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;&lt;DURATION#n&gt;&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;&lt;STATE#n&gt;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/tlLogic&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">    &lt;tlLogic id=&quot;&lt;ID&gt;&quot; type=&quot;&lt;ALGORITHM_ID&gt;&quot; programID=&quot;&lt;PROGRAM_ID&gt;&quot; offset=&quot;&lt;TIME_OFFSET&gt;&quot;&gt;
+        &lt;phase duration=&quot;&lt;DURATION#1&gt;&quot; state=&quot;&lt;STATE#1&gt;&quot;/&gt;
+        &lt;phase duration=&quot;&lt;DURATION#1&gt;&quot; state=&quot;&lt;STATE#1&gt;&quot;/&gt;
+        ... further states ...
+        &lt;phase duration=&quot;&lt;DURATION#n&gt;&quot; state=&quot;&lt;STATE#n&gt;&quot;/&gt;
+    &lt;/tlLogic&gt;
+</code></pre>
 <p>For an explanation of the attributes and semantics, please consult
 <a href="../Simulation/Traffic_Lights.html">Simulation/Traffic Lights</a>.
 Please note that usually, the generated program has the ID "0".</p>
@@ -638,13 +634,12 @@ Please note that usually, the generated program has the ID "0".</p>
 <p>Junctions represent the area where different streams cross, including
 the right-of-way rules vehicles have to follow when crossing the
 intersection. An example may be:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;junction</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;ID&gt;&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;&lt;JUNCTION_TYPE&gt;&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;&lt;X-POSITION&gt;&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;&lt;Y-POSITION&gt;&quot;</span>
-<span class="w">          </span><span class="na">incLanes=</span><span class="s">&quot;&lt;INCOMING_LANES&gt;&quot;</span><span class="w"> </span><span class="na">intLanes=</span><span class="s">&quot;&lt;INTERNAL_LANES&gt;&quot;</span>
-<span class="w">          </span><span class="na">shape=</span><span class="s">&quot;&lt;SHAPE&gt;&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span>...<span class="w"> </span>requests<span class="w"> </span>...
-<span class="nt">&lt;/junction&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;junction id=&quot;&lt;ID&gt;&quot; type=&quot;&lt;JUNCTION_TYPE&gt;&quot; x=&quot;&lt;X-POSITION&gt;&quot; y=&quot;&lt;Y-POSITION&gt;&quot;
+          incLanes=&quot;&lt;INCOMING_LANES&gt;&quot; intLanes=&quot;&lt;INTERNAL_LANES&gt;&quot;
+          shape=&quot;&lt;SHAPE&gt;&quot;&gt;
+    ... requests ...
+&lt;/junction&gt;
+</code></pre>
 <p>The junction itself is described by the following attributes:</p>
 <table>
 <thead>
@@ -706,9 +701,8 @@ have the same position.</p>
 </div>
 <h4 id="requests">Requests<a class="headerlink" href="#requests" title="Permanent link">#</a></h4>
 <p>What follows are "<code>request</code>"s, looking like:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nt">&lt;request</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;&lt;INDEX&gt;&quot;</span><span class="w"> </span><span class="na">response=</span><span class="s">&quot;&lt;RELATIVE_MAJOR_LINKS&gt;&quot;</span><span class="w"> </span><span class="na">foes=</span><span class="s">&quot;&lt;FOE_LINKS&gt;&quot;</span><span class="w"> </span><span class="na">cont=</span><span class="s">&quot;&lt;MAY_ENTER&gt;&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">  &lt;request index=&quot;&lt;INDEX&gt;&quot; response=&quot;&lt;RELATIVE_MAJOR_LINKS&gt;&quot; foes=&quot;&lt;FOE_LINKS&gt;&quot; cont=&quot;&lt;MAY_ENTER&gt;&quot;/&gt;
+</code></pre>
 <p>They describe, for each link (given as
 "<code>index</code>") which streams have a higher
 priority ("<code>response</code>") and force the vehicle
@@ -725,9 +719,8 @@ as following: first, sort edges by their direction, starting with 0°
 direction the connection follows, starting by the right-most.</p>
 <p>The same order is applied in the "response" and the "foes" field,
 starting from right. This means:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nt">&lt;request</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">response=</span><span class="s">&quot;001&quot;</span><span class="w"> </span><span class="na">foes=</span><span class="s">&quot;011&quot;</span><span class="w"> </span><span class="na">cont=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">  &lt;request index=&quot;2&quot; response=&quot;001&quot; foes=&quot;011&quot; cont=&quot;0&quot;/&gt;
+</code></pre>
 <p>The a vehicle using the connection with the index "2" has to wait for
 vehicles that use the connection "0". Connections "0" and "1" are its
 foes. The attributes of a request element are:</p>
@@ -785,11 +778,10 @@ information</p>
   internal junction</li>
 </ul>
 <p>An internal junction is encoded like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;junction</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;ID&gt;&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;internal&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;&lt;X-POSITION&gt;&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;&lt;Y-POSITION&gt;&quot;</span>
-<span class="w">          </span><span class="na">incLanes=</span><span class="s">&quot;&lt;INCOMING_PROHIBITING_LANES&gt;&quot;</span>
-<span class="w">          </span><span class="na">intLanes=</span><span class="s">&quot;&lt;INTERNAL_PROHIBITING_LANES&gt;&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;junction id=&quot;&lt;ID&gt;&quot; type=&quot;internal&quot; x=&quot;&lt;X-POSITION&gt;&quot; y=&quot;&lt;Y-POSITION&gt;&quot;
+          incLanes=&quot;&lt;INCOMING_PROHIBITING_LANES&gt;&quot;
+          intLanes=&quot;&lt;INTERNAL_PROHIBITING_LANES&gt;&quot;/&gt;
+</code></pre>
 <p>The ID is the same as the lane to use when crossing the internal
 junction itself. The type is always "internal". Please note that an
 internal junction is usually encoded in one line. The attributes of an
@@ -844,10 +836,9 @@ direction and the "state" of the connection. If the connection is
 controlled by a traffic light, the name of the traffic light and the
 index of the signal that controls this connection within the traffic
 light's phase definition is given. A connection is encoded as:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;&lt;FROM_EDGE_ID&gt;&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;&lt;TO_EDGE_ID&gt;&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;&lt;FROM_LANE_INDEX&gt;&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;&lt;TO_LANE_INDEX&gt;&quot;</span>
-<span class="w">            </span><span class="na">via=</span><span class="s">&quot;&lt;VIA_LANE_ID&gt;&quot;</span><span class="w"> </span><span class="na">tl=</span><span class="s">&quot;&lt;TRAFFIC_LIGHT_ID&gt;&quot;</span><span class="w"> </span><span class="na">linkIndex=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">dir=</span><span class="s">&quot;r&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;o&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;connection from=&quot;&lt;FROM_EDGE_ID&gt;&quot; to=&quot;&lt;TO_EDGE_ID&gt;&quot; fromLane=&quot;&lt;FROM_LANE_INDEX&gt;&quot; toLane=&quot;&lt;TO_LANE_INDEX&gt;&quot;
+            via=&quot;&lt;VIA_LANE_ID&gt;&quot; tl=&quot;&lt;TRAFFIC_LIGHT_ID&gt;&quot; linkIndex=&quot;12&quot; dir=&quot;r&quot; state=&quot;o&quot;/&gt;
+</code></pre>
 <p>The attributes are:</p>
 <table>
 <thead>
@@ -950,9 +941,8 @@ reasons:</p>
 </ul>
 <p>Each roundabout is defined (somewhat redundantly) by its nodes and
 edges:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;roundabout</span><span class="w"> </span><span class="na">nodes=</span><span class="s">&quot;nodeID1 nodeID2 ...&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;edgeID1 edgeID2 ...&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;roundabout nodes=&quot;nodeID1 nodeID2 ...&quot; edges=&quot;edgeID1 edgeID2 ...&quot;/&gt;
+</code></pre>
 <h2 id="software_for_viewing_editing_and_processing">Software for Viewing, Editing and Processing<a class="headerlink" href="#software_for_viewing_editing_and_processing" title="Permanent link">#</a></h2>
 <p>To create a SUMO network file, <a href="../netconvert.html">netconvert</a> helps
 to generate it from maps in other formats and
@@ -1001,7 +991,7 @@ these files by hand and rebuild the network with
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

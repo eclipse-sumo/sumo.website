@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -252,15 +253,14 @@ packages</a> instead.</p>
 <li>Build the SUMO binaries</li>
 </ol>
 <p>For ubuntu this boils down to</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">git</span>
-<span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="o">--</span><span class="n">recursive</span><span class="w"> </span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">eclipse</span><span class="o">-</span><span class="n">sumo</span><span class="o">/</span><span class="n">sumo</span>
-<span class="n">cd</span><span class="w"> </span><span class="n">sumo</span>
-<span class="k">export</span><span class="w"> </span><span class="n">SUMO_HOME</span><span class="o">=</span><span class="s2">&quot;$PWD&quot;</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">install_dependencies</span><span class="o">.</span><span class="n">sh</span><span class="w">  </span><span class="c1"># this will also add repositories for parquet, download and build jupedsim from source</span>
-<span class="n">cmake</span><span class="w"> </span><span class="o">-</span><span class="n">B</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">.</span>
-<span class="n">cmake</span><span class="w"> </span><span class="o">--</span><span class="n">build</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">-</span><span class="n">j</span><span class="o">$</span><span class="p">(</span><span class="n">nproc</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code>sudo apt-get install git
+git clone --recursive https://github.com/eclipse-sumo/sumo
+cd sumo
+export SUMO_HOME=&quot;$PWD&quot;
+sudo build_config/install_dependencies.sh  # this will also add repositories for parquet, download and build jupedsim from source
+cmake -B build .
+cmake --build build -j$(nproc)
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Do not build in an active Anaconda environment! The libraries have sometimes different versions than Anaconda which will break the build or the executables.</p>
@@ -299,26 +299,23 @@ alternatives below.</p>
 </li>
 </ul>
 <p>The package names above are for openSUSE, on a debian/ubuntu system the packages can be installed using:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">cat</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">build_req_deb</span><span class="o">.</span><span class="n">txt</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">tools_req_deb</span><span class="o">.</span><span class="n">txt</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code>sudo apt-get install $(cat build_config/build_req_deb.txt build_config/tools_req_deb.txt)
+</code></pre>
 <p>In contrast to the install script this will not include jupedsim and parquet.
 Some larger dependencies need to be added manually if needed (for a description see the section above):</p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install libavformat-dev libswscale-dev libopenscenegraph-dev
+<pre><code>sudo apt-get install libavformat-dev libswscale-dev libopenscenegraph-dev
 sudo apt-get install python3-gi-cairo gir1.2-gtk-3.0
 python3 -m pip install texttest
-</code></pre></div>
-
+</code></pre>
 <p>For the Python tools there are some more requirements depending on which tools you want to use. If you want to install
 everything using pip do <code>python3 -m pip install -r tools/requirements.txt -r tools/req_dev.txt</code>.</p>
 <h3 id="parquet_support">Parquet support<a class="headerlink" href="#parquet_support" title="Permanent link">#</a></h3>
 <p>see <a href="https://arrow.apache.org/install/">https://arrow.apache.org/install/</a></p>
-<div class="codehilite"><pre><span></span><code><span class="nx">wget</span><span class="w"> </span><span class="nx">https</span><span class="p">:</span><span class="c1">//packages.apache.org/artifactory/arrow/$(lsb_release --id --short | tr &#39;A-Z&#39; &#39;a-z&#39;)/apache-arrow-apt-source-latest-$(lsb_release --codename --short).deb</span>
-<span class="nx">sudo</span><span class="w"> </span><span class="nx">apt</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="o">-</span><span class="nx">y</span><span class="w"> </span><span class="o">-</span><span class="nx">V</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="nx">apache</span><span class="o">-</span><span class="nx">arrow</span><span class="o">-</span><span class="nx">apt</span><span class="o">-</span><span class="nx">source</span><span class="o">-</span><span class="nx">latest</span><span class="o">-</span><span class="err">$</span><span class="p">(</span><span class="nx">lsb_release</span><span class="w"> </span><span class="o">--</span><span class="nx">codename</span><span class="w"> </span><span class="o">--</span><span class="nx">short</span><span class="p">).</span><span class="nx">deb</span>
-<span class="nx">sudo</span><span class="w"> </span><span class="nx">apt</span><span class="w"> </span><span class="nx">update</span>
-<span class="nx">PARQUET_VERSION</span><span class="p">=</span><span class="err">$</span><span class="p">(</span><span class="nx">apt</span><span class="o">-</span><span class="nx">cache</span><span class="w"> </span><span class="nx">policy</span><span class="w"> </span><span class="nx">libparquet</span><span class="o">-</span><span class="nx">dev</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">grep</span><span class="w"> </span><span class="o">-</span><span class="nx">o</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">23</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">.</span><span class="o">-</span><span class="p">]</span><span class="o">*</span><span class="err">&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">head</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="nx">apt</span><span class="o">-</span><span class="nx">get</span><span class="w"> </span><span class="o">-</span><span class="nx">y</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">libarrow</span><span class="o">-</span><span class="nx">dev</span><span class="p">=</span><span class="err">$</span><span class="nx">PARQUET_VERSION</span><span class="w"> </span><span class="nx">libparquet</span><span class="o">-</span><span class="nx">dev</span><span class="p">=</span><span class="err">$</span><span class="nx">PARQUET_VERSION</span>
-</code></pre></div>
-
+<pre><code>wget https://packages.apache.org/artifactory/arrow/$(lsb_release --id --short | tr 'A-Z' 'a-z')/apache-arrow-apt-source-latest-$(lsb_release --codename --short).deb
+sudo apt install -y -V ./apache-arrow-apt-source-latest-$(lsb_release --codename --short).deb
+sudo apt update
+PARQUET_VERSION=$(apt-cache policy libparquet-dev | grep -o '23[0-9.-]*' | head -1) apt-get -y install libarrow-dev=$PARQUET_VERSION libparquet-dev=$PARQUET_VERSION
+</code></pre>
 <h2 id="getting_the_source_code">Getting the source code<a class="headerlink" href="#getting_the_source_code" title="Permanent link">#</a></h2>
 <p>For the correct setting of SUMO_HOME you have to remember the correct
 path, where you build your SUMO, the SUMO build path. This path is shown
@@ -328,31 +325,28 @@ build the tarball version if you need for some reason a specific version
 of sumo.</p>
 <h3 id="repository_checkout_recommended">repository checkout (recommended)<a class="headerlink" href="#repository_checkout_recommended" title="Permanent link">#</a></h3>
 <p>The following commands should be issued:</p>
-<div class="codehilite"><pre><span></span><code>git clone --recursive https://github.com/eclipse-sumo/sumo
+<pre><code>git clone --recursive https://github.com/eclipse-sumo/sumo
 cd sumo
 git fetch origin refs/replace/*:refs/replace/*
 pwd
-</code></pre></div>
-
+</code></pre>
 <p>The additional fetch of the replacements is necessary to get a full
 local project history.</p>
 <h3 id="release_version_or_nightly_tarball">release version or nightly tarball<a class="headerlink" href="#release_version_or_nightly_tarball" title="Permanent link">#</a></h3>
 <p>Download
 <a href="https://sumo.dlr.de/releases/1.27.1/sumo-src-1.27.1.tar.gz">sumo-src-1.27.1.tar.gz</a> or <a href="https://sumo.dlr.de/daily/sumo-src-git.tar.gz">https://sumo.dlr.de/daily/sumo-src-git.tar.gz</a></p>
-<div class="codehilite"><pre><span></span><code>tar xzf sumo-src-&lt;version&gt;.tar.gz
+<pre><code>tar xzf sumo-src-&lt;version&gt;.tar.gz
 cd sumo-&lt;version&gt;/
 pwd
-</code></pre></div>
-
+</code></pre>
 <h2 id="definition_of_sumo_home">Definition of SUMO_HOME<a class="headerlink" href="#definition_of_sumo_home" title="Permanent link">#</a></h2>
 <p>Before compiling is advisable to
 define the environment variable SUMO_HOME. SUMO_HOME must be set to
 the SUMO build path from the previous step. Assuming that you placed
 SUMO in the folder "<em>/home/&lt;user&gt;/sumo-&lt;version&gt;</em>", if you want to
 define only for the current session, type in the console</p>
-<div class="codehilite"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="n">SUMO_HOME</span><span class="o">=</span><span class="s2">&quot;/home/&lt;user&gt;/sumo-&lt;version&gt;&quot;</span>
-</code></pre></div>
-
+<pre><code>export SUMO_HOME=&quot;/home/&lt;user&gt;/sumo-&lt;version&gt;&quot;
+</code></pre>
 <p>If you want to define for all sessions (i.e. for every time that you run
 your Linux distribution), go to your HOME folder, and find one of the
 next three files (depending of your Linux distribution):
@@ -360,21 +354,18 @@ next three files (depending of your Linux distribution):
 files can be hidden). Then edit the file, add the line from above at the
 end and restart your session.</p>
 <p>You can check that SUMO_HOME was successfully set if you type</p>
-<div class="codehilite"><pre><span></span><code>echo $SUMO_HOME
-</code></pre></div>
-
+<pre><code>echo $SUMO_HOME
+</code></pre>
 <p>and console shows "/home/&lt;user&gt;/sumo-&lt;version&gt;"</p>
 <h2 id="installing_python_packages_for_the_tools">Installing Python packages for the tools<a class="headerlink" href="#installing_python_packages_for_the_tools" title="Permanent link">#</a></h2>
 <p>Calling the tools from netedit requires a list of Python packages to generate templates during compilation.
 Many of them might be available with the package manager of your distribution and most of the time we prefer
 to use those. For ubuntu this currently means, you should first do</p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install python3-pyproj python3-rtree python3-pandas flake8 python3-autopep8 python3-pulp python3-ezdxf
-</code></pre></div>
-
+<pre><code>sudo apt-get install python3-pyproj python3-rtree python3-pandas flake8 python3-autopep8 python3-pulp python3-ezdxf
+</code></pre>
 <p>and then install the remaining parts using pip:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python3</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">pip</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">requirements</span><span class="o">.</span><span class="n">txt</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">req_dev</span><span class="o">.</span><span class="n">txt</span>
-</code></pre></div>
-
+<pre><code>python3 -m pip install -r tools/requirements.txt -r tools/req_dev.txt
+</code></pre>
 <p>The pip installation will ensure that all libraries are there, so it is safe to skip the first <code>apt-get</code> step.
 If you need information about the minimum required versions of the packages read them directly
 from the <a href="https://github.com/eclipse-sumo/sumo/blob/main/tools/requirements.txt">requirements.txt</a>. Be aware that
@@ -387,13 +378,11 @@ Unfortunately some old pip packages are incomplete, so this requires <code>sudo 
 <p>Create a build folder for cmake (in the SUMO root folder)
 and configure SUMO with the full set of available options like GDAL and
 OpenSceneGraph support (if the libraries are installed):</p>
-<div class="codehilite"><pre><span></span><code>cmake -B build .
-</code></pre></div>
-
+<pre><code>cmake -B build .
+</code></pre>
 <p>to build the debug version just use</p>
-<div class="codehilite"><pre><span></span><code>cmake -D CMAKE_BUILD_TYPE=Debug -B build .
-</code></pre></div>
-
+<pre><code>cmake -D CMAKE_BUILD_TYPE=Debug -B build .
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>On some platforms the required cmake executable is called <em>cmake3</em>.</p>
@@ -413,39 +402,34 @@ OpenSceneGraph support (if the libraries are installed):</p>
 <li><code>-D ENABLE_C_BINDINGS=ON</code> enable C bindings when compiling libsumo (requires SWIG at least version 4.3)</li>
 </ul>
 <p>After this is finished, run</p>
-<div class="codehilite"><pre><span></span><code>cmake --build build -j $(nproc)
-</code></pre></div>
-
+<pre><code>cmake --build build -j $(nproc)
+</code></pre>
 <p>The <code>nproc</code> command gives you the number of logical cores on your
 computer, so that make will start parallel build jobs which makes the
 build a lot faster. If <code>nproc</code> is not available on your system, insert a
 fixed number here or leave the option out. You may also try</p>
-<div class="codehilite"><pre><span></span><code>cmake --build build -j $(grep -c ^processor /proc/cpuinfo)
-</code></pre></div>
-
+<pre><code>cmake --build build -j $(grep -c ^processor /proc/cpuinfo)
+</code></pre>
 <h2 id="building_with_clang">Building with clang<a class="headerlink" href="#building_with_clang" title="Permanent link">#</a></h2>
 <p>If you want to use a different compiler (just for the fun of it or
 because it has additional features) you can enable it at configure time.
 Our current clang configuration for additional static code checking
 enables the following CXXFLAGS:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">-</span><span class="nx">stdlib</span><span class="p">=</span><span class="nx">libstdc</span><span class="o">++</span><span class="w"> </span><span class="o">-</span><span class="nx">fsanitize</span><span class="p">=</span><span class="nx">undefined</span><span class="p">,</span><span class="nx">address</span><span class="p">,</span><span class="nx">integer</span><span class="w"> </span><span class="o">-</span><span class="nx">fno</span><span class="o">-</span><span class="nx">omit</span><span class="o">-</span><span class="nx">frame</span><span class="o">-</span><span class="nx">pointer</span><span class="w"> </span><span class="o">-</span><span class="nx">fsanitize</span><span class="o">-</span><span class="nx">blacklist</span><span class="p">=</span><span class="err">$</span><span class="nx">SUMO_HOME</span><span class="o">/</span><span class="nx">build_config</span><span class="o">/</span><span class="nx">clang_sanitize_blacklist</span><span class="p">.</span><span class="nx">txt</span>
-</code></pre></div>
-
+<pre><code>-stdlib=libstdc++ -fsanitize=undefined,address,integer -fno-omit-frame-pointer -fsanitize-blacklist=$SUMO_HOME/build_config/clang_sanitize_blacklist.txt
+</code></pre>
 <p>You may of course leave out all the sanitizer-checks you don't want but
 the stdlib option has to be set. The blacklist filters out a known bug
 in the cstdlib. For details see the clang documentation.</p>
 <p>The current CMake configuration already contains this for the debug
 build, so for building with CMake and clang just change to your repository base dir and use</p>
-<div class="codehilite"><pre><span></span><code>CXX=clang++ cmake -D CMAKE_BUILD_TYPE=Debug -B build .
+<pre><code>CXX=clang++ cmake -D CMAKE_BUILD_TYPE=Debug -B build .
 cmake --build build -j $(nproc)
-</code></pre></div>
-
+</code></pre>
 <p>The clang-debug-build will detect memory leaks (among other things)
 If the errors are reported with cryptic hexadecimal numbers as</p>
-<div class="codehilite"><pre><span></span><code>Indirect leak of 72 byte(s) in 1 object(s) allocated from:
+<pre><code>Indirect leak of 72 byte(s) in 1 object(s) allocated from:
     #0 0xa4ee2d  (.../sumo/bin/netconvertD+0xa4ee2d)
-</code></pre></div>
-
+</code></pre>
 <p>set the following environment variable to point to the llvm-symbolizer executable:
 <code>export ASAN_SYMBOLIZER_PATH=/usr/bin/llvm-symbolizer</code> before running the executable.</p>
 <p>Please note that the undefined behavior checker is very sensitive and will report
@@ -454,34 +438,29 @@ some false negatives also in system libraries. It is recommended to use
 before calling the executable.</p>
 <h2 id="building_a_minimal_feature_set">Building a minimal feature set<a class="headerlink" href="#building_a_minimal_feature_set" title="Permanent link">#</a></h2>
 <p>Many of the project features are optional. To test a minimal setup, the following build configuration can be used:</p>
-<div class="codehilite"><pre><span></span><code>cmake -DENABLE_FOX=OFF -DENABLE_PROJ=OFF -DCHECK_OPTIONAL_LIBS=OFF -DENABLE_FMI=OFF -B build .
-</code></pre></div>
-
+<pre><code>cmake -DENABLE_FOX=OFF -DENABLE_PROJ=OFF -DCHECK_OPTIONAL_LIBS=OFF -DENABLE_FMI=OFF -B build .
+</code></pre>
 <h2 id="installing_the_sumo_binaries">Installing the SUMO binaries<a class="headerlink" href="#installing_the_sumo_binaries" title="Permanent link">#</a></h2>
 <p>This (optional) step will copy the SUMO binaries to another path, so
 that you can delete all source and intermediate files afterwards. If you
 do not want (or need) to do that, you can simply skip this step and run
 SUMO from the bin subfolder (bin/sumo-gui and bin/sumo).</p>
 <p>If you want to install the SUMO binaries into your system, run</p>
-<div class="codehilite"><pre><span></span><code>sudo cmake --install build
-</code></pre></div>
-
+<pre><code>sudo cmake --install build
+</code></pre>
 <p>You have to adjust your SUMO_HOME variable to the install dir (usually
 /usr/local/share/sumo)</p>
-<div class="codehilite"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="n">SUMO_HOME</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">sumo</span>
-</code></pre></div>
-
+<pre><code>export SUMO_HOME=/usr/local/share/sumo
+</code></pre>
 <h2 id="uninstalling">Uninstalling<a class="headerlink" href="#uninstalling" title="Permanent link">#</a></h2>
 <p>CMake provides no <code>make uninstall</code> so if you ever want to uninstall, run</p>
-<div class="codehilite"><pre><span></span><code>sudo xargs rm &lt; install_manifest.txt
-</code></pre></div>
-
+<pre><code>sudo xargs rm &lt; install_manifest.txt
+</code></pre>
 <p>from the same folder you ran <code>make install</code>. This will leave some empty
 directories, so if you want to remove them as well, double check that
 $SUMO_HOME points to the right directory (see above) and run</p>
-<div class="codehilite"><pre><span></span><code>sudo rm -r $SUMO_HOME
-</code></pre></div>
-
+<pre><code>sudo rm -r $SUMO_HOME
+</code></pre>
 <h2 id="building_python_wheels_for_sumolib_traci_libsumo_and_eclipse-sumo">Building Python wheels for sumolib, traci, libsumo and eclipse-sumo<a class="headerlink" href="#building_python_wheels_for_sumolib_traci_libsumo_and_eclipse-sumo" title="Permanent link">#</a></h2>
 <p>If you want to distribute sumolib, traci, libsumo or the whole SUMO package
 as wheels, you can build those directly from the source tree. Please be aware
@@ -493,10 +472,9 @@ the easiest way is to call tools/build_config/build_wheels.sh but be aware that 
 will invoke <a href="https://cibuildwheel.pypa.io/">cibuildwheel</a> which in turn fires up docker
 and may take some time and space to build for multiple python versions.</p>
 <p>If you only need a single wheel the pattern is usually:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">tools</span><span class="o">/</span><span class="n">build_config</span><span class="o">/</span><span class="n">version</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">pep440</span><span class="w"> </span><span class="n">build_config</span><span class="o">/</span><span class="n">pyproject</span><span class="o">/</span><span class="n">sumolib</span><span class="o">.</span><span class="n">toml</span><span class="w"> </span><span class="n">pyproject</span><span class="o">.</span><span class="n">toml</span>
-<span class="n">python</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">--</span><span class="n">wheel</span>
-</code></pre></div>
-
+<pre><code>tools/build_config/version.py --pep440 build_config/pyproject/sumolib.toml pyproject.toml
+python -m build --wheel
+</code></pre>
 <p>where the first line patches the pyproject.toml with the current version
 (you can replace sumolib here by traci, libsumo etc.)
 and saves it in the SUMO root dir and the second call runs the build.</p>
@@ -519,26 +497,23 @@ ccache and run cmake again. It will be picked up automatically and can dramatica
 improve build speed.</p>
 <h2 id="how_to_build_jupedsim_and_then_build_sumo_with_jupedsim">How to build JuPedSim and then build SUMO with JuPedSim<a class="headerlink" href="#how_to_build_jupedsim_and_then_build_sumo_with_jupedsim" title="Permanent link">#</a></h2>
 <p>In this section, you will learn how to build the latest version of the pedestrian simulator JuPedSim and how to compile SUMO with this latest version of JuPedSim. First of all, clone the JuPedSim repository:</p>
-<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/PedestrianDynamics/jupedsim
-</code></pre></div>
-
+<pre><code class="language-bash">git clone https://github.com/PedestrianDynamics/jupedsim
+</code></pre>
 <p>Note that this will clone the full repository, including the latest version of JuPedSim. <strong>We strongly recommend to build the latest release of JuPedSim (not the master branch), which is officially supported by SUMO.</strong> You can consult the <a href="https://github.com/PedestrianDynamics/jupedsim#readme">JuPedSim build procedure</a>; hereafter we propose a similar procedure. First check which is the <a href="https://github.com/PedestrianDynamics/jupedsim/releases">latest release</a> then in the cloned directory checkout to the latest release and do a regular cmake build. For example, for JuPedSim release v1.3.1, you would need to type:</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>jupedsim
-git<span class="w"> </span>checkout<span class="w"> </span>v1.4.1
-cmake<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>.
-cmake<span class="w"> </span>--build<span class="w"> </span>build
-sudo<span class="w"> </span>cmake<span class="w"> </span>--install<span class="w"> </span>build
-</code></pre></div>
-
+<pre><code class="language-bash">cd jupedsim
+git checkout v1.4.1
+cmake -B build .
+cmake --build build
+sudo cmake --install build
+</code></pre>
 <p>Now you should make sure GEOS is installed (<code>sudo apt-get install libgeos-dev</code>) and
 continue with the <a href="#building_the_sumo_binaries_with_cmake">standard build procedure above</a>.</p>
 <h3 id="tweaking_the_jupedsim_build">Tweaking the JuPedSim build<a class="headerlink" href="#tweaking_the_jupedsim_build" title="Permanent link">#</a></h3>
 <p>If you do not want to install jupedsim into your system, you can specify an alternative install directory like this:</p>
-<div class="codehilite"><pre><span></span><code>cmake<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-DCMAKE_INSTALL_PREFIX<span class="o">=</span><span class="nv">$PWD</span>/../jupedsim-install<span class="w"> </span>.
-cmake<span class="w"> </span>--build<span class="w"> </span>build
-cmake<span class="w"> </span>--install<span class="w"> </span>build
-</code></pre></div>
-
+<pre><code class="language-bash">cmake -B build -DCMAKE_INSTALL_PREFIX=$PWD/../jupedsim-install .
+cmake --build build
+cmake --install build
+</code></pre>
 <p>This will install jupedsim in the directory <code>jupedsim-install</code> right beside the checkout. If you installed jupedsim
 into the system or in a <code>jupedsim-install</code> directory beside sumo, the standard cmake call of SUMO will find it
 automatically.</p>
@@ -550,23 +525,20 @@ different install path, you can notify CMake where JuPedSim is installed by sett
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
 <h3 id="problems_with_the_socket_subsystem">Problems with the socket subsystem<a class="headerlink" href="#problems_with_the_socket_subsystem" title="Permanent link">#</a></h3>
 <p>Problem:</p>
-<div class="codehilite"><pre><span></span><code><span class="nx">recv</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="nx">foreign</span><span class="o">/</span><span class="nx">tcpip</span><span class="o">/</span><span class="nx">libtcpip</span><span class="p">.</span><span class="nx">a</span><span class="p">(</span><span class="nx">socket</span><span class="p">.</span><span class="nx">o</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">symbol</span><span class="w"> </span><span class="nx">belongs</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">implicit</span><span class="w"> </span><span class="nx">dependency</span><span class="w"> </span><span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">libsocket</span><span class="p">.</span><span class="nx">so</span><span class="m m-Double">.1</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code>recv ./foreign/tcpip/libtcpip.a(socket.o) (symbol belongs to implicit dependency /usr/lib/libsocket.so.1)
+</code></pre>
 <p>Solution:
 <a href="https://lists.danga.com/pipermail/memcached/2005-September/001611.html">https://lists.danga.com/pipermail/memcached/2005-September/001611.html</a></p>
 <h3 id="ld_cannot_find_an_existing_library_fedora-23">ld cannot find an existing library (Fedora-23)<a class="headerlink" href="#ld_cannot_find_an_existing_library_fedora-23" title="Permanent link">#</a></h3>
 <p>Problem:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nx">ld</span><span class="p">:</span><span class="w"> </span><span class="nx">cannot</span><span class="w"> </span><span class="nx">find</span><span class="w"> </span><span class="o">-</span><span class="nx">lfreetype</span>
-<span class="nx">ls</span><span class="w"> </span><span class="o">-</span><span class="nx">lah</span><span class="w"> </span><span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">lib64</span><span class="o">/</span><span class="nx">libfreetype</span><span class="o">*</span>
-<span class="w"> </span><span class="nx">lrwxrwxrwx</span><span class="p">.</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nx">root</span><span class="w"> </span><span class="nx">root</span><span class="w">   </span><span class="mi">21</span><span class="w"> </span><span class="nx">Jul</span><span class="w"> </span><span class="mi">28</span><span class="w"> </span><span class="mi">15</span><span class="p">:</span><span class="mi">54</span><span class="w"> </span><span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">lib64</span><span class="o">/</span><span class="nx">libfreetype</span><span class="p">.</span><span class="nx">so</span><span class="m m-Double">.6</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">libfreetype</span><span class="p">.</span><span class="nx">so</span><span class="m m-Double">.6.12.0</span>
-<span class="w"> </span><span class="nx">lrwxr</span><span class="o">-</span><span class="nx">xr</span><span class="o">-</span><span class="nx">x</span><span class="p">.</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nx">root</span><span class="w"> </span><span class="nx">root</span><span class="w"> </span><span class="mi">689</span><span class="nx">K</span><span class="w"> </span><span class="nx">Jul</span><span class="w"> </span><span class="mi">28</span><span class="w"> </span><span class="mi">15</span><span class="p">:</span><span class="mi">54</span><span class="w"> </span><span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">lib64</span><span class="o">/</span><span class="nx">libfreetype</span><span class="p">.</span><span class="nx">so</span><span class="m m-Double">.6.12.0</span>
-</code></pre></div>
-
+<pre><code>/usr/bin/ld: cannot find -lfreetype
+ls -lah /usr/lib64/libfreetype*
+ lrwxrwxrwx. 1 root root   21 Jul 28 15:54 /usr/lib64/libfreetype.so.6 -&gt; libfreetype.so.6.12.0
+ lrwxr-xr-x. 1 root root 689K Jul 28 15:54 /usr/lib64/libfreetype.so.6.12.0
+</code></pre>
 <p>Solution: Install the dev package; for fedora:</p>
-<div class="codehilite"><pre><span></span><code><span class="nx">sudo</span><span class="w"> </span><span class="nx">yum</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">freetype</span><span class="o">-</span><span class="nx">devel</span>
-</code></pre></div>
-
+<pre><code>sudo yum install freetype-devel
+</code></pre>
 <p>For details see
 <a href="https://stackoverflow.com/questions/335928/ld-cannot-find-an-existing-library">stackoverflow</a>
 discussion.</p>
@@ -577,10 +549,9 @@ discussion.</p>
 want to use the X-Server or native Windows GUI. We tried native Windows
 GUI only and had to change the installed libFOX-1.4.la such that it
 contains</p>
-<div class="codehilite"><pre><span></span><code>dependency_libs=&#39; -lgdi32 -lglaux -ldl -lcomctl32 -lwsock32 -lwinspool -lmpr
--lpthread -lpng /usr/lib/libtiff.la /usr/lib/libjpeg.la -lz -lbz2 -lopengl32 -lglu32&#39;
-</code></pre></div>
-
+<pre><code>dependency_libs=' -lgdi32 -lglaux -ldl -lcomctl32 -lwsock32 -lwinspool -lmpr
+-lpthread -lpng /usr/lib/libtiff.la /usr/lib/libjpeg.la -lz -lbz2 -lopengl32 -lglu32'
+</code></pre>
 <p>Your mileage may vary.</p>
                 </main>
           </div>
@@ -589,7 +560,7 @@ contains</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

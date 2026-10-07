@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -282,41 +283,39 @@ Therefore, each TCP message consists of a small header that gives the
 overall message size and a set of commands that are put behind it. The
 length and identifier of each command is placed in front of the command.
 A scheme of this container is depicted below:</p>
-<div class="codehilite"><pre><span></span><code><span class="c"> 0                 7 8               15</span>
-<span class="nb">+--------------------------------------+</span>
-<span class="c">| Message Length including this header |</span>
-<span class="nb">+--------------------------------------+</span>
-<span class="c">|      (Message Length</span><span class="nt">,</span><span class="c"> continued)     |</span>
-<span class="nb">+--------------------------------------+</span><span class="c">  \</span>
-<span class="c">|     Length        |    Identifier    |  |</span>
-<span class="nb">+--------------------------------------+</span><span class="c">   </span><span class="nv">&gt;</span><span class="c"> Command_0</span>
-<span class="c">|           Command_0 content          |  |</span>
-<span class="nb">+--------------------------------------+</span><span class="c">  /</span>
-<span class="c">                   </span><span class="nt">...</span>
-<span class="nb">+--------------------------------------+</span><span class="c">  \</span>
-<span class="c">|     Length        |    Identifier    |  |</span>
-<span class="nb">+--------------------------------------+</span><span class="c">   </span><span class="nv">&gt;</span><span class="c"> Command_n</span><span class="nb">-</span><span class="c">1</span>
-<span class="c">|          Command_n</span><span class="nb">-</span><span class="c">1 content         |  |</span>
-<span class="nb">+--------------------------------------+</span><span class="c">  /</span>
-</code></pre></div>
-
+<pre><code> 0                 7 8               15
++--------------------------------------+
+| Message Length including this header |
++--------------------------------------+
+|      (Message Length, continued)     |
++--------------------------------------+  \
+|     Length        |    Identifier    |  |
++--------------------------------------+   &gt; Command_0
+|           Command_0 content          |  |
++--------------------------------------+  /
+                   ...
++--------------------------------------+  \
+|     Length        |    Identifier    |  |
++--------------------------------------+   &gt; Command_n-1
+|          Command_n-1 content         |  |
++--------------------------------------+  /
+</code></pre>
 <p>In some cases the length of a single command may not suffice, since the
 maximum command length is limited to 255. In those cases an extended
 length can be used by setting the original ubyte length field to zero
 and adding an integer length field. This extended scheme for a command
 looks as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="c"> 0                 7 8               15</span>
-<span class="nb">+--------------------------------------+</span><span class="c">  \</span>
-<span class="c">|   Length = 0      |                  |  |</span>
-<span class="nb">+-------------------+</span><span class="c">                  |  |</span>
-<span class="c">|        32 bit Integer Length         |  |</span>
-<span class="c">|                   </span><span class="nb">+------------------+</span><span class="c">   </span><span class="nv">&gt;</span><span class="c"> Command</span>
-<span class="c">|                   |   Identifier     |  |</span>
-<span class="nb">+--------------------------------------+</span><span class="c">  |</span>
-<span class="c">|            Command content           |  |</span>
-<span class="nb">+--------------------------------------+</span><span class="c">  /</span>
-</code></pre></div>
-
+<pre><code> 0                 7 8               15
++--------------------------------------+  \
+|   Length = 0      |                  |  |
++-------------------+                  |  |
+|        32 bit Integer Length         |  |
+|                   +------------------+   &gt; Command
+|                   |   Identifier     |  |
++--------------------------------------+  |
+|            Command content           |  |
++--------------------------------------+  /
+</code></pre>
 <p>To simplify the usage of TraCI, we provide a class for handling the
 socket connection and another for composing a message out of basic data
 types. The C++ implementation of these classes is available at <a href="https://github.com/eclipse-sumo/sumo/blob/main/src/foreign/tcpip"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/src/foreign/tcpip</a>, the
@@ -602,7 +601,7 @@ succeeding roads that are affected by the respective light phase.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

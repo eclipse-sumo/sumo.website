@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -215,9 +216,8 @@ Last edit: 06 October 2026
 separated values) representation. CSV-Files are easy to parse and can be
 opened in <a href="https://www.libreoffice.org/">LibreOffice</a> or Microsoft Excel.
 Usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">xml</span><span class="o">/</span><span class="n">xml2csv</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">input</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/xml/xml2csv.py input.xml
+</code></pre>
 <p>With the option <strong>--separator</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a> you can customize the field separator (default is
 <strong>;</strong>), the option <strong>--quotechar</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a> defines a quoting character such as ' which will be
 used to quote all fields. Furthermore you can supply an xsd schema file
@@ -243,9 +243,8 @@ limited to only one type of child elements.</p>
 </div>
 <h2 id="csv2xmlpy">csv2xml.py<a class="headerlink" href="#csv2xmlpy" title="Permanent link">#</a></h2>
 <p>This is the inverse tool to xml2csv.py. Usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">xml</span><span class="o">/</span><span class="n">csv2xml</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="n">schema</span><span class="o">.</span><span class="n">xsd</span><span class="w"> </span><span class="n">input</span><span class="o">.</span><span class="n">csv</span>
-</code></pre></div>
-
+<pre><code>python tools/xml/csv2xml.py -x schema.xsd input.csv
+</code></pre>
 <p>The options have the same meaning as above. For some file types as
 nodes, edges and routes the conversion is hard coded for all the others
 a <a href="../XMLValidation.html#adding_a_schema_declaration">schema</a> must be
@@ -257,9 +256,8 @@ even further using Google's <a href="https://developers.google.com/protocol-buff
 Buffers</a>. This will
 require the protoc compiler as well as the protobuf packages for python
 and your target language to be installed. Usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">xml</span><span class="o">/</span><span class="n">xml2protobuf</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="n">schema</span><span class="o">.</span><span class="n">xsd</span><span class="w"> </span><span class="n">input</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/xml/xml2protobuf.py -x schema.xsd input.xml
+</code></pre>
 <p>The xsd schema file needs to be given the using <strong>--xsd</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a> and the <strong>--validation</strong> option will
 enable XML validation. The additional <strong>--protodir</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a> option will give a directory
 where the protobuf message definitions and the generated python module
@@ -268,9 +266,8 @@ generate the protobuf description from the schema and then write a
 protomsg file containing the binary stream.</p>
 <h2 id="protobuf2xmlpy">protobuf2xml.py<a class="headerlink" href="#protobuf2xmlpy" title="Permanent link">#</a></h2>
 <p>This is the inverse tool to xml2protobuf.py. Usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">xml</span><span class="o">/</span><span class="n">protobuf2xml</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="n">schema</span><span class="o">.</span><span class="n">xsd</span><span class="w"> </span><span class="n">input</span><span class="o">.</span><span class="n">protomsg</span>
-</code></pre></div>
-
+<pre><code>python tools/xml/protobuf2xml.py -x schema.xsd input.protomsg
+</code></pre>
 <p>The options have the same meaning as above.</p>
 <div style="border:1px solid #909090; min-height: 35px;" align="right">
 <span style="float: right; margin-top: -5px;"><a href="https://web.archive.org/web/20191005024529/https:/ec.europa.eu/research/fp7/index_en.cfm"><img src="../images/FP7-small.gif" alt="Seventh Framework Programme"></a>
@@ -281,9 +278,8 @@ protomsg file containing the binary stream.</p>
 <h2 id="changeattributepy">changeAttribute.py<a class="headerlink" href="#changeattributepy" title="Permanent link">#</a></h2>
 <p>This sets/removes the specified attribute on all tags (elements) in the input file and writes the result to a new file
 If option <strong>--value</strong> (<strong>-v</strong>) is not given, the attribute is removed. Otherwise it is added/modified to the given value.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">xml</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">xml</span><span class="o">/</span><span class="n">changeAttribute</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">INPUT_FILE</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">OUTPUT_FILE</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="n">TAG</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="n">ATTRIBUTE</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="w"> </span><span class="n">VALUE</span><span class="p">]</span>
-</code></pre></div>
-
+<pre><code>python tools/xml/tools/xml/changeAttribute.py -f INPUT_FILE -o OUTPUT_FILE -t TAG -a ATTRIBUTE [-v VALUE]
+</code></pre>
 <h2 id="filterelementspy">filterElements.py<a class="headerlink" href="#filterelementspy" title="Permanent link">#</a></h2>
 <p>This removes the specified element from the input file subject to the following conditions:</p>
 <ul>
@@ -292,8 +288,8 @@ If option <strong>--value</strong> (<strong>-v</strong>) is not given, the attri
 <li>all elements that have a specified attribute not matching a value from a given list (<strong>--attribute</strong> ATTR <strong>--keep-values VAL1,VAL2</strong>)</li>
 </ul>
 <p>Example call:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">xml</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">xml</span><span class="o">/</span><span class="n">filterElements</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">stopoutput</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">filtered</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="n">stopinfo</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="n">delay</span><span class="w"> </span><span class="o">--</span><span class="n">remove</span><span class="o">-</span><span class="n">values</span><span class="w"> </span><span class="mi">0</span>
-</code></pre></div>
+<pre><code>python tools/xml/tools/xml/filterElements.py -f stopoutput.xml -o filtered.xml -t stopinfo -a delay --remove-values 0
+</code></pre>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -301,7 +297,7 @@ If option <strong>--value</strong> (<strong>-v</strong>) is not given, the attri
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

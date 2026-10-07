@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -228,150 +229,138 @@ Last edit: 06 October 2026
 <p>The goal is to build a simple network where the vehicles drive in
 circles so we set up four nodes at the corners as follows
 (<code>circular.nod.xml</code>):</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 
-<span class="nt">&lt;nodes</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;0.13&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.sf.net/xsd/nodes_file.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bottom-left&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bottom-right&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1250&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;top-right&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1250&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1250&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;top-left&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1250&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/nodes&gt;</span>
-</code></pre></div>
-
+&lt;nodes version=&quot;0.13&quot; xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/nodes_file.xsd&quot;&gt;
+    &lt;node id=&quot;bottom-left&quot; x=&quot;0&quot; y=&quot;0&quot;/&gt;
+    &lt;node id=&quot;bottom-right&quot; x=&quot;1250&quot; y=&quot;0&quot;/&gt;
+    &lt;node id=&quot;top-right&quot; x=&quot;1250&quot; y=&quot;1250&quot;/&gt;
+    &lt;node id=&quot;top-left&quot; x=&quot;0&quot; y=&quot;1250&quot;/&gt;
+&lt;/nodes&gt;
+</code></pre>
 <p>All edges connecting the nodes should have the same number of lanes and
 the same maximum speed. In order to save on typing we define the edge
 type in a separate file (<code>circular.typ.xml</code>):</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 
-<span class="nt">&lt;types</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.sf.net/xsd/types_file.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;edgeType&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;36.1&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/types&gt;</span>
-</code></pre></div>
-
+&lt;types xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/types_file.xsd&quot;&gt;
+    &lt;type id=&quot;edgeType&quot; numLanes=&quot;2&quot; speed=&quot;36.1&quot;/&gt;
+&lt;/types&gt;
+</code></pre>
 <p>Finally we define the edges connecting the nodes (<code>circular.edg.xml</code>):</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 
-<span class="nt">&lt;edges</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;0.13&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.sf.net/xsd/edges_file.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;bottom-left&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bottom&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;bottom-right&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;edgeType&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;bottom-right&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;right&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;top-right&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;edgeType&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;top-right&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;top&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;top-left&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;edgeType&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;top-left&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;left&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;bottom-left&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;edgeType&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/edges&gt;</span>
-</code></pre></div>
-
+&lt;edges version=&quot;0.13&quot; xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/edges_file.xsd&quot;&gt;
+    &lt;edge from=&quot;bottom-left&quot; id=&quot;bottom&quot; to=&quot;bottom-right&quot; type=&quot;edgeType&quot;/&gt;
+    &lt;edge from=&quot;bottom-right&quot; id=&quot;right&quot; to=&quot;top-right&quot; type=&quot;edgeType&quot;/&gt;
+    &lt;edge from=&quot;top-right&quot; id=&quot;top&quot; to=&quot;top-left&quot; type=&quot;edgeType&quot;/&gt;
+    &lt;edge from=&quot;top-left&quot; id=&quot;left&quot; to=&quot;bottom-left&quot; type=&quot;edgeType&quot;/&gt;
+&lt;/edges&gt;
+</code></pre>
 <p>The netconvert call is very straightforward</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert -n circular.nod.xml -t circular.typ.xml -e circular.edg.xml -o circular.net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert -n circular.nod.xml -t circular.typ.xml -e circular.edg.xml -o circular.net.xml
+</code></pre>
 <p>In order to simplify the resulting net (and get the highest speed out of
 the simulation), we omit turnarounds and simplify the movement over
 junctions by removing the junction internal lanes. The complete
 netconvert configuration file is as follows (<code>circular.netccfg</code>):</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 
-<span class="nt">&lt;configuration</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span>
-<span class="w">    </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.sf.net/xsd/netconvertConfiguration.xsd&quot;</span><span class="nt">&gt;</span>
+&lt;configuration xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/netconvertConfiguration.xsd&quot;&gt;
 
-<span class="w">   </span><span class="nt">&lt;input&gt;</span>
-<span class="w">       </span><span class="nt">&lt;node-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;circular.nod.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;edge-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;circular.edg.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;type-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;circular.typ.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/input&gt;</span>
+   &lt;input&gt;
+       &lt;node-files value=&quot;circular.nod.xml&quot;/&gt;
+       &lt;edge-files value=&quot;circular.edg.xml&quot;/&gt;
+       &lt;type-files value=&quot;circular.typ.xml&quot;/&gt;
+   &lt;/input&gt;
 
-<span class="nt">&lt;output&gt;</span>
-<span class="w">       </span><span class="nt">&lt;output-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;circular.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/output&gt;</span>
+&lt;output&gt;
+       &lt;output-file value=&quot;circular.net.xml&quot;/&gt;
+&lt;/output&gt;
 
-<span class="w">   </span><span class="nt">&lt;processing&gt;</span>
-<span class="w">       </span><span class="nt">&lt;no-internal-links</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;no-turnarounds</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/processing&gt;</span>
+   &lt;processing&gt;
+       &lt;no-internal-links value=&quot;true&quot;/&gt;
+       &lt;no-turnarounds value=&quot;true&quot;/&gt;
+   &lt;/processing&gt;
 
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+&lt;/configuration&gt;
+</code></pre>
 <p>Call netconvert again using this configuration file:</p>
-<div class="codehilite"><pre><span></span><code>netconvert -c circular.netcfg
-</code></pre></div>
-
+<pre><code>netconvert -c circular.netcfg
+</code></pre>
 <p>Try</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sumo-gui -n circular.net.xml</span>
-</code></pre></div>
-
+<pre><code>sumo-gui -n circular.net.xml
+</code></pre>
 <p>for a look at the final network.</p>
 <h2 id="route_and_flow_setup">Route and flow setup<a class="headerlink" href="#route_and_flow_setup" title="Permanent link">#</a></h2>
 <p>Next, we define routes and traffic flows. Open a new file called <code>circular.rou.xml</code> and insert the following vehicle type definitions for cars and trucks:</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 
-<span class="nt">&lt;routes</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span>
-<span class="w">  </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.sf.net/xsd/routes_file.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;4.5&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;car&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;36.1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;0.4&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;4.5&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;truck&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;22.2&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+&lt;routes xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/routes_file.xsd&quot;&gt;
+    &lt;vType accel=&quot;1.5&quot; decel=&quot;4.5&quot; id=&quot;car&quot; length=&quot;5&quot; maxSpeed=&quot;36.1&quot;/&gt;
+    &lt;vType accel=&quot;0.4&quot; decel=&quot;4.5&quot; id=&quot;truck&quot; length=&quot;12&quot; maxSpeed=&quot;22.2&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
 <p>For further details, see the <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#vehicle_types">vehicle type attributes description</a>.
 Since our network's edges are uni-directional, we want to define corresponding circular routes, i.e., counter-clockwise, as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;routeRight&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;bottom right top left&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;routeLeft&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;top left bottom right&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;routeTop&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;right top left bottom&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;routeBottom&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;left bottom right top&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">    &lt;route id=&quot;routeRight&quot; edges=&quot;bottom right top left&quot;/&gt;
+    &lt;route id=&quot;routeLeft&quot; edges=&quot;top left bottom right&quot;/&gt;
+    &lt;route id=&quot;routeTop&quot; edges=&quot;right top left bottom&quot;/&gt;
+    &lt;route id=&quot;routeBottom&quot; edges=&quot;left bottom right top&quot;/&gt;
+</code></pre>
 <p>Add these lines just before the closing <code>&lt;/routes&gt;</code> element. More information on defining your own routes can be found <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#routes">here</a>.
 Finally, we define traffic flows on these routes. For each route, we want a flow for cars as well as for trucks:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;free&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;carRight&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;70&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;routeRight&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;car&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;free&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;carTop&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;70&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;routeTop&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;car&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;free&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;carLeft&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;70&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;routeLeft&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;car&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;free&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;carBottom&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;70&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;routeBottom&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;car&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;free&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;truckRight&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;routeRight&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;truck&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;free&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;truckTop&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;routeTop&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;truck&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;free&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;truckLeft&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;routeLeft&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;truck&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;free&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;truckBottom&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;routeBottom&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;truck&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">    &lt;flow begin=&quot;0&quot; departPos=&quot;free&quot; id=&quot;carRight&quot; period=&quot;1&quot; number=&quot;70&quot; route=&quot;routeRight&quot; type=&quot;car&quot;/&gt;
+    &lt;flow begin=&quot;0&quot; departPos=&quot;free&quot; id=&quot;carTop&quot; period=&quot;1&quot; number=&quot;70&quot; route=&quot;routeTop&quot; type=&quot;car&quot;/&gt;
+    &lt;flow begin=&quot;0&quot; departPos=&quot;free&quot; id=&quot;carLeft&quot; period=&quot;1&quot; number=&quot;70&quot; route=&quot;routeLeft&quot; type=&quot;car&quot;/&gt;
+    &lt;flow begin=&quot;0&quot; departPos=&quot;free&quot; id=&quot;carBottom&quot; period=&quot;1&quot; number=&quot;70&quot; route=&quot;routeBottom&quot; type=&quot;car&quot;/&gt;
+    &lt;flow begin=&quot;0&quot; departPos=&quot;free&quot; id=&quot;truckRight&quot; period=&quot;1&quot; number=&quot;30&quot; route=&quot;routeRight&quot; type=&quot;truck&quot;/&gt;
+    &lt;flow begin=&quot;0&quot; departPos=&quot;free&quot; id=&quot;truckTop&quot; period=&quot;1&quot; number=&quot;30&quot; route=&quot;routeTop&quot; type=&quot;truck&quot;/&gt;
+    &lt;flow begin=&quot;0&quot; departPos=&quot;free&quot; id=&quot;truckLeft&quot; period=&quot;1&quot; number=&quot;30&quot; route=&quot;routeLeft&quot; type=&quot;truck&quot;/&gt;
+    &lt;flow begin=&quot;0&quot; departPos=&quot;free&quot; id=&quot;truckBottom&quot; period=&quot;1&quot; number=&quot;30&quot; route=&quot;routeBottom&quot; type=&quot;truck&quot;/&gt;
+</code></pre>
 <p>These lines can be inserted just after the route definitions. More on the attributes of the <code>flow</code> element can be found <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#repeated_vehicles_flows">here</a>.</p>
 <h2 id="rerouters">Rerouters<a class="headerlink" href="#rerouters" title="Permanent link">#</a></h2>
 <p>Currently, all flows taking one of the defined routes leave the simulation as soon as they reach their route's destination.
 In order to obtain endlessly driving vehicles, we need to define rerouters.
 Thus, we create a file called <code>circular.add.xml</code> which defines a <a href="../Simulation/Rerouter.html#assigning_a_new_route">rerouter</a> on the edges <code>bottom</code> and <code>top</code> each, such that vehicles continue on routes <code>routeRight</code> and <code>routeLeft</code>, respectively.</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 
-<span class="nt">&lt;additional</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.sf.net/xsd/additional_file.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;rerouter</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;rerouterBottom&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;bottom&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;100000&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;routeProbReroute</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;routeRight&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/interval&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/rerouter&gt;</span>
-<span class="w">    </span><span class="nt">&lt;rerouter</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;rerouterTop&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;top&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;100000&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;routeProbReroute</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;routeLeft&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/interval&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/rerouter&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+&lt;additional xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/additional_file.xsd&quot;&gt;
+    &lt;rerouter id=&quot;rerouterBottom&quot; edges=&quot;bottom&quot;&gt;
+        &lt;interval begin=&quot;0&quot; end=&quot;100000&quot;&gt;
+            &lt;routeProbReroute id=&quot;routeRight&quot; /&gt;
+        &lt;/interval&gt;
+    &lt;/rerouter&gt;
+    &lt;rerouter id=&quot;rerouterTop&quot; edges=&quot;top&quot;&gt;
+        &lt;interval begin=&quot;0&quot; end=&quot;100000&quot;&gt;
+            &lt;routeProbReroute id=&quot;routeLeft&quot; /&gt;
+        &lt;/interval&gt;
+    &lt;/rerouter&gt;
+&lt;/additional&gt;
+</code></pre>
 <h2 id="putting_it_all_together">Putting it all together<a class="headerlink" href="#putting_it_all_together" title="Permanent link">#</a></h2>
 <p>With all input files (network, routes, rerouters) completed, we can create a SUMO configuration file <code>circular.sumocfg</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 
-<span class="nt">&lt;configuration</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.sf.net/xsd/sumoConfiguration.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;input&gt;</span>
-<span class="w">        </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;circular.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;additional-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;circular.rou.xml,circular.add.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/input&gt;</span>
+&lt;configuration xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/sumoConfiguration.xsd&quot;&gt;
+    &lt;input&gt;
+        &lt;net-file value=&quot;circular.net.xml&quot;/&gt;
+        &lt;additional-files value=&quot;circular.rou.xml,circular.add.xml&quot;/&gt;
+    &lt;/input&gt;
 
-<span class="w">    </span><span class="nt">&lt;output&gt;</span>
-<span class="w">        </span><span class="nt">&lt;netstate-dump</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;dump.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/output&gt;</span>
+    &lt;output&gt;
+        &lt;netstate-dump value=&quot;dump.xml&quot;/&gt;
+    &lt;/output&gt;
 
-<span class="w">    </span><span class="nt">&lt;time&gt;</span>
-<span class="w">        </span><span class="nt">&lt;begin</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;end</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/time&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+    &lt;time&gt;
+        &lt;begin value=&quot;0&quot;/&gt;
+        &lt;end value=&quot;1000&quot;/&gt;
+    &lt;/time&gt;
+&lt;/configuration&gt;
+</code></pre>
 <p>Note that the routes file <code>circular.rou.xml</code> is declared as an additionals file here to prevent a referencing error due to the <a href="../sumo.html#loading_order_of_input_files">loading order of input files</a>.
 Since we want to analyze the output from the simulation later on, we also define the output file <code>dump.xml</code> storing the complete network state (cf. <a href="../sumo.html#output">Output Options</a> and <a href="../Simulation/Output/RawDump.html">RawDump</a>).</p>
 <h2 id="analyzing_the_output">Analyzing the output<a class="headerlink" href="#analyzing_the_output" title="Permanent link">#</a></h2>
@@ -383,7 +372,7 @@ Since we want to analyze the output from the simulation later on, we also define
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

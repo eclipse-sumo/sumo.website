@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -432,19 +433,17 @@ embedded into an interval tag. In this case one can (but does not have
 to) leave the tags <code>begin</code> and
 <code>end</code> out. So the following two snippets mean
 the same:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;edge0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;edge1&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;3600&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;100&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;flow id=&quot;0&quot; from=&quot;edge0&quot; to=&quot;edge1&quot; begin=&quot;0&quot; end=&quot;3600&quot; number=&quot;100&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
 <p>and</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;3600&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;edge0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;edge1&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;100&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/interval&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;interval begin=&quot;0&quot; end=&quot;3600&quot;&gt;
+        &lt;flow id=&quot;0&quot; from=&quot;edge0&quot; to=&quot;edge1&quot; number=&quot;100&quot;/&gt;
+    &lt;/interval&gt;
+&lt;/routes&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The input file always needs a root level element to enclose the trip/flow elements and this should be named <code>&lt;routes&gt;</code>.</p>
@@ -562,14 +561,13 @@ can be used to use other attributes for routing. Weight files that only
 contain some of the network edges are permitted. If undefined, the
 traveltime of an edge defaults to the free-flow traveltime. Also, only
 the <em>weight-attribute</em> must be defined:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;meandata&gt;</span>
-<span class="w">    </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;3600&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;whatever&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;edgeID1&quot;</span><span class="w"> </span><span class="na">traveltime=</span><span class="s">&quot;23&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;edgeID2&quot;</span><span class="w"> </span><span class="na">traveltime=</span><span class="s">&quot;1000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/interval&gt;</span>
-<span class="nt">&lt;/meandata&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;meandata&gt;
+    &lt;interval begin=&quot;0&quot; end=&quot;3600&quot; id=&quot;whatever&quot;&gt;
+        &lt;edge id=&quot;edgeID1&quot; traveltime=&quot;23&quot;/&gt;
+        &lt;edge id=&quot;edgeID2&quot; traveltime=&quot;1000&quot;/&gt;
+    &lt;/interval&gt;
+&lt;/meandata&gt;
+</code></pre>
 <h1 id="access_restrictions">Access restrictions<a class="headerlink" href="#access_restrictions" title="Permanent link">#</a></h1>
 <p>Access to a network edge is typically restricted by the <a href="../Simulation/VehiclePermissions.html">vehicle class</a> defined in a <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#vehicle_types">vehicle type</a> but can also be customized with <a href="../Simulation/VehiclePermissions.html#custom_access_restrictions">numerical restrictions</a>.</p>
 <h1 id="repair_routes">Repair routes<a class="headerlink" href="#repair_routes" title="Permanent link">#</a></h1>
@@ -604,31 +602,28 @@ of the route.</p>
 </li>
 </ul>
 <h1 id="usage_examples">Usage Examples<a class="headerlink" href="#usage_examples" title="Permanent link">#</a></h1>
-<div class="codehilite"><pre><span></span><code><span class="n">duarouter --trip-files trips.xml --net-file road.net.xml --output-file result.rou.xml</span>
-</code></pre></div>
-
+<pre><code>duarouter --trip-files trips.xml --net-file road.net.xml --output-file result.rou.xml
+</code></pre>
 <p>the file ''trips.xml '' given below must contain edges contained in the
 network file ''road.net.xml ''.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1625993_25&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;25&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-15229224#3&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;4474184&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1542480_35&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;35&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-46771582&quot;</span><span class="w">   </span><span class="na">to=</span><span class="s">&quot;-24038909#1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1544282_35&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;35&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;20554351#2&quot;</span><span class="w">  </span><span class="na">to=</span><span class="s">&quot;-4876083#5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1565407_35&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;35&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-25771472#1&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-25160470#0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1620115_45&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;45&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;11279351#3&quot;</span><span class="w">  </span><span class="na">to=</span><span class="s">&quot;5198584#1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1647560_45&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;45&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;54048879#0&quot;</span><span class="w">  </span><span class="na">to=</span><span class="s">&quot;-52105434#0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3761248_45&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;45&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-31928311&quot;</span><span class="w">   </span><span class="na">to=</span><span class="s">&quot;23792451#7&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;trip id=&quot;1625993_25&quot; depart=&quot;25&quot; from=&quot;-15229224#3&quot; to=&quot;4474184&quot;/&gt;
+    &lt;trip id=&quot;1542480_35&quot; depart=&quot;35&quot; from=&quot;-46771582&quot;   to=&quot;-24038909#1&quot;/&gt;
+    &lt;trip id=&quot;1544282_35&quot; depart=&quot;35&quot; from=&quot;20554351#2&quot;  to=&quot;-4876083#5&quot;/&gt;
+    &lt;trip id=&quot;1565407_35&quot; depart=&quot;35&quot; from=&quot;-25771472#1&quot; to=&quot;-25160470#0&quot;/&gt;
+    &lt;trip id=&quot;1620115_45&quot; depart=&quot;45&quot; from=&quot;11279351#3&quot;  to=&quot;5198584#1&quot;/&gt;
+    &lt;trip id=&quot;1647560_45&quot; depart=&quot;45&quot; from=&quot;54048879#0&quot;  to=&quot;-52105434#0&quot;/&gt;
+    &lt;trip id=&quot;3761248_45&quot; depart=&quot;45&quot; from=&quot;-31928311&quot;   to=&quot;23792451#7&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
 <p>Trips may contain <a href="Importing_O/D_Matrices.html#describing_the_taz">source and destination
 districts</a>
 as well as edges. If the districts shall be used for routing this has to
 be specified using the option "--with-taz". Furthermore (if the net does
 not contain the districts) a districts file needs to be provided:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">duarouter --trip-files=&lt;TRIP_DEFS&gt; --net-file=&lt;SUMO_NET&gt; \</span>
-<span class="n">  --output-file=MySUMORoutes.rou.xml --taz-files=&lt;DISTRICTS&gt; --with-taz</span>
-</code></pre></div>
-
+<pre><code>duarouter --trip-files=&lt;TRIP_DEFS&gt; --net-file=&lt;SUMO_NET&gt; \
+  --output-file=MySUMORoutes.rou.xml --taz-files=&lt;DISTRICTS&gt; --with-taz
+</code></pre>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>The edge weights are ignored when using TAZ this way. Instead TAZ edges are selected so that the travel time is minimized.</p>
@@ -636,24 +631,21 @@ not contain the districts) a districts file needs to be provided:</p>
 <p>As we have to read in the flow definitions completely into the memory -
 something we do not have to do necessarily with trips, an extra
 parameter (-f or --flows) is used to make them known by the router:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">duarouter --flows=&lt;FLOW_DEFS&gt; --net=&lt;SUMO_NET&gt; \</span>
-<span class="n">  --output-file=MySUMORoutes.rou.xml -b &lt;UINT&gt; -e &lt;UINT&gt;</span>
-</code></pre></div>
-
+<pre><code>duarouter --flows=&lt;FLOW_DEFS&gt; --net=&lt;SUMO_NET&gt; \
+  --output-file=MySUMORoutes.rou.xml -b &lt;UINT&gt; -e &lt;UINT&gt;
+</code></pre>
 <p>Remind that one can not insert flow descriptions into a trip definitions
 file. The opposite (some trip definitions within a flow descriptions
 file) is possible. You also can give both files at the input file, for
 example:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">duarouter --flows=&lt;FLOW_DEFS&gt; --trip-files=&lt;TRIP_DEFS&gt; --net=&lt;SUMO_NET&gt; \</span>
-<span class="n">  --output-file=MySUMORoutes.rou.xml -b &lt;UINT&gt; -e &lt;UINT&gt;</span>
-</code></pre></div>
-
+<pre><code>duarouter --flows=&lt;FLOW_DEFS&gt; --trip-files=&lt;TRIP_DEFS&gt; --net=&lt;SUMO_NET&gt; \
+  --output-file=MySUMORoutes.rou.xml -b &lt;UINT&gt; -e &lt;UINT&gt;
+</code></pre>
 <h1 id="dealing_with_errors_during_routing">Dealing with Errors During Routing<a class="headerlink" href="#dealing_with_errors_during_routing" title="Permanent link">#</a></h1>
 <p>When running <a href="../duarouter.html">duarouter</a> you may encounter errors
 of the type</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Error</span><span class="o">:</span><span class="w"> </span><span class="n">No</span><span class="w"> </span><span class="n">connection</span><span class="w"> </span><span class="n">between</span><span class="w"> </span><span class="s1">&#39;edge1&#39;</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="s1">&#39;edge2&#39;</span><span class="w"> </span><span class="n">found</span>
-</code></pre></div>
-
+<pre><code>Error: No connection between 'edge1' and 'edge2' found
+</code></pre>
 <p>This is caused by an unconnected network. If your network has vehicle
 class restrictions it may be that the connectivity is only lacking for
 particular vehicle classes which is less obvious from the GUI. You can
@@ -669,7 +661,7 @@ to pin down the connectivity gaps in your network.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

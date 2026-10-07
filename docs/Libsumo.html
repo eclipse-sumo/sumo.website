@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="css/fontawesome.all.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="js/jquery-3.7.0.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -309,15 +310,13 @@ in your start command instead of <code>sumo</code> or define the environment var
 <code>LIBSUMO_GUI</code>.</p>
 <h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link">#</a></h2>
 <p>Make sure you have libsumo installed (<code>pip install libsumo</code>).</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">libsumo</span>
-<span class="n">libsumo</span><span class="o">.</span><span class="n">start</span><span class="p">([</span><span class="s2">&quot;sumo&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;test.sumocfg&quot;</span><span class="p">])</span>
-<span class="n">libsumo</span><span class="o">.</span><span class="n">simulationStep</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-py">import libsumo
+libsumo.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;test.sumocfg&quot;])
+libsumo.simulationStep()
+</code></pre>
 <p>Existing traci scripts can be reused (subject to the <a href="#limitations">limitations</a> mentioned above) by calling</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">libsumo</span> <span class="k">as</span> <span class="nn">traci</span>
-</code></pre></div>
-
+<pre><code class="language-py">import libsumo as traci
+</code></pre>
 <p>In case you have a lot of scripts you can also set the environment
 variable <code>LIBSUMO_AS_TRACI</code> to a non empty value which will trigger the
 import as above.</p>
@@ -326,97 +325,89 @@ import as above.</p>
 <h3 id="example_code_testcpp">Example Code (test.cpp)<a class="headerlink" href="#example_code_testcpp" title="Permanent link">#</a></h3>
 <p>The example assumes you have the named sumocfg file in your current working directory and the SUMO <code>bin</code> directory included
 in the <code>PATH</code> environmental variable. Otherwise you need to provide the full file path.</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#define HAVE_LIBSUMOGUI  </span><span class="c1">// if you are on Windows or have libsumo compiled yourself without GUI you should remove this line</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;libsumo/libsumo.h&gt;</span>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#define HAVE_LIBSUMOGUI  // if you are on Windows or have libsumo compiled yourself without GUI you should remove this line
+#include &lt;libsumo/libsumo.h&gt;
 
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">libsumo</span><span class="p">;</span>
+using namespace libsumo;
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Simulation</span><span class="o">::</span><span class="n">start</span><span class="p">({</span><span class="s">&quot;sumo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-c&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;test.sumocfg&quot;</span><span class="p">});</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">Simulation</span><span class="o">::</span><span class="n">step</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">Simulation</span><span class="o">::</span><span class="n">close</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div>
-
+int main(int argc, char* argv[]) {
+    Simulation::start({&quot;sumo&quot;, &quot;-c&quot;, &quot;test.sumocfg&quot;});
+    for (int i = 0; i &lt; 5; i++) {
+        Simulation::step();
+    }
+    Simulation::close();
+}
+</code></pre>
 <h3 id="compiling_on_linux_make_sure_sumo_home_is_set_and_sumo_has_been_built">compiling on Linux (make sure SUMO_HOME is set and sumo has been built)<a class="headerlink" href="#compiling_on_linux_make_sure_sumo_home_is_set_and_sumo_has_been_built" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code>g++ -o test -std=c++11 -I$SUMO_HOME/src test.cpp -L$SUMO_HOME/bin -lsumocpp
-</code></pre></div>
-
+<pre><code>g++ -o test -std=c++11 -I$SUMO_HOME/src test.cpp -L$SUMO_HOME/bin -lsumocpp
+</code></pre>
 <h3 id="running_on_linux">running on Linux<a class="headerlink" href="#running_on_linux" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code>LD_LIBRARY_PATH=$SUMO_HOME/bin ./test
-</code></pre></div>
-
+<pre><code>LD_LIBRARY_PATH=$SUMO_HOME/bin ./test
+</code></pre>
 <h2 id="java">Java<a class="headerlink" href="#java" title="Permanent link">#</a></h2>
 <p>On Windows it is strongly recommended to use at least OpenJDK 21.0.5 (for libsumo 1.22.0 or later).
 Earlier versions show unexplained crashes.</p>
 <p>You might want to use the available <a href="Developer/Maven.html">Maven package</a>.</p>
 <h3 id="example_code_testjava">Example Code (Test.java)<a class="headerlink" href="#example_code_testjava" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.sumo.libsumo.Simulation</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.sumo.libsumo.StringVector</span><span class="p">;</span>
+<pre><code class="language-java">import org.eclipse.sumo.libsumo.Simulation;
+import org.eclipse.sumo.libsumo.StringVector;
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">Simulation</span><span class="p">.</span><span class="na">preloadLibraries</span><span class="p">();</span>
-<span class="w">        </span><span class="n">Simulation</span><span class="p">.</span><span class="na">start</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">StringVector</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;sumo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-c&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;test.sumocfg&quot;</span><span class="p">}));</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">Simulation</span><span class="p">.</span><span class="na">step</span><span class="p">();</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="n">Simulation</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-
+public class Test {
+    public static void main(String[] args) {
+        Simulation.preloadLibraries();
+        Simulation.start(new StringVector(new String[] {&quot;sumo&quot;, &quot;-c&quot;, &quot;test.sumocfg&quot;}));
+        for (int i = 0; i &lt; 5; i++) {
+            Simulation.step();
+        }
+        Simulation.close();
+    }
+}
+</code></pre>
 <p>Please note that starting with SUMO 1.16.0 it seems to be necessary to preload some libraries
 on Windows, see <a href="https://github.com/eclipse-sumo/sumo/issues/12605">https://github.com/eclipse-sumo/sumo/issues/12605</a>.
 This has been encapsulated in a separate convenience call <code>Simulation.preloadLibraries()</code> since SUMO 1.24.0.</p>
 <h3 id="compiling_on_linux_make_sure_sumo_home_is_set_and_sumo_has_been_built_1">compiling on Linux (make sure SUMO_HOME is set and sumo has been built)<a class="headerlink" href="#compiling_on_linux_make_sure_sumo_home_is_set_and_sumo_has_been_built_1" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code>javac -cp $SUMO_HOME/bin/libsumo-1.27.1-SNAPSHOT.jar Test.java
-</code></pre></div>
-
+<pre><code>javac -cp $SUMO_HOME/bin/libsumo-1.27.1-SNAPSHOT.jar Test.java
+</code></pre>
 <h3 id="running_on_linux_1">running on Linux<a class="headerlink" href="#running_on_linux_1" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="nx">java</span><span class="w"> </span><span class="o">-</span><span class="nx">Djava</span><span class="p">.</span><span class="kn">library</span><span class="p">.</span><span class="nx">path</span><span class="p">=</span><span class="err">$</span><span class="nx">SUMO_HOME</span><span class="o">/</span><span class="nx">bin</span><span class="w"> </span><span class="o">-</span><span class="nx">cp</span><span class="w"> </span><span class="err">$</span><span class="nx">SUMO_HOME</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nx">libsumo</span><span class="o">-</span><span class="m m-Double">1.27.1</span><span class="o">-</span><span class="nx">SNAPSHOT</span><span class="p">.</span><span class="nx">jar</span><span class="p">:.</span><span class="w"> </span><span class="nx">Test</span>
-</code></pre></div>
-
+<pre><code>java -Djava.library.path=$SUMO_HOME/bin -cp $SUMO_HOME/bin/libsumo-1.27.1-SNAPSHOT.jar:. Test
+</code></pre>
 <h3 id="casting_subscription_results">casting subscription results<a class="headerlink" href="#casting_subscription_results" title="Permanent link">#</a></h3>
 <p>Please be aware that casting subscription results is not straightforward with Java.
 You have to use the <code>cast</code> function as below. If the cast is not successful it will not throw an exception
 but return a null pointer.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">TraCIResults</span><span class="w"> </span><span class="nt">ssRes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">Simulation</span><span class="p">.</span><span class="nc">getSubscriptionResults</span><span class="o">();</span>
-<span class="nt">for</span><span class="w"> </span><span class="o">(</span><span class="nt">Map</span><span class="p">.</span><span class="nc">Entry</span><span class="o">&lt;</span><span class="nt">Integer</span><span class="o">,</span><span class="w"> </span><span class="nt">TraCIResult</span><span class="o">&gt;</span><span class="w"> </span><span class="nt">entry</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nt">ssRes</span><span class="p">.</span><span class="nc">entrySet</span><span class="o">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="err">TraCIResult</span><span class="w"> </span><span class="err">sR</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">entry.getValue()</span><span class="p">;</span>
-<span class="w">    </span><span class="err">TraCIStringList</span><span class="w"> </span><span class="err">vehIDs</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">TraCIStringList.cast(sR)</span><span class="p">;</span>
-<span class="w">    </span><span class="err">for</span><span class="w"> </span><span class="err">(String</span><span class="w"> </span><span class="n">vehID</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">vehIDs</span><span class="o">.</span><span class="nf">getValue</span><span class="p">())</span><span class="w"> </span><span class="err">{</span>
-<span class="w">        </span><span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="nf">println</span><span class="p">(</span><span class="s2">&quot;Subscription Departed vehicles: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vehID</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="err">}</span>
-</code></pre></div>
-
+<pre><code>TraCIResults ssRes = Simulation.getSubscriptionResults();
+for (Map.Entry&lt;Integer, TraCIResult&gt; entry : ssRes.entrySet()) {
+    TraCIResult sR = entry.getValue();
+    TraCIStringList vehIDs = TraCIStringList.cast(sR);
+    for (String vehID : vehIDs.getValue()) {
+        System.out.println(&quot;Subscription Departed vehicles: &quot; + vehID);
+    }
+}
+</code></pre>
 <h2 id="matlab">Matlab<a class="headerlink" href="#matlab" title="Permanent link">#</a></h2>
 <p>Please install the <a href="#python">Python package</a>. You can then use all commands inside your Matlab scripts
 just as in Python by adding the <code>py.</code> prefix.</p>
-<div class="codehilite"><pre><span></span><code>py.libsumo.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;test.sumocfg&quot;])
+<pre><code>py.libsumo.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;test.sumocfg&quot;])
 py.libsumo.simulationStep()
-</code></pre></div>
-
+</code></pre>
 <h2 id="c_1">C<a class="headerlink" href="#c_1" title="Permanent link">#</a></h2>
 <h3 id="example_code_programcs">Example Code (Program.cs)<a class="headerlink" href="#example_code_programcs" title="Permanent link">#</a></h3>
 <p>Make sure you have added the swig generated C# bindings to your solution, as well as the compiled libsumocs.dll if not present in your Sumo installation folder.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">Eclipse.Sumo.Libsumo</span><span class="p">;</span>
+<pre><code class="language-c#">using Eclipse.Sumo.Libsumo;
 
-<span class="k">internal</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">Simulation</span><span class="p">.</span><span class="n">start</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">StringVector</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;sumo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-c&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;test.sumocfg&quot;</span><span class="p">}));</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">Simulation</span><span class="p">.</span><span class="n">step</span><span class="p">();</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="n">Simulation</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+internal class Program
+{
+    static void Main(String[] args) {
+        Simulation.start(new StringVector(new String[] {&quot;sumo&quot;, &quot;-c&quot;, &quot;test.sumocfg&quot;}));
+        for (int i = 0; i &lt; 5; i++) {
+            Simulation.step();
+        }
+        Simulation.close();
+    }
+}
+</code></pre>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -424,7 +415,7 @@ py.libsumo.simulationStep()
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -217,10 +218,9 @@ using the format defined in
 <h2 id="instantiating_within_the_simulation">Instantiating within the Simulation<a class="headerlink" href="#instantiating_within_the_simulation" title="Permanent link">#</a></h2>
 <p>An edge based Amitran output is defined way within an additional file as
 following:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;edgeData</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;DETECTOR_ID&gt;&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;amitran&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;&lt;PERIOD&gt;&quot;</span>
-<span class="na">file=</span><span class="s">&quot;&lt;OUTPUT_FILE&gt;&quot;</span><span class="w"> </span><span class="err">\[</span><span class="na">vTypes=</span><span class="s">&quot;&lt;LIST&gt;&quot;</span><span class="err">\]</span><span class="w"> </span><span class="err">\[</span><span class="na">excludeEmpty=</span><span class="s">&quot;true&quot;</span><span class="err">\]/\</span><span class="nt">&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;edgeData id=&quot;&lt;DETECTOR_ID&gt;&quot; type=&quot;amitran&quot; period=&quot;&lt;PERIOD&gt;&quot;
+file=&quot;&lt;OUTPUT_FILE&gt;&quot; \[vTypes=&quot;&lt;LIST&gt;&quot;\] \[excludeEmpty=&quot;true&quot;\]/\&gt;
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -268,17 +268,16 @@ following:</p>
 </tbody>
 </table>
 <h2 id="generated_output">Generated Output<a class="headerlink" href="#generated_output" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;linkData</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.dlr.de/xsd/amitran/linkdata.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;timeSlice</span><span class="w"> </span><span class="na">startTime=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;60000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;timeSlice</span><span class="w"> </span><span class="na">startTime=</span><span class="s">&quot;60000&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;60000&quot;</span><span class="nt">&gt;</span>
-<span class="w">       </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;32&quot;</span><span class="w"> </span><span class="na">amount=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">averageSpeed=</span><span class="s">&quot;888&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;35&quot;</span><span class="w"> </span><span class="na">amount=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">averageSpeed=</span><span class="s">&quot;879&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;38&quot;</span><span class="w"> </span><span class="na">amount=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">averageSpeed=</span><span class="s">&quot;859&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/timeSlice&gt;</span>
-<span class="w">   </span>...
-<span class="nt">&lt;/linkData&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;linkData xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.dlr.de/xsd/amitran/linkdata.xsd&quot;&gt;
+   &lt;timeSlice startTime=&quot;0&quot; duration=&quot;60000&quot;/&gt;
+   &lt;timeSlice startTime=&quot;60000&quot; duration=&quot;60000&quot;&gt;
+       &lt;link id=&quot;32&quot; amount=&quot;2&quot; averageSpeed=&quot;888&quot;/&gt;
+       &lt;link id=&quot;35&quot; amount=&quot;2&quot; averageSpeed=&quot;879&quot;/&gt;
+       &lt;link id=&quot;38&quot; amount=&quot;4&quot; averageSpeed=&quot;859&quot;/&gt;
+   &lt;/timeSlice&gt;
+   ...
+&lt;/linkData&gt;
+</code></pre>
 <h3 id="value_descriptions">Value Descriptions<a class="headerlink" href="#value_descriptions" title="Permanent link">#</a></h3>
 <table>
 <thead>
@@ -357,7 +356,7 @@ following:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

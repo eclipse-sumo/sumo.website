@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -284,9 +285,8 @@ das Einlesen von Routen, Zuflüssen, Lichtsignalanlagen sowie Detektoren
 ermöglichen.</p>
 <h2 id="verwendung">Verwendung<a class="headerlink" href="#verwendung" title="Permanent link">#</a></h2>
 <p>Der Aufruf von <code>netconvert</code> für VISSIM-Netze erfolgt über:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --vissim-file=&lt;VISSIM_FILE –-output-file=MySUMOFile.net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --vissim-file=&lt;VISSIM_FILE –-output-file=MySUMOFile.net.xml
+</code></pre>
 <p>Die Unterscheidung, ob es sich um ein VISSIM-Netz im neuen <code>inpx</code>- oder
 alten <code>inp</code>-Format handelt wird während der Konversion geprüft. Somit
 muss sich der/die BenutzerIn nicht darum kümmern, in welcher Version das
@@ -328,9 +328,8 @@ für das konvertierte Netz zu erstellen. Diese hat die Endung <code>.rou.xml</co
 und wird bei der Simulation als Argument angegeben. Bei der Konversion
 werden <strong>nur statische Routendefinitionen</strong> unterstützt, die eine exakte
 Routenabfolge beinhalten. Der Aufruf erfolgt über:</p>
-<div class="codehilite"><pre><span></span><code>convert_vissimXML_flows_statRoutes.py -V &lt;vissim-file&gt; -n &lt;sumo-net-file&gt; -o &lt;output-filename&gt;
-</code></pre></div>
-
+<pre><code>convert_vissimXML_flows_statRoutes.py -V &lt;vissim-file&gt; -n &lt;sumo-net-file&gt; -o &lt;output-filename&gt;
+</code></pre>
 <h2 id="routendefinition_vissim">Routendefinition VISSIM<a class="headerlink" href="#routendefinition_vissim" title="Permanent link">#</a></h2>
 <p>Zuflüsse sind in der .inpx-Datei durch den XML-tag
 <code>&lt;timeIntervalVehVolume&gt;</code> gekennzeichnet. Ein Zufluss ist immer einer
@@ -341,16 +340,15 @@ die Fahrzeugzusammensetzung und die Verkehrsstärke definiert sind. Die
 Beginnzeiten der Zeitintervalle sind in Millisekunden angegeben und die
 Verkehrsstärke hat die Einheit Fz/h. Eine Zuflussdefinition sieht in
 VISSIM wie folgt aus:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nt">&lt;vehicleInput</span><span class="w"> </span><span class="na">anmFlag=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;9&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Parkplatz 30221&quot;</span><span class="w"> </span><span class="na">no=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
-<span class="w">     </span><span class="nt">&lt;timeIntVehVols&gt;</span>
-<span class="w">        </span><span class="nt">&lt;timeIntervalVehVolume</span><span class="w"> </span><span class="na">cont=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">timeInt=</span><span class="s">&quot;1 0&quot;</span><span class="w"> </span><span class="na">vehComp=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">volType=</span><span class="s">&quot;STOCHASTIC&quot;</span><span class="w"> </span><span class="na">volume=</span><span class="s">&quot;48.000000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;timeIntervalVehVolume</span><span class="w"> </span><span class="na">cont=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">timeInt=</span><span class="s">&quot;1 900000&quot;</span><span class="w"> </span><span class="na">vehComp=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">volType=</span><span class="s">&quot;STOCHASTIC&quot;</span><span class="w"> </span><span class="na">volume=</span><span class="s">&quot;84.000000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;timeIntervalVehVolume</span><span class="w"> </span><span class="na">cont=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">timeInt=</span><span class="s">&quot;1 1800000&quot;</span><span class="w"> </span><span class="na">vehComp=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">volType=</span><span class="s">&quot;STOCHASTIC&quot;</span><span class="w"> </span><span class="na">volume=</span><span class="s">&quot;120.040000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;timeIntervalVehVolume</span><span class="w"> </span><span class="na">cont=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">timeInt=</span><span class="s">&quot;1 2700000&quot;</span><span class="w"> </span><span class="na">vehComp=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">volType=</span><span class="s">&quot;STOCHASTIC&quot;</span><span class="w"> </span><span class="na">volume=</span><span class="s">&quot;120.040000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">     </span><span class="nt">&lt;/timeIntVehVols&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/vehicleInput&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">  &lt;vehicleInput anmFlag=&quot;false&quot; link=&quot;9&quot; name=&quot;Parkplatz 30221&quot; no=&quot;1&quot;&gt;
+     &lt;timeIntVehVols&gt;
+        &lt;timeIntervalVehVolume cont=&quot;false&quot; timeInt=&quot;1 0&quot; vehComp=&quot;6&quot; volType=&quot;STOCHASTIC&quot; volume=&quot;48.000000&quot;/&gt;
+        &lt;timeIntervalVehVolume cont=&quot;false&quot; timeInt=&quot;1 900000&quot; vehComp=&quot;6&quot; volType=&quot;STOCHASTIC&quot; volume=&quot;84.000000&quot;/&gt;
+        &lt;timeIntervalVehVolume cont=&quot;false&quot; timeInt=&quot;1 1800000&quot; vehComp=&quot;6&quot; volType=&quot;STOCHASTIC&quot; volume=&quot;120.040000&quot;/&gt;
+        &lt;timeIntervalVehVolume cont=&quot;false&quot; timeInt=&quot;1 2700000&quot; vehComp=&quot;6&quot; volType=&quot;STOCHASTIC&quot; volume=&quot;120.040000&quot;/&gt;
+     &lt;/timeIntVehVols&gt;
+  &lt;/vehicleInput&gt;
+</code></pre>
 <p>Routenentscheidungen werden in VISSIM durch ihre Startpunkte
 zusammengefasst. Von einer Strecke können mehrere statische Routen
 ausgehen, die zu unterschiedlichen Zielstrecken führen. Diese sind durch
@@ -360,21 +358,20 @@ der Zuflüsse für die Routen definiert sind. Der Verlauf der Route ist
 durch die angeführte Streckenfolge gegeben, welche durch den XML-tag
 <code>&lt;linkSeq&gt;</code> eingeleitet wird. Eine Routendefinition zeigt folgendes
 Beispiel:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vehicleRoutingDecisionStatic</span><span class="w"> </span><span class="na">allVehTypes=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">anmFlag=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">combineStaRoutDec=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;9&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Parkplatz 30221&quot;</span><span class="w"> </span><span class="na">no=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;1.000000&quot;</span><span class="nt">&gt;</span>
-<span class="w">     </span><span class="nt">&lt;vehicleRouteStatic</span><span class="w"> </span><span class="na">destLink=</span><span class="s">&quot;205&quot;</span><span class="w"> </span><span class="na">destPos=</span><span class="s">&quot;20.916000&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">no=</span><span class="s">&quot;113&quot;</span><span class="w"> </span><span class="na">relFlow=</span><span class="s">&quot;2 0:4.000000, 2 900000:6.990000, 2 1800000:9.990000, 2 2700000:9.990000, 2 3600000:12.660000, 2 4500000:16.330000, 2 5400000:20.990000, 2 6300000:15.660000, 2 7200000:16.660000, 2 8100000:16.330000&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;linkSeq&gt;</span>
-<span class="w">           </span><span class="nt">&lt;intObjectRef</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;10381&quot;</span><span class="nt">/&gt;</span>
-<span class="w">           </span><span class="nt">&lt;intObjectRef</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;269&quot;</span><span class="nt">/&gt;</span>
-<span class="w">           </span><span class="nt">&lt;intObjectRef</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;10154&quot;</span><span class="nt">/&gt;</span>
-<span class="w">           </span><span class="nt">&lt;intObjectRef</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;117&quot;</span><span class="nt">/&gt;</span>
-<span class="w">           </span><span class="nt">&lt;intObjectRef</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;10150&quot;</span><span class="nt">/&gt;</span>
-<span class="w">           </span><span class="nt">&lt;intObjectRef</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;76&quot;</span><span class="nt">/&gt;</span>
-<span class="w">           </span><span class="nt">&lt;intObjectRef</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;10145&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/linkSeq&gt;</span>
-<span class="w">     </span><span class="nt">&lt;/vehicleRouteStatic&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/vehicleRoutingDecisionStatic&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vehicleRoutingDecisionStatic allVehTypes=&quot;true&quot; anmFlag=&quot;false&quot; combineStaRoutDec=&quot;false&quot; link=&quot;9&quot; name=&quot;Parkplatz 30221&quot; no=&quot;1&quot; pos=&quot;1.000000&quot;&gt;
+     &lt;vehicleRouteStatic destLink=&quot;205&quot; destPos=&quot;20.916000&quot; name=&quot;&quot; no=&quot;113&quot; relFlow=&quot;2 0:4.000000, 2 900000:6.990000, 2 1800000:9.990000, 2 2700000:9.990000, 2 3600000:12.660000, 2 4500000:16.330000, 2 5400000:20.990000, 2 6300000:15.660000, 2 7200000:16.660000, 2 8100000:16.330000&quot;&gt;
+        &lt;linkSeq&gt;
+           &lt;intObjectRef key=&quot;10381&quot;/&gt;
+           &lt;intObjectRef key=&quot;269&quot;/&gt;
+           &lt;intObjectRef key=&quot;10154&quot;/&gt;
+           &lt;intObjectRef key=&quot;117&quot;/&gt;
+           &lt;intObjectRef key=&quot;10150&quot;/&gt;
+           &lt;intObjectRef key=&quot;76&quot;/&gt;
+           &lt;intObjectRef key=&quot;10145&quot;/&gt;
+        &lt;/linkSeq&gt;
+     &lt;/vehicleRouteStatic&gt;
+  &lt;/vehicleRoutingDecisionStatic&gt;
+</code></pre>
 <h2 id="routendefinition_sumo">Routendefinition SUMO<a class="headerlink" href="#routendefinition_sumo" title="Permanent link">#</a></h2>
 <p>In SUMO können definiert werden, bei denen wie in VISSIM mehrere Routen
 von einem gemeinsamen Startpunkt zusammengefasst werden. Jede Route in
@@ -382,26 +379,24 @@ der Verteilung ist über ihre Streckenabfolge, sowie ihrer
 Wahrscheinlichkeit definiert. Die Summe der Wahrscheinlichkeiten aller
 Routen muss immer 1 ergeben und die Referenzierung auf eine
 Routen-Verteilung erfolgt über deren eindeutige ID:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routeDistribution</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;81_900.0&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;81 83 210 211 268 117 76 115 213 212 114 265 203 204 263 109 52 188 297 190 296 186 70 298 238 299 124&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;163&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.372751499001&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;81 83 210 211 268 117 76 115 213 212 114 265 203 204 263 109 52 188 297 190 296 186 70 298 238 299 239 72 &quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;181&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.125916055963&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;81 83 210 211 268 117 76 115 213 212 114 265 203 204 263 109 52 188 297 190 296 186 181 184&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;187&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.171219187209&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;81 83 215 216 217 272 16&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;193&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.211192538308&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;81 83 210 211 268 13&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;195&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.11892071952&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/routeDistribution&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routeDistribution id=&quot;81_900.0&quot;&gt;
+   &lt;route edges=&quot;81 83 210 211 268 117 76 115 213 212 114 265 203 204 263 109 52 188 297 190 296 186 70 298 238 299 124&quot; id=&quot;163&quot; probability=&quot;0.372751499001&quot;/&gt;
+   &lt;route edges=&quot;81 83 210 211 268 117 76 115 213 212 114 265 203 204 263 109 52 188 297 190 296 186 70 298 238 299 239 72 &quot; id=&quot;181&quot; probability=&quot;0.125916055963&quot;/&gt;
+   &lt;route edges=&quot;81 83 210 211 268 117 76 115 213 212 114 265 203 204 263 109 52 188 297 190 296 186 181 184&quot; id=&quot;187&quot; probability=&quot;0.171219187209&quot;/&gt;
+   &lt;route edges=&quot;81 83 215 216 217 272 16&quot; id=&quot;193&quot; probability=&quot;0.211192538308&quot;/&gt;
+   &lt;route edges=&quot;81 83 210 211 268 13&quot; id=&quot;195&quot; probability=&quot;0.11892071952&quot;/&gt;
+&lt;/routeDistribution&gt;
+</code></pre>
 <p>Des weiteren gehören zur Routendefinition auch Fahzeugtyp-Verteilungen .
 Diese geben die Eigenschaften und die Wahrscheinlichkeit der definierten
 Fahrzeugtypen an und müssen vorher definiert werden. Wie bei der
 Routen-Verteilung erfolgt die Referenzierung auch hier über die
 eindeutige ID:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vTypeDistribution</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;6&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;3.500000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;t1001_D6&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;4.454081632653061&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;14.722222222222221&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.900000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;7.300000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;t1002_D6&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;10.086636363636364&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;14.722222222222221&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;truck&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.100000&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/vTypeDistribution&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vTypeDistribution id=&quot;6&quot;&gt;
+   &lt;vType accel=&quot;3.500000&quot; id=&quot;t1001_D6&quot; length=&quot;4.454081632653061&quot; maxSpeed=&quot;14.722222222222221&quot; probability=&quot;0.900000&quot;/&gt;
+   &lt;vType accel=&quot;7.300000&quot; id=&quot;t1002_D6&quot; length=&quot;10.086636363636364&quot; maxSpeed=&quot;14.722222222222221&quot; vClass=&quot;truck&quot; probability=&quot;0.100000&quot;/&gt;
+&lt;/vTypeDistribution&gt;
+</code></pre>
 <p>Auch die Fahrzeugzuflüsse werden in der Routen-Datei definiert. Diese
 werden wie in VISSIM für ein gewisses Zeitintervall festgelegt. Wichtig
 ist, dass die Zuflüsse <strong>aufsteigend nach der Zeit sortiert</strong> werden, da
@@ -409,11 +404,10 @@ diese ansonsten nicht korrekt eingelesen werden können. Jedem Zufluss
 wird des Weiteren noch eine zuvor definierte Routen-Verteilung, eine
 Fahrzeugtypen-Verteilung sowie eine ID zugeordnet. Zuflüsse werden in
 SUMO wie folgt definiert:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,1,0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;900.0&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;fl81_st0.0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;81_0.0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">vehsPerHour=</span><span class="s">&quot;94.56&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;900.0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,1,0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;1800.0&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;fl81_st900.0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;81_900.0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">vehsPerHour=</span><span class="s">&quot;120.08&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;1800.0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,1,0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;2700.0&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;fl108_st1800.0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;108_1800.0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">vehsPerHour=</span><span class="s">&quot;161.88&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;flow begin=&quot;0.0&quot; color=&quot;1,1,0&quot; end=&quot;900.0&quot; id=&quot;fl81_st0.0&quot; route=&quot;81_0.0&quot; type=&quot;6&quot; vehsPerHour=&quot;94.56&quot;/&gt;
+&lt;flow begin=&quot;900.0&quot; color=&quot;1,1,0&quot; end=&quot;1800.0&quot; id=&quot;fl81_st900.0&quot; route=&quot;81_900.0&quot; type=&quot;6&quot; vehsPerHour=&quot;120.08&quot;/&gt;
+&lt;flow begin=&quot;1800.0&quot; color=&quot;1,1,0&quot; end=&quot;2700.0&quot; id=&quot;fl108_st1800.0&quot; route=&quot;108_1800.0&quot; type=&quot;6&quot; vehsPerHour=&quot;161.88&quot;/&gt;
+</code></pre>
 <p>Allgemeine Informationen zur Definition von Routen und Zuflüssen finden
 sich unter
 <a href="https://sumo.dlr.de/docs/Definition_of_Vehicles,_Vehicle_Types,_and_Routes.html">https://sumo.dlr.de/docs/Definition_of_Vehicles,_Vehicle_Types,_and_Routes.html</a>
@@ -446,9 +440,8 @@ SUMO-Konfigurationsdatei eingetragen werden.</p>
 <p>Das zusätzliche Tool <code>tls_vissimXML2SUMO.py</code> ermöglicht es, VISSIM
 Lichtsignalanlagen zu parsen und das konvertierte SUMO-Netz mit diesen
 Informationen zu erweitern. Der Aufruf erfolgt über:</p>
-<div class="codehilite"><pre><span></span><code>tls_vissimXML2SUMO.py -V &lt;vissim-file&gt; -S &lt;sumo-file&gt; -o &lt;output-filename&gt;
-</code></pre></div>
-
+<pre><code>tls_vissimXML2SUMO.py -V &lt;vissim-file&gt; -S &lt;sumo-file&gt; -o &lt;output-filename&gt;
+</code></pre>
 <h2 id="lsa-definition_vissim">LSA-Definition: VISSIM<a class="headerlink" href="#lsa-definition_vissim" title="Permanent link">#</a></h2>
 <p>In VISSIM wird für jede erstellte Lichtsignalanlage eine zusätzliche
 <code>.sig-Datei</code> angelegt. Diese beinhaltet alle relevanten Informationen
@@ -466,83 +459,77 @@ Fahrstreifen zugewiesen werden und sind durch eine Signalabfolge
 definiert. Diese sind als Attribut des Kindelementes
 <code>&lt;signalOutputConfigurationElement&gt;</code> vorzufinden. Eine
 Lichtsignalanlagen-Definition sieht in VISSIM wie folgt aus:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;signalController</span><span class="w"> </span><span class="na">active=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">cycTm=</span><span class="s">&quot;0.000000&quot;</span><span class="w"> </span><span class="na">cycTmIsVar=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">debug=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">guiFile=</span><span class="s">&quot;VISSIG_GUI.dll&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;VLSA 301 (WienerStr./JudendorferStr.)&quot;</span><span class="w"> </span><span class="na">no=</span><span class="s">&quot;301&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;0.000000&quot;</span><span class="w"> </span><span class="na">progFile=</span><span class="s">&quot;VISSIG_Controller.dll&quot;</span><span class="w"> </span><span class="na">progNo=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">scDetRecFile=</span><span class="s">&quot;VISSIM_302.ldp&quot;</span><span class="w"> </span><span class="na">scDetRecShortNam=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">sigTmsTabAutoConfig=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">supplyFile1=</span><span class="s">&quot;vissig.config&quot;</span><span class="w"> </span><span class="na">supplyFile2=</span><span class="s">&quot;TestsiteGraz_v01301.sig&quot;</span><span class="w"> </span><span class="na">supplyFile3=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;FIXEDTIME&quot;</span><span class="nt">&gt;</span>
-<span class="w">     </span><span class="nt">&lt;sGs&gt;</span>
-<span class="w">        </span><span class="nt">&lt;signalGroup</span><span class="w"> </span><span class="na">amber=</span><span class="s">&quot;0.000000&quot;</span><span class="w"> </span><span class="na">greenFlsh=</span><span class="s">&quot;0.000000&quot;</span><span class="w"> </span><span class="na">minGreen=</span><span class="s">&quot;0.000000&quot;</span><span class="w"> </span><span class="na">minRed=</span><span class="s">&quot;0.000000&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;11GR&quot;</span><span class="w"> </span><span class="na">no=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">redAmber=</span><span class="s">&quot;0.000000&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;NORMAL&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt; ...</span><span class="w"> </span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;signalGroup</span><span class="w"> </span><span class="na">amber=</span><span class="s">&quot;0.000000&quot;</span><span class="w"> </span><span class="na">greenFlsh=</span><span class="s">&quot;0.000000&quot;</span><span class="w"> </span><span class="na">minGreen=</span><span class="s">&quot;0.000000&quot;</span><span class="w"> </span><span class="na">minRed=</span><span class="s">&quot;0.000000&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;14R&quot;</span><span class="w"> </span><span class="na">no=</span><span class="s">&quot;8&quot;</span><span class="w"> </span><span class="na">redAmber=</span><span class="s">&quot;0.000000&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;NORMAL&quot;</span><span class="nt">/&gt;</span>
-<span class="w">     </span><span class="nt">&lt;/sGs&gt;</span>
-<span class="w">     </span><span class="nt">&lt;wttFiles&gt;</span>
-<span class="w">        </span><span class="nt">&lt;intObjectRef</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">     </span><span class="nt">&lt;/wttFiles&gt;</span>
-<span class="w">     </span><span class="nt">&lt;sigTmsTabConfig&gt;</span>
-<span class="w">        </span><span class="nt">&lt;signalOutputConfigurationElement</span><span class="w"> </span><span class="na">configName=</span><span class="s">&quot;SIGGRP&quot;</span><span class="w"> </span><span class="na">detPort=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">sg=</span><span class="s">&quot;301 1&quot;</span><span class="w"> </span><span class="na">title=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">varNo=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">wttFilename=</span><span class="s">&quot;vissim&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;signalOutputConfigurationElement</span><span class="w"> </span><span class="na">configName=</span><span class="s">&quot;SIGGRP&quot;</span><span class="w"> </span><span class="na">detPort=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">sg=</span><span class="s">&quot;301 2&quot;</span><span class="w"> </span><span class="na">title=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">varNo=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">wttFilename=</span><span class="s">&quot;vissim&quot;</span><span class="nt">/&gt;</span>
-<span class="w">     </span><span class="nt">&lt;/sigTmsTabConfig&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/signalController&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;signalController active=&quot;true&quot; cycTm=&quot;0.000000&quot; cycTmIsVar=&quot;true&quot; debug=&quot;false&quot; guiFile=&quot;VISSIG_GUI.dll&quot; name=&quot;VLSA 301 (WienerStr./JudendorferStr.)&quot; no=&quot;301&quot; offset=&quot;0.000000&quot; progFile=&quot;VISSIG_Controller.dll&quot; progNo=&quot;1&quot; scDetRecFile=&quot;VISSIM_302.ldp&quot; scDetRecShortNam=&quot;false&quot; sigTmsTabAutoConfig=&quot;true&quot; supplyFile1=&quot;vissig.config&quot; supplyFile2=&quot;TestsiteGraz_v01301.sig&quot; supplyFile3=&quot;&quot; type=&quot;FIXEDTIME&quot;&gt;
+     &lt;sGs&gt;
+        &lt;signalGroup amber=&quot;0.000000&quot; greenFlsh=&quot;0.000000&quot; minGreen=&quot;0.000000&quot; minRed=&quot;0.000000&quot; name=&quot;11GR&quot; no=&quot;1&quot; redAmber=&quot;0.000000&quot; type=&quot;NORMAL&quot;/&gt;
+        &lt; ... &gt;
+        &lt;signalGroup amber=&quot;0.000000&quot; greenFlsh=&quot;0.000000&quot; minGreen=&quot;0.000000&quot; minRed=&quot;0.000000&quot; name=&quot;14R&quot; no=&quot;8&quot; redAmber=&quot;0.000000&quot; type=&quot;NORMAL&quot;/&gt;
+     &lt;/sGs&gt;
+     &lt;wttFiles&gt;
+        &lt;intObjectRef key=&quot;1&quot;/&gt;
+     &lt;/wttFiles&gt;
+     &lt;sigTmsTabConfig&gt;
+        &lt;signalOutputConfigurationElement configName=&quot;SIGGRP&quot; detPort=&quot;0&quot; sg=&quot;301 1&quot; title=&quot;&quot; varNo=&quot;1&quot; wttFilename=&quot;vissim&quot;/&gt;
+        &lt;signalOutputConfigurationElement configName=&quot;SIGGRP&quot; detPort=&quot;0&quot; sg=&quot;301 2&quot; title=&quot;&quot; varNo=&quot;2&quot; wttFilename=&quot;vissim&quot;/&gt;
+     &lt;/sigTmsTabConfig&gt;
+  &lt;/signalController&gt;
+</code></pre>
 <p>In der .inpx-Datei befinden sich ebenfalls die Definitionen der
 Lichtsignalgeber aller Lichtsignalanlagen. Diese sind einem Fahrstreifen
 einer Strecke zugewiesen und gehören zu einer zuvor definierten
 Signalgruppe:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;signalHeads&gt;</span>
-<span class="w">     </span><span class="nt">&lt;signalHead</span><span class="w"> </span><span class="na">allPedTypes=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">allVehTypes=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">complRate=</span><span class="s">&quot;1.000000&quot;</span><span class="w"> </span><span class="na">dischRecAct=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">isBlockSig=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;223 1&quot;</span><span class="w"> </span><span class="na">localNo=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">no=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;98.115000&quot;</span><span class="w"> </span><span class="na">sg=</span><span class="s">&quot;305 6&quot;</span><span class="w"> </span><span class="na">slowDownDist=</span><span class="s">&quot;3.000000&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CIRCULAR&quot;</span><span class="w"> </span><span class="na">vAmberBlock=</span><span class="s">&quot;0.000000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">     </span><span class="nt">&lt;signalHead</span><span class="w"> </span><span class="na">allPedTypes=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">allVehTypes=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">complRate=</span><span class="s">&quot;1.000000&quot;</span><span class="w"> </span><span class="na">dischRecAct=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">isBlockSig=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;276 3&quot;</span><span class="w"> </span><span class="na">localNo=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">no=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;82.377000&quot;</span><span class="w"> </span><span class="na">sg=</span><span class="s">&quot;305 5&quot;</span><span class="w"> </span><span class="na">slowDownDist=</span><span class="s">&quot;3.000000&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CIRCULAR&quot;</span><span class="w"> </span><span class="na">vAmberBlock=</span><span class="s">&quot;0.000000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/signalHeads&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;signalHeads&gt;
+     &lt;signalHead allPedTypes=&quot;true&quot; allVehTypes=&quot;true&quot; complRate=&quot;1.000000&quot; dischRecAct=&quot;false&quot; isBlockSig=&quot;false&quot; lane=&quot;223 1&quot; localNo=&quot;6&quot; name=&quot;&quot; no=&quot;1&quot; pos=&quot;98.115000&quot; sg=&quot;305 6&quot; slowDownDist=&quot;3.000000&quot; type=&quot;CIRCULAR&quot; vAmberBlock=&quot;0.000000&quot;/&gt;
+     &lt;signalHead allPedTypes=&quot;true&quot; allVehTypes=&quot;true&quot; complRate=&quot;1.000000&quot; dischRecAct=&quot;false&quot; isBlockSig=&quot;false&quot; lane=&quot;276 3&quot; localNo=&quot;5&quot; name=&quot;&quot; no=&quot;2&quot; pos=&quot;82.377000&quot; sg=&quot;305 5&quot; slowDownDist=&quot;3.000000&quot; type=&quot;CIRCULAR&quot; vAmberBlock=&quot;0.000000&quot;/&gt;
+  &lt;/signalHeads&gt;
+</code></pre>
 <h3 id="sig-datei">.sig-Datei<a class="headerlink" href="#sig-datei" title="Permanent link">#</a></h3>
 <p>Die Signalphasen werden in der <code>.sig-Datei</code> über ihre ID referenziert.
 Welche ID zu welcher Phase gehört, wird am Anfang der Datei wie folgt
 definiert:</p>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="nt">&lt;signaldisplays&gt;</span>
-<span class="w">     </span><span class="nt">&lt;display</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Red&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;RED&quot;</span><span class="nt">/&gt;</span>
-<span class="w">     </span><span class="nt">&lt;display</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Red/Amber&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;REDAMBER&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/signaldisplays&gt;&lt;/source&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml"> &lt;signaldisplays&gt;
+     &lt;display id=&quot;1&quot; name=&quot;Red&quot; state=&quot;RED&quot;/&gt;
+     &lt;display id=&quot;2&quot; name=&quot;Red/Amber&quot; state=&quot;REDAMBER&quot;/&gt;
+  &lt;/signaldisplays&gt;&lt;/source&gt;
+</code></pre>
 <p></source></p>
 <p>Des Weiteren werden in VISSIM für die Definition eines Signalprogrammes
 fixe Signalsequenzen verwendet, die ebenfalls am Anfang der <code>.sig-Datei</code>
 zu finden sind. Diese definieren die Abfolge der Phasen und die
 Referenzierung erfolgt über die jeweilige ID:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;signalsequences&gt;</span>
-<span class="w">   </span><span class="nt">&lt;signalsequence</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Red-Red/Amber-Green-Flashing Green-Amber&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;state</span><span class="w"> </span><span class="na">display=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">isFixedDuration=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">isClosed=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">defaultDuration=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;state</span><span class="w"> </span><span class="na">display=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">isFixedDuration=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">isClosed=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">defaultDuration=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;state</span><span class="w"> </span><span class="na">display=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">isFixedDuration=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">isClosed=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">defaultDuration=</span><span class="s">&quot;5000&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;state</span><span class="w"> </span><span class="na">display=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">isFixedDuration=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">isClosed=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">defaultDuration=</span><span class="s">&quot;4000&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;state</span><span class="w"> </span><span class="na">display=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">isFixedDuration=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">isClosed=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">defaultDuration=</span><span class="s">&quot;3000&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/signalsequence&gt;</span>
-<span class="w">   </span><span class="nt">&lt;signalsequence</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Off-Green&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;state</span><span class="w"> </span><span class="na">display=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">isFixedDuration=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">isClosed=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">defaultDuration=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;state</span><span class="w"> </span><span class="na">display=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">isFixedDuration=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">isClosed=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">defaultDuration=</span><span class="s">&quot;5000&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/signalsequence&gt;</span>
-<span class="nt">&lt;/signalsequences&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;signalsequences&gt;
+   &lt;signalsequence id=&quot;5&quot; name=&quot;Red-Red/Amber-Green-Flashing Green-Amber&quot;&gt;
+      &lt;state display=&quot;1&quot; isFixedDuration=&quot;false&quot; isClosed=&quot;true&quot; defaultDuration=&quot;1000&quot; /&gt;
+      &lt;state display=&quot;2&quot; isFixedDuration=&quot;true&quot; isClosed=&quot;true&quot; defaultDuration=&quot;1000&quot; /&gt;
+      &lt;state display=&quot;3&quot; isFixedDuration=&quot;false&quot; isClosed=&quot;false&quot; defaultDuration=&quot;5000&quot; /&gt;
+      &lt;state display=&quot;5&quot; isFixedDuration=&quot;true&quot; isClosed=&quot;false&quot; defaultDuration=&quot;4000&quot; /&gt;
+      &lt;state display=&quot;4&quot; isFixedDuration=&quot;true&quot; isClosed=&quot;true&quot; defaultDuration=&quot;3000&quot; /&gt;
+   &lt;/signalsequence&gt;
+   &lt;signalsequence id=&quot;12&quot; name=&quot;Off-Green&quot;&gt;
+      &lt;state display=&quot;7&quot; isFixedDuration=&quot;false&quot; isClosed=&quot;true&quot; defaultDuration=&quot;1000&quot; /&gt;
+      &lt;state display=&quot;3&quot; isFixedDuration=&quot;false&quot; isClosed=&quot;false&quot; defaultDuration=&quot;5000&quot; /&gt;
+   &lt;/signalsequence&gt;
+&lt;/signalsequences&gt;
+</code></pre>
 <p>Anschließend erfolgt die Definition aller Signalprogramme und deren
 Umlaufzeiten:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;prog</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">cycletime=</span><span class="s">&quot;80000&quot;</span><span class="w"> </span><span class="na">switchpoint=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;13000&quot;</span><span class="w"> </span><span class="na">intergreens=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">fitness=</span><span class="s">&quot;0.000000&quot;</span><span class="w"> </span><span class="na">vehicleCount=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Morgenprogramm S 2.7&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;prog id=&quot;1&quot; cycletime=&quot;80000&quot; switchpoint=&quot;0&quot; offset=&quot;13000&quot; intergreens=&quot;0&quot; fitness=&quot;0.000000&quot; vehicleCount=&quot;0&quot; name=&quot;Morgenprogramm S 2.7&quot;/&gt;
+</code></pre>
 <p>Die Definition der Signalgruppen besteht aus den Beginnzeiten der Rot-
 und Grünphase und den Zeitdauern der restlichen Phasen, welche sich in
 der zugehörigen Signalsequenz befinden:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;sg</span><span class="w"> </span><span class="na">sg_id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">signal_sequence=</span><span class="s">&quot;5&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;cmds&gt;</span>
-<span class="w">      </span><span class="nt">&lt;cmd</span><span class="w"> </span><span class="na">display=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;13000&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;cmd</span><span class="w"> </span><span class="na">display=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;46000&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/cmds&gt;</span>
-<span class="w">   </span><span class="nt">&lt;fixedstates&gt;</span>
-<span class="w">      </span><span class="nt">&lt;fixedstate</span><span class="w"> </span><span class="na">display=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;2000&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;fixedstate</span><span class="w"> </span><span class="na">display=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;4000&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;fixedstate</span><span class="w"> </span><span class="na">display=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3000&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/fixedstates&gt;</span>
-<span class="nt">&lt;/sg&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;sg sg_id=&quot;1&quot; signal_sequence=&quot;5&quot;&gt;
+   &lt;cmds&gt;
+      &lt;cmd display=&quot;3&quot; begin=&quot;13000&quot; /&gt;
+      &lt;cmd display=&quot;1&quot; begin=&quot;46000&quot; /&gt;
+   &lt;/cmds&gt;
+   &lt;fixedstates&gt;
+      &lt;fixedstate display=&quot;2&quot; duration=&quot;2000&quot; /&gt;
+      &lt;fixedstate display=&quot;5&quot; duration=&quot;4000&quot; /&gt;
+      &lt;fixedstate display=&quot;4&quot; duration=&quot;3000&quot; /&gt;
+   &lt;/fixedstates&gt;
+&lt;/sg&gt;
+</code></pre>
 <h2 id="lsa_definition_sumo">LSA Definition: SUMO<a class="headerlink" href="#lsa_definition_sumo" title="Permanent link">#</a></h2>
 <p>Im Gegensatz zu VISSIM benötigt SUMO nicht für jede Lichtsignalanlage
 eine zusätzliche Datei; es werden die Definitionen aller
@@ -563,38 +550,35 @@ gesetzt. Als Kindelemente finden sich die einzelnen Phasen der
 Schaltung, welche durch eine Zeitspanne in Sekunden und einen Zustand
 gekennzeichnet sind. Jeder Buchstabe des <code>states</code> definiert den
 aktuellen Zustand eines Fahrstreifens:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;69&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;static&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;Tagesprogramm S 5.3&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;0.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20.00&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;Grrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20.00&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;yyyy&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;100.00&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rGGG&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;100.00&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;yyyy&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/tlLogic&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;tlLogic id=&quot;69&quot; type=&quot;static&quot; programID=&quot;Tagesprogramm S 5.3&quot; offset=&quot;0.00&quot;&gt;
+   &lt;phase duration=&quot;20.00&quot; state=&quot;Grrr&quot;/&gt;
+   &lt;phase duration=&quot;20.00&quot; state=&quot;yyyy&quot;/&gt;
+   &lt;phase duration=&quot;100.00&quot; state=&quot;rGGG&quot;/&gt;
+   &lt;phase duration=&quot;100.00&quot; state=&quot;yyyy&quot;/&gt;
+&lt;/tlLogic&gt;
+</code></pre>
 <p>Welcher <code>state-Index</code> zu welchem Fahrstreifen zugeordnet wird, ist in
 der zugehörigen <em>Connection</em> durch deren <code>linkIndex</code> definiert.
 Zusätzlich muss jede <em>Connection</em>, die von einer Lichtsignalanlage
 beeinflusst wird, dieser auch zugewiesen werden. Hierfür wird dem
 Attribut <code>tl</code> die ID der jeweiligen LSA zugeteilt:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">dir=</span><span class="s">&quot;r&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;117&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;88&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">via=</span><span class="s">&quot;:69_1_0&quot;</span><span class="w"> </span><span class="na">tl=</span><span class="s">&quot;69&quot;</span><span class="w"> </span><span class="na">linkIndex=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;o&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;connection</span><span class="w"> </span><span class="na">dir=</span><span class="s">&quot;s&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;117&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;76&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">via=</span><span class="s">&quot;:69_2_0&quot;</span><span class="w"> </span><span class="na">tl=</span><span class="s">&quot;69&quot;</span><span class="w"> </span><span class="na">linkIndex=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;o&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;connection</span><span class="w"> </span><span class="na">dir=</span><span class="s">&quot;s&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;117&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;76&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">via=</span><span class="s">&quot;:69_2_1&quot;</span><span class="w"> </span><span class="na">tl=</span><span class="s">&quot;69&quot;</span><span class="w"> </span><span class="na">linkIndex=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;o&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;connection</span><span class="w"> </span><span class="na">dir=</span><span class="s">&quot;r&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;89&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;76&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">via=</span><span class="s">&quot;:69_0_0&quot;</span><span class="w"> </span><span class="na">tl=</span><span class="s">&quot;69&quot;</span><span class="w"> </span><span class="na">linkIndex=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;o&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;connection dir=&quot;r&quot; from=&quot;117&quot; fromLane=&quot;0&quot; to=&quot;88&quot; toLane=&quot;0&quot; via=&quot;:69_1_0&quot; tl=&quot;69&quot; linkIndex=&quot;2&quot; state=&quot;o&quot;/&gt;
+&lt;connection dir=&quot;s&quot; from=&quot;117&quot; fromLane=&quot;0&quot; to=&quot;76&quot; toLane=&quot;0&quot; via=&quot;:69_2_0&quot; tl=&quot;69&quot; linkIndex=&quot;3&quot; state=&quot;o&quot;/&gt;
+&lt;connection dir=&quot;s&quot; from=&quot;117&quot; fromLane=&quot;1&quot; to=&quot;76&quot; toLane=&quot;1&quot; via=&quot;:69_2_1&quot; tl=&quot;69&quot; linkIndex=&quot;1&quot; state=&quot;o&quot;/&gt;
+&lt;connection dir=&quot;r&quot; from=&quot;89&quot; fromLane=&quot;0&quot; to=&quot;76&quot; toLane=&quot;0&quot; via=&quot;:69_0_0&quot; tl=&quot;69&quot; linkIndex=&quot;0&quot; state=&quot;o&quot;/&gt;
+</code></pre>
 <p>Auch die <em>junction</em>, auf der die Lichtsignalanlage platziert werden
 soll, muss als solche definiert werden. Dies geschieht über das Attribut
 <code>type</code>, welches die Regelungsart der Kreuzung festlegt. Wird einer
 <em>junction</em> eine LSA zugewiesen so muss der <code>type</code> auf “’traffic_light”’
 gesetzt werden:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;junction</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;69&quot;</span><span class="w"> </span><span class="na">incLanes=</span><span class="s">&quot;89_0 117_0 117_1&quot;</span><span class="w"> </span><span class="na">intLanes=</span><span class="s">&quot;:69_0_0 :69_1_0 :69_2_0 :69_2_1&quot;</span><span class="w"> </span><span class="na">shape=</span><span class="s">&quot;3276.61,1952.22 3277.64,1946.15 3275.74,1944.30 3269.32,1943.27 3265.23,1952.29 3274.96,1953.43&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;traffic_light&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;3273.91&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1947.87&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;request</span><span class="w"> </span><span class="na">cont=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">foes=</span><span class="s">&quot;1100&quot;</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">response=</span><span class="s">&quot;1100&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;request</span><span class="w"> </span><span class="na">cont=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">foes=</span><span class="s">&quot;0000&quot;</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">response=</span><span class="s">&quot;0000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;request</span><span class="w"> </span><span class="na">cont=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">foes=</span><span class="s">&quot;0001&quot;</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">response=</span><span class="s">&quot;0000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;request</span><span class="w"> </span><span class="na">cont=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">foes=</span><span class="s">&quot;0001&quot;</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">response=</span><span class="s">&quot;0000&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/junction&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;junction id=&quot;69&quot; incLanes=&quot;89_0 117_0 117_1&quot; intLanes=&quot;:69_0_0 :69_1_0 :69_2_0 :69_2_1&quot; shape=&quot;3276.61,1952.22 3277.64,1946.15 3275.74,1944.30 3269.32,1943.27 3265.23,1952.29 3274.96,1953.43&quot; type=&quot;traffic_light&quot; x=&quot;3273.91&quot; y=&quot;1947.87&quot;&gt;
+   &lt;request cont=&quot;0&quot; foes=&quot;1100&quot; index=&quot;0&quot; response=&quot;1100&quot;/&gt;
+   &lt;request cont=&quot;0&quot; foes=&quot;0000&quot; index=&quot;1&quot; response=&quot;0000&quot;/&gt;
+   &lt;request cont=&quot;0&quot; foes=&quot;0001&quot; index=&quot;2&quot; response=&quot;0000&quot;/&gt;
+   &lt;request cont=&quot;0&quot; foes=&quot;0001&quot; index=&quot;3&quot; response=&quot;0000&quot;/&gt;
+&lt;/junction&gt;
+</code></pre>
 <p>Zusätzlich ist es möglich in SUMO mehrere Programme für eine LSA zu
 definieren. Dies geschieht über die Definition einer
 Wochenschaltautomatik (kurz WAUT). Durch das Attribut <code>startProg</code> wird
@@ -604,12 +588,11 @@ und die Zuordnung der Signalprogramme geschieht über deren ProgramID.
 Während der Simulation können die Signalprogramme entweder in dem GUI
 per Hand oder durch das Kindelement <code>&lt;wautSwitch&gt;</code> zu einem angegebenen
 Zeitpunkt verändert werden:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;WAUT</span><span class="w"> </span><span class="na">refTime=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;myWAUT&quot;</span><span class="w"> </span><span class="na">startProg=</span><span class="s">&quot;weekday_night&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;wautSwitch</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;21600&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;weekday_day&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;wautSwitch</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;79200&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;weekday_night&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/WAUT&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;WAUT refTime=&quot;0&quot; id=&quot;myWAUT&quot; startProg=&quot;weekday_night&quot;&gt;
+   &lt;wautSwitch time=&quot;21600&quot; to=&quot;weekday_day&quot;/&gt;
+   &lt;wautSwitch time=&quot;79200&quot; to=&quot;weekday_night&quot;/&gt;
+&lt;/WAUT&gt;
+</code></pre>
 <p>Nähere Beschreibungen zur Definition von Lichtsignalanlagen befinden
 sich unter <a href="https://sumo.dlr.de/docs/Simulation/Traffic_Lights.html">https://sumo.dlr.de/docs/Simulation/Traffic_Lights.html</a> (zuletzt
 geprüft am 28.07.2015).</p>
@@ -642,49 +625,44 @@ auszulesen und in das zuvor durch <code>netconvert</code> konvertierte SUMO-Netz
 übernehmen. Bei der Konversion entsteht eine zusätzliches
 <code>.add.xml-Datei</code>, welche anschließend der SUMO config-Datei für die
 Simulation hinzugefügt werden muss. Der Aufruf erfolgt über:</p>
-<div class="codehilite"><pre><span></span><code>convert_detectors2SUMO.py -V &lt;vissim-file&gt; -S &lt;sumo-file&gt; -o &lt;output-filename&gt;
-</code></pre></div>
-
+<pre><code>convert_detectors2SUMO.py -V &lt;vissim-file&gt; -S &lt;sumo-file&gt; -o &lt;output-filename&gt;
+</code></pre>
 <h2 id="detektor-definition_vissim">Detektor-Definition VISSIM<a class="headerlink" href="#detektor-definition_vissim" title="Permanent link">#</a></h2>
 <p>Querschnittsmessungen werden in VISSIM durch den XML-tag
 <code>&lt;dataCollectionPoint&gt;</code> gekennzeichnet. Die Position der einzelnen
 Detektoren ist durch den jeweiligen Fahrstreifen der Strecke sowie deren
 Laufmeter gegeben:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;dataCollectionPoint</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;108 1&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;301.41&quot;</span><span class="w"> </span><span class="na">no=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;162.558473&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;dataCollectionPoint</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;262 4&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;301.12&quot;</span><span class="w"> </span><span class="na">no=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;32.960054&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;dataCollectionPoint lane=&quot;108 1&quot; name=&quot;301.41&quot; no=&quot;1&quot; pos=&quot;162.558473&quot;/&gt;
+&lt;dataCollectionPoint lane=&quot;262 4&quot; name=&quot;301.12&quot; no=&quot;10&quot; pos=&quot;32.960054&quot;/&gt;
+</code></pre>
 <p>Resezeitmessungen sind in VISSIM nicht fahrstreifen- sondern
 streckenbezogen. Hierfür wird die Strecke und der Laufmeter für den
 Start- und Endpunkt festgelegt:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vehicleTravelTimeMeasurement</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Wienerstrasse_Sueden&quot;</span><span class="w"> </span><span class="na">no=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;start</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;207&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;239.836000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;end</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;126&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;12.867000&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/vehicleTravelTimeMeasurement&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vehicleTravelTimeMeasurement name=&quot;Wienerstrasse_Sueden&quot; no=&quot;1&quot;&gt;
+   &lt;start link=&quot;207&quot; pos=&quot;239.836000&quot;/&gt;
+   &lt;end link=&quot;126&quot; pos=&quot;12.867000&quot;/&gt;
+&lt;/vehicleTravelTimeMeasurement&gt;
+</code></pre>
 <h2 id="detektor-definition_sumo">Detektor-Definition SUMO<a class="headerlink" href="#detektor-definition_sumo" title="Permanent link">#</a></h2>
 <p>Induktionsschleifen werden in SUMO ähnlich definiert wie die
 Querschnittsmessungen in VISSIM. Zur Positionierung werden ebenfalls
 Fahrstreifen und Laufmeter angegeben. Es ist jedoch zusätzlich möglich
 das Zeitintervall zu definieren, in dem die Daten aggregiert werden.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;inductionLoop</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;ind_out.xml&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;900&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1_301.41&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;108_0&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;162.554736186&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;inductionLoop</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;ind_out.xml&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;900&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;33_359.21&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;123_0&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;28.1962390136&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;inductionLoop file=&quot;ind_out.xml&quot; period=&quot;900&quot; id=&quot;1_301.41&quot; lane=&quot;108_0&quot; pos=&quot;162.554736186&quot;/&gt;
+&lt;inductionLoop file=&quot;ind_out.xml&quot; period=&quot;900&quot; id=&quot;33_359.21&quot; lane=&quot;123_0&quot; pos=&quot;28.1962390136&quot;/&gt;
+</code></pre>
 <p>Wie bei den Induktionsschleifen sind auch die Reisezeitmessungen durch
 das Zeitintervall der Aggregierung und deren Position definiert. In SUMO
 muss sich jedoch im Gegensatz zu VISSIM die Reisezeitmessung nicht auf
 die ganze Strecke beziehen, da definiert wird, welche Fahrstreifen
 berücksichtigt werden sollen.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;entryExitDetector</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;time_out.xml&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;900&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;detEntry</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;207_0&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;239.753789696&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;detEntry</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;207_1&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;241.370532161&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;detExit</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;126_0&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;23.2884507277&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;detExit</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;126_1&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;23.2873152316&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/entryExitDetector&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;entryExitDetector file=&quot;time_out.xml&quot; period=&quot;900&quot; id=&quot;1&quot;&gt;
+   &lt;detEntry lane=&quot;207_0&quot; pos=&quot;239.753789696&quot;/&gt;
+   &lt;detEntry lane=&quot;207_1&quot; pos=&quot;241.370532161&quot;/&gt;
+   &lt;detExit lane=&quot;126_0&quot; pos=&quot;23.2884507277&quot;/&gt;
+   &lt;detExit lane=&quot;126_1&quot; pos=&quot;23.2873152316&quot;/&gt;
+&lt;/entryExitDetector&gt;
+</code></pre>
 <h2 id="umsetzung_2">Umsetzung<a class="headerlink" href="#umsetzung_2" title="Permanent link">#</a></h2>
 <p>Da bei der Netzkonversion die Verbindungsstrecken aus VISSIM zu
 SUMO-<em>junctions</em> zusammengefasst werden, bleiben die Streckenlängen
@@ -707,7 +685,7 @@ erreicht haben.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

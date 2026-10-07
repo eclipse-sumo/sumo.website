@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -268,9 +269,8 @@ below.</p>
 <p class="admonition-title">Caution</p>
 <p>This script will require copious amounts of disk space</p>
 </div>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">assign</span><span class="o">/</span><span class="n">duaIterate</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="n">network</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;</span><span class="n">trip</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">l</span><span class="w"> </span><span class="o">&lt;</span><span class="n">nr</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">iterations</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/assign/duaIterate.py -n &lt;network-file&gt; -t &lt;trip-file&gt; -l &lt;nr-of-iterations&gt;
+</code></pre>
 <p><em>duaIterate.py</em> supports many of the same options as
 <a href="../sumo.html">sumo</a>. Any options not listed when calling
 <em>duaIterate.py</em> <strong><em>--help</em></strong> can be passed to <a href="../sumo.html">sumo</a> by adding <strong>sumo--long-option-name arg</strong>
@@ -381,12 +381,11 @@ then propagated through <a href="../duarouter.html">duarouter</a> iterations
 (always as part of the written route file).</p>
 <p>In order to use vehicle type definitions from an <a href="/docs/sumo.html#format_of_additional_files"><em>additional-file</em></a>, further options must
 be set</p>
-<div class="codehilite"><pre><span></span><code><span class="nx">duaIterate</span><span class="p">.</span><span class="nx">py</span><span class="w"> </span><span class="o">-</span><span class="nx">n</span><span class="w"> </span><span class="o">...</span><span class="w"> </span><span class="o">-</span><span class="nx">t</span><span class="w"> </span><span class="o">...</span><span class="w"> </span><span class="o">-</span><span class="nx">l</span><span class="w"> </span><span class="o">...</span>
-<span class="w">  </span><span class="o">--</span><span class="nx">additional</span><span class="o">-</span><span class="nx">file</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">FILE_WITH_VTYPES</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="nx">duarouter</span><span class="o">--</span><span class="nx">aditional</span><span class="o">-</span><span class="nx">file</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">FILE_WITH_VTYPES</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="nx">duarouter</span><span class="o">--</span><span class="nx">vtype</span><span class="o">-</span><span class="nx">output</span><span class="w"> </span><span class="nx">dummy</span><span class="p">.</span><span class="nx">xml</span>
-</code></pre></div>
-
+<pre><code>duaIterate.py -n ... -t ... -l ...
+  --additional-file &lt;FILE_WITH_VTYPES&gt;
+  duarouter--aditional-file &lt;FILE_WITH_VTYPES&gt;
+  duarouter--vtype-output dummy.xml
+</code></pre>
 <p>Options preceded by the string <em>duarouter--</em> are passed directly to
 duarouter and the option <em>vtype-output dummy.xml</em> must be used to
 prevent duplicate definition of vehicle types in the generated output
@@ -431,7 +430,7 @@ time-consuming microscopic simulation.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

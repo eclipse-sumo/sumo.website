@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -233,9 +234,8 @@ There are various options to configure the size and number of the cells
 and to change the number of lanes and types of junctions. The options
 for this tutorial are written in a configuration file. The network is
 created by calling</p>
-<div class="codehilite"><pre><span></span><code>netgenerate -c manhattan/data/manhattan.netgcfg
-</code></pre></div>
-
+<pre><code>netgenerate -c manhattan/data/manhattan.netgcfg
+</code></pre>
 <h1 id="generating_vehicles">Generating vehicles<a class="headerlink" href="#generating_vehicles" title="Permanent link">#</a></h1>
 <p>The vehicles in a Manhattan mobility model drive randomly according to
 specified turning ratios. This type of mobility is supported by the
@@ -246,11 +246,10 @@ vehicles.</p>
 <p>The <a href="../Tools/Trip.html#randomtripspy">randomTrips.py</a> tool can be
 used to generated suitable randomFlows with the following options. If the <strong>--trip-attributes</strong> option
 is not recognized correctly, try using double quotes around the option value and escape double quotes inside.</p>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">randomTrips</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">flows</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">begin</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">--</span><span class="n">end</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>\
-<span class="w">       </span><span class="o">--</span><span class="n">flows</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">--</span><span class="n">jtrrouter</span><span class="w"> </span>\
-<span class="w">       </span><span class="o">--</span><span class="n">trip</span><span class="o">-</span><span class="n">attributes</span><span class="w"> </span><span class="s1">&#39;departPos=&quot;random&quot; departSpeed=&quot;max&quot;&#39;</span>
-</code></pre></div>
-
+<pre><code> &lt;SUMO_HOME&gt;/tools/randomTrips.py -n net.net.xml -o flows.xml --begin 0 --end 1 \
+       --flows 100 --jtrrouter \
+       --trip-attributes 'departPos=&quot;random&quot; departSpeed=&quot;max&quot;'
+</code></pre>
 <p>The option <strong>--flows 100</strong> defines the number of vehicles that shall drive in the
 network. Usually a <code>&lt;flow&gt;</code> is used to define multiple vehicles but in this
 case each flow generates just a single vehicle at the start of the
@@ -271,9 +270,8 @@ default turn ratios for the Manhattan Mobility Model (25% right, 50%
 straight, 25% left) are set via option <strong>--turn-defaults 25,50,25</strong>.</p>
 <p>All options for this tutorial are written in a configuration file. The
 vehicles are created by calling</p>
-<div class="codehilite"><pre><span></span><code>jtrrouter -c manhattan/data/manhattan.jtrrcfg
-</code></pre></div>
-
+<pre><code>jtrrouter -c manhattan/data/manhattan.jtrrcfg
+</code></pre>
 <h2 id="remarks_on_vehicle_number">Remarks on Vehicle number<a class="headerlink" href="#remarks_on_vehicle_number" title="Permanent link">#</a></h2>
 <p>The number of vehicles in the first few simulation seconds is limited by
 available road space for vehicle insertions. If the number of vehicles
@@ -288,7 +286,7 @@ steps before all vehicles have entered the network.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -262,7 +263,7 @@ distinguishing features are:</p>
 <code>$SUMO_HOME/tools/contributed</code>.</p>
 <p>However, hybridPY makes extensive use of Python packages which need to be
 installed before. The <em>required</em> packages to be installed are:</p>
-<div class="codehilite"><pre><span></span><code>wxPython==4.2.1
+<pre><code>wxPython==4.2.1
 scipy
 PyOpenGL==3.1.0
 pillow
@@ -275,19 +276,16 @@ networkx
 openpyxl
 requests
 tqdm
-</code></pre></div>
-
+</code></pre>
 <p>The exact choice of package-versions and installation methods depend on
 the operating system. Compatibility problems between Numpy version &gt;= 2.x and wxWindows have been reported.</p>
 <p>For Ubuntu distributions, all necessary packages can be installed by the one liner:</p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install  python3-wxgtk4.0 python3-wxgtk-webview4.0 python3-wxgtk-media4.0 python3-opengl python3-pil python3-matplotlib python3-pyproj python3-scipy python3-psutil python3-shapely python3-pyshp python3-networkx python3-gdal python3-openpyxl python3-requests python3-tqdm
-</code></pre></div>
-
+<pre><code>sudo apt-get install  python3-wxgtk4.0 python3-wxgtk-webview4.0 python3-wxgtk-media4.0 python3-opengl python3-pil python3-matplotlib python3-pyproj python3-scipy python3-psutil python3-shapely python3-pyshp python3-networkx python3-gdal python3-openpyxl python3-requests python3-tqdm
+</code></pre>
 <h1 id="getting_started">Getting started<a class="headerlink" href="#getting_started" title="Permanent link">#</a></h1>
 <p>The GUI of hybridPY can be launched by double clicking on hybridpy or executing the following command on thje command line:</p>
-<div class="codehilite"><pre><span></span><code>python hybridpy
-</code></pre></div>
-
+<pre><code>python hybridpy
+</code></pre>
 <p>If all required packages are installed correctly, you should see the
 main window as shown <a href="../../images/Fig_hybridpy_gui_main.png">here</a>,
 but initially with an empty network. The object browser shows initially
@@ -302,7 +300,7 @@ information.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

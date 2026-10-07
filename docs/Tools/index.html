@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -223,22 +224,18 @@ and required versions see also the <a href="../Installing/Linux_Build.html#insta
 <p>Python tools are usually called from the <a href="../Basics/Basic_Computer_Skills.html#running_programs_from_the_command_line">command
 line</a>.
 In the documentation linked below, the tools are described with a command like</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">xml</span><span class="o">/</span><span class="n">xml2csv</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">input</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/xml/xml2csv.py input.xml
+</code></pre>
 <p>This works only, if the current working directory is <strong><em>&lt;SUMO_HOME&gt;</em></strong>.</p>
 <p>For the Windows OS, to run the tool from any directory, you can use</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="o">%</span><span class="n">SUMO_HOME</span><span class="o">%</span>\<span class="n">tools</span>\<span class="n">xml</span>\<span class="n">xml2csv</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">input</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python %SUMO_HOME%\tools\xml\xml2csv.py input.xml
+</code></pre>
 <p>The equivalent command for Linux is</p>
-<div class="codehilite"><pre><span></span><code><span class="o">$</span><span class="n">SUMO_HOME</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">xml</span><span class="o">/</span><span class="n">xml2csv</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">input</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>$SUMO_HOME/tools/xml/xml2csv.py input.xml
+</code></pre>
 <p>If you have $SUMO_HOME/tools/xml on your PATH (see <em><a href="../Basics/Basic_Computer_Skills.html#configuring_path_settings">ConfigurePathSetting</a></em>), you can simple type</p>
-<div class="codehilite"><pre><span></span><code><span class="n">xml2csv.py input.xml</span>
-</code></pre></div>
-
+<pre><code>xml2csv.py input.xml
+</code></pre>
 <p>For scripts in other subdirectories of tools you have to replace xml in this example by the name of the subdirectory</p>
 <h2 id="using_tools_from_netedit">Using tools from netedit<a class="headerlink" href="#using_tools_from_netedit" title="Permanent link">#</a></h2>
 <p>Since version 1.17.0, netedit supports calling many tools via configuration dialog by using the 'Tools' menu. For a demonstration, see the <a href="../Tutorials/index.html#sumo_user_conference_tutorials">SUMO 2023 Conference tutorial</a>.</p>
@@ -310,7 +307,7 @@ above categories</li>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

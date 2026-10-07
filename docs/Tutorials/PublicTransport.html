@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -261,9 +262,8 @@ Main topics are:</p>
 Simultaneously, people are created. Each person hurries to their favorite bus stop and waits for their bus or tram.
 They then are picked up and brought to their target bus stops.</p>
 <p>Running the simulation:</p>
-<div class="codehilite"><pre><span></span><code><span class="na">.docs</span><span class="err">/</span><span class="no">tutorials</span><span class="err">/</span><span class="no">public_transport</span><span class="err">/</span><span class="no">data</span><span class="err">/</span><span class="no">run.sumocfg</span>
-</code></pre></div>
-
+<pre><code>.docs/tutorials/public_transport/data/run.sumocfg
+</code></pre>
 <p><img alt="" src="../images/PublicTransport01.gif" /></p>
 <h2 id="net_routes_demand_and_schedules">Net, routes, demand and schedules<a class="headerlink" href="#net_routes_demand_and_schedules" title="Permanent link">#</a></h2>
 <h3 id="net">Net<a class="headerlink" href="#net" title="Permanent link">#</a></h3>
@@ -285,12 +285,12 @@ It explains the use of edges, connections, demands, routes etc., in depth.</li>
 <p>When saving the net you should save your additionals as well.
 Bus stops should be written in the <code>additional.add.xml</code> file to provide the stops for the people and vehicles.
 An example xml code for the bus stop may look like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;busStop</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;A_bus&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;-E1_1&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;14.42&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;24.42&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;busStop</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;A_tram1&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;-E4_0&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;13.43&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;43.43&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;access</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;E1_0&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;175.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/busStop&gt;</span>
-</code></pre></div>
+<pre><code class="language-xml">    &lt;busStop id=&quot;A_bus&quot; lane=&quot;-E1_1&quot; startPos=&quot;14.42&quot; endPos=&quot;24.42&quot;/&gt;
+    &lt;busStop id=&quot;A_tram1&quot; lane=&quot;-E4_0&quot; startPos=&quot;13.43&quot; endPos=&quot;43.43&quot;&gt;
+        &lt;access lane=&quot;E1_0&quot; pos=&quot;175.00&quot;/&gt;
+    &lt;/busStop&gt;
 
+</code></pre>
 <p>If a busStop is on an edge that does not permit pedestrians (i.e. tram track) it must be connected to the rest of the network with <code>&lt;access&gt;</code> elements (also in the netedit additional-mode).</p>
 <h2 id="public_transport">Public Transport<a class="headerlink" href="#public_transport" title="Permanent link">#</a></h2>
 <p>The created bus stops can be used as the stopping points within the route declaration.
@@ -302,47 +302,44 @@ Below you can see examples from the code for the routes of the trams and buses.<
 <li>define repeating vehicles (<code>&lt;flow&gt;</code>) that disappear after running the route once. This is useful if the network does not contain the full circuit of the route</li>
 <li>define a single vehicle with a repeating route. This is ideal for letting delays from one round of the schedule carry over to the next round</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;bus&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;tram&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;tram&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">    &lt;vType id=&quot;bus&quot; vClass=&quot;bus&quot;/&gt;
+    &lt;vType id=&quot;tram&quot; vClass=&quot;tram&quot;/&gt;
 
-<span class="w">    </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;busRoute&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;-E1 -E0 -E3 -E2&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;yellow&quot;</span><span class="w"> </span><span class="na">repeat=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">cycleTime=</span><span class="s">&quot;140&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;A_bus&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20.00&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;30.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;B_bus&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20.00&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;90.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/route&gt;</span>
+    &lt;route id=&quot;busRoute&quot; edges=&quot;-E1 -E0 -E3 -E2&quot; color=&quot;yellow&quot; repeat=&quot;10&quot; cycleTime=&quot;140&quot;&gt;
+        &lt;stop busStop=&quot;A_bus&quot; duration=&quot;20.00&quot; until=&quot;30.00&quot;/&gt;
+        &lt;stop busStop=&quot;B_bus&quot; duration=&quot;20.00&quot; until=&quot;90.00&quot;/&gt;
+    &lt;/route&gt;
 
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">line=</span><span class="s">&quot;42&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;busRoute&quot;</span><span class="nt">/&gt;</span>
+    &lt;vehicle id=&quot;bus&quot; type=&quot;bus&quot; depart=&quot;0.00&quot; line=&quot;42&quot; route=&quot;busRoute&quot;/&gt;
 
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;tram1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;tram&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;3600.00&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;300.00&quot;</span><span class="w"> </span><span class="na">line=</span><span class="s">&quot;23&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;-E4&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;cyan&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;A_tram1&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20.00&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;30.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;B_tram1&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20.00&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;45.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/flow&gt;</span>
-</code></pre></div>
-
+    &lt;flow id=&quot;tram1&quot; type=&quot;tram&quot; begin=&quot;0.00&quot; end=&quot;3600.00&quot; period=&quot;300.00&quot; line=&quot;23&quot;&gt;
+        &lt;route edges=&quot;-E4&quot; color=&quot;cyan&quot;/&gt;
+        &lt;stop busStop=&quot;A_tram1&quot; duration=&quot;20.00&quot; until=&quot;30.00&quot;/&gt;
+        &lt;stop busStop=&quot;B_tram1&quot; duration=&quot;20.00&quot; until=&quot;45.00&quot;/&gt;
+    &lt;/flow&gt;
+</code></pre>
 <h3 id="schedules">Schedules<a class="headerlink" href="#schedules" title="Permanent link">#</a></h3>
 <p>Buses and trams usually run on strict schedules in daily life. Similar alterations are possible in SUMO and are vital while using intermodal routing.
 Such schedules are defined with the attribute <code>until</code>. The until attribute is set for the stops.
 A vehicle following this schedule can't leave this stop until this time ('until') has passed and the minimum stopping time ('duration') has also passed.</p>
 <h2 id="demand">Demand<a class="headerlink" href="#demand" title="Permanent link">#</a></h2>
 <p>The travel demand consists of persons that can choose their mode of transport freely</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;personFlow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;AB&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;3600&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.1&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;personTrip</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-E1&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-E0&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;-20&quot;</span><span class="w"> </span><span class="na">modes=</span><span class="s">&quot;public&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/personFlow&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;personFlow id=&quot;AB&quot; begin=&quot;0&quot; end=&quot;3600&quot; probability=&quot;0.1&quot;&gt;
+        &lt;personTrip from=&quot;-E1&quot; to=&quot;-E0&quot; arrivalPos=&quot;-20&quot; modes=&quot;public&quot;/&gt;
+    &lt;/personFlow&gt;
+</code></pre>
 <p>Instead of flows, all persons and vehicles can also be defined individually and person plans can be defined with explicit steps.
 Use the sumo option <strong>--vehroute</strong> output to learn how a <code>&lt;personFlow&gt;</code> is expanded into multiple travel stages during the simulation.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;HeadingBusstop20&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;1.00&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;green&quot;</span><span class="nt">&gt;</span>
-<span class="w">     </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;gneE1&quot;</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_-gneE10_1_6&quot;</span><span class="nt">/&gt;</span>
-<span class="w">     </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_-gneE10_1_5&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;tram&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/person&gt;</span>
+<pre><code class="language-xml">&lt;person id=&quot;HeadingBusstop20&quot; depart=&quot;1.00&quot; color=&quot;green&quot;&gt;
+     &lt;walk from=&quot;gneE1&quot; busStop=&quot;busStop_-gneE10_1_6&quot;/&gt;
+     &lt;ride busStop=&quot;busStop_-gneE10_1_5&quot; lines=&quot;tram&quot;/&gt;
+&lt;/person&gt;
 
-<span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;Tram&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,1,0&quot;</span><span class="w"> </span><span class="na">line=</span><span class="s">&quot;tram&quot;</span><span class="nt">&gt;</span>
-<span class="w">     </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;gneE10 -gneE10&quot;</span><span class="nt">/&gt;</span>
-<span class="w">     </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_-gneE10_1_6&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/vehicle&gt;</span>
-</code></pre></div>
-
+&lt;vehicle id=&quot;0&quot; type=&quot;Tram&quot; depart=&quot;0&quot; color=&quot;1,1,0&quot; line=&quot;tram&quot;&gt;
+     &lt;route edges=&quot;gneE10 -gneE10&quot;/&gt;
+     &lt;stop busStop=&quot;busStop_-gneE10_1_6&quot; duration=&quot;20&quot;/&gt;
+&lt;/vehicle&gt;
+</code></pre>
 <p><img alt="" src="../images/PublicTransport05.gif" />
 <em>Alteration of the busRoute.The bus stops until 170 at the uppermost bus stop.</em></p>
 <h2 id="sumocfg">sumocfg<a class="headerlink" href="#sumocfg" title="Permanent link">#</a></h2>
@@ -350,17 +347,16 @@ Use the sumo option <strong>--vehroute</strong> output to learn how a <code>&lt;
 with a sumocfg. Within this, you set the net, route and additional files.
 Afterwards, you can start your simulation by clicking on it or starting it over on the
 command line.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.dlr.de/xsd/sumoConfiguration.xsd&quot;</span><span class="nt">&gt;</span>
+<pre><code class="language-xml">&lt;configuration xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.dlr.de/xsd/sumoConfiguration.xsd&quot;&gt;
 
-<span class="w">    </span><span class="nt">&lt;input&gt;</span>
-<span class="w">        </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;net.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;pt.rou.xml,persons.rou.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;additional-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;stops.add.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/input&gt;</span>
+    &lt;input&gt;
+        &lt;net-file value=&quot;net.net.xml&quot;/&gt;
+        &lt;route-files value=&quot;pt.rou.xml,persons.rou.xml&quot;/&gt;
+        &lt;additional-files value=&quot;stops.add.xml&quot;/&gt;
+    &lt;/input&gt;
 
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+&lt;/configuration&gt;
+</code></pre>
 <p>For getting specific data about the simulation, you can use TraCI.
 A good starting point would be the tutorials provided:</p>
 <ul>
@@ -374,7 +370,7 @@ A good starting point would be the tutorials provided:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

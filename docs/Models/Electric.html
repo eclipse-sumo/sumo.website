@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -380,25 +381,24 @@ that it is a mass and not a moment of inertia. The old parameter is considered d
 Also the <code>vehicleMass</code> has been deprecated in favor of the new <code>mass</code> attribute of vehicles / vehicle types.</p>
 </div>
 <p>An example of a vehicle with electric attribute (those are the values for a city bus from the original publication):</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ElectricBus&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;100.0&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">minGap=</span><span class="s">&quot;2.5&quot;</span><span class="w"> </span><span class="na">mass=</span><span class="s">&quot;10000&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,1,1&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.battery.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.battery.capacity&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;maximumPower&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;frontSurfaceArea&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;airDragCoefficient&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.6&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;rotatingMass&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;radialDragCoefficient&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;rollDragCoefficient&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.01&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;constantPowerIntake&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;propulsionEfficiency&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.9&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;recuperationEfficiency&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.9&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;stoppingThreshold&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.battery.maximumChargeRate&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;150000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vType&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vType id=&quot;ElectricBus&quot; accel=&quot;1.0&quot; decel=&quot;1.0&quot; length=&quot;12&quot; maxSpeed=&quot;100.0&quot; sigma=&quot;0.0&quot; minGap=&quot;2.5&quot; mass=&quot;10000&quot; color=&quot;1,1,1&quot;&gt;
+        &lt;param key=&quot;has.battery.device&quot; value=&quot;true&quot;/&gt;
+        &lt;param key=&quot;device.battery.capacity&quot; value=&quot;2000&quot;/&gt;
+        &lt;param key=&quot;maximumPower&quot; value=&quot;1000&quot;/&gt;
+        &lt;param key=&quot;frontSurfaceArea&quot; value=&quot;5&quot;/&gt;
+        &lt;param key=&quot;airDragCoefficient&quot; value=&quot;0.6&quot;/&gt;
+        &lt;param key=&quot;rotatingMass&quot; value=&quot;100&quot;/&gt;
+        &lt;param key=&quot;radialDragCoefficient&quot; value=&quot;0.5&quot;/&gt;
+        &lt;param key=&quot;rollDragCoefficient&quot; value=&quot;0.01&quot;/&gt;
+        &lt;param key=&quot;constantPowerIntake&quot; value=&quot;100&quot;/&gt;
+        &lt;param key=&quot;propulsionEfficiency&quot; value=&quot;0.9&quot;/&gt;
+        &lt;param key=&quot;recuperationEfficiency&quot; value=&quot;0.9&quot;/&gt;
+        &lt;param key=&quot;stoppingThreshold&quot; value=&quot;0.1&quot;/&gt;
+        &lt;param key=&quot;device.battery.maximumChargeRate&quot; value=&quot;150000&quot;/&gt;
+    &lt;/vType&gt;
+&lt;/routes&gt;
+</code></pre>
 <p>If a vehicle has a battery device (and is not <a href="#tracking_fuel_consumption_for_non-electrical_vehicles">tracking fuel</a>)
 and no explicit <code>emissionClass</code> is defined, it will be assigned the emission class <code>Energy/unknown</code>.
 It will not use the <a href="../Vehicle_Type_Parameter_Defaults.html">default emission class</a> derived from the vehicle class then.
@@ -406,27 +406,25 @@ This is for backward compatibility and will issue a warning because in general i
 Most of the parameters above do actually apply to this emission class and not to the battery device itself.</p>
 <p>The initial energy content of the battery (by default <code>0.5*device.battery.capacity</code>) can
 be set in the vehicle definitions</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type1&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,0,0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.battery.chargeLevel&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;500&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vehicle id=&quot;0&quot; type=&quot;type1&quot; depart=&quot;0&quot; color=&quot;1,0,0&quot;&gt;
+        &lt;param key=&quot;device.battery.chargeLevel&quot; value=&quot;500&quot;/&gt;
+    &lt;/vehicle&gt;
+&lt;/routes&gt;
+</code></pre>
 <p>The charging rate of the battery at a charging station is limited to model the effects of battery management controllers (e.g. charge a nearly full battery less than an nearly empty one).
 There are two ways to define the maximum charge rate: For a constant rate set the attribute <code>device.battery.maximumChargeRate</code>.
 If instead a maximum charge rate depending on the state of charge is wanted, it can be defined through data points between which the rate will get interpolated.
 The states of charge have to be given in <code>device.battery.chargeLevelTable</code> and the corresponding charge rates in <code>device.battery.chargeCurveTable</code>.
 If defined, the maximum charge curve takes precedence over the constant maximum charge rate <code>device.battery.maximumChargeRate</code>. An example definition where the charge rate decreases above
 50% state of charge looks like the following:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type1&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,0,0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.battery.chargeLevelTable&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0 0.5 1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.battery.chargeCurveTable&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;45000 45000 20000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vehicle id=&quot;0&quot; type=&quot;type1&quot; depart=&quot;0&quot; color=&quot;1,0,0&quot;&gt;
+        &lt;param key=&quot;device.battery.chargeLevelTable&quot; value=&quot;0 0.5 1&quot;/&gt;
+        &lt;param key=&quot;device.battery.chargeCurveTable&quot; value=&quot;45000 45000 20000&quot;/&gt;
+    &lt;/vehicle&gt;
+&lt;/routes&gt;
+</code></pre>
 <h1 id="vehicle_behavior">Vehicle behavior<a class="headerlink" href="#vehicle_behavior" title="Permanent link">#</a></h1>
 <p>By default, vehicle behavior will not be affected by battery level. Car will keep driving even when their battery capacity is at 0. To avoid this, either <a href="#traci">TraCI</a> must be used to change speed or route based on the current battery level or
 the <a href="../Simulation/Stationfinder.html">stationfinder device</a> can be configured to monitor the battery capacity.</p>
@@ -540,11 +538,10 @@ A charging station can be converted to a gas station by setting the <strong>char
 </tbody>
 </table>
 <p>Charging stations are defined in additional using the following format:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">    </span><span class="nt">&lt;chargingStation</span><span class="w"> </span><span class="na">chargeDelay=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">chargeInTransit=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">power=</span><span class="s">&quot;200000&quot;</span><span class="w"> </span><span class="na">efficiency=</span><span class="s">&quot;0.95&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;25&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;cS_2to19_0a&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;2to19_0&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+    &lt;chargingStation chargeDelay=&quot;2&quot; chargeInTransit=&quot;0&quot; power=&quot;200000&quot; efficiency=&quot;0.95&quot; endPos=&quot;25&quot; id=&quot;cS_2to19_0a&quot; lane=&quot;2to19_0&quot; startPos=&quot;10&quot;/&gt;
+&lt;/additional&gt;
+</code></pre>
 <p>And are represented in the simulation as shown:</p>
 <p><img alt="" src="../images/ChargingStation.png" title="Representation of chargingStation in GUI" />
 Representation of chargingStation in GUI</p>
@@ -558,45 +555,42 @@ Color of chargingStation during charge</p>
 <p>A stop at a charging station may occur due to traffic conditions,
 stopping at a defined location or stopping at an explicit
 chargingStation as defined below:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;v0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">chargingStation=</span><span class="s">&quot;myChargingStationID&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;50&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vehicle id=&quot;v0&quot; route=&quot;route0&quot; depart=&quot;0&quot;&gt;
+        &lt;stop chargingStation=&quot;myChargingStationID&quot; until=&quot;50&quot;/&gt;
+    &lt;/vehicle&gt;
+&lt;/routes&gt;
+</code></pre>
 <h2 id="charging_station_output">Charging Station output<a class="headerlink" href="#charging_station_output" title="Permanent link">#</a></h2>
 <p>There are two variants of the charging station output. One lists values for all time steps whereas the other
 aggregates the data into charging events (thus related to the whole time a vehicle was connected to the charging station).</p>
 <h3 id="full_report">Full report<a class="headerlink" href="#full_report" title="Permanent link">#</a></h3>
 <p>Option <strong>--chargingstations-output chargingstations.xml</strong> generates a full
 report of energy charged by charging stations:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;output&gt;</span>
-<span class="w">    </span><span class="nt">&lt;battery-output</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;battery.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;chargingstations-output</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;chargingstations.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/output&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;output&gt;
+    &lt;battery-output value=&quot;battery.xml&quot;/&gt;
+    &lt;chargingstations-output value=&quot;chargingstations.xml&quot;/&gt;
+&lt;/output&gt;
+</code></pre>
 <p>File chargingstations.xml has the following structure:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;chargingstations-export&gt;</span>
-<span class="w">    </span><span class="nt">&lt;chargingStation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CS1&quot;</span><span class="w"> </span><span class="na">totalEnergyCharged=</span><span class="s">&quot;71.25&quot;</span><span class="w"> </span><span class="na">chargingSteps=</span><span class="s">&quot;27&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;ElectricVehicle1&quot;</span><span class="w"> </span><span class="na">totalEnergyChargedIntoVehicle=</span><span class="s">&quot;15.83&quot;</span><span class="w"> </span><span class="na">chargingBegin=</span><span class="s">&quot;12.00&quot;</span><span class="w"> </span><span class="na">chargingEnd=</span><span class="s">&quot;17.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;step</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;12.00&quot;</span><span class="w"> </span><span class="na">chargingStatus=</span><span class="s">&quot;chargingStopped&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;2.64&quot;</span><span class="w"> </span><span class="na">partialCharge=</span><span class="s">&quot;2.64&quot;</span><span class="w"> </span><span class="na">power=</span><span class="s">&quot;10000.00&quot;</span><span class="w"> </span><span class="na">efficiency=</span><span class="s">&quot;0.95&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;12962.97&quot;</span><span class="w"> </span><span class="na">maximumBatteryCapacity=</span><span class="s">&quot;35000.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;step</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;13.00&quot;</span><span class="w"> </span><span class="na">chargingStatus=</span><span class="s">&quot;chargingStopped&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;2.64&quot;</span><span class="w"> </span><span class="na">partialCharge=</span><span class="s">&quot;5.28&quot;</span><span class="w"> </span><span class="na">power=</span><span class="s">&quot;10000.00&quot;</span><span class="w"> </span><span class="na">efficiency=</span><span class="s">&quot;0.95&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;12965.59&quot;</span><span class="w"> </span><span class="na">maximumBatteryCapacity=</span><span class="s">&quot;35000.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;step</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;14.00&quot;</span><span class="w"> </span><span class="na">chargingStatus=</span><span class="s">&quot;chargingStopped&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;2.64&quot;</span><span class="w"> </span><span class="na">partialCharge=</span><span class="s">&quot;7.92&quot;</span><span class="w"> </span><span class="na">power=</span><span class="s">&quot;10000.00&quot;</span><span class="w"> </span><span class="na">efficiency=</span><span class="s">&quot;0.95&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;12968.22&quot;</span><span class="w"> </span><span class="na">maximumBatteryCapacity=</span><span class="s">&quot;35000.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/vehicle&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;ElectricVehicle2&quot;</span><span class="w"> </span><span class="na">totalEnergyChargedIntoVehicle=</span><span class="s">&quot;5.28&quot;</span><span class="w"> </span><span class="na">chargingBegin=</span><span class="s">&quot;17.00&quot;</span><span class="w"> </span><span class="na">chargingEnd=</span><span class="s">&quot;18.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;step</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;17.00&quot;</span><span class="w"> </span><span class="na">chargingStatus=</span><span class="s">&quot;chargingStopped&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;2.64&quot;</span><span class="w"> </span><span class="na">partialCharge=</span><span class="s">&quot;18.47&quot;</span><span class="w"> </span><span class="na">power=</span><span class="s">&quot;10000.00&quot;</span><span class="w"> </span><span class="na">efficiency=</span><span class="s">&quot;0.95&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;11967.35&quot;</span><span class="w"> </span><span class="na">maximumBatteryCapacity=</span><span class="s">&quot;35000.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;step</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;18.00&quot;</span><span class="w"> </span><span class="na">chargingStatus=</span><span class="s">&quot;chargingStopped&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;2.64&quot;</span><span class="w"> </span><span class="na">partialCharge=</span><span class="s">&quot;21.11&quot;</span><span class="w"> </span><span class="na">power=</span><span class="s">&quot;10000.00&quot;</span><span class="w"> </span><span class="na">efficiency=</span><span class="s">&quot;0.95&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;12978.72&quot;</span><span class="w"> </span><span class="na">maximumBatteryCapacity=</span><span class="s">&quot;35000.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/vehicle&gt;</span>
-<span class="w">        </span>...
-<span class="w">    </span><span class="nt">&lt;/chargingStation&gt;</span>
-<span class="w">        </span>...
+<pre><code class="language-xml">&lt;chargingstations-export&gt;
+    &lt;chargingStation id=&quot;CS1&quot; totalEnergyCharged=&quot;71.25&quot; chargingSteps=&quot;27&quot;&gt;
+        &lt;vehicle id=&quot;veh0&quot; type=&quot;ElectricVehicle1&quot; totalEnergyChargedIntoVehicle=&quot;15.83&quot; chargingBegin=&quot;12.00&quot; chargingEnd=&quot;17.00&quot;&gt;
+            &lt;step time=&quot;12.00&quot; chargingStatus=&quot;chargingStopped&quot; energyCharged=&quot;2.64&quot; partialCharge=&quot;2.64&quot; power=&quot;10000.00&quot; efficiency=&quot;0.95&quot; actualBatteryCapacity=&quot;12962.97&quot; maximumBatteryCapacity=&quot;35000.00&quot;/&gt;
+            &lt;step time=&quot;13.00&quot; chargingStatus=&quot;chargingStopped&quot; energyCharged=&quot;2.64&quot; partialCharge=&quot;5.28&quot; power=&quot;10000.00&quot; efficiency=&quot;0.95&quot; actualBatteryCapacity=&quot;12965.59&quot; maximumBatteryCapacity=&quot;35000.00&quot;/&gt;
+            &lt;step time=&quot;14.00&quot; chargingStatus=&quot;chargingStopped&quot; energyCharged=&quot;2.64&quot; partialCharge=&quot;7.92&quot; power=&quot;10000.00&quot; efficiency=&quot;0.95&quot; actualBatteryCapacity=&quot;12968.22&quot; maximumBatteryCapacity=&quot;35000.00&quot;/&gt;
+        &lt;/vehicle&gt;
+        &lt;vehicle id=&quot;veh1&quot; type=&quot;ElectricVehicle2&quot; totalEnergyChargedIntoVehicle=&quot;5.28&quot; chargingBegin=&quot;17.00&quot; chargingEnd=&quot;18.00&quot;&gt;
+            &lt;step time=&quot;17.00&quot; chargingStatus=&quot;chargingStopped&quot; energyCharged=&quot;2.64&quot; partialCharge=&quot;18.47&quot; power=&quot;10000.00&quot; efficiency=&quot;0.95&quot; actualBatteryCapacity=&quot;11967.35&quot; maximumBatteryCapacity=&quot;35000.00&quot;/&gt;
+            &lt;step time=&quot;18.00&quot; chargingStatus=&quot;chargingStopped&quot; energyCharged=&quot;2.64&quot; partialCharge=&quot;21.11&quot; power=&quot;10000.00&quot; efficiency=&quot;0.95&quot; actualBatteryCapacity=&quot;12978.72&quot; maximumBatteryCapacity=&quot;35000.00&quot;/&gt;
+        &lt;/vehicle&gt;
+        ...
+    &lt;/chargingStation&gt;
+        ...
 
-<span class="w">    </span>...
-<span class="nt">&lt;/chargingstations-export&gt;</span>
-</code></pre></div>
-
+    ...
+&lt;/chargingstations-export&gt;
+</code></pre>
 <p>For the entire ChargingStation:</p>
 <table>
 <thead>
@@ -717,14 +711,13 @@ report of energy charged by charging stations:</p>
 <p>Option <strong>--chargingstations-output chargingevents.xml --chargingstations-output.aggregated true</strong> generates a
 report of the charging events at any charging station in the network. The generated output file chargingevents.xml has
 the following structure:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;chargingstations-export&gt;</span>
-<span class="w">    </span><span class="nt">&lt;chargingEvent</span><span class="w"> </span><span class="na">chargingStation=</span><span class="s">&quot;CS1&quot;</span><span class="w"> </span><span class="na">vehicle=</span><span class="s">&quot;veh0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;ElectricVehicle1&quot;</span><span class="w"> </span><span class="na">totalEnergyChargedIntoVehicle=</span><span class="s">&quot;15.83&quot;</span><span class="w"> </span><span class="na">chargingBegin=</span><span class="s">&quot;12.00&quot;</span><span class="w"> </span><span class="na">chargingEnd=</span><span class="s">&quot;17.00&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;12968.22&quot;</span><span class="w"> </span><span class="na">maximumBatteryCapacity=</span><span class="s">&quot;35000.00&quot;</span><span class="w"> </span><span class="na">minPower=</span><span class="s">&quot;10000.00&quot;</span><span class="w"> </span><span class="na">maxPower=</span><span class="s">&quot;10000.00&quot;</span><span class="w"> </span><span class="na">minCharge=</span><span class="s">&quot;2.64&quot;</span><span class="w"> </span><span class="na">maxCharge=</span><span class="s">&quot;2.64&quot;</span><span class="w"> </span><span class="na">minEfficiency=</span><span class="s">&quot;0.95&quot;</span><span class="w"> </span><span class="na">maxEfficiency=</span><span class="s">&quot;0.95&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;chargingEvent</span><span class="w"> </span><span class="na">chargingStation=</span><span class="s">&quot;CS1&quot;</span><span class="w"> </span><span class="na">vehicle=</span><span class="s">&quot;veh1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;ElectricVehicle1&quot;</span><span class="w"> </span><span class="na">totalEnergyChargedIntoVehicle=</span><span class="s">&quot;5.28&quot;</span><span class="w"> </span><span class="na">chargingBegin=</span><span class="s">&quot;17.00&quot;</span><span class="w"> </span><span class="na">chargingEnd=</span><span class="s">&quot;18.00&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;12978.72&quot;</span><span class="w"> </span><span class="na">maximumBatteryCapacity=</span><span class="s">&quot;35000.00&quot;</span><span class="w"> </span><span class="na">minPower=</span><span class="s">&quot;10000.00&quot;</span><span class="w"> </span><span class="na">maxPower=</span><span class="s">&quot;10000.00&quot;</span><span class="w"> </span><span class="na">minCharge=</span><span class="s">&quot;2.64&quot;</span><span class="w"> </span><span class="na">maxCharge=</span><span class="s">&quot;2.64&quot;</span><span class="w"> </span><span class="na">minEfficiency=</span><span class="s">&quot;0.95&quot;</span><span class="w"> </span><span class="na">maxEfficiency=</span><span class="s">&quot;0.95&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span>...
+<pre><code class="language-xml">&lt;chargingstations-export&gt;
+    &lt;chargingEvent chargingStation=&quot;CS1&quot; vehicle=&quot;veh0&quot; type=&quot;ElectricVehicle1&quot; totalEnergyChargedIntoVehicle=&quot;15.83&quot; chargingBegin=&quot;12.00&quot; chargingEnd=&quot;17.00&quot; actualBatteryCapacity=&quot;12968.22&quot; maximumBatteryCapacity=&quot;35000.00&quot; minPower=&quot;10000.00&quot; maxPower=&quot;10000.00&quot; minCharge=&quot;2.64&quot; maxCharge=&quot;2.64&quot; minEfficiency=&quot;0.95&quot; maxEfficiency=&quot;0.95&quot; /&gt;
+    &lt;chargingEvent chargingStation=&quot;CS1&quot; vehicle=&quot;veh1&quot; type=&quot;ElectricVehicle1&quot; totalEnergyChargedIntoVehicle=&quot;5.28&quot; chargingBegin=&quot;17.00&quot; chargingEnd=&quot;18.00&quot; actualBatteryCapacity=&quot;12978.72&quot; maximumBatteryCapacity=&quot;35000.00&quot; minPower=&quot;10000.00&quot; maxPower=&quot;10000.00&quot; minCharge=&quot;2.64&quot; maxCharge=&quot;2.64&quot; minEfficiency=&quot;0.95&quot; maxEfficiency=&quot;0.95&quot; /&gt;
+    ...
 
-<span class="nt">&lt;/chargingstations-export&gt;</span>
-</code></pre></div>
-
+&lt;/chargingstations-export&gt;
+</code></pre>
 <p>If the option <strong>--chargingstations-output.aggregated.write-unfinished true</strong> is set as well, vehicles still charging at the
 end of the simulation are included as well (but do not contain the chargingEnd attribute).
 Attributes with the same name can be looked up in the <a href="#full_report">table above</a>. The remaining attributes are:</p>
@@ -772,40 +765,38 @@ Attributes with the same name can be looked up in the <a href="#full_report">tab
 <h1 id="battery-output">battery-output<a class="headerlink" href="#battery-output" title="Permanent link">#</a></h1>
 <p>There are three output parameters to be set in the SUMO configuration to
 use the battery device:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">    </span><span class="nt">&lt;input&gt;</span>
-<span class="w">        </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;netFile.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;routeFile.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;additional-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;additionalFile.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/input&gt;</span>
-<span class="w">    </span><span class="nt">&lt;output&gt;</span>
-<span class="w">        </span><span class="nt">&lt;battery-output</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Battery.out.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;battery-output.precision</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;device.battery.probability</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;summary-output</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;summary_100.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/output&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;input&gt;
+        &lt;net-file value=&quot;netFile.xml&quot;/&gt;
+        &lt;route-files value=&quot;routeFile.xml&quot;/&gt;
+        &lt;additional-files value=&quot;additionalFile.xml&quot;/&gt;
+    &lt;/input&gt;
+    &lt;output&gt;
+        &lt;battery-output value=&quot;Battery.out.xml&quot;/&gt;
+        &lt;battery-output.precision value=&quot;4&quot;/&gt;
+        &lt;device.battery.probability value=&quot;1&quot;/&gt;
+        &lt;summary-output value=&quot;summary_100.xml&quot;/&gt;
+    &lt;/output&gt;
+&lt;/configuration&gt;
+</code></pre>
 <p>The battery-output generates a file with this structure:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;battery-export&gt;</span>
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;0.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;vehicle01&quot;</span><span class="w"> </span><span class="na">energyConsumed=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">totalEnergyConsumed=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">totalEnergyRegenerated=</span><span class="s">&quot;0.00&quot;</span>
-<span class="w">            </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;17500.00&quot;</span><span class="w"> </span><span class="na">maximumBatteryCapacity=</span><span class="s">&quot;35000.00&quot;</span>
-<span class="w">            </span><span class="na">chargingStationId=</span><span class="s">&quot;NULL&quot;</span><span class="w"> </span><span class="na">energyCharged=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">energyChargedInTransit=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">energyChargedStopped=</span><span class="s">&quot;0.00&quot;</span>
-<span class="w">            </span><span class="na">speed=</span><span class="s">&quot;12.92&quot;</span><span class="w"> </span><span class="na">acceleration=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1428.27&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;25.57&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;01to02_0&quot;</span>
-<span class="w">            </span><span class="na">posOnLane=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">timeStopped=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">.....</span><span class="w"> </span><span class="err">*/</span>
-<span class="w">    </span><span class="err">&lt;/timestep</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;1.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">.....</span>
-<span class="w">    </span><span class="err">&lt;/timestep</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">...</span>
-<span class="w">    </span><span class="err">...</span>
-<span class="w">    </span><span class="err">&lt;/timestep</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/battery-export&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;battery-export&gt;
+    &lt;timestep time=&quot;0.00&quot;&gt;
+        &lt;vehicle id=&quot;vehicle01&quot; energyConsumed=&quot;0.00&quot; totalEnergyConsumed=&quot;0.00&quot; totalEnergyRegenerated=&quot;0.00&quot;
+            actualBatteryCapacity=&quot;17500.00&quot; maximumBatteryCapacity=&quot;35000.00&quot;
+            chargingStationId=&quot;NULL&quot; energyCharged=&quot;0.00&quot; energyChargedInTransit=&quot;0.00&quot; energyChargedStopped=&quot;0.00&quot;
+            speed=&quot;12.92&quot; acceleration=&quot;0.00&quot; x=&quot;1428.27&quot; y=&quot;25.57&quot; lane=&quot;01to02_0&quot;
+            posOnLane=&quot;0.00&quot; timeStopped=&quot;0&quot;/&gt;
+        &lt;vehicle id=..... */
+    &lt;/timestep&gt;
+    &lt;timestep time=&quot;1.00&quot;&gt;
+        &lt;vehicle id=.....
+    &lt;/timestep&gt;
+    &lt;timestep time=...
+    ...
+    &lt;/timestep&gt;
+&lt;/battery-export&gt;
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -925,25 +916,22 @@ can be used to access the consumption of the vehicle if the <code>emissionClass=
 declared</a>.</p>
 <h2 id="query_of_the_current_state_of_charge">Query of the current state of charge<a class="headerlink" href="#query_of_the_current_state_of_charge" title="Permanent link">#</a></h2>
 <p>The current state of charge of the battery can be computed as the quotient of the actual battery charge and the maximum battery capacity:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">capacity</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">getParameter</span><span class="p">(</span><span class="n">vehID</span><span class="p">,</span> <span class="s2">&quot;device.battery.capacity&quot;</span><span class="p">))</span>
-<span class="n">currentCharge</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">getParameter</span><span class="p">(</span><span class="n">vehID</span><span class="p">,</span> <span class="s2">&quot;device.battery.chargeLevel&quot;</span><span class="p">))</span>
-<span class="n">stateOfCharge</span> <span class="o">=</span> <span class="n">currentCharge</span> <span class="o">/</span> <span class="n">capacity</span>
-</code></pre></div>
-
+<pre><code class="language-python">capacity = float(traci.vehicle.getParameter(vehID, &quot;device.battery.capacity&quot;))
+currentCharge = float(traci.vehicle.getParameter(vehID, &quot;device.battery.chargeLevel&quot;))
+stateOfCharge = currentCharge / capacity
+</code></pre>
 <h2 id="calculating_the_remaining_range">Calculating the remaining Range<a class="headerlink" href="#calculating_the_remaining_range" title="Permanent link">#</a></h2>
 <p>After the vehicle has been driving for a while, the remaining range can be computed based on previous consumption and distance:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">mWh</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">getDistance</span><span class="p">(</span><span class="n">vehID</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">getParameter</span><span class="p">(</span><span class="n">vehID</span><span class="p">,</span> <span class="s2">&quot;device.battery.totalEnergyConsumed&quot;</span><span class="p">))</span>
-<span class="n">remainingRange</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">getParameter</span><span class="p">(</span><span class="n">vehID</span><span class="p">,</span> <span class="s2">&quot;device.battery.chargeLevel&quot;</span><span class="p">))</span> <span class="o">*</span> <span class="n">mWh</span>
-</code></pre></div>
-
+<pre><code class="language-python">mWh = traci.vehicle.getDistance(vehID) / float(traci.vehicle.getParameter(vehID, &quot;device.battery.totalEnergyConsumed&quot;))
+remainingRange = float(traci.vehicle.getParameter(vehID, &quot;device.battery.chargeLevel&quot;)) * mWh
+</code></pre>
 <p>To compute the remaining range on departure, the value of <code>mWh</code> (meters per Watt-hour) should be calibrated from a prior simulation.</p>
 <h2 id="reducing_the_power_of_a_charging_station">Reducing the power of a charging station<a class="headerlink" href="#reducing_the_power_of_a_charging_station" title="Permanent link">#</a></h2>
 <p>If too many consumers connect to the eletrical grid, it may not be able to supply the nominal power of the charging station. A temporary
 power drop of 20% can be modeled using the following sample code:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">prevPower</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">chargingstation</span><span class="o">.</span><span class="n">getPower</span><span class="p">(</span><span class="n">chargingStationID</span><span class="p">)</span> <span class="c1"># remember for restoring the full power later</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">chargingstation</span><span class="o">.</span><span class="n">setPower</span><span class="p">(</span><span class="n">chargingStationID</span><span class="p">,</span> <span class="n">prevPower</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code class="language-python">prevPower = traci.chargingstation.getPower(chargingStationID) # remember for restoring the full power later
+traci.chargingstation.setPower(chargingStationID, prevPower * 0.8)
+</code></pre>
 <h1 id="model_details">Model Details<a class="headerlink" href="#model_details" title="Permanent link">#</a></h1>
 <p>All information about the implemented device (including details on the
 vehicle energy consumption and charging model) can be found in the
@@ -960,23 +948,22 @@ Heidelberg
 <h1 id="example_configurations">Example Configurations<a class="headerlink" href="#example_configurations" title="Permanent link">#</a></h1>
 <h2 id="kia_soul_ev_2020">Kia Soul EV 2020<a class="headerlink" href="#kia_soul_ev_2020" title="Permanent link">#</a></h2>
 <p>The values are provided by courtesy of Jim Div based on his own calibration.</p>
-<div class="codehilite"><pre><span></span><code><span class="cm">&lt;!-- vehicle mass = 1682kg curb wt + average 2 passengers / bags --&gt;</span>
-<span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;soulEV65&quot;</span><span class="w"> </span><span class="na">minGap=</span><span class="s">&quot;2.50&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;29.06&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;white&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">emissionClass=</span><span class="s">&quot;Energy/unknown&quot;</span><span class="w"> </span><span class="na">mass=</span><span class="s">&quot;1830&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.battery.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;airDragCoefficient&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.35&quot;</span><span class="nt">/&gt;</span><span class="w">       </span><span class="cm">&lt;!-- https://www.evspecifications.com/en/model/e94fa0 --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;constantPowerIntake&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="nt">/&gt;</span><span class="w">       </span><span class="cm">&lt;!-- observed summer levels --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;frontSurfaceArea&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2.6&quot;</span><span class="nt">/&gt;</span><span class="w">          </span><span class="cm">&lt;!-- computed (ht-clearance) * width --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;rotatingMass&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;40&quot;</span><span class="nt">/&gt;</span><span class="w">               </span><span class="cm">&lt;!-- guesstimate, inspired by PHEMlight5 PC_BEV --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.battery.capacity&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;64000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;maximumPower&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;150000&quot;</span><span class="nt">/&gt;</span><span class="w">           </span><span class="cm">&lt;!-- website as above --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;propulsionEfficiency&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;.98&quot;</span><span class="nt">/&gt;</span><span class="w">      </span><span class="cm">&lt;!-- guesstimate value providing closest match to observed --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;radialDragCoefficient&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="nt">/&gt;</span><span class="w">     </span><span class="cm">&lt;!-- as above --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;recuperationEfficiency&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;.96&quot;</span><span class="nt">/&gt;</span><span class="w">    </span><span class="cm">&lt;!-- as above --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;rollDragCoefficient&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.01&quot;</span><span class="nt">/&gt;</span><span class="w">      </span><span class="cm">&lt;!-- as above --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;stoppingThreshold&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="nt">/&gt;</span><span class="w">         </span><span class="cm">&lt;!-- as above --&gt;</span>
-<span class="nt">&lt;/vType&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;!-- vehicle mass = 1682kg curb wt + average 2 passengers / bags --&gt;
+&lt;vType id=&quot;soulEV65&quot; minGap=&quot;2.50&quot; maxSpeed=&quot;29.06&quot; color=&quot;white&quot; accel=&quot;1.0&quot; decel=&quot;1.0&quot; sigma=&quot;0.0&quot; emissionClass=&quot;Energy/unknown&quot; mass=&quot;1830&quot;&gt;
+    &lt;param key=&quot;has.battery.device&quot; value=&quot;true&quot;/&gt;
+    &lt;param key=&quot;airDragCoefficient&quot; value=&quot;0.35&quot;/&gt;       &lt;!-- https://www.evspecifications.com/en/model/e94fa0 --&gt;
+    &lt;param key=&quot;constantPowerIntake&quot; value=&quot;100&quot;/&gt;       &lt;!-- observed summer levels --&gt;
+    &lt;param key=&quot;frontSurfaceArea&quot; value=&quot;2.6&quot;/&gt;          &lt;!-- computed (ht-clearance) * width --&gt;
+    &lt;param key=&quot;rotatingMass&quot; value=&quot;40&quot;/&gt;               &lt;!-- guesstimate, inspired by PHEMlight5 PC_BEV --&gt;
+    &lt;param key=&quot;device.battery.capacity&quot; value=&quot;64000&quot;/&gt;
+    &lt;param key=&quot;maximumPower&quot; value=&quot;150000&quot;/&gt;           &lt;!-- website as above --&gt;
+    &lt;param key=&quot;propulsionEfficiency&quot; value=&quot;.98&quot;/&gt;      &lt;!-- guesstimate value providing closest match to observed --&gt;
+    &lt;param key=&quot;radialDragCoefficient&quot; value=&quot;0.1&quot;/&gt;     &lt;!-- as above --&gt;
+    &lt;param key=&quot;recuperationEfficiency&quot; value=&quot;.96&quot;/&gt;    &lt;!-- as above --&gt;
+    &lt;param key=&quot;rollDragCoefficient&quot; value=&quot;0.01&quot;/&gt;      &lt;!-- as above --&gt;
+    &lt;param key=&quot;stoppingThreshold&quot; value=&quot;0.1&quot;/&gt;         &lt;!-- as above --&gt;
+&lt;/vType&gt;
+</code></pre>
 <p>Observations:
 - Simulation efficiencies of 6.3 - 6.7 km driven per kWh consumed agree with measured efficiencies of 6.4 - 6.8 (stddev 0.4 - 0.8) in short and medium range simulations with realistic traffic
 - abstract scenarios without junctions and other cars overestimate the efficiency by a large factor (~ twice as many km/kWh)</p>
@@ -987,7 +974,7 @@ Heidelberg
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

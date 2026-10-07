@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -257,25 +258,22 @@ applications.</p>
 <p>SUMO applications are plain executables. You just start them by typing
 their name from the command line; for example
 <a href="../netgenerate.html">netgenerate</a> is called by</p>
-<div class="codehilite"><pre><span></span><code>netgenerate.exe
-</code></pre></div>
-
+<pre><code>netgenerate.exe
+</code></pre>
 <p>under Windows and by</p>
-<div class="codehilite"><pre><span></span><code>netgenerate
-</code></pre></div>
-
+<pre><code>netgenerate
+</code></pre>
 <p>under Linux.</p>
 <p>This simply starts the application
 (<a href="../netgenerate.html">netgenerate</a> in this case). As no parameter
 has been given, the application does not know what to do and prints only
 an information about itself:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">Eclipse</span><span class="w"> </span><span class="nt">SUMO</span><span class="w"> </span><span class="nt">netgenerate</span><span class="w"> </span><span class="nt">Version</span><span class="w"> </span><span class="nt">1</span><span class="p">.</span><span class="nc">27</span><span class="p">.</span><span class="nc">1</span>
-<span class="w"> </span><span class="nt">Build</span><span class="w"> </span><span class="nt">features</span><span class="o">:</span><span class="w"> </span><span class="nt">Linux-4</span><span class="p">.</span><span class="nc">1</span><span class="p">.</span><span class="nc">39-56-default</span><span class="w"> </span><span class="nt">Proj</span><span class="w"> </span><span class="nt">GDAL</span><span class="w"> </span><span class="nt">GUI</span>
-<span class="w"> </span><span class="nt">Copyright</span><span class="w"> </span><span class="o">(</span><span class="nt">C</span><span class="o">)</span><span class="w"> </span><span class="nt">2001-2020</span><span class="w"> </span><span class="nt">German</span><span class="w"> </span><span class="nt">Aerospace</span><span class="w"> </span><span class="nt">Center</span><span class="w"> </span><span class="o">(</span><span class="nt">DLR</span><span class="o">)</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="nt">others</span><span class="o">;</span><span class="w"> </span><span class="nt">https</span><span class="o">://</span><span class="nt">sumo</span><span class="p">.</span><span class="nc">dlr</span><span class="p">.</span><span class="nc">de</span>
-<span class="w"> </span><span class="nt">License</span><span class="w"> </span><span class="nt">EPL-2</span><span class="p">.</span><span class="nc">0</span><span class="o">:</span><span class="w"> </span><span class="nt">Eclipse</span><span class="w"> </span><span class="nt">Public</span><span class="w"> </span><span class="nt">License</span><span class="w"> </span><span class="nt">Version</span><span class="w"> </span><span class="nt">2</span><span class="w"> </span><span class="o">&lt;</span><span class="nt">https</span><span class="o">://</span><span class="nt">www</span><span class="p">.</span><span class="nc">eclipse</span><span class="p">.</span><span class="nc">org</span><span class="o">/</span><span class="nt">legal</span><span class="o">/</span><span class="nt">epl-2</span><span class="p">.</span><span class="nc">0</span><span class="o">/&gt;</span>
-<span class="w"> </span><span class="nt">Use</span><span class="w"> </span><span class="nt">--help</span><span class="w"> </span><span class="nt">to</span><span class="w"> </span><span class="nt">get</span><span class="w"> </span><span class="nt">the</span><span class="w"> </span><span class="nt">list</span><span class="w"> </span><span class="nt">of</span><span class="w"> </span><span class="nt">options</span><span class="o">.</span>
-</code></pre></div>
-
+<pre><code>Eclipse SUMO netgenerate Version 1.27.1
+ Build features: Linux-4.1.39-56-default Proj GDAL GUI
+ Copyright (C) 2001-2020 German Aerospace Center (DLR) and others; https://sumo.dlr.de
+ License EPL-2.0: Eclipse Public License Version 2 &lt;https://www.eclipse.org/legal/epl-2.0/&gt;
+ Use --help to get the list of options.
+</code></pre>
 <h1 id="options">Options<a class="headerlink" href="#options" title="Permanent link">#</a></h1>
 <p>Each application has a set of options which define which files shall be
 processed or generated, or which define the application's behavior.
@@ -292,21 +290,18 @@ require an argument. Setting an option with an argument on the command
 line consists of two parts - the option name and the option's value. For
 example, if one wants the simulation to load a certain road network,
 "mynet.net.xml", the following must be written:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">--net mynet.net.xml</span>
-</code></pre></div>
-
+<pre><code>--net mynet.net.xml
+</code></pre>
 <p>The '--' in front indicates that the option's long name is following
 ("net") in this case. After a whitespace the option's value must be
 given. It is also possible to use a '=' instead of the whitespace:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">--net=mynet.net.xml</span>
-</code></pre></div>
-
+<pre><code>--net=mynet.net.xml
+</code></pre>
 <p>Some often used options can be abbreviated. The abbreviation for the
 <strong>--net</strong>-option is <strong>-n</strong>. The following has the same effect as the two examples
 above:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">-n mynet.net.xml</span>
-</code></pre></div>
-
+<pre><code>-n mynet.net.xml
+</code></pre>
 <p>Please note that an abbreviation is indicated using a single '-'.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -314,9 +309,8 @@ above:</p>
 </div>
 <p>If you want to append options to a list of values given in a
 <a href="#configuration_files_vs_command_line_parameter">configuration file</a> you will use the following syntax:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">+a myAdditional.add.xml</span>
-</code></pre></div>
-
+<pre><code>+a myAdditional.add.xml
+</code></pre>
 <p>Please note that you can use the abbreviated or the non-abbreviated name here but always a single '+'.
 This will only work for lists of strings or numbers.</p>
 <h2 id="option_value_types">Option Value Types<a class="headerlink" href="#option_value_types" title="Permanent link">#</a></h2>
@@ -346,37 +340,33 @@ configuration file. For the boolean options the value should be either
 "no", or "0" for deactivating the option (case does not matter here).</p>
 <p>For the example above, the configuration file (let's save it under
 "test.sumocfg", see below) would look like:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">    </span><span class="nt">&lt;input&gt;</span>
-<span class="w">        </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;test.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;test.rou.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;additional-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;test.add.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/input&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;input&gt;
+        &lt;net-file value=&quot;test.net.xml&quot;/&gt;
+        &lt;route-files value=&quot;test.rou.xml&quot;/&gt;
+        &lt;additional-files value=&quot;test.add.xml&quot;/&gt;
+    &lt;/input&gt;
+&lt;/configuration&gt;
+</code></pre>
 <p>The section <code>input</code> given above has only
 documentation purposes and no functional meaning.</p>
 <p>A less verbose but equivalent version would look like:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">    </span><span class="nt">&lt;n</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;test.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;r</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;test.rou.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;a</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;test.add.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;n v=&quot;test.net.xml&quot;/&gt;
+    &lt;r v=&quot;test.rou.xml&quot;/&gt;
+    &lt;a v=&quot;test.add.xml&quot;/&gt;
+&lt;/configuration&gt;
+</code></pre>
 <p>The according <a href="../sumo.html">sumo</a> execution call - working with both
 configuration versions - would be:</p>
-<div class="codehilite"><pre><span></span><code>sumo.exe -c test.sumocfg
-</code></pre></div>
-
+<pre><code>sumo.exe -c test.sumocfg
+</code></pre>
 <p>This means that instead of the parameters, we only give the name of the
 configuration file using the option <strong>--configuration-file</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a> or <strong>-c</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a>. If you want to give no further
 options on the command line it is possible to leave out the "-c" as
 well:</p>
-<div class="codehilite"><pre><span></span><code>sumo.exe test.sumocfg
-</code></pre></div>
-
+<pre><code>sumo.exe test.sumocfg
+</code></pre>
 <h2 id="naming_conventions_for_configuration_files">Naming Conventions for Configuration Files<a class="headerlink" href="#naming_conventions_for_configuration_files" title="Permanent link">#</a></h2>
 <p>Depending on the targeted application, the configuration files have
 different extensions. It is highly recommended to follow this
@@ -421,13 +411,12 @@ are generated.</p>
 <h2 id="environment_variables_in_configuration_files">Environment variables in Configuration Files<a class="headerlink" href="#environment_variables_in_configuration_files" title="Permanent link">#</a></h2>
 <p>It is possible to refer to environment variables in configuration files. The syntax to refer to an environment variable is <strong>${VARNAME}</strong>.
 For example, your configuration file may reference a variable called <strong>NETFILENAME</strong>, containing the name of a network file, with the following configuration settings.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">    </span><span class="nt">&lt;input&gt;</span>
-<span class="w">        </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;${NETFILENAME}.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/input&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;input&gt;
+        &lt;net-file value=&quot;${NETFILENAME}.net.xml&quot;/&gt;
+    &lt;/input&gt;
+&lt;/configuration&gt;
+</code></pre>
 <p>There are also some special values you can use here which aren't environment variables:</p>
 <ul>
 <li><strong>${LOCALTIME}</strong> refers to the local time when the configuration has been loaded</li>
@@ -640,9 +629,8 @@ easiest way is to open the command-line window using <strong>start-command-line.
 <p>Furthermore you need to make sure that your computer knows where to find
 the python tools. The easiest (but somewhat cumbersome) method is to run
 the tool using its full path:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">yourname</span><span class="o">&gt;</span><span class="n">D</span><span class="p">:</span>\<span class="n">path_to_sumo</span>\<span class="n">tools</span>\<span class="n">randomTrips</span><span class="o">.</span><span class="n">py</span><span class="w">  </span><span class="o">...</span><span class="w"> </span><span class="n">arguments</span><span class="w"> </span><span class="o">...</span>
-</code></pre></div>
-
+<pre><code>C:\Users\yourname&gt;D:\path_to_sumo\tools\randomTrips.py  ... arguments ...
+</code></pre>
 <p>Alternatively, you can add the directory in which the tool lies to your
 <a href="Basic_Computer_Skills.html#configuring_path_settings">PATH-Variable</a>.</p>
                 </main>
@@ -652,7 +640,7 @@ the tool using its full path:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -224,9 +225,8 @@ To filter out (short) VISSIM connectors, which may not have been
 converted to edges in the network import but are included in the VISSIM
 route definitions, you may also (ab)use this facility to delete the edge
 from all relevant routes, e.g. edgemap["10000"] = ""</p>
-<div class="codehilite"><pre><span></span><code>vissim_parseRoutes.py &lt;VISSIM_NETWORK&gt; &lt;OUTPUT_PREFIX&gt;
-</code></pre></div>
-
+<pre><code>vissim_parseRoutes.py &lt;VISSIM_NETWORK&gt; &lt;OUTPUT_PREFIX&gt;
+</code></pre>
 <p>The script is located in <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools/import/vissim. It is written in Python.</p>
 <h1 id="vissim_parsebusstopspy">vissim_parseBusStops.py<a class="headerlink" href="#vissim_parsebusstopspy" title="Permanent link">#</a></h1>
 <p>Parses bus stops and bus routes stored in the given Vissim file (first
@@ -234,9 +234,8 @@ parameter). The read bus lines are saved as
 <em>&lt;OUTPUT_PREFIX&gt;_busses.rou.xml</em>. The read routes are saved as
 <em>&lt;OUTPUT_PREFIX&gt;_stops.add.xml</em>. (Starting?) edges of the route may be
 renamed by setting them within "edgemap" variable (see below).</p>
-<div class="codehilite"><pre><span></span><code>vissim_parseBusStops.py &lt;VISSIM_NETWORK&gt; &lt;OUTPUT_PREFIX&gt;
-</code></pre></div>
-
+<pre><code>vissim_parseBusStops.py &lt;VISSIM_NETWORK&gt; &lt;OUTPUT_PREFIX&gt;
+</code></pre>
 <p>The script is located in <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools/import/vissim. It is written in Python.</p>
                 </main>
           </div>
@@ -245,7 +244,7 @@ renamed by setting them within "edgemap" variable (see below).</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -228,25 +229,24 @@ the queue lengths will be written can be restricted to the given period. Then, t
 <p>The output file format is determined by the file extension (or the option <strong>--output.format</strong>). Besides XML, the <a href="../../Other/File_Extensions.html">column based formats</a> CSV (<code>.csv</code>) and Parquet (<code>.parquet</code>) are supported. Because these formats require a homogeneous set of columns, the option <strong>--queue-output.skip-empty</strong> must be set when using them (otherwise empty time steps would create rows without queue data).</p>
 <h2 id="generated_output">Generated Output<a class="headerlink" href="#generated_output" title="Permanent link">#</a></h2>
 <p>The generated XML file looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;queue-export&gt;</span>
+<pre><code class="language-xml">&lt;queue-export&gt;
 
-<span class="w">  </span><span class="nt">&lt;data</span><span class="w"> </span><span class="na">timestep=</span><span class="s">&quot;&lt;TIME_STEP&gt;&quot;</span><span class="nt">&gt;</span>
+  &lt;data timestep=&quot;&lt;TIME_STEP&gt;&quot;&gt;
 
-<span class="w">  </span><span class="nt">&lt;lanes&gt;</span>
+  &lt;lanes&gt;
 
-<span class="w">    </span><span class="nt">&lt;lane</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="w"> </span><span class="na">queueing_time=</span><span class="s">&quot;&lt;LANE_QUEUEING_TIME&gt;&quot;</span><span class="w"> </span><span class="na">queueing_length=</span><span class="s">&quot;&lt;LANE_QUEUEING_LENGTH&gt;&quot;</span>
-<span class="w">    </span><span class="na">queueing_length_experimental=</span><span class="s">&quot;&lt;LANE_QUEUEING_LENGTH_EXPERIMENTAL&gt;&quot;</span><span class="nt">/&gt;</span>
+    &lt;lane id=&quot;&lt;LANE_ID&gt;&quot; queueing_time=&quot;&lt;LANE_QUEUEING_TIME&gt;&quot; queueing_length=&quot;&lt;LANE_QUEUEING_LENGTH&gt;&quot;
+    queueing_length_experimental=&quot;&lt;LANE_QUEUEING_LENGTH_EXPERIMENTAL&gt;&quot;/&gt;
 
-<span class="w">    </span>...<span class="w"> </span>next<span class="w"> </span>lane<span class="w"> </span>...
+    ... next lane ...
 
-<span class="w">  </span><span class="nt">&lt;/lanes&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/data&gt;</span>
+  &lt;/lanes&gt;
+  &lt;/data&gt;
 
-<span class="w">  </span>...<span class="w"> </span>next<span class="w"> </span>timestep<span class="w"> </span>...
+  ... next timestep ...
 
-<span class="nt">&lt;/queue-export&gt;</span>
-</code></pre></div>
-
+&lt;/queue-export&gt;
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -305,22 +305,21 @@ lengths (including minGap) up to the last queued vehicle otherwise.</p>
 <p>When setting the option <strong>--queue-output.aggregation</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;TIME&gt;</em></a>, per-timestep
 data is replaced by per-edge queue length statistics aggregated over
 the given period (typically a traffic light cycle):</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;queue-export&gt;</span>
+<pre><code class="language-xml">&lt;queue-export&gt;
 
-<span class="w">  </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;&lt;BEGIN&gt;&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;&lt;END&gt;&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;EDGE_ID&gt;&quot;</span><span class="w"> </span><span class="na">samples=</span><span class="s">&quot;&lt;NUM_SAMPLES&gt;&quot;</span>
-<span class="w">      </span><span class="na">maxQueueLengthInVehicles=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">medianQueueLengthInVehicles=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">percentileQueueLengthInVehicles=</span><span class="s">&quot;...&quot;</span>
-<span class="w">      </span><span class="na">maxQueueLengthInMeters=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">medianQueueLengthInMeters=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">percentileQueueLengthInMeters=</span><span class="s">&quot;...&quot;</span><span class="nt">/&gt;</span>
+  &lt;interval begin=&quot;&lt;BEGIN&gt;&quot; end=&quot;&lt;END&gt;&quot;&gt;
+    &lt;edge id=&quot;&lt;EDGE_ID&gt;&quot; samples=&quot;&lt;NUM_SAMPLES&gt;&quot;
+      maxQueueLengthInVehicles=&quot;...&quot; medianQueueLengthInVehicles=&quot;...&quot; percentileQueueLengthInVehicles=&quot;...&quot;
+      maxQueueLengthInMeters=&quot;...&quot; medianQueueLengthInMeters=&quot;...&quot; percentileQueueLengthInMeters=&quot;...&quot;/&gt;
 
-<span class="w">    </span>...<span class="w"> </span>next<span class="w"> </span>edge<span class="w"> </span>...
+    ... next edge ...
 
-<span class="w">  </span><span class="nt">&lt;/interval&gt;</span>
+  &lt;/interval&gt;
 
-<span class="w">  </span>...<span class="w"> </span>next<span class="w"> </span>interval<span class="w"> </span>...
+  ... next interval ...
 
-<span class="nt">&lt;/queue-export&gt;</span>
-</code></pre></div>
-
+&lt;/queue-export&gt;
+</code></pre>
 <p>Each lane (or meso segment queue) with at least one queued vehicle
 contributes one sample per recorded time step. The <code>median</code> and
 <code>percentile</code> values are computed over all samples of the interval with
@@ -344,7 +343,7 @@ communications.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

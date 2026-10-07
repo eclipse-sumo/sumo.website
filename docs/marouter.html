@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="css/fontawesome.all.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="js/jquery-3.7.0.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -294,10 +295,9 @@ limit, lane number and edge priority to compute traveltimes and flows
 based on density. For details, see functions
 <em>capacityConstraintFunction</em> and <em>getCapacity</em> in <a href="https://github.com/eclipse-sumo/sumo/blob/main/src/marouter/ROMAAssignments.cpp"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/src/marouter/ROMAAssignments.cpp</a>.</p>
 <p>By setting option <strong>--capacities.default</strong>, the following constraint function is used:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">capacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edge</span><span class="o">-&gt;</span><span class="n">getNumLanes</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">800</span><span class="p">;</span>
-<span class="n">travelTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edge</span><span class="o">-&gt;</span><span class="n">getLength</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">edge</span><span class="o">-&gt;</span><span class="n">getSpeedLimit</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">1.</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.</span><span class="o">*</span><span class="p">(</span><span class="n">flow</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">capacity</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.9</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3.</span><span class="p">);</span>
-</code></pre></div>
-
+<pre><code>capacity = edge-&gt;getNumLanes() * 800;
+travelTime = edge-&gt;getLength() / edge-&gt;getSpeedLimit() * (1. + 1.*(flow / (capacity * 0.9)) * 3.);
+</code></pre>
 <h2 id="microscopic_outputs">Microscopic Outputs<a class="headerlink" href="#microscopic_outputs" title="Permanent link">#</a></h2>
 <p>One of the main usages of marouter is to compute a
 <a href="Demand/Dynamic_User_Assignment.html">User Assignment</a>.
@@ -864,7 +864,7 @@ configuration:
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

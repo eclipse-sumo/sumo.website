@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -404,10 +405,9 @@ may not work for certain scripts.</p>
 <h2 id="plotxmlattributespy">plotXMLAttributes.py<a class="headerlink" href="#plotxmlattributespy" title="Permanent link">#</a></h2>
 <p>Create multiple 2D-plots of 2 arbitrary attributes from on or more xml files aggregated by an third attribute (i.e. detector-id).</p>
 <p>Example uses:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w">  </span><span class="n">tools</span><span class="o">/</span><span class="n">visualization</span><span class="o">/</span><span class="n">plotXMLAttributes</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">fcd</span><span class="o">.</span><span class="n">xml</span>
-<span class="n">python</span><span class="w">  </span><span class="n">tools</span><span class="o">/</span><span class="n">visualization</span><span class="o">/</span><span class="n">plotXMLAttributes</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">fcd</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="n">fcd2</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python  tools/visualization/plotXMLAttributes.py -x x -y y fcd.xml
+python  tools/visualization/plotXMLAttributes.py -x x -y y fcd.xml fcd2.xml
+</code></pre>
 <p>The above example draws the paths of all vehicles through the network based on fcd-output. (It is a special case that can also be accomplished with  <a href="#plot_trajectoriespy">plot_trajectories.py</a>)</p>
 <p>When option <strong>--show</strong> is set, a interactive plot is opened that allows identifying data points vehicles by clicking on the plot (dataID is printed on the console).</p>
 <p>Option <strong>--filter-ids ID1,ID2,...</strong> allows restricting the plot to the given data element ids. You can use a wildcard to filter out ids that follow some pattern; for instance <strong>--filter-ids bus_</strong>* will filter out all ids that begin with the four characters "bus_".</p>
@@ -447,10 +447,9 @@ may not work for certain scripts.</p>
 <p>If a combined plot is needed that cannot be created with any of the above methods (i.e. because the data comes from different kinds of data files such as summary-output and edgeData) then an alternative is to use option <strong>--csv-output</strong> and plotting the resulting data with another tool (i.e. <a href="https://en.wikipedia.org/wiki/Gnuplot">gnuplot</a>).</p>
 <p>In csv-output each group of data points belonging to the same ID will form it's own block separated by two blank lines from the next block.
 To replicate a plot where each ID/block has its distinct color, the following approach can be used in gnuplot:</p>
-<div class="codehilite"><pre><span></span><code>stats &#39;data.csv&#39;
-plot for [idx=0:STATS_blocks] &#39;data.csv&#39; i idx with lines
-</code></pre></div>
-
+<pre><code>stats 'data.csv'
+plot for [idx=0:STATS_blocks] 'data.csv' i idx with lines
+</code></pre>
 <h3 id="xml_format_assumptions">XML format assumptions<a class="headerlink" href="#xml_format_assumptions" title="Permanent link">#</a></h3>
 <p>The default parsing engine of plotXMLAttributes assumes that each xml element occupies exactly one line in the input files. This fits with the output formatting of all SUMO applications.
 If an arbitrary XML file shall be plotted (i.e. without linebreaks), the option <strong>--robust-parser</strong> can be set. This will reduce processing speed.</p>
@@ -493,58 +492,51 @@ permitted for the x and y attribute.</p>
 <p><img src="../images/departDelayScatter.png" width="500px"/></p>
 <h3 id="time_to_collision_over_simulation_time">Time to collision over simulation time<a class="headerlink" href="#time_to_collision_over_simulation_time" title="Permanent link">#</a></h3>
 <p>The plot is created from the output file of a SUMO simulation for which a global <a href="../Simulation/Output/SSM_Device.html">SSM device</a> has been added. For this example, starting from the <a href="https://github.com/DLR-TS/sumo-scenarios/tree/main/bologna/acosta">Bologna "acosta" scenario</a>, the SUMO configuration file had been modified in order to compute time to collision:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.dlr.de/xsd/sumoConfiguration.xsd&quot;</span><span class="nt">&gt;</span>
+<pre><code class="language-xml">&lt;configuration xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.dlr.de/xsd/sumoConfiguration.xsd&quot;&gt;
 
-<span class="w">    </span><span class="nt">&lt;device.ssm.deterministic</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;device.ssm.file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;ssm.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;device.ssm.measures</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;TTC&quot;</span><span class="nt">/&gt;</span>
+    &lt;device.ssm.deterministic value=&quot;true&quot;/&gt;
+    &lt;device.ssm.file value=&quot;ssm.xml&quot;/&gt;
+    &lt;device.ssm.measures value=&quot;TTC&quot;/&gt;
 
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+&lt;/configuration&gt;
+</code></pre>
 <p>After the simulation has finished to run, a XML file <code>ssm.xml</code> has been produced. Using this file we can extract and plot the TTC values by using the command line:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="p">.</span><span class="n">exe</span><span class="w"> </span><span class="p">.</span><span class="err">\</span><span class="n">plotXMLAttributes</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="n">ssm</span><span class="p">.</span><span class="nc">xml</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="nc">time</span><span class="w"> </span><span class="c1">--xlabel &quot;Time [s]&quot; -y value --ylabel &quot;TTC [s]&quot; -i ego --filter-ids bus_* --title &quot;time to collision over simulation time&quot; --scatterplot</span>
-</code></pre></div>
-
+<pre><code>python.exe .\plotXMLAttributes.py ssm.xml -x time --xlabel &quot;Time [s]&quot; -y value --ylabel &quot;TTC [s]&quot; -i ego --filter-ids bus_* --title &quot;time to collision over simulation time&quot; --scatterplot
+</code></pre>
 <p><img src="../images/plot_ttc.png" title="plot_ttc.png" width=600px/></p>
 <h3 id="queuing_times_over_time">Queuing times over time<a class="headerlink" href="#queuing_times_over_time" title="Permanent link">#</a></h3>
 <p>Input is <a href="../Simulation/Output/QueueOutput.html">queue-output</a>.</p>
 <p>Call to generate the plot:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">visualization</span><span class="o">/</span><span class="n">plotXMLAttributes</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="n">timestep</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="w"> </span><span class="n">queueing_time</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">queue</span><span class="o">.</span><span class="n">png</span><span class="w"> </span><span class="n">queue</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">--</span><span class="n">filter</span><span class="o">-</span><span class="n">ids</span><span class="w"> </span><span class="mi">121</span><span class="n">_0</span>
-</code></pre></div>
-
+<pre><code>python tools/visualization/plotXMLAttributes.py -x timestep -y queueing_time -o queue.png queue.xml -i id --filter-ids 121_0
+</code></pre>
 <p>where -x is the attribute for the x axis; -y is the attribute for the y axis; -o is the output file name; -i is the filtered attribute name (lane id in this case); --filter-ids are the value(s) of the filtered attribute name (id = 121_0 in this case).</p>
 <p><img src="../images/queue_out.png" width="500px"/></p>
 <h3 id="departure_times_versus_arrival_times">Departure times versus arrival times<a class="headerlink" href="#departure_times_versus_arrival_times" title="Permanent link">#</a></h3>
 <p>Input is <a href="../Simulation/Output/VehRoutes.html">vehroutes-output</a>.</p>
 <p>Call to generate the plot:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">visualization</span><span class="o">/</span><span class="n">plotXMLAttributes</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="n">depart</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="w"> </span><span class="n">arrival</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">vehroute</span><span class="o">.</span><span class="n">png</span><span class="w"> </span><span class="n">vehroute</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">scatterplot</span>
-</code></pre></div>
-
+<pre><code>python tools/visualization/plotXMLAttributes.py -x depart -y arrival -o vehroute.png vehroute.xml --scatterplot
+</code></pre>
 <p>where -x is the attribute for the x axis; -y is the attribute for the y axis; -o is the output file name; --scatterplot is to make a scatter plot instead of a line plot.</p>
 <p><img src="../images/vehroute_output.png" width="500px"/></p>
 <h3 id="leader_gaps_versus_speeds">Leader gaps versus speeds<a class="headerlink" href="#leader_gaps_versus_speeds" title="Permanent link">#</a></h3>
 <p>Input is <a href="../Simulation/Output/Lanechange.html">lanechange-output</a>.</p>
 <p>Call to generate the plot:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">visualization</span><span class="o">/</span><span class="n">plotXMLAttributes</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="n">speed</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="w"> </span><span class="n">leaderGap</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">lc</span><span class="o">.</span><span class="n">png</span><span class="w"> </span><span class="n">lanechange</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">reason</span><span class="w"> </span><span class="o">--</span><span class="n">filter</span><span class="o">-</span><span class="n">ids</span><span class="w"> </span><span class="n">speedGain</span>
-</code></pre></div>
-
+<pre><code>python tools/visualization/plotXMLAttributes.py -x speed -y leaderGap -o lc.png lanechange.xml -i reason --filter-ids speedGain
+</code></pre>
 <p>where -x is the attribute for the x axis; -y is the attribute for the y axis; -o is the output file name; -i is the filtered attribute name (reason for lane changing in this case); --filter-ids are the values of the filtered attribute name (reason = speedGain in this case).</p>
 <p><img src="../images/lanechange_output.png" width="500px"/></p>
 <h3 id="all_trajectories_over_time_1">All trajectories over time 1<a class="headerlink" href="#all_trajectories_over_time_1" title="Permanent link">#</a></h3>
 <p>Input is <a href="../Simulation/Output/FCDOutput.html">fcd_output</a>.</p>
 <p>Call to generate the plot:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">visualization</span><span class="o">/</span><span class="n">plotXMLAttributes</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">allXY_output</span><span class="o">.</span><span class="n">png</span><span class="w"> </span><span class="n">fcd</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">scatterplot</span>
-</code></pre></div>
-
+<pre><code>python tools/visualization/plotXMLAttributes.py -x x -y y -o allXY_output.png fcd.xml --scatterplot
+</code></pre>
 <p>where -x is the attribute for the x axis; -y is the attribute for the y axis; -o is the output file name; --scatterplot is to make a scatter plot instead of a line plot..</p>
 <p><img src="../images/allXY_output.png" width="500px"/></p>
 <h3 id="selected_trajectories_over_time_1">Selected trajectories over time 1<a class="headerlink" href="#selected_trajectories_over_time_1" title="Permanent link">#</a></h3>
 <p>Input is <a href="../Simulation/Output/FCDOutput.html">fcd_output</a>.</p>
 <p>Call to generate the plot:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">visualization</span><span class="o">/</span><span class="n">plotXMLAttributes</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">vehLocations_output</span><span class="o">.</span><span class="n">png</span><span class="w"> </span><span class="n">fcd</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">--</span><span class="n">filter</span><span class="o">-</span><span class="n">ids</span><span class="w"> </span><span class="n">Audinot_7_0</span><span class="w"> </span><span class="o">--</span><span class="n">scatterplot</span><span class="w"> </span><span class="o">--</span><span class="n">legend</span>
-</code></pre></div>
-
+<pre><code>python tools/visualization/plotXMLAttributes.py -x x -y y -o vehLocations_output.png fcd.xml -i id --filter-ids Audinot_7_0 --scatterplot --legend
+</code></pre>
 <p>where -x is the attribute for the x axis; -y is the attribute for the y axis; -o is the output file name; -i is the filtered attribute name (vehicle id in this case); --filter-ids are the values of the filtered attribute name (vehicle id = Audinot_7_0 in this case); --scatterplot is to make a scatter plot instead of a line plot; --legend is to show the legend.</p>
 <p><img src="../images/vehLocations_output.png" width="500px"/></p>
 <h3 id="public_transport_schedule">Public transport schedule<a class="headerlink" href="#public_transport_schedule" title="Permanent link">#</a></h3>
@@ -555,19 +547,17 @@ permitted for the x and y attribute.</p>
 <p>In this type of plot time is on the y-axis running from top to bottom. Input is route file of a <a href="../Simulation/Public_Transport.html#public_transport_schedules">public transport schedule</a> where each vehicle is modelled individually.
 A similar plot could also be generated from <a href="../Simulation/Output/StopOutput.html">stop-output</a> by using attribute <code>started</code> or <code>ended</code> (or <code>started,ended</code>) instead of <code>until</code>.</p>
 <p>Call to generate the plot:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">visualization</span><span class="o">/</span><span class="n">plotXMLAttributes</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">route</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="n">busStop</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="w"> </span><span class="n">until</span><span class="w"> </span><span class="o">--</span><span class="n">ytime1</span><span class="w"> </span><span class="o">--</span><span class="n">legend</span><span class="w"> </span><span class="o">--</span><span class="n">xticks</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">stoplist</span><span class="o">.</span><span class="n">txt</span><span class="w"> </span><span class="o">--</span><span class="n">invert</span><span class="o">-</span><span class="n">yaxis</span><span class="w"> </span><span class="o">--</span><span class="n">marker</span><span class="w"> </span><span class="n">o</span>
-</code></pre></div>
-
+<pre><code>python tools/visualization/plotXMLAttributes.py route.rou.xml -x busStop -y until --ytime1 --legend --xticks-file stoplist.txt --invert-yaxis --marker o
+</code></pre>
 <p><img src="../images/schedule_until.png" width="500px"/></p>
 <p>The file stoplist.txt is used to define the ordering of the stops (corresponding to their ordering along a transport line) and is shown below.
 In order to group busStops that belong to different tracks of the same train station, they were named with a common suffix in their id and the stoplist.txt file uses wildcards (<code>*</code>) to match them.</p>
-<div class="codehilite"><pre><span></span><code>*WLA
+<pre><code>*WLA
 *KI
 *MM
 *KX
 *LHG
-</code></pre></div>
-
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The main advantage of <a href="Railways.html#plotstopspy">plotStops.py</a> is creating a stoplist.txt file automatically.</p>
@@ -579,16 +569,14 @@ In order to group busStops that belong to different tracks of the same train sta
 <h3 id="turn-counts_over_time">Turn-counts over time<a class="headerlink" href="#turn-counts_over_time" title="Permanent link">#</a></h3>
 <p>This plot uses an attribute list for the value id (<code>-i from,to</code>) to reflect the fact that a turning relation is uniquely identified by the combination of two attributes. It also demonstrates flexible filtering to show all traffic that passes over edge <code>-40</code> or edge <code>36</code>.</p>
 <p>Call to generate the plot:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">visualization</span><span class="o">/</span><span class="n">plotXMLAttributes</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">turnCounts</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">from</span><span class="p">,</span><span class="n">to</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="n">begin</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">--</span><span class="n">xtime0</span><span class="w"> </span><span class="o">--</span><span class="n">legend</span><span class="w">  </span><span class="o">--</span><span class="n">filter</span><span class="o">-</span><span class="n">ids</span><span class="o">=</span><span class="s2">&quot;-40|*,36|*&quot;</span>
-</code></pre></div>
-
+<pre><code>python tools/visualization/plotXMLAttributes.py turnCounts.xml -i from,to -x begin -y count --xtime0 --legend  --filter-ids=&quot;-40|*,36|*&quot;
+</code></pre>
 <p><img src="../images/turn-counts.png" width="500px"/></p>
 <h3 id="boxplot_waiting_time_by_departlane">Boxplot: waiting time by departLane<a class="headerlink" href="#boxplot_waiting_time_by_departlane" title="Permanent link">#</a></h3>
 <p>This plot demonstrates box-plotting for a single attribute (waitingTime). Optionally split by category (departLane). The call uses <a href="../Simulation/Output/TripInfo.html">tripinfo-output</a> from two different simulation runs as it's input.</p>
 <p>Call to generate the plot:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">visualization</span><span class="o">/</span><span class="n">plotXMLAttributes</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">tripinfos</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="n">tripinfos2</span><span class="o">.</span><span class="n">xml</span><span class="w">  </span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="n">waitingTime</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="w"> </span><span class="err">@</span><span class="n">BOX</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">departLane</span><span class="w"> </span><span class="o">--</span><span class="n">show</span>
-</code></pre></div>
-
+<pre><code>python tools/visualization/plotXMLAttributes.py tripinfos.xml tripinfos2.xml  -x waitingTime -y @BOX -i departLane --show
+</code></pre>
 <p><img src="../images/boxplot_departLane_waitingTime_horiz.png" width="500px"/></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -598,9 +586,8 @@ In order to group busStops that belong to different tracks of the same train sta
 <p>This plot demonstrates the use of <strong>--barplot</strong> binning and <code>@COUNT</code> to create a histogram of timeLoss values from two simulation runs.
 It also shows how to clamp data to the upper range of 300.</p>
 <p>Call to generate the plot:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">plotXMLAttributes</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="n">tripinfos</span><span class="p">.</span><span class="nc">xml</span><span class="w"> </span><span class="n">tripinfos2</span><span class="p">.</span><span class="nc">xml</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="n">timeLoss</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="w"> </span><span class="nv">@COUNT</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="nv">@NONE</span><span class="w"> </span><span class="c1">--legend  --barplot --xbin 20 --xclamp :300</span>
-</code></pre></div>
-
+<pre><code>plotXMLAttributes.py tripinfos.xml tripinfos2.xml -x timeLoss -y @COUNT -i @NONE --legend  --barplot --xbin 20 --xclamp :300
+</code></pre>
 <p><img src="../images/hist_timeLoss_clamped.png" width="500px"/></p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -618,9 +605,8 @@ The source data for this kind of plot is typically <a href="../Simulation/Output
 <h2 id="plot_trajectoriespy">plot_trajectories.py<a class="headerlink" href="#plot_trajectoriespy" title="Permanent link">#</a></h2>
 <p>Create plot of all trajectories obtained from a file generated through <a href="../Simulation/Output/FCDOutput.html">--fcd-output</a>. This tool in particular is located in <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools.</p>
 <p>Example use:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">plot_trajectories</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">fcd</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="n">td</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">plot</span><span class="o">.</span><span class="n">png</span><span class="w"> </span><span class="o">-</span><span class="n">s</span>
-</code></pre></div>
-
+<pre><code>python tools/plot_trajectories.py fcd.xml -t td -o plot.png -s
+</code></pre>
 <p>The option <strong>-t (--trajectory-type)</strong> supports different attributes that can be plotted against each other. The argument is a two-letter code with each letter encoding an attribute that is derived from the fcd input.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -651,33 +637,29 @@ The source data for this kind of plot is typically <a href="../Simulation/Output
 <h3 id="accelerations_versus_distances">Accelerations versus distances<a class="headerlink" href="#accelerations_versus_distances" title="Permanent link">#</a></h3>
 <p>Input is <a href="../Simulation/Output/FCDOutput.html">fcd-output</a>.</p>
 <p>Call to generate the plot:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">plot_trajectories</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="n">da</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">Plot_trajectories</span><span class="o">.</span><span class="n">png</span><span class="w"> </span><span class="n">fcd</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/plot_trajectories.py -t da -o Plot_trajectories.png fcd.xml
+</code></pre>
 <p>where -t is the aforementioned trajectory type; -o is the output file name.</p>
 <p><img src="../images/Plot_trajectories.png" width="500px"/></p>
 <h3 id="all_trajectories_over_time_2">All trajectories over time 2<a class="headerlink" href="#all_trajectories_over_time_2" title="Permanent link">#</a></h3>
 <p>Input is <a href="../Simulation/Output/FCDOutput.html">fcd-output</a>.</p>
 <p>Call to generate the plot:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">plot_trajectories</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="n">xy</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">allLocations_output</span><span class="o">.</span><span class="n">png</span><span class="w"> </span><span class="n">fcd</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/plot_trajectories.py -t xy -o allLocations_output.png fcd.xml
+</code></pre>
 <p>where -t is the aforementioned trajectory type; -o is the output file name.</p>
 <p><img src="../images/allLocations_output.png" width="500px"/></p>
 <h3 id="selected_trajectories_over_time_2">Selected trajectories over time 2<a class="headerlink" href="#selected_trajectories_over_time_2" title="Permanent link">#</a></h3>
 <p>Input is <a href="../Simulation/Output/FCDOutput.html">fcd-output</a>.</p>
 <p>Call to generate the plot:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">plot_trajectories</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="n">xy</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">selectXY_output</span><span class="o">.</span><span class="n">png</span><span class="w"> </span><span class="n">fcd</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">filter</span><span class="o">-</span><span class="n">ids</span><span class="w"> </span><span class="n">Audinot_7_0</span>
-</code></pre></div>
-
+<pre><code>python tools/plot_trajectories.py -t xy -o selectXY_output.png fcd.xml --filter-ids Audinot_7_0
+</code></pre>
 <p>where -t is the aforementioned trajectory type; -o is the output file name;--filter-ids are the value(s) of the filtered attributes (id = Audinot_7_0 in this case).</p>
 <p><img src="../images/selectXY_output.png" width="500px"/></p>
 <h3 id="fcd_based_speeds_over_time">FCD based speeds over time<a class="headerlink" href="#fcd_based_speeds_over_time" title="Permanent link">#</a></h3>
 <p>Input is <a href="../Simulation/Output/FCDOutput.html">fcd-output</a>.</p>
 <p>Call to generate the plot:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">plot_trajectories</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="n">ts</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">timeSpeed_output</span><span class="o">.</span><span class="n">png</span><span class="w"> </span><span class="n">fcd</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">filter</span><span class="o">-</span><span class="n">ids</span><span class="w"> </span><span class="n">Audinot_7_0</span><span class="p">,</span><span class="n">Costa_12_0</span><span class="p">,</span><span class="n">Pepoli_3_0</span><span class="p">,</span><span class="n">Silvani_11_0</span><span class="p">,</span><span class="n">XXI_APRILE_7_0</span><span class="w"> </span><span class="o">--</span><span class="n">legend</span>
-</code></pre></div>
-
+<pre><code>python tools/plot_trajectories.py -t ts -o timeSpeed_output.png fcd.xml --filter-ids Audinot_7_0,Costa_12_0,Pepoli_3_0,Silvani_11_0,XXI_APRILE_7_0 --legend
+</code></pre>
 <p>where -t is the aforementioned trajectory type; -o is the output file name; --filter-ids are the value(s) of the filtered attributes (id in [Audinot_7_0, Costa_12_0, Pepoli_3_0, Silvani_11_0, XXI_APRILE_7_0] in this case); --legend is to show the legend</p>
 <p><img src="../images/timeSpeed_output.png" width="500px"/></p>
 <h3 id="interactive_plot_1">Interactive Plot<a class="headerlink" href="#interactive_plot_1" title="Permanent link">#</a></h3>
@@ -1425,9 +1407,8 @@ the figure (once known it is as it should be). In such cases, the option
 <p><a href="../sumo-gui.html">sumo-gui</a> can load <a href="../sumo-gui.html#visualizing_edge-related_data">edgeData files</a> and use the contained values of any attribute for coloring edges (roads) as well as for modifying the visual width of the edges. This serves a similar use case as <a href="#plot_net_dumppy">plot_net_dump.py</a> but allows all dynamic zooming and panning features of of sumo-gui.</p>
 <p>When stepping through the simulation, different time intervals contained in
 the weight file can be shown. It can be useful to adapt the simulation step length to the data period for easier stepping:</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">sumo</span><span class="o">-</span><span class="nv">gui</span><span class="w"> </span><span class="o">-</span><span class="nv">n</span><span class="w"> </span><span class="nv">NET</span><span class="w"> </span><span class="o">--</span><span class="nv">edgedata</span><span class="o">-</span><span class="nv">files</span><span class="w"> </span><span class="nv">FILE</span><span class="w"> </span><span class="o">--</span><span class="nv">step</span><span class="o">-</span><span class="nv">length</span><span class="w"> </span><span class="mi">3600</span><span class="w"> </span><span class="o">--</span><span class="k">end</span><span class="w"> </span><span class="mi">24</span>:<span class="mi">0</span>:<span class="mi">0</span>
-</code></pre></div>
-
+<pre><code>sumo-gui -n NET --edgedata-files FILE --step-length 3600 --end 24:0:0
+</code></pre>
 <p>After that, you need to do the following settings:</p>
 <ul>
 <li>Choose "edgeData" for coloring:</li>
@@ -1448,24 +1429,21 @@ the weight file can be shown. It can be useful to adapt the simulation step leng
 <li>Use <a href="../Netedit/index.html">netedit</a> to select all edges at one or more intersection for which the flow shall be visualized and save the selection to a file (e.g. <em>sel.txt</em>)</li>
 <li>
 <p>generate polygons with widths according to the number of vehicles passing the selected edges. When setting <strong>--scale-width to 0.01</strong>, 100 vehicles using the same edge sequence will correspond to a polygon width of 1m. The option <strong>--spread</strong> is used to prevent overlapping of the generated polygons and should be adapted according to the polygon width.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">  route2poly.py NET routes.rou.xml -o flows.poly.xml --filter-output.file sel.txt --scale-width 0.01 --internal --spread 1 --hue cycle</span>
-</code></pre></div>
-
+<pre><code>  route2poly.py NET routes.rou.xml -o flows.poly.xml --filter-output.file sel.txt --scale-width 0.01 --internal --spread 1 --hue cycle
+</code></pre>
 </li>
 <li>
 <p>visualize the flows in <a href="../sumo-gui.html">sumo-gui</a></p>
-<div class="codehilite"><pre><span></span><code><span class="n">  sumo-gui -n NET -a flows.poly.xml</span>
-</code></pre></div>
-
+<pre><code>  sumo-gui -n NET -a flows.poly.xml
+</code></pre>
 </li>
 </ol>
 <p><img src="../images/Route2poly_intersectionFlow.png" width="400px"/></p>
 <h2 id="visulizing_fcd-data_as_moving_pois">Visulizing FCD-Data as moving POIs<a class="headerlink" href="#visulizing_fcd-data_as_moving_pois" title="Permanent link">#</a></h2>
 <p>The tool <code>fcdReplay.py</code> can be used to replay an <a href="../Simulation/Output/FCDOutput.html">fcd-output file</a> in <a href="../sumo-gui.html">sumo-gui</a>.</p>
 <p>Example uses:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w">  </span><span class="n">tools</span><span class="o">/</span><span class="n">fcdReplay</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">k</span><span class="w"> </span><span class="n">example</span><span class="o">.</span><span class="n">sumocfg</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">fcd</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python  tools/fcdReplay.py -k example.sumocfg -f fcd.xml
+</code></pre>
 <p>To make use of fcd data with lon/lat values (generated with sumo option <strong>--fcd-output.geo</strong>), the option <strong>--geo</strong> must be set. With the option <strong>--fcd-output.utm</strong> the vehicle positions in the FCD output are given in UTM coordinates.</p>
 <h1 id="outdated">Outdated<a class="headerlink" href="#outdated" title="Permanent link">#</a></h1>
 <p>The tools are meant to be named as following: &lt;API&gt;__&lt;DESCRIPTION&gt;.py, where:</p>
@@ -1493,9 +1471,8 @@ the weight file can be shown. It can be useful to adapt the simulation step leng
 <p>Either shows the plot (when <strong>--show</strong> is set) or saves it into a file (when <strong>--output</strong> <strong>&lt;FILENAME&gt;</strong> is set).</p>
 <p><strong>--join</strong> sums up the values found for each edge and divides the result by the number of these values. If join is not set and <strong>--output</strong> is given, one should choose an output name which looks as following: &lt;NAME&gt;<strong>'%05d.png. The %05d will be replaced by the current time step written.</strong></p>
 <p>If you have generated a set of images by not "joining" (aggregating) the data, you can convert the obtained pictures into an animated gif using ImageMagick and the following command:</p>
-<div class="codehilite"><pre><span></span><code>convert -delay 20 *.png -loop 0 animation.gif
-</code></pre></div>
-
+<pre><code>convert -delay 20 *.png -loop 0 animation.gif
+</code></pre>
 <p>(loop 0 means that the animation repeats from begin after the end)</p>
 <p>You can format the axes by using <strong>--xticks</strong> <strong>&lt;XMIN,XMAX,XSTEP,FONTSIZE&gt;</strong> and <strong>--yticks</strong> <strong>&lt;YMIN,YMAX,YSTEP,FONTSIZE&gt;</strong> and set theit limits using <strong>--xlim</strong> <strong>&lt;XMIN,XMAX&gt;</strong> and <strong>--ylim</strong> <strong>&lt;YMIN,YMAX&gt;</strong>. The output size of the image may be set using <strong>--size</strong> <strong>&lt;WIDTH,HEIGHT&gt;</strong>.</p>
                 </main>
@@ -1505,7 +1482,7 @@ the weight file can be shown. It can be useful to adapt the simulation step leng
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

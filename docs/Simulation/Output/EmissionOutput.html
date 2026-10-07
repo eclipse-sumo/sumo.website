@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -240,24 +241,23 @@ For the old behavior use the option <strong>--emissions.volumetric-fuel</strong>
 </div>
 <p>The emission output is a xml-file containing the emission values for
 each time step for every vehicle. The produced XML File looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;emission-export&gt;</span>
+<pre><code class="language-xml">&lt;emission-export&gt;
 
-<span class="w"> </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;&lt;TIME_STEP&gt;&quot;</span><span class="nt">&gt;</span>
+ &lt;timestep time=&quot;&lt;TIME_STEP&gt;&quot;&gt;
 
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;VEHICLE_ID&gt;&quot;</span><span class="w"> </span><span class="na">eclass=</span><span class="s">&quot;&lt;VEHICLE_EMISSION_CLASS&gt;&quot;</span><span class="w"> </span><span class="na">CO2=</span><span class="s">&quot;&lt;VEHICLE_CO2&gt;&quot;</span><span class="w"> </span><span class="na">CO=</span><span class="s">&quot;&lt;VEHICLE_CO&gt;&quot;</span>
-<span class="w">    </span><span class="na">HC=</span><span class="s">&quot;&lt;VEHICLE_HC&gt;&quot;</span><span class="w"> </span><span class="na">NOx=</span><span class="s">&quot;&lt;VEHICLE_NOX&gt;&quot;</span><span class="w"> </span><span class="na">PMx=</span><span class="s">&quot;&lt;VEHICLE_PMX&gt;&quot;</span><span class="w"> </span><span class="na">fuel=</span><span class="s">&quot;&lt;VEHICLE_FUEL&gt;&quot;</span><span class="w"> </span><span class="na">electricity=</span><span class="s">&quot;&lt;VEHICLE_ELECTRICITY&gt;&quot;</span><span class="w"> </span><span class="na">noise=</span><span class="s">&quot;&lt;VEHICLE_NOISE&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">    </span><span class="na">route=</span><span class="s">&quot;&lt;VEHICLE_ROUTE&gt;&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;&lt;VEHICLE_TYPE&gt;&quot;</span><span class="w"> </span><span class="na">waiting=</span><span class="s">&quot;&lt;VEHICLE_WAITING&gt;&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;&lt;VEHICLE_LANE&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">    </span><span class="na">pos=</span><span class="s">&quot;&lt;VEHICLE_POS&gt;&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;&lt;VEHICLE_SPEED&gt;&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;&lt;VEHICLE_ANGLE&gt;&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;&lt;VEHICLE_POS_X&gt;&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;&lt;VEHICLE_POS_Y&gt;&quot;</span><span class="nt">/&gt;</span>
+  &lt;vehicle id=&quot;&lt;VEHICLE_ID&gt;&quot; eclass=&quot;&lt;VEHICLE_EMISSION_CLASS&gt;&quot; CO2=&quot;&lt;VEHICLE_CO2&gt;&quot; CO=&quot;&lt;VEHICLE_CO&gt;&quot;
+    HC=&quot;&lt;VEHICLE_HC&gt;&quot; NOx=&quot;&lt;VEHICLE_NOX&gt;&quot; PMx=&quot;&lt;VEHICLE_PMX&gt;&quot; fuel=&quot;&lt;VEHICLE_FUEL&gt;&quot; electricity=&quot;&lt;VEHICLE_ELECTRICITY&gt;&quot; noise=&quot;&lt;VEHICLE_NOISE&gt;&quot; \
+    route=&quot;&lt;VEHICLE_ROUTE&gt;&quot; type=&quot;&lt;VEHICLE_TYPE&gt;&quot; waiting=&quot;&lt;VEHICLE_WAITING&gt;&quot; lane=&quot;&lt;VEHICLE_LANE&gt;&quot; \
+    pos=&quot;&lt;VEHICLE_POS&gt;&quot; speed=&quot;&lt;VEHICLE_SPEED&gt;&quot; angle=&quot;&lt;VEHICLE_ANGLE&gt;&quot; x=&quot;&lt;VEHICLE_POS_X&gt;&quot; y=&quot;&lt;VEHICLE_POS_Y&gt;&quot;/&gt;
 
-<span class="w">   </span>...<span class="w"> </span>more<span class="w"> </span>vehicles<span class="w"> </span>...
+   ... more vehicles ...
 
-<span class="w">  </span><span class="nt">&lt;/timestep&gt;</span>
+  &lt;/timestep&gt;
 
-...<span class="w"> </span>the<span class="w"> </span>next<span class="w"> </span>timestep<span class="w"> </span>...
+... the next timestep ...
 
-<span class="nt">&lt;/emission-export&gt;</span>
-</code></pre></div>
-
+&lt;/emission-export&gt;
+</code></pre>
 <p>The meanings of the written values are given in the following table.</p>
 <table>
 <thead>
@@ -388,13 +388,11 @@ each time step for every vehicle. The produced XML File looks like this:</p>
 <h2 id="visualization_example">Visualization example<a class="headerlink" href="#visualization_example" title="Permanent link">#</a></h2>
 <p>The user-selected attributes can be plotted with use of <a href="../../Tools/Visualization.html#plotxmlattributespy">plotXMLAttributes.py</a>. The scenario acosta, one of the published sumo scenarios, is used as example (<a href="https://github.com/DLR-TS/sumo-scenarios/tree/main/bologna/acosta">https://github.com/DLR-TS/sumo-scenarios/tree/main/bologna/acosta</a>).</p>
 <h3 id="generating_the_output">Generating the output<a class="headerlink" href="#generating_the_output" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="n">sumo -c run.sumocfg --emission-output emissions.xml</span>
-</code></pre></div>
-
+<pre><code>sumo -c run.sumocfg --emission-output emissions.xml
+</code></pre>
 <h3 id="example_call_for_plotting">Example call for plotting<a class="headerlink" href="#example_call_for_plotting" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="n">python plotXMLAttributes.py -x time -y CO2 -s -o CO2_output.png emissions.xml -i id --filter-ids Audinot_10_89 --legend</span>
-</code></pre></div>
-
+<pre><code>python plotXMLAttributes.py -x time -y CO2 -s -o CO2_output.png emissions.xml -i id --filter-ids Audinot_10_89 --legend
+</code></pre>
 <p>where -x is the attribute for the x axis; -y is the attribute for the y axis; -s is to show the plot; -o is the output file name; -i is the filtered attribute name; --filter-ids are the value(s) of the filtered attribute name; --legend is to show the value(s) of the selected attribute name.</p>
 <p>The resultant plot is illustrated below.</p>
 <p><img src="../../images/CO2_output.png" width="500px"/></p>
@@ -405,7 +403,7 @@ each time step for every vehicle. The produced XML File looks like this:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

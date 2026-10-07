@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -383,19 +384,18 @@ After click over "Create crossing" and recomputing (F5) the new crossing is visi
 <p><img alt="" src="../images/GNECrossingFrame4.png" />
 Crossing can be inspected as other elements.</p>
 <p>Internally, crossing works as edges, and therefore they appear in the <em>net.xml</em> as edges with different functions (crossing or walkingarea)</p>
-<div class="codehilite"><pre><span></span><code>...<span class="w"> </span>previous<span class="w"> </span>element<span class="w"> </span>of<span class="w"> </span>net.xml<span class="w"> </span>...
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;:0_c0&quot;</span><span class="w"> </span><span class="na">function=</span><span class="s">&quot;&#39;&#39;&#39;crossing&#39;&#39;&#39;&quot;</span><span class="w"> </span><span class="na">crossingEdges=</span><span class="s">&quot;3 7&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;lane</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;:0_c0_0&quot;</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">allow=</span><span class="s">&quot;pedestrian&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;1.00&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;13.10&quot;</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;3.00&quot;</span>
-<span class="w">        </span><span class="na">shape=</span><span class="s">&quot;43.45,56.55 43.45,43.45&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/edge&gt;</span>
-...<span class="w"> </span>...
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;:0_w1&quot;</span><span class="w"> </span><span class="na">function=</span><span class="s">&quot;walkingarea&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;lane</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;:0_w1_0&quot;</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">allow=</span><span class="s">&quot;pedestrian&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;1.00&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;13.10&quot;</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;3.00&quot;</span>
-<span class="w">        </span><span class="na">shape=</span><span class="s">&quot;44.95,43.45 41.95,43.45 41.95,56.55 44.95,56.55&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/edge&gt;</span>
-...<span class="w"> </span>further<span class="w"> </span>elements<span class="w"> </span>of<span class="w"> </span>net.xml...
-</code></pre></div>
-
+<pre><code class="language-xml">... previous element of net.xml ...
+    &lt;edge id=&quot;:0_c0&quot; function=&quot;'''crossing'''&quot; crossingEdges=&quot;3 7&quot;&gt;
+        &lt;lane id=&quot;:0_c0_0&quot; index=&quot;0&quot; allow=&quot;pedestrian&quot; speed=&quot;1.00&quot; length=&quot;13.10&quot; width=&quot;3.00&quot;
+        shape=&quot;43.45,56.55 43.45,43.45&quot;/&gt;
+    &lt;/edge&gt;
+... ...
+    &lt;edge id=&quot;:0_w1&quot; function=&quot;walkingarea&quot;&gt;
+        &lt;lane id=&quot;:0_w1_0&quot; index=&quot;0&quot; allow=&quot;pedestrian&quot; speed=&quot;1.00&quot; length=&quot;13.10&quot; width=&quot;3.00&quot;
+        shape=&quot;44.95,43.45 41.95,43.45 41.95,56.55 44.95,56.55&quot;/&gt;
+    &lt;/edge&gt;
+... further elements of net.xml...
+</code></pre>
 <h2 id="taz_traffic_analysis_zones">TAZ (Traffic Analysis Zones)<a class="headerlink" href="#taz_traffic_analysis_zones" title="Permanent link">#</a></h2>
 <p>This mode allows creating and editing <a href="../Demand/Importing_O/D_Matrices.html#describing_the_taz">TAZ</a>. (Shortcut Z). TAZs are composed of a closed polygon and a list of edges associated with certain weights for the inputs (Sources) and outputs (Sinks) (Similar to a <a href="https://en.wikipedia.org/wiki/Flow_network">Flow Network</a>).</p>
 <p>The creation of TAZs require two steps:</p>
@@ -452,7 +452,7 @@ Example of POIs with and without imgFile</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

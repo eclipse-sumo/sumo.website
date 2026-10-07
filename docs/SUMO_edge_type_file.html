@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="css/fontawesome.all.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="js/jquery-3.7.0.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -331,12 +332,11 @@ attributes:</p>
 </li>
 </ul>
 <p>So an example of a SUMO edge type file is:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;types&gt;</span>
-<span class="w">    </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;highway.motorway&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;13&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;44.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;highway.residential&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.889&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/types&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;types&gt;
+    &lt;type id=&quot;highway.motorway&quot; priority=&quot;13&quot; numLanes=&quot;2&quot; speed=&quot;44.0&quot; /&gt;
+    &lt;type id=&quot;highway.residential&quot; priority=&quot;4&quot; numLanes=&quot;1&quot; speed=&quot;13.889&quot; /&gt;
+&lt;/types&gt;
+</code></pre>
 <h2 id="templates_for_openstreetmap">Templates for OpenStreetMap<a class="headerlink" href="#templates_for_openstreetmap" title="Permanent link">#</a></h2>
 <p>The SUMO edge type file defines default values for some tags, which are
 taken if no explicit value is given for a certain road in a
@@ -595,7 +595,7 @@ pedestrian infrastructure (sidewalks) and/or bike lanes:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

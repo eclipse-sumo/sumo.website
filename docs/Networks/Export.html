@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -330,9 +331,8 @@ road objects</p>
 <strong>--matsim-output</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a>. The extension for MATSim networks is usually ".xml".</p>
 <p>Please note that the capacity is computed by multiplying an edge's lane
 number with the capacity norm:</p>
-<div class="codehilite"><pre><span></span><code>MAXIMUM_FLOW = LANE_NUMBER * CAPACITY_NORM
-</code></pre></div>
-
+<pre><code>MAXIMUM_FLOW = LANE_NUMBER * CAPACITY_NORM
+</code></pre>
 <p>The value of CAPACITY_NORM is controlled via the option <strong>--capacity-norm</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a> (default: 1800).</p>
 <h2 id="dlrnavteq">DlrNavteq<a class="headerlink" href="#dlrnavteq" title="Permanent link">#</a></h2>
 <p>The <strong>--dlr-navteq-output</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a> generates a links, a nodes and a traffic lights file matching extraction version 6.5 by default. The version can be set using the option <strong>--dlr-navteq.version</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a>. A version of 7 or larger will trigger the output of additional attributes such as maximum height and width.</p>
@@ -340,17 +340,16 @@ number with the capacity norm:</p>
 <p>The Amitran network format consists of a single XML file conforming to
 the schema at <a href="https://sumo.dlr.de/xsd/amitran/network.xsd">https://sumo.dlr.de/xsd/amitran/network.xsd</a>. The option <strong>--amitran-output</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a>
 writes the data to a file with the following format</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 
-<span class="nt">&lt;network</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;http://sumo.dlr.de/xsd/amitran/network.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;rightBeforeLeft&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;priority&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span>...
-<span class="w">   </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">roadClass=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;136448&quot;</span><span class="w"> </span><span class="na">speedLimitKmh=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">laneNr=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span>...
-<span class="nt">&lt;/network&gt;</span>
-</code></pre></div>
-
+&lt;network xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;http://sumo.dlr.de/xsd/amitran/network.xsd&quot;&gt;
+   &lt;node id=&quot;0&quot; type=&quot;rightBeforeLeft&quot;/&gt;
+   &lt;node id=&quot;1&quot; type=&quot;priority&quot;/&gt;
+   ...
+   &lt;link id=&quot;0&quot; from=&quot;1&quot; to=&quot;0&quot; roadClass=&quot;4&quot; length=&quot;136448&quot; speedLimitKmh=&quot;20&quot; laneNr=&quot;1&quot;/&gt;
+   ...
+&lt;/network&gt;
+</code></pre>
 <p>where all values are integers (the length is in units of 0.01m, the road
 class is a functional road class in the Navteq sense)</p>
 <h1 id="converting_to_other_gis_formats">Converting to other GIS formats<a class="headerlink" href="#converting_to_other_gis_formats" title="Permanent link">#</a></h1>
@@ -370,7 +369,7 @@ class is a functional road class in the Navteq sense)</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

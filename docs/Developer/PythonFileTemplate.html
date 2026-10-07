@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -187,44 +188,44 @@ Last edit: 06 October 2026
                   
                   
 
-<div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/env python # Leave this one out for non executable python files</span>
-<span class="c1"># -*- coding: utf-8 -*- # optional encoding line, use if non-ASCII characters are in the code</span>
-<span class="c1"># Eclipse SUMO, Simulation of Urban MObility; see https://eclipse.dev/sumo</span>
-<span class="c1"># Copyright (C) &lt;YEAR OF CREATION&gt;-&lt;CURRENT YEAR&gt; German Aerospace Center (DLR) and others.</span>
-<span class="c1"># This program and the accompanying materials are made available under the</span>
-<span class="c1"># terms of the Eclipse Public License 2.0 which is available at</span>
-<span class="c1"># https://www.eclipse.org/legal/epl-2.0/</span>
-<span class="c1"># This Source Code may also be made available under the following Secondary</span>
-<span class="c1"># Licenses when the conditions for such availability set forth in the Eclipse</span>
-<span class="c1"># Public License 2.0 are satisfied: GNU General Public License, version 2</span>
-<span class="c1"># or later which is available at</span>
-<span class="c1"># https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html</span>
-<span class="c1"># SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-or-later</span>
+<pre><code class="language-py">#!/usr/bin/env python # Leave this one out for non executable python files
+# -*- coding: utf-8 -*- # optional encoding line, use if non-ASCII characters are in the code
+# Eclipse SUMO, Simulation of Urban MObility; see https://eclipse.dev/sumo
+# Copyright (C) &lt;YEAR OF CREATION&gt;-&lt;CURRENT YEAR&gt; German Aerospace Center (DLR) and others.
+# This program and the accompanying materials are made available under the
+# terms of the Eclipse Public License 2.0 which is available at
+# https://www.eclipse.org/legal/epl-2.0/
+# This Source Code may also be made available under the following Secondary
+# Licenses when the conditions for such availability set forth in the Eclipse
+# Public License 2.0 are satisfied: GNU General Public License, version 2
+# or later which is available at
+# https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+# SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-or-later
 
-<span class="c1"># @file    &lt;FILENAME&gt;</span>
-<span class="c1"># @author  &lt;AUTHOR&#39;S NAME, ONE SEPARATE LINE FOR EACH AUTHOR&gt;</span>
-<span class="c1"># @author  &lt;AUTHOR&#39;S NAME 2&gt;</span>
-<span class="c1"># @date    &lt;FILE CREATION DATE&gt;</span>
+# @file    &lt;FILENAME&gt;
+# @author  &lt;AUTHOR'S NAME, ONE SEPARATE LINE FOR EACH AUTHOR&gt;
+# @author  &lt;AUTHOR'S NAME 2&gt;
+# @date    &lt;FILE CREATION DATE&gt;
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">&lt;A BRIEF DESCRIPTION OF THE FILE&#39;S CONTENTS&gt;</span>
+&quot;&quot;&quot;
+&lt;A BRIEF DESCRIPTION OF THE FILE'S CONTENTS&gt;
 
-<span class="sd">&lt;more documentation including examples&gt;</span>
-<span class="sd">&quot;&quot;&quot;</span>
+&lt;more documentation including examples&gt;
+&quot;&quot;&quot;
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
+from __future__ import print_function
+from __future__ import absolute_import
 
-<span class="kn">import</span> <span class="nn">os</span>  <span class="c1"># imports one per line</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">...</span>
+import os  # imports one per line
+import sys
+import ...
 
-<span class="c1"># use the following when you depend on sumolib or traci</span>
-<span class="k">if</span> <span class="s2">&quot;SUMO_HOME&quot;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;SUMO_HOME&quot;</span><span class="p">],</span> <span class="s1">&#39;tools&#39;</span><span class="p">))</span>
-<span class="kn">import</span> <span class="nn">sumolib</span>  <span class="c1"># noqa</span>
-<span class="c1"># the noqa is needed to tell the style checker that it is OK to have an import which is not at the top of the file</span>
-</code></pre></div>
+# use the following when you depend on sumolib or traci
+if &quot;SUMO_HOME&quot; in os.environ:
+    sys.path.append(os.path.join(os.environ[&quot;SUMO_HOME&quot;], 'tools'))
+import sumolib  # noqa
+# the noqa is needed to tell the style checker that it is OK to have an import which is not at the top of the file
+</code></pre>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -232,7 +233,7 @@ Last edit: 06 October 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

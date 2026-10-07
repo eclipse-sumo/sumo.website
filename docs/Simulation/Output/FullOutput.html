@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -221,48 +222,47 @@ destination folder must exist.</p>
 <p>The full dump is a xml-file containing information about every edge,
 lane, vehicle and traffic light for each time step. A full dump-file
 looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;full-export&gt;</span>
-<span class="w">    </span><span class="nt">&lt;data</span><span class="w"> </span><span class="na">timestep=</span><span class="s">&quot;&lt;TIME_STEP&gt;&quot;</span><span class="nt">&gt;</span>
+<pre><code class="language-xml">&lt;full-export&gt;
+    &lt;data timestep=&quot;&lt;TIME_STEP&gt;&quot;&gt;
 
-<span class="w">    </span><span class="nt">&lt;vehicles&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;VEHICLE_ID&gt;&quot;</span><span class="w"> </span><span class="na">eclass=</span><span class="s">&quot;&lt;VEHICLE_ECLASS&gt;&quot;</span><span class="w"> </span><span class="na">co2=</span><span class="s">&quot;&lt;VEHICLE_CO2&gt;&quot;</span><span class="w"> </span><span class="na">co=</span><span class="s">&quot;&lt;VEHICLE_CO&gt;&quot;</span><span class="w"> </span><span class="na">hc=</span><span class="s">&quot;&lt;VEHICLE_HC&gt;&quot;</span>
-<span class="w">        </span><span class="na">nox=</span><span class="s">&quot;&lt;VEHICLE_NOX&gt;&quot;</span><span class="w"> </span><span class="na">pmx=</span><span class="s">&quot;&lt;VEHICLE_PMX&gt;&quot;</span><span class="w"> </span><span class="na">fuel=</span><span class="s">&quot;&lt;VEHICLE_FUEL&gt;&quot;</span><span class="w"> </span><span class="na">electricity=</span><span class="s">&quot;&lt;VEHICLE_ELECTRICITY&gt;&quot;</span><span class="w"> </span><span class="na">noise=</span><span class="s">&quot;&lt;VEHICLE_NOISE&gt;&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;&lt;VEHICLE_ROUTE&gt;&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;&lt;VEHICLE_TYPE&gt;&quot;</span>
-<span class="w">        </span><span class="na">waiting=</span><span class="s">&quot;&lt;VEHICLE_WAITING&gt;&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;&lt;VEHICLE_LANE&gt;&quot;</span><span class="w"> </span><span class="na">pos_lane=</span><span class="s">&quot;&lt;VEHICLE_POS_LANE&gt;&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;&lt;VEHICLE_SPEED&gt;&quot;</span>
-<span class="w">        </span><span class="na">angle=</span><span class="s">&quot;&lt;VEHICLE_ANGLE&gt;&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;&lt;VEHICLE_POS_X&gt;&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;&lt;VEHICLE_POS_Y&gt;&quot;</span><span class="nt">/&gt;</span>
+    &lt;vehicles&gt;
+        &lt;vehicle id=&quot;&lt;VEHICLE_ID&gt;&quot; eclass=&quot;&lt;VEHICLE_ECLASS&gt;&quot; co2=&quot;&lt;VEHICLE_CO2&gt;&quot; co=&quot;&lt;VEHICLE_CO&gt;&quot; hc=&quot;&lt;VEHICLE_HC&gt;&quot;
+        nox=&quot;&lt;VEHICLE_NOX&gt;&quot; pmx=&quot;&lt;VEHICLE_PMX&gt;&quot; fuel=&quot;&lt;VEHICLE_FUEL&gt;&quot; electricity=&quot;&lt;VEHICLE_ELECTRICITY&gt;&quot; noise=&quot;&lt;VEHICLE_NOISE&gt;&quot; route=&quot;&lt;VEHICLE_ROUTE&gt;&quot; type=&quot;&lt;VEHICLE_TYPE&gt;&quot;
+        waiting=&quot;&lt;VEHICLE_WAITING&gt;&quot; lane=&quot;&lt;VEHICLE_LANE&gt;&quot; pos_lane=&quot;&lt;VEHICLE_POS_LANE&gt;&quot; speed=&quot;&lt;VEHICLE_SPEED&gt;&quot;
+        angle=&quot;&lt;VEHICLE_ANGLE&gt;&quot; x=&quot;&lt;VEHICLE_POS_X&gt;&quot; y=&quot;&lt;VEHICLE_POS_Y&gt;&quot;/&gt;
 
-<span class="w">        </span>...<span class="w"> </span>more<span class="w"> </span>vehicles<span class="w"> </span>...
+        ... more vehicles ...
 
-<span class="w">    </span><span class="nt">&lt;/vehicles&gt;</span>
+    &lt;/vehicles&gt;
 
-<span class="w">    </span><span class="nt">&lt;edges&gt;</span>
+    &lt;edges&gt;
 
-<span class="w">        </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;EDGE_ID&gt;&quot;</span><span class="w"> </span><span class="na">traveltime=</span><span class="s">&quot;&lt;EDGE_TRAVELTIME&gt;&quot;</span><span class="nt">&gt;</span>
+        &lt;edge id=&quot;&lt;EDGE_ID&gt;&quot; traveltime=&quot;&lt;EDGE_TRAVELTIME&gt;&quot;&gt;
 
-<span class="w">        </span><span class="nt">&lt;lane</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="w"> </span><span class="na">co=</span><span class="s">&quot;&lt;LANE_CO&gt;&quot;</span><span class="w"> </span><span class="na">co2=</span><span class="s">&quot;&lt;LANE_CO2&gt;&quot;</span><span class="w"> </span><span class="na">nox=</span><span class="s">&quot;&lt;LANE_NOX&gt;&quot;</span><span class="w"> </span><span class="na">pmx=</span><span class="s">&quot;&lt;LANE_CO&gt;&quot;</span>
-<span class="w">        </span><span class="na">hc=</span><span class="s">&quot;&lt;LANE_HC&gt;&quot;</span><span class="w"> </span><span class="na">noise=</span><span class="s">&quot;&lt;LANE_NOISE&gt;&quot;</span><span class="w"> </span><span class="na">fuel=</span><span class="s">&quot;&lt;LANE_FUEL&gt;&quot;</span><span class="w"> </span><span class="na">electricity=</span><span class="s">&quot;&lt;LANE_ELECTRICITY&gt;&quot;</span><span class="w"> </span><span class="na">maxspeed=</span><span class="s">&quot;&lt;LANE_MAXSPEED&gt;&quot;</span><span class="w"> </span><span class="na">meanspeed=</span><span class="s">&quot;&lt;LANE_MEANSPEED&gt;&quot;</span>
-<span class="w">        </span><span class="na">occupancy=</span><span class="s">&quot;&lt;LANE_OCCUPANCY&gt;&quot;</span><span class="w"> </span><span class="na">vehicle_count=</span><span class="s">&quot;&lt;LANE_VEHICLES_COUNT&gt;&quot;</span><span class="nt">/&gt;</span>
+        &lt;lane id=&quot;&lt;LANE_ID&gt;&quot; co=&quot;&lt;LANE_CO&gt;&quot; co2=&quot;&lt;LANE_CO2&gt;&quot; nox=&quot;&lt;LANE_NOX&gt;&quot; pmx=&quot;&lt;LANE_CO&gt;&quot;
+        hc=&quot;&lt;LANE_HC&gt;&quot; noise=&quot;&lt;LANE_NOISE&gt;&quot; fuel=&quot;&lt;LANE_FUEL&gt;&quot; electricity=&quot;&lt;LANE_ELECTRICITY&gt;&quot; maxspeed=&quot;&lt;LANE_MAXSPEED&gt;&quot; meanspeed=&quot;&lt;LANE_MEANSPEED&gt;&quot;
+        occupancy=&quot;&lt;LANE_OCCUPANCY&gt;&quot; vehicle_count=&quot;&lt;LANE_VEHICLES_COUNT&gt;&quot;/&gt;
 
-<span class="w">            </span>...<span class="w"> </span>more<span class="w"> </span>lanes<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>edge<span class="w"> </span>if<span class="w"> </span>exists
+            ... more lanes of the edge if exists
 
-<span class="w">        </span><span class="nt">&lt;/edge&gt;</span>
+        &lt;/edge&gt;
 
-<span class="w">            </span>...<span class="w"> </span>more<span class="w"> </span>edges<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>network
+            ... more edges of the network
 
-<span class="w">    </span><span class="nt">&lt;/edges&gt;</span>
+    &lt;/edges&gt;
 
-<span class="w">    </span><span class="nt">&lt;tls&gt;</span>
-<span class="w">        </span><span class="nt">&lt;trafficlight</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0/0&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;GgGr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span>...<span class="w"> </span>more<span class="w"> </span>traffic<span class="w"> </span>lights
+    &lt;tls&gt;
+        &lt;trafficlight id=&quot;0/0&quot; state=&quot;GgGr&quot;/&gt;
+        ... more traffic lights
 
-<span class="w">    </span><span class="nt">&lt;/tls&gt;</span>
+    &lt;/tls&gt;
 
-<span class="nt">&lt;/data&gt;</span>
+&lt;/data&gt;
 
-...<span class="w"> </span>the<span class="w"> </span>next<span class="w"> </span>timestep<span class="w"> </span>...
+... the next timestep ...
 
-<span class="nt">&lt;/full-export&gt;</span>
-</code></pre></div>
-
+&lt;/full-export&gt;
+</code></pre>
 <p>The meanings of the written values are given in the following table.</p>
 <table>
 <thead>
@@ -473,7 +473,7 @@ traffic lights and the travel times for the lanes.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

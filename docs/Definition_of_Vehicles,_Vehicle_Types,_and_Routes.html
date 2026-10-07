@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="css/fontawesome.all.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="js/jquery-3.7.0.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -416,16 +417,15 @@ used. The driver of a vehicle does not have to be modelled explicitly.
 For the simulation of <a href="Specification/Persons.html">persons which walk around or ride in vehicles, additional definitions are necessary</a>.</p>
 <h1 id="vehicles_and_routes">Vehicles and Routes<a class="headerlink" href="#vehicles_and_routes" title="Permanent link">#</a></h1>
 <p>Initially, we will define a vehicle with a route that belongs to it:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type1&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;0.8&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;4.5&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;70&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vType id=&quot;type1&quot; accel=&quot;0.8&quot; decel=&quot;4.5&quot; sigma=&quot;0.5&quot; length=&quot;5&quot; maxSpeed=&quot;70&quot;/&gt;
 
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type1&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,0,0&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;beg middle end rend&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
+    &lt;vehicle id=&quot;0&quot; type=&quot;type1&quot; depart=&quot;0&quot; color=&quot;1,0,0&quot;&gt;
+      &lt;route edges=&quot;beg middle end rend&quot;/&gt;
+    &lt;/vehicle&gt;
 
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+&lt;/routes&gt;
+</code></pre>
 <p>By giving such a route definition to <a href="sumo.html">sumo</a> (or
 <a href="sumo-gui.html">sumo-gui</a>), <a href="sumo.html">sumo</a> will build a
 red (color=1,0,0) vehicle of type "type1" named "0" which starts at time
@@ -438,17 +438,16 @@ route. In this case the route must be "externalized" - defined before
 being referenced by the vehicles. Also, the route must be named by
 giving it an id. The vehicles using the route refer it using the
 "route"-attribute. The complete change looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type1&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;0.8&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;4.5&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;70&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vType id=&quot;type1&quot; accel=&quot;0.8&quot; decel=&quot;4.5&quot; sigma=&quot;0.5&quot; length=&quot;5&quot; maxSpeed=&quot;70&quot;/&gt;
 
-<span class="w">    </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,1,0&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;beg middle end rend&quot;</span><span class="nt">/&gt;</span>
+    &lt;route id=&quot;route0&quot; color=&quot;1,1,0&quot; edges=&quot;beg middle end rend&quot;/&gt;
 
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type1&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,0,0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type1&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;0,1,0&quot;</span><span class="nt">/&gt;</span>
+    &lt;vehicle id=&quot;0&quot; type=&quot;type1&quot; route=&quot;route0&quot; depart=&quot;0&quot; color=&quot;1,0,0&quot;/&gt;
+    &lt;vehicle id=&quot;1&quot; type=&quot;type1&quot; route=&quot;route0&quot; depart=&quot;0&quot; color=&quot;0,1,0&quot;/&gt;
 
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+&lt;/routes&gt;
+</code></pre>
 <h2 id="available_vehicle_attributes">Available Vehicle attributes<a class="headerlink" href="#available_vehicle_attributes" title="Permanent link">#</a></h2>
 <p>A vehicle may be defined using the following attributes:</p>
 <table>
@@ -629,21 +628,20 @@ following additional parameters are known:</p>
 </tbody>
 </table>
 <p>Flow can define their route explicitly (like vehicles) or with from,to,via (like trips):</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type1&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,1,0&quot;</span><span class="w">  </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="w"> </span><span class="s">&quot;7200&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;900&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;BUS&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;beg middle end rend&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;station1&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;30&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/flow&gt;</span>
+<pre><code class="language-xml">&lt;flow id=&quot;type1&quot; color=&quot;1,1,0&quot;  begin=&quot;0&quot; end= &quot;7200&quot; period=&quot;900&quot; type=&quot;BUS&quot;&gt;
+    &lt;route edges=&quot;beg middle end rend&quot;/&gt;
+    &lt;stop busStop=&quot;station1&quot; duration=&quot;30&quot;/&gt;
+&lt;/flow&gt;
 
-<span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route1&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;beg middle end rend&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type2&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,1,0&quot;</span><span class="w">  </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="w"> </span><span class="s">&quot;7200&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;900&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;BUS&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route1&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;station1&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;30&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/flow&gt;</span>
+&lt;route id=&quot;route1&quot; edges=&quot;beg middle end rend&quot;/&gt;
+&lt;flow id=&quot;type2&quot; color=&quot;1,1,0&quot;  begin=&quot;0&quot; end= &quot;7200&quot; period=&quot;900&quot; type=&quot;BUS&quot; route=&quot;route1&quot;&gt;
+    &lt;stop busStop=&quot;station1&quot; duration=&quot;30&quot;/&gt;
+&lt;/flow&gt;
 
-<span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type3&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,1,0&quot;</span><span class="w">  </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="w"> </span><span class="s">&quot;7200&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;900&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;BUS&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;end&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;station1&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;30&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/flow&gt;</span>
-</code></pre></div>
-
+&lt;flow id=&quot;type3&quot; color=&quot;1,1,0&quot;  begin=&quot;0&quot; end= &quot;7200&quot; period=&quot;900&quot; type=&quot;BUS&quot; from=&quot;beg&quot; to=&quot;end&quot;&gt;
+    &lt;stop busStop=&quot;station1&quot; duration=&quot;30&quot;/&gt;
+&lt;/flow&gt;
+</code></pre>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>While flow and vehicle definitions can be mixed arbitrarily, the route file always has to be sorted by departure / begin time.</p>
@@ -738,13 +736,12 @@ conditions found in the network at the time of departure/flow begin.
 Optionally, a list of intermediate edges can be specified with the <code>via</code>
 attribute. The input format is exactly the same as that for the
 <a href="duarouter.html">duarouter</a> application <a href="Demand/Shortest_or_Optimal_Path_Routing.html">and can be found here</a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">  </span><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;t&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;end&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;f&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;23&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;end&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;f2&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;23&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;end&quot;</span><span class="w"> </span><span class="na">via=</span><span class="s">&quot;e1 e23 e7&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+  &lt;trip id=&quot;t&quot; depart=&quot;0&quot; from=&quot;beg&quot; to=&quot;end&quot;/&gt;
+  &lt;flow id=&quot;f&quot; begin=&quot;0&quot; end=&quot;100&quot; number=&quot;23&quot; from=&quot;beg&quot; to=&quot;end&quot;/&gt;
+  &lt;flow id=&quot;f2&quot; begin=&quot;0&quot; end=&quot;100&quot; number=&quot;23&quot; from=&quot;beg&quot; to=&quot;end&quot; via=&quot;e1 e23 e7&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
 <p>For more details on how to handle routing errors and influence the
 routing in this case see
 <a href="Demand/Automatic_Routing.html">Demand/Automatic_Routing</a>.</p>
@@ -759,17 +756,15 @@ empty-network travel times as default). When loading trips into
 <a href="sumo.html">sumo</a>, the current travel times in the network are
 used as determined by the <a href="Demand/Automatic_Routing.html">rerouting
 device</a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">  </span><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;t&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">fromTaz=</span><span class="s">&quot;taz1&quot;</span><span class="w"> </span><span class="na">toTaz=</span><span class="s">&quot;taz2&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">  </span><span class="nt">&lt;taz</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;TAZ_ID&gt;&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;&lt;EDGE_ID&gt; &lt;EDGE_ID&gt; ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span>...
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+  &lt;trip id=&quot;t&quot; depart=&quot;0&quot; fromTaz=&quot;taz1&quot; toTaz=&quot;taz2&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;taz id=&quot;&lt;TAZ_ID&gt;&quot; edges=&quot;&lt;EDGE_ID&gt; &lt;EDGE_ID&gt; ...&quot;/&gt;
+  ...
+&lt;/additional&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When used in <a href="duarouter.html">duarouter</a> or <a href="sumo.html">sumo</a>, edge weights within TAZ are ignored.</p>
@@ -924,22 +919,20 @@ considered to have arrived;</p>
 </ul>
 <h1 id="vehicle_types">Vehicle Types<a class="headerlink" href="#vehicle_types" title="Permanent link">#</a></h1>
 <p>A vehicle is defined using the <code>vType</code>-element as shown below:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type1&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;2.6&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;4.5&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;70&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vType id=&quot;type1&quot; accel=&quot;2.6&quot; decel=&quot;4.5&quot; sigma=&quot;0.5&quot; length=&quot;5&quot; maxSpeed=&quot;70&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
 <p>Having defined this, one can build vehicles of type "type1". The values
 used above are the ones most of the examples use. They resemble a
 standard vehicle as used within the Stefan Krauß' thesis.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type1&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;2.6&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;4.5&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;70&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type1&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;edge1 edge2 edge3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vType id=&quot;type1&quot; accel=&quot;2.6&quot; decel=&quot;4.5&quot; sigma=&quot;0.5&quot; length=&quot;5&quot; maxSpeed=&quot;70&quot;/&gt;
+    &lt;vehicle id=&quot;veh1&quot; type=&quot;type1&quot; depart=&quot;0&quot;&gt;
+        &lt;route edges=&quot;edge1 edge2 edge3&quot;/&gt;
+    &lt;/vehicle&gt;
+&lt;/routes&gt;
+</code></pre>
 <p>This definition is the initial one which includes both, the definition
 of the vehicle's "purely physical" parameters, such as its length, its
 color, or its maximum velocity, and also the used car-following model's
@@ -954,11 +947,10 @@ when driving through a city.</p>
 models can be selected as well. Model selection and parameterization is
 done by setting further <code>vType</code>-attributes as shown below. The models and their
 parameters are described in the following.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type1&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;70&quot;</span><span class="w"> </span><span class="na">carFollowModel=</span><span class="s">&quot;Krauss&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;2.6&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;4.5&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.5&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vType id=&quot;type1&quot; length=&quot;5&quot; maxSpeed=&quot;70&quot; carFollowModel=&quot;Krauss&quot; accel=&quot;2.6&quot; decel=&quot;4.5&quot; sigma=&quot;0.5&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
 <h2 id="available_vtype_attributes">Available vType Attributes<a class="headerlink" href="#available_vtype_attributes" title="Permanent link">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1285,11 +1277,10 @@ a global default. The option value overrides all vClass-defaults. Setting <stron
 <p>The center of the speed distribution is defined relative to the road speed limit. On some roads, different speed limits may apply to cars and trucks.
 To model this, <a href="Networks/PlainXML.html#vehicle-class_specific_speed_limits">vClass-specific speed limits may be defined either in the network</a> or directly in an additional file:</p>
 <p>Note, that the given type id refers to an edge type rather than a vehicle type. The edge type may be <a href="Netedit/editModesCommon.html#inspect">set to an arbitrary value in the network file</a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;38.89&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;restriction</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;truck&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;27.89&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/type&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;type id=&quot;a&quot; priority=&quot;3&quot; numLanes=&quot;3&quot; speed=&quot;38.89&quot;/&gt;
+   &lt;restriction vClass=&quot;truck&quot; speed=&quot;27.89&quot;/&gt;
+&lt;/type&gt;
+</code></pre>
 <h3 id="additional_remarks_on_speed_distributions">Additional remarks on speed distributions<a class="headerlink" href="#additional_remarks_on_speed_distributions" title="Permanent link">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1301,14 +1292,12 @@ To model this, <a href="Networks/PlainXML.html#vehicle-class_specific_speed_limi
 </div>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h3>
 <p>Define a flow of vehicles that desire to drive at 120% of the speed limit without any deviation:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;example&quot;</span><span class="w"> </span><span class="na">speedFactor=</span><span class="s">&quot;1.2&quot;</span><span class="w"> </span><span class="na">speedDev=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;f&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;example&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;3600&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;A&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;B&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">  &lt;vType id=&quot;example&quot; speedFactor=&quot;1.2&quot; speedDev=&quot;0&quot;/&gt;
+  &lt;flow id=&quot;f&quot; type=&quot;example&quot; begin=&quot;0&quot; end=&quot;3600&quot; probability=&quot;0.2&quot; from=&quot;A&quot; to=&quot;B&quot;/&gt;
+</code></pre>
 <p>Define a vehicle type with high speed deviation and no cut-off</p>
-<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;example2&quot;</span><span class="w"> </span><span class="na">speedFactor=</span><span class="s">&quot;norm(1.0,0.5)&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">  &lt;vType id=&quot;example2&quot; speedFactor=&quot;norm(1.0,0.5)&quot;/&gt;
+</code></pre>
 <h2 id="vehicle_length">Vehicle Length<a class="headerlink" href="#vehicle_length" title="Permanent link">#</a></h2>
 <p>Due to the work on <a href="#car-following_models">car following models</a>, we decided to use two values
 for vehicle length. The <code>length</code>-attribute
@@ -1630,18 +1619,17 @@ length look quite odd, buses with 2m length, too.</p>
 </div>
 <h2 id="carriages_custom_visualization">Carriages, custom visualization<a class="headerlink" href="#carriages_custom_visualization" title="Permanent link">#</a></h2>
 <p>Further parameters can be used to achieve visualization of <a href="Simulation/Railways.html#trains">individual rail carriages</a> and configure exiting behavior at stations.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;rail&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;rail&quot;</span><span class="w"> </span><span class="na">imgFile=</span><span class="s">&quot;locomotive.png&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;carriageLength&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;carriageGap&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;carriageImages&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;freight.png,passengers.png&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;locomotiveLength&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;25&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;frontSeatPos&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1.7&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;seatingWidth&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;carriageDoors&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;scaleVisual&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1.5&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/vType&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vType id=&quot;rail&quot; vClass=&quot;rail&quot; imgFile=&quot;locomotive.png&quot;&gt;
+    &lt;param key=&quot;carriageLength&quot; value=&quot;20&quot;/&gt;
+    &lt;param key=&quot;carriageGap&quot; value=&quot;1&quot;/&gt;
+    &lt;param key=&quot;carriageImages&quot; value=&quot;freight.png,passengers.png&quot;/&gt;
+    &lt;param key=&quot;locomotiveLength&quot; value=&quot;25&quot;/&gt;
+    &lt;param key=&quot;frontSeatPos&quot; value=&quot;1.7&quot;/&gt;
+    &lt;param key=&quot;seatingWidth&quot; value=&quot;2.0&quot;/&gt;
+    &lt;param key=&quot;carriageDoors&quot; value=&quot;2&quot;/&gt;
+    &lt;param key=&quot;scaleVisual&quot; value=&quot;1.5&quot;/&gt;
+&lt;/vType&gt;
+</code></pre>
 <h2 id="car-following_models">Car-Following Models<a class="headerlink" href="#car-following_models" title="Permanent link">#</a></h2>
 <p>The car-following models currently implemented in SUMO are given in the
 following table.</p>
@@ -2297,9 +2285,8 @@ lists which parameter are used by which model(s). <a href="Car-Following-Models/
 </tbody>
 </table>
 <p>To select a car following model the following syntax should be used:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;idmAlternative&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">minGap=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">carFollowModel=</span><span class="s">&quot;IDM&quot;</span><span class="w"> </span><span class="na">tau=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="err">...</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vType id=&quot;idmAlternative&quot; length=&quot;5&quot; minGap=&quot;2&quot; carFollowModel=&quot;IDM&quot; tau=&quot;1.0&quot; .../&gt;
+</code></pre>
 <h3 id="default_krauss_model_description">Default <em>Krauss</em> Model Description<a class="headerlink" href="#default_krauss_model_description" title="Permanent link">#</a></h3>
 <p>The default model is a modification of the model defined by Stefan Krauß
 in <a href="https://sumo.dlr.de/pdf/KraussDiss.pdf">Microscopic Modeling of Traffic Flow: Investigation of Collision Free Vehicle Dynamics</a>. The
@@ -2328,12 +2315,11 @@ model as in <a href="https://github.com/eclipse-sumo/sumo/blob/main/src/microsim
 <p>If multiple ignore parameters are set, they are combined with "or".
 Foes are ignored while they are being followed.
 Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ego&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;r0&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;carFollowModel.ignoreIDs&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;foe1 foe2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;carFollowModel.ignoreTypes&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;bikeType&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/vehicle&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vehicle id=&quot;ego&quot; depart=&quot;0&quot; route=&quot;r0&quot;&gt;
+   &lt;param key=&quot;carFollowModel.ignoreIDs&quot; value=&quot;foe1 foe2&quot;/&gt;
+   &lt;param key=&quot;carFollowModel.ignoreTypes&quot; value=&quot;bikeType&quot;/&gt;
+&lt;/vehicle&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These parameters take no effect in <a href="Simulation/Meso.html">meso</a></p>
@@ -2548,9 +2534,8 @@ lists which parameter are used by which model(s).</p>
 </tbody>
 </table>
 <p>The parameters are set within the <code>&lt;vType&gt;</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;myType&quot;</span><span class="w"> </span><span class="na">lcStrategic=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">lcCooperative=</span><span class="s">&quot;0.0&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vType id=&quot;myType&quot; lcStrategic=&quot;0.5&quot; lcCooperative=&quot;0.0&quot;/&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>parameter 'lcMaxSpeedLatStanding' will not be applied when a vehicle is at the end of its lane (to ensure that there are no deadlocks).</p>
@@ -2683,16 +2668,14 @@ listed below.</p>
 </tbody>
 </table>
 <p>The parameters are set within the <code>&lt;vType&gt;</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ambulance&quot;</span><span class="w"> </span><span class="na">jmDriveAfterRedTime=</span><span class="s">&quot;300&quot;</span><span class="w"> </span><span class="na">jmDriveRedSpeed=</span><span class="s">&quot;5.56&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vType id=&quot;ambulance&quot; jmDriveAfterRedTime=&quot;300&quot; jmDriveRedSpeed=&quot;5.56&quot;/&gt;
+</code></pre>
 <h3 id="impatience">Impatience<a class="headerlink" href="#impatience" title="Permanent link">#</a></h3>
 <p>The impatience of a driver is value between 0 and 1 that grows whenever
 the driver has to stop unintentionally (i.e. due to a jam or waiting at
 an intersection). The impatience value is computed as</p>
-<div class="codehilite"><pre><span></span><code>MAX(0,<span class="w"> </span>MIN(1.0,<span class="w"> </span>baseImpatience<span class="w"> </span>+<span class="w"> </span>waitingTime<span class="w"> </span>/<span class="w"> </span>timeToMaxImpatience))
-</code></pre></div>
-
+<pre><code class="language-xml">MAX(0, MIN(1.0, baseImpatience + waitingTime / timeToMaxImpatience))
+</code></pre>
 <p>Where baseImpatience is configured by setting the vType-attribute
 <em>impatience</em> and timeToMaxImpatience is set using the option <strong>--time-to-impatience</strong> (default
 180s). Setting this option to 0 disables impatience growth. The value of baseImpatience may be negative to slow the growth of
@@ -2716,12 +2699,11 @@ values interpolate smoothly between these extremes.</p>
 <p>If multiple ignore parameters are set, they are combined with "or".
 Foes are ignored while they are approaching a junction and also while they are on the junction.</p>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ego&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;r0&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;junctionModel.ignoreIDs&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;foe1 foe2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;junctionModel.ignoreTypes&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;bikeType&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/vehicle&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vehicle id=&quot;ego&quot; depart=&quot;0&quot; route=&quot;r0&quot;&gt;
+   &lt;param key=&quot;junctionModel.ignoreIDs&quot; value=&quot;foe1 foe2&quot;/&gt;
+   &lt;param key=&quot;junctionModel.ignoreTypes&quot; value=&quot;bikeType&quot;/&gt;
+&lt;/vehicle&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These parameters also apply to intermodal simulation. They may be used to let pedestrians ignore vehicles and vice versa.</p>
@@ -2740,14 +2722,13 @@ defined. So it should always be at the top of the very first route file.</p>
 distribution. In order to use this feature just define distributions as
 following:</p>
 <h2 id="vehicle_type_distributions">Vehicle Type Distributions<a class="headerlink" href="#vehicle_type_distributions" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vTypeDistribution</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;typedist1&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type1&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;0.8&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;70&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.9&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type2&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;1.8&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;15&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vTypeDistribution&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vTypeDistribution id=&quot;typedist1&quot;&gt;
+        &lt;vType id=&quot;type1&quot; accel=&quot;0.8&quot; length=&quot;5&quot; maxSpeed=&quot;70&quot; probability=&quot;0.9&quot;/&gt;
+        &lt;vType id=&quot;type2&quot; accel=&quot;1.8&quot; length=&quot;15&quot; maxSpeed=&quot;50&quot; probability=&quot;0.1&quot;/&gt;
+    &lt;/vTypeDistribution&gt;
+&lt;/routes&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The python tool <a href="Tools/Misc.html#createvehtypedistributionpy">createVehTypeDistribution.py</a> can be used to generate large distributions that vary multiple <em>vType</em> parameters independently of each other.</p>
@@ -2755,34 +2736,32 @@ following:</p>
 <h3 id="using_existing_types">Using existing types<a class="headerlink" href="#using_existing_types" title="Permanent link">#</a></h3>
 <p>Multiple distributions can make use of the same types and optionally override their probabilities.
 Previously defined vehicle type distributions can be referenced as well.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type1&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;0.8&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;70&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.9&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type2&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;1.8&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;15&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type3&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;1.9&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;15&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;50&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type4&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;1.7&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;50&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vTypeDistribution</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;typedist1&quot;</span><span class="w"> </span><span class="na">vTypes=</span><span class="s">&quot;type1 type2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vTypeDistribution</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;typedist2&quot;</span><span class="w"> </span><span class="na">vTypes=</span><span class="s">&quot;type3 type4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vTypeDistribution</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;typedist3&quot;</span><span class="w"> </span><span class="na">vTypes=</span><span class="s">&quot;type1 type2&quot;</span><span class="w"> </span><span class="na">probabilities=</span><span class="s">&quot;0.5 0.5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vTypeDistribution</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;alltypesdist&quot;</span><span class="w"> </span><span class="na">vTypes=</span><span class="s">&quot;typedist1 typedist2&quot;</span><span class="w"> </span><span class="na">probabilities=</span><span class="s">&quot;0.5 0.5&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vType id=&quot;type1&quot; accel=&quot;0.8&quot; length=&quot;5&quot; maxSpeed=&quot;70&quot; probability=&quot;0.9&quot;/&gt;
+    &lt;vType id=&quot;type2&quot; accel=&quot;1.8&quot; length=&quot;15&quot; maxSpeed=&quot;50&quot; probability=&quot;0.1&quot;/&gt;
+    &lt;vType id=&quot;type3&quot; accel=&quot;1.9&quot; length=&quot;15&quot; maxSpeed=&quot;50&quot;/&gt;
+    &lt;vType id=&quot;type4&quot; accel=&quot;1.7&quot; length=&quot;12&quot; maxSpeed=&quot;50&quot;/&gt;
+    &lt;vTypeDistribution id=&quot;typedist1&quot; vTypes=&quot;type1 type2&quot;/&gt;
+    &lt;vTypeDistribution id=&quot;typedist2&quot; vTypes=&quot;type3 type4&quot;/&gt;
+    &lt;vTypeDistribution id=&quot;typedist3&quot; vTypes=&quot;type1 type2&quot; probabilities=&quot;0.5 0.5&quot;/&gt;
+    &lt;vTypeDistribution id=&quot;alltypesdist&quot; vTypes=&quot;typedist1 typedist2&quot; probabilities=&quot;0.5 0.5&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
 <h2 id="route_distributions">Route Distributions<a class="headerlink" href="#route_distributions" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;routeDistribution</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;routedist1&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,1,0&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;beg middle end rend&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.9&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route1&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,2,0&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;beg middle end&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/routeDistribution&gt;</span>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;routeDistribution id=&quot;routedist1&quot;&gt;
+        &lt;route id=&quot;route0&quot; color=&quot;1,1,0&quot; edges=&quot;beg middle end rend&quot; probability=&quot;0.9&quot;/&gt;
+        &lt;route id=&quot;route1&quot; color=&quot;1,2,0&quot; edges=&quot;beg middle end&quot; probability=&quot;0.1&quot;/&gt;
+    &lt;/routeDistribution&gt;
 
-<span class="w">    </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route2&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;beg middle end rend&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route3&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;beg middle end&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;routeDistribution</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;routedist2&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;route2&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">refId=</span><span class="s">&quot;route3&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/routeDistribution&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+    &lt;route id=&quot;route2&quot; edges=&quot;beg middle end rend&quot;/&gt;
+    &lt;route id=&quot;route3&quot; edges=&quot;beg middle end&quot;/&gt;
+    &lt;routeDistribution id=&quot;routedist2&quot;&gt;
+        &lt;route refId=&quot;route2&quot; probability=&quot;2&quot;/&gt;
+        &lt;route refId=&quot;route3&quot; probability=&quot;3&quot;/&gt;
+    &lt;/routeDistribution&gt;
+&lt;/routes&gt;
+</code></pre>
 <p>A distribution has only an id as (mandatory) attribute and needs a
 probability attribute for each of its child elements. The sum of the
 probability values needs not to be 1, they are scaled accordingly. Note,
@@ -2790,11 +2769,10 @@ that probability defaults to <em>1.00</em> when not specified. At the moment
 the id for the children is mandatory, this is likely to change in future
 versions.</p>
 <p>A distribution can be used just as using individual types and routes:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;typedist1&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;routedist1&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,0,0&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vehicle id=&quot;0&quot; type=&quot;typedist1&quot; route=&quot;routedist1&quot; depart=&quot;0&quot; color=&quot;1,0,0&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>When using <a href="duarouter.html">duarouter</a> with input files containing distributions, the output files will contain a fixed route and type for each vehicle and the distributions will be gone. This is to ensure that each vehicles route will fit its sampled <code>vClass</code> when using the input files with <a href="sumo.html">sumo</a></p>
@@ -2804,19 +2782,18 @@ versions.</p>
 persons by using the stop element either as part of a route or a vehicle
 definition. The stop element can also be used to guide vehicles along a route to
 a waypoint. The examples below show all three cases:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;beg middle end rend&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;middle_0&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/route&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;v0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;end_0&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;50&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;v1&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;90&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;end_1&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;route id=&quot;route0&quot; edges=&quot;beg middle end rend&quot;&gt;
+        &lt;stop lane=&quot;middle_0&quot; endPos=&quot;50&quot; duration=&quot;20&quot;/&gt;
+    &lt;/route&gt;
+    &lt;vehicle id=&quot;v0&quot; route=&quot;route0&quot; depart=&quot;0&quot;&gt;
+        &lt;stop lane=&quot;end_0&quot; endPos=&quot;10&quot; until=&quot;50&quot;/&gt;
+    &lt;/vehicle&gt;
+    &lt;vehicle id=&quot;v1&quot; route=&quot;route0&quot; depart=&quot;90&quot;&gt;
+        &lt;stop lane=&quot;end_1&quot; endPos=&quot;10&quot; speed=&quot;13.89&quot;/&gt;
+    &lt;/vehicle&gt;
+&lt;/routes&gt;
+</code></pre>
 <p>The resulting vehicle <code>v0</code> will stop twice, once at lane <code>middle_0</code> because of
 the stop defined in its route and the second time because of the stop
 defined in the vehicle itself. The first stop will last 20 seconds the
@@ -3121,30 +3098,27 @@ However, it is also possible to set other requirements that must be met for the 
 </div>
 <h2 id="user_defined_parameters">User defined Parameters<a class="headerlink" href="#user_defined_parameters" title="Permanent link">#</a></h2>
 <p>Stops support <a href="Simulation/GenericParameters.html">Generic Parameters</a>. These may also be retrieved and modified via <a href="TraCI/Vehicle_Value_Retrieval.html">TraCI</a></p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;r0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;E0&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;10&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;userDefined&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;42&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/stop&gt;</span>
-<span class="nt">&lt;/trip&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;trip id=&quot;r0&quot; depart=&quot;0&quot;/&gt;
+  &lt;stop edge=&quot;E0&quot; duration=&quot;10&quot;&gt;
+      &lt;param key=&quot;userDefined&quot; value=&quot;42&quot;/&gt;
+  &lt;/stop&gt;
+&lt;/trip&gt;
+</code></pre>
 <h1 id="colors">Colors<a class="headerlink" href="#colors" title="Permanent link">#</a></h1>
 <p>A color is defined as <em>red,green,blue</em> or <em>red,green,blue,alpha</em> either
 in a vehicle, route or vType.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;r0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;0,255,255&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;t0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;0,0,255&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;v0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;255,0,0,0&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;route id=&quot;r0&quot; color=&quot;0,255,255&quot;/&gt;
+&lt;type id=&quot;t0&quot; color=&quot;0,0,255&quot;/&gt;
+&lt;vehicle id=&quot;v0&quot; color=&quot;255,0,0,0&quot;/&gt;
+</code></pre>
 <p>In the default visualization settings the vehicle color will be used if
 define, otherwise the type and finally the route color. <a href="sumo-gui.html#vehicle_visualisation_settings">These settings can be changed.</a></p>
 <p>By default color components should be given as integers in the range of
 (0,255) but other definitions are also supported:</p>
-<div class="codehilite"><pre><span></span><code>color=&quot;0.5,<span class="w"> </span>0.5,<span class="w"> </span>1.0&quot;
+<pre><code class="language-xml">color=&quot;0.5, 0.5, 1.0&quot;
 color=&quot;#FF0000&quot;
 color=&quot;red&quot;
-</code></pre></div>
-
+</code></pre>
 <p>The transparency value (alpha) only <a href="sumo-gui.html#transparency">takes effect</a> when also using the vType
 attribute <em>imgFile</em>.</p>
 <h1 id="devices">Devices<a class="headerlink" href="#devices" title="Permanent link">#</a></h1>
@@ -3194,25 +3168,24 @@ list of vehicle ids that shall be equipped using the option <strong>--device.&lt
 <p>Another option for assigning devices for vehicle types or individual
 vehicles is by using <a href="Simulation/GenericParameters.html">generic parameters</a>. This is done by
 defining them for the vehicle or the vehicle type in the following way:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;v0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.&lt;DEVICENAME&gt;.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vehicle id=&quot;v0&quot; route=&quot;route0&quot; depart=&quot;0&quot;&gt;
+        &lt;param key=&quot;has.&lt;DEVICENAME&gt;.device&quot; value=&quot;true&quot;/&gt;
+    &lt;/vehicle&gt;
 
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;t1&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.&lt;DEVICENAME&gt;.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vType&gt;</span>
+    &lt;vType id=&quot;t1&quot;&gt;
+        &lt;param key=&quot;has.&lt;DEVICENAME&gt;.device&quot; value=&quot;true&quot;/&gt;
+    &lt;/vType&gt;
 
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;v1&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;t1&quot;</span><span class="nt">/&gt;</span>
+    &lt;vehicle id=&quot;v1&quot; route=&quot;route0&quot; depart=&quot;0&quot; type=&quot;t1&quot;/&gt;
 
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;t2&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.&lt;DEVICENAME&gt;.probability&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vType&gt;</span>
+    &lt;vType id=&quot;t2&quot;&gt;
+        &lt;param key=&quot;device.&lt;DEVICENAME&gt;.probability&quot; value=&quot;0.5&quot;/&gt;
+    &lt;/vType&gt;
 
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;v2&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;t2&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+    &lt;vehicle id=&quot;v2&quot; route=&quot;route0&quot; depart=&quot;0&quot; type=&quot;t2&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <code>&lt;param&gt;</code> of a vehicle has precedence over the <code>&lt;param&gt;</code> of the vehicle's type. Both have precedence over the assignment by options.</p>
@@ -3224,7 +3197,7 @@ defining them for the vehicle or the vehicle type in the following way:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

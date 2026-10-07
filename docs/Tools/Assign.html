@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -256,9 +257,8 @@ is read by the <a href="../duarouter.html">duarouter</a> in the next iteration
 steps in order to compute the DUA.</p>
 <p>For further options of the script either look at the source code or
 start it with the "--help" option.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">assign</span><span class="o">/</span><span class="n">duaIterate</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="n">PATH_TO_SUMO_NET</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;</span><span class="n">PATH_TO_TRIPS</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/assign/duaIterate.py -n &lt;PATH_TO_SUMO_NET&gt; -t &lt;PATH_TO_TRIPS&gt;
+</code></pre>
 <h3 id="loading_vehicle_types_from_an_additional_file">Loading vehicle types from an additional file<a class="headerlink" href="#loading_vehicle_types_from_an_additional_file" title="Permanent link">#</a></h3>
 <p>If the file <code>vtypes.add.xml</code> defines vehicle types that are needed by the traffic demand input for duaIterate.py, the following options must be set</p>
 <p><strong>--additional vtypes.add.xml duarouter--vtype-output dummy.xml duarouter--additional-files vtypes.add.xml</strong></p>
@@ -273,9 +273,8 @@ start it with the "--help" option.</p>
 <p>To check the evolution of different simulation parameters during the dua
 estimation an additional script is provided which analyses teleport counts
 and how they evolve over the iterations.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">assign</span><span class="o">/</span><span class="n">duaIterate_analysis</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">dualog</span><span class="o">.</span><span class="n">txt</span>
-</code></pre></div>
-
+<pre><code>python tools/assign/duaIterate_analysis.py dualog.txt
+</code></pre>
 <h2 id="cadytsiteratepy">cadytsIterate.py<a class="headerlink" href="#cadytsiteratepy" title="Permanent link">#</a></h2>
 <p>This script is a variant of duaIterate.py which uses the
 Cadyts calibration tool, developed by Gunnar Flötteröd at EPFL,
@@ -284,9 +283,8 @@ to given link counts. The validation work of the calibration between
 SUMO and Cadyts is work in progress. You will need to download
 <a href="https://github.com/gunnarfloetteroed/java">Cadyts</a> separately and add a
 reference to the jar file to the call.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">assign</span><span class="o">/</span><span class="n">cadytsIterate</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">input_net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">routes</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="n">input_measurements</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">classpath</span><span class="w"> </span><span class="n">cadyts</span><span class="o">.</span><span class="n">jar</span>
-</code></pre></div>
-
+<pre><code>python tools/assign/cadytsIterate.py -n input_net.net.xml -r routes.rou.xml -d input_measurements.xml --classpath cadyts.jar
+</code></pre>
 <h2 id="one-shotpy">one-shot.py<a class="headerlink" href="#one-shotpy" title="Permanent link">#</a></h2>
 <p>The one-shot.py provides a variant of the dynamic user assignment. The
 assignment method is the same one which SUMO and the dua-iterate.py use.
@@ -299,13 +297,12 @@ updated and link trave times at free-flow speeds are used for all trips.</p>
 <p>A stochastic user-equilibrium traffic state will not achieved with the
 use of this script.</p>
 <p>An exemplary execution command is shown below.</p>
-<div class="codehilite"><pre><span></span><code> one-shot.py -f &lt;travel-time updating interval&gt; -n &lt;network file&gt; -t &lt;trip file&gt;
+<pre><code> one-shot.py -f &lt;travel-time updating interval&gt; -n &lt;network file&gt; -t &lt;trip file&gt;
 
  where -f travel-time updating interval (sec); -1 means no travel-time updating (default: -1,1800,300,15)
        -n network file name and the respective path
        -t trip file name and the respective path
-</code></pre></div>
-
+</code></pre>
 <p>Additional setting, such as outputs of summary and trip-information as
 well as begin time, could be made by adding respective options which can
 be found in the script.</p>
@@ -313,17 +310,16 @@ be found in the script.</p>
 <p>This script is to generate hourly matrices from a VISUM daily matrix.
 The traffic demand of the traffic zones, which have the same connection
 links, will be integrated. The exemplary command is indicated below.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">matrixDailyToHourly</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="o">&lt;</span><span class="n">matrix</span><span class="w"> </span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">z</span><span class="w"> </span><span class="o">&lt;</span><span class="n">district</span><span class="w"> </span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;</span><span class="n">flow</span><span class="w"> </span><span class="kt">time</span><span class="o">-</span><span class="n">series</span><span class="w"> </span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span>
+<pre><code>matrixDailyToHourly.py -m &lt;matrix file&gt; -z &lt;district file&gt; -t &lt;flow time-series file&gt; -o
 
-<span class="o">&lt;</span><span class="k">output</span><span class="w"> </span><span class="n">directory</span><span class="o">&gt;</span>
+&lt;output directory&gt;
 
-<span class="n">where</span><span class="w"> </span><span class="o">-</span><span class="nl">m:</span><span class="w"> </span><span class="n">matrix</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">name</span>
-<span class="w">      </span><span class="o">-</span><span class="nl">z:</span><span class="w"> </span><span class="n">district</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">name</span>
-<span class="w">      </span><span class="o">-</span><span class="nl">t:</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">containing</span><span class="w"> </span><span class="n">traffic</span><span class="w"> </span><span class="n">flow</span><span class="w"> </span><span class="kt">time</span><span class="w"> </span><span class="n">series</span><span class="w"> </span><span class="p">(</span><span class="n">optional</span><span class="p">);</span><span class="w"> </span><span class="n">If</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">specified</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">defined</span>
-<span class="w">          </span><span class="n">daily</span><span class="w"> </span><span class="n">matrix</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">regularly</span><span class="w"> </span><span class="n">divided</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="mh">24</span><span class="w"> </span><span class="n">hours</span><span class="p">.</span>
-<span class="w">      </span><span class="o">-</span><span class="nl">o:</span><span class="w"> </span><span class="k">output</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">respective</span><span class="w"> </span><span class="n">path</span>
-</code></pre></div>
-
+where -m: matrix file name
+      -z: district file name
+      -t: name of the file containing traffic flow time series (optional); If not specified, the defined
+          daily matrix will be regularly divided into 24 hours.
+      -o: output directory name and the respective path
+</code></pre>
 <h2 id="costfunctioncheckerpy">costFunctionChecker.py<a class="headerlink" href="#costfunctioncheckerpy" title="Permanent link">#</a></h2>
 <p>Run duarouter repeatedly and simulate weight changes via a cost
 function. (to be continued)</p>
@@ -335,7 +331,7 @@ function. (to be continued)</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

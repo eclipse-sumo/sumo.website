@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -272,28 +273,27 @@ Last edit: 06 October 2026
 <h3 id="running_and_debugging">Running and Debugging<a class="headerlink" href="#running_and_debugging" title="Permanent link">#</a></h3>
 <p>One of the generated binaries either with or without a debugger can be started in the <code>Run</code> menu or by pressing <kbd>F5</kbd> or <kbd>Ctrl</kbd> + <kbd>F5</kbd>. In the next step, you will quickly notice, that Visual Studio Code requires the definition of run configurations. These are defined in the <code>.vscode/launch.json</code> configuration file. To generate a good launch.json for sumo, you can run the script tools/devel/generate_vscode_tasks.py (be aware that it overwrites any existing launch.json). You can also click on the <code>Add Configuration...</code> button on the bottom to add a new configuration for SUMO.</p>
 <p>A simple configuration to launch <code>sumo</code> on macOS can be seen here:</p>
-<div class="codehilite"><pre><span></span><code>{
-<span class="w">    </span>//<span class="w"> </span>Use<span class="w"> </span>IntelliSense<span class="w"> </span>to<span class="w"> </span>learn<span class="w"> </span>about<span class="w"> </span>possible<span class="w"> </span>attributes.
-<span class="w">    </span>//<span class="w"> </span>Hover<span class="w"> </span>to<span class="w"> </span>view<span class="w"> </span>descriptions<span class="w"> </span>of<span class="w"> </span>existing<span class="w"> </span>attributes.
-<span class="w">    </span>//<span class="w"> </span>For<span class="w"> </span>more<span class="w"> </span>information,<span class="w"> </span>visit:<span class="w"> </span>https://go.microsoft.com/fwlink/?linkid=830387
-<span class="w">    </span>&quot;version&quot;:<span class="w"> </span>&quot;0.2.0&quot;,
-<span class="w">    </span>&quot;configurations&quot;:<span class="w"> </span>[
-<span class="w">        </span>{
-<span class="w">            </span>&quot;name&quot;:<span class="w"> </span>&quot;Start<span class="w"> </span>SUMO<span class="w"> </span>&quot;,
-<span class="w">            </span>&quot;type&quot;:<span class="w"> </span>&quot;cppdbg&quot;,
-<span class="w">            </span>&quot;request&quot;:<span class="w"> </span>&quot;launch&quot;,
-<span class="w">            </span>&quot;program&quot;:<span class="w"> </span>&quot;<span class="cp">${</span><span class="n">workspaceFolder</span><span class="cp">}</span>/bin/sumo&quot;,
-<span class="w">            </span>&quot;args&quot;:<span class="w"> </span>[],
-<span class="w">            </span>&quot;stopAtEntry&quot;:<span class="w"> </span>false,
-<span class="w">            </span>&quot;cwd&quot;:<span class="w"> </span>&quot;<span class="cp">${</span><span class="n">workspaceFolder</span><span class="cp">}</span>&quot;,
-<span class="w">            </span>&quot;environment&quot;:<span class="w"> </span>[],
-<span class="w">            </span>&quot;externalConsole&quot;:<span class="w"> </span>false,
-<span class="w">            </span>&quot;MIMode&quot;:<span class="w"> </span>&quot;lldb&quot;
-<span class="w">        </span>}
-<span class="w">    </span>]
+<pre><code>{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    &quot;version&quot;: &quot;0.2.0&quot;,
+    &quot;configurations&quot;: [
+        {
+            &quot;name&quot;: &quot;Start SUMO &quot;,
+            &quot;type&quot;: &quot;cppdbg&quot;,
+            &quot;request&quot;: &quot;launch&quot;,
+            &quot;program&quot;: &quot;${workspaceFolder}/bin/sumo&quot;,
+            &quot;args&quot;: [],
+            &quot;stopAtEntry&quot;: false,
+            &quot;cwd&quot;: &quot;${workspaceFolder}&quot;,
+            &quot;environment&quot;: [],
+            &quot;externalConsole&quot;: false,
+            &quot;MIMode&quot;: &quot;lldb&quot;
+        }
+    ]
 }
-</code></pre></div>
-
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you try to launch <code>sumo-gui</code> with a run configuration on macOS, the launch will fail because it cannot find the proper <code>DISPLAY</code> variable of the XQuartz server instance. A workaround seems to be to define a <code>preLaunchTask</code> in the configuration above which exports the <code>DISPLAY</code> variable for the debugging session. However, this needs more testing.</p>
@@ -316,7 +316,7 @@ Last edit: 06 October 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

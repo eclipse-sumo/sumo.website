@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -229,56 +230,54 @@ Last edit: 06 October 2026
 <h1 id="defining_new_nema_phase_timings">Defining New NEMA phase timings<a class="headerlink" href="#defining_new_nema_phase_timings" title="Permanent link">#</a></h1>
 <p>You can load new definitions for NEMA-phase traffic controller as a part of an <a href="/docs/sumo.html#format_of_additional_files"><em>additional-file</em></a>. The signal timing could be updated in simulation through <a href="https://sumo.dlr.de/pydoc/traci/_trafficlight.html#TrafficLightDomain.setNemaOffset">TraCI functions</a>. A definition of a traffic light program for a four-leg eight-phase intersection within an <a href="/docs/sumo.html#format_of_additional_files"><em>additional-file</em></a>
 looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;add&gt;</span>
-<span class="w">    </span><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2881&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;NEMA&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;NEMA&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;detector-length&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;detector-length-leftTurnLane&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;total-cycle-length&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;130&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ring1&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1,2,3,4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ring2&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;5,6,7,8&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;barrierPhases&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2,6&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;coordinate-mode&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;barrier2Phases&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;4,8&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;minRecall&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2,6&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;maxRecall&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;whetherOutputState&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;fixForceOff&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">maxDur=</span><span class="s">&quot;25&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrrrrrrrGrrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">maxDur=</span><span class="s">&quot;25&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrGrrrrrrrrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;GGrrrrrrrrrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;8&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrrrrrGGrrrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">maxDur=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrrrrGrrrrrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">maxDur=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrrrrrrrrrrG&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">maxDur=</span><span class="s">&quot;35&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrrrrrrrrGGr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">maxDur=</span><span class="s">&quot;35&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrrGGrrrrrrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/tlLogic&gt;</span>
-<span class="nt">&lt;/add&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;add&gt;
+    &lt;tlLogic id=&quot;2881&quot; offset=&quot;10&quot; programID=&quot;NEMA&quot; type=&quot;NEMA&quot;&gt;
+        &lt;param key=&quot;detector-length&quot; value=&quot;20&quot;/&gt;
+        &lt;param key=&quot;detector-length-leftTurnLane&quot; value=&quot;10&quot;/&gt;
+        &lt;param key=&quot;total-cycle-length&quot; value=&quot;130&quot;/&gt;
+        &lt;param key=&quot;ring1&quot; value=&quot;1,2,3,4&quot;/&gt;
+        &lt;param key=&quot;ring2&quot; value=&quot;5,6,7,8&quot;/&gt;
+        &lt;param key=&quot;barrierPhases&quot; value=&quot;2,6&quot;/&gt;
+        &lt;param key=&quot;coordinate-mode&quot; value=&quot;true&quot;/&gt;
+        &lt;param key=&quot;barrier2Phases&quot; value=&quot;4,8&quot;/&gt;
+        &lt;param key=&quot;minRecall&quot; value=&quot;2,6&quot;/&gt;
+        &lt;param key=&quot;maxRecall&quot; value=&quot;&quot;/&gt;
+        &lt;param key=&quot;whetherOutputState&quot; value=&quot;true&quot;/&gt;
+        &lt;param key=&quot;fixForceOff&quot; value=&quot;false&quot;/&gt;
+        &lt;phase duration=&quot;99&quot; minDur=&quot;5&quot;  maxDur=&quot;25&quot; vehext=&quot;2&quot; yellow=&quot;3&quot; red=&quot;2&quot; name=&quot;3&quot; state=&quot;rrrrrrrrGrrr&quot;/&gt;
+        &lt;phase duration=&quot;99&quot; minDur=&quot;5&quot;  maxDur=&quot;25&quot; vehext=&quot;2&quot; yellow=&quot;3&quot; red=&quot;2&quot; name=&quot;7&quot; state=&quot;rrGrrrrrrrrr&quot;/&gt;
+        &lt;phase duration=&quot;99&quot; minDur=&quot;5&quot; maxDur=&quot;30&quot; vehext=&quot;2&quot; yellow=&quot;3&quot; red=&quot;2&quot; name=&quot;4&quot; state=&quot;GGrrrrrrrrrr&quot;/&gt;
+        &lt;phase duration=&quot;99&quot; minDur=&quot;5&quot; maxDur=&quot;30&quot; vehext=&quot;2&quot; yellow=&quot;3&quot; red=&quot;2&quot; name=&quot;8&quot; state=&quot;rrrrrrGGrrrr&quot;/&gt;
+        &lt;phase duration=&quot;99&quot; minDur=&quot;5&quot;  maxDur=&quot;20&quot; vehext=&quot;2&quot; yellow=&quot;3&quot; red=&quot;2&quot; name=&quot;1&quot; state=&quot;rrrrrGrrrrrr&quot;/&gt;
+        &lt;phase duration=&quot;99&quot; minDur=&quot;5&quot;  maxDur=&quot;20&quot; vehext=&quot;2&quot; yellow=&quot;3&quot; red=&quot;2&quot; name=&quot;5&quot; state=&quot;rrrrrrrrrrrG&quot;/&gt;
+        &lt;phase duration=&quot;99&quot; minDur=&quot;5&quot;  maxDur=&quot;35&quot; vehext=&quot;2&quot; yellow=&quot;3&quot; red=&quot;2&quot; name=&quot;2&quot; state=&quot;rrrrrrrrrGGr&quot;/&gt;
+        &lt;phase duration=&quot;99&quot; minDur=&quot;5&quot;  maxDur=&quot;35&quot; vehext=&quot;2&quot; yellow=&quot;3&quot; red=&quot;2&quot; name=&quot;6&quot; state=&quot;rrrGGrrrrrrr&quot;/&gt;
+    &lt;/tlLogic&gt;
+&lt;/add&gt;
+</code></pre>
 <p>For an intersection at a ramp, the traffic light program configuration could look like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;add&gt;</span>
-<span class="w">    </span><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2881&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;NEMA&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;NEMA&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;detector-length&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;detector-length-leftTurnLane&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;total-cycle-length&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;120&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ring1&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1,2,0,4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ring2&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0,6,0,4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;barrierPhases&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2,6&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;coordinate-mode&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;barrier2Phases&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;4,4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;minRecall&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2,6&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;maxRecall&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;whetherOutputState&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;fixForceOff&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;add&gt;
+    &lt;tlLogic id=&quot;2881&quot; offset=&quot;10&quot; programID=&quot;NEMA&quot; type=&quot;NEMA&quot;&gt;
+        &lt;param key=&quot;detector-length&quot; value=&quot;20&quot;/&gt;
+        &lt;param key=&quot;detector-length-leftTurnLane&quot; value=&quot;10&quot;/&gt;
+        &lt;param key=&quot;total-cycle-length&quot; value=&quot;120&quot;/&gt;
+        &lt;param key=&quot;ring1&quot; value=&quot;1,2,0,4&quot;/&gt;
+        &lt;param key=&quot;ring2&quot; value=&quot;0,6,0,4&quot;/&gt;
+        &lt;param key=&quot;barrierPhases&quot; value=&quot;2,6&quot;/&gt;
+        &lt;param key=&quot;coordinate-mode&quot; value=&quot;true&quot;/&gt;
+        &lt;param key=&quot;barrier2Phases&quot; value=&quot;4,4&quot;/&gt;
+        &lt;param key=&quot;minRecall&quot; value=&quot;2,6&quot;/&gt;
+        &lt;param key=&quot;maxRecall&quot; value=&quot;&quot;/&gt;
+        &lt;param key=&quot;whetherOutputState&quot; value=&quot;true&quot;/&gt;
+        &lt;param key=&quot;fixForceOff&quot; value=&quot;false&quot;/&gt;
 
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">maxDur=</span><span class="s">&quot;16&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;srrrrrrGGrrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;67&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;srrrrrrrrGGG&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;22&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;3.5&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;GGGGGrrrrrrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;99&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;88&quot;</span><span class="w"> </span><span class="na">vehext=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">yellow=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">red=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;srrrrGGrrrrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/tlLogic&gt;</span>
-<span class="nt">&lt;/add&gt;</span>
-</code></pre></div>
-
+        &lt;phase duration=&quot;99&quot; minDur=&quot;6&quot;  maxDur=&quot;16&quot; vehext=&quot;2&quot; yellow=&quot;4&quot; red=&quot;1&quot; name=&quot;1&quot; state=&quot;srrrrrrGGrrr&quot;/&gt;
+        &lt;phase duration=&quot;99&quot; minDur=&quot;10&quot; maxDur=&quot;67&quot; vehext=&quot;2&quot; yellow=&quot;4&quot; red=&quot;1&quot; name=&quot;2&quot; state=&quot;srrrrrrrrGGG&quot;/&gt;
+        &lt;phase duration=&quot;99&quot; minDur=&quot;10&quot; maxDur=&quot;22&quot; vehext=&quot;2&quot; yellow=&quot;3.5&quot; red=&quot;1.5&quot; name=&quot;4&quot; state=&quot;GGGGGrrrrrrr&quot;/&gt;
+        &lt;phase duration=&quot;99&quot; minDur=&quot;10&quot; maxDur=&quot;88&quot; vehext=&quot;2&quot; yellow=&quot;4&quot; red=&quot;1&quot; name=&quot;6&quot; state=&quot;srrrrGGrrrrr&quot;/&gt;
+    &lt;/tlLogic&gt;
+&lt;/add&gt;
+</code></pre>
 <p><img alt="NEMA_ramp_intersection.png" src="../images/NEMA_ramp_intersection.png" title="NEMA_ramp_intersection.png" /></p>
 <p>Example: A ramp intersection which only has phases 1, 2, 4, and 6. Phase 4 controls the traffic from the off ramp.</p>
 <h2 id="tllogic_attributes">&lt;tlLogic&gt; Attributes<a class="headerlink" href="#tllogic_attributes" title="Permanent link">#</a></h2>
@@ -485,7 +484,7 @@ looks like this:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

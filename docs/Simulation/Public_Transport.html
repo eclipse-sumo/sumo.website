@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -254,9 +255,8 @@ Last edit: 06 October 2026
 <p>It is possible to define positions of bus stops and let vehicles
 ("busses") stop at these positions for a pre-given time. Definitions of
 bus stop locations in SUMO have the following format:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;busStop</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;BUS_STOP_ID&gt;&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;&lt;STARTING_POSITION&gt;&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;&lt;ENDING_POSITION&gt;&quot;</span><span class="w"> </span><span class="err">[</span><span class="na">lines=</span><span class="s">&quot;&lt;LINE_ID&gt;[ &lt;LINE_ID&gt;]*&quot;</span><span class="err">]</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;busStop id=&quot;&lt;BUS_STOP_ID&gt;&quot; lane=&quot;&lt;LANE_ID&gt;&quot; startPos=&quot;&lt;STARTING_POSITION&gt;&quot; endPos=&quot;&lt;ENDING_POSITION&gt;&quot; [lines=&quot;&lt;LINE_ID&gt;[ &lt;LINE_ID&gt;]*&quot;]/&gt;
+</code></pre>
 <p>That means that a bus
 stop is an area on a lane. The parameters have the following meanings:</p>
 <table>
@@ -356,11 +356,10 @@ The generic parameter <code>&lt;param key="allowOvertakeRight" value="false"/&gt
 <p>Each bus or train stop may have additional child elements to model access from
 other parts of the network (e.g. road access to a stop on the rail
 network). This takes the following form:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;busStop</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;myStop&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;A_0&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;230&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;250&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;access</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;B_0&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;150&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/busStop&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;busStop id=&quot;myStop&quot; lane=&quot;A_0&quot; startPos=&quot;230&quot; endPos=&quot;250&quot;&gt;
+   &lt;access lane=&quot;B_0&quot; pos=&quot;150&quot;/&gt;
+&lt;/busStop&gt;
+</code></pre>
 <p>Access information is added automatically for railway stops when
 <a href="../Tutorials/PT_from_OpenStreetMap.html#initial_network_and_public_transit_information_extraction">importing public transport information from
 OSM</a>.</p>
@@ -407,33 +406,31 @@ and the number of doors per carriage of the vehicle, see <a href="../Definition_
 <h2 id="virtual_stops">Virtual Stops<a class="headerlink" href="#virtual_stops" title="Permanent link">#</a></h2>
 <p>While it is possible to <a href="#stopping_without_defining_a_bus_stop">stop anywhere</a>, it may be useful to define busStops that are visible as infrastructure but only when in use.
 This makes it possible to define a limited list of potential stopping locations for use with <a href="Taxi.html">on-demand public transport</a> and <a href="../IntermodalRouting.html#switching_between_modes">intermodal routing</a>. To distinguish "real" busStops from "virtual" busStops the <a href="GenericParameters.html">generic parameter</a> <code>emptyColor</code> can be set:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;busStop</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;example&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;E0_0&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;255,145,4&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;emptyColor&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1,1,1,0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/busStop&gt;</span>
-</code></pre></div>
-
+<pre><code>    &lt;busStop id=&quot;example&quot; lane=&quot;E0_0&quot; startPos=&quot;50&quot; endPos=&quot;60&quot; color=&quot;255,145,4&quot;&gt;
+        &lt;param key=&quot;emptyColor&quot; value=&quot;1,1,1,0&quot;/&gt;
+    &lt;/busStop&gt;
+</code></pre>
 <p>The busStop will take on the <code>emptyColor</code> if it has neither waiting persons nor stopping vehicles. If the fourth value of the color definition (the <em>alpha</em>-channel) is set to <em>0</em>, the busStop will be invisible when empty.</p>
 <h1 id="letting_vehicles_stop_at_a_bus_stop">Letting Vehicles stop at a bus stop<a class="headerlink" href="#letting_vehicles_stop_at_a_bus_stop" title="Permanent link">#</a></h1>
 <p>Vehicles must be informed that they must stop at a bus stop. The
 following example shows how this can be done (taken from <strong><em>&lt;SUMO_HOME&gt;</em></strong><em>/examples/sumo/busses</em>):</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.dlr.de/xsd/additional_file.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;busStop</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;busstop1&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;2/1to1/1_0&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;100 101 102&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;busStop</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;busstop2&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;1/2to0/2_0&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;100 101&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;busStop</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;busstop3&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;0/1to0/0_0&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;100 101 102&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;busStop</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;busstop4&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;1/0to2/0_0&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;100 101&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;additional xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.dlr.de/xsd/additional_file.xsd&quot;&gt;
+    &lt;busStop id=&quot;busstop1&quot; lane=&quot;2/1to1/1_0&quot; startPos=&quot;20&quot; endPos=&quot;40&quot; lines=&quot;100 101 102&quot;/&gt;
+    &lt;busStop id=&quot;busstop2&quot; lane=&quot;1/2to0/2_0&quot; startPos=&quot;20&quot; endPos=&quot;40&quot; lines=&quot;100 101&quot;/&gt;
+    &lt;busStop id=&quot;busstop3&quot; lane=&quot;0/1to0/0_0&quot; startPos=&quot;20&quot; endPos=&quot;40&quot; lines=&quot;100 101 102&quot;/&gt;
+    &lt;busStop id=&quot;busstop4&quot; lane=&quot;1/0to2/0_0&quot; startPos=&quot;20&quot; endPos=&quot;40&quot; lines=&quot;100 101&quot;/&gt;
 
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;BUS&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;2.6&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;4.5&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">minGap=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;70&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,1,0&quot;</span><span class="w"> </span><span class="na">guiShape=</span><span class="s">&quot;bus&quot;</span><span class="nt">/&gt;</span>
+    &lt;vType id=&quot;BUS&quot; accel=&quot;2.6&quot; decel=&quot;4.5&quot; sigma=&quot;0&quot; length=&quot;12&quot; minGap=&quot;3&quot; maxSpeed=&quot;70&quot; color=&quot;1,1,0&quot; guiShape=&quot;bus&quot;/&gt;
 
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;BUS&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,1,0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;2/0to2/1 2/1to1/1 1/1to1/2 1/2to0/2 0/2to0/1 0/1to0/0 0/0to1/0 1/0to2/0 2/0to2/1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busstop1&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busstop2&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busstop3&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busstop4&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+    &lt;vehicle id=&quot;0&quot; type=&quot;BUS&quot; depart=&quot;0&quot; color=&quot;1,1,0&quot;&gt;
+        &lt;route edges=&quot;2/0to2/1 2/1to1/1 1/1to1/2 1/2to0/2 0/2to0/1 0/1to0/0 0/0to1/0 1/0to2/0 2/0to2/1&quot;/&gt;
+        &lt;stop busStop=&quot;busstop1&quot; duration=&quot;20&quot;/&gt;
+        &lt;stop busStop=&quot;busstop2&quot; duration=&quot;20&quot;/&gt;
+        &lt;stop busStop=&quot;busstop3&quot; duration=&quot;20&quot;/&gt;
+        &lt;stop busStop=&quot;busstop4&quot; duration=&quot;20&quot;/&gt;
+    &lt;/vehicle&gt;
+&lt;/additional&gt;
+</code></pre>
 <p>What is defined here is a vehicle named "0" being a "BUS". "BUS" is a
 referenced vehicle type declared earlier. The vehicle has an embedded route
 (written by hand in this case) and a list of stop places. Each stop
@@ -448,25 +445,23 @@ see
 <h2 id="incomplete_route_definition">Incomplete Route Definition<a class="headerlink" href="#incomplete_route_definition" title="Permanent link">#</a></h2>
 <p>It is also possible to define a bus route without defining all
 intermediate edges:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;BUS&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,1,0&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2/0to2/1&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;2/0to2/1&quot;</span><span class="nt">&gt;</span>
-<span class="w">       </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busstop1&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busstop2&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busstop3&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busstop4&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/trip&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;trip id=&quot;0&quot; type=&quot;BUS&quot; depart=&quot;0&quot; color=&quot;1,1,0&quot; from=&quot;2/0to2/1&quot; to=&quot;2/0to2/1&quot;&gt;
+       &lt;stop busStop=&quot;busstop1&quot; duration=&quot;20&quot;/&gt;
+       &lt;stop busStop=&quot;busstop2&quot; duration=&quot;20&quot;/&gt;
+       &lt;stop busStop=&quot;busstop3&quot; duration=&quot;20&quot;/&gt;
+       &lt;stop busStop=&quot;busstop4&quot; duration=&quot;20&quot;/&gt;
+   &lt;/trip&gt;
+</code></pre>
 <p>The vehicle will take the fastest path between <em>from</em>-edge and <em>to</em>-edge
 that visits all stops in their correct order.</p>
 <p>Even the trip attributes 'from' and 'to' can be omitted to let the bus start at the first stop and end at the last. Using <code>departPos="stop"</code>, the vehicle will be inserted directly at the first stop in its route:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;BUS&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,1,0&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;stop&quot;</span><span class="nt">&gt;</span>
-<span class="w">       </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busstop1&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busstop2&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busstop3&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busstop4&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/trip&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;trip id=&quot;0&quot; type=&quot;BUS&quot; depart=&quot;0&quot; color=&quot;1,1,0&quot; departPos=&quot;stop&quot;&gt;
+       &lt;stop busStop=&quot;busstop1&quot; duration=&quot;20&quot;/&gt;
+       &lt;stop busStop=&quot;busstop2&quot; duration=&quot;20&quot;/&gt;
+       &lt;stop busStop=&quot;busstop3&quot; duration=&quot;20&quot;/&gt;
+       &lt;stop busStop=&quot;busstop4&quot; duration=&quot;20&quot;/&gt;
+   &lt;/trip&gt;
+</code></pre>
 <h1 id="public_transport_schedules">Public Transport Schedules<a class="headerlink" href="#public_transport_schedules" title="Permanent link">#</a></h1>
 <p>In most cases, public transport runs according to a fixed schedule. Such a schedule must be defined using the <code>until</code> attribute in the stops. Vehicles in the simulation will adhere to the schedule as they cannot leave a stop before the until-time is reached but they may still be delayed due to traffic. When <code>until</code> and <code>duration</code> are used, duration defines the minimum stopping time which can also cause delayed departures when already arriving late at a stop.</p>
 <div class="admonition note">
@@ -480,60 +475,56 @@ that visits all stops in their correct order.</p>
 <h2 id="single_vehicles_and_trips">Single vehicles and trips<a class="headerlink" href="#single_vehicles_and_trips" title="Permanent link">#</a></h2>
 <p>When defining <code>until</code> values for a vehicle and trip, the values denote absolute simulation times.
 Note, that seconds or human-readable times may be used.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;trip</span><span class="err">=&quot;bus&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;end&quot;</span><span class="w"> </span><span class="na">line=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;6:0:0&quot;</span><span class="nt">&gt;</span>
-<span class="w">     </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopA&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;6:30:00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">     </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopB&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;6:32:30&quot;</span><span class="nt">/&gt;</span>
-<span class="w">     </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopC&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;23700&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/trip&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;trip=&quot;bus&quot; from=&quot;beg&quot; to=&quot;end&quot; line=&quot;bus&quot; depart=&quot;6:0:0&quot;&gt;
+     &lt;stop busStop=&quot;busStopA&quot; until=&quot;6:30:00&quot;/&gt;
+     &lt;stop busStop=&quot;busStopB&quot; until=&quot;6:32:30&quot;/&gt;
+     &lt;stop busStop=&quot;busStopC&quot; until=&quot;23700&quot;/&gt;
+&lt;/trip&gt;
+</code></pre>
 <h2 id="flows">Flows<a class="headerlink" href="#flows" title="Permanent link">#</a></h2>
 <p>When defining a vehicle flow the <code>until</code> times are absolute times for the first vehicle in the flow. For all later vehicles, the times will be shifted according to later departure times (period * vehicleIndex).</p>
 <p>The example below defines a flow that inserts two vehicles. The first vehicle will stop until 10,110,210 and the second vehicle will stop until 310,410,510:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">from =</span><span class="w"> </span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to =</span><span class="s">&quot;end&quot;</span><span class="w"> </span><span class="na">line=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;301&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;300&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopA&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopB&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;110&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopC&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;210&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/flow&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;flow id=&quot;bus&quot; from = &quot;beg&quot; to =&quot;end&quot; line=&quot;bus&quot; begin=&quot;0&quot; end=&quot;301&quot; period=&quot;300&quot;&gt;
+    &lt;stop busStop=&quot;busStopA&quot; until=&quot;10&quot;/&gt;
+    &lt;stop busStop=&quot;busStopB&quot; until=&quot;110&quot;/&gt;
+    &lt;stop busStop=&quot;busStopC&quot; until=&quot;210&quot;/&gt;
+&lt;/flow&gt;
+</code></pre>
 <h2 id="stops_in_a_stand-alone_route">Stops in a stand-alone route<a class="headerlink" href="#stops_in_a_stand-alone_route" title="Permanent link">#</a></h2>
 <p>Stops may also be part of a route that is defined by itself (with an id) and referenced by vehicles or flows. In that case the <code>until</code> times will be interpreted as 'times after vehicle departure'.</p>
 <p>The example below defines a flow that inserts two vehicles. The first vehicle will depart at 500 and stop until 510,610,710. The second vehicle will depart at 800 and stop until 810,910,1010:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;busRoute&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;A B C D E&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopA&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopB&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;110&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopC&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;210&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/route&gt;</span>
+<pre><code class="language-xml">&lt;route id=&quot;busRoute&quot; edges=&quot;A B C D E&quot;&gt;
+    &lt;stop busStop=&quot;busStopA&quot; until=&quot;10&quot;/&gt;
+    &lt;stop busStop=&quot;busStopB&quot; until=&quot;110&quot;/&gt;
+    &lt;stop busStop=&quot;busStopC&quot; until=&quot;210&quot;/&gt;
+&lt;/route&gt;
 
-<span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;busRoute&quot;</span><span class="w"> </span><span class="na">line=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;500&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;801&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;300&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
+&lt;flow id=&quot;bus&quot; route=&quot;busRoute&quot; line=&quot;bus&quot; begin=&quot;500&quot; end=&quot;801&quot; period=&quot;300&quot;/&gt;
 
+</code></pre>
 <h2 id="looped_routes">Looped routes<a class="headerlink" href="#looped_routes" title="Permanent link">#</a></h2>
 <p>Looped routes can be defined by repeating edges and stops in the above definitions.
 To shorten the input description, a route may also be defined with the attributes <code>repeat</code> and <code>cycleTime</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;busRoute&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;A B C D E&quot;</span><span class="w"> </span><span class="na">repeat=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">cycleTime=</span><span class="s">&quot;300&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopA&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopB&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;110&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopC&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;210&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/route&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;route id=&quot;busRoute&quot; edges=&quot;A B C D E&quot; repeat=&quot;3&quot; cycleTime=&quot;300&quot;&gt;
+    &lt;stop busStop=&quot;busStopA&quot; until=&quot;10&quot;/&gt;
+    &lt;stop busStop=&quot;busStopB&quot; until=&quot;110&quot;/&gt;
+    &lt;stop busStop=&quot;busStopC&quot; until=&quot;210&quot;/&gt;
+&lt;/route&gt;
+</code></pre>
 <p>This repeats the route edges and the stops three times.
 The <code>until</code> times of the stops are shifted by 300s in each cycle and thus the simulation expands this to the following schedule:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;busRoute&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;A B C D E A B C D E A B C D E&quot;</span><span class="w"> </span><span class="na">repeat=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">cycleTime=</span><span class="s">&quot;300&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopA&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopB&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;110&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopC&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;210&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopA&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;310&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopB&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;410&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopC&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;510&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopA&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;610&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopB&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;710&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopC&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;810&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/route&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;route id=&quot;busRoute&quot; edges=&quot;A B C D E A B C D E A B C D E&quot; repeat=&quot;3&quot; cycleTime=&quot;300&quot;&gt;
+    &lt;stop busStop=&quot;busStopA&quot; until=&quot;10&quot;/&gt;
+    &lt;stop busStop=&quot;busStopB&quot; until=&quot;110&quot;/&gt;
+    &lt;stop busStop=&quot;busStopC&quot; until=&quot;210&quot;/&gt;
+    &lt;stop busStop=&quot;busStopA&quot; until=&quot;310&quot;/&gt;
+    &lt;stop busStop=&quot;busStopB&quot; until=&quot;410&quot;/&gt;
+    &lt;stop busStop=&quot;busStopC&quot; until=&quot;510&quot;/&gt;
+    &lt;stop busStop=&quot;busStopA&quot; until=&quot;610&quot;/&gt;
+    &lt;stop busStop=&quot;busStopB&quot; until=&quot;710&quot;/&gt;
+    &lt;stop busStop=&quot;busStopC&quot; until=&quot;810&quot;/&gt;
+&lt;/route&gt;
+</code></pre>
 <p>In contrast to a period flow (which also repeats a given stop sequence), this simulation keeps a single vehicle in the loop. This allows for delays from one loop to be carried over into the next iteration. Flow definitions can make use of repeating routes in order to have multiple vehicles serving the repeating loop at the same time.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -556,9 +547,8 @@ The <code>until</code> times of the stops are shifted by 300s in each cycle and 
 <h1 id="stopping_without_defining_a_bus_stop">Stopping without defining a bus stop<a class="headerlink" href="#stopping_without_defining_a_bus_stop" title="Permanent link">#</a></h1>
 <p>You may also let a vehicle stop at another position than a bus stop. The
 short definition of a vehicle's stop is:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">bus_stop=</span><span class="s">&quot;&lt;BUS_STOP_ID&gt;&quot;</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">(</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;&lt;POSITION_AT_LANE&gt;&quot;</span><span class="w"> </span><span class="err">)</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;&lt;HALTING_DURATION&gt;&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;stop bus_stop=&quot;&lt;BUS_STOP_ID&gt;&quot; | ( lane=&quot;&lt;LANE_ID&gt;&quot; endPos=&quot;&lt;POSITION_AT_LANE&gt;&quot; ) duration=&quot;&lt;HALTING_DURATION&gt;&quot;/&gt;
+</code></pre>
 <p>This means you can either use a bus stop or a lane position to define
 where a vehicle has to stop. For a complete list of attributes for the
 <code>stop</code> element of a vehicle see
@@ -587,7 +577,7 @@ transport lines. The usage of this line data is explained at
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

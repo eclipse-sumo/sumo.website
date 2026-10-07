@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -244,15 +245,14 @@ Last edit: 06 October 2026
 <h2 id="equipping_vehicles">Equipping vehicles<a class="headerlink" href="#equipping_vehicles" title="Permanent link">#</a></h2>
 <p>A vehicle can be equipped with an SSM Device which logs the conflicts of the vehicle and other traffic participants (currently only vehicles) and corresponding safety surrogate measures. To attach an SSM device to a vehicle, the <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#devices">standard device-equipment procedures</a> can be applied using <code>&lt;device name&gt;=ssm</code>.</p>
 <p>For instance, a single vehicle can be equipped (with a device parametrized by default values) as in the following minimal example</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span>...
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;v0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.ssm.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
-<span class="w">    </span>....
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    ...
+    &lt;vehicle id=&quot;v0&quot; route=&quot;route0&quot; depart=&quot;0&quot;&gt;
+        &lt;param key=&quot;has.ssm.device&quot; value=&quot;true&quot;/&gt;
+    &lt;/vehicle&gt;
+    ....
+&lt;/routes&gt;
+</code></pre>
 <h2 id="preparing_the_network_file">Preparing the network file<a class="headerlink" href="#preparing_the_network_file" title="Permanent link">#</a></h2>
 <p>The SSM device makes use of the <a href="../../Networks/SUMO_Road_Networks.html#junctions_and_right-of-way">right-of-way information</a> of the intersections to derive some of the measures. It uses the foe matrix of the right-of-way definition to extract crossing and merging paths. If an intersection is set to <strong>unregulated</strong>, this information is not available and thus e.g. no PET measure can be computed for this intersection.</p>
 <h2 id="output_file">Output File<a class="headerlink" href="#output_file" title="Permanent link">#</a></h2>
@@ -263,27 +263,26 @@ Alternatively, set option <strong>--device.ssm.file</strong> to let all vehicles
 <p><code>&lt;conflict begin="&lt;log-begin-time&gt;" end="&lt;log-end-time&gt;" ego="&lt;equipped-vehicleID&gt;" foe="&lt;opponent-vehicleID&gt;"&gt; ... &lt;/conflict&gt;</code>.</p>
 <h2 id="output_content_configuration">Output Content Configuration<a class="headerlink" href="#output_content_configuration" title="Permanent link">#</a></h2>
 <p>The detail of information given for each conflict and the criteria to qualify an encounter as a conflict (i.e., produce a corresponding <code>conflict</code> element in the output) can be customized by a number of generic parameters to the vehicle or device, resp.. A full parametrization (redundantly assigning the default values, here) could look as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span>...
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;v0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.ssm.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.ssm.measures&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;TTC DRAC PET BR SGAP TGAP PPET MDRAC&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.ssm.thresholds&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;3.0 3.0 2.0 0.0 0.2 0.5 2.0 3.4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.ssm.range&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;50.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.ssm.mdrac.prt&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.ssm.extratime&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;5.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.ssm.file&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;ssm_v0.xml&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.ssm.trajectories&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.ssm.geo&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.ssm.write-positions&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.ssm.write-lane-positions&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.ssm.filter-edges.input-file&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;input_list.txt&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.ssm.exclude-conflict-types&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
-<span class="w">    </span>....
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    ...
+    &lt;vehicle id=&quot;v0&quot; route=&quot;route0&quot; depart=&quot;0&quot;&gt;
+        &lt;param key=&quot;has.ssm.device&quot; value=&quot;true&quot;/&gt;
+        &lt;param key=&quot;device.ssm.measures&quot; value=&quot;TTC DRAC PET BR SGAP TGAP PPET MDRAC&quot;/&gt;
+        &lt;param key=&quot;device.ssm.thresholds&quot; value=&quot;3.0 3.0 2.0 0.0 0.2 0.5 2.0 3.4&quot;/&gt;
+        &lt;param key=&quot;device.ssm.range&quot; value=&quot;50.0&quot; /&gt;
+        &lt;param key=&quot;device.ssm.mdrac.prt&quot; value=&quot;1.0&quot; /&gt;
+        &lt;param key=&quot;device.ssm.extratime&quot; value=&quot;5.0&quot; /&gt;
+        &lt;param key=&quot;device.ssm.file&quot; value=&quot;ssm_v0.xml&quot; /&gt;
+        &lt;param key=&quot;device.ssm.trajectories&quot; value=&quot;false&quot; /&gt;
+        &lt;param key=&quot;device.ssm.geo&quot; value=&quot;false&quot; /&gt;
+        &lt;param key=&quot;device.ssm.write-positions&quot; value=&quot;false&quot; /&gt;
+        &lt;param key=&quot;device.ssm.write-lane-positions&quot; value=&quot;false&quot; /&gt;
+        &lt;param key=&quot;device.ssm.filter-edges.input-file&quot; value=&quot;input_list.txt&quot; /&gt;
+        &lt;param key=&quot;device.ssm.exclude-conflict-types&quot; value=&quot;&quot; /&gt;
+    &lt;/vehicle&gt;
+    ....
+&lt;/routes&gt;
+</code></pre>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">#</a></h2>
 <p>The possible parameters are summarized in the following table</p>
 <table>
@@ -622,22 +621,18 @@ vehicles, if the vehicle is not decelerating, the current speed is extrapolated 
 <p>For some reference to definitions of SSMs see for instance <a href="https://doi.org/10.1016/j.sbspro.2011.08.027">Guido et al. (2011) "Safety performance measures: a comparison between microsimulation and observational data"</a> or <a href="https://doi.org/10.1016/j.iatssr.2017.02.001">Mahmud et al. (2016) "Application of proximal surrogate indicators for safety evaluation: A review of recent developments and research needs"</a>.</p>
 <h3 id="ttc">TTC<a class="headerlink" href="#ttc" title="Permanent link">#</a></h3>
 <p>The time-to-collision is defined for all follow-lead situations for which the follower is faster than the leader. It is given as</p>
-<div class="codehilite"><pre><span></span><code>TTC = space_gap/speed-difference.
-</code></pre></div>
-
+<pre><code>TTC = space_gap/speed-difference.
+</code></pre>
 <p>For a crossing or merging situation the TTC is only considered defined if for the case that the expected conflict area exit time of the vehicle A is larger than the expected conflict area entry time for vehicle B, where A is the vehicle with the smaller expected conflict area entry time. If this is the case the TTC is defined as</p>
-<div class="codehilite"><pre><span></span><code>TTC = B’s distance to conflict area entry / B’s current speed.
-</code></pre></div>
-
+<pre><code>TTC = B’s distance to conflict area entry / B’s current speed.
+</code></pre>
 <h3 id="drac">DRAC<a class="headerlink" href="#drac" title="Permanent link">#</a></h3>
 <p>For a lead/follow-situation the DRAC (deceleration to avoid a crash) where the follower vehicle's speed is larger than the leader vehicle's speed is defined as</p>
-<div class="codehilite"><pre><span></span><code>DRAC = 0.5*speed_difference^2/space_gap.
-</code></pre></div>
-
+<pre><code>DRAC = 0.5*speed_difference^2/space_gap.
+</code></pre>
 <p>For a crossing situation the DRAC is considered defined only if the expected conflict area exit time tA for the first vehicle (A) is larger than the <em>linearly extrapolated</em> conflict area entry time for the second vehicle (B). In that case, the DRAC is defined as follows:</p>
-<div class="codehilite"><pre><span></span><code>DRAC = 2*(speedB - distConflictB/tA)/tA.
-</code></pre></div>
-
+<pre><code>DRAC = 2*(speedB - distConflictB/tA)/tA.
+</code></pre>
 <p>This value is chosen such that constant deceleration with the corresponding rate would imply that B enters the conflict area exactly at time tA, when vehicle A leaves it.</p>
 <p>For a merging situation, both variants for the DRAC calculation must be tested and the minimal result should be applied as the appropriate value for the DRAC.</p>
 <div class="admonition note">
@@ -646,9 +641,9 @@ vehicles, if the vehicle is not decelerating, the current speed is extrapolated 
 </div>
 <h3 id="mdrac">MDRAC<a class="headerlink" href="#mdrac" title="Permanent link">#</a></h3>
 <p>A modified indicator of the DRAC called MDRAC considering a perception-reaction-time (PRT) is defined as</p>
-<div class="codehilite"><pre><span></span><code>MDRAC = 0.5*speed_difference/(TTC - PRT).
-</code></pre></div>
+<pre><code>MDRAC = 0.5*speed_difference/(TTC - PRT).
 
+</code></pre>
 <p>The <code>PRT</code> is configured with param key <code>device.ssm.mdrac.prt</code> or via option <strong>--device.ssm.mdrac.prt</strong> and defaults to a value of <code>1</code> second.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -656,9 +651,8 @@ vehicles, if the vehicle is not decelerating, the current speed is extrapolated 
 </div>
 <h3 id="pet">PET<a class="headerlink" href="#pet" title="Permanent link">#</a></h3>
 <p>For merging and crossing situations, the PET (post encroachment time) is defined as the difference of the leading vehicle's conflict area exit time tA and the following vehicle's conflict area entry time tB:</p>
-<div class="codehilite"><pre><span></span><code>PET = tB - tA.
-</code></pre></div>
-
+<pre><code>PET = tB - tA.
+</code></pre>
 <p>For lead/follow situations, no PET is calculated.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -679,45 +673,44 @@ vehicles, if the vehicle is not decelerating, the current speed is extrapolated 
 The extent of output can be controlled by the parameters <code>device.ssm.measures</code> (which SSMs to report) and <code>device.ssm.trajectories</code> (whether to report complete trajectories for vehicles, the tracked SSMs, and the encounter types).</p>
 <p>The resulting file contains a root element <code>&lt;SSMLog&gt;</code>, which contains several <code>&lt;conflict&gt;</code> elements and one <code>&lt;globalMeasures&gt;</code> element. Each reported <code>&lt;conflict&gt;</code> corresponds to a tracked encounter, during which an SSM's criticality threshold was exceeded during the simulation. The <code>&lt;globalMeasures&gt;</code> element holds a timeline for all simulated times and the corresponding values for the selected measures, which are not associated to specific conflicts, see <a href="#available_ssms">Available_SSMs</a>.</p>
 <p>An example for the contents of an output file:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;SSMLog&gt;</span>
-<span class="w">     </span><span class="nt">&lt;conflict</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;6.50&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;13.90&quot;</span><span class="w"> </span><span class="na">ego=</span><span class="s">&quot;ego1&quot;</span><span class="w"> </span><span class="na">foe=</span><span class="s">&quot;foe1&quot;</span><span class="nt">&gt;</span>
-<span class="w">         </span><span class="nt">&lt;timeSpan</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;6.50 6.60 6.70 6.80 6.90 7.00 7.10 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;typeSpan</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;10 10 10 10 10 10 10 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;egoPosition</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;98.35,61.20 98.35,60.20 98.35,59.25 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;egoLane</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;NC_0 NC_0 NC_0 NC_0 NC_0 NC_0 NC_0 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;egoLanePosition</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;59.73 61.12 62.51 63.89 65.28 66.67 68.06 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;egoVelocity</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;0.00,-10.23 0.00,-9.78 0.00,-9.33 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;foePosition</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;76.31,48.35 77.59,48.35 78.82,48.35 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;foeLane</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;WC_0 WC_0 WC_0 WC_0 WC_0 WC_0 WC_0 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;foeLanePosition</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;45.84 47.23 48.62 50.00 51.39 52.78 54.17 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;foeVelocity</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;13.02,0.00 12.57,0.00 12.12,0.00 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;conflictPoint</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;99.23,49.46 99.23,49.46 99.23,49.46 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;TTCSpan</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;1.78 1.74 1.70 1.67 1.63 1.60 1.56 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;minTTC</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;7.40&quot;</span><span class="w"> </span><span class="na">position=</span><span class="s">&quot;99.23,49.46&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1.48&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.50&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;DRACSpan</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;3.66 3.61 3.56 3.50 3.44 3.37 3.30 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;maxDRAC</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;6.50&quot;</span><span class="w"> </span><span class="na">position=</span><span class="s">&quot;99.23,49.46&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;10&quot;</span>
-<span class="na">value=</span><span class="s">&quot;3.66&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;12.95&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;PET</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;9.42&quot;</span><span class="w"> </span><span class="na">position=</span><span class="s">&quot;99.23,49.46&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;17&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.72&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;5.12&quot;</span><span class="nt">/&gt;</span>
-<span class="w">     </span><span class="nt">&lt;/conflict&gt;</span>
-<span class="w">     </span><span class="nt">&lt;conflict</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;21.50&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;27.20&quot;</span><span class="w"> </span><span class="na">ego=</span><span class="s">&quot;ego1&quot;</span><span class="w"> </span><span class="na">foe=</span><span class="s">&quot;foe2&quot;</span><span class="nt">&gt;</span>
-<span class="w">         </span>...
-<span class="w">     </span><span class="nt">&lt;/conflict&gt;</span>
-<span class="w">     </span>...
-<span class="w">    </span><span class="nt">&lt;globalMeasures</span><span class="w"> </span><span class="na">ego=</span><span class="s">&quot;ToC_veh&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;timeSpan</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;0.00 0.10 0.20 0.30 0.40 0.50 0.60 0.70 0.80 0.90 1.00 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;positions</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;98.35,61.20 98.35,60.20 98.35,59.25 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;lane</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;NC_0 NC_0 NC_0 NC_0 NC_0 NC_0 NC_0 NC_0 NC_0 NC_0 NC_0 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;lanePosition</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;0.00 1.39 2.78 4.17 5.56 6.95 8.33 9.72 11.11 12.50 13.89 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;BRSpan</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;maxBR</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;363.20&quot;</span><span class="w"> </span><span class="na">position=</span><span class="s">&quot;1850.01,-4.95&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;5.53&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;SGAPSpan</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;27.50 27.50 27.49 27.45 27.38 27.29 27.17 27.02 26.85 26.65 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;minSGAP</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;365.50&quot;</span><span class="w"> </span><span class="na">position=</span><span class="s">&quot;1863.41,-4.95&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.31&quot;</span><span class="w"> </span><span class="na">leader=</span><span class="s">&quot;leader&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;TGAPSpan</span><span class="w"> </span><span class="na">values=</span><span class="s">&quot;inf 105.77 52.86 35.19 26.33 20.99 17.41 14.85 12.91 11.39 10.16 ...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;minTGAP</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;365.30&quot;</span><span class="w"> </span><span class="na">position=</span><span class="s">&quot;1863.14,-4.95&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.23&quot;</span><span class="w"> </span><span class="na">leader=</span><span class="s">&quot;leader&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/globalMeasures&gt;</span>
-<span class="nt">&lt;/SSMLog&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;SSMLog&gt;
+     &lt;conflict begin=&quot;6.50&quot; end=&quot;13.90&quot; ego=&quot;ego1&quot; foe=&quot;foe1&quot;&gt;
+         &lt;timeSpan values=&quot;6.50 6.60 6.70 6.80 6.90 7.00 7.10 ...&quot;/&gt;
+         &lt;typeSpan values=&quot;10 10 10 10 10 10 10 ...&quot;/&gt;
+         &lt;egoPosition values=&quot;98.35,61.20 98.35,60.20 98.35,59.25 ...&quot;/&gt;
+         &lt;egoLane values=&quot;NC_0 NC_0 NC_0 NC_0 NC_0 NC_0 NC_0 ...&quot;/&gt;
+         &lt;egoLanePosition values=&quot;59.73 61.12 62.51 63.89 65.28 66.67 68.06 ...&quot;/&gt;
+         &lt;egoVelocity values=&quot;0.00,-10.23 0.00,-9.78 0.00,-9.33 ...&quot;/&gt;
+         &lt;foePosition values=&quot;76.31,48.35 77.59,48.35 78.82,48.35 ...&quot;/&gt;
+         &lt;foeLane values=&quot;WC_0 WC_0 WC_0 WC_0 WC_0 WC_0 WC_0 ...&quot;/&gt;
+         &lt;foeLanePosition values=&quot;45.84 47.23 48.62 50.00 51.39 52.78 54.17 ...&quot;/&gt;
+         &lt;foeVelocity values=&quot;13.02,0.00 12.57,0.00 12.12,0.00 ...&quot;/&gt;
+         &lt;conflictPoint values=&quot;99.23,49.46 99.23,49.46 99.23,49.46 ...&quot;/&gt;
+         &lt;TTCSpan values=&quot;1.78 1.74 1.70 1.67 1.63 1.60 1.56 ...&quot;/&gt;
+         &lt;minTTC time=&quot;7.40&quot; position=&quot;99.23,49.46&quot; type=&quot;10&quot; value=&quot;1.48&quot; speed=&quot;13.50&quot;/&gt;
+         &lt;DRACSpan values=&quot;3.66 3.61 3.56 3.50 3.44 3.37 3.30 ...&quot;/&gt;
+         &lt;maxDRAC time=&quot;6.50&quot; position=&quot;99.23,49.46&quot; type=&quot;10&quot;
+value=&quot;3.66&quot; speed=&quot;12.95&quot;/&gt;
+         &lt;PET time=&quot;9.42&quot; position=&quot;99.23,49.46&quot; type=&quot;17&quot; value=&quot;0.72&quot; speed=&quot;5.12&quot;/&gt;
+     &lt;/conflict&gt;
+     &lt;conflict begin=&quot;21.50&quot; end=&quot;27.20&quot; ego=&quot;ego1&quot; foe=&quot;foe2&quot;&gt;
+         ...
+     &lt;/conflict&gt;
+     ...
+    &lt;globalMeasures ego=&quot;ToC_veh&quot;&gt;
+        &lt;timeSpan values=&quot;0.00 0.10 0.20 0.30 0.40 0.50 0.60 0.70 0.80 0.90 1.00 ...&quot;/&gt;
+        &lt;positions values=&quot;98.35,61.20 98.35,60.20 98.35,59.25 ...&quot;/&gt;
+        &lt;lane values=&quot;NC_0 NC_0 NC_0 NC_0 NC_0 NC_0 NC_0 NC_0 NC_0 NC_0 NC_0 ...&quot;/&gt;
+        &lt;lanePosition values=&quot;0.00 1.39 2.78 4.17 5.56 6.95 8.33 9.72 11.11 12.50 13.89 ...&quot;/&gt;
+        &lt;BRSpan values=&quot;0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 ...&quot;/&gt;
+        &lt;maxBR time=&quot;363.20&quot; position=&quot;1850.01,-4.95&quot; value=&quot;5.53&quot;/&gt;
+        &lt;SGAPSpan values=&quot;27.50 27.50 27.49 27.45 27.38 27.29 27.17 27.02 26.85 26.65 ...&quot;/&gt;
+        &lt;minSGAP time=&quot;365.50&quot; position=&quot;1863.41,-4.95&quot; value=&quot;0.31&quot; leader=&quot;leader&quot;/&gt;
+        &lt;TGAPSpan values=&quot;inf 105.77 52.86 35.19 26.33 20.99 17.41 14.85 12.91 11.39 10.16 ...&quot;/&gt;
+        &lt;minTGAP time=&quot;365.30&quot; position=&quot;1863.14,-4.95&quot; value=&quot;0.23&quot; leader=&quot;leader&quot;/&gt;
+    &lt;/globalMeasures&gt;
+&lt;/SSMLog&gt;
+</code></pre>
 <p>Elements of type <code>&lt;conflict&gt;</code> hold the following information in their child elements:</p>
 <table>
 <thead>
@@ -1057,14 +1050,13 @@ The extent of output can be controlled by the parameters <code>device.ssm.measur
 <h3 id="restricting_ssm_device_to_edges_and_junctions">Restricting SSM Device to Edges and Junctions<a class="headerlink" href="#restricting_ssm_device_to_edges_and_junctions" title="Permanent link">#</a></h3>
 <p>The option <code>--device.ssm.filter-edges.input-file &lt;input_list&gt;</code> can be used to specify an input file containing edgeIDs and junctionIDs that are used to restrict the measurement of conflicts.
 The edges and junctions must be defined as following:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">edge</span><span class="o">:</span><span class="n">edgeID1</span>
-<span class="n">edge</span><span class="o">:</span><span class="n">edgeID2</span>
-<span class="o">...</span>
-<span class="n">junction</span><span class="o">:</span><span class="n">junctionID1</span>
-<span class="n">junction</span><span class="o">:</span><span class="n">junctionID2</span>
-<span class="o">...</span>
-</code></pre></div>
-
+<pre><code>edge:edgeID1
+edge:edgeID2
+...
+junction:junctionID1
+junction:junctionID2
+...
+</code></pre>
 <p>The edges adjoining the given junctions and the given edges are used to measure the conflicts. Only conflicts occurring at these edges are measured and outputted.</p>
 <h2 id="traci">TraCI<a class="headerlink" href="#traci" title="Permanent link">#</a></h2>
 <p>The following values can be retrieved for equipped vehicles if they have enabled the corresponding measures:</p>
@@ -1084,7 +1076,7 @@ The edges and junctions must be defined as following:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

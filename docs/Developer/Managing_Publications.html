@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -244,9 +245,8 @@ belongs to - at least organisation and topics.</p>
 new entries from the search engine <a href="https://www.semanticscholar.org/">Semantic Scholar</a>. The script 
 <strong>SUMO_HOME/tools/build_config/bibtexUpdate.py</strong> can be used to query the most cited articles which 
 refer to one of the SUMO reference publications. The script is called like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">build_config</span><span class="o">/</span><span class="n">bibtexUpdate</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">bibtex</span><span class="o">-</span><span class="n">input</span><span class="w"> </span><span class="n">docs</span><span class="o">/</span><span class="n">sumo</span><span class="o">.</span><span class="n">bib</span><span class="w"> </span><span class="o">--</span><span class="n">bibtex</span><span class="o">-</span><span class="n">output</span><span class="w"> </span><span class="n">docs</span><span class="o">/</span><span class="n">sumo</span><span class="o">.</span><span class="n">bib</span><span class="w"> </span><span class="o">--</span><span class="n">cited</span><span class="o">-</span><span class="n">works</span><span class="w"> </span><span class="s2">&quot;b1914c912dea62703856d89fe3724675a6139b71&quot;</span><span class="w"> </span><span class="s2">&quot;0e62ded610aeb17cc65f9f7159477e48248a98a2&quot;</span><span class="w"> </span><span class="o">--</span><span class="nb">min</span><span class="o">-</span><span class="n">citations</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">--</span><span class="n">exclude</span><span class="o">-</span><span class="n">media</span><span class="w"> </span><span class="s2">&quot;SUMO Conference Proceedings&quot;</span><span class="w"> </span><span class="s2">&quot;International Conference on Simulation of Urban Mobility&quot;</span><span class="w"> </span><span class="s2">&quot;arXiv.org&quot;</span>
-</code></pre></div>
-
+<pre><code>python tools/build_config/bibtexUpdate.py --bibtex-input docs/sumo.bib --bibtex-output docs/sumo.bib --cited-works &quot;b1914c912dea62703856d89fe3724675a6139b71&quot; &quot;0e62ded610aeb17cc65f9f7159477e48248a98a2&quot; --min-citations 100 --exclude-media &quot;SUMO Conference Proceedings&quot; &quot;International Conference on Simulation of Urban Mobility&quot; &quot;arXiv.org&quot;
+</code></pre>
 <p>The example call takes the current version of the bibtex file and overwrites it. 
 It queries the works citing the SUMO reference publications given by their Semantic Scholar hashes 
 in <strong>--cited-works</strong> and includes only those with at least <strong>--min-citations</strong>. Publications can be excluded from the 
@@ -260,7 +260,7 @@ bibtex file.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

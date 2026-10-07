@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -225,10 +226,9 @@ parameter must be supplied:</p>
 <li>the descriptions of the flows.</li>
 </ul>
 <p>A call may look like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">jtrrouter --route-files=&lt;FLOW_DEFS&gt; --turn-ratio-files=&lt;TURN_DEFINITIONS&gt; --net-file=&lt;SUMO_NET&gt; \</span>
-<span class="n">  --output-file=MySUMORoutes.rou.xml --begin &lt;UINT&gt; --end &lt;UINT&gt;</span>
-</code></pre></div>
-
+<pre><code>jtrrouter --route-files=&lt;FLOW_DEFS&gt; --turn-ratio-files=&lt;TURN_DEFINITIONS&gt; --net-file=&lt;SUMO_NET&gt; \
+  --output-file=MySUMORoutes.rou.xml --begin &lt;UINT&gt; --end &lt;UINT&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When turn-counts instead of turn-ratios are available, <a href="Routes_from_Observation_Points.html">other tools may be used</a>.</p>
@@ -267,21 +267,20 @@ parameter must be supplied:</p>
 <p>To describe the turn definitions, one has to write an XML file. Within
 this file, for each interval and each edge the list of percentages to
 use a certain follower edge has to be given. An example:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;edgeRelations&gt;</span>
-<span class="w">   </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;3600&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;myEdge0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;myEdge1&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;myEdge0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;myEdge2&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.7&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;myEdge0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;myEdge3&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.1&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;edgeRelations&gt;
+   &lt;interval begin=&quot;0&quot; end=&quot;3600&quot;&gt;
+      &lt;edgeRelation from=&quot;myEdge0&quot; to=&quot;myEdge1&quot; probability=&quot;0.2&quot;/&gt;
+      &lt;edgeRelation from=&quot;myEdge0&quot; to=&quot;myEdge2&quot; probability=&quot;0.7&quot;/&gt;
+      &lt;edgeRelation from=&quot;myEdge0&quot; to=&quot;myEdge3&quot; probability=&quot;0.1&quot;/&gt;
 
-<span class="w">      </span>...<span class="w"> </span>any<span class="w"> </span>other<span class="w"> </span>edges<span class="w"> </span>...
+      ... any other edges ...
 
-<span class="w">   </span><span class="nt">&lt;/interval&gt;</span>
+   &lt;/interval&gt;
 
-<span class="w">   </span>...<span class="w"> </span>some<span class="w"> </span>further<span class="w"> </span>intervals<span class="w"> </span>...
+   ... some further intervals ...
 
-<span class="nt">&lt;/edgeRelations&gt;</span>
-</code></pre></div>
-
+&lt;/edgeRelations&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you provide turn definitions that overlap (for example in multiple files), the latter turn definition will override the former.</p>
@@ -312,15 +311,14 @@ network structure, see <a href="../Tools/Turns.html#generateturndefspy">generate
 all networks have sink edges defined, one can support a list of edges to
 be declared as sinks using <strong>--sinks &lt;EDGE_ID&gt;[,&lt;EDGE_ID&gt;]</strong>*. You may also add your sink definitions to a
 turn-file (XML only):</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;turns&gt;</span>
-<span class="w">   </span>...<span class="w"> </span>some<span class="w"> </span>further<span class="w"> </span>turning<span class="w"> </span>definitions<span class="w"> </span>as<span class="w"> </span>above<span class="w"> </span>...
+<pre><code class="language-xml">&lt;turns&gt;
+   ... some further turning definitions as above ...
 
-<span class="w">   </span><span class="nt">&lt;sink</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;&lt;EDGE_ID&gt;[ &lt;EDGE_ID&gt;]*&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span>...<span class="w"> </span>further<span class="w"> </span>sink<span class="w"> </span>definitions<span class="w"> </span>...
+   &lt;sink edges=&quot;&lt;EDGE_ID&gt;[ &lt;EDGE_ID&gt;]*&quot;/&gt;
+   ... further sink definitions ...
 
-<span class="nt">&lt;/turns&gt;</span>
-</code></pre></div>
-
+&lt;/turns&gt;
+</code></pre>
 <p>If you do not define sinks, the option <strong>--accept-all-destinations</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a> may be used to declare all edge
 as possible sinks.</p>
 <h2 id="flow_definitions">Flow Definitions<a class="headerlink" href="#flow_definitions" title="Permanent link">#</a></h2>
@@ -330,13 +328,12 @@ is the same as for the <a href="../duarouter.html">duarouter</a> with just a
 single difference: as it is not known where the vehicle will leave the
 network as the route it uses is randomly computed, the route must be
 specified using attribute <em>from</em> and attribute <em>to</em> must be omitted:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">   </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;example0&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;A&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;3600&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;example1&quot;</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">   </span>....
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+   &lt;flow id=&quot;example0&quot; from=&quot;A&quot; begin=&quot;0&quot; end=&quot;3600&quot; probability=&quot;0.5&quot;/&gt;
+   &lt;flow id=&quot;example1&quot; ... /&gt;
+   ....
+&lt;/routes&gt;
+</code></pre>
 <h3 id="random_flows">Random Flows<a class="headerlink" href="#random_flows" title="Permanent link">#</a></h3>
 <p>The tool <a href="../Tools/Trip.html#randomtripspy">randomTrips.py</a> can be
 used to generated jtrrouter input by setting options <strong>--flows</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;INT&gt;</em></a> <strong>--jtrrouter</strong>.</p>
@@ -363,7 +360,7 @@ again.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

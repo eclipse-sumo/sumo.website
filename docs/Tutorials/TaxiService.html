@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -293,44 +294,40 @@ use the following gifs as a guide. Otherwise you can skip this section.</p>
 <h4 id="creating_the_taxi_and_person">Creating the taxi and person<a class="headerlink" href="#creating_the_taxi_and_person" title="Permanent link">#</a></h4>
 <p>Key participants within the simulation are people waiting and taxis.
 To create a vehicle of type taxi you have to add the key parameter:</p>
-<div class="codehilite"><pre><span></span><code><span class="cm">&lt;!-- Route --&gt;</span>
-<span class="w">   </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;-gneE2 gneE0 -gneE0 gneE2 -gneE2&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;yellow&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route_0&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;!-- Route --&gt;
+   &lt;route edges=&quot;-gneE2 gneE0 -gneE0 gneE2 -gneE2&quot; color=&quot;yellow&quot; id=&quot;route_0&quot;/&gt;
 
-<span class="cm">&lt;!-- Taxi-Type --&gt;</span>
-<span class="w">   </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;taxi&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;taxi&quot;</span><span class="w"> </span><span class="na">personCapacity=</span><span class="s">&quot;8&quot;</span><span class="nt">&gt;</span>
-<span class="w">       </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.taxi.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/vType&gt;</span>
-</code></pre></div>
-
+&lt;!-- Taxi-Type --&gt;
+   &lt;vType id=&quot;taxi&quot; vClass=&quot;taxi&quot; personCapacity=&quot;8&quot;&gt;
+       &lt;param key=&quot;has.taxi.device&quot; value=&quot;true&quot;/&gt;
+   &lt;/vType&gt;
+</code></pre>
 <p>There are other options to define the taxis behavior. You can decide when the taxis are going to disappear or if they should start circling the area. In this example the taxis will keep circling the area, even when there are no longer people in the simulation. This is done by choosing a dispatch-algorithm at the start of the simulation, which is discussed later in the tutorial.</p>
 <p>Next you can create a person, which departs at the start and heads to the designated bus stop.</p>
 <p>The third line here is essential, declaring that the person wants to go by taxi to edge gneE2. The <code>lines</code> parameter is also essential here.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;HeadingBusstop1&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;green&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-gneE1&quot;</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_gneE0_0_0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;gneE0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;gneE2&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;taxi&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/person&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;person id=&quot;HeadingBusstop1&quot; depart=&quot;0.00&quot; color=&quot;green&quot;&gt;
+    &lt;walk from=&quot;-gneE1&quot; busStop=&quot;busStop_gneE0_0_0&quot;/&gt;
+    &lt;ride from=&quot;gneE0&quot; to=&quot;gneE2&quot; lines=&quot;taxi&quot;/&gt;
+&lt;/person&gt;
+</code></pre>
 <p>It is also possible to define personTrips for intermodal routing or group several people together.
 As shown in the beginner traci tutorials, you can create a <code>runner.py</code> file to manage the taxi creation in your project.
 Within the example method, four taxis are created and dispatched at a given time.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Creating 4 taxis</span>
-<span class="k">def</span> <span class="nf">createTaxi</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-        <span class="c1"># declaring the name(unique), route(from demand.route.xml), type of vehicle(declared in demand.route.xml),</span>
-        <span class="c1"># depart time, and line</span>
-        <span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;taxiV</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;route_0&#39;</span><span class="p">,</span> <span class="s1">&#39;taxi&#39;</span><span class="p">,</span> <span class="n">depart</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">time</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="s1">&#39;taxi&#39;</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code class="language-python"># Creating 4 taxis
+def createTaxi(time):
+    for i in range(0, 20, 5):
+        # declaring the name(unique), route(from demand.route.xml), type of vehicle(declared in demand.route.xml),
+        # depart time, and line
+        traci.vehicle.add(f'taxiV{i}', 'route_0', 'taxi', depart=f'{time}', line='taxi')
+</code></pre>
 <h4 id="dispatch_and_pickup">Dispatch and Pickup<a class="headerlink" href="#dispatch_and_pickup" title="Permanent link">#</a></h4>
 <p>For this example we are using "-device.taxi.dispatch-algorithm traci". Within this algorithm, one has to declare which customers should be picked up by which taxi. Meaning you have to pass the existing reservations to the designated taxi you'd like to use for the pick up. There are other algorithms like greedy, greedyClosest etc. that work differently with the reservations.
 Next, the taxi fleet (containing all taxis in the map) are saved into "fleet", while all reservations are saved into "reservations". Afterwards the first taxi in the fleet is called and given the first reservation from "reservation_ids".</p>
-<div class="codehilite"><pre><span></span><code><span class="n">fleet</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">getTaxiFleet</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">reservations</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">person</span><span class="o">.</span><span class="n">getTaxiReservations</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">reservation_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">reservations</span><span class="p">]</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">dispatchTaxi</span><span class="p">(</span><span class="n">fleet</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">reservation_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</code></pre></div>
-
+<pre><code class="language-python">fleet = traci.vehicle.getTaxiFleet(0)
+reservations = traci.person.getTaxiReservations(0)
+reservation_ids = [r.id for r in reservations]
+traci.vehicle.dispatchTaxi(fleet[0], reservation_ids[0])
+</code></pre>
 <p>For more output parameters take a look at the documentation and the Pydoc.</p>
 <h2 id="part_2">Part 2<a class="headerlink" href="#part_2" title="Permanent link">#</a></h2>
 <p>In the second part of the tutorial, a bus stop is overflowing with people waiting for their ride. Emergency taxis are deployed to pick up the customers.</p>
@@ -338,49 +335,45 @@ Next, the taxi fleet (containing all taxis in the map) are saved into "fleet", w
 <p>For this part of the tutorial you can add another method to monitor the bus stops and start the emergency taxi function if needed.
 In this example we are targeting one bus stop with too many people waiting for a transport.
 As you can see in the code below, for all the bus stops, where the personCount is equal or larger than four, the method emergencyTaxi(i) is called.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># checks if busstop is &quot;overflowing&quot;</span>
-<span class="k">def</span> <span class="nf">busstopCheck</span><span class="p">():</span>
-    <span class="c1"># getting all bus stops on the map</span>
-    <span class="n">busstops</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">busstop</span><span class="o">.</span><span class="n">getIDList</span><span class="p">()</span>
-    <span class="c1"># checking the personcount of waiting people</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">busstops</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">traci</span><span class="o">.</span><span class="n">busstop</span><span class="o">.</span><span class="n">getPersonCount</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
-            <span class="n">emergencyTaxi</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code class="language-python"># checks if busstop is &quot;overflowing&quot;
+def busstopCheck():
+    # getting all bus stops on the map
+    busstops = traci.busstop.getIDList()
+    # checking the personcount of waiting people
+    for i in busstops:
+        if traci.busstop.getPersonCount(i) &gt;= 4:
+            emergencyTaxi(i)
+</code></pre>
 <h3 id="fleet_and_dispatch">Fleet and dispatch<a class="headerlink" href="#fleet_and_dispatch" title="Permanent link">#</a></h3>
 <p>The fleet consists only out of unoccupied taxis. Getting unoccupied taxis(0).
 If one wants to add further reservations to a assigned taxi, filter for the occupied(2) or those in pickup-modus(1).
 The id of the bus stop in question is given to the emergencyTaxi method, to specifically plan a pick up.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Dispatching taxis to cater to people waiting at a bus stop</span>
-<span class="k">def</span> <span class="nf">emergencyTaxi</span><span class="p">(</span><span class="n">busstopID</span><span class="p">):</span>
-    <span class="c1"># getting a Id-list of people waiting at the busstop</span>
-    <span class="n">peopleWaiting</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">busstop</span><span class="o">.</span><span class="n">getPersonIDs</span><span class="p">(</span><span class="n">busstopID</span><span class="p">)</span>
-    <span class="n">pickup</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="c1"># creating a list with the taxi reservations</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">peopleWaiting</span><span class="p">):</span>
-        <span class="n">pickup</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">traci</span><span class="o">.</span><span class="n">person</span><span class="o">.</span><span class="n">getTaxiReservations</span><span class="p">(</span><span class="mi">0</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
-    <span class="c1"># if one Taxi should pick up all customers, the list needs to clarify the drop off</span>
-    <span class="c1"># hence the pickup is extended by the order of drop offs</span>
-    <span class="c1"># pickup.extend(pickup)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">fleet</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">getTaxiFleet</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="k">except</span> <span class="p">(</span><span class="n">traci</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">FatalTraCIError</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No unoccupied taxi-fleet!&quot;</span><span class="p">)</span>
-    <span class="c1"># dispatching the unoccupied taxis to pick up their designated customers</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">peopleWaiting</span><span class="p">):</span>
-        <span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">dispatchTaxi</span><span class="p">(</span><span class="n">fleet</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pickup</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-</code></pre></div>
-
+<pre><code class="language-python"># Dispatching taxis to cater to people waiting at a bus stop
+def emergencyTaxi(busstopID):
+    # getting a Id-list of people waiting at the busstop
+    peopleWaiting = traci.busstop.getPersonIDs(busstopID)
+    pickup = []
+    # creating a list with the taxi reservations
+    for i, val in enumerate(peopleWaiting):
+        pickup.append(traci.person.getTaxiReservations(0)[i].id)
+    # if one Taxi should pick up all customers, the list needs to clarify the drop off
+    # hence the pickup is extended by the order of drop offs
+    # pickup.extend(pickup)
+    try:
+        fleet = traci.vehicle.getTaxiFleet(0)
+    except (traci.exceptions.FatalTraCIError):
+        print(&quot;No unoccupied taxi-fleet!&quot;)
+    # dispatching the unoccupied taxis to pick up their designated customers
+    for i, val in enumerate(peopleWaiting):
+        traci.vehicle.dispatchTaxi(fleet[i], pickup[i])
+</code></pre>
 <p>The taxi from the list with listposition i is dispatched to pick up the person from list "pickup" at position i.</p>
 <p>It is also possible to let one taxi pick up and drop off all the people, if the vehicle capacity is sufficient.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">pickup</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">pickup</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code class="language-python">pickup.extend(pickup)
+</code></pre>
 <p>Might look like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">pickup</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">]</span>
-</code></pre></div>
-
+<pre><code class="language-python">pickup = [a,b,c,a,b,c]
+</code></pre>
 <p>The passengers are dropped of in the order of the extension.</p>
 <h3 id="sumocfg">sumocfg<a class="headerlink" href="#sumocfg" title="Permanent link">#</a></h3>
 <p>Additional lines are added to the config files:
@@ -388,27 +381,26 @@ To be able to use traci.taxis, one has to add an algorithm to the config files.
 Furthermore, to prevent the taxis simply vanishing after dropping of their person(s), the line declaring
 randomCircling has been added. After delivering the person to the right position the taxi starts
 driving around in the network after a short break.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">            </span><span class="nt">&lt;input&gt;</span>
-<span class="w">                </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;net.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;route-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;demand.rou.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;additional-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;add.add.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;no-step-log</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;True&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;time-to-teleport</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;device.taxi.dispatch-algorithm</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;traci&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;device.taxi.idle-algorithm</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;randomCircling&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/input&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;configuration&gt;
+            &lt;input&gt;
+                &lt;net-file value=&quot;net.net.xml&quot;/&gt;
+                &lt;route-files value=&quot;demand.rou.xml&quot;/&gt;
+                &lt;additional-files value=&quot;add.add.xml&quot;/&gt;
+                &lt;no-step-log value=&quot;True&quot;/&gt;
+                &lt;time-to-teleport value=&quot;0&quot;/&gt;
+                &lt;device.taxi.dispatch-algorithm value=&quot;traci&quot;/&gt;
+                &lt;device.taxi.idle-algorithm value=&quot;randomCircling&quot;/&gt;
+            &lt;/input&gt;
+&lt;/configuration&gt;
+</code></pre>
 <p>Another way to use the algorithms is to add them to the traci.start in the script:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sumoBinary</span> <span class="o">=</span> <span class="n">sumolib</span><span class="o">.</span><span class="n">checkBinary</span><span class="p">(</span><span class="s1">&#39;sumo&#39;</span><span class="p">)</span>
-<span class="n">traci</span><span class="o">.</span><span class="n">start</span><span class="p">([</span><span class="n">sumoBinary</span><span class="p">,</span>
-            <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;sumo.sumocfg&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;--tripinfo-output&quot;</span><span class="p">,</span> <span class="s2">&quot;tripinfos.xml&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;--device.taxi.dispatch-algorithm&quot;</span><span class="p">,</span> <span class="s2">&quot;traci&quot;</span><span class="p">,</span>
-             <span class="p">]</span> <span class="o">+</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
-</code></pre></div>
+<pre><code class="language-python">sumoBinary = sumolib.checkBinary('sumo')
+traci.start([sumoBinary,
+            &quot;-c&quot;, &quot;sumo.sumocfg&quot;,
+             &quot;--tripinfo-output&quot;, &quot;tripinfos.xml&quot;,
+             &quot;--device.taxi.dispatch-algorithm&quot;, &quot;traci&quot;,
+             ] + sys.argv[1:])
+</code></pre>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -416,7 +408,7 @@ driving around in the network after a short break.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

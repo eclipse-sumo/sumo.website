@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -244,7 +245,7 @@ documentation can be found
 <h2 id="building_the_library">Building the Library<a class="headerlink" href="#building_the_library" title="Permanent link">#</a></h2>
 <p>To build the library without building SUMO, the following dependencies
 from the SUMO-source directory must be present:</p>
-<div class="codehilite"><pre><span></span><code>src/utils/traci/TraCIAPI.h
+<pre><code>src/utils/traci/TraCIAPI.h
 src/utils/traci/TraCIAPI.cpp
 src/foreign/tcpip/socket.h
 src/foreign/tcpip/socket.cpp
@@ -252,8 +253,7 @@ src/foreign/tcpip/storage.h
 src/foreign/tcpip/storage.cpp
 src/libsumo/TraCIConstants.h
 src/libsumo/TraCIDefs.h
-</code></pre></div>
-
+</code></pre>
 <p>Additionally, the file <em>config.h</em> must be present but these files can be
 left empty. If SUMO was built, they can either be found in the <em>src</em> or
 the <em>cmake-build/src</em> directory.</p>
@@ -271,48 +271,44 @@ one needs to be aware of its two operating modes:</p>
 <h3 id="feeding_raw_traci_commands_to_sumo">Feeding raw TraCI commands to SUMO<a class="headerlink" href="#feeding_raw_traci_commands_to_sumo" title="Permanent link">#</a></h3>
 <p>In this operating mode, the full TraCI-API is supported. Example input
 files typically look like:</p>
-<div class="codehilite"><pre><span></span><code>repeat 50 simstep2 0
+<pre><code>repeat 50 simstep2 0
 setvalue 0xc4 0x31 veh0 &lt;string&gt; e_vo0
 simstep2 200
-</code></pre></div>
-
+</code></pre>
 <p>This mode is meant for testing the server side and is unsuitable for
 building a control program that mixes TraCI calls with custom code.</p>
 <h3 id="testing_the_traciapi_client_library">Testing the TraCIAPI client library<a class="headerlink" href="#testing_the_traciapi_client_library" title="Permanent link">#</a></h3>
 <p>In this mode the client library itself is used. Example code looks like:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">SUMOTime</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simulation</span><span class="p">.</span><span class="n">getCurrentTime</span><span class="p">();</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edge</span><span class="p">.</span><span class="n">getIDList</span><span class="p">();</span>
-</code></pre></div>
-
+<pre><code class="language-cpp">SUMOTime t = simulation.getCurrentTime();
+std::vector&lt;std::string&gt; = edge.getIDList();
+</code></pre>
 <h2 id="example_code">Example Code<a class="headerlink" href="#example_code" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utils/traci/TraCIAPI.h&gt;</span>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;utils/traci/TraCIAPI.h&gt;
 
-<span class="k">class</span><span class="w"> </span><span class="nc">Client</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">TraCIAPI</span><span class="w"> </span><span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-<span class="w">    </span><span class="n">Client</span><span class="p">()</span><span class="w"> </span><span class="p">{};</span>
-<span class="w">    </span><span class="o">~</span><span class="n">Client</span><span class="p">()</span><span class="w"> </span><span class="p">{};</span>
-<span class="p">};</span>
+class Client : public TraCIAPI {
+public:
+    Client() {};
+    ~Client() {};
+};
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Client</span><span class="w"> </span><span class="n">client</span><span class="p">;</span>
-<span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&quot;localhost&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1337</span><span class="p">);</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;time in s: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">simulation</span><span class="p">.</span><span class="n">getTime</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;run 5 steps ...</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">simulationStep</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;time in s: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">simulation</span><span class="p">.</span><span class="n">getTime</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div>
-
+int main(int argc, char* argv[]) {
+    Client client;
+    client.connect(&quot;localhost&quot;, 1337);
+    std::cout &lt;&lt; &quot;time in s: &quot; &lt;&lt; client.simulation.getTime() &lt;&lt; &quot;\n&quot;;
+    std::cout &lt;&lt; &quot;run 5 steps ...\n&quot;;
+    client.simulationStep(5);
+    std::cout &lt;&lt; &quot;time in s: &quot; &lt;&lt; client.simulation.getTime() &lt;&lt; &quot;\n&quot;;
+    client.close();
+}
+</code></pre>
 <h3 id="compiling_make_sure_sumo_home_is_set">compiling (make sure SUMO_HOME is set)<a class="headerlink" href="#compiling_make_sure_sumo_home_is_set" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code>g++ -o test -I$SUMO_HOME/src TraCIAPITest.cpp $SUMO_HOME/src/utils/traci/TraCIAPI.cpp $SUMO_HOME/src/foreign/tcpip/socket.cpp $SUMO_HOME/src/foreign/tcpip/storage.cpp
-</code></pre></div>
-
+<pre><code>g++ -o test -I$SUMO_HOME/src TraCIAPITest.cpp $SUMO_HOME/src/utils/traci/TraCIAPI.cpp $SUMO_HOME/src/foreign/tcpip/socket.cpp $SUMO_HOME/src/foreign/tcpip/storage.cpp
+</code></pre>
 <h3 id="running">running<a class="headerlink" href="#running" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code>sumo -c test.sumocfg --remote-port 1337 &amp;
+<pre><code>sumo -c test.sumocfg --remote-port 1337 &amp;
 ./test
-</code></pre></div>
+</code></pre>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -320,7 +316,7 @@ building a control program that mixes TraCI calls with custom code.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

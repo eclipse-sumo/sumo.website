@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -324,9 +325,8 @@ class mainly.</p>
 </table>
 <p>The format of the output is a CSV-like with <strong>;</strong> as the column
 separator:</p>
-<div class="codehilite"><pre><span></span><code>&lt;speed&gt;;&lt;acceleration&gt;;&lt;slope&gt;;&lt;Pollutant-Type&gt;;&lt;Polutant-Value-in-mg/s-or-ml/s&gt;
-</code></pre></div>
-
+<pre><code>&lt;speed&gt;;&lt;acceleration&gt;;&lt;slope&gt;;&lt;Pollutant-Type&gt;;&lt;Polutant-Value-in-mg/s-or-ml/s&gt;
+</code></pre>
 <h3 id="emissions">Emissions<a class="headerlink" href="#emissions" title="Permanent link">#</a></h3>
 <table>
 <thead>
@@ -509,7 +509,7 @@ are printed on the screen.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

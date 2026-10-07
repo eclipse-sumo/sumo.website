@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -243,27 +244,26 @@ Mai 2014, Berlin</a></p>
 <p>Both sender and receiver devices may also be <a href="../Specification/Persons.html#devices">enable for persons</a>. These devices work the same as those for vehicles and will interact with each other as well as with vehicle devices.</p>
 <h1 id="output">Output<a class="headerlink" href="#output" title="Permanent link">#</a></h1>
 <p>The option <strong>--bt-output</strong> generates an XML output file of the following form:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;bt-output&gt;</span>
-<span class="w">    </span><span class="nt">&lt;bt</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;VEHICLE_ID&gt;&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;seen</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;VEHICLE_ID&gt;&quot;</span><span class="w"> </span><span class="na">tBeg=</span><span class="s">&quot;&lt;TIME&gt;&quot;</span><span class="w"> </span><span class="na">observerPosBeg=</span><span class="s">&quot;&lt;COORD&gt;&quot;</span><span class="w"> </span><span class="na">observerSpeedBeg=</span><span class="s">&quot;&lt;SPEED&gt;&quot;</span><span class="w"> </span><span class="na">observerLaneIDBeg=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="w"> </span><span class="na">observerLanePosBeg=</span><span class="s">&quot;&lt;LANE_POS&gt;&quot;</span>
-<span class="w">                                                </span><span class="na">seenPosBeg=</span><span class="s">&quot;&lt;COORD&gt;&quot;</span><span class="w"> </span><span class="na">seenSpeedBeg=</span><span class="s">&quot;&lt;SPEED&gt;&quot;</span><span class="w"> </span><span class="na">seenLaneIDBeg=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="w"> </span><span class="na">seenLanePosBeg=</span><span class="s">&quot;&lt;LANE_POS&gt;&quot;</span>
-<span class="w">                                </span><span class="na">tEnd=</span><span class="s">&quot;&lt;TIME&gt;&quot;</span><span class="w"> </span><span class="na">observerPosEnd=</span><span class="s">&quot;&lt;COORD&gt;&quot;</span><span class="w"> </span><span class="na">observerSpeedEnd=</span><span class="s">&quot;&lt;SPEED&gt;&quot;</span><span class="w"> </span><span class="na">observerLaneIDEnd=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="w"> </span><span class="na">observerLanePosEnd=</span><span class="s">&quot;&lt;LANE_POS&gt;&quot;</span>
-<span class="w">                                                </span><span class="na">seenPosEnd=</span><span class="s">&quot;&lt;COORD&gt;&quot;</span><span class="w"> </span><span class="na">seenSpeedEnd=</span><span class="s">&quot;&lt;SPEED&gt;&quot;</span><span class="w"> </span><span class="na">seenLaneIDEnd=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="w"> </span><span class="na">seenLanePosEnd=</span><span class="s">&quot;&lt;LANE_POS&gt;&quot;</span>
-<span class="w">                                </span><span class="na">observerRoute=</span><span class="s">&quot;&lt;EDGE_ID&gt;+&quot;</span><span class="w"> </span><span class="na">seenRoute=</span><span class="s">&quot;&lt;EDGE_ID&gt;+&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;recognitionPoint</span><span class="w"> </span><span class="na">t=</span><span class="s">&quot;&lt;TIME&gt;&quot;</span><span class="w"> </span><span class="na">observerPos=</span><span class="s">&quot;&lt;COORD&gt;&quot;</span><span class="w"> </span><span class="na">observerSpeed=</span><span class="s">&quot;&lt;SPEED&gt;&quot;</span><span class="w"> </span><span class="na">observerLaneID=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="w"> </span><span class="na">observerLanePos=</span><span class="s">&quot;&lt;LANE_POS&gt;&quot;</span>
-<span class="w">                                            </span><span class="na">seenPos=</span><span class="s">&quot;&lt;COORD&gt;&quot;</span><span class="w"> </span><span class="na">seenSpeed=</span><span class="s">&quot;&lt;SPEED&gt;&quot;</span><span class="w"> </span><span class="na">seenLaneID=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="w"> </span><span class="na">seenLanePos=</span><span class="s">&quot;&lt;LANE_POS&gt;&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;bt-output&gt;
+    &lt;bt id=&quot;&lt;VEHICLE_ID&gt;&quot;&gt;
+        &lt;seen id=&quot;&lt;VEHICLE_ID&gt;&quot; tBeg=&quot;&lt;TIME&gt;&quot; observerPosBeg=&quot;&lt;COORD&gt;&quot; observerSpeedBeg=&quot;&lt;SPEED&gt;&quot; observerLaneIDBeg=&quot;&lt;LANE_ID&gt;&quot; observerLanePosBeg=&quot;&lt;LANE_POS&gt;&quot;
+                                                seenPosBeg=&quot;&lt;COORD&gt;&quot; seenSpeedBeg=&quot;&lt;SPEED&gt;&quot; seenLaneIDBeg=&quot;&lt;LANE_ID&gt;&quot; seenLanePosBeg=&quot;&lt;LANE_POS&gt;&quot;
+                                tEnd=&quot;&lt;TIME&gt;&quot; observerPosEnd=&quot;&lt;COORD&gt;&quot; observerSpeedEnd=&quot;&lt;SPEED&gt;&quot; observerLaneIDEnd=&quot;&lt;LANE_ID&gt;&quot; observerLanePosEnd=&quot;&lt;LANE_POS&gt;&quot;
+                                                seenPosEnd=&quot;&lt;COORD&gt;&quot; seenSpeedEnd=&quot;&lt;SPEED&gt;&quot; seenLaneIDEnd=&quot;&lt;LANE_ID&gt;&quot; seenLanePosEnd=&quot;&lt;LANE_POS&gt;&quot;
+                                observerRoute=&quot;&lt;EDGE_ID&gt;+&quot; seenRoute=&quot;&lt;EDGE_ID&gt;+&quot;&gt;
+            &lt;recognitionPoint t=&quot;&lt;TIME&gt;&quot; observerPos=&quot;&lt;COORD&gt;&quot; observerSpeed=&quot;&lt;SPEED&gt;&quot; observerLaneID=&quot;&lt;LANE_ID&gt;&quot; observerLanePos=&quot;&lt;LANE_POS&gt;&quot;
+                                            seenPos=&quot;&lt;COORD&gt;&quot; seenSpeed=&quot;&lt;SPEED&gt;&quot; seenLaneID=&quot;&lt;LANE_ID&gt;&quot; seenLanePos=&quot;&lt;LANE_POS&gt;&quot;/&gt;
 
-<span class="w">            </span>...<span class="w"> </span>more<span class="w"> </span>recognition<span class="w"> </span>points<span class="w"> </span>...
+            ... more recognition points ...
 
-<span class="w">        </span><span class="nt">&lt;/seen&gt;</span>
+        &lt;/seen&gt;
 
-<span class="w">        </span>...<span class="w"> </span>more<span class="w"> </span>contacts<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>vehicle<span class="w"> </span>...
-<span class="w">    </span><span class="nt">&lt;/bt&gt;</span>
+        ... more contacts of the same vehicle ...
+    &lt;/bt&gt;
 
-<span class="w">    </span>...<span class="w"> </span>more<span class="w"> </span>data<span class="w"> </span>of<span class="w"> </span>of<span class="w"> </span>sensor<span class="w"> </span>vehicles<span class="w"> </span>...
-<span class="nt">&lt;/bt-output&gt;</span>
-</code></pre></div>
-
+    ... more data of of sensor vehicles ...
+&lt;/bt-output&gt;
+</code></pre>
 <p>If the option <strong>--device.btreceiver.all-recognitions</strong> is not given only the first recognition point will be
 printed for each encounter. The meanings of the written values are given
 in the following table.</p>
@@ -445,7 +445,7 @@ road. This can be accomplished by by setting <a href="../Definition_of_Vehicles%
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

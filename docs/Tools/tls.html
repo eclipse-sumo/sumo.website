@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -228,14 +229,12 @@ Last edit: 06 October 2026
 <h1 id="tlscoordinatorpy">tlsCoordinator.py<a class="headerlink" href="#tlscoordinatorpy" title="Permanent link">#</a></h1>
 <p>This script modifies the traffic-light offsets to coordinate them for a
 given traffic demand. Example call:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">tlsCoordinator</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">routes</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">tlsOffsets</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/tlsCoordinator.py -n net.net.xml -r routes.rou.xml -o tlsOffsets.add.xml
+</code></pre>
 <p>This would generate the file <em>tlsOffsets.add.xml</em> which can be loaded
 into <a href="../sumo.html">sumo</a>:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sumo -n net.net.xml -r routes.rou.xml -a tlsOffsets.add.xml</span>
-</code></pre></div>
-
+<pre><code>sumo -n net.net.xml -r routes.rou.xml -a tlsOffsets.add.xml
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is advisable to run this with a <em>.net.xml</em> file where all traffic lights have the same cycle time. This is the default since version 0.25.0 but older networks should be rebuilt</p>
@@ -247,14 +246,12 @@ into <a href="../sumo.html">sumo</a>:</p>
 <h1 id="tlscycleadaptationpy">tlsCycleAdaptation.py<a class="headerlink" href="#tlscycleadaptationpy" title="Permanent link">#</a></h1>
 <p>This script modifies the cycle length and the duration of green phases according to Websters
 formula to best accommodate a given traffic demand. Example call:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">tlsCycleAdaptation</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">routes</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">newTLS</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="n">begin_time</span>
-</code></pre></div>
-
+<pre><code>python tools/tlsCycleAdaptation.py -n net.net.xml -r routes.rou.xml -o newTLS.add.xml -b begin_time
+</code></pre>
 <p>This would generate the file <em>newTLS.add.xml</em> which can be loaded into
 <a href="../sumo.html">sumo</a>:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sumo -n net.net.xml -r routes.rou.xml -a newTLS.add.xml</span>
-</code></pre></div>
-
+<pre><code>sumo -n net.net.xml -r routes.rou.xml -a newTLS.add.xml
+</code></pre>
 <p>The signalization parameters, such as minimal green time, lost time, yellow time, maximal and minimal cycles, can be adjusted with the use of options. Option <strong>-R</strong> is to restrict the maximal cycle length as the given one, while Option <strong>-u</strong> is to use the calculated max cycle length as the cycle length for all intersections. With Option <strong>-e</strong> only the green time splits will be adapted.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -289,56 +286,49 @@ formula to best accommodate a given traffic demand. Example call:</p>
 <h1 id="tls_csv2sumopy">tls_csv2SUMO.py<a class="headerlink" href="#tls_csv2sumopy" title="Permanent link">#</a></h1>
 <p>This tool requires the program definition and the SUMO-network it shall
 be converted to:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">tls</span><span class="o">/</span><span class="n">tls_csv2SUMO</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">&lt;</span><span class="n">TLS_CSV</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">NET</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/tls/tls_csv2SUMO.py &lt;TLS_CSV&gt; &lt;NET&gt;
+</code></pre>
 <p>It prints the generated TLS definition on stdout (you can pipe it to a
 file).</p>
 <p>The format of the CSV description is as following. At first, three
 header lines must be given, which name the tls (which is the id of the
 tlLogic in the network), the program's subkey, and the offset at which
 the program shall start in seconds - normally 0:</p>
-<div class="codehilite"><pre><span></span><code>    key;&lt;KEY&gt;
+<pre><code>    key;&lt;KEY&gt;
     subkey;&lt;SUBKEY&gt;
     offset;&lt;OFFSET&gt;
-</code></pre></div>
-
+</code></pre>
 <p>Then, it is defined which signal (number) in the program is responsible
 for which link. The link may be described either using the incoming edge
 only, or the incoming lane only, or also incorporating the outgoing
 edge/lane. This means the following lines are all valid:</p>
-<div class="codehilite"><pre><span></span><code>    link;&lt;LINK_NUMBER&gt;;&lt;FROM_EDGE&gt;;;0
+<pre><code>    link;&lt;LINK_NUMBER&gt;;&lt;FROM_EDGE&gt;;;0
     link;&lt;LINK_NUMBER&gt;;&lt;FROM_LANE&gt;;;0
     link;&lt;LINK_NUMBER&gt;;&lt;FROM_EDGE&gt;;&lt;TO_EDGE&gt;;0
     link;&lt;LINK_NUMBER&gt;;&lt;FROM_EDGE&gt;;&lt;TO_LANE&gt;;0
     link;&lt;LINK_NUMBER&gt;;&lt;FROM_LANE&gt;;&lt;TO_EDGE&gt;;0
     link;&lt;LINK_NUMBER&gt;;&lt;FROM_LANE&gt;;&lt;TO_LANE&gt;;0
-</code></pre></div>
-
+</code></pre>
 <p>It is also possible to assign more than one link to a single signal.</p>
 <p>Then, the signals' states are given:</p>
-<div class="codehilite"><pre><span></span><code>&lt;LINK_NUMBER&gt;;&lt;STATES&gt;
-</code></pre></div>
-
+<pre><code>&lt;LINK_NUMBER&gt;;&lt;STATES&gt;
+</code></pre>
 <p>The states are encoded using the signal colors (please note that only
 lower-case letters are used, see below) described above, separated by
 ';'. An example signal phase definition (for signal 1) could be:</p>
-<div class="codehilite"><pre><span></span><code><span class="mf">1</span><span class="p">;</span><span class="n">g</span><span class="p">;</span><span class="n">g</span><span class="p">;</span><span class="n">g</span><span class="p">;</span><span class="n">g</span><span class="p">;</span><span class="n">y</span><span class="p">;</span><span class="n">r</span><span class="p">;</span><span class="n">r</span><span class="p">;</span><span class="n">r</span><span class="p">;</span><span class="n">r</span><span class="p">;</span><span class="n">r</span>
-</code></pre></div>
-
+<pre><code>1;g;g;g;g;y;r;r;r;r;r
+</code></pre>
 <p>Please not that the number of states must be the same for all defined
 links.</p>
 <p>Now, we only have to define the phase times:</p>
-<div class="codehilite"><pre><span></span><code>time;&lt;TIMES&gt;
-</code></pre></div>
-
+<pre><code>time;&lt;TIMES&gt;
+</code></pre>
 <p>The times are given in seconds, again separated using ';'. An example
 could be:</p>
-<div class="codehilite"><pre><span></span><code>time;18;33;3;6;3;3;9;15;90
-</code></pre></div>
-
+<pre><code>time;18;33;3;6;3;3;9;15;90
+</code></pre>
 <p>A complete CSV-description could look like:</p>
-<div class="codehilite"><pre><span></span><code>    key;102
+<pre><code>    key;102
     subkey;utopia
     offset;0
     link;1;4643;;0
@@ -352,8 +342,7 @@ could be:</p>
     min;21;3;3;2;20;9;3;2
     time;45;3;3;2;36;9;3;2
     max;78;3;3;2;62;9;3;2
-</code></pre></div>
-
+</code></pre>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h2>
 <p>The example shows what is tested in
 <a href="https://sourceforge.net/apps/trac/sumo/browser/trunk/sumo/tests/tools/tls/csv2sumo/both_ok">[1]</a>.
@@ -364,7 +353,7 @@ lights, see next figure.</p>
 <p><strong>Figure: example intersection</strong></p>
 <p><img alt="tls2csv_example_net.svg" src="../images/Tls2csv_example_net.svg" title="tls2csv_example_net.svg" /></p>
 <p>Now, we define two different programs for this intersection. The first:</p>
-<div class="codehilite"><pre><span></span><code>key;0
+<pre><code>key;0
 subkey;own1
 offset;0
 link;1;4si;3o;0
@@ -390,14 +379,13 @@ link;4;2si;4o;0
 min;10;3;5;3;3;10;3;5;3;3
 time;15;3;5;3;3;45;3;5;3;3
 max;30;3;15;3;3;60;3;15;3;3
-</code></pre></div>
-
+</code></pre>
 <p>This means that we have four streams: two for north/south (edges 3si and
 4si) and two for east/west (edges 1si and 2si). Two, because we give
 green longer for the respective left-movers. The key is the ID of the
 traffic light ("0"), the subkey is the name of our program ("own1").</p>
 <p>The second program looks like this:</p>
-<div class="codehilite"><pre><span></span><code>key;0
+<pre><code>key;0
 subkey;own2
 offset;0
 link;1;4si;3o;0
@@ -421,12 +409,10 @@ link;4;2si;2o;0
 3;r;r;r;r;g;y;r;r
 4;r;r;r;r;g;g;g;y
 time;31;16;6;16;31;16;6;16
-</code></pre></div>
-
+</code></pre>
 <p>We convert those program definitions using</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">tls</span><span class="o">/</span><span class="n">tls_csv2SUMO</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">lsa_def</span><span class="o">.</span><span class="n">csv</span><span class="p">,</span><span class="n">lsa_def2</span><span class="o">.</span><span class="n">csv</span><span class="w"> </span><span class="n">input_net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/tls/tls_csv2SUMO.py lsa_def.csv,lsa_def2.csv input_net.net.xml
+</code></pre>
 <p>And obtain the following programs after loading them into
 <a href="../sumo-gui.html">sumo-gui</a>:</p>
 <p><strong>Figure: converted programs</strong></p>
@@ -439,21 +425,18 @@ signal groups in a way that is closer to the typical representation used
 by traffic engineers. It accepts green times per signal group and
 creates the <a href="../sumo.html">sumo</a> tls representation out of it. Example call to convert two csv-tls-descriptions into the
 additional file <em>tls.add.xml</em>:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">tls</span><span class="o">/</span><span class="n">tls_csvSignalgroups</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">tl1</span><span class="o">.</span><span class="n">csv</span><span class="p">,</span><span class="n">tl2</span><span class="o">.</span><span class="n">csv</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">tls</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/tls/tls_csvSignalgroups.py -n net.net.xml -i tl1.csv,tl2.csv -o tls.add.xml
+</code></pre>
 <p>In the opposite direction, templates for csv-tls-descriptions of all tls
 in a <a href="../sumo.html">sumo</a> network can be written to a given directory
 and completed by hand:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">tls</span><span class="o">/</span><span class="n">tls_csvSignalgroups</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="o">.</span>
-</code></pre></div>
-
+<pre><code>python tools/tls/tls_csvSignalgroups.py -n net.net.xml -m .
+</code></pre>
 <p>It also provides a mechanism to convert an additional file <em>tls.add.xml</em> or the TL logic contained in a
 net file <em>net.net.xml</em> directly into a csv-tls-representation. Example call to convert an additional file <em>tls.add.xml</em>
 into csv-tls-representation(s):</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">tls</span><span class="o">/</span><span class="n">tls_csvSignalgroups</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">tls</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="o">--</span><span class="n">group</span>
-</code></pre></div>
-
+<pre><code>python tools/tls/tls_csvSignalgroups.py -n net.net.xml -i tls.add.xml -r --group
+</code></pre>
 <p>The csv output files (one per found TL logic) are written to the current working directory and named <em>tlID_programID.csv</em>. An additional file
 prefix can be prepended using the <strong>--output</strong> parameter. When adding the parameter <strong>--group</strong>, signal groups with identical signal states across all
 examined TL logics are joined.</p>
@@ -515,95 +498,89 @@ uses a header row with the following keywords and their meanings:</p>
 of a second green time per cycle (keywords <em>on2</em> and <em>off2</em>) is
 optional, so are the keywords.</p>
 <h2 id="example_with_a_single_green_phase_per_signal_group">Example with a single green phase per signal group<a class="headerlink" href="#example_with_a_single_green_phase_per_signal_group" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="k">[general]</span>
-<span class="na">cycle time;60</span>
-<span class="na">key;1</span>
-<span class="na">subkey;SZP_LeftTurn</span>
-<span class="na">offset;0</span>
-<span class="na">parameter;key1;value1</span>
-<span class="na">parameter;key2;value2</span>
-<span class="k">[links]</span>
-<span class="na">FZ11;-474_0;</span>
-<span class="na">FZ12;-474_1;</span>
-<span class="na">FZ21;-472_0;</span>
-<span class="na">FZ31;-468_0;</span>
-<span class="na">FZ32;-468_1;</span>
-<span class="na">FZ41;-470_0;</span>
-<span class="k">[signal groups]</span>
-<span class="na">id;on1;off1;transOn;transOff</span>
-<span class="na">FZ11;0;25;1;3</span>
-<span class="na">FZ12;0;35;1;3</span>
-<span class="na">FZ21;40;55;1;3</span>
-<span class="na">FZ31;0;25;1;3</span>
-<span class="na">FZ32;0;35;1;3</span>
-<span class="na">FZ41;40;55;1;3</span>
-</code></pre></div>
-
+<pre><code>[general]
+cycle time;60
+key;1
+subkey;SZP_LeftTurn
+offset;0
+parameter;key1;value1
+parameter;key2;value2
+[links]
+FZ11;-474_0;
+FZ12;-474_1;
+FZ21;-472_0;
+FZ31;-468_0;
+FZ32;-468_1;
+FZ41;-470_0;
+[signal groups]
+id;on1;off1;transOn;transOff
+FZ11;0;25;1;3
+FZ12;0;35;1;3
+FZ21;40;55;1;3
+FZ31;0;25;1;3
+FZ32;0;35;1;3
+FZ41;40;55;1;3
+</code></pre>
 <h2 id="example_with_two_green_phases_for_some_groups">Example with two green phases for some groups<a class="headerlink" href="#example_with_two_green_phases_for_some_groups" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="k">[general]</span>
-<span class="na">cycle time;60</span>
-<span class="na">key;1</span>
-<span class="na">subkey;SZP_2Green</span>
-<span class="na">offset;0</span>
-<span class="k">[links]</span>
-<span class="na">FZ11;-474_0;</span>
-<span class="na">FZ12;-474_1;</span>
-<span class="na">FZ21;-472_0;</span>
-<span class="na">FZ31;-468_0;</span>
-<span class="na">FZ32;-468_1;</span>
-<span class="na">FZ41;-470_0;</span>
-<span class="k">[signal groups]</span>
-<span class="na">id;on1;off1;transOn;transOff;on2;off2</span>
-<span class="na">FZ11;0;15;1;3;;</span>
-<span class="na">FZ12;0;15;1;3;40;55</span>
-<span class="na">FZ21;25;35;1;3;;</span>
-<span class="na">FZ31;0;25;1;3;;</span>
-<span class="na">FZ32;0;15;1;3;40;55</span>
-<span class="na">FZ41;25;35;1;3;;</span>
-</code></pre></div>
-
+<pre><code>[general]
+cycle time;60
+key;1
+subkey;SZP_2Green
+offset;0
+[links]
+FZ11;-474_0;
+FZ12;-474_1;
+FZ21;-472_0;
+FZ31;-468_0;
+FZ32;-468_1;
+FZ41;-470_0;
+[signal groups]
+id;on1;off1;transOn;transOff;on2;off2
+FZ11;0;15;1;3;;
+FZ12;0;15;1;3;40;55
+FZ21;25;35;1;3;;
+FZ31;0;25;1;3;;
+FZ32;0;15;1;3;40;55
+FZ41;25;35;1;3;;
+</code></pre>
 <h2 id="example_for_an_actuated_traffic_light">Example for an actuated traffic light<a class="headerlink" href="#example_for_an_actuated_traffic_light" title="Permanent link">#</a></h2>
 <p>The <strong>actuated</strong> setting defines a list of times (given as cycleSeconds). Each pair defines the start and end of an actuation range.
 The difference between each pair of values corresponds to the difference between <em>minDur</em> and <em>maxDur</em> and thus the possible length extension.</p>
-<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="n">general</span><span class="p">];;;;;;</span>
-<span class="n">cycle</span><span class="w"> </span><span class="n">time</span><span class="p">;</span><span class="mi">60</span><span class="p">;;;;;</span>
-<span class="n">key</span><span class="p">;</span><span class="mi">1</span><span class="p">;;;;;</span>
-<span class="n">subkey</span><span class="p">;</span><span class="n">SZP_Prio</span><span class="p">;;;;;</span>
-<span class="n">offset</span><span class="p">;</span><span class="mi">5</span><span class="p">;;;;;</span>
-<span class="n">actuated</span><span class="p">;</span><span class="mi">5</span><span class="p">;</span><span class="mi">10</span>
-<span class="p">[</span><span class="n">links</span><span class="p">];;;;;;</span>
-<span class="n">FZ11</span><span class="p">;</span><span class="mi">-474</span><span class="n">_0</span><span class="p">;;;;;</span>
-<span class="n">FZ11</span><span class="p">;</span><span class="mi">-474</span><span class="n">_1</span><span class="p">;;;;;</span>
-<span class="n">FZ21</span><span class="p">;</span><span class="mi">-472</span><span class="n">_0</span><span class="p">;;;;;</span>
-<span class="n">FZ31</span><span class="p">;</span><span class="mi">-468</span><span class="n">_0</span><span class="p">;;;;;</span>
-<span class="n">FZ31</span><span class="p">;</span><span class="mi">-468</span><span class="n">_1</span><span class="p">;;;;;</span>
-<span class="n">FZ41</span><span class="p">;</span><span class="mi">-470</span><span class="n">_0</span><span class="p">;;;;;</span>
-<span class="p">[</span><span class="n">signal</span><span class="w"> </span><span class="n">groups</span><span class="p">];;;;;;</span>
-<span class="kt">id</span><span class="p">;</span><span class="n">on1</span><span class="p">;</span><span class="n">off1</span><span class="p">;</span><span class="n">transOn</span><span class="p">;</span><span class="n">transOff</span><span class="p">;;</span>
-<span class="n">FZ11</span><span class="p">;</span><span class="mi">0</span><span class="p">;</span><span class="mi">10</span><span class="p">;</span><span class="mi">1</span><span class="p">;</span><span class="mi">3</span><span class="p">;;</span>
-<span class="n">FZ21</span><span class="p">;</span><span class="mi">15</span><span class="p">;</span><span class="mi">25</span><span class="p">;</span><span class="mi">1</span><span class="p">;</span><span class="mi">3</span><span class="p">;;</span>
-<span class="n">FZ31</span><span class="p">;</span><span class="mi">30</span><span class="p">;</span><span class="mi">40</span><span class="p">;</span><span class="mi">1</span><span class="p">;</span><span class="mi">3</span><span class="p">;;</span>
-<span class="n">FZ41</span><span class="p">;</span><span class="mi">45</span><span class="p">;</span><span class="mi">55</span><span class="p">;</span><span class="mi">1</span><span class="p">;</span><span class="mi">3</span><span class="p">;;</span>
-</code></pre></div>
-
+<pre><code>[general];;;;;;
+cycle time;60;;;;;
+key;1;;;;;
+subkey;SZP_Prio;;;;;
+offset;5;;;;;
+actuated;5;10
+[links];;;;;;
+FZ11;-474_0;;;;;
+FZ11;-474_1;;;;;
+FZ21;-472_0;;;;;
+FZ31;-468_0;;;;;
+FZ31;-468_1;;;;;
+FZ41;-470_0;;;;;
+[signal groups];;;;;;
+id;on1;off1;transOn;transOff;;
+FZ11;0;10;1;3;;
+FZ21;15;25;1;3;;
+FZ31;30;40;1;3;;
+FZ41;45;55;1;3;;
+</code></pre>
 <h1 id="buildtransitionspy">buildTransitions.py<a class="headerlink" href="#buildtransitionspy" title="Permanent link">#</a></h1>
 <p>This tool creates tlLogic definitions with branching signal plans based on a simplified
 input: named green phases and list of successor green phases names.
 The corresponding yellow and red phases will be build and the 'next' attribute
 will be set to the appropriate transition phase.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">tls</span><span class="o">/</span><span class="n">buildTransitions</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="n">tlLogic</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">&lt;</span><span class="n">output</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/tls/buildTransitions.py -d &lt;tlLogic-file&gt; -o &lt;output-file&gt;
+</code></pre>
 <h1 id="tls_analyzesplitpy">tls_analyzeSplit.py<a class="headerlink" href="#tls_analyzesplitpy" title="Permanent link">#</a></h1>
 <p>Compute how much time each controlled link of a traffic light spent in the green state (in percent).</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">tls</span><span class="o">/</span><span class="n">tls_analyzeSplit</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">FILE</span>
-</code></pre></div>
-
+<pre><code>python tools/tls/tls_analyzeSplit.py FILE
+</code></pre>
 <p>Any input file with <code>&lt;tlLogic&gt;</code> elements is supported (<em>.net.xml</em>, <em>.add.xml</em> and <a href="../Simulation/Output/Traffic_Lights.html#tls_programs">traffic light logs</a> in <code>SaveTLSProgram</code> format).</p>
 <p>The output is one line per traffic light program:</p>
-<div class="codehilite"><pre><span></span><code>tlLogic=0 program=0 cycle=138.0 G=[22, 22, 4, 4, 22, 22, 4, 4, 22, 22, 4, 4, 22, 22, 4, 4] Gg=[22, 22, 38, 38, 22, 22, 38, 38, 22, 22, 38, 38, 22, 22, 38, 38]
-</code></pre></div>
-
+<pre><code>tlLogic=0 program=0 cycle=138.0 G=[22, 22, 4, 4, 22, 22, 4, 4, 22, 22, 4, 4, 22, 22, 4, 4] Gg=[22, 22, 38, 38, 22, 22, 38, 38, 22, 22, 38, 38, 22, 22, 38, 38]
+</code></pre>
 <p>Where the element <code>G</code> gives percentages in state <code>G</code> (major green, no foes) and element <code>Gg</code> gives percentages in stage <code>G</code> or <code>g</code> (including minor green, green with some foes).</p>
                 </main>
           </div>
@@ -612,7 +589,7 @@ will be set to the appropriate transition phase.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

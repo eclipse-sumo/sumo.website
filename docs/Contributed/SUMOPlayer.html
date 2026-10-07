@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -218,67 +219,65 @@ Last edit: 06 October 2026
 <li><strong>Author</strong>: Michael Willigens</li>
 </ul>
 <h2 id="from_readme">From README<a class="headerlink" href="#from_readme" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="nx">This</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">gives</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">brief</span><span class="w"> </span><span class="nx">overview</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">SUMPlayer</span><span class="w"> </span><span class="nx">usage</span><span class="p">.</span>
-<span class="err">#</span><span class="w"> </span><span class="nx">SUMOPlayer</span><span class="w"> </span><span class="nx">can</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">play</span><span class="w"> </span><span class="nx">SUMO</span><span class="w"> </span><span class="nx">network</span><span class="o">-</span><span class="nx">dump</span><span class="w"> </span><span class="nx">files</span>
-<span class="err">#</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">realtime</span><span class="w"> </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="nx">possible</span><span class="p">)</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">latitude</span><span class="o">/</span><span class="nx">longitude</span><span class="w"> </span><span class="nx">coordinates</span><span class="p">.</span>
-<span class="err">#</span><span class="w"> </span><span class="nx">It</span><span class="w"> </span><span class="nx">can</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">customized</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">any</span><span class="w"> </span><span class="nx">way</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">implementing</span>
-<span class="err">#</span><span class="w"> </span><span class="nx">de</span><span class="p">.</span><span class="nx">psi</span><span class="p">.</span><span class="nx">telco</span><span class="p">.</span><span class="nx">sumoplayer</span><span class="p">.</span><span class="nx">SUMOLocationListener</span>
-<span class="err">#</span><span class="w"> </span><span class="nx">SEE</span><span class="p">:</span>
-<span class="err">#</span><span class="w"> </span><span class="nx">public</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">SUMOLocationListener</span><span class="w"> </span><span class="p">{</span>
-<span class="err">#</span><span class="w">   </span><span class="nx">public</span><span class="w"> </span><span class="nx">void</span><span class="w"> </span><span class="nx">LocationUpdated</span><span class="p">(</span><span class="nx">String</span><span class="w"> </span><span class="nx">vehicleId</span><span class="p">,</span><span class="w"> </span><span class="nx">int</span><span class="w"> </span><span class="nx">timestep</span><span class="p">,</span><span class="w"> </span><span class="nx">double</span><span class="w"> </span><span class="nx">lon</span><span class="p">,</span><span class="w"> </span><span class="nx">double</span><span class="w"> </span><span class="nx">lat</span><span class="p">,</span><span class="w"> </span><span class="nx">double</span><span class="w"> </span><span class="nx">speed</span><span class="p">);</span>
-<span class="err">#</span><span class="w"> </span><span class="p">}</span>
-<span class="err">#</span><span class="w"> </span><span class="nx">You</span><span class="w"> </span><span class="nx">can</span><span class="w"> </span><span class="nx">call</span><span class="w"> </span><span class="nx">SUMOPlayer</span><span class="w"> </span><span class="nx">with</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">own</span><span class="w"> </span><span class="nx">implementation</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">using</span><span class="w"> </span><span class="nx">the</span>
-<span class="err">#</span><span class="w"> </span><span class="o">-</span><span class="nx">l</span><span class="w"> </span><span class="s">&quot;&lt;classname&gt;&quot;</span><span class="w"> </span><span class="nx">parameter</span><span class="p">.</span>
-<span class="err">#</span><span class="w"> </span><span class="nx">If</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">used</span><span class="p">,</span><span class="w"> </span><span class="nx">SUMOPlayer</span><span class="w"> </span><span class="nx">uses</span><span class="w"> </span><span class="nx">STDOUT</span><span class="w"> </span><span class="nx">CVS</span><span class="w"> </span><span class="nx">style</span><span class="w"> </span><span class="k">like</span><span class="p">:</span>
-<span class="err">#</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">vehicle_id</span><span class="p">&gt;</span><span class="o">|</span><span class="p">&lt;</span><span class="nx">timestep</span><span class="p">&gt;</span><span class="o">|</span><span class="p">&lt;</span><span class="nx">lon</span><span class="p">&gt;</span><span class="o">|</span><span class="p">&lt;</span><span class="nx">lat</span><span class="p">&gt;</span><span class="o">|</span><span class="p">&lt;</span><span class="nx">speed</span><span class="p">&gt;</span>
+<pre><code># This is file gives a brief overview on SUMPlayer usage.
+# SUMOPlayer can be used to play SUMO network-dump files
+# in realtime (if possible) to latitude/longitude coordinates.
+# It can be customized in any way by implementing
+# de.psi.telco.sumoplayer.SUMOLocationListener
+# SEE:
+# public interface SUMOLocationListener {
+#   public void LocationUpdated(String vehicleId, int timestep, double lon, double lat, double speed);
+# }
+# You can call SUMOPlayer with your own implementation by using the
+# -l "&lt;classname&gt;" parameter.
+# If not used, SUMOPlayer uses STDOUT CVS style like:
+# &lt;vehicle_id&gt;|&lt;timestep&gt;|&lt;lon&gt;|&lt;lat&gt;|&lt;speed&gt;
 
-<span class="err">#</span><span class="w"> </span><span class="nx">Eclipse</span><span class="w"> </span><span class="nx">integration</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">easily</span><span class="w"> </span><span class="nx">possible</span><span class="w"> </span><span class="nx">by</span><span class="p">:</span>
-<span class="err">#</span><span class="w"> </span><span class="nx">new</span><span class="o">-</span><span class="nx">project</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">existing</span><span class="w"> </span><span class="nx">ant</span><span class="w"> </span><span class="nx">buildfile</span><span class="w"> </span><span class="p">(</span><span class="nx">build</span><span class="p">.</span><span class="nx">xml</span><span class="p">)</span>
+# Eclipse integration is easily possible by:
+# new-project -&gt; from existing ant buildfile (build.xml)
 
-<span class="err">#</span><span class="w"> </span><span class="nx">see</span><span class="w"> </span><span class="nx">possible</span><span class="w"> </span><span class="nx">ant</span><span class="w"> </span><span class="nx">tasks</span><span class="p">:</span>
-<span class="err">$</span><span class="p">&gt;</span><span class="w"> </span><span class="nx">ant</span><span class="w"> </span><span class="o">-</span><span class="nx">projecthelp</span>
+# see possible ant tasks:
+$&gt; ant -projecthelp
 
-<span class="err">#</span><span class="w"> </span><span class="nx">compile</span>
-<span class="err">$</span><span class="p">&gt;</span><span class="w"> </span><span class="nx">ant</span><span class="w"> </span><span class="nx">sumoplayer</span><span class="p">.</span><span class="nx">jar</span>
+# compile
+$&gt; ant sumoplayer.jar
 
-<span class="err">#</span><span class="w"> </span><span class="nx">run</span><span class="w"> </span><span class="nx">sumoPlayer</span><span class="w"> </span><span class="nx">with</span><span class="p">:</span>
-<span class="err">$</span><span class="p">&gt;</span><span class="w"> </span><span class="nx">ant</span><span class="w"> </span><span class="nx">sumplayer</span><span class="p">.</span><span class="nx">run</span>
-<span class="err">#</span><span class="w"> </span><span class="o">...</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">even</span><span class="w"> </span><span class="nx">better</span><span class="w"> </span><span class="nx">integrated</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">project</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">jarfile</span><span class="p">:</span>
-<span class="err">$</span><span class="p">&gt;</span><span class="w"> </span><span class="nx">java</span><span class="w"> </span><span class="o">-</span><span class="nx">jar</span><span class="w"> </span><span class="nx">sumoplayer</span><span class="p">.</span><span class="nx">jar</span>
-<span class="err">#</span><span class="w"> </span><span class="nx">possible</span><span class="w"> </span><span class="nx">parameters</span><span class="p">:</span>
-<span class="err">#</span><span class="w"> </span><span class="nx">ANT</span><span class="w"> </span><span class="nx">param</span><span class="w">                         </span><span class="err">#</span><span class="w"> </span><span class="nx">description</span>
-<span class="err">#</span><span class="w"> </span><span class="nx">JAR</span><span class="w"> </span><span class="nx">param</span>
+# run sumoPlayer with:
+$&gt; ant sumplayer.run
+# ... or even better integrated in your project by jarfile:
+$&gt; java -jar sumoplayer.jar
+# possible parameters:
+# ANT param                         # description
+# JAR param
 
-<span class="w"> </span><span class="o">-</span><span class="nx">Dnetfile</span><span class="p">=&lt;</span><span class="nx">sumo_network_xml_file</span><span class="p">&gt;</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="nx">sumo</span><span class="w"> </span><span class="nx">network</span><span class="w"> </span><span class="nx">file</span>
-<span class="w"> </span><span class="o">-</span><span class="nx">n</span><span class="w">                                 </span><span class="err">#</span><span class="w"> </span><span class="nx">needed</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">geo</span><span class="w"> </span><span class="nx">coordinate</span><span class="w"> </span><span class="nx">lookups</span>
+ -Dnetfile=&lt;sumo_network_xml_file&gt;  # the used sumo network file
+ -n                                 # needed for geo coordinate lookups
 
-<span class="w"> </span><span class="o">-</span><span class="nx">Dndump</span><span class="p">=&lt;</span><span class="nx">sumo_ndump_xml_file</span><span class="p">&gt;</span><span class="w">      </span><span class="err">#</span><span class="w"> </span><span class="nx">sumo</span><span class="w"> </span><span class="nx">network</span><span class="o">-</span><span class="nx">dump</span><span class="w"> </span><span class="nx">simulation</span><span class="w"> </span><span class="nx">file</span>
-<span class="w"> </span><span class="o">-</span><span class="nx">d</span>
+ -Dndump=&lt;sumo_ndump_xml_file&gt;      # sumo network-dump simulation file
+ -d
 
-<span class="w"> </span><span class="o">-</span><span class="nx">Dequipped</span><span class="p">=&lt;</span><span class="nx">propability</span><span class="p">&gt;</span><span class="w">           </span><span class="err">#</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">floating</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="nx">between</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="mi">1</span>
-<span class="w"> </span><span class="o">-</span><span class="nx">e</span><span class="w">                                 </span><span class="err">#</span><span class="w"> </span><span class="nx">defining</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">tracked</span>
-<span class="w">                                    </span><span class="err">#</span><span class="w"> </span><span class="nx">vehicles</span><span class="p">.</span><span class="w"> </span><span class="m m-Double">0.01</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mi">1</span><span class="o">%</span>
+ -Dequipped=&lt;propability&gt;           # a floating value between 0 and 1
+ -e                                 # defining the number of tracked
+                                    # vehicles. 0.01 is 1%
 
-<span class="w"> </span><span class="o">-</span><span class="nx">Djitter</span><span class="p">=&lt;</span><span class="nx">value_in_meters</span><span class="p">&gt;</span><span class="w">         </span><span class="err">#</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">random</span><span class="w"> </span><span class="nx">GPS</span><span class="w"> </span><span class="nx">jitter</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">meters</span>
-<span class="w"> </span><span class="o">-</span><span class="nx">j</span>
+ -Djitter=&lt;value_in_meters&gt;         # a random GPS jitter in meters
+ -j
 
-<span class="w"> </span><span class="o">-</span><span class="nx">Dlistener</span><span class="p">=&lt;</span><span class="nx">full_java_classname</span><span class="p">&gt;</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="nx">java</span><span class="w"> </span><span class="nx">implementation</span><span class="w"> </span><span class="nx">of</span>
-<span class="w"> </span><span class="o">-</span><span class="nx">l</span><span class="w">                                 </span><span class="err">#</span><span class="w"> </span><span class="nx">SUMOLocationListener</span>
-<span class="w">                                    </span><span class="err">#</span><span class="w"> </span><span class="k">default</span><span class="p">:</span>
-<span class="w">                                    </span><span class="err">#</span><span class="w"> </span><span class="nx">de</span><span class="p">.</span><span class="nx">psi</span><span class="p">.</span><span class="nx">telco</span><span class="p">.</span><span class="nx">sumoplayer</span><span class="p">.</span><span class="nx">SUMOPipedLocationListener</span>
-<span class="w">                                    </span><span class="err">#</span><span class="w">    </span><span class="p">(</span><span class="nx">stdout</span><span class="w"> </span><span class="nx">CSV</span><span class="w"> </span><span class="nx">style</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span>
+ -Dlistener=&lt;full_java_classname&gt;   # the used java implementation of
+ -l                                 # SUMOLocationListener
+                                    # default:
+                                    # de.psi.telco.sumoplayer.SUMOPipedLocationListener
+                                    #    (stdout CSV style data)
 
 
 
-<span class="err">#</span><span class="w"> </span><span class="nx">JAVA</span><span class="w"> </span><span class="nx">DOC</span>
-<span class="err">$</span><span class="p">&gt;</span><span class="w"> </span><span class="nx">ant</span><span class="w"> </span><span class="nx">javadoc</span><span class="w">                      </span><span class="err">#</span><span class="w"> </span><span class="nx">creates</span><span class="w"> </span><span class="nx">JAVA</span><span class="w"> </span><span class="nx">DOCS</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="nx">javadoc</span>
-</code></pre></div>
-
+# JAVA DOC
+$&gt; ant javadoc                      # creates JAVA DOCS in /build/javadoc
+</code></pre>
 <h2 id="additional_information">Additional Information<a class="headerlink" href="#additional_information" title="Permanent link">#</a></h2>
 <p>You can run the player as following:</p>
-<div class="codehilite"><pre><span></span><code>sumo ... --no-step-log --netstate-dump - | java -jar SUMOPlayer.jar -d - -c &lt;probability&gt; -n &lt;used_network_file&gt; ...
-</code></pre></div>
-
+<pre><code>sumo ... --no-step-log --netstate-dump - | java -jar SUMOPlayer.jar -d - -c &lt;probability&gt; -n &lt;used_network_file&gt; ...
+</code></pre>
 <p>("-" redirects the dump to stdout)</p>
 <p>The basic functionality is as following</p>
 <ul>
@@ -296,7 +295,7 @@ Last edit: 06 October 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

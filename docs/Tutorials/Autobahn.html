@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -246,28 +247,26 @@ We will use this approach here, but for more sophisticated realizations
 of vehicle variability, we recommend using the script
 <code>createVehTypeDistribution.py</code> in the <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools directory.</p>
 <p>Create a routes-file <code>autobahn.rou.xml</code> with the following content:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;normal_car&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;passenger&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">speedFactor=</span><span class="s">&quot;0.9&quot;</span><span class="w"> </span><span class="na">speedDev=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;sporty_car&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;passenger&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="na">speedFactor=</span><span class="s">&quot;1.3&quot;</span><span class="w"> </span><span class="na">speedDev=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;trailer&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;trailer&quot;</span><span class="w">  </span><span class="na">maxSpeed=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">speedFactor=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speedDev=</span><span class="s">&quot;0.05&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;coach&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;coach&quot;</span><span class="w">  </span><span class="na">maxSpeed=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">speedFactor=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speedDev=</span><span class="s">&quot;0.05&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;normal&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;normal_car&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;5000&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;5000&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;entry&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;exit&quot;</span><span class="w"> </span><span class="na">departSpeed=</span><span class="s">&quot;avg&quot;</span><span class="w"> </span><span class="na">departLane=</span><span class="s">&quot;best&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;sporty&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;sporty_car&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;5000&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;300&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;entry&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;exit&quot;</span><span class="w"> </span><span class="na">departSpeed=</span><span class="s">&quot;avg&quot;</span><span class="w"> </span><span class="na">departLane=</span><span class="s">&quot;best&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;coach&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;coach&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;5000&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;300&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;entry&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;exit&quot;</span><span class="w"> </span><span class="na">departSpeed=</span><span class="s">&quot;avg&quot;</span><span class="w"> </span><span class="na">departLane=</span><span class="s">&quot;best&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;trailer&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;trailer&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;5000&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;700&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;entry&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;exit&quot;</span><span class="w"> </span><span class="na">departSpeed=</span><span class="s">&quot;avg&quot;</span><span class="w"> </span><span class="na">departLane=</span><span class="s">&quot;best&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vType id=&quot;normal_car&quot; vClass=&quot;passenger&quot; maxSpeed=&quot;40&quot; speedFactor=&quot;0.9&quot; speedDev=&quot;0.2&quot; sigma=&quot;0.5&quot; /&gt;
+    &lt;vType id=&quot;sporty_car&quot; vClass=&quot;passenger&quot; maxSpeed=&quot;60&quot; speedFactor=&quot;1.3&quot; speedDev=&quot;0.1&quot; sigma=&quot;0.1&quot; /&gt;
+    &lt;vType id=&quot;trailer&quot; vClass=&quot;trailer&quot;  maxSpeed=&quot;30&quot; speedFactor=&quot;1&quot; speedDev=&quot;0.05&quot; /&gt;
+    &lt;vType id=&quot;coach&quot; vClass=&quot;coach&quot;  maxSpeed=&quot;30&quot; speedFactor=&quot;1&quot; speedDev=&quot;0.05&quot; /&gt;
+    &lt;flow id=&quot;normal&quot; type=&quot;normal_car&quot; begin=&quot;0&quot; end=&quot;5000&quot; number=&quot;5000&quot; from=&quot;entry&quot; to=&quot;exit&quot; departSpeed=&quot;avg&quot; departLane=&quot;best&quot; /&gt;
+    &lt;flow id=&quot;sporty&quot; type=&quot;sporty_car&quot; begin=&quot;0&quot; end=&quot;5000&quot; number=&quot;300&quot; from=&quot;entry&quot; to=&quot;exit&quot; departSpeed=&quot;avg&quot; departLane=&quot;best&quot; /&gt;
+    &lt;flow id=&quot;coach&quot; type=&quot;coach&quot; begin=&quot;0&quot; end=&quot;5000&quot; number=&quot;300&quot; from=&quot;entry&quot; to=&quot;exit&quot; departSpeed=&quot;avg&quot; departLane=&quot;best&quot; /&gt;
+    &lt;flow id=&quot;trailer&quot; type=&quot;trailer&quot; begin=&quot;0&quot; end=&quot;5000&quot; number=&quot;700&quot; from=&quot;entry&quot; to=&quot;exit&quot; departSpeed=&quot;avg&quot; departLane=&quot;best&quot; /&gt;
+&lt;/routes&gt;
+</code></pre>
 <h1 id="run_the_simulation">Run the Simulation<a class="headerlink" href="#run_the_simulation" title="Permanent link">#</a></h1>
 <p>Create a config-file <code>autobahn.sumocfg</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">   </span><span class="nt">&lt;input&gt;</span>
-<span class="w">       </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;autobahn.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;route-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;autobahn.rou.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/input&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;configuration&gt;
+   &lt;input&gt;
+       &lt;net-file value=&quot;autobahn.net.xml&quot;/&gt;
+       &lt;route-files value=&quot;autobahn.rou.xml&quot;/&gt;
+   &lt;/input&gt;
+&lt;/configuration&gt;
+</code></pre>
 <p><img alt="autobahnEditViewSettings.png" src="../images/AutobahnEditViewSettings.png" title="Editing and saving of view settings" /></p>
 <p>Editing and saving of view settings</p>
 <p>Start SUMO with this config. In the
@@ -285,15 +284,14 @@ including delay in the export. To save our current visualization scheme,
 click on the floppy-icon in the View Settings dialog and save it as
 <code>autobahn.view.xml</code>. Then adapt the configuration to load the view
 settings by adding a <code>&lt;gui-settings-file ... /&gt;</code>-element:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">   </span><span class="nt">&lt;input&gt;</span>
-<span class="w">       </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;autobahn.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;route-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;autobahn.rou.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;gui-settings-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;autobahn.view.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/input&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;configuration&gt;
+   &lt;input&gt;
+       &lt;net-file value=&quot;autobahn.net.xml&quot;/&gt;
+       &lt;route-files value=&quot;autobahn.rou.xml&quot;/&gt;
+       &lt;gui-settings-file value=&quot;autobahn.view.xml&quot;/&gt;
+   &lt;/input&gt;
+&lt;/configuration&gt;
+</code></pre>
 <p>If you now restart SUMO with the configuration, it will automatically
 load the view settings stored in <code>autobahn.view.xml</code>.</p>
 <p>Back to <a href="index.html">Tutorials</a>.</p>
@@ -304,7 +302,7 @@ load the view settings stored in <code>autobahn.view.xml</code>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

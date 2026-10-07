@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -225,21 +226,20 @@ The output period can be set by using option <strong>--device.fcd.period</strong
 To delay output (i.e. until some warm-up time has passed), the option <strong>--device.fcd.begin</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;TIME&gt;</em></a> may be used.</p>
 <h2 id="generated_output">Generated Output<a class="headerlink" href="#generated_output" title="Permanent link">#</a></h2>
 <p>The generated XML file looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;fcd-export&gt;</span>
+<pre><code class="language-xml">&lt;fcd-export&gt;
 
-<span class="w">  </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;&lt;TIME_STEP&gt;&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;VEHICLE_ID&gt;&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;&lt;VEHICLE_POS_X&gt;&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;&lt;VEHICLE_POS_Y&gt;&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;&lt;VEHICLE_ANGLE&gt;&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;&lt;VEHICLE_TYPE&gt;&quot;</span>
-<span class="w">      </span><span class="na">speed=</span><span class="s">&quot;&lt;VEHICLE_SPEED&gt;&quot;</span><span class="nt">/&gt;</span>
+  &lt;timestep time=&quot;&lt;TIME_STEP&gt;&quot;&gt;
+      &lt;vehicle id=&quot;&lt;VEHICLE_ID&gt;&quot; x=&quot;&lt;VEHICLE_POS_X&gt;&quot; y=&quot;&lt;VEHICLE_POS_Y&gt;&quot; angle=&quot;&lt;VEHICLE_ANGLE&gt;&quot; type=&quot;&lt;VEHICLE_TYPE&gt;&quot;
+      speed=&quot;&lt;VEHICLE_SPEED&gt;&quot;/&gt;
 
-<span class="w">      </span>...<span class="w"> </span>more<span class="w"> </span>vehicles<span class="w"> </span>...
+      ... more vehicles ...
 
-<span class="w">  </span><span class="nt">&lt;/timestep&gt;</span>
+  &lt;/timestep&gt;
 
-<span class="w">  </span>...<span class="w"> </span>next<span class="w"> </span>timestep<span class="w"> </span>...
+  ... next timestep ...
 
-<span class="nt">&lt;/fcd-export&gt;</span>
-</code></pre></div>
-
+&lt;/fcd-export&gt;
+</code></pre>
 <p>The values without a tick in the "On" column need to be <a href="#further_options">enabled explicitly</a> and the ones without a tick at "Meso" are not available for the <a href="../Meso.html">mesoscopic simulation</a>.</p>
 <table>
 <thead>
@@ -380,7 +380,7 @@ To delay output (i.e. until some warm-up time has passed), the option <strong>--
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

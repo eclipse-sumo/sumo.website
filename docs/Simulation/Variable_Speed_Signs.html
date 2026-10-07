@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -209,15 +210,14 @@ Last edit: 06 October 2026
 <p>One of the trigger objects that may be specified within an <a href="/docs/sumo.html#format_of_additional_files"><em>additional-file</em></a> allows the
 simulation of variable speed signs. The syntax for such an object is given in the following</p>
 <h1 id="definition_in_a_single_file">Definition in a single file<a class="headerlink" href="#definition_in_a_single_file" title="Permanent link">#</a></h1>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">    </span><span class="nt">&lt;variableSpeedSign</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;vss0&quot;</span><span class="w"> </span><span class="na">lanes=</span><span class="s">&quot;middle_0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;step</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;2.8&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;step</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;47.22&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;step</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;200&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;-1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/variableSpeedSign&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+    &lt;variableSpeedSign id=&quot;vss0&quot; lanes=&quot;middle_0&quot;&gt;
+        &lt;step time=&quot;0&quot; speed=&quot;2.8&quot;/&gt;
+        &lt;step time=&quot;100&quot; speed=&quot;47.22&quot;/&gt;
+        &lt;step time=&quot;200&quot; speed=&quot;-1&quot;/&gt;
+    &lt;/variableSpeedSign&gt;
+&lt;/additional&gt;
+</code></pre>
 <p>The following attributes are used within the <code>VariableSpeedSign</code> element:</p>
 <table>
 <thead>
@@ -270,28 +270,26 @@ and the speed to set itself and uses the following attributes:</p>
 </table>
 <h1 id="definition_with_an_external_file">Definition with an external file<a class="headerlink" href="#definition_with_an_external_file" title="Permanent link">#</a></h1>
 <p>Instead of defining the speed changes of a <code>&lt;variableSpeedSign&gt;</code> in the same file, it may also be read from a second file as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">  </span><span class="nt">&lt;variableSpeedSign</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;VSS_ID&quot;</span><span class="w"> </span><span class="na">lanes=</span><span class="s">&quot;LANE_IDS&quot;</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;DEF_FILE&quot;</span><span class="nt">&gt;</span>
-<span class="w">     </span><span class="nt">&lt;step</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;&lt;TIME&gt;&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;&lt;SPEED&gt;&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;variableSpeedSign id=&quot;VSS_ID&quot; lanes=&quot;LANE_IDS&quot; file=&quot;DEF_FILE&quot;&gt;
+     &lt;step time=&quot;&lt;TIME&gt;&quot; speed=&quot;&lt;SPEED&gt;&quot;/&gt;
 
-<span class="w">     </span>...<span class="w"> </span>further<span class="w"> </span>entries<span class="w"> </span>...
+     ... further entries ...
 
-<span class="w">  </span><span class="nt">&lt;/variableSpeedSign&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+  &lt;/variableSpeedSign&gt;
+&lt;/additional&gt;
+</code></pre>
 <p>A file name can be supplied, called &lt;DEF_FILE&gt; within the schema above. This file must contain the
 information about when a certain speed shall be set onto the lane. This
 file has the following format:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vss&gt;</span>
-<span class="w">  </span><span class="nt">&lt;step</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;&lt;TIME&gt;&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;&lt;SPEED&gt;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;step</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;&lt;TIME&gt;&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;&lt;SPEED&gt;&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;vss&gt;
+  &lt;step time=&quot;&lt;TIME&gt;&quot; speed=&quot;&lt;SPEED&gt;&quot;/&gt;
+  &lt;step time=&quot;&lt;TIME&gt;&quot; speed=&quot;&lt;SPEED&gt;&quot;/&gt;
 
-<span class="w">  </span>...<span class="w"> </span>further<span class="w"> </span>entries<span class="w"> </span>...
+  ... further entries ...
 
-<span class="nt">&lt;/vss&gt;</span>
-</code></pre></div>
-
+&lt;/vss&gt;
+</code></pre>
 <p>Examples for <code>variableSpeedSign</code> definitions can be obtained <a href="https://sumo.dlr.de/extractTest.php?path=sumo/extended/variable_speed_signs">from our test suites</a></p>
                 </main>
           </div>
@@ -300,7 +298,7 @@ file has the following format:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -226,81 +227,76 @@ The way to do this is highly dependent on your individual setup.
 We try <a href="Containerized_SUMO_GUI.html">in a dedicated tutorial</a> to give advice on how to do this.</p>
 <h2 id="getting_the_docker_image">Getting the docker image<a class="headerlink" href="#getting_the_docker_image" title="Permanent link">#</a></h2>
 <p>You can either get the latest docker image from the SUMO docker registry by using</p>
-<div class="codehilite"><pre><span></span><code><span class="w">  </span>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/eclipse-sumo/sumo:latest
-</code></pre></div>
-
+<pre><code class="language-shell">  docker pull ghcr.io/eclipse-sumo/sumo:latest
+</code></pre>
 <p>or build your own local version of the image by checking out the <a href="https://github.com/eclipse-sumo/sumo">SUMO repository</a> and executing:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nb">cd</span><span class="w"> </span>build_config/docker
-<span class="w">  </span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>ghcr.io/eclipse-sumo/sumo:latest<span class="w"> </span>-f<span class="w"> </span>Dockerfile.ubuntu.git<span class="w"> </span>.
-</code></pre></div>
-
+<pre><code class="language-shell">  cd build_config/docker
+  docker build -t ghcr.io/eclipse-sumo/sumo:latest -f Dockerfile.ubuntu.git .
+</code></pre>
 <h2 id="creating_simulation_files">Creating simulation files<a class="headerlink" href="#creating_simulation_files" title="Permanent link">#</a></h2>
 <p>For this tutorial we use the simulation files from the <a href="Hello_SUMO.html">Hello SUMO Tutorial</a>.
 Check out that tutorial to learn about the purpose of the files.</p>
 <p>Create a directory called <code>hello_sumo_docker</code> and in it create 3 files:</p>
 <h4 id="hellonetxml"><code>hello.net.xml</code><a class="headerlink" href="#hellonetxml" title="Permanent link">#</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;net</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.20&quot;</span><span class="w"> </span><span class="na">junctionCornerDetail=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">limitTurnSpeed=</span><span class="s">&quot;5.50&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-<span class="w">     </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;http://sumo.dlr.de/xsd/net_file.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;location</span><span class="w"> </span><span class="na">netOffset=</span><span class="s">&quot;250.00,0.00&quot;</span><span class="w"> </span><span class="na">convBoundary=</span><span class="s">&quot;0.00,0.00,501.00,0.00&quot;</span><span class="w"> </span><span class="na">origBoundary=</span><span class="s">&quot;-250.00,0.00,251.00,0.00&quot;</span>
-<span class="w">              </span><span class="na">projParameter=</span><span class="s">&quot;!&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;:2_0&quot;</span><span class="w"> </span><span class="na">function=</span><span class="s">&quot;internal&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;lane</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;:2_0_0&quot;</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;0.10&quot;</span><span class="w"> </span><span class="na">shape=</span><span class="s">&quot;500.00,-1.60 500.00,-1.60&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/edge&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1to2&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;lane</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1to2_0&quot;</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;500.00&quot;</span><span class="w"> </span><span class="na">shape=</span><span class="s">&quot;0.00,-1.60 500.00,-1.60&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/edge&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;out&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;lane</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;out_0&quot;</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;1.00&quot;</span><span class="w"> </span><span class="na">shape=</span><span class="s">&quot;500.00,-1.60 501.00,-1.60&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/edge&gt;</span>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;net version=&quot;1.20&quot; junctionCornerDetail=&quot;5&quot; limitTurnSpeed=&quot;5.50&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+     xsi:noNamespaceSchemaLocation=&quot;http://sumo.dlr.de/xsd/net_file.xsd&quot;&gt;
+    &lt;location netOffset=&quot;250.00,0.00&quot; convBoundary=&quot;0.00,0.00,501.00,0.00&quot; origBoundary=&quot;-250.00,0.00,251.00,0.00&quot;
+              projParameter=&quot;!&quot;/&gt;
+    &lt;edge id=&quot;:2_0&quot; function=&quot;internal&quot;&gt;
+        &lt;lane id=&quot;:2_0_0&quot; index=&quot;0&quot; speed=&quot;13.89&quot; length=&quot;0.10&quot; shape=&quot;500.00,-1.60 500.00,-1.60&quot;/&gt;
+    &lt;/edge&gt;
+    &lt;edge id=&quot;1to2&quot; from=&quot;1&quot; to=&quot;2&quot; priority=&quot;-1&quot;&gt;
+        &lt;lane id=&quot;1to2_0&quot; index=&quot;0&quot; speed=&quot;13.89&quot; length=&quot;500.00&quot; shape=&quot;0.00,-1.60 500.00,-1.60&quot;/&gt;
+    &lt;/edge&gt;
+    &lt;edge id=&quot;out&quot; from=&quot;2&quot; to=&quot;3&quot; priority=&quot;-1&quot;&gt;
+        &lt;lane id=&quot;out_0&quot; index=&quot;0&quot; speed=&quot;13.89&quot; length=&quot;1.00&quot; shape=&quot;500.00,-1.60 501.00,-1.60&quot;/&gt;
+    &lt;/edge&gt;
 
-<span class="w">    </span><span class="nt">&lt;junction</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;dead_end&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">incLanes=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">intLanes=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">shape=</span><span class="s">&quot;0.00,0.00 0.00,-3.20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;junction</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;priority&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;500.00&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">incLanes=</span><span class="s">&quot;1to2_0&quot;</span><span class="w"> </span><span class="na">intLanes=</span><span class="s">&quot;:2_0_0&quot;</span>
-<span class="w">              </span><span class="na">shape=</span><span class="s">&quot;500.00,0.00 500.00,-3.20 500.00,0.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;request</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">response=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">foes=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">cont=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/junction&gt;</span>
-<span class="w">    </span><span class="nt">&lt;junction</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;dead_end&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;501.00&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">incLanes=</span><span class="s">&quot;out_0&quot;</span><span class="w"> </span><span class="na">intLanes=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">shape=</span><span class="s">&quot;501.00,-3.20 501.00,0.00&quot;</span><span class="nt">/&gt;</span>
+    &lt;junction id=&quot;1&quot; type=&quot;dead_end&quot; x=&quot;0.00&quot; y=&quot;0.00&quot; incLanes=&quot;&quot; intLanes=&quot;&quot; shape=&quot;0.00,0.00 0.00,-3.20&quot;/&gt;
+    &lt;junction id=&quot;2&quot; type=&quot;priority&quot; x=&quot;500.00&quot; y=&quot;0.00&quot; incLanes=&quot;1to2_0&quot; intLanes=&quot;:2_0_0&quot;
+              shape=&quot;500.00,0.00 500.00,-3.20 500.00,0.00&quot;&gt;
+        &lt;request index=&quot;0&quot; response=&quot;0&quot; foes=&quot;0&quot; cont=&quot;0&quot;/&gt;
+    &lt;/junction&gt;
+    &lt;junction id=&quot;3&quot; type=&quot;dead_end&quot; x=&quot;501.00&quot; y=&quot;0.00&quot; incLanes=&quot;out_0&quot; intLanes=&quot;&quot; shape=&quot;501.00,-3.20 501.00,0.00&quot;/&gt;
 
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1to2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;out&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">via=</span><span class="s">&quot;:2_0_0&quot;</span><span class="w"> </span><span class="na">dir=</span><span class="s">&quot;s&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;M&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;:2_0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;out&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">dir=</span><span class="s">&quot;s&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;M&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/net&gt;</span>
-</code></pre></div>
-
+    &lt;connection from=&quot;1to2&quot; to=&quot;out&quot; fromLane=&quot;0&quot; toLane=&quot;0&quot; via=&quot;:2_0_0&quot; dir=&quot;s&quot; state=&quot;M&quot;/&gt;
+    &lt;connection from=&quot;:2_0&quot; to=&quot;out&quot; fromLane=&quot;0&quot; toLane=&quot;0&quot; dir=&quot;s&quot; state=&quot;M&quot;/&gt;
+&lt;/net&gt;
+</code></pre>
 <h4 id="hellorouxml"><code>hello.rou.xml</code><a class="headerlink" href="#hellorouxml" title="Permanent link">#</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;5.0&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;Car&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;2.0&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;100.0&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;1to2 out&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;Car&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vType accel=&quot;1.0&quot; decel=&quot;5.0&quot; id=&quot;Car&quot; length=&quot;2.0&quot; maxSpeed=&quot;100.0&quot; sigma=&quot;0.0&quot;/&gt;
+    &lt;route id=&quot;route0&quot; edges=&quot;1to2 out&quot;/&gt;
+    &lt;vehicle depart=&quot;1&quot; id=&quot;veh0&quot; route=&quot;route0&quot; type=&quot;Car&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
 <h4 id="hellosumocfg"><code>hello.sumocfg</code><a class="headerlink" href="#hellosumocfg" title="Permanent link">#</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">    </span><span class="nt">&lt;input&gt;</span>
-<span class="w">        </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;hello.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;hello.rou.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/input&gt;</span>
-<span class="w">    </span><span class="nt">&lt;time&gt;</span>
-<span class="w">        </span><span class="nt">&lt;begin</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;end</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/time&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">
+&lt;configuration&gt;
+    &lt;input&gt;
+        &lt;net-file value=&quot;hello.net.xml&quot;/&gt;
+        &lt;route-files value=&quot;hello.rou.xml&quot;/&gt;
+    &lt;/input&gt;
+    &lt;time&gt;
+        &lt;begin value=&quot;0&quot;/&gt;
+        &lt;end value=&quot;10000&quot;/&gt;
+    &lt;/time&gt;
+&lt;/configuration&gt;
+</code></pre>
 <h2 id="running_the_simulation">Running the simulation<a class="headerlink" href="#running_the_simulation" title="Permanent link">#</a></h2>
 <p>To run the simulation start a new container from the image and mount the directory in there with the <code>-v</code>-Option.
 Add <code>--full-output result.xml</code> to the SUMO command to get the result of the simulation.
 The command to start the container might look like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="c1"># Replace this with the location where your simulation files are located.</span>
-<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">SIMULATION_FILES_DIR</span><span class="o">=</span><span class="nv">$PWD</span>
+<pre><code class="language-shell">  # Replace this with the location where your simulation files are located.
+  export SIMULATION_FILES_DIR=$PWD
 
-<span class="w">  </span>docker<span class="w"> </span>run<span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>--rm<span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>-v<span class="w"> </span><span class="nv">$SIMULATION_FILES_DIR</span>:<span class="nv">$SIMULATION_FILES_DIR</span><span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>ghcr.io/eclipse-sumo/sumo:latest<span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>sumo<span class="w"> </span>--configuration-file<span class="w"> </span><span class="nv">$SIMULATION_FILES_DIR</span>/hello.sumocfg<span class="w"> </span>--full-output<span class="w"> </span><span class="nv">$SIMULATION_FILES_DIR</span>/result.xml
-</code></pre></div>
-
+  docker run \
+      --rm \
+      -v $SIMULATION_FILES_DIR:$SIMULATION_FILES_DIR \
+      ghcr.io/eclipse-sumo/sumo:latest \
+      sumo --configuration-file $SIMULATION_FILES_DIR/hello.sumocfg --full-output $SIMULATION_FILES_DIR/result.xml
+</code></pre>
 <p>This will run the simulation specified in <code>hello.sumocfg</code>.
 After that, a file named <code>result.xml</code> will have been created, which contains the output of the simulation.</p>
 <h2 id="further_reading">Further Reading<a class="headerlink" href="#further_reading" title="Permanent link">#</a></h2>
@@ -312,7 +308,7 @@ After that, a file named <code>result.xml</code> will have been created, which c
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

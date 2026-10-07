@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -193,11 +194,10 @@ OpenStreetMap file</a>
 following the <a href="../Import_from_OpenStreetMap.html">Tutorials/Import from
 OpenStreetMap</a>. The
 netconvert call was:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span>netconvert<span class="w"> </span>--type-files<span class="w"> </span><span class="cp">${</span><span class="n">SUMO_HOME</span><span class="cp">}</span>/data/typemap/osmNetconvert.typ.xml,<span class="cp">${</span><span class="n">SUMO_HOME</span><span class="cp">}</span>/data/typemap/osmNetconvertUrbanDe.typ.xml<span class="w">  </span>--remove-edges.by-vclass<span class="w"> </span>hov,taxi,bus,delivery,transport,lightrail,cityrail,
-<span class="w">    </span>rail_slow,rail_fast,motorcycle,bicycle,pedestrian<span class="w"> </span>--remove-geometry<span class="w"> </span>--remove-isolated<span class="w"> </span>--try-join-tls<span class="w"> </span>--verbose<span class="w"> </span>--seed<span class="w"> </span>1<span class="w"> </span>--osm-files<span class="w"> </span>eichstaett.osm<span class="w"> </span>--output-file
-<span class="w">    </span>eichstaett.net.xml
-</code></pre></div>
-
+<pre><code>    netconvert --type-files ${SUMO_HOME}/data/typemap/osmNetconvert.typ.xml,${SUMO_HOME}/data/typemap/osmNetconvertUrbanDe.typ.xml  --remove-edges.by-vclass hov,taxi,bus,delivery,transport,lightrail,cityrail,
+    rail_slow,rail_fast,motorcycle,bicycle,pedestrian --remove-geometry --remove-isolated --try-join-tls --verbose --seed 1 --osm-files eichstaett.osm --output-file
+    eichstaett.net.xml
+</code></pre>
 <p>You can use this file if you need a road network of a town with about
 13,000 inhabitants. All roads were verified to have the right highway
 type, speed limit and one-way attribute. All traffic lights of cars (not
@@ -236,7 +236,7 @@ all pedestrian lights) were also verified. See also
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

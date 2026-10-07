@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -244,23 +245,22 @@ sign</a>.</p>
 would be expected given the specified flow and speed. This ensures that
 invalid jams do not grow upstream past a calibrator. This behavior can be controlled with attribute 'jamThreshold' (see below).</p>
 <p>If no target flow is given, the provided type information will instead be used to modify the type of vehicles that are passing the calibrator.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;t0&quot;</span><span class="w"> </span><span class="na">speedDev=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">speedFactor=</span><span class="s">&quot;1.2&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;c1&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;beg middle end rend&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;vType id=&quot;t0&quot; speedDev=&quot;0.1&quot; speedFactor=&quot;1.2&quot; sigma=&quot;0&quot;/&gt;
+  &lt;route id=&quot;c1&quot; edges=&quot;beg middle end rend&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;calibrator</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;calibtest_edge&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">output=</span><span class="s">&quot;detector.xml&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w">    </span><span class="na">end=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;c1&quot;</span><span class="w"> </span><span class="na">vehsPerHour=</span><span class="s">&quot;2500&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;27.8&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;t0&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;free&quot;</span><span class="w"> </span><span class="na">departSpeed=</span><span class="s">&quot;max&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;3600&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;c1&quot;</span><span class="w"> </span><span class="na">vehsPerHour=</span><span class="s">&quot;2500&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;15.0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;t0&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;free&quot;</span><span class="w"> </span><span class="na">departSpeed=</span><span class="s">&quot;max&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/calibrator&gt;</span>
+  &lt;calibrator id=&quot;calibtest_edge&quot; edge=&quot;beg&quot; pos=&quot;0&quot; output=&quot;detector.xml&quot;&gt;
+    &lt;flow begin=&quot;0&quot;    end=&quot;1800&quot; route=&quot;c1&quot; vehsPerHour=&quot;2500&quot; speed=&quot;27.8&quot; type=&quot;t0&quot; departPos=&quot;free&quot; departSpeed=&quot;max&quot;/&gt;
+    &lt;flow begin=&quot;1800&quot; end=&quot;3600&quot; route=&quot;c1&quot; vehsPerHour=&quot;2500&quot; speed=&quot;15.0&quot; type=&quot;t0&quot; departPos=&quot;free&quot; departSpeed=&quot;max&quot;/&gt;
+  &lt;/calibrator&gt;
 
-<span class="w">  </span><span class="nt">&lt;calibrator</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;calibtest_lane&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;middle_1&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">output=</span><span class="s">&quot;detector.xml&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w">    </span><span class="na">end=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;c1&quot;</span><span class="w"> </span><span class="na">vehsPerHour=</span><span class="s">&quot;600&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;27.8&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;t0&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;free&quot;</span><span class="w"> </span><span class="na">departSpeed=</span><span class="s">&quot;max&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;3600&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;c1&quot;</span><span class="w"> </span><span class="na">vehsPerHour=</span><span class="s">&quot;800&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;15.0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;t0&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;free&quot;</span><span class="w"> </span><span class="na">departSpeed=</span><span class="s">&quot;max&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/calibrator&gt;</span>
+  &lt;calibrator id=&quot;calibtest_lane&quot; edge=&quot;middle_1&quot; pos=&quot;0&quot; output=&quot;detector.xml&quot;&gt;
+    &lt;flow begin=&quot;0&quot;    end=&quot;1800&quot; route=&quot;c1&quot; vehsPerHour=&quot;600&quot; speed=&quot;27.8&quot; type=&quot;t0&quot; departPos=&quot;free&quot; departSpeed=&quot;max&quot;/&gt;
+    &lt;flow begin=&quot;1800&quot; end=&quot;3600&quot; route=&quot;c1&quot; vehsPerHour=&quot;800&quot; speed=&quot;15.0&quot; type=&quot;t0&quot; departPos=&quot;free&quot; departSpeed=&quot;max&quot;/&gt;
+  &lt;/calibrator&gt;
 
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+&lt;/additional&gt;
+</code></pre>
 <p>The following attributes/elements are used within the calibrator
 element:</p>
 <table>
@@ -361,27 +361,25 @@ attribute of the flow is used. Note, that this value may also specify
 the name of a route distribution.</p>
 <h2 id="calibrating_only_flow">Calibrating only Flow<a class="headerlink" href="#calibrating_only_flow" title="Permanent link">#</a></h2>
 <p>If attribute 'speed' is omitted from the <code>&lt;flow&gt;</code> definition, the calibrator will only affect flow by removing or insertion vehicles:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;t0&quot;</span><span class="w"> </span><span class="na">speedDev=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">speedFactor=</span><span class="s">&quot;1.2&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;c1&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;beg middle end rend&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;vType id=&quot;t0&quot; speedDev=&quot;0.1&quot; speedFactor=&quot;1.2&quot; sigma=&quot;0&quot;/&gt;
+  &lt;route id=&quot;c1&quot; edges=&quot;beg middle end rend&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;calibrator</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;calibtest_edge&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">output=</span><span class="s">&quot;detector.xml&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w">    </span><span class="na">end=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;c1&quot;</span><span class="w"> </span><span class="na">vehsPerHour=</span><span class="s">&quot;2500&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;t0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;3600&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;c1&quot;</span><span class="w"> </span><span class="na">vehsPerHour=</span><span class="s">&quot;2500&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;t0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/calibrator&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+  &lt;calibrator id=&quot;calibtest_edge&quot; edge=&quot;beg&quot; pos=&quot;0&quot; output=&quot;detector.xml&quot;&gt;
+    &lt;flow begin=&quot;0&quot;    end=&quot;1800&quot; route=&quot;c1&quot; vehsPerHour=&quot;2500&quot; type=&quot;t0&quot;/&gt;
+    &lt;flow begin=&quot;1800&quot; end=&quot;3600&quot; route=&quot;c1&quot; vehsPerHour=&quot;2500&quot; type=&quot;t0&quot;/&gt;
+  &lt;/calibrator&gt;
+&lt;/additional&gt;
+</code></pre>
 <h2 id="calibrating_only_speed">Calibrating only Speed<a class="headerlink" href="#calibrating_only_speed" title="Permanent link">#</a></h2>
 <p>If only attribute 'speed' is given in the <code>&lt;flow&gt;</code> definition, the calibrator acts similar to a <a href="Variable_Speed_Signs.html">variableSpeedSign</a>:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">  </span><span class="nt">&lt;calibrator</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;calibtest_edge&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">output=</span><span class="s">&quot;detector.xml&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w">    </span><span class="na">end=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;3600&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/calibrator&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;calibrator id=&quot;calibtest_edge&quot; edge=&quot;beg&quot; pos=&quot;0&quot; output=&quot;detector.xml&quot;&gt;
+    &lt;flow begin=&quot;0&quot;    end=&quot;1800&quot; speed=&quot;10&quot;/&gt;
+    &lt;flow begin=&quot;1800&quot; end=&quot;3600&quot; speed=&quot;20&quot;/&gt;
+  &lt;/calibrator&gt;
+&lt;/additional&gt;
+</code></pre>
 <h2 id="calibrating_vehicle_types">Calibrating vehicle types<a class="headerlink" href="#calibrating_vehicle_types" title="Permanent link">#</a></h2>
 <p>When a calibrator flow is defined without attribute <code>vehsPerHour</code> but with attribute <code>type</code>, this defines a type-calibrator.
 This type of calibrator will modify the types of all passing vehicles (or all vehicles that match the <code>vTypes</code> attribute of the calibrator).
@@ -406,17 +404,16 @@ The normal behavior is to replace the type of the passing vehicles with the type
 </ul>
 <p>Both can be accomplished by using the <code>vTypes</code> attribute of the calibrator to make it apply to a subset of types only.
 For a dependent mapping, multiple calibrators (each with a different <code>vTypes</code> attribute) may be defined as in the following example:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">  </span>...
-<span class="w">  </span><span class="nt">&lt;calibrator</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;forCars&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;E1&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">vTypes=</span><span class="s">&quot;myCarType&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;myCarType2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/calibrator&gt;</span>
-<span class="w">  </span><span class="nt">&lt;calibrator</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;forTrucks&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;E1&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">vTypes=</span><span class="s">&quot;myTruckType&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;myTruckType2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/calibrator&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+  ...
+  &lt;calibrator id=&quot;forCars&quot; edge=&quot;E1&quot; pos=&quot;0&quot; vTypes=&quot;myCarType&quot;&gt;
+    &lt;flow begin=&quot;0&quot; end=&quot;1800&quot; type=&quot;myCarType2&quot;/&gt;
+  &lt;/calibrator&gt;
+  &lt;calibrator id=&quot;forTrucks&quot; edge=&quot;E1&quot; pos=&quot;0&quot; vTypes=&quot;myTruckType&quot;&gt;
+    &lt;flow begin=&quot;0&quot; end=&quot;1800&quot; type=&quot;myTruckType2&quot;/&gt;
+  &lt;/calibrator&gt;
+&lt;/additional&gt;
+</code></pre>
 <p>If there are many different vehicle types in the simulation, creating one calibrator per vType may be cumbersome to define.
 In this case it may be better to define a mapping between type distributions as described below.</p>
 <h3 id="mapping_between_vtypedistributions">Mapping between vTypeDistributions<a class="headerlink" href="#mapping_between_vtypedistributions" title="Permanent link">#</a></h3>
@@ -428,36 +425,33 @@ In this case, the new type of the passing vehicle will be mapped to a specific t
 - the index of the actual vehicle type in the original vTypeDistribution will be computed
 - the type with that index in the new vTypeDistribution will be used as the new vehicle type</p>
 <p>Example route-file input:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vTypeDistribution</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;dist1&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;car&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;70&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;truck&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;truck&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/vTypeDistribution&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vTypeDistribution id=&quot;dist1&quot;&gt;
+  &lt;vType id=&quot;car&quot; probability=&quot;70&quot;/&gt;
+  &lt;vType id=&quot;truck&quot; maxSpeed=&quot;10&quot; probability=&quot;30&quot; vClass=&quot;truck&quot;/&gt;
+&lt;/vTypeDistribution&gt;
+</code></pre>
 <p>Example additional-file input:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vTypeDistribution</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bad_weather&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;car2&quot;</span><span class="w"> </span><span class="na">speedFactor=</span><span class="s">&quot;0.8&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;truck2&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">tau=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;truck&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/vTypeDistribution&gt;</span>
+<pre><code class="language-xml">&lt;vTypeDistribution id=&quot;bad_weather&quot;&gt;
+  &lt;vType id=&quot;car2&quot; speedFactor=&quot;0.8&quot; decel=&quot;3&quot;/&gt;
+  &lt;vType id=&quot;truck2&quot; decel=&quot;2&quot; tau=&quot;1.5&quot; vClass=&quot;truck&quot;/&gt;
+&lt;/vTypeDistribution&gt;
 
-<span class="nt">&lt;calibrator</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;c1&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;middle_0&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">output=</span><span class="s">&quot;detector.xml&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;900&quot;</span><span class="w">    </span><span class="na">end=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;r1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;bad_weather&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/calibrator&gt;</span>
-</code></pre></div>
-
+&lt;calibrator id=&quot;c1&quot; lane=&quot;middle_0&quot; pos=&quot;0&quot; output=&quot;detector.xml&quot;&gt;
+  &lt;flow begin=&quot;900&quot;    end=&quot;1800&quot; route=&quot;r1&quot; type=&quot;bad_weather&quot;/&gt;
+&lt;/calibrator&gt;
+</code></pre>
 <p>In this example, all cars will be mapped to slower cars (type 'car' to 'car2') and all trucks will be mapped to trucks that keep larger distances.</p>
 <h3 id="calibrating_on_junctions">Calibrating on junctions<a class="headerlink" href="#calibrating_on_junctions" title="Permanent link">#</a></h3>
 <p>You can define a type calibration for a whole junction in the following way:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">  </span><span class="nt">&lt;calibrator</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;cars&quot;</span><span class="w"> </span><span class="na">node=</span><span class="s">&quot;J1&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;myNewCarType&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/calibrator&gt;</span>
-<span class="w">  </span><span class="nt">&lt;calibrator</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;carsUndone&quot;</span><span class="w"> </span><span class="na">node=</span><span class="s">&quot;J2&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">local=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;myNewCarType2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/calibrator&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;calibrator id=&quot;cars&quot; node=&quot;J1&quot; pos=&quot;0&quot;&gt;
+    &lt;flow begin=&quot;0&quot; end=&quot;1800&quot; type=&quot;myNewCarType&quot;/&gt;
+  &lt;/calibrator&gt;
+  &lt;calibrator id=&quot;carsUndone&quot; node=&quot;J2&quot; pos=&quot;0&quot; local=&quot;true&quot;&gt;
+    &lt;flow begin=&quot;0&quot; end=&quot;1800&quot; type=&quot;myNewCarType2&quot;/&gt;
+  &lt;/calibrator&gt;
+&lt;/additional&gt;
+</code></pre>
 <p>This will change the vehicle type once the vehicle enters one of the edges which approach the junction.
 The second variant above with the <code>local</code> attribute will also undo the changes (revert to the original type)
 once the vehicle has left any edge outgoing from the junction.
@@ -481,17 +475,16 @@ For the calibrator to be able to function before the first vehicle, it
 needs a <em>fall back</em> route which just needs to consist of a single edge
 (i.e. the edge on which the calibrator is placed).</p>
 <p>Example <a href="/docs/sumo.html#format_of_additional_files"><em>additional-file</em></a>:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">   </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;t0&quot;</span><span class="w"> </span><span class="na">speedDev=</span><span class="s">&quot;0.1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;routeProbe</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;cali_edge1_probe&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;edge1&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;output.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;cali1_fallback&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;edge1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;calibrator</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;cali_edge1&quot;</span><span class="w"> </span><span class="na">edge=</span><span class="s">&quot;edge1&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">output=</span><span class="s">&quot;detector.xml&quot;</span><span class="w"> </span><span class="na">routeProbe=</span><span class="s">&quot;cali_edge1_probe&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w">    </span><span class="na">end=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;cali1_fallback&quot;</span><span class="w"> </span><span class="na">vehsPerHour=</span><span class="s">&quot;2500&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;27.8&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;t0&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;free&quot;</span><span class="w"> </span><span class="na">departSpeed=</span><span class="s">&quot;max&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;1800&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;3600&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;cali1_fallback&quot;</span><span class="w"> </span><span class="na">vehsPerHour=</span><span class="s">&quot;2500&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;15.0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;t0&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;free&quot;</span><span class="w"> </span><span class="na">departSpeed=</span><span class="s">&quot;max&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/calibrator&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+   &lt;vType id=&quot;t0&quot; speedDev=&quot;0.1&quot;/&gt;
+   &lt;routeProbe id=&quot;cali_edge1_probe&quot; edge=&quot;edge1&quot; period=&quot;60&quot; file=&quot;output.xml&quot;/&gt;
+   &lt;route id=&quot;cali1_fallback&quot; edges=&quot;edge1&quot;/&gt;
+   &lt;calibrator id=&quot;cali_edge1&quot; edge=&quot;edge1&quot; pos=&quot;0&quot; output=&quot;detector.xml&quot; routeProbe=&quot;cali_edge1_probe&quot;&gt;
+      &lt;flow begin=&quot;0&quot;    end=&quot;1800&quot; route=&quot;cali1_fallback&quot; vehsPerHour=&quot;2500&quot; speed=&quot;27.8&quot; type=&quot;t0&quot; departPos=&quot;free&quot; departSpeed=&quot;max&quot;/&gt;
+      &lt;flow begin=&quot;1800&quot; end=&quot;3600&quot; route=&quot;cali1_fallback&quot; vehsPerHour=&quot;2500&quot; speed=&quot;15.0&quot; type=&quot;t0&quot; departPos=&quot;free&quot; departSpeed=&quot;max&quot;/&gt;
+   &lt;/calibrator&gt;
+&lt;/additional&gt;
+</code></pre>
 <p>Running the simulation with the random demand as well as these <code>&lt;calibrator&gt;</code> and <code>&lt;routeProbe&gt;</code>
 definitions will achieve a simulation in which traffic matches the
 specified flows at each calibrator edge. However, the realism of traffic
@@ -505,7 +498,7 @@ the size and complexity of the network between calibrator edges.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

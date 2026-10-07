@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -223,9 +224,8 @@ working directory with the current timestamp (i.e.
 <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools/2021-02-22-10-00-00/). If you edit the network, you can use the
 script <em>build.bat</em> to rebuild the random demand.</p>
 <p>Call:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">osmWebWizard</span><span class="o">.</span><span class="n">py</span>
-</code></pre></div>
-
+<pre><code>python tools/osmWebWizard.py
+</code></pre>
 <p>The script will keep running so you can build multiple scenarios in your
 web-browser. Stop the script when you're done to free up the port again.</p>
 <div class="admonition caution">
@@ -241,20 +241,17 @@ can be defined with one of the following options:</p>
 <li><strong>--polygon</strong> calculates the bounding box from polygon data in the specified file.</li>
 </ul>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">osmGet</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">bbox</span><span class="w"> </span><span class="o">&lt;</span><span class="n">bounding</span><span class="o">-</span><span class="n">box</span><span class="o">&gt;</span><span class="w"> </span><span class="o">--</span><span class="n">tiles</span><span class="w"> </span><span class="o">&lt;</span><span class="n">INT</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/osmGet.py --bbox &lt;bounding-box&gt; --tiles &lt;INT&gt;
+</code></pre>
 <p>The additional option <strong>--tiles</strong> allows to split larger areas into multiple tiles and download requests.</p>
 <h1 id="osmbuildpy">osmBuild.py<a class="headerlink" href="#osmbuildpy" title="Permanent link">#</a></h1>
 <p>The script creates a sumo network from the given osm file (i.e. from the output of osmGet.py).
 Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">osmBuild</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">osm</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="o">&lt;</span><span class="n">osm</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/osmBuild.py --osm-file &lt;osm-file&gt;
+</code></pre>
 <p>More additional options can be defined to manage the import. Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">osmBuild</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">osm</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="o">&lt;</span><span class="n">osm</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">vehicle</span><span class="o">-</span><span class="n">classes</span><span class="w"> </span><span class="p">(</span><span class="n">all</span><span class="o">|</span><span class="n">road</span><span class="o">|</span><span class="n">publicTransport</span><span class="o">|</span><span class="n">passenger</span><span class="p">)]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">type</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="o">&lt;</span><span class="n">TYPEMAP_FILE</span><span class="o">&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">netconvert</span><span class="o">-</span><span class="n">options</span><span class="w"> </span><span class="o">&lt;</span><span class="n">OPT1</span><span class="p">,</span><span class="n">OPT2</span><span class="p">,</span><span class="n">OPT3</span><span class="o">&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">polyconvert</span><span class="o">-</span><span class="n">options</span><span class="w"> </span><span class="o">&lt;</span><span class="n">OPT1</span><span class="p">,</span><span class="n">OPT2</span><span class="p">,</span><span class="n">OPT3</span><span class="o">&gt;</span><span class="p">]</span>
-</code></pre></div>
-
+<pre><code>python tools/osmBuild.py --osm-file &lt;osm-file&gt; [--vehicle-classes (all|road|publicTransport|passenger)] [--type-file &lt;TYPEMAP_FILE&gt;] [--netconvert-options &lt;OPT1,OPT2,OPT3&gt;] [--polyconvert-options &lt;OPT1,OPT2,OPT3&gt;]
+</code></pre>
 <p>The option <strong>--vehicle-classes</strong> allows to filter the roads to import by vehicles classes.
 If "road" is given as parameter, only roads usable by road vehicles are
 extracted, if "passenger" is given, only those accessible by passenger
@@ -269,9 +266,8 @@ visualization. Useful type files can be found at <strong><em>&lt;SUMO_HOME&gt;</
 and <strong>-polyconvert-options</strong>.</p>
 <h1 id="osmtaxistoppy">osmTaxiStop.py<a class="headerlink" href="#osmtaxistoppy" title="Permanent link">#</a></h1>
 <p>This script import taxi stands from OSM data. Using the option <strong>--type</strong> you can choose which type of element to add in the SUMO network. For example:</p>
-<div class="codehilite"><pre><span></span><code>python <span class="l">tools/import/osm/osmTaxiStop.py</span> <span class="o">--</span>osm-file <span class="l">&lt;osm-file&gt;</span> <span class="o">-</span>n <span class="l">&lt;net-file&gt;</span> <span class="o">--</span>type parkingArea
-</code></pre></div>
-
+<pre><code>python tools/import/osm/osmTaxiStop.py --osm-file &lt;osm-file&gt; -n &lt;net-file&gt; --type parkingArea
+</code></pre>
 <p>Will add the taxi stands as parkingAreas.</p>
                 </main>
           </div>
@@ -280,7 +276,7 @@ and <strong>-polyconvert-options</strong>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -249,24 +250,22 @@ at which the values shall be collected and written.</p>
 </tbody>
 </table>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vTypeProbe</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;probe1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;DEFAULT_VEHTYPE&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;output.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+    &lt;vTypeProbe id=&quot;probe1&quot; type=&quot;DEFAULT_VEHTYPE&quot; period=&quot;10&quot; file=&quot;output.xml&quot;/&gt;
+&lt;/additional&gt;
+</code></pre>
 <p>This file is then loaded in <a href="../../sumo.html">sumo</a> using the option <strong>--additional-files</strong></p>
 <h2 id="generated_output">Generated Output<a class="headerlink" href="#generated_output" title="Permanent link">#</a></h2>
 <p>The output is divided into timestep-sections:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;&lt;COLLECTION_TIME&gt;&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;DETECTOR_ID&gt;&quot;</span><span class="w"> </span><span class="na">vtype=</span><span class="s">&quot;&lt;OBSERVED_TYPE&gt;&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;VEHICLE_ID&gt;&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;&lt;POSITION_ON_LANE&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">        </span><span class="na">x=</span><span class="s">&quot;&lt;X-COORDINATE&gt;&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;&lt;Y-COORDINATE&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">        </span><span class="na">lat=</span><span class="s">&quot;&lt;LAT-COORDINATE&gt;&quot;</span><span class="w"> </span><span class="na">lon=</span><span class="s">&quot;&lt;LON-COORDINATE&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">        </span><span class="na">speed=</span><span class="s">&quot;&lt;VEHICLE_SPEED&gt;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span>...<span class="w"> </span>further<span class="w"> </span>vehicles<span class="w"> </span>...
-<span class="nt">&lt;/timestep&gt;</span>
-...<span class="w"> </span>further<span class="w"> </span>time<span class="w"> </span>steps<span class="w"> </span>...
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;timestep time=&quot;&lt;COLLECTION_TIME&gt;&quot; id=&quot;&lt;DETECTOR_ID&gt;&quot; vtype=&quot;&lt;OBSERVED_TYPE&gt;&quot;&gt;
+    &lt;vehicle id=&quot;&lt;VEHICLE_ID&gt;&quot; lane=&quot;&lt;LANE_ID&gt;&quot; pos=&quot;&lt;POSITION_ON_LANE&gt;&quot; \
+        x=&quot;&lt;X-COORDINATE&gt;&quot; y=&quot;&lt;Y-COORDINATE&gt;&quot; \
+        lat=&quot;&lt;LAT-COORDINATE&gt;&quot; lon=&quot;&lt;LON-COORDINATE&gt;&quot; \
+        speed=&quot;&lt;VEHICLE_SPEED&gt;&quot;/&gt;
+    ... further vehicles ...
+&lt;/timestep&gt;
+... further time steps ...
+</code></pre>
 <p>The values are described in the following table.</p>
 <table>
 <thead>
@@ -341,7 +340,7 @@ at which the values shall be collected and written.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

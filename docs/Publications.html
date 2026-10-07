@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="css/fontawesome.all.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="js/jquery-3.7.0.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -223,19 +224,18 @@ Last edit: 06 October 2026
 <p>When citing SUMO in general please use our current reference publication: <a href="https://ieeexplore.ieee.org/document/8569938">"Microscopic Traffic Simulation using SUMO"</a>; Pablo Alvarez Lopez, Michael Behrisch, Laura Bieker-Walz, Jakob Erdmann, Yun-Pang Flötteröd, Robert Hilbrich, Leonhard Lücken, Johannes Rummel, Peter Wagner, and Evamarie Wießner. IEEE Intelligent Transportation Systems Conference (ITSC), 2018.</p>
 </div>
 <h2 id="bibtex">BibTeX<a class="headerlink" href="#bibtex" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="err">@</span><span class="n">INPROCEEDINGS</span><span class="p">{</span><span class="mi">8569938</span><span class="p">,</span>
-<span class="w">  </span><span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Lopez</span><span class="p">,</span><span class="w"> </span><span class="n">Pablo</span><span class="w"> </span><span class="n">Alvarez</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">Behrisch</span><span class="p">,</span><span class="w"> </span><span class="n">Michael</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">Bieker</span><span class="o">-</span><span class="n">Walz</span><span class="p">,</span><span class="w"> </span><span class="n">Laura</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">Erdmann</span><span class="p">,</span><span class="w"> </span><span class="n">Jakob</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">Flötteröd</span><span class="p">,</span><span class="w"> </span><span class="n">Yun</span><span class="o">-</span><span class="n">Pang</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">Hilbrich</span><span class="p">,</span><span class="w"> </span><span class="n">Robert</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">Lücken</span><span class="p">,</span><span class="w"> </span><span class="n">Leonhard</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">Rummel</span><span class="p">,</span><span class="w"> </span><span class="n">Johannes</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">Wagner</span><span class="p">,</span><span class="w"> </span><span class="n">Peter</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">Wiessner</span><span class="p">,</span><span class="w"> </span><span class="n">Evamarie</span><span class="p">},</span>
-<span class="w">  </span><span class="n">booktitle</span><span class="o">=</span><span class="p">{</span><span class="mi">2018</span><span class="w"> </span><span class="mi">21</span><span class="n">st</span><span class="w"> </span><span class="n">International</span><span class="w"> </span><span class="n">Conference</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">Intelligent</span><span class="w"> </span><span class="n">Transportation</span><span class="w"> </span><span class="n">Systems</span><span class="w"> </span><span class="p">(</span><span class="n">ITSC</span><span class="p">)},</span><span class="w"> </span>
-<span class="w">  </span><span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">Microscopic</span><span class="w"> </span><span class="n">Traffic</span><span class="w"> </span><span class="n">Simulation</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">SUMO</span><span class="p">},</span><span class="w"> </span>
-<span class="w">  </span><span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2018</span><span class="p">},</span>
-<span class="w">  </span><span class="n">volume</span><span class="o">=</span><span class="p">{},</span>
-<span class="w">  </span><span class="n">number</span><span class="o">=</span><span class="p">{},</span>
-<span class="w">  </span><span class="n">pages</span><span class="o">=</span><span class="p">{</span><span class="mi">2575</span><span class="o">-</span><span class="mi">2582</span><span class="p">},</span>
-<span class="w">  </span><span class="n">keywords</span><span class="o">=</span><span class="p">{</span><span class="n">Tools</span><span class="p">;</span><span class="n">Microscopy</span><span class="p">;</span><span class="n">Roads</span><span class="p">;</span><span class="n">Data</span><span class="w"> </span><span class="n">models</span><span class="p">;</span><span class="n">Urban</span><span class="w"> </span><span class="n">areas</span><span class="p">;</span><span class="n">Vehicle</span><span class="w"> </span><span class="n">dynamics</span><span class="p">;</span><span class="n">Mathematical</span><span class="w"> </span><span class="n">model</span><span class="p">},</span>
-<span class="w">  </span><span class="n">doi</span><span class="o">=</span><span class="p">{</span><span class="mf">10.1109</span><span class="o">/</span><span class="n">ITSC</span><span class="o">.</span><span class="mf">2018.8569938</span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-</code></pre></div>
-
+<pre><code>@INPROCEEDINGS{8569938,
+  author={Lopez, Pablo Alvarez and Behrisch, Michael and Bieker-Walz, Laura and Erdmann, Jakob and Flötteröd, Yun-Pang and Hilbrich, Robert and Lücken, Leonhard and Rummel, Johannes and Wagner, Peter and Wiessner, Evamarie},
+  booktitle={2018 21st International Conference on Intelligent Transportation Systems (ITSC)}, 
+  title={Microscopic Traffic Simulation using SUMO}, 
+  year={2018},
+  volume={},
+  number={},
+  pages={2575-2582},
+  keywords={Tools;Microscopy;Roads;Data models;Urban areas;Vehicle dynamics;Mathematical model},
+  doi={10.1109/ITSC.2018.8569938}
+  }
+</code></pre>
 <h2 id="doi">DOI<a class="headerlink" href="#doi" title="Permanent link">#</a></h2>
 <p>If you want to refer explicitly to the software version being used, please use the corresponding software DOI. You can always find the DOI for the current and previous releases <a href="https://doi.org/10.5281/zenodo.8345518">on Zenodo</a> .</p>
 <p><em>For version 1.27.1, use:</em></p>
@@ -706,7 +706,7 @@ this list of publications.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

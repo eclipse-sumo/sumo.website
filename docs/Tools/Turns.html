@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -291,21 +292,19 @@ the resulting traffic fulfills the counting data.</p>
 <h2 id="edge_counts">edge counts<a class="headerlink" href="#edge_counts" title="Permanent link">#</a></h2>
 <p>The data, most frequently available takes the form of traffic counts on roads (edges). This data can be passed to routeSampler.py in an <a href="../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures.html">edgeData
 file</a> using option <strong>--edgedata-files</strong>.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">routeSampler</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="n">input</span><span class="o">-</span><span class="n">route</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">--</span><span class="n">edgedata</span><span class="o">-</span><span class="n">files</span><span class="w"> </span><span class="o">&lt;</span><span class="n">edgedata</span><span class="o">-</span><span class="n">files</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">&lt;</span><span class="n">output</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/routeSampler.py -r &lt;input-route-file&gt; --edgedata-files &lt;edgedata-files&gt; -o &lt;output-file&gt;
+</code></pre>
 <p>Only the edge attribute 'id' and another attribute for the traffic count are needed:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;data&gt;</span>
-<span class="w">    </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;arbitrary&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;300&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;-58&quot;</span><span class="w"> </span><span class="na">entered=</span><span class="s">&quot;4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;45&quot;</span><span class="w"> </span><span class="na">entered=</span><span class="s">&quot;3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;-31&quot;</span><span class="w"> </span><span class="na">entered=</span><span class="s">&quot;15&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span>...
-<span class="w">     </span><span class="nt">&lt;/interval&gt;</span>
-<span class="w">     </span>...
-<span class="nt">&lt;/data&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;data&gt;
+    &lt;interval id=&quot;arbitrary&quot; begin=&quot;0.0&quot; end=&quot;300&quot;&gt;
+        &lt;edge id=&quot;-58&quot; entered=&quot;4&quot;/&gt;
+        &lt;edge id=&quot;45&quot; entered=&quot;3&quot;/&gt;
+        &lt;edge id=&quot;-31&quot; entered=&quot;15&quot;/&gt;
+        ...
+     &lt;/interval&gt;
+     ...
+&lt;/data&gt;
+</code></pre>
 <p>The attributes for reading the counts from edge-data file can be set with option <strong>--edgedata-attribute</strong> (default 'entered')
 You can put any number of counting attributes in the same <code>&lt;edge&gt;</code> element if you intend to call <strong>routeSamper.py</strong> <a href="#multiple_vehicle_types">multiple times for different vehicle types</a>.</p>
 <div class="admonition note">
@@ -320,23 +319,21 @@ You can put any number of counting attributes in the same <code>&lt;edge&gt;</co
 <h2 id="turn_counts">turn counts<a class="headerlink" href="#turn_counts" title="Permanent link">#</a></h2>
 <p>Traffic counts related to turning traffic can be provided in the following format:</p>
 <p>The turn-count data must be provided in the format:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;data&gt;</span>
-<span class="w">  </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;generated&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;99.0&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-58.121.42&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;64&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-58.121.42&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-31&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;45&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-68&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-31.80.00&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;31&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-31.80.00&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;37&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-31.80.00&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-23&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;13&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-92.180.00&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-60&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/interval&gt;</span>
-<span class="nt">&lt;/data&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;data&gt;
+  &lt;interval id=&quot;generated&quot; begin=&quot;0.0&quot; end=&quot;99.0&quot;&gt;
+    &lt;edgeRelation from=&quot;-58.121.42&quot; to=&quot;64&quot; count=&quot;1&quot;/&gt;
+    &lt;edgeRelation from=&quot;-58.121.42&quot; to=&quot;-31&quot; count=&quot;3&quot;/&gt;
+    &lt;edgeRelation from=&quot;45&quot; to=&quot;-68&quot; count=&quot;3&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;31&quot; count=&quot;1&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;37&quot; count=&quot;1&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;-23&quot; count=&quot;13&quot;/&gt;
+    &lt;edgeRelation from=&quot;-92.180.00&quot; to=&quot;-60&quot; count=&quot;1&quot;/&gt;
+  &lt;/interval&gt;
+&lt;/data&gt;
+</code></pre>
 <p>Example call:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">routeSampler</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="n">input</span><span class="o">-</span><span class="n">route</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">--</span><span class="n">turn</span><span class="o">-</span><span class="n">files</span><span class="w"> </span><span class="o">&lt;</span><span class="n">turn</span><span class="o">-</span><span class="n">files</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">&lt;</span><span class="n">output</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/routeSampler.py -r &lt;input-route-file&gt; --turn-files &lt;turn-files&gt; -o &lt;output-file&gt;
+</code></pre>
 <p>The attributes for reading the counts from the turn-data file can be set with option <strong>--turn-attribute</strong> (default 'count')
 You can put any number of counting attributes in the same <code>&lt;edgeRelation&gt;</code> element if you intend to call <strong>routeSamper.py</strong> <a href="#multiple_vehicle_types">multiple times for different vehicle types</a>.</p>
 <p>In case an existing scenario should be modified (i.e. in combination with different kinds of counting data) it is also possible to <a href="#generateturnratiospy">convert an existing file with vehicles into a turn-count file</a>.</p>
@@ -346,21 +343,19 @@ You can put any number of counting attributes in the same <code>&lt;edgeRelation
 </div>
 <h2 id="turn_ratios">turn ratios<a class="headerlink" href="#turn_ratios" title="Permanent link">#</a></h2>
 <p>Traffic data related to turning traffic can also be provided as ratios in the following format:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;data&gt;</span>
-<span class="w">  </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;generated&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;99.0&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-58.121.42&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;64&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-58.121.42&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-31&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.7&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-31.80.00&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;31&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-31.80.00&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;37&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-31.80.00&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-23&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.8&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/interval&gt;</span>
-<span class="nt">&lt;/data&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;data&gt;
+  &lt;interval id=&quot;generated&quot; begin=&quot;0.0&quot; end=&quot;99.0&quot;&gt;
+    &lt;edgeRelation from=&quot;-58.121.42&quot; to=&quot;64&quot; probability=&quot;0.3&quot;/&gt;
+    &lt;edgeRelation from=&quot;-58.121.42&quot; to=&quot;-31&quot; probability=&quot;0.7&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;31&quot; probability=&quot;0.1&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;37&quot; probability=&quot;0.1&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;-23&quot; probability=&quot;0.8&quot;/&gt;
+  &lt;/interval&gt;
+&lt;/data&gt;
+</code></pre>
 <p>Example call:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">routeSampler</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="n">input</span><span class="o">-</span><span class="n">route</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">--</span><span class="n">turn</span><span class="o">-</span><span class="n">ratio</span><span class="o">-</span><span class="n">files</span><span class="w"> </span><span class="o">&lt;</span><span class="n">turn</span><span class="o">-</span><span class="n">ratio</span><span class="o">-</span><span class="n">files</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">&lt;</span><span class="n">output</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/routeSampler.py -r &lt;input-route-file&gt; --turn-ratio-files &lt;turn-ratio-files&gt; -o &lt;output-file&gt;
+</code></pre>
 <p>The attributes for reading the ratios from the turn-data file can be set with option <strong>--turn-ratio-attribute</strong> (default <em>probability</em>).
 You can put any number of counting attributes in the same <code>&lt;edgeRelation&gt;</code> element if you intend to call <strong>routeSamper.py</strong> <a href="#multiple_vehicle_types">multiple times for different vehicle types</a>.</p>
 <div class="admonition caution">
@@ -380,10 +375,9 @@ You can put any number of counting attributes in the same <code>&lt;edgeRelation
 </ul>
 <p>The most realistic routes are those that result from <a href="../Demand/Dynamic_User_Assignment.html">dynamic user assignment</a>. Even when starting with random traffic demand, such routes will cover a better variaty of plausible routes through the network.</p>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">randomTrips</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="n">input</span><span class="o">-</span><span class="n">net</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">sampleRoutes</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span>
-<span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">routeSampler</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">sampleRoutes</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">edgedata</span><span class="o">-</span><span class="n">files</span><span class="w"> </span><span class="o">&lt;</span><span class="n">edgedata</span><span class="o">-</span><span class="n">files</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">&lt;</span><span class="n">output</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/randomTrips.py -n &lt;input-net-file&gt; -r sampleRoutes.rou.xml
+python tools/routeSampler.py -r sampleRoutes.rou.xml --edgedata-files &lt;edgedata-files&gt; -o &lt;output-file&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>departure times in route files are ignored and only the <code>&lt;route&gt;</code>-elements are used. Route with named routes but without vehicles may also be used.</p>
@@ -391,9 +385,8 @@ You can put any number of counting attributes in the same <code>&lt;edgeRelation
 <h2 id="generalized_route_restrictions">Generalized route restrictions<a class="headerlink" href="#generalized_route_restrictions" title="Permanent link">#</a></h2>
 <p>By default, the input options --edgedata-files and --turn-files allow restricting counts for single edges and pairs of consecutive edges.</p>
 <p>To define count restrictions for longer consecutive edge sequences the optional 'via' attribute can be used for <code>&lt;edgeRelation&gt;</code> elements:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;A&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;D&quot;</span><span class="w"> </span><span class="na">via=</span><span class="s">&quot;B C&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;42&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;edgeRelation from=&quot;A&quot; to=&quot;D&quot; via=&quot;B C&quot; count=&quot;42&quot;/&gt;
+</code></pre>
 <p>To define count restrictions on non-consecutive edges the option <strong>--turn-max-gap <INT></strong> can be used. Example:
 When setting option <strong>--turn-max-gap 2</strong>, the edgeRelation <code>&lt;edgeRelation from="A" to="D" .../&gt;</code> would apply to routes containing "A B", "A X D" or "A X Y D" but not "A X Y Z D".</p>
 <h2 id="origin-destination_restrictions">Origin-Destination restrictions<a class="headerlink" href="#origin-destination_restrictions" title="Permanent link">#</a></h2>
@@ -403,21 +396,19 @@ Using such counts with routeSampler.py permits to combine them with other forms 
 <h3 id="edge_based">Edge Based<a class="headerlink" href="#edge_based" title="Permanent link">#</a></h3>
 <p>When loading an edgeRelation file with the option <strong>--od-files</strong>, origin-destination counts will be added.
 This can be used to combine (edge-based) OD-relations with other counting data.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;A&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;D&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;42&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;edgeRelation from=&quot;A&quot; to=&quot;D&quot; count=&quot;42&quot;/&gt;
+</code></pre>
 <p>The above counting data example will match routes which start on edge <code>A</code> and end on edge <code>D</code>.</p>
 <p>The tool <a href="Routes.html#route2odpy">route2OD.py</a> supports option <strong>--edge-relations</strong> to transform any kind of route file into a suitable file of edge-based origin-destination edgeRelations.</p>
 <h3 id="taz_district_based">TAZ (district) Based<a class="headerlink" href="#taz_district_based" title="Permanent link">#</a></h3>
 <p>When loading an <a href="../Demand/Importing_O/D_Matrices.html#describing_the_taz">TAZ-file</a> with option <strong>--taz-files</strong>, it is possible to define counts between Traffic Assignment Zones (TAZ, also called districts).
 The counting data itself must be given in the following from and loaded with option <strong>--od-files</strong>:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;data&gt;</span>
-<span class="w">    </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;generated&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;99.0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;tazRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1_2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;2_0&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/interval&gt;</span>
-<span class="nt">&lt;/data&gt;</span>
-</code></pre></div>
-
+<pre><code>&lt;data&gt;
+    &lt;interval id=&quot;generated&quot; begin=&quot;0.0&quot; end=&quot;99.0&quot;&gt;
+        &lt;tazRelation from=&quot;1_2&quot; to=&quot;2_0&quot; count=&quot;5&quot;/&gt;
+    &lt;/interval&gt;
+&lt;/data&gt;
+</code></pre>
 <p>The TAZ ids which are referenced by the <code>tazRelation</code> attributes <code>from</code> and <code>to</code> must be defined within the loaded <strong>--taz-files</strong>.
 The above counting data example will match routes which start on any edge of TAZ <code>1_2</code> and end on any edge of taz <code>2_0</code>.</p>
 <h2 id="depart_arrival_restrictions">Depart / Arrival restrictions<a class="headerlink" href="#depart_arrival_restrictions" title="Permanent link">#</a></h2>
@@ -455,10 +446,9 @@ The above counting data example will match routes which start on any edge of TAZ
 <h2 id="vehicle_attributes">Vehicle attributes<a class="headerlink" href="#vehicle_attributes" title="Permanent link">#</a></h2>
 <p>With the option <strong>--attributes</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a>, additional parameters can be given to the generated
 vehicles (note, usage of the quoting characters).</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">routeSampler</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">input_net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">candidate</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">out</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="n">data</span><span class="o">.</span><span class="n">xml</span>
-<span class="w">  </span><span class="o">--</span><span class="n">attributes</span><span class="o">=</span><span class="s2">&quot;departLane=</span><span class="se">\&quot;</span><span class="s2">best</span><span class="se">\&quot;</span><span class="s2"> departSpeed=</span><span class="se">\&quot;</span><span class="s2">max</span><span class="se">\&quot;</span><span class="s2"> departPos=</span><span class="se">\&quot;</span><span class="s2">random</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
-</code></pre></div>
-
+<pre><code>python tools/routeSampler.py -n input_net.net.xml -r candidate.rou.xml -o out.rou.xml -d data.xml
+  --attributes=&quot;departLane=\&quot;best\&quot; departSpeed=\&quot;max\&quot; departPos=\&quot;random\&quot;&quot;
+</code></pre>
 <p>The above attributes would make the vehicles be distributed randomly on their
 starting edges and inserted with high speed on a reasonable lane.</p>
 <div class="admonition note">
@@ -467,26 +457,22 @@ starting edges and inserted with high speed on a reasonable lane.</p>
 </div>
 <h2 id="multiple_vehicle_types">Multiple vehicle types<a class="headerlink" href="#multiple_vehicle_types" title="Permanent link">#</a></h2>
 <p>To distinguish vehicles of different types, routeSampler may be run multiple times with different attributes. Note, that it is also necessary to set the option <strong>--prefix</strong> to prevent duplicate ids. The example below creates traffic consisting of cars and trucks using two edgedata files with distinct count values (stored in the default attribute 'entered').</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">routeSampler</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">attributes</span><span class="o">=</span><span class="s2">&quot;type=</span><span class="se">\&quot;</span><span class="s2">car</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">--</span><span class="n">edgedata</span><span class="o">-</span><span class="n">files</span><span class="w"> </span><span class="n">carcounts</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">prefix</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">cars</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">candidate</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span>
-<span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">routeSampler</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">attributes</span><span class="o">=</span><span class="s2">&quot;type=</span><span class="se">\&quot;</span><span class="s2">heavy</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">--</span><span class="n">edgedata</span><span class="o">-</span><span class="n">files</span><span class="w"> </span><span class="n">truckcounts</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">prefix</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">trucks</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">candidate</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/routeSampler.py --attributes=&quot;type=\&quot;car\&quot;&quot; --edgedata-files carcounts.xml --prefix c -o cars.rou.xml -r candidate.rou.xml
+python tools/routeSampler.py --attributes=&quot;type=\&quot;heavy\&quot;&quot; --edgedata-files truckcounts.xml --prefix t -o trucks.rou.xml -r candidate.rou.xml
+</code></pre>
 <p>Alternatively, the count values might also be stored in different attributes of the same file (i.e. 'count1', 'count2'):</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">routeSampler</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">attributes</span><span class="o">=</span><span class="s2">&quot;type=</span><span class="se">\&quot;</span><span class="s2">car</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">--</span><span class="n">edgedata</span><span class="o">-</span><span class="n">files</span><span class="w"> </span><span class="n">counts</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">edgedata</span><span class="o">-</span><span class="n">attribute</span><span class="w"> </span><span class="n">count1</span><span class="w"> </span><span class="o">--</span><span class="n">prefix</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">cars</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">candidate</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span>
-<span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">routeSampler</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">attributes</span><span class="o">=</span><span class="s2">&quot;type=</span><span class="se">\&quot;</span><span class="s2">heavy</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">--</span><span class="n">edgedata</span><span class="o">-</span><span class="n">files</span><span class="w"> </span><span class="n">counts</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">edgedata</span><span class="o">-</span><span class="n">attribute</span><span class="w"> </span><span class="n">count2</span><span class="w"> </span><span class="o">--</span><span class="n">prefix</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">trucks</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w">  </span><span class="o">-</span><span class="n">r</span><span class="w">  </span><span class="n">candidate</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/routeSampler.py --attributes=&quot;type=\&quot;car\&quot;&quot; --edgedata-files counts.xml --edgedata-attribute count1 --prefix c -o cars.rou.xml -r candidate.rou.xml
+python tools/routeSampler.py --attributes=&quot;type=\&quot;heavy\&quot;&quot; --edgedata-files counts.xml --edgedata-attribute count2 --prefix t -o trucks.rou.xml  -r  candidate.rou.xml
+</code></pre>
 <p>When running the simulation, the types 'car' and 'heavy' (previously set as vehicle attributes), must be defined in an additional file which could look like the following example (types.add.xml):</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;car&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;heavy&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;truck&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;vType id=&quot;car&quot;/&gt;
+  &lt;vType id=&quot;heavy&quot; vClass=&quot;truck&quot;/&gt;
+&lt;/additional&gt;
+</code></pre>
 <p>The simulation could then be called like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nx">sumo</span><span class="w"> </span><span class="o">-</span><span class="nx">n</span><span class="w"> </span><span class="nx">net</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">xml</span><span class="w"> </span><span class="o">-</span><span class="nx">a</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">xml</span><span class="w"> </span><span class="o">-</span><span class="nx">r</span><span class="w"> </span><span class="nx">cars</span><span class="p">.</span><span class="nx">rou</span><span class="p">.</span><span class="nx">xml</span><span class="p">,</span><span class="nx">trucks</span><span class="p">.</span><span class="nx">rou</span><span class="p">.</span><span class="nx">xml</span>
-</code></pre></div>
-
+<pre><code>  sumo -n net.net.xml -a types.add.xml -r cars.rou.xml,trucks.rou.xml
+</code></pre>
 <h2 id="sampling">Sampling<a class="headerlink" href="#sampling" title="Permanent link">#</a></h2>
 <p>In this stage, routes are selected randomly within the limits imposed by the input counts.
 Only routes that pass a minimum number of counting locations (option <strong>--min-count</strong>, default <em>1</em>) are eligible for sampling.</p>
@@ -551,24 +537,22 @@ When setting option <strong>--optimize full</strong>. No constraints on the rout
 <h3 id="spatial_quality_data">Spatial quality data<a class="headerlink" href="#spatial_quality_data" title="Permanent link">#</a></h3>
 <p>By setting option <strong>--mismatch-output FILE</strong> an [edgeData] file will be created that holds the mismatch between input and output count (<code>deficit</code>) as well as the input count (<code>measuredCount</code>) for each time interval:</p>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;data&gt;</span>
-<span class="w">    </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;deficit&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;99.0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-58.121.42&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;64&quot;</span><span class="w"> </span><span class="na">measuredCount=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">deficit=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-58.121.42&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-31&quot;</span><span class="w"> </span><span class="na">measuredCount=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">deficit=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;45&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-68&quot;</span><span class="w"> </span><span class="na">measuredCount=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">deficit=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span>...
-<span class="w">    </span><span class="nt">&lt;/interval&gt;</span>
-<span class="nt">&lt;/data&gt;</span>
-</code></pre></div>
-
+<pre><code>&lt;data&gt;
+    &lt;interval id=&quot;deficit&quot; begin=&quot;0.0&quot; end=&quot;99.0&quot;&gt;
+        &lt;edgeRelation from=&quot;-58.121.42&quot; to=&quot;64&quot; measuredCount=&quot;1&quot; deficit=&quot;0&quot;/&gt;
+        &lt;edgeRelation from=&quot;-58.121.42&quot; to=&quot;-31&quot; measuredCount=&quot;3&quot; deficit=&quot;0&quot;/&gt;
+        &lt;edgeRelation from=&quot;45&quot; to=&quot;-68&quot; measuredCount=&quot;3&quot; deficit=&quot;1&quot;/&gt;
+        ...
+    &lt;/interval&gt;
+&lt;/data&gt;
+</code></pre>
 <p>Such a data file can be visualized in <a href="../sumo-gui.html#visualizing_edge-related_data">sumo-gui</a> and also plotted with <a href="Visualization.html#plot_net_dumppy">plot_net_dump.py</a>.</p>
 <h1 id="generateturnratiospy">generateTurnRatios.py<a class="headerlink" href="#generateturnratiospy" title="Permanent link">#</a></h1>
 <p>This script is used to calculate the turn ratios from a
 an edge to its downstream edge with a given route file. The output file
 can be directly used as input with <a href="#routesamplerpy">routeSampler.py</a> and <a href="../jtrrouter.html">jtrrouter</a>. The time interval will span the minimum and maximum departure times of the route file but it can also be configured with options <strong>--begin</strong>, <strong>--end</strong> and  <strong>--interval</strong>.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">turn</span><span class="o">-</span><span class="n">defs</span><span class="o">/</span><span class="n">generateTurnRatios</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="n">route</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/turn-defs/generateTurnRatios.py -r &lt;route-file&gt;
+</code></pre>
 <p>The standard output is the traffic volumes (which jtrrouter normalizes automatically). With the option <strong>-p</strong>,  turning ratios will be written as values from [0,1].</p>
 <h1 id="generateturndefspy">generateTurnDefs.py<a class="headerlink" href="#generateturndefspy" title="Permanent link">#</a></h1>
 <p>This script allows generation of the turn definitions based on the
@@ -583,9 +567,8 @@ distributes the traffic uniformly, that is:</p>
     processed allows turning to.</li>
 </ol>
 <p>Example use</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">turn</span><span class="o">-</span><span class="n">defs</span><span class="o">/</span><span class="n">generateTurnDefs</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">connections</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">connections</span><span class="o">.</span><span class="n">con</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">turn</span><span class="o">-</span><span class="n">definitions</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">output</span><span class="o">.</span><span class="n">turndefs</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python tools/turn-defs/generateTurnDefs.py --connections-file connections.con.xml --turn-definitions-file output.turndefs.xml
+</code></pre>
 <p>The script allows to be extended with new traffic distribution policies
 (for example, based on Gaussian distribution) easily. See the
 <em>DestinationWeightCalculator</em> class for details.</p>
@@ -598,22 +581,19 @@ file. For usage details, execute the <em>generateTurnDefs.py</em> script with
 </div>
 <h1 id="turncount2edgecountpy">turnCount2EdgeCount.py<a class="headerlink" href="#turncount2edgecountpy" title="Permanent link">#</a></h1>
 <p>This script converts turn-count data into <a href="../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures.html">edgeData</a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">turn</span><span class="o">-</span><span class="n">defs</span><span class="o">/</span><span class="n">turnCount2EdgeCount</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;</span><span class="n">turn</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">&lt;</span><span class="n">output</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/turn-defs/turnCount2EdgeCount.py -t &lt;turn-file&gt; -o &lt;output-file&gt;
+</code></pre>
 <h1 id="turnfile2edgerelationspy">turnFile2EdgeRelations.py<a class="headerlink" href="#turnfile2edgerelationspy" title="Permanent link">#</a></h1>
 <p>This script converts the deprecated turn-file format into edgeRelation format</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">turn</span><span class="o">-</span><span class="n">defs</span><span class="o">/</span><span class="n">turnFile2EdgeRelations</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;</span><span class="n">turn</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">&lt;</span><span class="n">output</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/turn-defs/turnFile2EdgeRelations.py -t &lt;turn-file&gt; -o &lt;output-file&gt;
+</code></pre>
 <h1 id="jtcrouterpy">jtcrouter.py<a class="headerlink" href="#jtcrouterpy" title="Permanent link">#</a></h1>
 <p>The <strong>J</strong>unction<strong>T</strong>urn<strong>C</strong>ountRouter generates vehicle routes from turn-count data.
 It does so by converting the turn counts into into flows and turn-ratio files that are suitable as <a href="../jtrrouter.html">jtrrouter</a> input.
 Then it calls jtrrouter in the background.</p>
 <p>Example call:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="n">tools</span><span class="o">/</span><span class="n">jtcrouter</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="n">net</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;</span><span class="n">turn</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">&lt;</span><span class="n">output</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/jtcrouter.py -n &lt;net-file&gt; -t &lt;turn-file&gt; -o &lt;output-file&gt;
+</code></pre>
 <p>There are three basic styles of converting turn-counts to routes:</p>
 <ul>
 <li>Flows start at all turn-count locations in the network but end when reaching the next count location</li>
@@ -622,18 +602,18 @@ Then it calls jtrrouter in the background.</p>
 </ul>
 <h2 id="turn_count_data_format">Turn count data format<a class="headerlink" href="#turn_count_data_format" title="Permanent link">#</a></h2>
 <p>The turn-count data must be provided in the format which is the same as for <a href="#routesamplerpy">routeSampler</a>:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;data&gt;</span>
-<span class="w">  </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;generated&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;99.0&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-58.121.42&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;64&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-58.121.42&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-31&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;45&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-68&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-31.80.00&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;31&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-31.80.00&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;37&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-31.80.00&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-23&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;13&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edgeRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-92.180.00&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-60&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/interval&gt;</span>
-<span class="nt">&lt;/data&gt;</span>
-</code></pre></div>
+<pre><code class="language-xml">&lt;data&gt;
+  &lt;interval id=&quot;generated&quot; begin=&quot;0.0&quot; end=&quot;99.0&quot;&gt;
+    &lt;edgeRelation from=&quot;-58.121.42&quot; to=&quot;64&quot; count=&quot;1&quot;/&gt;
+    &lt;edgeRelation from=&quot;-58.121.42&quot; to=&quot;-31&quot; count=&quot;3&quot;/&gt;
+    &lt;edgeRelation from=&quot;45&quot; to=&quot;-68&quot; count=&quot;3&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;31&quot; count=&quot;1&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;37&quot; count=&quot;1&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;-23&quot; count=&quot;13&quot;/&gt;
+    &lt;edgeRelation from=&quot;-92.180.00&quot; to=&quot;-60&quot; count=&quot;1&quot;/&gt;
+  &lt;/interval&gt;
+&lt;/data&gt;
+</code></pre>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -641,7 +621,7 @@ Then it calls jtrrouter in the background.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

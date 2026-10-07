@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -250,26 +251,23 @@ minor whitespace / naming issues when called with the "--fix" flag. The
 PEP 8 checks are quite slow, so if only a header check is wished, run
 with the option "--skip-pep".</p>
 <p>Call:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">checkStyle</span><span class="o">.</span><span class="n">py</span>
-<span class="n">checkStyle</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">fix</span><span class="w"> </span><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span>
-</code></pre></div>
-
+<pre><code>checkStyle.py
+checkStyle.py --fix &lt;SUMO_HOME&gt;/tools
+</code></pre>
 <h1 id="documentation_tools">Documentation Tools<a class="headerlink" href="#documentation_tools" title="Permanent link">#</a></h1>
 <h2 id="buildpydocpy">buildPyDoc.py<a class="headerlink" href="#buildpydocpy" title="Permanent link">#</a></h2>
 <p>Generate the static PyDoc documentation for the <code>sumolib</code> and <code>traci</code> Python libraries. Alternatively, you can <a href="https://sumo.dlr.de/pydoc/">read the PyDoc documentation online</a> instead of building it locally.
 Call <code>buildPyDoc.py --help</code> for a complete list of options.</p>
 <p>Call:</p>
-<div class="codehilite"><pre><span></span><code>buildPyDoc.py -p my_output_dir
-</code></pre></div>
-
+<pre><code>buildPyDoc.py -p my_output_dir
+</code></pre>
 <h2 id="checkauthorspy">checkAuthors.py<a class="headerlink" href="#checkauthorspy" title="Permanent link">#</a></h2>
 <p>Checks the log for all source files for authors and "thanks" and checks
 whether they appear in the file header. It can optionally try to fix the
 file header and also update the global AUTHORS file if needed.</p>
 <p>Call:</p>
-<div class="codehilite"><pre><span></span><code>checkAuthors.py
-</code></pre></div>
-
+<pre><code>checkAuthors.py
+</code></pre>
 <h1 id="translation_tools">Translation Tools<a class="headerlink" href="#translation_tools" title="Permanent link">#</a></h1>
 <h2 id="updatemessageidspy">updateMessageIDs.py<a class="headerlink" href="#updatemessageidspy" title="Permanent link">#</a></h2>
 <p>SUMO uses the original string from the source code as message ID in gettext.
@@ -301,32 +299,27 @@ script is the following:</p>
 <li><strong>--numbered-placeholders</strong>: Add an order number to every placeholder given by <strong>--placeholder</strong> inside every <strong>msgid</strong>, starting with 0</li>
 </ul>
 <p>An example call to replace all minor case uses of the abbreviation "id" with the upper case version "ID" for all languages:</p>
-<div class="codehilite"><pre><span></span><code>updateMessageIDs.py --start --replace &quot;id&quot; &quot;ID&quot; --apply
-</code></pre></div>
-
+<pre><code>updateMessageIDs.py --start --replace &quot;id&quot; &quot;ID&quot; --apply
+</code></pre>
 <p>If the changes are done manually inside the English to English <code>.po</code> file, it is necessary to call the script twice. The first call is merely for creating the file to edit:</p>
-<div class="codehilite"><pre><span></span><code>python updateMessageIDs.py --start
-</code></pre></div>
-
+<pre><code>python updateMessageIDs.py --start
+</code></pre>
 <p>Then the changes are processed in the second call:</p>
-<div class="codehilite"><pre><span></span><code>python updateMessageIDs.py --apply
-</code></pre></div>
-
+<pre><code>python updateMessageIDs.py --apply
+</code></pre>
 <h2 id="obsoletetranslationspy">obsoleteTranslations.py<a class="headerlink" href="#obsoletetranslationspy" title="Permanent link">#</a></h2>
 <p>The script processes translations which have been lost due to changes of the original string in
 the source code but are still present in the <code>.po</code> translation files. It can be restricted to languages given by their language codes
 using the option <strong>--lang <langCode1> [<langCode2>]</strong>. If the said option is not given, all existing language files will be processed.</p>
 <p>In order to write a protocol of the obsolete translations (those which are not referenced in the source code),
 the script has to be called with a file path to write the protocol to as follows:</p>
-<div class="codehilite"><pre><span></span><code>python obsoleteTranslations.py --output obsolete.txt
-</code></pre></div>
-
+<pre><code>python obsoleteTranslations.py --output obsolete.txt
+</code></pre>
 <p>Adding the option <strong>--clear</strong> will remove the obsolete translations permanently from the <code>.po</code> files.</p>
 <p>There is an option called <strong>--patch</strong> to link obsolete translations again if the updated message ID / the current source string is known .
 The script is provided with a sequence of arguments which form pairs of first the outdated message ID and then new updated one.</p>
-<div class="codehilite"><pre><span></span><code>python obsoleteTranslations.py --patch &quot;Add Sidewalk&quot; &quot;Add sidewalk&quot; &quot;Overrids default shape of pedestrian sidewalk&quot; &quot;Overrides default shape of pedestrian sidewalk&quot;
-</code></pre></div>
-
+<pre><code>python obsoleteTranslations.py --patch &quot;Add Sidewalk&quot; &quot;Add sidewalk&quot; &quot;Overrids default shape of pedestrian sidewalk&quot; &quot;Overrides default shape of pedestrian sidewalk&quot;
+</code></pre>
 <p>The script looks into the translation files and moves the actual translations from the obsolete to the current entry (only if the current one is still empty). The obsolete entry
 is removed in case its content has been transferred to the current entry.</p>
                 </main>
@@ -336,7 +329,7 @@ is removed in case its content has been transferred to the current entry.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

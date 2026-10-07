@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="css/fontawesome.all.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="js/jquery-3.7.0.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -641,9 +642,8 @@ Last edit: 06 October 2026
 <li>Configure the git client on your computer to use the email address
   that you used when registering for your account:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="n">git</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="c1">--global user.email &quot;email@example.com&quot;</span>
-</code></pre></div>
-
+<pre><code>git config --global user.email &quot;email@example.com&quot;
+</code></pre>
 <ul>
 <li>Create an <a href="https://accounts.eclipse.org/user/register">Eclipse account</a> if you do not
   already have one. Make sure to use the same email address as for
@@ -654,17 +654,15 @@ Last edit: 06 October 2026
   repository on GitHub</li>
 <li>Clone the forked repository to your computer</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>git clone https://github.com/yourgithubid/sumo.git
-</code></pre></div>
-
+<pre><code>git clone https://github.com/yourgithubid/sumo.git
+</code></pre>
 <ul>
 <li>Modify the files in the created sumo clone directory</li>
 <li>From within this directory Commit your changes with</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>git add src
+<pre><code>git add src
 git commit -m &quot;your change message&quot; -s
-</code></pre></div>
-
+</code></pre>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>the option -s must be used so the contribution can be accepted in accordance with Eclipse rules</p>
@@ -672,9 +670,8 @@ git commit -m &quot;your change message&quot; -s
 <ul>
 <li>Push your changes to your fork on GitHub with</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>git push
-</code></pre></div>
-
+<pre><code>git push
+</code></pre>
 <ul>
 <li>Send us a <a href="https://help.github.com/en/articles/creating-a-pull-request-from-a-fork">pull request on GitHub</a></li>
 <li>Delete your fork, once the pull request is accepted or declined.</li>
@@ -856,14 +853,12 @@ client version and SUMO version match. When using SUMO version 1.0.0 or larger y
 <p>Yes. It is supported since version 0.24.0. To create a new network for
   lefthand traffic, the option <strong>--lefthand</strong> must be set.</p>
 <p>To convert an existing network to lefthand driving, there are two options. Abstract networks (no geo-reference, coordinates do not matter much) can be processed with netconvert:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">    netconvert -s righthand.net.xml --flip-y-axis -o lefthand.net.xml</span>
-</code></pre></div>
-
+<pre><code>    netconvert -s righthand.net.xml --flip-y-axis -o lefthand.net.xml
+</code></pre>
 <p>To convert an existing network and preserve coordinates, the network must first be disaggregated into nodes and edges and then re-assembled:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">    netconvert -s righthand.net.xml --plain-output-prefix righthand</span>
-<span class="n">    netconvert -e righthand.edg.xml -n righthand.nod.xml --lefthand -o lefthand.net.xml</span>
-</code></pre></div>
-
+<pre><code>    netconvert -s righthand.net.xml --plain-output-prefix righthand
+    netconvert -e righthand.edg.xml -n righthand.nod.xml --lefthand -o lefthand.net.xml
+</code></pre>
 <h3 id="can_sumo_generate_movement_traces">Can SUMO generate movement traces?<a class="headerlink" href="#can_sumo_generate_movement_traces" title="Permanent link">#</a></h3>
 <p>Yes. This is accomplished by using the
   <a href="Tools/TraceExporter.html">traceExporter</a> tool to convert SUMO
@@ -899,14 +894,12 @@ client version and SUMO version match. When using SUMO version 1.0.0 or larger y
 Subversion is not supported anymore.
 There are plenty of git clients for all platforms. If you use the command line client, you
 can checkout sumo using the following command:</p>
-<div class="codehilite"><pre><span></span><code>git clone --recursive https://github.com/eclipse-sumo/sumo
-</code></pre></div>
-
+<pre><code>git clone --recursive https://github.com/eclipse-sumo/sumo
+</code></pre>
 <p>If you want to see the full project history in your git checkout please
 change to the created directory and call</p>
-<div class="codehilite"><pre><span></span><code>git fetch origin refs/replace/*:refs/replace/*
-</code></pre></div>
-
+<pre><code>git fetch origin refs/replace/*:refs/replace/*
+</code></pre>
 <p>For later updates go inside the sumo directory, which has been created,
 and simply type <code>git pull</code>.</p>
 <h3 id="is_there_further_documentation_on_git">Is there further documentation on Git?<a class="headerlink" href="#is_there_further_documentation_on_git" title="Permanent link">#</a></h3>
@@ -1003,10 +996,9 @@ and simply type <code>git pull</code>.</p>
 </ul>
 <h3 id="why_can_my_input-xml_files_not_be_read_even_though_they_look_ok_to_me">Why can my input-XML files not be read even though they look OK to me?<a class="headerlink" href="#why_can_my_input-xml_files_not_be_read_even_though_they_look_ok_to_me" title="Permanent link">#</a></h3>
 <p>Errors such as</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Error</span><span class="o">:</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">expected</span><span class="w"> </span><span class="n">at</span>
-<span class="n">At</span><span class="w"> </span><span class="n">line</span><span class="sr">/column 10/</span><span class="mi">46</span>
-</code></pre></div>
-
+<pre><code>Error: attribute name expected at
+At line/column 10/46
+</code></pre>
 <p>can be caused by non-printing characters in the XML-file. Open your
   XML-file in a document editor and activate the option for showing
   line-breaks and other non-printing characters to find them.</p>
@@ -1392,9 +1384,8 @@ of a 1km highway, do the following:</p>
 <li>you can use insertion method 'last' which places vehicles at their
   desired headway for a given speed (repeat for every lane):</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;lane0&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;startEdge&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;destEdge&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;65&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;last&quot;</span><span class="w"> </span><span class="na">departSpeed=</span><span class="s">&quot;7.885&quot;</span><span class="w"> </span><span class="na">departLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;flow id=&quot;lane0&quot; from=&quot;startEdge&quot; to=&quot;destEdge&quot; begin=&quot;0&quot; end=&quot;1&quot; number=&quot;65&quot; departPos=&quot;last&quot; departSpeed=&quot;7.885&quot; departLane=&quot;0&quot;/&gt;
+</code></pre>
 <p>To let vehicles enter the simulation continuously with a specific
 density:</p>
 <ul>
@@ -1402,9 +1393,8 @@ density:</p>
   equilibrium speed from above: 15.385m / 7.885m/s = 1.951s</li>
 <li>use the equilibrium speed as departSpeed</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;lane0&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;startEdge&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;destEdge&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;3600&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;1.951&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;base&quot;</span><span class="w"> </span><span class="na">departSpeed=</span><span class="s">&quot;7.885&quot;</span><span class="w"> </span><span class="na">departLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;flow id=&quot;lane0&quot; from=&quot;startEdge&quot; to=&quot;destEdge&quot; begin=&quot;0&quot; end=&quot;3600&quot; period=&quot;1.951&quot; departPos=&quot;base&quot; departSpeed=&quot;7.885&quot; departLane=&quot;0&quot;/&gt;
+</code></pre>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>For the continuous case, the specified density is reached <strong>only</strong> close to the inflow as vehicles start accelerating to their preferred speeds. In order to maintain the density along the edge, use a ring road scenario or limit the allowed speed to the <em>departSpeed</em> value. Remember <a href="#how_do_i_get_high_flowsvehicle_densities">time-resolution dependency</a> for further adjustment.</p>
@@ -1459,11 +1449,10 @@ Likewise, in the real world different days have different traffic and it is more
 </div>
 <p>In order to collect distinct output from multiple runs, it is advisable to set option <strong>--output-prefix</strong>.
 Running a simulation 3 times with different results could be done in a batch file like this:</p>
-<div class="codehilite"><pre><span></span><code>sumo -c run.sumocfg --seed 1 --output-prefix 1.
+<pre><code>sumo -c run.sumocfg --seed 1 --output-prefix 1.
 sumo -c run.sumocfg --seed 2 --output-prefix 2.
 sumo -c run.sumocfg --seed 3 --output-prefix 3.
-</code></pre></div>
-
+</code></pre>
 <p>The tool <a href="Tools/Misc.html#runseedspy">runSeeds.py</a> can be used to automate this, parallelize it and even add output options to avoid modifying the .sumocfg:</p>
 <p><code>tools/runSeeds.py -a sumo -k run.sumocfg --seeds 1:4 --threads 4 --statistic-output stats.xml</code></p>
 <p>The tool <a href="Tools/Output.html#attributestatspy">attributeStats.py</a> can be used to generated statistics for multiple runs:
@@ -1497,10 +1486,9 @@ The latter is accomplished by setting vType attributes <code>jmIgnoreFoeProb</co
 Selecting the checkbox 'Satellite background' before generating the scenario is sufficient. To select another image provider, the tool <a href="Tools/Misc.html#tilegetpy">tileGet.py</a> can also be used.</p>
 <p>It is important to know that the network projection will be changed from UTM to <a href="https://en.wikipedia.org/wiki/Web_Mercator_projection">Mercator</a> if the checkbox "satellite background" is enabled. This is necessary to match the projection of popular satellite image providers. However, this projection has the unwelcome property of distorting lengths much more strongly than the default project. Depending on the area being imported, distances could be doubled (or worse).</p>
 <p>The revert such a projection to UTM, the following commands may be used:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert -s *.net.xml -p plain --proj.plain-geo</span>
-<span class="n">netconvert -e plain.edg.xml -n plain.nod.xml -x plain.con.xml -i plain.tll.xml --proj.utm</span>
-</code></pre></div>
-
+<pre><code>netconvert -s *.net.xml -p plain --proj.plain-geo
+netconvert -e plain.edg.xml -n plain.nod.xml -x plain.con.xml -i plain.tll.xml --proj.utm
+</code></pre>
 <p>When changing the projection, the satellite background can no longer be used. Any polygons must be recomputed with <a href="polyconvert.html">polyconvert</a> and the locations of the public transport stops extracted from the OSM must be adapted as well. (the easiest solution is the add <code>friendlyPos="true"</code> to all stopping places but this may distort their desired position).</p>
 <h3 id="sumo-gui_breaks">sumo-gui breaks<a class="headerlink" href="#sumo-gui_breaks" title="Permanent link">#</a></h3>
 <p>Sometimes <a href="sumo-gui.html">sumo-gui</a> terminates with no reason.
@@ -1532,19 +1520,17 @@ down your simulation sometimes to the point of halting.</p>
 timestep. This can be done with an additional traci command for building
 screenshots. A small python snippet shows the usage of this TraCI
 command to get a new image for each new timestep.</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">range</span><span class="ss">(</span><span class="nv">duration</span><span class="ss">)</span>:
-<span class="w">        </span><span class="nv">traci</span>.<span class="nv">simulationStep</span><span class="ss">()</span>
-<span class="w">        </span><span class="nv">traci</span>.<span class="nv">gui</span>.<span class="nv">screenshot</span><span class="ss">(</span><span class="s2">&quot;View #0&quot;</span>,<span class="w"> </span><span class="s2">&quot;images/&quot;</span><span class="o">+</span><span class="nv">str</span><span class="ss">(</span><span class="nv">i</span><span class="ss">)</span><span class="o">+</span><span class="s2">&quot;.png&quot;</span><span class="ss">)</span>
-</code></pre></div>
-
+<pre><code>    for i in range(duration):
+        traci.simulationStep()
+        traci.gui.screenshot(&quot;View #0&quot;, &quot;images/&quot;+str(i)+&quot;.png&quot;)
+</code></pre>
 <p>A more sophisticated version of this approach is given in the <a href="Tools/Misc.html#createscreenshotsequencepy">createScreenshotSequence.py</a> tool.</p>
 <p>Next you have to glue the images together. This job can be done
 graphically with virtualdub <a href="https://www.virtualdub.org">[2]</a> or via
 commandline with ffmpeg <a href="https://www.ffmpeg.org">[3]</a>. An example command
 for ffmpeg is shown below.</p>
-<div class="codehilite"><pre><span></span><code>    ffmpeg -r 10 -i images/%d.png -b:v 1500k -vcodec wmv2 sumo.wmv
-</code></pre></div>
-
+<pre><code>    ffmpeg -r 10 -i images/%d.png -b:v 1500k -vcodec wmv2 sumo.wmv
+</code></pre>
 <p>The parameters -r set the value for the fps and -b:v the bitrate for the
 video.</p>
 <h3 id="incomplete_output">Incomplete output<a class="headerlink" href="#incomplete_output" title="Permanent link">#</a></h3>
@@ -1632,24 +1618,21 @@ This can be accomplished by modifying the python variable <strong>sys.path</stro
 as explained <a href="TraCI/Interfacing_TraCI_from_Python.html">here</a> and
 <a href="Tools/Sumolib.html">here</a>. Alternatively you can hard-code the
 path to your SUMO-installation into your script:</p>
-<div class="codehilite"><pre><span></span><code> <span class="kn">import</span> <span class="nn">sys</span>
- <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;/your/path/to/sumo/tools&#39;</span><span class="p">)</span>
- <span class="kn">import</span> <span class="nn">traci</span>
- <span class="kn">import</span> <span class="nn">sumolib</span>
-</code></pre></div>
-
+<pre><code> import sys
+ sys.path.append('/your/path/to/sumo/tools')
+ import traci
+ import sumolib
+</code></pre>
 <h3 id="the_python_scripts_do_not_accept_command_line_arguments_windows_only">the python scripts do not accept command line arguments (windows only)<a class="headerlink" href="#the_python_scripts_do_not_accept_command_line_arguments_windows_only" title="Permanent link">#</a></h3>
 <p>This is a <a href="https://stackoverflow.com/questions/2640971/">known issue</a>
 with some python installations. The usual workaround if you are not
 allowed to do edit the registry, is to call the python interpreter
 explicitly, e.g. instead of</p>
-<div class="codehilite"><pre><span></span><code>script.py &lt;argument&gt;
-</code></pre></div>
-
+<pre><code>script.py &lt;argument&gt;
+</code></pre>
 <p>you do</p>
-<div class="codehilite"><pre><span></span><code>python script.py &lt;argument&gt;
-</code></pre></div>
-
+<pre><code>python script.py &lt;argument&gt;
+</code></pre>
 <h3 id="osmwebwizardpy_fails_to_generate_scenario_on_windows_10"><a href="Tools/Import/OSM.html#osmwebwizardpy">osmWebWizard.py</a> fails to generate Scenario on Windows 10<a class="headerlink" href="#osmwebwizardpy_fails_to_generate_scenario_on_windows_10" title="Permanent link">#</a></h3>
 <p>This can happen with an outdated version of python 2.7. Updating to
 2.7.15 (64bit) has been reported as fixing this problem.</p>
@@ -1706,7 +1689,7 @@ As a work-around you can <a href="https://askubuntu.com/questions/1399383/how-to
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

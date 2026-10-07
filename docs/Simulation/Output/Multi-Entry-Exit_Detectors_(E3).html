@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -230,20 +231,19 @@ description consists of the following parts:</p>
 <li>A closing tag that must match the opening tag.</li>
 </ul>
 <p>The definition:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">   </span><span class="nt">&lt;entryExitDetector</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;ID&gt;&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;&lt;AGGREGATION_TIME&gt;&quot;</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;&lt;OUTPUT_XMLFILE&gt;&quot;</span>
-<span class="w">   </span><span class="na">timeThreshold=</span><span class="s">&quot;&lt;FLOAT&gt;&quot;</span><span class="w"> </span><span class="na">speedThreshold=</span><span class="s">&quot;&lt;FLOAT&gt;&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;detEntry</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;&lt;LANE_ID1&gt;&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;&lt;POSITION_ON_LANE&gt;&quot;</span><span class="w"> </span><span class="na">friendlyPos=</span><span class="s">&quot;&lt;BOOL&gt;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;detEntry</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;&lt;LANE_ID2&gt;&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;&lt;POSITION_ON_LANE&gt;&quot;</span><span class="w"> </span><span class="na">friendlyPos=</span><span class="s">&quot;&lt;BOOL&gt;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;detExit</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;&lt;LANE_ID1&gt;&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;&lt;POSITION_ON_LANE&gt;&quot;</span><span class="w"> </span><span class="na">friendlyPos=</span><span class="s">&quot;&lt;BOOL&gt;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;detExit</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;&lt;LANE_ID3&gt;&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;&lt;POSITION_ON_LANE&gt;&quot;</span><span class="w"> </span><span class="na">friendlyPos=</span><span class="s">&quot;&lt;BOOL&gt;&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;additional&gt;
+   &lt;entryExitDetector id=&quot;&lt;ID&gt;&quot; period=&quot;&lt;AGGREGATION_TIME&gt;&quot; file=&quot;&lt;OUTPUT_XMLFILE&gt;&quot;
+   timeThreshold=&quot;&lt;FLOAT&gt;&quot; speedThreshold=&quot;&lt;FLOAT&gt;&quot;&gt;
+      &lt;detEntry lane=&quot;&lt;LANE_ID1&gt;&quot; pos=&quot;&lt;POSITION_ON_LANE&gt;&quot; friendlyPos=&quot;&lt;BOOL&gt;&quot;/&gt;
+      &lt;detEntry lane=&quot;&lt;LANE_ID2&gt;&quot; pos=&quot;&lt;POSITION_ON_LANE&gt;&quot; friendlyPos=&quot;&lt;BOOL&gt;&quot;/&gt;
+      &lt;detExit lane=&quot;&lt;LANE_ID1&gt;&quot; pos=&quot;&lt;POSITION_ON_LANE&gt;&quot; friendlyPos=&quot;&lt;BOOL&gt;&quot;/&gt;
+      &lt;detExit lane=&quot;&lt;LANE_ID3&gt;&quot; pos=&quot;&lt;POSITION_ON_LANE&gt;&quot; friendlyPos=&quot;&lt;BOOL&gt;&quot;/&gt;
 
-<span class="w">      </span>...<span class="w"> </span>further<span class="w"> </span>entries<span class="w"> </span>...
+      ... further entries ...
 
-<span class="w">   </span><span class="nt">&lt;/entryExitDetector&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+   &lt;/entryExitDetector&gt;
+&lt;/additional&gt;
+</code></pre>
 <p>will build a Multi-Entry-Exit Detector starting at either lane
 "LANE_ID1" or "LANE_ID2" and end at the same lane of "LANE_ID1" or
 "LANE_ID3". All values will aggregated over a time of
@@ -316,14 +316,13 @@ configuration was read in/the program has been started within.</p>
 <h2 id="generated_output">Generated Output<a class="headerlink" href="#generated_output" title="Permanent link">#</a></h2>
 <p>A single data line within the output of a simulated Multi-Entry-Exit
 Detector looks as following:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">interval</span> <span class="n">begin</span><span class="o">=</span><span class="s">&quot;&lt;BEGIN_TIME&gt;&quot;</span> <span class="n">end</span><span class="o">=</span><span class="s">&quot;&lt;END_TIME&gt;&quot;</span> <span class="n">id</span><span class="o">=</span><span class="s">&quot;&lt;ID&gt;&quot;</span> <span class="n">meanTravelTime</span><span class="o">=</span><span class="s">&quot;&lt;MEAN_TT&gt;&quot;</span>
-<span class="n">meanOverlapTravelTime</span><span class="o">=</span><span class="s">&quot;&lt;MEAN_OVERLAP_TT&gt;&quot;</span> <span class="n">meanSpeed</span><span class="o">=</span><span class="s">&quot;&lt;MEAN_SPEED&gt;&quot;</span>
-<span class="n">meanHaltsPerVehicle</span><span class="o">=</span><span class="s">&quot;&lt;MEAN_HALT_NUMBER&gt;&quot;</span> <span class="n">vehicleSum</span><span class="o">=</span><span class="s">&quot;&lt;#VEHICLES&gt;&quot;</span> <span class="n">meanSpeedWithin</span><span class="o">=</span><span class="s">&quot;&lt;MEAN_SPEED&gt;&quot;</span>
-<span class="n">meanHaltsPerVehicleWithin</span><span class="o">=</span><span class="s">&quot;&lt;MEAN_HALT_NUMBER&gt;&quot;</span> <span class="n">meanDurationWithin</span><span class="o">=</span><span class="s">&quot;&lt;MEAN_HALT_DURATION&gt;&quot;</span>
-<span class="n">vehicleSumWithin</span><span class="o">=</span><span class="s">&quot;&lt;#VEHICLES&gt;&quot;</span> <span class="n">meanIntervalSpeedWithin</span><span class="o">=</span><span class="s">&quot;&lt;MEAN_SPEED&gt;&quot;</span>
-<span class="n">meanIntervalHaltsPerVehicleWithin</span><span class="o">=</span><span class="s">&quot;&lt;MEAN_HALT_NUMBER&gt;&quot;</span> <span class="n">meanIntervalDurationWithin</span><span class="o">=</span><span class="s">&quot;&lt;MEAN_HALT_DURATION&gt;&quot;</span><span class="o">/&gt;</span>
-</code></pre></div>
-
+<pre><code>&lt;interval begin=&quot;&lt;BEGIN_TIME&gt;&quot; end=&quot;&lt;END_TIME&gt;&quot; id=&quot;&lt;ID&gt;&quot; meanTravelTime=&quot;&lt;MEAN_TT&gt;&quot;
+meanOverlapTravelTime=&quot;&lt;MEAN_OVERLAP_TT&gt;&quot; meanSpeed=&quot;&lt;MEAN_SPEED&gt;&quot;
+meanHaltsPerVehicle=&quot;&lt;MEAN_HALT_NUMBER&gt;&quot; vehicleSum=&quot;&lt;#VEHICLES&gt;&quot; meanSpeedWithin=&quot;&lt;MEAN_SPEED&gt;&quot;
+meanHaltsPerVehicleWithin=&quot;&lt;MEAN_HALT_NUMBER&gt;&quot; meanDurationWithin=&quot;&lt;MEAN_HALT_DURATION&gt;&quot;
+vehicleSumWithin=&quot;&lt;#VEHICLES&gt;&quot; meanIntervalSpeedWithin=&quot;&lt;MEAN_SPEED&gt;&quot;
+meanIntervalHaltsPerVehicleWithin=&quot;&lt;MEAN_HALT_NUMBER&gt;&quot; meanIntervalDurationWithin=&quot;&lt;MEAN_HALT_DURATION&gt;&quot;/&gt;
+</code></pre>
 <p>As for lane area detectors, the measures generated by Multi-Entry-Exit
 Detector may be grouped by the way they are computed. The plain measures
 take only those vehicles into account that have left the detector area
@@ -476,7 +475,7 @@ in the following table.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -227,11 +228,10 @@ your command line (or configuration) parameter by <strong>--netstate-dump</stron
 <p><a href="../../Basics/Using_the_Command_Line_Applications.html#configuration_files">Alternatively, add the option to the configuration
 file</a>,
 e.g.:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;output&gt;</span>
-<span class="w">   </span><span class="nt">&lt;netstate-dump</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;&lt;FILE&gt;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/output&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;output&gt;
+   &lt;netstate-dump value=&quot;&lt;FILE&gt;&quot; /&gt;
+&lt;/output&gt;
+</code></pre>
 <p><a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a> is the name of the file the output will be written to. Any other file
 with this name will be overwritten, the destination folder must exist.</p>
 <h2 id="generated_output">Generated Output<a class="headerlink" href="#generated_output" title="Permanent link">#</a></h2>
@@ -239,35 +239,34 @@ with this name will be overwritten, the destination folder must exist.</p>
 of the network with every lane of this edge with all vehicles on this
 lane. For each vehicle, its name, speed and position on its respective
 lane are written. A raw dump-file looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;netstate&gt;</span>
-<span class="w">   </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;&lt;TIME_STEP&gt;&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;EDGE_ID&gt;&quot;</span><span class="nt">&gt;</span>
-<span class="w">         </span><span class="nt">&lt;lane</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;VEHICLE_ID&gt;&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;&lt;VEH_POSITION&gt;&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;&lt;VEH_SPEED&gt;&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;netstate&gt;
+   &lt;timestep time=&quot;&lt;TIME_STEP&gt;&quot;&gt;
+      &lt;edge id=&quot;&lt;EDGE_ID&gt;&quot;&gt;
+         &lt;lane id=&quot;&lt;LANE_ID&gt;&quot;&gt;
+            &lt;vehicle id=&quot;&lt;VEHICLE_ID&gt;&quot; pos=&quot;&lt;VEH_POSITION&gt;&quot; speed=&quot;&lt;VEH_SPEED&gt;&quot;/&gt;
 
-<span class="w">            </span>...<span class="w"> </span>more<span class="w"> </span>vehicles<span class="w"> </span>if<span class="w"> </span>any<span class="w"> </span>on<span class="w"> </span>this<span class="w"> </span>lane<span class="w"> </span>...
+            ... more vehicles if any on this lane ...
 
-<span class="w">         </span><span class="nt">&lt;/lane&gt;</span>
+         &lt;/lane&gt;
 
-<span class="w">         </span>...<span class="w"> </span>more<span class="w"> </span>lanes<span class="w"> </span>if<span class="w"> </span>the<span class="w"> </span>edge<span class="w"> </span>possesses<span class="w"> </span>more<span class="w"> </span>...
+         ... more lanes if the edge possesses more ...
 
-<span class="w">         </span>...<span class="w"> </span>optional<span class="w"> </span>persons<span class="w"> </span>and<span class="w"> </span>containers<span class="w"> </span>if<span class="w"> </span>currently<span class="w"> </span>active<span class="w"> </span>on<span class="w"> </span>that<span class="w"> </span>edge
-<span class="w">         </span><span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;ID&gt;&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;&lt;OFFSET_FROM_EDGE_BEGIN&gt;&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;&lt;SPEED&gt;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span>...
-<span class="w">         </span><span class="nt">&lt;container</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;ID&gt;&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;&lt;OFFSET_FROM_EDGE_BEGIN&gt;&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;&lt;SPEED&gt;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">         </span>...
+         ... optional persons and containers if currently active on that edge
+         &lt;person id=&quot;&lt;ID&gt;&quot; pos=&quot;&lt;OFFSET_FROM_EDGE_BEGIN&gt;&quot; speed=&quot;&lt;SPEED&gt;&quot;/&gt;
+         ...
+         &lt;container id=&quot;&lt;ID&gt;&quot; pos=&quot;&lt;OFFSET_FROM_EDGE_BEGIN&gt;&quot; speed=&quot;&lt;SPEED&gt;&quot;/&gt;
+         ...
 
-<span class="w">      </span><span class="nt">&lt;/edge&gt;</span>
+      &lt;/edge&gt;
 
-<span class="w">      </span>...<span class="w"> </span>more<span class="w"> </span>edges<span class="w"> </span>....
+      ... more edges ....
 
-<span class="w">   </span><span class="nt">&lt;/timestep&gt;</span>
+   &lt;/timestep&gt;
 
-...<span class="w"> </span>the<span class="w"> </span>next<span class="w"> </span>timestep<span class="w"> </span>...
+... the next timestep ...
 
-<span class="nt">&lt;/netstate&gt;</span>
-</code></pre></div>
-
+&lt;/netstate&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If persons or containers are transported within a vehicle, they are written as child elements of that vehicle rather than as child elements of the edge.</p>
@@ -346,7 +345,7 @@ only those edges and lanes will be written that contain vehicles.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

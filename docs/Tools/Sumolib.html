@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -246,19 +247,17 @@ documentation</a>. You can
 <h1 id="importing_sumolib_in_a_script">importing <strong>sumolib</strong> in a script<a class="headerlink" href="#importing_sumolib_in_a_script" title="Permanent link">#</a></h1>
 <p>To use the library, the <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools directory must be on the python load
 path. This is typically done with a stanza like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="k">if</span> <span class="s1">&#39;SUMO_HOME&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;SUMO_HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;tools&#39;</span><span class="p">))</span>
-</code></pre></div>
-
+<pre><code class="language-python">import os
+import sys
+if 'SUMO_HOME' in os.environ:
+    sys.path.append(os.path.join(os.environ['SUMO_HOME'], 'tools'))
+</code></pre>
 <h1 id="loading_a_network_file">loading a network file<a class="headerlink" href="#loading_a_network_file" title="Permanent link">#</a></h1>
-<div class="codehilite"><pre><span></span><code><span class="c1"># import the library</span>
-<span class="kn">import</span> <span class="nn">sumolib</span>
-<span class="c1"># parse the net</span>
-<span class="n">net</span> <span class="o">=</span> <span class="n">sumolib</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">readNet</span><span class="p">(</span><span class="s1">&#39;myNet.net.xml&#39;</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code class="language-python"># import the library
+import sumolib
+# parse the net
+net = sumolib.net.readNet('myNet.net.xml')
+</code></pre>
 <p>The following named arguments may be given to the <code>readNet</code> function (i.e. <code>readNet('myNet.net.xml', withInternal=True)</code>):</p>
 <ul>
 <li>withPrograms (bool): import all traffic light programs (default False)</li>
@@ -270,46 +269,42 @@ path. This is typically done with a stanza like this:</p>
 </ul>
 <h1 id="usage_examples">usage examples<a class="headerlink" href="#usage_examples" title="Permanent link">#</a></h1>
 <h2 id="import_a_network_and_retrieve_nodes_and_edges">import a network and retrieve nodes and edges<a class="headerlink" href="#import_a_network_and_retrieve_nodes_and_edges" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># import the library</span>
-<span class="kn">import</span> <span class="nn">sumolib</span>
-<span class="c1"># parse the net</span>
-<span class="n">net</span> <span class="o">=</span> <span class="n">sumolib</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">readNet</span><span class="p">(</span><span class="s1">&#39;myNet.net.xml&#39;</span><span class="p">)</span>
+<pre><code class="language-python"># import the library
+import sumolib
+# parse the net
+net = sumolib.net.readNet('myNet.net.xml')
 
-<span class="c1"># retrieve the coordinate of a node based on its ID</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">getNode</span><span class="p">(</span><span class="s1">&#39;myNodeID&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">getCoord</span><span class="p">())</span>
+# retrieve the coordinate of a node based on its ID
+print(net.getNode('myNodeID').getCoord())
 
-<span class="c1"># retrieve the successor node ID of an edge</span>
-<span class="n">nextNodeID</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">getEdge</span><span class="p">(</span><span class="s1">&#39;myEdgeID&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">getToNode</span><span class="p">()</span><span class="o">.</span><span class="n">getID</span><span class="p">()</span>
-</code></pre></div>
-
+# retrieve the successor node ID of an edge
+nextNodeID = net.getEdge('myEdgeID').getToNode().getID()
+</code></pre>
 <h2 id="compute_the_average_edge_speed_in_a_plain_xml_edge_file">compute the average edge speed in a <em>plain xml</em> edge file<a class="headerlink" href="#compute_the_average_edge_speed_in_a_plain_xml_edge_file" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">speedSum</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="n">edgeCount</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">sumolib</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;myNet.edg.xml&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;edge&#39;</span><span class="p">]):</span>
-    <span class="n">speedSum</span> <span class="o">+=</span> <span class="nb">float</span><span class="p">(</span><span class="n">edge</span><span class="o">.</span><span class="n">speed</span><span class="p">)</span>
-    <span class="n">edgeCount</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">avgSpeed</span> <span class="o">=</span> <span class="n">speedSum</span> <span class="o">/</span> <span class="n">edgeCount</span>
-</code></pre></div>
-
+<pre><code class="language-python">speedSum = 0.0
+edgeCount = 0
+for edge in sumolib.xml.parse('myNet.edg.xml', ['edge']):
+    speedSum += float(edge.speed)
+    edgeCount += 1
+avgSpeed = speedSum / edgeCount
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is just a processing example. To compute average travel speeds in a network, process <a href="../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures.html">edgeData</a>, <a href="../Simulation/Output/TripInfo.html">tripinfos</a> or <a href="../Simulation/Output/Summary.html">summary-output</a> instead.</p>
 </div>
 <h2 id="compute_the_length_of_the_selected_edges">compute the length of the selected edges<a class="headerlink" href="#compute_the_length_of_the_selected_edges" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">net</span><span class="o">.</span><span class="n">loadSelection</span><span class="p">(</span><span class="s1">&#39;selection.txt&#39;</span><span class="p">)</span>
-<span class="n">cumulLength</span> <span class="o">=</span> <span class="mf">0.</span>
-<span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">net</span><span class="o">.</span><span class="n">getEdges</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">edge</span><span class="o">.</span><span class="n">isSelected</span><span class="p">():</span>
-        <span class="n">cumulLength</span> <span class="o">+=</span> <span class="n">edge</span><span class="o">.</span><span class="n">getLength</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-python">net.loadSelection('selection.txt')
+cumulLength = 0.
+for edge in net.getEdges():
+    if edge.isSelected():
+        cumulLength += edge.getLength()
+</code></pre>
 <h2 id="compute_the_median_speed_using_the_statistics_module">compute the median speed using the <a href="https://sumo.dlr.de/pydoc/sumolib/statistics.html#Statistics">Statistics</a> module<a class="headerlink" href="#compute_the_median_speed_using_the_statistics_module" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">edgeStats</span> <span class="o">=</span> <span class="n">sumolib</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="n">Statistics</span><span class="p">(</span><span class="s2">&quot;edge speeds&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">sumolib</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;myNet.edg.xml&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;edge&#39;</span><span class="p">]):</span>
-    <span class="n">edgeStats</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">edge</span><span class="o">.</span><span class="n">speed</span><span class="p">))</span>
-<span class="n">avgSpeed</span> <span class="o">=</span> <span class="n">edgeStats</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-python">edgeStats = sumolib.statistics.Statistics(&quot;edge speeds&quot;)
+for edge in sumolib.xml.parse('myNet.edg.xml', ['edge']):
+    edgeStats.add(float(edge.speed))
+avgSpeed = edgeStats.median()
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Attribute <em>speed</em> is optional in user-generated <em>.edg.xml</em> files but will always be included if that file was written by <a href="../netconvert.html">netconvert</a> or <a href="../Netedit/index.html">netedit</a>.</p>
@@ -317,78 +312,71 @@ path. This is typically done with a stanza like this:</p>
 <h2 id="locate_nearby_edges_based_on_the_geo-coordinate">locate nearby edges based on the geo-coordinate<a class="headerlink" href="#locate_nearby_edges_based_on_the_geo-coordinate" title="Permanent link">#</a></h2>
 <p>This requires the module <a href="https://github.com/pyproj4/pyproj">pyproj</a> to be installed.
 For larger networks <a href="https://pypi.org/project/Rtree/">rtree</a> is also strongly recommended.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">net</span> <span class="o">=</span> <span class="n">sumolib</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">readNet</span><span class="p">(</span><span class="s1">&#39;myNet.net.xml&#39;</span><span class="p">)</span>
-<span class="n">radius</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">convertLonLat2XY</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
-<span class="n">edges</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">getNeighboringEdges</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
-<span class="c1"># pick the closest edge</span>
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">distancesAndEdges</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([(</span><span class="n">dist</span><span class="p">,</span> <span class="n">edge</span><span class="p">)</span> <span class="k">for</span> <span class="n">edge</span><span class="p">,</span> <span class="n">dist</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">dist</span><span class="p">,</span> <span class="n">closestEdge</span> <span class="o">=</span> <span class="n">distancesAndEdges</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</code></pre></div>
-
+<pre><code class="language-python">net = sumolib.net.readNet('myNet.net.xml')
+radius = 0.1
+x, y = net.convertLonLat2XY(lon, lat)
+edges = net.getNeighboringEdges(x, y, radius)
+# pick the closest edge
+if len(edges) &gt; 0:
+    distancesAndEdges = sorted([(dist, edge) for edge, dist in edges], key=lambda x:x[0])
+    dist, closestEdge = distancesAndEdges[0]
+</code></pre>
 <h2 id="parse_all_edges_in_a_route_file">parse all edges in a route file<a class="headerlink" href="#parse_all_edges_in_a_route_file" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">route</span> <span class="ow">in</span> <span class="n">sumolib</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">parse_fast</span><span class="p">(</span><span class="s2">&quot;myRoutes.rou.xml&quot;</span><span class="p">,</span> <span class="s1">&#39;route&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;edges&#39;</span><span class="p">]):</span>
-    <span class="n">edge_ids</span> <span class="o">=</span> <span class="n">route</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-    <span class="c1"># do something with the vector of edge ids</span>
-</code></pre></div>
-
+<pre><code class="language-python">for route in sumolib.xml.parse_fast(&quot;myRoutes.rou.xml&quot;, 'route', ['edges']):
+    edge_ids = route.edges.split()
+    # do something with the vector of edge ids
+</code></pre>
 <h2 id="parse_vehicles_and_their_route_edges_in_a_route_file">parse vehicles and their route edges in a route file<a class="headerlink" href="#parse_vehicles_and_their_route_edges_in_a_route_file" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">vehicle</span> <span class="ow">in</span> <span class="n">sumolib</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;myRoutes.rou.xml&quot;</span><span class="p">,</span> <span class="s2">&quot;vehicle&quot;</span><span class="p">):</span>
-    <span class="n">route</span> <span class="o">=</span> <span class="n">vehicle</span><span class="o">.</span><span class="n">route</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># access the first (and only) child element with name &#39;route&#39;</span>
-    <span class="n">edges</span> <span class="o">=</span> <span class="n">route</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-python">for vehicle in sumolib.xml.parse(&quot;myRoutes.rou.xml&quot;, &quot;vehicle&quot;):
+    route = vehicle.route[0] # access the first (and only) child element with name 'route'
+    edges = route.edges.split()
+</code></pre>
 <p>with automatic data conversions (including depart time as "HH:MM:SS"):</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">sumolib.miscutils</span> <span class="kn">import</span> <span class="n">parseTime</span>
-<span class="k">for</span> <span class="n">vehicle</span> <span class="ow">in</span> <span class="n">sumolib</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;myRoutes.rou.xml&quot;</span><span class="p">,</span> <span class="s2">&quot;vehicle&quot;</span><span class="p">,</span> <span class="n">attr_conversions</span><span class="o">=</span><span class="p">{</span>
-            <span class="s1">&#39;depart&#39;</span> <span class="p">:</span> <span class="n">parseTime</span><span class="p">,</span>
-            <span class="s1">&#39;edges&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">())}):</span>
-    <span class="n">edges</span> <span class="o">=</span> <span class="n">vehicle</span><span class="o">.</span><span class="n">route</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">edges</span>
-    <span class="k">if</span> <span class="n">vehicle</span><span class="o">.</span><span class="n">depart</span> <span class="o">&gt;</span> <span class="mi">42</span><span class="p">:</span>
-       <span class="o">...</span>
-</code></pre></div>
-
+<pre><code class="language-python">from sumolib.miscutils import parseTime
+for vehicle in sumolib.xml.parse(&quot;myRoutes.rou.xml&quot;, &quot;vehicle&quot;, attr_conversions={
+            'depart' : parseTime,
+            'edges' : (lambda x : x.split())}):
+    edges = vehicle.route[0].edges
+    if vehicle.depart &gt; 42:
+       ...
+</code></pre>
 <h2 id="parse_all_edges_in_a_edge_data_meandata_file">parse all edges in a edge data (meanData) file<a class="headerlink" href="#parse_all_edges_in_a_edge_data_meandata_file" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="n">sumolib</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;edgedata.xml&quot;</span><span class="p">,</span> <span class="s2">&quot;interval&quot;</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">interval</span><span class="o">.</span><span class="n">edge</span><span class="p">:</span>
-        <span class="c1"># do something with the edge attributes i.e. edge.entered</span>
-</code></pre></div>
-
+<pre><code class="language-python">for interval in sumolib.xml.parse(&quot;edgedata.xml&quot;, &quot;interval&quot;):
+    for edge in interval.edge:
+        # do something with the edge attributes i.e. edge.entered
+</code></pre>
 <h2 id="coordinate_transformations">coordinate transformations<a class="headerlink" href="#coordinate_transformations" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">net</span> <span class="o">=</span> <span class="n">sumolib</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">readNet</span><span class="p">(</span><span class="s1">&#39;myNet.net.xml&#39;</span><span class="p">)</span>
+<pre><code class="language-python">net = sumolib.net.readNet('myNet.net.xml')
 
-<span class="c1"># network coordinates (lower left network corner is at x=0, y=0)</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">convertLonLat2XY</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
-<span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">convertXY2LonLat</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+# network coordinates (lower left network corner is at x=0, y=0)
+x, y = net.convertLonLat2XY(lon, lat)
+lon, lat = net.convertXY2LonLat(x, y)
 
-<span class="c1"># raw UTM coordinates</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">convertLonLat2XY</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">convertXY2LonLat</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+# raw UTM coordinates
+x, y = net.convertLonLat2XY(lon, lat, True)
+lon, lat = net.convertXY2LonLat(x, y, True)
 
-<span class="c1"># lane/offset coordinates</span>
-<span class="c1"># from lane position to network coordinates</span>
-<span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">sumolib</span><span class="o">.</span><span class="n">geomhelper</span><span class="o">.</span><span class="n">positionAtShapeOffset</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">getLane</span><span class="p">(</span><span class="n">laneID</span><span class="p">)</span><span class="o">.</span><span class="n">getShape</span><span class="p">(),</span> <span class="n">lanePos</span><span class="p">)</span>
-<span class="c1"># from network coordinates to lane position</span>
-<span class="n">lane</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">getNeighboringLanes</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">radius</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="p">(</span><span class="n">see</span> <span class="s2">&quot;locate nearby edges based on the geo-coordinate&quot;</span> <span class="n">above</span><span class="p">)</span>
-<span class="n">lanePos</span><span class="p">,</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">sumolib</span><span class="o">.</span><span class="n">geomhelper</span><span class="o">.</span><span class="n">polygonOffsetAndDistanceToPoint</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span> <span class="n">lane</span><span class="o">.</span><span class="n">getShape</span><span class="p">())</span>
-</code></pre></div>
-
+# lane/offset coordinates
+# from lane position to network coordinates
+x,y = sumolib.geomhelper.positionAtShapeOffset(net.getLane(laneID).getShape(), lanePos)
+# from network coordinates to lane position
+lane, d = net.getNeighboringLanes(x, y, radius)[0] (see &quot;locate nearby edges based on the geo-coordinate&quot; above)
+lanePos, dist = sumolib.geomhelper.polygonOffsetAndDistanceToPoint((x,y), lane.getShape())
+</code></pre>
 <p>see also
 <a href="../TraCI/Interfacing_TraCI_from_Python.html#coordinate_transformations">TraCI/Interfacing_TraCI_from_Python#coordinate_transformations</a></p>
 <h2 id="manipulating_and_writing_xml">Manipulating and writing xml<a class="headerlink" href="#manipulating_and_writing_xml" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;patched.nod.xml&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outf</span><span class="p">:</span>
-    <span class="c1"># setting attrs is optional, it results in a cleaner patch file</span>
-    <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;node&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">]}</span>  <span class="c1"># other attrs are not needed for patching</span>
-    <span class="c1"># parse always returns a generator but there is only one root element</span>
-    <span class="n">nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sumolib</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;plain.nod.xml&#39;</span><span class="p">,</span> <span class="s1">&#39;nodes&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="o">.</span><span class="n">node</span><span class="p">:</span>
-        <span class="n">node</span><span class="o">.</span><span class="n">addChild</span><span class="p">(</span><span class="s2">&quot;param&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;origPos&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span> <span class="p">:</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="p">}</span> <span class="p">)</span>
-        <span class="n">node</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-        <span class="n">node</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-    <span class="n">outf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">nodes</span><span class="o">.</span><span class="n">toXML</span><span class="p">())</span>
-</code></pre></div>
-
+<pre><code class="language-python">with open(&quot;patched.nod.xml&quot;, 'w') as outf:
+    # setting attrs is optional, it results in a cleaner patch file
+    attrs = {'node': ['id', 'x', 'y']}  # other attrs are not needed for patching
+    # parse always returns a generator but there is only one root element
+    nodes = list(sumolib.xml.parse('plain.nod.xml', 'nodes', attrs))[0]
+    for node in nodes.node:
+        node.addChild(&quot;param&quot;, { &quot;key&quot;: &quot;origPos&quot;, &quot;value&quot; : &quot;%s %s&quot; % (node.x, node.y) } )
+        node.x = float(node.x) + random.randint(-20, 20)
+        node.y = float(node.y) + random.randint(-20, 20)
+    outf.write(nodes.toXML())
+</code></pre>
 <h1 id="further_examples">Further Examples<a class="headerlink" href="#further_examples" title="Permanent link">#</a></h1>
 <p>The <em>runner.py</em> files in the test subfolders of <a href="https://github.com/eclipse-sumo/sumo/blob/main/tests/tools/sumolib"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/tests/tools/sumolib</a> provide additional
 examples for sumolib use.</p>
@@ -399,7 +387,7 @@ examples for sumolib use.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

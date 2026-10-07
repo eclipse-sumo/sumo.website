@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -341,12 +342,11 @@ You might not to edit your <code>CMakeCache.txt</code> to use the selfmade libra
 or because you want to anble or disable certain features in the libraries),
 you can also try to build against vcpkg.
 The setup follows those basic steps.</p>
-<div class="codehilite"><pre><span></span><code>git clone https://github.com/Microsoft/vcpkg.git
+<pre><code>git clone https://github.com/Microsoft/vcpkg.git
 cd vcpkg
 ./bootstrap-vcpkg.sh
 ./vcpkg install arrow gdal xerces-c gettext fmt eigen3
-</code></pre></div>
-
+</code></pre>
 <p>Unless you are determined that all your builds will use vcpkg libraries,
 you should not call <code>./vcpkg integrate install</code> because it might mess up
 your environment if you decide to build against SUMOLibraries at a later point.
@@ -357,9 +357,8 @@ cannot build any GUI applications by using only vcpkg.</p>
 <h2 id="install_python_packages">Install python packages<a class="headerlink" href="#install_python_packages" title="Permanent link">#</a></h2>
 <p>For using the SUMO Python tools from the command line or in netedit it is recommended to install a list of python packages.
 From your SUMO directory you can install them using pip:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">pip</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">tools</span>\<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
-</code></pre></div>
-
+<pre><code>pip install -r tools\requirements.txt
+</code></pre>
 <h2 id="manual_cmake_configuration">Manual CMake configuration<a class="headerlink" href="#manual_cmake_configuration" title="Permanent link">#</a></h2>
 <h3 id="method_1_via_cmake_gui">Method 1: Via CMake GUI<a class="headerlink" href="#method_1_via_cmake_gui" title="Permanent link">#</a></h3>
 <ul>
@@ -446,10 +445,9 @@ repair your file associations or undefine <strong>HAVE_VERSION_H</strong> in
 <a href="https://stackoverflow.com/questions/2640971/windows-is-not-passing-command-line-arguments-to-python-programs-executed-from-t">command line
 arguments</a>.
 For a quick fix, you can also execute the following commands manually:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">tools</span>\<span class="n">build</span>\<span class="n">version</span><span class="o">.</span><span class="n">py</span>
-<span class="n">tools</span>\<span class="n">build</span>\<span class="n">typemap</span><span class="o">.</span><span class="n">py</span>
-</code></pre></div>
-
+<pre><code>tools\build\version.py
+tools\build\typemap.py
+</code></pre>
 <h3 id="execution_cannot_proceed_because_msvcr120dllmsvcr140dll_was_not_found">Execution cannot proceed because MSVCR120.dll/MSVCR140.dll was not found<a class="headerlink" href="#execution_cannot_proceed_because_msvcr120dllmsvcr140dll_was_not_found" title="Permanent link">#</a></h3>
 <p>Install Microsoft <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist">Visual C++ Redistributable Packages for Visual
 Studio</a>
@@ -461,16 +459,14 @@ You can check if all dependencies are correct using
 <p>Your version of Visual Studio doesn't support Debugging, you can only compile in release mode.</p>
 <h2 id="how_to_build_jupedsim_and_then_build_sumo_with_jupedsim">How to build JuPedSim and then build SUMO with JuPedSim<a class="headerlink" href="#how_to_build_jupedsim_and_then_build_sumo_with_jupedsim" title="Permanent link">#</a></h2>
 <p>In this section, you will learn how to build the latest version of the pedestrian simulator JuPedSim and how to compile SUMO with this latest version of JuPedSim, in case the release version of JuPedSim that comes with SUMO isn't sufficient for your needs. You can consult the JuPedSim build procedure <a href="https://github.com/PedestrianDynamics/jupedsim#readme">here</a>; hereafter proposes a similar procedure. First of all, clone the JuPedSim repository:</p>
-<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/PedestrianDynamics/jupedsim.git
-</code></pre></div>
-
+<pre><code class="language-bash">git clone https://github.com/PedestrianDynamics/jupedsim.git
+</code></pre>
 <p>Outside the repository directory, but at the same level, create two directories <code>jupedsim-build</code> and <code>jupedsim-install</code> (for instance), then type:</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>jupedsim-build
-cmake<span class="w"> </span>-DCMAKE_INSTALL_PREFIX<span class="o">=</span>../jupedsim-install<span class="w"> </span>..
-cmake<span class="w"> </span>--build<span class="w"> </span>.<span class="w"> </span>--config<span class="w"> </span>Release
-cmake<span class="w"> </span>--install<span class="w"> </span>.<span class="w"> </span>--config<span class="w"> </span>Release
-</code></pre></div>
-
+<pre><code class="language-bash">cd jupedsim-build
+cmake -DCMAKE_INSTALL_PREFIX=../jupedsim-install ..
+cmake --build . --config Release
+cmake --install . --config Release
+</code></pre>
 <p>You can also change the configuration to Debug and also enable multithreading as usual which CMake. Now to integrate the latest version of JuPedSim into SUMO, please follow the standard build procedure for Windows: since the JuPedSim install folder is at the same level of SUMO, it will be found automatically. Alternatively, you can notify CMake where is JuPedSim installed by setting <code>JUPEDSIM_CUSTOMDIR</code> when calling CMake.</p>
 <p>For further remarks on the use of JuPedSim inside SUMO, please consult <a href="../Simulation/Pedestrians.html#model_jupedsim">this page</a>.</p>
                 </main>
@@ -480,7 +476,7 @@ cmake<span class="w"> </span>--install<span class="w"> </span>.<span class="w"> 
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

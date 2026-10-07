@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -342,14 +343,13 @@ the <em>rerouting device</em> are used. Note, that these can also be modified vi
 <p>Sometimes it is useful to guide route search with additional information while still taking travel times into account.
 For this use case the option <strong>--weights.priority-factor FLOAT</strong> can be used with <a href="../sumo.html">sumo</a> and <a href="../duarouter.html">duarouter</a>.</p>
 <p>When this option is set, the priority value of each edge is factored into the routing decision so that low-priority edges receive a penalty (they appear to be slower) whereas high-priority edges receive little or no penalty. For the option value <code>PriorityFactor</code>, the penalty is computed thus:</p>
-<div class="codehilite"><pre><span></span><code>  MinEdgePriority : minimum priority value of all edges
+<pre><code>  MinEdgePriority : minimum priority value of all edges
   MaxEdgePriority : maximum priority value of all edges
   EdgePriorityRange = MaxEdgePriority - MinEdgePriority
 
   relativeInversePrio = 1 - ((edgePriority - MinEdgePriority) / EdgePriorityRange)
-  effort =  traveltime <span class="gs">* (1 + relativeInversePrio *</span> PriorityFactor)
-</code></pre></div>
-
+  effort =  traveltime * (1 + relativeInversePrio * PriorityFactor)
+</code></pre>
 <p>As a consequence:</p>
 <ul>
 <li>the highest priority edge will get no penalty</li>
@@ -397,11 +397,10 @@ Preferences are defined with the following attributes</p>
 </table>
 <p>When the <code>&lt;preference&gt;</code> element is loaded, all listed <code>vTypes</code> and <code>vClasses</code> will have their edge travelTime divided by the defined <code>priority</code> value for all edges that have the given <code>routingType</code>. If an edge does not define attribute <code>routingType</code> it's <code>type</code> is used for matching preferences.</p>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional</span><span class="w"> </span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;preference</span><span class="w"> </span><span class="na">routingType=</span><span class="s">&quot;typeB&quot;</span><span class="w"> </span><span class="na">vClasses=</span><span class="s">&quot;wheelchair&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;4&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional &gt;
+    &lt;preference routingType=&quot;typeB&quot; vClasses=&quot;wheelchair&quot; priority=&quot;4&quot;/&gt;
+&lt;/additional&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If a <code>&lt;preference&gt;</code> element defines neither <code>vTypes</code> nor <code>vClasses</code> it will apply the <code>priority</code> to all vehicles/persons.</p>
@@ -444,14 +443,12 @@ loading suitable <em>effort</em>-data (see
 the speed for all network edges to the same value.</p>
 <p>A simpler solution is to define a vehicle type that travels with the
 same speed on all edges:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;routeByDistance&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vType id=&quot;routeByDistance&quot; maxSpeed=&quot;1&quot;/&gt;
+</code></pre>
 <p>and then using that type to find the fastest route:</p>
-<div class="codehilite"><pre><span></span><code>stageResult = traci.simulation.findRoute(fromEdge, toEdge, &quot;routeByDistance&quot;)
+<pre><code>stageResult = traci.simulation.findRoute(fromEdge, toEdge, &quot;routeByDistance&quot;)
 shortestDistance = stage.length
-</code></pre></div>
-
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Older versions of SUMO do not supply the value <em>stage.length</em>. In this case <strong>shortestDistance = stage.travelTime</strong> is also correct due to the speed of 1m/s.</p>
@@ -473,7 +470,7 @@ prohibitions, priority-factor, random-factor, routing preferences, ...).</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

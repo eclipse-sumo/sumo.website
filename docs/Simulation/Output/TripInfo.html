@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -236,24 +237,23 @@ vehicle as soon as the vehicle arrived at its destination and is removed
 from the network.</p>
 <h2 id="generated_output">Generated Output<a class="headerlink" href="#generated_output" title="Permanent link">#</a></h2>
 <p>The format is as following:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tripinfos&gt;</span>
-<span class="w">    </span><span class="nt">&lt;tripinfo</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;VEHICLE_ID&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">            </span><span class="na">depart=</span><span class="s">&quot;&lt;DEPARTURE_TIME&gt;&quot;</span><span class="w"> </span><span class="na">departLane=</span><span class="s">&quot;&lt;DEPARTURE_LANE_ID&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">            </span><span class="na">departPos=</span><span class="s">&quot;&lt;DEPARTURE_POSITION&gt;&quot;</span><span class="w"> </span><span class="na">departSpeed=</span><span class="s">&quot;&lt;DEPARTURE_SPEED&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">            </span><span class="na">departDelay=</span><span class="s">&quot;&lt;DEPARTURE_DELAY&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">            </span><span class="na">arrival=</span><span class="s">&quot;&lt;ARRIVAL_TIME&gt;&quot;</span><span class="w"> </span><span class="na">arrivalLane=</span><span class="s">&quot;&lt;DEPARTURE_LANE_ID&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">            </span><span class="na">arrivalPos=</span><span class="s">&quot;&lt;ARRIVAL_POSITION&gt;&quot;</span><span class="w"> </span><span class="na">arrivalSpeed=</span><span class="s">&quot;&lt;ARRIVAL_SPEED&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">            </span><span class="na">duration=</span><span class="s">&quot;&lt;TRAVEL_TIME&gt;&quot;</span><span class="w"> </span><span class="na">routeLength=</span><span class="s">&quot;&lt;ROUTE_LENGTH&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">            </span><span class="na">waitingTime=</span><span class="s">&quot;&lt;SECONDS_WAITING_FOR_TRAFFIC&gt;&quot;</span>
-<span class="w">            </span><span class="na">waitingCount=</span><span class="s">&quot;&lt;NUMBER_OF_WAITING_EPISODES&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">            </span><span class="na">rerouteNo=</span><span class="s">&quot;&lt;REROUTE_NUMBER&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">            </span><span class="na">devices=</span><span class="s">&quot;&lt;DEVICE_LIST&gt;&quot;</span><span class="w"> </span><span class="na">vtype=</span><span class="s">&quot;&lt;VEHICLE_TYPE_ID&gt;&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;tripinfos&gt;
+    &lt;tripinfo id=&quot;&lt;VEHICLE_ID&gt;&quot; \
+            depart=&quot;&lt;DEPARTURE_TIME&gt;&quot; departLane=&quot;&lt;DEPARTURE_LANE_ID&gt;&quot; \
+            departPos=&quot;&lt;DEPARTURE_POSITION&gt;&quot; departSpeed=&quot;&lt;DEPARTURE_SPEED&gt;&quot; \
+            departDelay=&quot;&lt;DEPARTURE_DELAY&gt;&quot; \
+            arrival=&quot;&lt;ARRIVAL_TIME&gt;&quot; arrivalLane=&quot;&lt;DEPARTURE_LANE_ID&gt;&quot; \
+            arrivalPos=&quot;&lt;ARRIVAL_POSITION&gt;&quot; arrivalSpeed=&quot;&lt;ARRIVAL_SPEED&gt;&quot; \
+            duration=&quot;&lt;TRAVEL_TIME&gt;&quot; routeLength=&quot;&lt;ROUTE_LENGTH&gt;&quot; \
+            waitingTime=&quot;&lt;SECONDS_WAITING_FOR_TRAFFIC&gt;&quot;
+            waitingCount=&quot;&lt;NUMBER_OF_WAITING_EPISODES&gt;&quot; \
+            rerouteNo=&quot;&lt;REROUTE_NUMBER&gt;&quot; \
+            devices=&quot;&lt;DEVICE_LIST&gt;&quot; vtype=&quot;&lt;VEHICLE_TYPE_ID&gt;&quot;/&gt;
 
-<span class="w">    </span>...<span class="w"> </span>information<span class="w"> </span>about<span class="w"> </span>further<span class="w"> </span>vehicles<span class="w"> </span>...
+    ... information about further vehicles ...
 
-<span class="nt">&lt;/tripinfos&gt;</span>
-</code></pre></div>
-
+&lt;/tripinfos&gt;
+</code></pre>
 <p>Please note that, in contrary to the example above, for each time step,
 all those values are reported in one line. An entry is written each time
 a vehicle has arrived at his destination. In prior to this, the written
@@ -384,15 +384,14 @@ Routes</a>
 and <a href="../../Models/Emissions.html">Models/Emissions</a>) contributes to the tripinfo output. It provides the sum of all emissions/consumption generated/consumed by the
 vehicle during its journey.</p>
 <p>This adds the following line:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tripinfos&gt;</span>
-<span class="w">    </span><span class="nt">&lt;tripinfo</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;VEHICLE_ID&gt;&quot;</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="na">vtype=</span><span class="s">&quot;&lt;VEHICLE_TYPE_ID&gt;&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;emissions</span><span class="w"> </span><span class="na">CO_abs=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">CO2_abs=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">HC_abs=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">PMx_abs=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">NOx_abs=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">fuel_abs=</span><span class="s">&quot;...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/tripinfo&gt;</span>
-<span class="w">    </span>...<span class="w"> </span>information<span class="w"> </span>about<span class="w"> </span>further<span class="w"> </span>vehicles<span class="w"> </span>...
+<pre><code class="language-xml">&lt;tripinfos&gt;
+    &lt;tripinfo id=&quot;&lt;VEHICLE_ID&gt;&quot; ... vtype=&quot;&lt;VEHICLE_TYPE_ID&gt;&quot;&gt;
+        &lt;emissions CO_abs=&quot;...&quot; CO2_abs=&quot;...&quot; HC_abs=&quot;...&quot; PMx_abs=&quot;...&quot; NOx_abs=&quot;...&quot; fuel_abs=&quot;...&quot;/&gt;
+    &lt;/tripinfo&gt;
+    ... information about further vehicles ...
 
-<span class="nt">&lt;/tripinfos&gt;</span>
-</code></pre></div>
-
+&lt;/tripinfos&gt;
+</code></pre>
 <p>with units as following</p>
 <table>
 <thead>
@@ -444,15 +443,14 @@ vehicle during its journey.</p>
 <p>The <a href="../../Models/Electric.html">"battery" device</a> contributes to the tripinfo output how many times the vehicle encountered its battery depleted during its journey.
 Vehicles can be forced to stop due to lack of energy using the <a href="../Stationfinder.html">"stationfinder" device</a> or may recuperate energy while braking and then deplete the battery again.</p>
 <p>This adds the following line:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tripinfos&gt;</span>
-<span class="w">    </span><span class="nt">&lt;tripinfo</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;VEHICLE_ID&gt;&quot;</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="na">vtype=</span><span class="s">&quot;&lt;VEHICLE_TYPE_ID&gt;&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;battery</span><span class="w"> </span><span class="na">depleted=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">actualBatteryCapacity=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">totalEnergyConsumed=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">totalEnergyRegenerated=</span><span class="s">&quot;...&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/tripinfo&gt;</span>
-<span class="w">    </span>...<span class="w"> </span>information<span class="w"> </span>about<span class="w"> </span>further<span class="w"> </span>vehicles<span class="w"> </span>...
+<pre><code class="language-xml">&lt;tripinfos&gt;
+    &lt;tripinfo id=&quot;&lt;VEHICLE_ID&gt;&quot; ... vtype=&quot;&lt;VEHICLE_TYPE_ID&gt;&quot;&gt;
+        &lt;battery depleted=&quot;...&quot; actualBatteryCapacity=&quot;...&quot; totalEnergyConsumed=&quot;...&quot; totalEnergyRegenerated=&quot;...&quot;/&gt;
+    &lt;/tripinfo&gt;
+    ... information about further vehicles ...
 
-<span class="nt">&lt;/tripinfos&gt;</span>
-</code></pre></div>
-
+&lt;/tripinfos&gt;
+</code></pre>
 <p>with the attributes as following</p>
 <table>
 <thead>
@@ -493,28 +491,25 @@ To change this, the option <strong>--tripinfo-output.write-unfinished</strong> c
 <p>Example:
 Setting SUMO-option <strong>--device.tripinfo.probability 0</strong> will disable the device for all vehicles by default.
 The following definition overrides this default end enables the device for busses:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bus&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.tripinfo.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/vType&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vType id=&quot;bus&quot;&gt;
+  &lt;param key=&quot;has.tripinfo.device&quot; value=&quot;true&quot;/&gt;
+&lt;/vType&gt;
+</code></pre>
 <h2 id="person_and_container_output">Person and Container Output<a class="headerlink" href="#person_and_container_output" title="Permanent link">#</a></h2>
 <p>If the simulation contains persons or containers, the following elements
 will be added to the output:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;personinfo</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;person0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0.00&quot;</span><span class="nt">&gt;</span>
-<span class="w"> </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">arrival=</span><span class="s">&quot;47.00&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;55.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w"> </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">waitingTime=</span><span class="s">&quot;74.00&quot;</span><span class="w"> </span><span class="na">vehicle=</span><span class="s">&quot;train0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;121.00&quot;</span><span class="w"> </span><span class="na">arrival=</span><span class="s">&quot;140.00&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;92.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w"> </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20.00&quot;</span><span class="w"> </span><span class="na">arrival=</span><span class="s">&quot;160.00&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;45.00&quot;</span><span class="w"> </span><span class="na">actType=</span><span class="s">&quot;singing&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/personinfo&gt;</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;containerinfo</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;container0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;tranship</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">arrival=</span><span class="s">&quot;54.00&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;55.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;transport</span><span class="w"> </span><span class="na">waitingTime=</span><span class="s">&quot;103.00&quot;</span><span class="w"> </span><span class="na">vehicle=</span><span class="s">&quot;train0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;157.00&quot;</span><span class="w"> </span><span class="na">arrival=</span><span class="s">&quot;176.00&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;92.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20.00&quot;</span><span class="w"> </span><span class="na">arrival=</span><span class="s">&quot;196.00&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;40.00&quot;</span><span class="w"> </span><span class="na">actType=</span><span class="s">&quot;waiting&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/containerinfo&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;personinfo id=&quot;person0&quot; depart=&quot;0.00&quot;&gt;
+ &lt;walk depart=&quot;0.00&quot; arrival=&quot;47.00&quot; arrivalPos=&quot;55.00&quot;/&gt;
+ &lt;ride waitingTime=&quot;74.00&quot; vehicle=&quot;train0&quot; depart=&quot;121.00&quot; arrival=&quot;140.00&quot; arrivalPos=&quot;92.00&quot;/&gt;
+ &lt;stop duration=&quot;20.00&quot; arrival=&quot;160.00&quot; arrivalPos=&quot;45.00&quot; actType=&quot;singing&quot;/&gt;
+&lt;/personinfo&gt;
+</code></pre>
+<pre><code class="language-xml">&lt;containerinfo id=&quot;container0&quot; depart=&quot;0.00&quot;&gt;
+  &lt;tranship depart=&quot;0.00&quot; arrival=&quot;54.00&quot; arrivalPos=&quot;55.00&quot;/&gt;
+  &lt;transport waitingTime=&quot;103.00&quot; vehicle=&quot;train0&quot; depart=&quot;157.00&quot; arrival=&quot;176.00&quot; arrivalPos=&quot;92.00&quot;/&gt;
+  &lt;stop duration=&quot;20.00&quot; arrival=&quot;196.00&quot; arrivalPos=&quot;40.00&quot; actType=&quot;waiting&quot;/&gt;
+&lt;/containerinfo&gt;
+</code></pre>
 <p>When setting option <strong>--personinfo-output FILE</strong>, the above elements will be written to the given filename instead of written together with the vehicle <code>&lt;tripinfo&gt;</code> elements.</p>
 <p>The <code>&lt;personinfo&gt;</code> / <code>&lt;containerinfo&gt;</code> attributes have the following meaning:</p>
 <table>
@@ -614,7 +609,7 @@ the option <a href="StatisticOutput.html"><strong>--statistic-output</strong></a
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -244,23 +245,20 @@ and then click the 'Reduce' button.</p>
    <a href="../Tools/Detector.html#edgedatafromflowpy">edgeDataFromFlow.py tool</a></li>
 </ol>
 <p>The corresponding commands could look like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="o">$</span><span class="n">SUMO_HOME</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">detector</span><span class="o">/</span><span class="n">mapDetectors</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">motorway</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">gz</span><span class="w"> </span><span class="o">--</span><span class="n">detector</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">detectors</span><span class="o">.</span><span class="n">csv</span><span class="w"> </span><span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">detectorss</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">id</span><span class="o">-</span><span class="n">column</span><span class="w"> </span><span class="n">detector_name</span><span class="w"> </span><span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">radius</span><span class="w"> </span><span class="mf">100.0</span>
-<span class="n">python</span><span class="w"> </span><span class="o">$</span><span class="n">SUMO_HOME</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">detector</span><span class="o">/</span><span class="n">edgeDataFromFlow</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">detector</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">detectorss</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">detector</span><span class="o">-</span><span class="n">flow</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">detector_data</span><span class="o">.</span><span class="n">csv</span><span class="w"> </span><span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">edgedata</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">id</span><span class="o">-</span><span class="n">column</span><span class="w"> </span><span class="n">detector_name</span><span class="w"> </span><span class="o">--</span><span class="n">time</span><span class="o">-</span><span class="n">column</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">--</span><span class="n">flow</span><span class="o">-</span><span class="n">columns</span><span class="w"> </span><span class="n">count</span>
-</code></pre></div>
-
+<pre><code>python $SUMO_HOME/tools/detector/mapDetectors.py -n motorway.net.xml.gz --detector-file detectors.csv --output-file detectorss.add.xml --id-column detector_name --max-radius 100.0
+python $SUMO_HOME/tools/detector/edgeDataFromFlow.py --detector-file detectorss.add.xml --detector-flow-file detector_data.csv --output-file edgedata.xml --id-column detector_name --time-column time --flow-columns count
+</code></pre>
 <p>The above command assumes that time stamps are in minutes of the day and data is aggregated per hour.</p>
 <p>If the timestamps are absolute dates and in a different aggregation period, the command to obtain hourly counts could like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="o">$</span><span class="n">SUMO_HOME</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">detector</span><span class="o">/</span><span class="n">edgeDataFromFlow</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">detector</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">detectorss</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">detector</span><span class="o">-</span><span class="n">flow</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">detector_data</span><span class="o">.</span><span class="n">csv</span><span class="w"> </span><span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">edgedata</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">id</span><span class="o">-</span><span class="n">column</span><span class="w"> </span><span class="n">detector_name</span><span class="w"> </span><span class="o">--</span><span class="n">time</span><span class="o">-</span><span class="n">column</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">--</span><span class="n">flow</span><span class="o">-</span><span class="n">columns</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">--</span><span class="n">time</span><span class="o">-</span><span class="n">scale</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">--</span><span class="n">time</span><span class="o">-</span><span class="n">format</span><span class="w"> </span><span class="o">%</span><span class="n">Y</span><span class="o">-%</span><span class="n">m</span><span class="o">-%</span><span class="n">dT</span><span class="o">%</span><span class="n">H</span><span class="p">:</span><span class="o">%</span><span class="n">M</span><span class="p">:</span><span class="o">%</span><span class="n">SZ</span><span class="w"> </span><span class="o">--</span><span class="n">time</span><span class="o">-</span><span class="n">offset</span><span class="w"> </span><span class="mi">2025</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">24</span><span class="n">T00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="n">Z</span><span class="w"> </span><span class="o">--</span><span class="n">end</span><span class="w"> </span><span class="mf">86400.0</span><span class="w"> </span><span class="o">--</span><span class="n">interval</span><span class="w"> </span><span class="mf">3600.0</span>
-</code></pre></div>
-
+<pre><code>python $SUMO_HOME/tools/detector/edgeDataFromFlow.py --detector-file detectorss.add.xml --detector-flow-file detector_data.csv --output-file edgedata.xml --id-column detector_name --time-column time --flow-columns count --time-scale 1 --time-format %Y-%m-%dT%H:%M:%SZ --time-offset 2025-11-24T00:00:00Z --end 86400.0 --interval 3600.0
+</code></pre>
 <h2 id="determining_the_routes">Determining the routes<a class="headerlink" href="#determining_the_routes" title="Permanent link">#</a></h2>
 <p>The <a href="../Demand/Routes_from_Observation_Points.html#choosing_the_right_tool">recommended all-purpose tool</a> for importing traffic from counting data is <a href="../Tools/Turns.html#routesamplerpy">routeSampler.py</a>.
 This tool requires some initial routes which are deemed "plausible" and which then guide the interpretation of the counting data.
 A simple way to get started is to compute fastest routes between random origins and destinations. This avoids loops and detours.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="o">$</span><span class="n">SUMO_HOME</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">randomTrips</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">motorway</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">gz</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">sampleRoutes</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span>
-<span class="n">python</span><span class="w"> </span><span class="o">$</span><span class="n">SUMO_HOME</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">routeSampler</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">sampleRoutes</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">edgedata</span><span class="o">-</span><span class="n">files</span><span class="w"> </span><span class="n">edgedata</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">edgedata</span><span class="o">-</span><span class="n">attribute</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">motorway</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>python $SUMO_HOME/tools/randomTrips.py -n motorway.net.xml.gz -r sampleRoutes.rou.xml
+python $SUMO_HOME/tools/routeSampler.py -r sampleRoutes.rou.xml --edgedata-files edgedata.xml --edgedata-attribute count -o motorway.rou.xml
+</code></pre>
 <h2 id="comparison_of_the_detected_and_the_estimated_flows">Comparison of the detected and the estimated flows<a class="headerlink" href="#comparison_of_the_detected_and_the_estimated_flows" title="Permanent link">#</a></h2>
 <p>There are two stages where deviations between measured and simulated counts can be introduced:</p>
 <h3 id="routesamplerpy_mismatch">routeSampler.py mismatch<a class="headerlink" href="#routesamplerpy_mismatch" title="Permanent link">#</a></h3>
@@ -281,9 +279,8 @@ multiple intervals.</p>
 <p>This script is to compare the detected and simulated edge flows. The
 latter one is based on SUMO's aggregated outputs. The script can be
 executed as following:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">tools</span><span class="o">/</span><span class="n">detector</span><span class="o">/</span><span class="n">flowFromEdgeData</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="n">detectors</span><span class="o">.</span><span class="n">det</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="n">edgeData</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">detector_flows</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">flow_column</span><span class="err">`</span>
-</code></pre></div>
-
+<pre><code>tools/detector/flowFromEdgeData.py -d detectors.det.xml -e edgeData.xml -f detector_flows.xml -c flow_column`
+</code></pre>
 <p>, where <code>detectors.det.xml</code> mainly defines the relationship between
 detectors and edges; <code>edgeData.xml</code> is the aggregated output from SUMO;
 <code>detector_flows.xml</code> defines the detected flow data; the flow_column is
@@ -298,9 +295,8 @@ deviation, RMSE and RMSPE are also calculated as outputs.</p>
 <p>This script is to compare the detected flows and the route flows
 according to the pre-defined emitted flows and routes. The basic
 execution call is as following:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">tools</span><span class="o">/</span><span class="n">detector</span><span class="o">/</span><span class="n">flowFromRoutes</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="n">detectors</span><span class="o">.</span><span class="n">det</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="n">emitters</span><span class="o">.</span><span class="n">flows</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">detector_flows</span><span class="o">.</span><span class="n">txt</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">routes</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="err">`</span>
-</code></pre></div>
-
+<pre><code>tools/detector/flowFromRoutes.py -d detectors.det.xml -e emitters.flows.xml -f detector_flows.txt -r routes.rou.xml`
+</code></pre>
 <p>Diagnosing and fixing simulation mismatch requires investigation the following sources of error:</p>
 <ul>
 <li>network quality (missing lanes and connections may cause unrealistic jamming)</li>
@@ -316,7 +312,7 @@ execution call is as following:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

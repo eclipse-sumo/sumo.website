@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -210,12 +211,11 @@ Last edit: 06 October 2026
 
 <h2 id="instantiating_within_the_simulation">Instantiating within the Simulation<a class="headerlink" href="#instantiating_within_the_simulation" title="Permanent link">#</a></h2>
 <p>An induction loop is defined this way within an <a href="/docs/sumo.html#format_of_additional_files"><em>additional-file</em></a> like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">   </span><span class="nt">&lt;inductionLoop</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;ID&gt;&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;&lt;POSITION_ON_LANE&gt;&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;&lt;AGGREGATION_TIME&gt;&quot;</span>
-<span class="w">   </span><span class="na">file=</span><span class="s">&quot;&lt;OUTPUT_FILE&gt;&quot;</span><span class="w"> </span><span class="na">friendlyPos=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+   &lt;inductionLoop id=&quot;&lt;ID&gt;&quot; lane=&quot;&lt;LANE_ID&gt;&quot; pos=&quot;&lt;POSITION_ON_LANE&gt;&quot; period=&quot;&lt;AGGREGATION_TIME&gt;&quot;
+   file=&quot;&lt;OUTPUT_FILE&gt;&quot; friendlyPos=&quot;true&quot;/&gt;
+&lt;/additional&gt;
+</code></pre>
 <p>The "<code>id</code>" is any string by which you can name
 the detector. The attributes "<code>lane</code>" and
 "<code>pos</code>" describe on which lane and at which
@@ -227,13 +227,12 @@ which file the detector shall write his results into.</p>
 <p>Multiple definitions may be placed in the same <a href="/docs/sumo.html#format_of_additional_files"><em>additional-file</em></a> and also reference the
 same output file. Ensure that the <a href="/docs/sumo.html#format_of_additional_files"><em>additional-file</em></a> always starts and ends with a top
 level of tags like so:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">  </span><span class="nt">&lt;inductionLoop</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;myLoop1&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;foo_0&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;42&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;900&quot;</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;out.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;inductionLoop</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;myLoop2&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;foo_2&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;42&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;900&quot;</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;out.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span>....
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;inductionLoop id=&quot;myLoop1&quot; lane=&quot;foo_0&quot; pos=&quot;42&quot; period=&quot;900&quot; file=&quot;out.xml&quot;/&gt;
+  &lt;inductionLoop id=&quot;myLoop2&quot; lane=&quot;foo_2&quot; pos=&quot;42&quot; period=&quot;900&quot; file=&quot;out.xml&quot;/&gt;
+  ....
+&lt;/additional&gt;
+</code></pre>
 <p>The attributes:</p>
 <table>
 <thead>
@@ -304,12 +303,11 @@ level of tags like so:</p>
 <h2 id="generated_output">Generated Output<a class="headerlink" href="#generated_output" title="Permanent link">#</a></h2>
 <p>A single data line within the output of a simulated induction loop looks
 as following:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;&#39;&#39;&lt;BEGIN_TIME&gt;&#39;&#39;&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;&#39;&#39;&lt;END_TIME&gt;&#39;&#39;&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&#39;&#39;&lt;DETECTOR_ID&gt;&#39;&#39;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">      </span><span class="na">nVehContrib=</span><span class="s">&quot;&#39;&#39;&lt;MEASURED_VEHICLES&gt;&#39;&#39;&quot;</span><span class="w"> </span><span class="na">flow=</span><span class="s">&quot;&#39;&#39;&lt;FLOW&gt;&#39;&#39;&quot;</span><span class="w"> </span><span class="na">occupancy=</span><span class="s">&quot;&#39;&#39;&lt;OCCUPANCY&gt;&#39;&#39;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">      </span><span class="na">speed=</span><span class="s">&quot;&#39;&#39;&lt;MEAN_SPEED&gt;&#39;&#39;&quot;</span><span class="w"> </span><span class="na">harmonicMeanSpeed=</span><span class="s">&quot;&#39;&#39;&lt;HARM_MEAN_SPEED&gt;&#39;&#39;&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;&#39;&#39;&lt;MEAN_LENGTH&gt;&#39;&#39;&quot;</span><span class="w"> </span><span class="na">nVehEntered=</span><span class="s">&quot;&#39;&#39;&lt;ENTERED_VEHICLES&gt;&#39;&#39;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span>...<span class="w"> </span>further<span class="w"> </span>intervals<span class="w"> </span>...
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;interval begin=&quot;''&lt;BEGIN_TIME&gt;''&quot; end=&quot;''&lt;END_TIME&gt;''&quot; id=&quot;''&lt;DETECTOR_ID&gt;''&quot; \
+      nVehContrib=&quot;''&lt;MEASURED_VEHICLES&gt;''&quot; flow=&quot;''&lt;FLOW&gt;''&quot; occupancy=&quot;''&lt;OCCUPANCY&gt;''&quot; \
+      speed=&quot;''&lt;MEAN_SPEED&gt;''&quot; harmonicMeanSpeed=&quot;''&lt;HARM_MEAN_SPEED&gt;''&quot; length=&quot;''&lt;MEAN_LENGTH&gt;''&quot; nVehEntered=&quot;''&lt;ENTERED_VEHICLES&gt;''&quot;/&gt;
+   ... further intervals ...
+</code></pre>
 <p>The values are described in the following table.</p>
 <table>
 <thead>
@@ -413,7 +411,7 @@ collected for the vehicles correspond to
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

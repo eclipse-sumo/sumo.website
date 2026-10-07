@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -233,18 +234,15 @@ shapes.txt and the public transport line definitions from OSM (see <a href="../.
 <li>importing the candidate stops from OSM (or anywhere else). This guides selection of stop locations whereas the routes will be built be fastest-path search.</li>
 </ul>
 <p>The minimal call is:</p>
-<div class="codehilite"><pre><span></span><code>python <span class="l">tools/import/gtfs/gtfs2pt.py</span> <span class="o">--</span>network <span class="l">&lt;net-file&gt;</span> <span class="o">--</span>gtfs <span class="l">&lt;gtfs-data-file&gt;</span> <span class="o">--</span>date <span class="l">&lt;YYYYMMDD&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/import/gtfs/gtfs2pt.py --network &lt;net-file&gt; --gtfs &lt;gtfs-data-file&gt; --date &lt;YYYYMMDD&gt;
+</code></pre>
 <p>or for the option with OSM routes:</p>
-<div class="codehilite"><pre><span></span><code>python <span class="l">tools/import/gtfs/gtfs2pt.py</span> <span class="o">--</span>network <span class="l">&lt;net-file&gt;</span> <span class="o">--</span>gtfs <span class="l">&lt;gtfs-data-file&gt;</span> <span class="o">--</span>date <span class="l">&lt;YYYYMMDD&gt;</span> <span class="o">--</span>osm-routes <span class="l">&lt;ptlines-file&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/import/gtfs/gtfs2pt.py --network &lt;net-file&gt; --gtfs &lt;gtfs-data-file&gt; --date &lt;YYYYMMDD&gt; --osm-routes &lt;ptlines-file&gt;
+</code></pre>
 <p>If OSM routes or shapes are not available, it helps to load a file with candidate stopping locations (i.e. from importing OSM with option <strong>--ptstop-output</strong>).
 Whenever a GTFS-coordinate has nearby stops, all of them will be considered as candidates instead of using all edges within range. This greatly speeds up the importer.</p>
-<div class="codehilite"><pre><span></span><code>python <span class="l">tools/import/gtfs/gtfs2pt.py</span> <span class="o">--</span>network <span class="l">&lt;net-file&gt;</span> <span class="o">--</span>gtfs <span class="l">&lt;gtfs-data-file&gt;</span> <span class="o">--</span>date <span class="l">&lt;YYYYMMDD&gt;</span> <span class="o">--</span>stops <span class="l">&lt;ptstop-file&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/import/gtfs/gtfs2pt.py --network &lt;net-file&gt; --gtfs &lt;gtfs-data-file&gt; --date &lt;YYYYMMDD&gt; --stops &lt;ptstop-file&gt;
+</code></pre>
 <p>In either case you can use the <strong>--modes</strong> option that allows to select which public transport
 modes should be imported (bus, tram, train, subway and/or ferry). As default all modes are imported.</p>
 <p>As output an additional file (.add.xml) containing the stops and a route file
@@ -270,9 +268,8 @@ This can greatly speed up search as it restricts candidates to all loaded stops 
 <p>This is a helper script which converts the stop sequences found in GTFS data into SUMO's FCD format and
 optionally also in GPS tracks for further processing. It is used by the script gtfs2pt.py.</p>
 <p>The minimal call is:</p>
-<div class="codehilite"><pre><span></span><code>python <span class="l">tools/import/gtfs/gtfs2fcd.py</span> <span class="o">--</span>gtfs <span class="l">&lt;gtfs-data-file&gt;</span> <span class="o">--</span>date <span class="l">&lt;YYYYMMDD&gt;</span>
-</code></pre></div>
-
+<pre><code>python tools/import/gtfs/gtfs2fcd.py --gtfs &lt;gtfs-data-file&gt; --date &lt;YYYYMMDD&gt;
+</code></pre>
 <h1 id="gtfs2osmpy">gtfs2osm.py<a class="headerlink" href="#gtfs2osmpy" title="Permanent link">#</a></h1>
 <p>This helper script contains the necessary functions to import public transport
 from GTFS and OSM. It is used by the script gtfs2pt.py when the <strong>--osm-routes</strong> option is given.</p>
@@ -283,7 +280,7 @@ from GTFS and OSM. It is used by the script gtfs2pt.py when the <strong>--osm-ro
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

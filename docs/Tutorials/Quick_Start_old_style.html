@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -387,26 +388,25 @@ specification of detector locations.</p>
 <p>The complete node file of the example network is shown in Listing 1.1.</p>
 <p><strong>Listing 1.1 Format of the node file of the example network
 (<em>quickstart.nod.xml</em>)</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;nodes</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span>
-<span class="w">  </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.sf.net/xsd/nodes_file.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;91&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-1000.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1000.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;92&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-1000.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;93&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;3000.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;94&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;+3000.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;+1000.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;911&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-500.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;+1000.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;912&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-500.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;913&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;+2500.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;914&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;2500.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;+1000.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;+1000.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;+1000.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;+2000.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;+2000.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;+1000.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;+1000.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;+1000.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/nodes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;nodes xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/nodes_file.xsd&quot;&gt;
+    &lt;node id=&quot;91&quot; x=&quot;-1000.0&quot; y=&quot;1000.0&quot; /&gt;
+    &lt;node id=&quot;92&quot; x=&quot;-1000.0&quot; y=&quot;0.0&quot; /&gt;
+    &lt;node id=&quot;93&quot; x=&quot;3000.0&quot; y=&quot;0.0&quot; /&gt;
+    &lt;node id=&quot;94&quot; x=&quot;+3000.0&quot; y=&quot;+1000.0&quot; /&gt;
+    &lt;node id=&quot;911&quot; x=&quot;-500.0&quot; y=&quot;+1000.0&quot; /&gt;
+    &lt;node id=&quot;912&quot; x=&quot;-500.0&quot; y=&quot;0.0&quot; /&gt;
+    &lt;node id=&quot;913&quot; x=&quot;+2500.0&quot; y=&quot;0.0&quot; /&gt;
+    &lt;node id=&quot;914&quot; x=&quot;2500.0&quot; y=&quot;+1000.0&quot; /&gt;
+    &lt;node id=&quot;1&quot; x=&quot;0.0&quot; y=&quot;+1000.0&quot; /&gt;
+    &lt;node id=&quot;2&quot; x=&quot;0.0&quot; y=&quot;0.0&quot; /&gt;
+    &lt;node id=&quot;3&quot; x=&quot;+1000.0&quot; y=&quot;0.0&quot; /&gt;
+    &lt;node id=&quot;4&quot; x=&quot;+2000.0&quot; y=&quot;0.0&quot; /&gt;
+    &lt;node id=&quot;5&quot; x=&quot;+2000.0&quot; y=&quot;+1000.0&quot; /&gt;
+    &lt;node id=&quot;6&quot; x=&quot;+1000.0&quot; y=&quot;+1000.0&quot; /&gt;
+&lt;/nodes&gt;
+</code></pre>
 <h4 id="link">Link<a class="headerlink" href="#link" title="Permanent link">#</a></h4>
 <p>Roads are represented as links in SUMO like in other traffic simulation
 software. To define link characteristics the identification (<strong>id</strong>) of
@@ -431,14 +431,13 @@ and 2 lanes respectively. Type (c) is then for the northbound and
 southbound roads with a lower priority.</p>
 <p><strong>Listing 1.2 Link type file of the example network
 (<em>quickstart.typ.xml</em>)</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;types&gt;</span>
-<span class="w">    </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.889&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;b&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.889&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;c&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.889&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/types&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;types&gt;
+    &lt;type id=&quot;a&quot; priority=&quot;3&quot; numLanes=&quot;3&quot; speed=&quot;13.889&quot;/&gt;
+    &lt;type id=&quot;b&quot; priority=&quot;3&quot; numLanes=&quot;2&quot; speed=&quot;13.889&quot;/&gt;
+    &lt;type id=&quot;c&quot; priority=&quot;2&quot; numLanes=&quot;3&quot; speed=&quot;13.889&quot;/&gt;
+&lt;/types&gt;
+</code></pre>
 <p>With the use of the link type file the link file for the example network
 is generated and shown in Listing 1.3. The defined attributes include:</p>
 <ul>
@@ -453,38 +452,37 @@ is generated and shown in Listing 1.3. The defined attributes include:</p>
     available in Section 4.2.</li>
 </ul>
 <p><strong>Listing 1.3 Link file of the example network (<em>quickstart.edg.xml</em>)</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;edges</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span>
-<span class="w">  </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.sf.net/xsd/edges_file.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;D1&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;911&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;91&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;D2&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;91&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;911&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;b&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;D3&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;912&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;92&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;D4&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;92&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;912&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;b&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;D5&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;913&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;93&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;D6&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;93&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;913&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;b&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;D7&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;914&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;94&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;D8&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;94&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;914&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;b&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L1&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;911&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L2&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;911&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;b&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L3&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;912&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L4&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;912&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;b&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L5&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;913&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L6&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;913&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;b&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L7&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;914&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L8&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;914&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;b&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L9&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L10&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L11&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L12&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L13&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L14&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L15&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;c&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L16&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;c&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L17&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;L18&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/edges&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;edges xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/edges_file.xsd&quot;&gt;
+    &lt;edge id=&quot;D1&quot; from=&quot;911&quot; to=&quot;91&quot; type=&quot;a&quot;/&gt;
+    &lt;edge id=&quot;D2&quot; from=&quot;91&quot; to=&quot;911&quot; type=&quot;b&quot;/&gt;
+    &lt;edge id=&quot;D3&quot; from=&quot;912&quot; to=&quot;92&quot; type=&quot;a&quot;/&gt;
+    &lt;edge id=&quot;D4&quot; from=&quot;92&quot; to=&quot;912&quot; type=&quot;b&quot;/&gt;
+    &lt;edge id=&quot;D5&quot; from=&quot;913&quot; to=&quot;93&quot; type=&quot;a&quot;/&gt;
+    &lt;edge id=&quot;D6&quot; from=&quot;93&quot; to=&quot;913&quot; type=&quot;b&quot;/&gt;
+    &lt;edge id=&quot;D7&quot; from=&quot;914&quot; to=&quot;94&quot; type=&quot;a&quot;/&gt;
+    &lt;edge id=&quot;D8&quot; from=&quot;94&quot; to=&quot;914&quot; type=&quot;b&quot;/&gt;
+    &lt;edge id=&quot;L1&quot; from=&quot;1&quot; to=&quot;911&quot; type=&quot;a&quot;/&gt;
+    &lt;edge id=&quot;L2&quot; from=&quot;911&quot; to=&quot;1&quot; type=&quot;b&quot;/&gt;
+    &lt;edge id=&quot;L3&quot; from=&quot;2&quot; to=&quot;912&quot; type=&quot;a&quot;/&gt;
+    &lt;edge id=&quot;L4&quot; from=&quot;912&quot; to=&quot;2&quot; type=&quot;b&quot;/&gt;
+    &lt;edge id=&quot;L5&quot; from=&quot;4&quot; to=&quot;913&quot; type=&quot;a&quot;/&gt;
+    &lt;edge id=&quot;L6&quot; from=&quot;913&quot; to=&quot;4&quot; type=&quot;b&quot;/&gt;
+    &lt;edge id=&quot;L7&quot; from=&quot;5&quot; to=&quot;914&quot; type=&quot;a&quot;/&gt;
+    &lt;edge id=&quot;L8&quot; from=&quot;914&quot; to=&quot;5&quot; type=&quot;b&quot;/&gt;
+    &lt;edge id=&quot;L9&quot; from=&quot;5&quot; to=&quot;6&quot; type=&quot;a&quot;/&gt;
+    &lt;edge id=&quot;L10&quot; from=&quot;6&quot; to=&quot;5&quot; type=&quot;a&quot;/&gt;
+    &lt;edge id=&quot;L11&quot; from=&quot;6&quot; to=&quot;1&quot; type=&quot;a&quot;/&gt;
+    &lt;edge id=&quot;L12&quot; from=&quot;1&quot; to=&quot;6&quot; type=&quot;a&quot;/&gt;
+    &lt;edge id=&quot;L13&quot; from=&quot;3&quot; to=&quot;2&quot; type=&quot;a&quot;/&gt;
+    &lt;edge id=&quot;L14&quot; from=&quot;2&quot; to=&quot;3&quot; type=&quot;a&quot;/&gt;
+    &lt;edge id=&quot;L15&quot; from=&quot;6&quot; to=&quot;3&quot; type=&quot;c&quot;/&gt;
+    &lt;edge id=&quot;L16&quot; from=&quot;3&quot; to=&quot;6&quot; type=&quot;c&quot;/&gt;
+    &lt;edge id=&quot;L17&quot; from=&quot;4&quot; to=&quot;3&quot; type=&quot;a&quot;/&gt;
+    &lt;edge id=&quot;L18&quot; from=&quot;3&quot; to=&quot;4&quot; type=&quot;a&quot;/&gt;
+&lt;/edges&gt;
+</code></pre>
 <h4 id="traffic_movements">Traffic movements<a class="headerlink" href="#traffic_movements" title="Permanent link">#</a></h4>
 <p>The default in SUMO based on the given geometric design of all possible
 and logical traffic movements. U-turns, are allowed, if there is no
@@ -516,44 +514,43 @@ executing network generation. Explanation will be provided in Section
 1.3.</p>
 <p><strong>Listing 1.4 Specification of traffic movements
 (<em>quickstart.con.xml</em>)</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;connections</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span>
-<span class="w">  </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.sf.net/xsd/connections_file.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L12&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L12&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L12&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L4&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L14&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L4&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L14&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L4&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L14&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L9&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L11&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L9&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L11&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L9&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L11&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L9&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L15&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L9&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L15&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L16&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L10&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L16&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L10&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L16&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L10&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L16&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L11&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L12&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L15&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L12&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L15&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L12&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L10&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L12&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L10&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L12&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L10&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L14&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L16&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L14&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L16&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L14&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L16&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L14&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L18&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L14&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L18&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L14&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L18&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L17&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L16&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L17&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L16&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L17&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L16&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L17&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L13&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L17&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L13&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;L17&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;L13&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/connections&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;connections xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/connections_file.xsd&quot;&gt;
+    &lt;connection from=&quot;L2&quot; to=&quot;L12&quot; fromLane=&quot;0&quot; toLane=&quot;0&quot;/&gt;
+    &lt;connection from=&quot;L2&quot; to=&quot;L12&quot; fromLane=&quot;0&quot; toLane=&quot;1&quot;/&gt;
+    &lt;connection from=&quot;L2&quot; to=&quot;L12&quot; fromLane=&quot;1&quot; toLane=&quot;2&quot;/&gt;
+    &lt;connection from=&quot;L4&quot; to=&quot;L14&quot; fromLane=&quot;0&quot; toLane=&quot;0&quot;/&gt;
+    &lt;connection from=&quot;L4&quot; to=&quot;L14&quot; fromLane=&quot;1&quot; toLane=&quot;1&quot;/&gt;
+    &lt;connection from=&quot;L4&quot; to=&quot;L14&quot; fromLane=&quot;1&quot; toLane=&quot;2&quot;/&gt;
+    &lt;connection from=&quot;L9&quot; to=&quot;L11&quot; fromLane=&quot;0&quot; toLane=&quot;0&quot;/&gt;
+    &lt;connection from=&quot;L9&quot; to=&quot;L11&quot; fromLane=&quot;1&quot; toLane=&quot;1&quot;/&gt;
+    &lt;connection from=&quot;L9&quot; to=&quot;L11&quot; fromLane=&quot;1&quot; toLane=&quot;2&quot;/&gt;
+    &lt;connection from=&quot;L9&quot; to=&quot;L15&quot; fromLane=&quot;1&quot; toLane=&quot;1&quot;/&gt;
+    &lt;connection from=&quot;L9&quot; to=&quot;L15&quot; fromLane=&quot;2&quot; toLane=&quot;2&quot;/&gt;
+    &lt;connection from=&quot;L16&quot; to=&quot;L10&quot; fromLane=&quot;0&quot; toLane=&quot;0&quot;/&gt;
+    &lt;connection from=&quot;L16&quot; to=&quot;L10&quot; fromLane=&quot;1&quot; toLane=&quot;1&quot;/&gt;
+    &lt;connection from=&quot;L16&quot; to=&quot;L10&quot; fromLane=&quot;1&quot; toLane=&quot;2&quot;/&gt;
+    &lt;connection from=&quot;L16&quot; to=&quot;L11&quot; fromLane=&quot;2&quot; toLane=&quot;2&quot;/&gt;
+    &lt;connection from=&quot;L12&quot; to=&quot;L15&quot; fromLane=&quot;0&quot; toLane=&quot;0&quot;/&gt;
+    &lt;connection from=&quot;L12&quot; to=&quot;L15&quot; fromLane=&quot;1&quot; toLane=&quot;1&quot;/&gt;
+    &lt;connection from=&quot;L12&quot; to=&quot;L10&quot; fromLane=&quot;1&quot; toLane=&quot;0&quot;/&gt;
+    &lt;connection from=&quot;L12&quot; to=&quot;L10&quot; fromLane=&quot;1&quot; toLane=&quot;1&quot;/&gt;
+    &lt;connection from=&quot;L12&quot; to=&quot;L10&quot; fromLane=&quot;2&quot; toLane=&quot;2&quot;/&gt;
+    &lt;connection from=&quot;L14&quot; to=&quot;L16&quot; fromLane=&quot;1&quot; toLane=&quot;1&quot;/&gt;
+    &lt;connection from=&quot;L14&quot; to=&quot;L16&quot; fromLane=&quot;1&quot; toLane=&quot;0&quot;/&gt;
+    &lt;connection from=&quot;L14&quot; to=&quot;L16&quot; fromLane=&quot;2&quot; toLane=&quot;2&quot;/&gt;
+    &lt;connection from=&quot;L14&quot; to=&quot;L18&quot; fromLane=&quot;0&quot; toLane=&quot;0&quot;/&gt;
+    &lt;connection from=&quot;L14&quot; to=&quot;L18&quot; fromLane=&quot;1&quot; toLane=&quot;1&quot;/&gt;
+    &lt;connection from=&quot;L14&quot; to=&quot;L18&quot; fromLane=&quot;1&quot; toLane=&quot;2&quot;/&gt;
+    &lt;connection from=&quot;L17&quot; to=&quot;L16&quot; fromLane=&quot;0&quot; toLane=&quot;0&quot;/&gt;
+    &lt;connection from=&quot;L17&quot; to=&quot;L16&quot; fromLane=&quot;1&quot; toLane=&quot;1&quot;/&gt;
+    &lt;connection from=&quot;L17&quot; to=&quot;L16&quot; fromLane=&quot;1&quot; toLane=&quot;2&quot;/&gt;
+    &lt;connection from=&quot;L17&quot; to=&quot;L13&quot; fromLane=&quot;1&quot; toLane=&quot;0&quot;/&gt;
+    &lt;connection from=&quot;L17&quot; to=&quot;L13&quot; fromLane=&quot;1&quot; toLane=&quot;1&quot;/&gt;
+    &lt;connection from=&quot;L17&quot; to=&quot;L13&quot; fromLane=&quot;2&quot; toLane=&quot;2&quot;/&gt;
+&lt;/connections&gt;
+</code></pre>
 <p><img alt="Image:image004.gif" src="../images/Image004.gif" title="Image:image004.gif" /></p>
 <p><strong>Fig. 1.4: Allowed traffic movements from Link L2 to Link L12 (with the
 specified lane connection setting)</strong></p>
@@ -580,27 +577,25 @@ added to the configuration file. As stated previously, the prohibition
 of u-turn movements can only be conducted globally.</p>
 <p><strong>Listing 1.6 Configuration file for generating the network file
 (quickstart.netc.cfg)</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">    </span><span class="nt">&lt;input&gt;</span>
-<span class="w">        </span><span class="nt">&lt;edge-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;quickstart.edg.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;node-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;quickstart.nod.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;type-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;quickstart.typ.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;connection-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;quickstart.con.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/input&gt;</span>
-<span class="w">    </span><span class="nt">&lt;output&gt;</span>
-<span class="w">        </span><span class="nt">&lt;output-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;quickstart.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/output&gt;</span>
-<span class="w">    </span><span class="nt">&lt;processing&gt;</span>
-<span class="w">        </span><span class="nt">&lt;no-turnarounds</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/processing&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;input&gt;
+        &lt;edge-files value=&quot;quickstart.edg.xml&quot;/&gt;
+        &lt;node-files value=&quot;quickstart.nod.xml&quot;/&gt;
+        &lt;type-files value=&quot;quickstart.typ.xml&quot;/&gt;
+        &lt;connection-files value=&quot;quickstart.con.xml&quot;/&gt;
+    &lt;/input&gt;
+    &lt;output&gt;
+        &lt;output-file value=&quot;quickstart.net.xml&quot;/&gt;
+    &lt;/output&gt;
+    &lt;processing&gt;
+        &lt;no-turnarounds value=&quot;true&quot;/&gt;
+    &lt;/processing&gt;
+&lt;/configuration&gt;
+</code></pre>
 <p>In our example, the network file <em>quickstart.net.xml</em> will be generated
 by executing the following command in the command line</p>
-<div class="codehilite"><pre><span></span><code>netconvert –c quickstart.netccfg
-</code></pre></div>
-
+<pre><code>netconvert –c quickstart.netccfg
+</code></pre>
 <p>The generated network file can be viewed with the use of
 <a href="../sumo-gui.html">sumo-gui</a> for checking if the network is built
 accurately. Figure 1.7 shows that the U-turn movements are prohibited,
@@ -683,47 +678,46 @@ the information in Table 1.1. The related attributes include:</p>
 <p>The sequence of the attributes can be changed. The attribute <em>sigma</em> is
 assigned as 0.5 for all vehicle types.</p>
 <p><strong>Listing 1.5 Traffic demand and route data (quickstart.rou.xml)</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;routes&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;3.0&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;6.0&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CarA&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;5.0&quot;</span><span class="w"> </span><span class="na">minGap=</span><span class="s">&quot;2.5&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;50.0&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;2.0&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;6.0&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CarB&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;7.5&quot;</span><span class="w"> </span><span class="na">minGap=</span><span class="s">&quot;2.5&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;50.0&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;5.0&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CarC&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;5.0&quot;</span><span class="w"> </span><span class="na">minGap=</span><span class="s">&quot;2.5&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;40.0&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;5.0&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CarD&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;7.5&quot;</span><span class="w"> </span><span class="na">minGap=</span><span class="s">&quot;2.5&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;30.0&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route01&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;D2 L2 L12 L10 L7 D7&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route02&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;D2 L2 L12 L15 L18 L5 D5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route03&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;D2 L2 L12 L15 L13 L3 D3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route04&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;D4 L4 L14 L18 L5 D5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route05&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;D4 L4 L14 L16 L10 L7 D7&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route06&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;D4 L4 L14 L16 L11 L1 D1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route07&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;D6 L6 L17 L13 L3 D3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route08&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;D6 L6 L17 L16 L11 L1 D1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route09&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;D6 L6 L17 L16 L10 L7 D7&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route10&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;D8 L8 L9 L11 L1 D1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route11&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;D8 L8 L9 L15 L13 L3 D3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route12&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;D8 L8 L9 L15 L18 L5 D5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route01&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarA&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,0,0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh1&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route02&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarA&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh2&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route03&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarA&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh3&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route04&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarA&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh4&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route05&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarA&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh5&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route06&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarA&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh6&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route07&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarA&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh7&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route08&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarA&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh8&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route09&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarA&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh9&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route10&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarA&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh10&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route11&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarA&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh11&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route12&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarA&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh12&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route01&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarB&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,0,0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh13&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route02&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarB&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh14&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route03&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarB&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh15&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route04&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarB&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh16&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route05&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarB&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh17&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route06&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarB&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;54000&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh18&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route07&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;CarB&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;routes&gt;
+  &lt;vType accel=&quot;3.0&quot; decel=&quot;6.0&quot; id=&quot;CarA&quot; length=&quot;5.0&quot; minGap=&quot;2.5&quot; maxSpeed=&quot;50.0&quot; sigma=&quot;0.5&quot; /&gt;
+  &lt;vType accel=&quot;2.0&quot; decel=&quot;6.0&quot; id=&quot;CarB&quot; length=&quot;7.5&quot; minGap=&quot;2.5&quot; maxSpeed=&quot;50.0&quot; sigma=&quot;0.5&quot; /&gt;
+  &lt;vType accel=&quot;1.0&quot; decel=&quot;5.0&quot; id=&quot;CarC&quot; length=&quot;5.0&quot; minGap=&quot;2.5&quot; maxSpeed=&quot;40.0&quot; sigma=&quot;0.5&quot; /&gt;
+  &lt;vType accel=&quot;1.0&quot; decel=&quot;5.0&quot; id=&quot;CarD&quot; length=&quot;7.5&quot; minGap=&quot;2.5&quot; maxSpeed=&quot;30.0&quot; sigma=&quot;0.5&quot; /&gt;
+  &lt;route id=&quot;route01&quot; edges=&quot;D2 L2 L12 L10 L7 D7&quot;/&gt;
+  &lt;route id=&quot;route02&quot; edges=&quot;D2 L2 L12 L15 L18 L5 D5&quot;/&gt;
+  &lt;route id=&quot;route03&quot; edges=&quot;D2 L2 L12 L15 L13 L3 D3&quot;/&gt;
+  &lt;route id=&quot;route04&quot; edges=&quot;D4 L4 L14 L18 L5 D5&quot;/&gt;
+  &lt;route id=&quot;route05&quot; edges=&quot;D4 L4 L14 L16 L10 L7 D7&quot;/&gt;
+  &lt;route id=&quot;route06&quot; edges=&quot;D4 L4 L14 L16 L11 L1 D1&quot;/&gt;
+  &lt;route id=&quot;route07&quot; edges=&quot;D6 L6 L17 L13 L3 D3&quot;/&gt;
+  &lt;route id=&quot;route08&quot; edges=&quot;D6 L6 L17 L16 L11 L1 D1&quot;/&gt;
+  &lt;route id=&quot;route09&quot; edges=&quot;D6 L6 L17 L16 L10 L7 D7&quot;/&gt;
+  &lt;route id=&quot;route10&quot; edges=&quot;D8 L8 L9 L11 L1 D1&quot;/&gt;
+  &lt;route id=&quot;route11&quot; edges=&quot;D8 L8 L9 L15 L13 L3 D3&quot;/&gt;
+  &lt;route id=&quot;route12&quot; edges=&quot;D8 L8 L9 L15 L18 L5 D5&quot;/&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh0&quot; route=&quot;route01&quot; type=&quot;CarA&quot; color=&quot;1,0,0&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh1&quot; route=&quot;route02&quot; type=&quot;CarA&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh2&quot; route=&quot;route03&quot; type=&quot;CarA&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh3&quot; route=&quot;route04&quot; type=&quot;CarA&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh4&quot; route=&quot;route05&quot; type=&quot;CarA&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh5&quot; route=&quot;route06&quot; type=&quot;CarA&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh6&quot; route=&quot;route07&quot; type=&quot;CarA&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh7&quot; route=&quot;route08&quot; type=&quot;CarA&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh8&quot; route=&quot;route09&quot; type=&quot;CarA&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh9&quot; route=&quot;route10&quot; type=&quot;CarA&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh10&quot; route=&quot;route11&quot; type=&quot;CarA&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh11&quot; route=&quot;route12&quot; type=&quot;CarA&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh12&quot; route=&quot;route01&quot; type=&quot;CarB&quot; color=&quot;1,0,0&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh13&quot; route=&quot;route02&quot; type=&quot;CarB&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh14&quot; route=&quot;route03&quot; type=&quot;CarB&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh15&quot; route=&quot;route04&quot; type=&quot;CarB&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh16&quot; route=&quot;route05&quot; type=&quot;CarB&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh17&quot; route=&quot;route06&quot; type=&quot;CarB&quot; /&gt;
+  &lt;vehicle depart=&quot;54000&quot; id=&quot;veh18&quot; route=&quot;route07&quot; type=&quot;CarB&quot; /&gt;
 ...
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+&lt;/routes&gt;
+</code></pre>
 <h4 id="traffic_routes">Traffic routes<a class="headerlink" href="#traffic_routes" title="Permanent link">#</a></h4>
 <p>Following the vehicle type information traffic route data need to be
 defined as well. The input attributes include:</p>
@@ -758,26 +752,24 @@ simulation time period is specified in a configuration file. For the
 example network the respective configuration file is shown in Listing
 1.7 and the traffic simulation can then be carried out with the use of
 the following command.</p>
-<div class="codehilite"><pre><span></span><code>sumo –c quickstart.sumocfg
-</code></pre></div>
-
+<pre><code>sumo –c quickstart.sumocfg
+</code></pre>
 <p><strong>Listing 1.7 Configuration file for the traffic simulation of the
 example network (quickstart.sumo.cfg)</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;</span>
-<span class="nt">&lt;configuration</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span>
-<span class="w">  </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.sf.net/xsd/sumoConfiguration.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;input&gt;</span>
-<span class="w">        </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;quickstart.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;quickstart.rou.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/input&gt;</span>
-<span class="w">    </span><span class="nt">&lt;time&gt;</span>
-<span class="w">        </span><span class="nt">&lt;begin</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;54000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;end</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;54900&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/time&gt;</span>
-<span class="w">    </span><span class="nt">&lt;time-to-teleport</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;-1&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;
+&lt;configuration xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/sumoConfiguration.xsd&quot;&gt;
+    &lt;input&gt;
+        &lt;net-file value=&quot;quickstart.net.xml&quot;/&gt;
+        &lt;route-files value=&quot;quickstart.rou.xml&quot;/&gt;
+    &lt;/input&gt;
+    &lt;time&gt;
+        &lt;begin value=&quot;54000&quot;/&gt;
+        &lt;end value=&quot;54900&quot;/&gt;
+    &lt;/time&gt;
+    &lt;time-to-teleport value=&quot;-1&quot;/&gt;
+&lt;/configuration&gt;
+</code></pre>
 <p>We use the <code>&lt;time-to-teleport value="-1"/&gt;</code>
 option here, to disable the automatic removal of vehicles which wait too
 long in front of an intersection.</p>
@@ -811,7 +803,7 @@ Figure 1.9.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

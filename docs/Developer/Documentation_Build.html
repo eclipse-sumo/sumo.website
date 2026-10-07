@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -235,13 +236,11 @@ Last edit: 06 October 2026
 </div>
 <h1 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">#</a></h1>
 <p>Building the documentation requires the python3-version of mkdocs along with several plugins. The complete plugins list is contained in the <code>requirements.txt</code> file in the <code>docs/web/</code> directory. These can be installed with pip using:</p>
-<div class="codehilite"><pre><span></span><code> pip install -r requirements.txt
-</code></pre></div>
-
+<pre><code> pip install -r requirements.txt
+</code></pre>
 <p>You also need to install the plantuml package</p>
-<div class="codehilite"><pre><span></span><code> sudo apt install plantuml
-</code></pre></div>
-
+<pre><code> sudo apt install plantuml
+</code></pre>
 <h1 id="documentation_parts">Documentation Parts<a class="headerlink" href="#documentation_parts" title="Permanent link">#</a></h1>
 <h2 id="source_files">Source Files<a class="headerlink" href="#source_files" title="Permanent link">#</a></h2>
 <h3 id="markdown_files">Markdown files<a class="headerlink" href="#markdown_files" title="Permanent link">#</a></h3>
@@ -267,7 +266,7 @@ The necessary files are as follows:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -285,7 +286,7 @@ Unix-like environments. Documentation can be found in the</p>
   choose a different target for the libs and includes such as $HOME).
   For GDAL, Fox and Proj this is more or less straightforward:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>tar xzf fox-1.6.36.tar.gz
+<pre><code>tar xzf fox-1.6.36.tar.gz
 cd fox-1.6.36
 ./configure --prefix=$HOME &amp;&amp; make install
 cd ..
@@ -296,8 +297,7 @@ cd ..
 tar xzf proj-4.6.0.tar.gz
 cd proj-4.6.0
 ./configure --prefix=$HOME &amp;&amp; make install
-</code></pre></div>
-
+</code></pre>
 <ul>
 <li>Note: The "make install" for GDAL may fail due to the Python
   bindings which it wants to install into some only-root-writable
@@ -323,87 +323,78 @@ cd proj-4.6.0
   build</a> is
   somewhat more involved:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="n">tar</span><span class="w"> </span><span class="n">xzf</span><span class="w"> </span><span class="n">xerces</span><span class="o">-</span><span class="n">c</span><span class="o">-</span><span class="n">current</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
-<span class="k">export</span><span class="w"> </span><span class="n">XERCESCROOT</span><span class="o">=$</span><span class="p">{</span><span class="n">HOME</span><span class="p">}</span><span class="o">/</span><span class="n">xerces</span><span class="o">-</span><span class="n">c</span><span class="o">-</span><span class="n">src_3_0_1</span>
-<span class="n">cd</span><span class="w"> </span><span class="o">$</span><span class="n">XERCESCROOT</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">xercesc</span>
-<span class="n">autoconf</span>
-<span class="o">./</span><span class="n">runConfigure</span><span class="w"> </span><span class="o">-</span><span class="n">plinux</span><span class="w"> </span><span class="o">-</span><span class="n">cgcc</span><span class="w"> </span><span class="o">-</span><span class="n">xg</span><span class="o">++</span><span class="w"> </span><span class="o">-</span><span class="n">minmem</span><span class="w"> </span><span class="o">-</span><span class="n">nsocket</span><span class="w"> </span><span class="o">-</span><span class="n">tnative</span><span class="w"> </span><span class="o">-</span><span class="n">rpthread</span><span class="w"> </span><span class="o">-</span><span class="n">P</span><span class="o">$</span><span class="n">HOME</span>
-<span class="n">make</span>
-<span class="n">make</span><span class="w"> </span><span class="n">install</span>
-</code></pre></div>
-
+<pre><code>tar xzf xerces-c-current.tar.gz
+export XERCESCROOT=${HOME}/xerces-c-src_3_0_1
+cd $XERCESCROOT/src/xercesc
+autoconf
+./runConfigure -plinux -cgcc -xg++ -minmem -nsocket -tnative -rpthread -P$HOME
+make
+make install
+</code></pre>
 <h4 id="concluding_remarks">Concluding Remarks<a class="headerlink" href="#concluding_remarks" title="Permanent link">#</a></h4>
 <p>After installing all of the required libraries and tools in this
 fashion, note that, when building SUMO, the following parameters will be
 required for the "./configure" run:</p>
-<div class="codehilite"><pre><span></span><code>./configure --with-fox-config=$HOME/bin/fox-config --with-proj-gdal=$HOME --with-xerces=$HOME
-</code></pre></div>
-
+<pre><code>./configure --with-fox-config=$HOME/bin/fox-config --with-proj-gdal=$HOME --with-xerces=$HOME
+</code></pre>
 <h3 id="distribution-specific_instructions">Distribution-specific instructions<a class="headerlink" href="#distribution-specific_instructions" title="Permanent link">#</a></h3>
 <p>If you want to build and optionally install SUMO on Ubuntu systems, you
 may want to follow the instructions below.</p>
 <h4 id="ubuntu_1204_tested_with_sumo_0220">Ubuntu 12.04 (tested with SUMO 0.22.0)<a class="headerlink" href="#ubuntu_1204_tested_with_sumo_0220" title="Permanent link">#</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">autoconf</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">proj</span><span class="w">  </span><span class="n">libtool</span><span class="w"> </span><span class="n">libgdal1</span><span class="o">-</span><span class="n">dev</span><span class="w"> </span><span class="n">libxerces</span><span class="o">-</span><span class="n">c2</span><span class="o">-</span><span class="n">dev</span><span class="w"> </span><span class="n">libfox</span><span class="o">-</span><span class="mf">1.6</span><span class="o">-</span><span class="mi">0</span><span class="w"> </span><span class="n">libfox</span><span class="o">-</span><span class="mf">1.6</span><span class="o">-</span><span class="n">dev</span>
-<span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="p">;</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">ln</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="n">libgdal1</span><span class="o">.</span><span class="mf">7.0</span><span class="o">.</span><span class="n">so</span><span class="w"> </span><span class="n">libgdal</span><span class="o">.</span><span class="n">so</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">sumo</span><span class="o">-</span><span class="mf">0.22</span><span class="o">.</span><span class="mi">0</span>
-<span class="n">tar</span><span class="w"> </span><span class="n">xzf</span><span class="w"> </span><span class="n">sumo</span><span class="o">-</span><span class="n">src</span><span class="o">-</span><span class="mf">0.22</span><span class="o">.</span><span class="mf">0.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">mv</span><span class="w"> </span><span class="o">-</span><span class="n">v</span><span class="w"> </span><span class="n">sumo</span><span class="o">-</span><span class="mf">0.22</span><span class="o">.</span><span class="mi">0</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span>
-<span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">sumo</span><span class="o">-</span><span class="mf">0.22</span><span class="o">.</span><span class="mi">0</span>
-<span class="o">./</span><span class="n">configure</span><span class="w"> </span><span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">fox</span><span class="o">-</span><span class="n">includes</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">fox</span><span class="o">-</span><span class="mf">1.6</span><span class="w"> </span><span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">gdal</span><span class="o">-</span><span class="n">includes</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">gdal</span><span class="w"> </span><span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">proj</span><span class="o">-</span><span class="n">libraries</span><span class="o">=/</span><span class="n">usr</span><span class="w"> </span><span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">gdal</span><span class="o">-</span><span class="n">libraries</span><span class="o">=/</span><span class="n">usr</span><span class="w"> </span><span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">proj</span><span class="o">-</span><span class="n">gdal</span>
-<span class="n">make</span>
-<span class="n">cd</span><span class="w"> </span><span class="n">bin</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">mv</span><span class="w"> </span><span class="n">activitygen</span><span class="w"> </span><span class="n">emissionsDrivingCycle</span><span class="w"> </span><span class="n">netconvert</span><span class="w"> </span><span class="n">polyconvert</span><span class="w"> </span><span class="n">TraCITestClient</span><span class="w"> </span><span class="n">dfrouter</span><span class="w"> </span><span class="n">emissionsMap</span><span class="w"> </span><span class="n">netgenerate</span><span class="w">  </span><span class="n">sumo</span><span class="w"> </span><span class="n">duarouter</span><span class="w"> </span><span class="n">jtrrouter</span><span class="w"> </span><span class="n">od2trips</span><span class="w"> </span><span class="n">sumo</span><span class="o">-</span><span class="n">gui</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span>
-</code></pre></div>
-
+<pre><code>sudo apt-get install autoconf
+sudo apt-get install proj  libtool libgdal1-dev libxerces-c2-dev libfox-1.6-0 libfox-1.6-dev
+cd /usr/lib; sudo ln -s libgdal1.7.0.so libgdal.so cd /usr/local/src/sumo-0.22.0
+tar xzf sumo-src-0.22.0.tar.gz
+sudo mv -v sumo-0.22.0 /usr/local/src
+cd /usr/local/src/sumo-0.22.0
+./configure --with-fox-includes=/usr/include/fox-1.6 --with-gdal-includes=/usr/include/gdal --with-proj-libraries=/usr --with-gdal-libraries=/usr --with-proj-gdal
+make
+cd bin
+sudo mv activitygen emissionsDrivingCycle netconvert polyconvert TraCITestClient dfrouter emissionsMap netgenerate  sumo duarouter jtrrouter od2trips sumo-gui /usr/local/bin
+</code></pre>
 <h4 id="ubuntu_1404_trusty_tahr_tested_with_sumo_0220">Ubuntu 14.04 "Trusty Tahr" (tested with SUMO 0.22.0)<a class="headerlink" href="#ubuntu_1404_trusty_tahr_tested_with_sumo_0220" title="Permanent link">#</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">autoconf</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">libproj</span><span class="o">-</span><span class="n">dev</span><span class="w"> </span><span class="n">proj</span><span class="o">-</span><span class="n">bin</span><span class="w"> </span><span class="n">proj</span><span class="o">-</span><span class="n">data</span><span class="w">  </span><span class="n">libtool</span><span class="w"> </span><span class="n">libgdal1</span><span class="o">-</span><span class="n">dev</span><span class="w"> </span><span class="n">libxerces</span><span class="o">-</span><span class="n">c3</span><span class="o">-</span><span class="n">dev</span><span class="w"> </span><span class="n">libfox</span><span class="o">-</span><span class="mf">1.6</span><span class="o">-</span><span class="mi">0</span><span class="w"> </span><span class="n">libfox</span><span class="o">-</span><span class="mf">1.6</span><span class="o">-</span><span class="n">dev</span>
-<span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="p">;</span>
-</code></pre></div>
-
+<pre><code>sudo apt-get install autoconf
+sudo apt-get install libproj-dev proj-bin proj-data  libtool libgdal1-dev libxerces-c3-dev libfox-1.6-0 libfox-1.6-dev
+cd /usr/lib;
+</code></pre>
 <p>create this link ...if it complains that it exists, even better</p>
-<div class="codehilite"><pre><span></span><code>sudo ln -s libgdal1.7.0.so libgdal.so
+<pre><code>sudo ln -s libgdal1.7.0.so libgdal.so
 sudo ln -s libproj.so.0.7.0 proj-lib.so
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">cd</span><span class="w"> </span><span class="n">sumo</span><span class="o">-</span><span class="mf">0.22</span><span class="o">.</span><span class="mi">0</span>
-<span class="n">tar</span><span class="w"> </span><span class="n">xzf</span><span class="w"> </span><span class="n">sumo</span><span class="o">-</span><span class="n">src</span><span class="o">-</span><span class="mf">0.22</span><span class="o">.</span><span class="mf">0.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
-<span class="n">open</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="s2">&quot;configure&quot;</span><span class="w"> </span><span class="ow">and</span><span class="w">  </span><span class="n">change</span><span class="p">:</span><span class="w"> </span><span class="n">am__api_version</span><span class="o">=</span><span class="s1">&#39;1.13&#39;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">am__api_version</span><span class="o">=</span><span class="s1">&#39;1.14&#39;</span>
-<span class="n">cd</span><span class="w"> </span><span class="o">..</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">mv</span><span class="w"> </span><span class="o">-</span><span class="n">v</span><span class="w"> </span><span class="n">sumo</span><span class="o">-</span><span class="mf">0.22</span><span class="o">.</span><span class="mi">0</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span>
-<span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">sumo</span><span class="o">-</span><span class="mf">0.22</span><span class="o">.</span><span class="mi">0</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">aclocal</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">automake</span><span class="w"> </span><span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">missing</span>
-<span class="n">sudo</span><span class="w"> </span><span class="o">./</span><span class="n">configure</span><span class="w"> </span><span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">fox</span><span class="o">-</span><span class="n">includes</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">fox</span><span class="o">-</span><span class="mf">1.6</span><span class="w"> </span><span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">gdal</span><span class="o">-</span><span class="n">includes</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">gdal</span><span class="w"> </span><span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">proj</span><span class="o">-</span><span class="n">libraries</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="w"> </span><span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">gdal</span><span class="o">-</span><span class="n">libraries</span><span class="o">=/</span><span class="n">usr</span><span class="w"> </span><span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">proj</span><span class="o">-</span><span class="n">gdal</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">make</span>
-<span class="n">cd</span><span class="w"> </span><span class="n">bin</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">mv</span><span class="w"> </span><span class="n">activitygen</span><span class="w"> </span><span class="n">emissionsDrivingCycle</span><span class="w"> </span><span class="n">netconvert</span><span class="w"> </span><span class="n">polyconvert</span><span class="w"> </span><span class="n">TraCITestClient</span><span class="w"> </span><span class="n">dfrouter</span><span class="w"> </span><span class="n">emissionsMap</span><span class="w"> </span><span class="n">netgenerate</span><span class="w">  </span><span class="n">sumo</span><span class="w"> </span><span class="n">duarouter</span><span class="w"> </span><span class="n">jtrrouter</span><span class="w"> </span><span class="n">od2trips</span><span class="w"> </span><span class="n">sumo</span><span class="o">-</span><span class="n">gui</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span>
-<span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">mkdir</span><span class="w"> </span><span class="n">sumo</span><span class="o">-</span><span class="mf">0.22</span><span class="o">.</span><span class="mi">0</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">mv</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">sumo</span><span class="o">-</span><span class="mf">0.22</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">tools</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">sumo</span><span class="o">-</span><span class="mf">0.22</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">mv</span><span class="w">  </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">sumo</span><span class="o">-</span><span class="mf">0.22</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">data</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">sumo</span><span class="o">-</span><span class="mf">0.22</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span>
-</code></pre></div>
-
+</code></pre>
+<pre><code>cd sumo-0.22.0
+tar xzf sumo-src-0.22.0.tar.gz
+open file &quot;configure&quot; and  change: am__api_version='1.13' to am__api_version='1.14'
+cd ..
+sudo mv -v sumo-0.22.0 /usr/local/src
+cd /usr/local/src/sumo-0.22.0
+sudo aclocal
+sudo automake --add-missing
+sudo ./configure --with-fox-includes=/usr/include/fox-1.6 --with-gdal-includes=/usr/include/gdal --with-proj-libraries=/usr/lib --with-gdal-libraries=/usr --with-proj-gdal
+sudo make
+cd bin
+sudo mv activitygen emissionsDrivingCycle netconvert polyconvert TraCITestClient dfrouter emissionsMap netgenerate  sumo duarouter jtrrouter od2trips sumo-gui /usr/local/bin
+cd /usr/local/share
+sudo mkdir sumo-0.22.0
+sudo mv /usr/local/src/sumo-0.22.0/tools /usr/local/share/sumo-0.22.0/
+sudo mv  /usr/local/src/sumo-0.22.0/data /usr/local/share/sumo-0.22.0/
+</code></pre>
 <p>if exist...</p>
-<div class="codehilite"><pre><span></span><code>sudo mv  /usr/local/src/sumo-0.22.0/doc /usr/local/share/sumo-0.22.0/
-</code></pre></div>
-
+<pre><code>sudo mv  /usr/local/src/sumo-0.22.0/doc /usr/local/share/sumo-0.22.0/
+</code></pre>
 <h4 id="ubuntu_1804_tested_with_sumo_0320">Ubuntu 18.04 (tested with SUMO 0.32.0)<a class="headerlink" href="#ubuntu_1804_tested_with_sumo_0320" title="Permanent link">#</a></h4>
 <p>The required libraries are libxerces-c-dev, libgdal-dev, libproj-dev and
 libfox-1.6-dev.</p>
 <h4 id="centos_rhel">CentOS / RHEL<a class="headerlink" href="#centos_rhel" title="Permanent link">#</a></h4>
-<div class="codehilite"><pre><span></span><code>sudo yum install xerces-c-devel cmake libxerces-c-dev  gdal-devel proj-develgl2ps-devel gcc-c++
-</code></pre></div>
-
+<pre><code>sudo yum install xerces-c-devel cmake libxerces-c-dev  gdal-devel proj-develgl2ps-devel gcc-c++
+</code></pre>
 <p>You need to download fox-toolkit from its website and build manually
 <a href="https://www.fox-toolkit.org/download.html">https://www.fox-toolkit.org/download.html</a></p>
 <h4 id="cygwin">Cygwin<a class="headerlink" href="#cygwin" title="Permanent link">#</a></h4>
 <p>Cygwin comes with a quite old xerces-c (version 2.5). After installing
 it you need to make a symbolic link in /usr/lib such that the linker
 finds the correct library:</p>
-<div class="codehilite"><pre><span></span><code>cd /usr/lib; ln -s /usr/lib/libxerces-c25.dll.a /usr/lib/libxerces-c.dll.a
-</code></pre></div>
-
+<pre><code>cd /usr/lib; ln -s /usr/lib/libxerces-c25.dll.a /usr/lib/libxerces-c.dll.a
+</code></pre>
 <p>Now everything (but the GUI) should build fine.</p>
                 </main>
           </div>
@@ -412,7 +403,7 @@ finds the correct library:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -233,53 +234,47 @@ into your class' name.</p>
 model's parameter. Extend the list of known elements
 "SUMOXMLDefinitions::tags" located in <a href="https://github.com/eclipse-sumo/sumo/blob/main/src/utils/xml/SUMOXMLDefinitions.cpp"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/src/utils/xml/SUMOXMLDefinitions.cpp</a>.
 In SUMOXMLDefinitions.h:</p>
-<div class="codehilite"><pre><span></span><code>SUMO_TAG_CF_SMART_SK,
-</code></pre></div>
-
+<pre><code>SUMO_TAG_CF_SMART_SK,
+</code></pre>
 <p>In SUMOXMLDefinitions.cpp:</p>
-<div class="codehilite"><pre><span></span><code>{ &quot;carFollowing-SmartSK&quot;,     SUMO_TAG_CF_SMART_SK },
-</code></pre></div>
-
+<pre><code>{ &quot;carFollowing-SmartSK&quot;,     SUMO_TAG_CF_SMART_SK },
+</code></pre>
 <p>Furthermore you need to add an entry to
 SUMOXMLDefinitions::carFollowModelValues[] also in
 SUMOXMLDefinitions.cpp:</p>
-<div class="codehilite"><pre><span></span><code>{ &quot;SmartSK&quot;,     SUMO_TAG_CF_SMART_SK },
-</code></pre></div>
-
+<pre><code>{ &quot;SmartSK&quot;,     SUMO_TAG_CF_SMART_SK },
+</code></pre>
 <p>Car-following models are instantiated in MSVehicleType::build(...)
 located in <a href="https://github.com/eclipse-sumo/sumo/blob/main/src/microsim/MSVehicleType.cpp"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/src/microsim/MSVehicleType.cpp</a>. You'll find a switch, here
 where you have to put the call to your model's constructor into.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="nx">SUMO_TAG_CF_SMART_SK</span><span class="p">:</span>
-<span class="w">  </span><span class="nx">model</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">new</span><span class="w"> </span><span class="nx">MSCFModel_SmartSK</span><span class="p">(</span><span class="nx">vtype</span><span class="p">,</span>
-<span class="w">                                </span><span class="nx">from</span><span class="p">.</span><span class="nx">getCFParam</span><span class="p">(</span><span class="nx">SUMO_ATTR_ACCEL</span><span class="p">,</span><span class="w"> </span><span class="nx">SUMOVTypeParameter</span><span class="o">::</span><span class="nx">getDefaultAccel</span><span class="p">(</span><span class="nx">from</span><span class="p">.</span><span class="nx">vehicleClass</span><span class="p">)),</span>
-<span class="w">                                </span><span class="nx">from</span><span class="p">.</span><span class="nx">getCFParam</span><span class="p">(</span><span class="nx">SUMO_ATTR_DECEL</span><span class="p">,</span><span class="w"> </span><span class="nx">SUMOVTypeParameter</span><span class="o">::</span><span class="nx">getDefaultDecel</span><span class="p">(</span><span class="nx">from</span><span class="p">.</span><span class="nx">vehicleClass</span><span class="p">)),</span>
-<span class="w">                                </span><span class="nx">from</span><span class="p">.</span><span class="nx">getCFParam</span><span class="p">(</span><span class="nx">SUMO_ATTR_SIGMA</span><span class="p">,</span><span class="w"> </span><span class="nx">SUMOVTypeParameter</span><span class="o">::</span><span class="nx">getDefaultImperfection</span><span class="p">(</span><span class="nx">from</span><span class="p">.</span><span class="nx">vehicleClass</span><span class="p">)),</span>
-<span class="w">                                </span><span class="nx">from</span><span class="p">.</span><span class="nx">getCFParam</span><span class="p">(</span><span class="nx">SUMO_ATTR_TAU</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">.),</span>
-<span class="w">                                </span><span class="nx">from</span><span class="p">.</span><span class="nx">getCFParam</span><span class="p">(</span><span class="nx">SUMO_ATTR_TMP1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">.),</span>
-<span class="w">                                </span><span class="nx">from</span><span class="p">.</span><span class="nx">getCFParam</span><span class="p">(</span><span class="nx">SUMO_ATTR_TMP1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">.),</span>
-<span class="w">                                </span><span class="nx">from</span><span class="p">.</span><span class="nx">getCFParam</span><span class="p">(</span><span class="nx">SUMO_ATTR_TMP1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">.),</span>
-<span class="w">                                </span><span class="nx">from</span><span class="p">.</span><span class="nx">getCFParam</span><span class="p">(</span><span class="nx">SUMO_ATTR_TMP1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">.),</span>
-<span class="w">                                </span><span class="nx">from</span><span class="p">.</span><span class="nx">getCFParam</span><span class="p">(</span><span class="nx">SUMO_ATTR_TMP1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">.));</span>
-</code></pre></div>
-
+<pre><code>case SUMO_TAG_CF_SMART_SK:
+  model = new MSCFModel_SmartSK(vtype,
+                                from.getCFParam(SUMO_ATTR_ACCEL, SUMOVTypeParameter::getDefaultAccel(from.vehicleClass)),
+                                from.getCFParam(SUMO_ATTR_DECEL, SUMOVTypeParameter::getDefaultDecel(from.vehicleClass)),
+                                from.getCFParam(SUMO_ATTR_SIGMA, SUMOVTypeParameter::getDefaultImperfection(from.vehicleClass)),
+                                from.getCFParam(SUMO_ATTR_TAU, 1.),
+                                from.getCFParam(SUMO_ATTR_TMP1, 1.),
+                                from.getCFParam(SUMO_ATTR_TMP1, 1.),
+                                from.getCFParam(SUMO_ATTR_TMP1, 1.),
+                                from.getCFParam(SUMO_ATTR_TMP1, 1.),
+                                from.getCFParam(SUMO_ATTR_TMP1, 1.));
+</code></pre>
 <p>You may note that the constructor is read with values from "from". The
 first parameter, starting with SUMO_ATTR_ denotes the XML-attribute
 which names the parameter. These attributes, if new, have to be added to <strong><em>&lt;SUMO_HOME&gt;</em></strong>. In SUMOXMLDefinitions.h:</p>
-<div class="codehilite"><pre><span></span><code>SUMO_ATTR_TMP1,
+<pre><code>SUMO_ATTR_TMP1,
 SUMO_ATTR_TMP2,
 SUMO_ATTR_TMP3,
 SUMO_ATTR_TMP4,
 SUMO_ATTR_TMP5,
-</code></pre></div>
-
+</code></pre>
 <p>In SUMOXMLDefinitions.cpp:</p>
-<div class="codehilite"><pre><span></span><code>{ &quot;tmp1&quot;,           SUMO_ATTR_TMP1 },
+<pre><code>{ &quot;tmp1&quot;,           SUMO_ATTR_TMP1 },
 { &quot;tmp2&quot;,           SUMO_ATTR_TMP2 },
 { &quot;tmp3&quot;,           SUMO_ATTR_TMP3 },
 { &quot;tmp4&quot;,           SUMO_ATTR_TMP4 },
 { &quot;tmp5&quot;,           SUMO_ATTR_TMP5 },
-</code></pre></div>
-
+</code></pre>
 <p>The second parameter denotes the default value. There are two different
 mechanisms to define default values. Either they are vehicle class
 independent (they are the same for passenger cars and for trucks for
@@ -288,29 +283,27 @@ different default for the different vehicle classes then insert the
 relevant code into <a href="https://github.com/eclipse-sumo/sumo/blob/main/src/utils/vehicle/SUMOVTypeParameter.cpp"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/src/utils/vehicle/SUMOVTypeParameter.cpp</a>. You can only
 have floating point values as model parameters at the moment.</p>
 <p>You also have to define which parameter must be read in <a href="https://github.com/eclipse-sumo/sumo/blob/main/src/utils/vehicle/SUMOVehicleParserHelper.cpp"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/src/utils/vehicle/SUMOVehicleParserHelper.cpp</a>, method getAllowedCFModelAttrs():</p>
-<div class="codehilite"><pre><span></span><code><span class="nl">std</span><span class="p">:</span><span class="err">:</span><span class="k">set</span><span class="o">&lt;</span><span class="n">SumoXMLAttr</span><span class="o">&gt;</span><span class="w"> </span><span class="n">smartSKParams</span><span class="p">;</span>
-<span class="n">smartSKParams</span><span class="p">.</span><span class="k">insert</span><span class="p">(</span><span class="n">SUMO_ATTR_ACCEL</span><span class="p">);</span>
-<span class="n">smartSKParams</span><span class="p">.</span><span class="k">insert</span><span class="p">(</span><span class="n">SUMO_ATTR_DECEL</span><span class="p">);</span>
-<span class="n">smartSKParams</span><span class="p">.</span><span class="k">insert</span><span class="p">(</span><span class="n">SUMO_ATTR_SIGMA</span><span class="p">);</span>
-<span class="n">smartSKParams</span><span class="p">.</span><span class="k">insert</span><span class="p">(</span><span class="n">SUMO_ATTR_TAU</span><span class="p">);</span>
-<span class="n">smartSKParams</span><span class="p">.</span><span class="k">insert</span><span class="p">(</span><span class="n">SUMO_ATTR_TMP1</span><span class="p">);</span>
-<span class="n">smartSKParams</span><span class="p">.</span><span class="k">insert</span><span class="p">(</span><span class="n">SUMO_ATTR_TMP2</span><span class="p">);</span>
-<span class="n">smartSKParams</span><span class="p">.</span><span class="k">insert</span><span class="p">(</span><span class="n">SUMO_ATTR_TMP3</span><span class="p">);</span>
-<span class="n">smartSKParams</span><span class="p">.</span><span class="k">insert</span><span class="p">(</span><span class="n">SUMO_ATTR_TMP4</span><span class="p">);</span>
-<span class="n">smartSKParams</span><span class="p">.</span><span class="k">insert</span><span class="p">(</span><span class="n">SUMO_ATTR_TMP5</span><span class="p">);</span>
-<span class="n">allowedCFModelAttrs</span><span class="o">[</span><span class="n">SUMO_TAG_CF_SMART_SK</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">smartSKParams</span><span class="p">;</span>
-</code></pre></div>
-
+<pre><code>std::set&lt;SumoXMLAttr&gt; smartSKParams;
+smartSKParams.insert(SUMO_ATTR_ACCEL);
+smartSKParams.insert(SUMO_ATTR_DECEL);
+smartSKParams.insert(SUMO_ATTR_SIGMA);
+smartSKParams.insert(SUMO_ATTR_TAU);
+smartSKParams.insert(SUMO_ATTR_TMP1);
+smartSKParams.insert(SUMO_ATTR_TMP2);
+smartSKParams.insert(SUMO_ATTR_TMP3);
+smartSKParams.insert(SUMO_ATTR_TMP4);
+smartSKParams.insert(SUMO_ATTR_TMP5);
+allowedCFModelAttrs[SUMO_TAG_CF_SMART_SK] = smartSKParams;
+</code></pre>
 <p>Note, that we have to adapt the constructor to retrieve the additional
 parameter (tmp1-tmp5). We have also to adapt the copy constructor
 located in our class in MSCFModel_SmartSK::duplicate(...).</p>
 <p>For further interaction, you also have to adapt the "id" of the model in
 the model's .h class:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">virtual</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="w"> </span><span class="n">getModelID</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
-<span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">SUMO_TAG_CF_SMART_SK</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-
+<pre><code>virtual int getModelID() const {
+ return SUMO_TAG_CF_SMART_SK;
+}
+</code></pre>
 <h2 id="using_custom_parameters_via_traci">Using Custom Parameters via TraCI<a class="headerlink" href="#using_custom_parameters_via_traci" title="Permanent link">#</a></h2>
 <p>A carFollowModel can override the functions getParameter and setParameter inherited from MSCFModel.
 Any calls to 'traci.vehicle.setParameter' and 'traci.vehicle.getParameter' where the key starts with "carFollowModel." will then be forwarded to these methods (without the prefix).
@@ -322,8 +315,8 @@ will be mapped onto the call
 <p>Sumo performs <a href="../../XMLValidation.html">xml validation</a>. If you add new
 XML elements or attributes you either need to adapt the XML schema files
 in <strong><em>&lt;SUMO_HOME&gt;</em></strong>/data/xsd or add the option</p>
-<div class="codehilite"><pre><span></span><code>--xml-validation never
-</code></pre></div>
+<pre><code>--xml-validation never
+</code></pre>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -331,7 +324,7 @@ in <strong><em>&lt;SUMO_HOME&gt;</em></strong>/data/xsd or add the option</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

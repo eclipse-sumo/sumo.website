@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -211,9 +212,8 @@ Last edit: 06 October 2026
 <p><a href="../../netconvert.html">netconvert</a> allows a round-trip reimport of
 generated SUMO road networks. Use the option <strong>--sumo-net-file</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a> for reading a SUMO road
 network, the shorter options <strong>--sumo-net</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a> and <strong>--sumo</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a> are synonymes. An example call:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --sumo-net-file mySUMOnet.net.xml -o mySUMOnet2.net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --sumo-net-file mySUMOnet.net.xml -o mySUMOnet2.net.xml
+</code></pre>
 <p>If your original network has been generated with the same SUMO version,
 both the read network ("mySUMOnet.net.xml") and
 the generated one ("mySUMOnet2.net.xml") should be same besides the
@@ -226,15 +226,13 @@ road network using additional
 <a href="../PlainXML.html">XML-files</a>.
 An example would be patching the type of a node.</p>
 <p>prepare a file like this: patch.nod.xml :</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;nodes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;id_of_the_node_you_want_to_modify&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;right_before_left&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;nodes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;nodes&gt;
+    &lt;node id=&quot;id_of_the_node_you_want_to_modify&quot; type=&quot;right_before_left&quot;/&gt;
+&lt;nodes&gt;
+</code></pre>
 <p>and patch the network like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --sumo-net-file your.net.xml --node-files patch.nod.xml -o yourpatched.net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --sumo-net-file your.net.xml --node-files patch.nod.xml -o yourpatched.net.xml
+</code></pre>
 <h2 id="patching_in_stages">Patching in stages<a class="headerlink" href="#patching_in_stages" title="Permanent link">#</a></h2>
 <p>Most of the time you will want to modify your SUMO network after the initial import.
 To do so you can of course edit the file directly with netedit and store the changed
@@ -255,7 +253,7 @@ explanations to netdiff) but in the following situations it is probably unavoida
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

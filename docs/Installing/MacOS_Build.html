@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -241,40 +242,32 @@ Last edit: 06 October 2026
 <h1 id="the_homebrew_approach">The Homebrew Approach<a class="headerlink" href="#the_homebrew_approach" title="Permanent link">#</a></h1>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <p>The installation requires <a href="https://brew.sh">Homebrew</a>. If you did not already install homebrew, do so by invoking</p>
-<div class="codehilite"><pre><span></span><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;
-</code></pre></div>
-
+<pre><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;
+</code></pre>
 <p>and make sure your homebrew db is up-to-date.</p>
-<div class="codehilite"><pre><span></span><code>brew update
-</code></pre></div>
-
+<pre><code>brew update
+</code></pre>
 <p>In order to compile the C++ source code files of SUMO, a C++ compiler is needed. On macOS the default C/C++ compiler is Clang. If you want to install the Clang compilers, please use the following command:</p>
-<div class="codehilite"><pre><span></span><code>xcode-select --install
-</code></pre></div>
-
+<pre><code>xcode-select --install
+</code></pre>
 <p>After the successful installation, you can test Clang with the following command:</p>
-<div class="codehilite"><pre><span></span><code>clang --version
-</code></pre></div>
-
+<pre><code>clang --version
+</code></pre>
 <p>SUMO uses <a href="https://cmake.org/">CMake</a> to manage the software compilation process. You can install CMake with homebrew easily.</p>
-<div class="codehilite"><pre><span></span><code>brew install cmake
-</code></pre></div>
-
+<pre><code>brew install cmake
+</code></pre>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">#</a></h2>
 <p>In order to compile and execute SUMO, there are several libraries that need to be installed. You can install these dependencies with homebrew with the following commands:</p>
-<div class="codehilite"><pre><span></span><code>brew install --cask xquartz
+<pre><code>brew install --cask xquartz
 brew install xerces-c fox proj gdal gl2ps
-</code></pre></div>
-
+</code></pre>
 <p>Depending on the SUMO features you want to enable during compilation, you may want to additional libraries. Most libraries are available in homebrew and should be recognized with CMake. Here is what you need to prepare some more features such as libsumo and the testing environment:</p>
-<div class="codehilite"><pre><span></span><code>brew install python ccache googletest fmt swig eigen apache-arrow pygobject3 gtk+3 adwaita-icon-theme
+<pre><code>brew install python ccache googletest fmt swig eigen apache-arrow pygobject3 gtk+3 adwaita-icon-theme
 python3 -m pip install texttest
-</code></pre></div>
-
+</code></pre>
 <p>You can optionally include OSG (OpenSceneGraph) to enable the experimental <a href="../sumo-gui.html#3d_visualization">3D-Visualization</a>:</p>
-<div class="codehilite"><pre><span></span><code>brew install open-scene-graph
-</code></pre></div>
-
+<pre><code>brew install open-scene-graph
+</code></pre>
 <h3 id="troubleshooting_the_fox_library_on_macos_catalina">Troubleshooting the fox library on macOS Catalina<a class="headerlink" href="#troubleshooting_the_fox_library_on_macos_catalina" title="Permanent link">#</a></h3>
 <p>If you encounter segmentation faults on macOS Catalina, please follow the following steps (see <a href="https://github.com/eclipse-sumo/sumo/issues/6242#issuecomment-553458710">Issue 6242</a>).</p>
 <ol>
@@ -297,39 +290,33 @@ python3 -m pip install texttest
 </ol>
 <h2 id="git_cloning_and_building">Git Cloning and Building<a class="headerlink" href="#git_cloning_and_building" title="Permanent link">#</a></h2>
 <p>The source code of SUMO can be cloned with the following command to the directory <code>./sumo</code>. The environment variable <code>SUMO_HOME</code> should also be set to this directory.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="o">--</span><span class="n">recursive</span><span class="w"> </span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">eclipse</span><span class="o">-</span><span class="n">sumo</span><span class="o">/</span><span class="n">sumo</span>
-<span class="k">export</span><span class="w"> </span><span class="n">SUMO_HOME</span><span class="o">=</span><span class="s2">&quot;$PWD/sumo&quot;</span>
-</code></pre></div>
-
+<pre><code>git clone --recursive https://github.com/eclipse-sumo/sumo
+export SUMO_HOME=&quot;$PWD/sumo&quot;
+</code></pre>
 <p>SUMO is usually build as an out-of-source build. You need to create a directory for your build and invoke CMake to trigger the configuration from there.</p>
-<div class="codehilite"><pre><span></span><code>cd $SUMO_HOME
+<pre><code>cd $SUMO_HOME
 cmake -B build .
-</code></pre></div>
-
+</code></pre>
 <p>The output of the CMake configuration process will show you which libraries have been found on your system and which SUMO features have been enabled accordingly.
 The build process can now be triggered with the following command</p>
-<div class="codehilite"><pre><span></span><code>cd $SUMO_HOME
+<pre><code>cd $SUMO_HOME
 cmake --build build --parallel $(sysctl -n hw.ncpu)
-</code></pre></div>
-
+</code></pre>
 <p>You may want to also run <code>make install</code> or add <code>$SUMO_HOME/bin</code> to the <code>PATH</code>, in order to easily start <code>sumo</code> or any other application from the command line.</p>
 <h2 id="optional_steps">Optional Steps<a class="headerlink" href="#optional_steps" title="Permanent link">#</a></h2>
 <h3 id="traci_as_a_service_traas">TraCI as a Service (TraaS)<a class="headerlink" href="#traci_as_a_service_traas" title="Permanent link">#</a></h3>
 <p>TraaS is a java library for working with TraCI. Building TraaS can be triggered with the following commands.</p>
-<div class="codehilite"><pre><span></span><code>cd $SUMO_HOME
+<pre><code>cd $SUMO_HOME
 cmake --build build --target traas --parallel
-</code></pre></div>
-
+</code></pre>
 <h3 id="examples_and_unit_tests">Examples and Unit Tests<a class="headerlink" href="#examples_and_unit_tests" title="Permanent link">#</a></h3>
 <p>SUMO provides unit tests to be used with Google's Testing and Mocking Framework - Googletest. In order to execute these tests you need to install Googletest first.</p>
-<div class="codehilite"><pre><span></span><code>brew install googletest
-</code></pre></div>
-
+<pre><code>brew install googletest
+</code></pre>
 <p>The creation of the examples and the execution of the tests can be triggered as follows</p>
-<div class="codehilite"><pre><span></span><code>cd $SUMO_HOME
+<pre><code>cd $SUMO_HOME
 CTEST_OUTPUT_ON_FAILURE=1 cmake --build build --target examples test
-</code></pre></div>
-
+</code></pre>
 <p>More information is provided <a href="../Developer/Unit_Tests.html">here</a>.</p>
 <h3 id="integration_tests_with_texttest">Integration Tests with TextTest<a class="headerlink" href="#integration_tests_with_texttest" title="Permanent link">#</a></h3>
 <p>SUMO uses an application called TextTest to manage and execute and extensive set of integration tests. If you plan to extend SUMO with new features, we would like to encourage you to also add tests for your code to the SUMO testsuite and to make sure that existing functionality is not affected.</p>
@@ -342,59 +329,52 @@ CTEST_OUTPUT_ON_FAILURE=1 cmake --build build --target examples test
 - Python 3.8.2 (shipped with Xcode) - (<code>/usr/bin/python3</code>)
 - Python 3.8.6 (installed with Brew) - (<code>/usr/local/bin/python3.8</code>)</p>
 <p>If you do not configure anything "special" during <code>cmake</code>, it will find the Python 2.7 installation and use that version of the Python framework for building libsumo. In your cmake output, you will find something like this:</p>
-<div class="codehilite"><pre><span></span><code>-- Found PythonInterp: /usr/bin/python (found version &quot;2.7.16&quot;)
+<pre><code>-- Found PythonInterp: /usr/bin/python (found version &quot;2.7.16&quot;)
 -- Found Python: /usr/bin/python
 ...
 -- Found PythonLibs: /usr/lib/libpython2.7.dylib (found version &quot;2.7.16&quot;)
-</code></pre></div>
-
+</code></pre>
 <p>You should be able to just use python 2.7 and import libsumo.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Python</span> <span class="mf">2.7.16</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Jun</span>  <span class="mi">5</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">22</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">21</span><span class="p">)</span>
-<span class="p">[</span><span class="n">GCC</span> <span class="mf">4.2.1</span> <span class="n">Compatible</span> <span class="n">Apple</span> <span class="n">LLVM</span> <span class="mf">11.0.3</span> <span class="p">(</span><span class="n">clang</span><span class="o">-</span><span class="mf">1103.0.29.20</span><span class="p">)</span> <span class="p">(</span><span class="o">-</span><span class="n">macos10</span><span class="mf">.15</span><span class="o">-</span><span class="n">objc</span><span class="o">-</span> <span class="n">on</span> <span class="n">darwin</span>
-<span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">libsumo</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
+<pre><code>Python 2.7.16 (default, Jun  5 2020, 22:59:21)
+[GCC 4.2.1 Compatible Apple LLVM 11.0.3 (clang-1103.0.29.20) (-macos10.15-objc- on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import libsumo
+&gt;&gt;&gt;
+</code></pre>
 <p>If you want to use Python <strong>3.x</strong>, we recommend to use the Python version shipped with Brew (e.g. <code>brew install python@3.8</code>). In order to use this Python version, you have to tell CMake to use this particular Python interpreter:</p>
-<div class="codehilite"><pre><span></span><code>cd $SUMO_HOME
+<pre><code>cd $SUMO_HOME
 mkdir -p out/build-python3.8
 cd out/build-python3.8
 cmake -DPYTHON_EXECUTABLE=/usr/local/bin/python3.8 ../..
-</code></pre></div>
-
+</code></pre>
 <p>In the CMake configuration output, you should see lines like the following:</p>
-<div class="codehilite"><pre><span></span><code>-- Found PythonInterp: /usr/local/bin/python3.8 (found version &quot;3.8.6&quot;)
+<pre><code>-- Found PythonInterp: /usr/local/bin/python3.8 (found version &quot;3.8.6&quot;)
 ...
 -- Found PythonLibs: /usr/local/Frameworks/Python.framework/Versions/3.8/lib/libpython3.8.dylib (found version &quot;3.8.6&quot;)
-</code></pre></div>
-
+</code></pre>
 <p>After building, you should be able to load <code>libsumo</code></p>
-<div class="codehilite"><pre><span></span><code><span class="err">$</span> <span class="n">python3</span><span class="mf">.8</span>
-<span class="n">Python</span> <span class="mf">3.8.6</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Oct</span> <span class="mi">27</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">08</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">44</span><span class="p">)</span>
-<span class="p">[</span><span class="n">Clang</span> <span class="mf">12.0.0</span> <span class="p">(</span><span class="n">clang</span><span class="o">-</span><span class="mf">1200.0.32.21</span><span class="p">)]</span> <span class="n">on</span> <span class="n">darwin</span>
-<span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">libsumo</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
+<pre><code>$ python3.8
+Python 3.8.6 (default, Oct 27 2020, 08:57:44)
+[Clang 12.0.0 (clang-1200.0.32.21)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import libsumo
+&gt;&gt;&gt;
+</code></pre>
 <p>If you do not want to use Python 2.7 (from macOS) or Python 3 (from Brew), but instead want to use Python 3.x from Xcode, you will need to tell <code>cmake</code> where to find the Python installation of the command line tools of Xcode. The following path settings work on macOS Catalina with the command line tools of Xcode 12.1.</p>
-<div class="codehilite"><pre><span></span><code>cmake \
+<pre><code>cmake \
 -DPYTHON_EXECUTABLE=/usr/bin/python3 \
 -DPYTHON_INCLUDE_DIR:PATH=/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Headers \
 -DPYTHON_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/Current/lib/libpython3.8.dylib \
 ../..
-</code></pre></div>
-
+</code></pre>
 <p>After the build, you should be able to load libsumo.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python3</span>
-<span class="n">Python</span> <span class="mf">3.8.2</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Sep</span> <span class="mi">24</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">19</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">08</span><span class="p">)</span>
-<span class="p">[</span><span class="n">Clang</span> <span class="mf">12.0.0</span> <span class="p">(</span><span class="n">clang</span><span class="o">-</span><span class="mf">1200.0.32.21</span><span class="p">)]</span> <span class="n">on</span> <span class="n">darwin</span>
-<span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">libsumo</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
+<pre><code>/usr/bin/python3
+Python 3.8.2 (default, Sep 24 2020, 19:37:08)
+[Clang 12.0.0 (clang-1200.0.32.21)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import libsumo
+&gt;&gt;&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To build JuPedSim and build SUMO with JuPedSim follow the <a href="Linux_Build.html#how_to_build_jupedsim_and_then_build_sumo_with_jupedsim">instructions for the Linux build</a></p>
@@ -405,20 +385,18 @@ cmake -DPYTHON_EXECUTABLE=/usr/local/bin/python3.8 ../..
 <p>This uses a pre-packaged version of sumo which is convenient but may lag behind the latest official release of SUMO.</p>
 </div>
 <p>You should start by <a href="https://www.macports.org/install.php">installing Macports</a>. Afterwards start a terminal session and run</p>
-<div class="codehilite"><pre><span></span><code>sudo port install sumo
-</code></pre></div>
-
+<pre><code>sudo port install sumo
+</code></pre>
 <p>While this will install a SUMO version you maybe do not want to use, it will pull in all dependencies you need.</p>
 <p>If you want to build from a repository checkout you should additionally do</p>
-<div class="codehilite"><pre><span></span><code>sudo port install automake autoconf
-</code></pre></div>
-
+<pre><code>sudo port install automake autoconf
+</code></pre>
 <p>After obtaining the <a href="Linux_Build.html#installing_required_tools_and_libraries">required libraries</a>
 you can follow the build steps of <a href="Linux_Build.html#getting_the_source_code">building under Linux</a>, you
 might want to add another --prefix=/opt/sumo to the configure line.</p>
 <p>If you wish to use clang rather than gcc for compilation do:</p>
-<div class="codehilite"><pre><span></span><code>./configure CXX=clang++ CXXFLAGS=&quot;-stdlib=libstdc++&quot;
-</code></pre></div>
+<pre><code>./configure CXX=clang++ CXXFLAGS=&quot;-stdlib=libstdc++&quot;
+</code></pre>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -426,7 +404,7 @@ might want to add another --prefix=/opt/sumo to the configure line.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

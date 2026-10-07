@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -243,9 +244,8 @@ Last edit: 06 October 2026
 <h1 id="generaterailsignalconstraintspy">generateRailSignalConstraints.py<a class="headerlink" href="#generaterailsignalconstraintspy" title="Permanent link">#</a></h1>
 <p>Generate <a href="../Simulation/Railways.html#schedule_constraints">constraints that enforce a given railway schedule</a>.
 Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">generateRailSignalConstraints</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="n">input</span><span class="o">-</span><span class="n">route</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="n">input</span><span class="o">-</span><span class="n">net</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="n">input</span><span class="o">-</span><span class="n">stop</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">&lt;</span><span class="n">output</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO_HOME&gt;/tools/generateRailSignalConstraints.py -r &lt;input-route-file&gt; -n &lt;input-net-file&gt; -a &lt;input-stop-file&gt; -o &lt;output-file&gt;
+</code></pre>
 <h2 id="generated_constraints">Generated Constraints<a class="headerlink" href="#generated_constraints" title="Permanent link">#</a></h2>
 <p>Different types of constraints are generated in different cases:</p>
 <h3 id="1_predecessor">1. predecessor<a class="headerlink" href="#1_predecessor" title="Permanent link">#</a></h3>
@@ -349,9 +349,8 @@ to ensure that all constraint foe vehicles are recorded during the simulation.</
 <p>Compare arrival and departure at stops between an input schedule (route-file) and
 simulation output (stop-output). The results will be printed on the command line.</p>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">scheduleStats</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="n">input</span><span class="o">-</span><span class="n">route</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="o">&lt;</span><span class="n">stop</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO_HOME&gt;/tools/output/scheduleStats.py -r &lt;input-route-file&gt; -s &lt;stop-file&gt;
+</code></pre>
 <p>Options:</p>
 <ul>
 <li><strong>--xml-output FILE</strong> (<strong>-o</strong>): write statistics to FILE in xml format</li>
@@ -373,16 +372,14 @@ simulation output (stop-output). The results will be printed on the command line
 <li><strong>--group-histogram FLOAT</strong> (<strong>-I</strong>): add a histogram over the group values (when using <strong>-g</strong>) with the given bin width</li>
 </ul>
 <p>Examples:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">scheduleStats</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="n">input</span><span class="o">-</span><span class="n">route</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="o">&lt;</span><span class="n">stop</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="mi">50</span>
-<span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">scheduleStats</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="n">input</span><span class="o">-</span><span class="n">route</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="o">&lt;</span><span class="n">stop</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="n">g</span><span class="w"> </span><span class="n">stopID</span><span class="w"> </span><span class="o">-</span><span class="n">T</span><span class="w"> </span><span class="n">median</span><span class="w"> </span><span class="o">-</span><span class="n">I</span><span class="w"> </span><span class="mi">10</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO_HOME&gt;/tools/output/scheduleStats.py -r &lt;input-route-file&gt; -s &lt;stop-file&gt; -t d -i 50
+&lt;SUMO_HOME&gt;/tools/output/scheduleStats.py -r &lt;input-route-file&gt; -s &lt;stop-file&gt; -t a -g stopID -T median -I 10
+</code></pre>
 <h1 id="checkreversalspy">checkReversals.py<a class="headerlink" href="#checkreversalspy" title="Permanent link">#</a></h1>
 <p>This tool counts the number of reversals per vehicle and also the number of reverals that occur per edge.</p>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">route</span><span class="o">/</span><span class="n">checkReversals</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="n">input</span><span class="o">-</span><span class="n">net</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="n">input</span><span class="o">-</span><span class="n">route</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">reversals</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO_HOME&gt;/tools/route/checkReversals.py -n &lt;input-net-file&gt; -r &lt;input-route-file&gt; -o reversals.xml
+</code></pre>
 <h1 id="plotstopspy">plotStops.py<a class="headerlink" href="#plotstopspy" title="Permanent link">#</a></h1>
 <p>Plot a public transport schedule (either planned or actual timings). This script is a wrapper around <a href="Visualization.html#public_transport_schedule">plotXMLAttributes.py</a> with the main advantage of defining the ordering of stops along a specified line and aggregating data by the human-readable stop name rather than track-specific stop positions.
 Several options are passed directly to <a href="Visualization.html#plotxmlattributespy">plotXMLAttributes.py</a></p>
@@ -394,14 +391,12 @@ Several options are passed directly to <a href="Visualization.html#plotxmlattrib
 </ul>
 <p>Also recommended is setting option <strong>-a</strong>,--stop-file** with the definition of public transport stops for reading their names.</p>
 <p>Example: loading simulation inputs</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">visualization</span><span class="o">/</span><span class="n">plotStops</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">osm_pt</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="n">osm_stops</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">pt_light_rail_S46</span><span class="p">:</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="n">v</span><span class="w"> </span><span class="o">--</span><span class="n">legend</span><span class="w"> </span><span class="o">--</span><span class="n">filter</span><span class="o">-</span><span class="n">ids</span><span class="w"> </span>\<span class="o">*</span><span class="n">S46</span>\<span class="o">*</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO_HOME&gt;/tools/visualization/plotStops.py -r osm_pt.rou.xml -a osm_stops.add.xml -i pt_light_rail_S46:1 -v --legend --filter-ids \*S46\*
+</code></pre>
 <p><img src="../images//S46_input_flows.png" width="800px"/></p>
 <p>Example: after running the simulation with <strong>--vehroute-output vehroutes.xml</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">visualization</span><span class="o">/</span><span class="n">plotStops</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">vehroutes</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="n">osm_stops</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">pt_light_rail_S46</span><span class="p">:</span><span class="mf">1.0</span><span class="w"> </span><span class="o">-</span><span class="n">v</span><span class="w"> </span><span class="o">--</span><span class="n">legend</span><span class="w"> </span><span class="o">--</span><span class="n">filter</span><span class="o">-</span><span class="n">ids</span><span class="w"> </span>\<span class="o">*</span><span class="n">S46</span>\<span class="o">*</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO_HOME&gt;/tools/visualization/plotStops.py -r vehroutes.xml -a osm_stops.add.xml -i pt_light_rail_S46:1.0 -v --legend --filter-ids \*S46\*
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Here, option <strong>-i</strong> references a vehicle id rather than a flow id as in the prior example</p>
@@ -409,17 +404,15 @@ Several options are passed directly to <a href="Visualization.html#plotxmlattrib
 <p><img src="../images/S46.png" width="800px"/></p>
 <p>Example: after running the simulation with <strong>--stop-output stopinfos.xml</strong> for reading actual timing.
 Such a file is loaded by adding the option <strong>-s, --stopinfo-file</strong> to the options from the previous example.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">visualization</span><span class="o">/</span><span class="n">plotStops</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">vehroutes</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="n">osm_stops</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">pt_light_rail_S46</span><span class="p">:</span><span class="mf">1.0</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="n">stopinfos</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">v</span><span class="w"> </span><span class="o">--</span><span class="n">legend</span><span class="w"> </span><span class="o">--</span><span class="n">filter</span><span class="o">-</span><span class="n">ids</span><span class="w"> </span>\<span class="o">*</span><span class="n">S46</span>\<span class="o">*</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO_HOME&gt;/tools/visualization/plotStops.py -r vehroutes.xml -a osm_stops.add.xml -i pt_light_rail_S46:1.0 -s stopinfos.xml -v --legend --filter-ids \*S46\*
+</code></pre>
 <p><img src="../images/S46_actual.png" width="800px"/></p>
 <h1 id="createovertakingreroutespy">createOvertakingReroutes.py<a class="headerlink" href="#createovertakingreroutespy" title="Permanent link">#</a></h1>
 <p>Parses a network and routefile to find overtaking locations and create <overtakingReroute> elements
 This tool is meant to generate rerouter definitions for automated and dynamic <a href="../Simulation/Rerouter.html#rerouting_to_a_railroad_siding_to_be_overtaken_by_a_faster_train">train-overtaking</a>.</p>
 <p>Example call</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">trigger</span><span class="o">/</span><span class="n">createOvertakingReroutes</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">input_routes</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">out</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO_HOME&gt;/tools/trigger/createOvertakingReroutes.py -n net.net.xml -r input_routes.rou.xml -o out.add.xml
+</code></pre>
 <p>The tool analyzes the rail network along loaded routes to find passing loops (sidings) that match a range of criteria:</p>
 <ul>
 <li>there must be a signal that guards the exit of the siding</li>
@@ -438,9 +431,8 @@ The tool works by identifiyng conflict junctions (i.e. switches and crossings) a
 <p>When using this tool for convential rail operations, option <strong>--split-offset</strong> should be set to ensure that signals are created well in advance of switches and crossings to account for overrun distance (<em>Durchrutschweg</em>).</p>
 </div>
 <p>Example call</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">patchRailConflicts</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">input_net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">output_net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO_HOME&gt;/tools/net/patchRailConflicts.py -n input_net.net.xml -o output_net.net.xml
+</code></pre>
 <p>The following options are available</p>
 <ul>
 <li><strong>--vclass</strong> (default <em>tram</em>): defines which conflict points are considered for patching</li>
@@ -455,9 +447,8 @@ opposite directions. For found sidings
 - if there is a ptStop on the main line but not on the siding, a new ptStop is added
 - if the new stop is not guarded by rail signals, new signals are added to the network</p>
 <p>Example call</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">patchRailConflicts</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">input_net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">input_routes</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="n">input_stops</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">output_net</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="n">output_stops</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">xml</span><span class="w"> </span><span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">stop</span><span class="o">-</span><span class="n">signals</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO_HOME&gt;/tools/net/patchRailConflicts.py -n input_net.net.xml -r input_routes.rou.xml -s input_stops.add.xml -o output_net.net.xml -O output_stops.add.xml --add-stop-signals
+</code></pre>
 <p>The algorithm for finding and filtering sidings uses the same options as <a href="#createovertakingreroutespy">createOvertakingReroutes.py</a>. If option <strong>--add-stop-signals</strong> is set, sidings are also accepted if they do not have a signal yet.</p>
 <h1 id="abstractrailpy">abstractRail.py<a class="headerlink" href="#abstractrailpy" title="Permanent link">#</a></h1>
 <p>Converts a geodetical rail network into an abstract (schematic) rail network. See <a href="Net.html#abstractrailpy">full documentation</a>.</p>
@@ -468,7 +459,7 @@ opposite directions. For found sidings
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

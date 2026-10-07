@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -286,12 +287,11 @@ definition into one of your <a href="../../sumo.html#format_of_additional_files"
 </table>
 <h3 id="generated_output">Generated Output<a class="headerlink" href="#generated_output" title="Permanent link">#</a></h3>
 <p>The output looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tlsStates&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tlsState</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;&lt;SIM_STEP&gt;&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;TLS_ID&gt;&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;&lt;TLS_SUBID&gt;&quot;</span><span class="w"> </span><span class="na">phase=</span><span class="s">&quot;&lt;PHASE_INDEX&gt;&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;&lt;STATE&gt;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span>...<span class="w"> </span>further<span class="w"> </span>states<span class="w"> </span>...
-<span class="nt">&lt;/tlsStates&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;tlsStates&gt;
+   &lt;tlsState time=&quot;&lt;SIM_STEP&gt;&quot; id=&quot;&lt;TLS_ID&gt;&quot; programID=&quot;&lt;TLS_SUBID&gt;&quot; phase=&quot;&lt;PHASE_INDEX&gt;&quot; state=&quot;&lt;STATE&gt;&quot;/&gt;
+   ... further states ...
+&lt;/tlsStates&gt;
+</code></pre>
 <p>The state is saved in each simulation step. The state itself is coded
 as a list of the characters 'G', 'Y', and 'R', standing for "green",
 "yellow", and "red", respectively, see <a href="../Traffic_Lights.html">Simulation/Traffic
@@ -411,15 +411,14 @@ have to add the following definition into one of your <a href="../../sumo.html#f
 </table>
 <h3 id="generated_output_1">Generated Output<a class="headerlink" href="#generated_output_1" title="Permanent link">#</a></h3>
 <p>The output looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tlsSwitches&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tlsSwitch</span><span class="w"> </span><span class="na">tls=</span><span class="s">&quot;&lt;TLS_ID&gt;&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;&lt;TLS_SUB_ID&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">      </span><span class="na">fromLane=</span><span class="s">&quot;&lt;LINKS_SOURCE_LANE&gt;&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;&lt;LINK_DESTINATION_LANE&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">      </span><span class="na">begin=</span><span class="s">&quot;&lt;BEGIN_OF_GREEN_PHASE&gt;&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;&lt;END_OF_GREEN_PHASE&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">      </span><span class="na">duration=</span><span class="s">&quot;&lt;DURATION_OF_GREEN_PHASE&gt;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span>...<span class="w"> </span>further<span class="w"> </span>switch<span class="w"> </span>points<span class="w"> </span>...
-<span class="nt">&lt;/tlsSwitches&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;tlsSwitches&gt;
+   &lt;tlsSwitch tls=&quot;&lt;TLS_ID&gt;&quot; programID=&quot;&lt;TLS_SUB_ID&gt;&quot; \
+      fromLane=&quot;&lt;LINKS_SOURCE_LANE&gt;&quot; toLane=&quot;&lt;LINK_DESTINATION_LANE&gt;&quot; \
+      begin=&quot;&lt;BEGIN_OF_GREEN_PHASE&gt;&quot; end=&quot;&lt;END_OF_GREEN_PHASE&gt;&quot; \
+      duration=&quot;&lt;DURATION_OF_GREEN_PHASE&gt;&quot;/&gt;
+   ... further switch points ...
+&lt;/tlsSwitches&gt;
+</code></pre>
 <p>Each entry is written into a single line. The values have the following
 meanings:</p>
 <table>
@@ -504,12 +503,11 @@ following definition into one of your <a href="../../sumo.html#format_of_additio
 </table>
 <h3 id="generated_output_2">Generated Output<a class="headerlink" href="#generated_output_2" title="Permanent link">#</a></h3>
 <p>The output looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tlsStates&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tlsState</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;&lt;SIM_STEP&gt;&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;TLS_ID&gt;&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;&lt;TLS_SUBID&gt;&quot;</span><span class="w"> </span><span class="na">phase=</span><span class="s">&quot;&lt;PHASE_INDEX&gt;&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;&lt;STATE&gt;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span>...<span class="w"> </span>further<span class="w"> </span>states<span class="w"> </span>...
-<span class="nt">&lt;/tlsStates&gt;</span>
-</code></pre></div>
-
+<pre><code>&lt;tlsStates&gt;
+   &lt;tlsState time=&quot;&lt;SIM_STEP&gt;&quot; id=&quot;&lt;TLS_ID&gt;&quot; programID=&quot;&lt;TLS_SUBID&gt;&quot; phase=&quot;&lt;PHASE_INDEX&gt;&quot; state=&quot;&lt;STATE&gt;&quot;/&gt;
+   ... further states ...
+&lt;/tlsStates&gt;
+</code></pre>
 <p>Each entry is written into a single line. The values have the same
 meaning as those in the
 <a href="#generated_output">SaveTLSStates-output</a>.</p>
@@ -547,14 +545,13 @@ definition into one of your <a href="../../sumo.html#format_of_additional_files"
 </table>
 <h3 id="generated_output_3">Generated Output<a class="headerlink" href="#generated_output_3" title="Permanent link">#</a></h3>
 <p>The output is a loadable tlLogic element that records the complete state sequence of a traffic light:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tlsStates&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;TLS_ID&gt;&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;&lt;TLS_SUBID&gt;&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;static/&gt;</span>
-<span class="s">      &lt;phase state=&quot;</span><span class="err">...&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;...&quot;</span>
-<span class="w">      </span><span class="err">...</span>
-<span class="w">   </span><span class="err">&lt;/tlLogic</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/tlsStates&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;tlsStates&gt;
+   &lt;tlLogic id=&quot;&lt;TLS_ID&gt;&quot; programID=&quot;&lt;TLS_SUBID&gt;&quot; type=&quot;static/&gt;
+      &lt;phase state=&quot;...&quot; duration=&quot;...&quot;
+      ...
+   &lt;/tlLogic&gt;
+&lt;/tlsStates&gt;
+</code></pre>
 <p>A new phase is saved whenever the state changes. A new tlLogic is written whenever the programID changes.</p>
 <h2 id="coupled_lane_area_detectors">Coupled Lane Area Detectors<a class="headerlink" href="#coupled_lane_area_detectors" title="Permanent link">#</a></h2>
 <h3 id="instantiating_within_the_simulation_4">Instantiating within the Simulation<a class="headerlink" href="#instantiating_within_the_simulation_4" title="Permanent link">#</a></h3>
@@ -581,7 +578,7 @@ The incoming lane is already given by the
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

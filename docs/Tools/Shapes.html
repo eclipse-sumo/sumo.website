@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -216,9 +217,8 @@ Last edit: 06 October 2026
 
 <h1 id="circlepolygonpy">circlePolygon.py<a class="headerlink" href="#circlepolygonpy" title="Permanent link">#</a></h1>
 <p>Generate circular polygons with custom radius, and number of vertices.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO</span>\<span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">shape</span><span class="o">/</span><span class="n">circlePolygon</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">RADIUS</span><span class="p">,</span><span class="n">NUMVERTICES</span><span class="w"> </span><span class="p">[</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">radius2</span><span class="p">,</span><span class="n">points2</span><span class="p">]</span><span class="w"> </span><span class="o">....</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO\&gt;/tools/shape/circlePolygon.py X,Y,RADIUS,NUMVERTICES [x2,y2,radius2,points2] ....
+</code></pre>
 <ul>
 <li>&lt;X&gt;: Polygon center X</li>
 <li>&lt;Y&gt;: Polygon center Y</li>
@@ -227,9 +227,8 @@ Last edit: 06 October 2026
 </ul>
 <h1 id="csv2polyconvertxmlpy">CSV2polyconvertXML.py<a class="headerlink" href="#csv2polyconvertxmlpy" title="Permanent link">#</a></h1>
 <p>Converts a given CSV-file that contains a list of pois to an XML-file that may be read by POLYCONVERT</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO</span>\<span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">shape</span><span class="o">/</span><span class="n">CSV2polyconvertXML</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">&lt;</span><span class="n">CSV_FILE</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">OUTPUT_FILE</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">VALUENAME</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;</span><span class="n">VALUENAME</span><span class="o">&gt;</span><span class="p">]</span><span class="o">*</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO\&gt;/tools/shape/CSV2polyconvertXML.py &lt;CSV_FILE&gt; &lt;OUTPUT_FILE&gt; &lt;VALUENAME&gt;[,&lt;VALUENAME&gt;]*
+</code></pre>
 <ul>
 <li>&lt;CSV_FILE&gt;: CSV document to be converted</li>
 <li>&lt;OUTPUT_FILE&gt;: POIs compatible with POLYCONVERT</li>
@@ -238,9 +237,8 @@ Last edit: 06 October 2026
 <p>Converts a PoIs within a given PoI-file which are located on lanes into
 induction loop detectors. Each PoI is replicated to cover all lanes of
 the road. The detectors are named "&lt;POINAME&gt;__l&lt;LANE_INDEX&gt;".</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO</span>\<span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">shape</span><span class="o">/</span><span class="n">pois2inductionLoops</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">&lt;</span><span class="n">NET</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">POIS</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">OUTPUT</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO\&gt;/tools/shape/pois2inductionLoops.py &lt;NET&gt; &lt;POIS&gt; &lt;OUTPUT&gt;
+</code></pre>
 <ul>
 <li>&lt;NET&gt;: The net to use for retrieving lane numbers</li>
 <li>&lt;POIS&gt;: The file containing the PoIs</li>
@@ -254,9 +252,8 @@ the type of the edge (street, junction). Edges may be given in arbitrary
 order, connected edges are found automatically. Therefore: crossing
 chains of connected edges are not allowed -&gt; this needs two different
 runs of this script. Output is written in file 'pois.add.xml'</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO</span>\<span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">shape</span><span class="o">/</span><span class="n">poi_alongRoads</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">&lt;</span><span class="n">NET</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">EDGE_ID</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;</span><span class="n">EDGE_ID</span><span class="o">&gt;</span><span class="p">]</span><span class="o">*</span><span class="w"> </span><span class="o">&lt;</span><span class="n">DISTANCE</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO\&gt;/tools/shape/poi_alongRoads.py &lt;NET&gt; &lt;EDGE_ID&gt;[,&lt;EDGE_ID&gt;]* &lt;DISTANCE&gt;
+</code></pre>
 <ul>
 <li>&lt;NET&gt;: The net to use for retrieving the geometry</li>
 <li>&lt;EDGE_ID&gt;[,&lt;EDGE_ID&gt;]*: The edges to go along</li>
@@ -269,9 +266,8 @@ with type="default", color="1,0,0", and layer="0".</p>
 <h1 id="poi_at_stopspy">poi_at_stops.py<a class="headerlink" href="#poi_at_stopspy" title="Permanent link">#</a></h1>
 <p>Spatial distribute of POIs along given edges on a given network.</p>
 <p>Generates a PoI-file containing a PoI for each Stop from the given net.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO</span>\<span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">shape</span><span class="o">/</span><span class="n">poi_at_stops</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">&lt;</span><span class="n">NET</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">STOPS</span><span class="o">&gt;</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO\&gt;/tools/shape/poi_at_stops.py &lt;NET&gt; &lt;STOPS&gt;
+</code></pre>
 <ul>
 <li>&lt;NET&gt;: The network</li>
 <li>&lt;STOPS&gt;: The stops to read stop positions from</li>
@@ -282,9 +278,8 @@ with type="default", color="1,0,0", and layer="0".</p>
 <p>Spatial distribute of POIs along given edges on a given network.</p>
 <p>Generates a PoI-file containing a PoI for each tls controlled
 intersection from the given net.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO</span><span class="err">\</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">shape</span><span class="o">/</span><span class="n">poi_atTLS</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="o">&lt;</span><span class="n">NET</span><span class="o">&gt;</span><span class="w"> </span><span class="o">[</span><span class="n">nojoin</span><span class="o">]</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO\&gt;/tools/shape/poi_atTLS.py &lt;NET&gt; [nojoin]
+</code></pre>
 <ul>
 <li>&lt;NET&gt;: The net to read traffic light (tls) positions from</li>
 <li>[nojoin]: If "nojoin" is given, PoIs will be built on all nodes
@@ -298,9 +293,8 @@ intersection from the given net.</p>
 <h1 id="poly2edgedatapy">poly2edgedata.py<a class="headerlink" href="#poly2edgedatapy" title="Permanent link">#</a></h1>
 <p>Transform polygons with params into edgedata with attributes.
 For each polygon a unique edge is selected that gives the best geometrical match.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">SUMO</span>\<span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">shape</span><span class="o">/</span><span class="n">poly2edgedata</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">&lt;</span><span class="n">POLYGONS</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">NETFILE</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">OUTPUT_EDGEDATA</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO\&gt;/tools/shape/poly2edgedata.py &lt;POLYGONS&gt; -n NETFILE -o OUTPUT_EDGEDATA
+</code></pre>
 <p>Further options:</p>
 <ul>
 <li><strong>--split-attributes</strong> and <strong>--nosplit-attributes</strong> support the use case where a single polygon applies to both directions of a road and related data must be split for the forward and reverse edge (i.e. traffic counts).</li>
@@ -316,15 +310,14 @@ For each polygon a unique edge is selected that gives the best geometrical match
 <h2 id="patches">patches<a class="headerlink" href="#patches" title="Permanent link">#</a></h2>
 <p>Option <strong>--patchfile</strong> loads instructions to modify the matching in special cases.
 The following syntax is supported in the patch file (one patch per line):</p>
-<div class="codehilite"><pre><span></span><code><span class="p">#</span><span class="w"> </span><span class="n">lines</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="sc">&#39;#&#39;</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">ignored</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">comments</span>
-<span class="p">#</span><span class="w"> </span><span class="n">rev</span><span class="w"> </span><span class="n">overrides</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">reverse</span><span class="w"> </span><span class="k">edge</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">EDGEID</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">REVEDGEID</span>
-<span class="n">rev</span><span class="w"> </span><span class="n">EDGEID</span><span class="w"> </span><span class="n">REVEDGEID</span>
-<span class="p">#</span><span class="w"> </span><span class="n">edg</span><span class="w"> </span><span class="n">overrides</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">edge</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="k">assign</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">POLYID</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">EDGEID</span>
-<span class="n">edg</span><span class="w"> </span><span class="n">POLYID</span><span class="w"> </span><span class="n">EDGEID</span>
-<span class="p">#</span><span class="w"> </span><span class="n">dat</span><span class="w"> </span><span class="n">overrrides</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="n">ATTR</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">POLYID</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">take</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">VALUE</span>
-<span class="n">dat</span><span class="w"> </span><span class="n">POLYID</span><span class="w"> </span><span class="n">ATTR</span><span class="w"> </span><span class="n">VALUE</span>
-</code></pre></div>
-
+<pre><code># lines starting with '#' are ignored as comments
+# rev overrides the reverse edge of EDGEID to be REVEDGEID
+rev EDGEID REVEDGEID
+# edg overrides the edge to assign for POLYID to be EDGEID
+edg POLYID EDGEID
+# dat overrrides the data attribute ATTR for POLYID to take on value VALUE
+dat POLYID ATTR VALUE
+</code></pre>
 <p>any ID or VALUE may bet set to 'None' to signify that</p>
 <ul>
 <li>a reverse edge should not be assigned</li>
@@ -338,7 +331,7 @@ The following syntax is supported in the patch file (one patch per line):</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

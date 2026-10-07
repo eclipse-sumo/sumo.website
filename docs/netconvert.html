@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="css/fontawesome.all.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="js/jquery-3.7.0.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -295,21 +296,18 @@ assumes at least one parameter - the combination of the name of the file
 type to import as parameter name and the name of the file to import as
 parameter value. So, for importing a network from OpenStreetMap one
 could simply write:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --osm my_osm_net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --osm my_osm_net.xml
+</code></pre>
 <p>and for importing a VISUM-network:</p>
-<div class="codehilite"><pre><span></span><code>netconvert --visum my_visum_net.net
-</code></pre></div>
-
+<pre><code>netconvert --visum my_visum_net.net
+</code></pre>
 <p>In both cases, as no output name is given, the SUMO network generated
 from the imported data is written into the file "net.net.xml". To write
 the network into a different file, use the option <strong>-o</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a>. If you want to save
 the imported VISUM-network into a file named "my_sumo_net.net.xml",
 write:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --visum my_visum_net.net -o my_sumo_net.net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --visum my_visum_net.net -o my_sumo_net.net.xml
+</code></pre>
 <p>Many further parameter steer how the network is imported and how the
 resulting SUMO-network is generated.</p>
 <h1 id="supported_network_formats">Supported Network Formats<a class="headerlink" href="#supported_network_formats" title="Permanent link">#</a></h1>
@@ -2160,7 +2158,7 @@ may be issued during network building.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

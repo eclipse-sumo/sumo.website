@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -265,32 +266,30 @@ network (<kbd>Ctrl</kbd> + <kbd>S</kbd>).</p>
 <p>As a next step, we define the competing vehicle types as well as a several of these vehicles, organized as <em>flows</em>. This can be done <a href="#using_xml">manually creating xml files</a>, or <a href="#using_netedit">using the netedit gui</a>.</p>
 <h2 id="using_xml">Using XML<a class="headerlink" href="#using_xml" title="Permanent link">#</a></h2>
 <p>Open a new file called <code>sumolympics.rou.xml</code> and insert the following vehicle type definitions:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;pkw&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;2.6&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;4.5&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">speedDev=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;passenger&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;15&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;1.2&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;2.5&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">speedDev=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;bus&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;tram&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;13&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;0.8&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">speedDev=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;rail_urban&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bike&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;1.8&quot;</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;0.8&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;7.5&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;0.8&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">speedDev=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;bicycle&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;pedestrian&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;0.3&quot;</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;2.0&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">speedDev=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;pedestrian&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vType id=&quot;pkw&quot; length=&quot;5&quot; maxSpeed=&quot;50&quot; accel=&quot;2.6&quot; decel=&quot;4.5&quot; sigma=&quot;0.2&quot; speedDev=&quot;0.2&quot; vClass=&quot;passenger&quot;/&gt;
+    &lt;vType id=&quot;bus&quot; length=&quot;15&quot; maxSpeed=&quot;30&quot; accel=&quot;1.2&quot; decel=&quot;2.5&quot; sigma=&quot;0.1&quot; speedDev=&quot;0.1&quot; vClass=&quot;bus&quot;/&gt;
+    &lt;vType id=&quot;tram&quot; length=&quot;40&quot; maxSpeed=&quot;13&quot; accel=&quot;0.8&quot; decel=&quot;0.5&quot; sigma=&quot;0.1&quot; speedDev=&quot;0.1&quot; vClass=&quot;rail_urban&quot;/&gt;
+    &lt;vType id=&quot;bike&quot; length=&quot;1.8&quot; width=&quot;0.8&quot; maxSpeed=&quot;7.5&quot; accel=&quot;0.8&quot; decel=&quot;1.5&quot; sigma=&quot;0.5&quot; speedDev=&quot;0.5&quot; vClass=&quot;bicycle&quot;/&gt;
+    &lt;vType id=&quot;pedestrian&quot; length=&quot;0.3&quot; width=&quot;0.5&quot; maxSpeed=&quot;2.0&quot; accel=&quot;0.2&quot; decel=&quot;1.5&quot; sigma=&quot;0.2&quot; speedDev=&quot;0.2&quot; vClass=&quot;pedestrian&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
 <p>Take a look at the <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#vehicle_types">vehicle type attributes
 description</a>
 for details on these definitions, as well as <a href="../Specification/Persons.html">this page</a> for persons.</p>
 <p>For each vehicle type, we schedule and position vehicle flows by adding the following <code>&lt;flow .../&gt;</code> elements just below the
 vType definitions (within the <code>&lt;routes&gt;</code> element!):</p>
-<div class="codehilite"><pre><span></span><code><span class="w">        </span>...
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;pkw&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;pkw&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;end&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;66&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;last&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;end&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;last&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;tram&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;tram&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;end&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;last&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bike&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;bike&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;end&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;last&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">        ...
+    &lt;flow id=&quot;pkw&quot; type=&quot;pkw&quot; from=&quot;beg&quot; to=&quot;end&quot; begin=&quot;0&quot; end=&quot;0&quot; number=&quot;66&quot; departPos=&quot;last&quot;/&gt;
+    &lt;flow id=&quot;bus&quot; type=&quot;bus&quot; from=&quot;beg&quot; to=&quot;end&quot; begin=&quot;0&quot; end=&quot;0&quot; number=&quot;5&quot; departPos=&quot;last&quot;/&gt;
+    &lt;flow id=&quot;tram&quot; type=&quot;tram&quot; from=&quot;beg&quot; to=&quot;end&quot; begin=&quot;0&quot; end=&quot;0&quot; number=&quot;2&quot; departPos=&quot;last&quot;/&gt;
+    &lt;flow id=&quot;bike&quot; type=&quot;bike&quot; from=&quot;beg&quot; to=&quot;end&quot; begin=&quot;0&quot; end=&quot;0&quot; number=&quot;100&quot; departPos=&quot;last&quot;/&gt;
 
-<span class="w">    </span><span class="nt">&lt;personFlow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;pedestrian&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;pedestrian&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;-30&quot;</span><span class="nt">&gt;</span>
-<span class="w">       </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;end&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;-0.1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/personFlow&gt;</span>
-<span class="w">        </span>...
-</code></pre></div>
-
+    &lt;personFlow id=&quot;pedestrian&quot; type=&quot;pedestrian&quot; begin=&quot;0&quot; end=&quot;0&quot; number=&quot;100&quot; departPos=&quot;-30&quot;&gt;
+       &lt;walk from=&quot;beg&quot; to=&quot;end&quot; arrivalPos=&quot;-0.1&quot;/&gt;
+    &lt;/personFlow&gt;
+        ...
+</code></pre>
 <p>Notice that the pedestrian flow (represented by the <code>personFlow</code> element above) has a slightly different syntax, the reason for this is that pedestrians can walk or take a ride (use public transport for instance), and these different activities need to be communicated to <a href="../sumo.html">sumo</a>. For details on the meaning of the attributes of the flows, see the
 section <a href="../Demand/Shortest_or_Optimal_Path_Routing.html#flow_definitions">Flow Definitions</a> and <a href="../Specification/Persons.html#repeated_persons_personflows">Person Flows</a>.</p>
 <h2 id="using_netedit">Using netedit<a class="headerlink" href="#using_netedit" title="Permanent link">#</a></h2>
@@ -311,17 +310,16 @@ Model</a> and <a href="../Simulation/Bicycles.html">Bicycle
 simulation</a>). In netedit, go to <code>Processing</code> &gt; <code>Sumo options</code> (or <kbd>Shift</kbd> + <kbd>F10</kbd>) and search for <code>lateral-resolution</code> in the new dialog. Change the value from the default -1 (meaning that all vehicles should drive at the center of their lane) to 1.</p>
 <hr />
 <p>It is also possible to manually define the config file. Just create a xml text file (saved as <code>sumolympics.sumocfg</code>), with the following content:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">   </span><span class="nt">&lt;input&gt;</span>
-<span class="w">       </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;sumolympics.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;route-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;sumolympics.rou.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/input&gt;</span>
-<span class="w">   </span><span class="nt">&lt;processing&gt;</span>
-<span class="w">    </span><span class="nt">&lt;lateral-resolution</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1.&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/processing&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;configuration&gt;
+   &lt;input&gt;
+       &lt;net-file value=&quot;sumolympics.net.xml&quot;/&gt;
+       &lt;route-files value=&quot;sumolympics.rou.xml&quot;/&gt;
+   &lt;/input&gt;
+   &lt;processing&gt;
+    &lt;lateral-resolution value=&quot;1.&quot; /&gt;
+   &lt;/processing&gt;
+&lt;/configuration&gt;
+</code></pre>
 <hr />
 <p>Finally, start the simulation by
 double-clicking on the configuration file <code>sumolympics.sumocfg</code>
@@ -365,7 +363,7 @@ lights</a>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

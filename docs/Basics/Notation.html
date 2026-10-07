@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -217,30 +218,27 @@ different type of information. Below, these annotations and colors are
 described.</p>
 <h2 id="command_line">Command Line<a class="headerlink" href="#command_line" title="Permanent link">#</a></h2>
 <p>If you encounter something like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --visum=MyVisumNet.inp --output-file=MySUMONet.net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --visum=MyVisumNet.inp --output-file=MySUMONet.net.xml
+</code></pre>
 <p>you should know that this is a call on the command line. There may be
 also a '\' at the end of a line. This indicates that you have to
 continue typing without pressing return (ignoring both the '\' and the
 following newline). The following example means exactly the same as the
 one above:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --visum=MyVisumNet.inp \</span>
-<span class="n">  --output-file=MySUMONet.net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --visum=MyVisumNet.inp \
+  --output-file=MySUMONet.net.xml
+</code></pre>
 <h2 id="application_options">Application Options<a class="headerlink" href="#application_options" title="Permanent link">#</a></h2>
 <p>Command line option names are normally colored <strong>this way</strong>. Their values ** <em>&lt;LIKE THIS&gt;</em> **.</p>
 <h2 id="xml_examples">XML Examples<a class="headerlink" href="#xml_examples" title="Permanent link">#</a></h2>
 <p>XML-elements and attributes are shown <code>like this</code>. Their values, if variable,
 <em><code>&lt;LIKE THIS&gt;</code></em>.</p>
 <p>Complete examples of XML-Files are shown like the following:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;myType&gt;</span>
-<span class="w">  </span><span class="nt">&lt;myElem</span><span class="w"> </span><span class="na">myAttr1=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">myAttr2=</span><span class="s">&quot;0.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;myElem</span><span class="w"> </span><span class="na">myAttr1=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">myAttr2=</span><span class="s">&quot;-500.0&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/myType&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;myType&gt;
+  &lt;myElem myAttr1=&quot;0&quot; myAttr2=&quot;0.0&quot;/&gt;
+  &lt;myElem myAttr1=&quot;1&quot; myAttr2=&quot;-500.0&quot;/&gt;
+&lt;/myType&gt;
+</code></pre>
 <h2 id="referenced_data_types">Referenced Data Types<a class="headerlink" href="#referenced_data_types" title="Permanent link">#</a></h2>
 <ul>
 <li><em>&lt;BOOL&gt;</em>: a boolean value, use "t" or "true" and "f" or "false" for
@@ -312,7 +310,7 @@ value in here.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

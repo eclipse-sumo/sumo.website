@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -224,12 +225,11 @@ stops</a>, container stops are
 loaded onto or unloaded from a vehicle. Vehicles use the same advanced
 approaching behavior at container stops as at bus stops. Definitions of
 container stop locations in SUMO have the following format:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">    </span><span class="nt">&lt;containerStop</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;CONTAINER_STOP_ID&gt;&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;&lt;STARTING_POSITION&gt;&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;&lt;ENDING_POSITION&gt;&quot;</span><span class="w"> </span><span class="err">[</span><span class="na">line=</span><span class="s">&quot;&lt;LINE_ID&gt;[ &lt;LINE_ID&gt;]*&quot;</span><span class="err">]</span><span class="nt">/&gt;</span>
-<span class="w">    </span>...
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+    &lt;containerStop id=&quot;&lt;CONTAINER_STOP_ID&gt;&quot; lane=&quot;&lt;LANE_ID&gt;&quot; startPos=&quot;&lt;STARTING_POSITION&gt;&quot; endPos=&quot;&lt;ENDING_POSITION&gt;&quot; [line=&quot;&lt;LINE_ID&gt;[ &lt;LINE_ID&gt;]*&quot;]/&gt;
+    ...
+&lt;/additional&gt;
+</code></pre>
 <p>That means that a container stop is an area
 on a lane. The parameters have the following meanings:</p>
 <table>
@@ -314,16 +314,15 @@ on a lane. The parameters have the following meanings:</p>
 </div>
 <p>Vehicles must be informed that they must stop at a container stop. The
 following example shows how this should be done:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vtype</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;truck&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;2.6&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;4.5&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;15&quot;</span><span class="w"> </span><span class="na">maxspeed=</span><span class="s">&quot;70&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,1,0&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;truck&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;1,1,0&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;2/0to2/1 2/1to1/1 1/1to1/2 1/2to0/2 0/2to0/1 0/1to0/0 0/0to1/0 1/0to2/0 2/0to2/1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop1&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop2&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop3&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop4&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/vehicle&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vtype id=&quot;truck&quot; accel=&quot;2.6&quot; decel=&quot;4.5&quot; sigma=&quot;0.5&quot; length=&quot;15&quot; maxspeed=&quot;70&quot; color=&quot;1,1,0&quot;/&gt;
+&lt;vehicle id=&quot;0&quot; type=&quot;truck&quot; depart=&quot;0&quot; color=&quot;1,1,0&quot;&gt;
+    &lt;route edges=&quot;2/0to2/1 2/1to1/1 1/1to1/2 1/2to0/2 0/2to0/1 0/1to0/0 0/0to1/0 1/0to2/0 2/0to2/1&quot;/&gt;
+    &lt;stop containerStop=&quot;containerStop1&quot; duration=&quot;20&quot;/&gt;
+    &lt;stop containerStop=&quot;containerStop2&quot; duration=&quot;20&quot;/&gt;
+    &lt;stop containerStop=&quot;containerStop3&quot; duration=&quot;20&quot;/&gt;
+    &lt;stop containerStop=&quot;containerStop4&quot; duration=&quot;20&quot;/&gt;
+&lt;/vehicle&gt;
+</code></pre>
 <p>What is defined here is a vehicle named "0" being a "truck". "truck" is
 a referenced type declared earlier. The vehicle has an embedded route
 (written by hand in this case) and a list of stop places. Each stop
@@ -334,9 +333,8 @@ container stop in seconds. Please note that the order of container stops
 the vehicle shall halt at must be correct.</p>
 <p>You may also let a vehicle stop at another position than a container
 stop. The short definition of a vehicle's stop is:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;stop</span><span class="w"> </span><span class="err">[</span><span class="na">containerStop=</span><span class="s">&quot;&lt;CONTAINER_STOP_ID&gt;&quot;</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">(</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;&lt;POSITION_AT_LANE&gt;&quot;</span><span class="w"> </span><span class="err">)]</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;&lt;HALTING_DURATION&gt;&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;stop [containerStop=&quot;&lt;CONTAINER_STOP_ID&gt;&quot; | ( lane=&quot;&lt;LANE_ID&gt;&quot; endPos=&quot;&lt;POSITION_AT_LANE&gt;&quot; )] duration=&quot;&lt;HALTING_DURATION&gt;&quot;/&gt;
+</code></pre>
 <p>This means you can either use a
 container stop or a lane position to define where a vehicle has to stop.
 For a complete list of attributes for the "stop"-element of a vehicle
@@ -345,20 +343,18 @@ see <a href="index.html#stops">Specification#Stops</a>.</p>
 <p>Each containerStop may have additional child elements to model access from
 other parts of the network (e.g. road access to a stop on the rail
 network). This takes the following form:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;containerStop</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;myStop&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;A_0&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;230&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;250&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;access</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;B_0&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;150&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/containerStop&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;containerStop id=&quot;myStop&quot; lane=&quot;A_0&quot; startPos=&quot;230&quot; endPos=&quot;250&quot;&gt;
+   &lt;access lane=&quot;B_0&quot; pos=&quot;150&quot;/&gt;
+&lt;/containerStop&gt;
+</code></pre>
 <h2 id="spacing_of_waiting_containers">Spacing of waiting containers<a class="headerlink" href="#spacing_of_waiting_containers" title="Permanent link">#</a></h2>
 <p>The spacing between waiting containers defaults to 2.5. This is appropriate when standard shipping containers of 2.44m width are stacked next to each other in paralle..
 When containers are stacked at a different angle, the distance along the stop must be increased. This can be done with params:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;containerStop</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ct_5&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;324040749#0_0&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;630.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;waitingWidth&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;13&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;waitingDepth&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2.44&quot;</span><span class="nt">/&gt;</span>
-<span class="w"> </span><span class="nt">&lt;/containerStop&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;containerStop id=&quot;ct_5&quot; angle=&quot;0&quot; lane=&quot;324040749#0_0&quot; startPos=&quot;0.00&quot; endPos=&quot;630.00&quot;&gt;
+        &lt;param key=&quot;waitingWidth&quot; value=&quot;13&quot;/&gt;
+        &lt;param key=&quot;waitingDepth&quot; value=&quot;2.44&quot;/&gt;
+ &lt;/containerStop&gt;
+</code></pre>
 <h1 id="trailers_and_rail_cars">Trailers and Rail Cars<a class="headerlink" href="#trailers_and_rail_cars" title="Permanent link">#</a></h1>
 <p>Containers can be used to model trailers and marshalling/switching by changing the length of the vehicle dynamically upon being loaded/unloaded.
 This is done by setting <a href="../Simulation/GenericParameters.html">Generic Parameter</a> <code>&lt;param key="device.container.loadedType" value="TYPE_ID"/&gt;</code>.</p>
@@ -384,7 +380,7 @@ The <strong>vClass</strong>, <strong>guiShape</strong> and visualization params 
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

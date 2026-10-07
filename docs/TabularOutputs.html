@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="css/fontawesome.all.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="js/jquery-3.7.0.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -214,55 +215,51 @@ which can be converted to other formats using some of the <a href="Tools/Xml.htm
 Starting with SUMO 1.24.0 there is experimental support for generating tabular outputs
 in CSV or <a href="https://parquet.apache.org/">Parquet</a> format directly from SUMO applications.</p>
 <p>The easiest way to do so is to give your output file a different name:</p>
-<div class="codehilite"><pre><span></span><code>sumo -c my.sumocfg --fcd-output fcd.csv
-</code></pre></div>
-
+<pre><code>sumo -c my.sumocfg --fcd-output fcd.csv
+</code></pre>
 <p>will generate a CSV file instead of an XML file and</p>
-<div class="codehilite"><pre><span></span><code>sumo -c my.sumocfg --fcd-output fcd.parquet
-</code></pre></div>
-
+<pre><code>sumo -c my.sumocfg --fcd-output fcd.parquet
+</code></pre>
 <p>will generate Parquet output.</p>
 <p>Most of the time the mapping of XML to a tabular format is straight forward. For FCD output for instance the FCD file:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;fcd-export</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;http://sumo.dlr.de/xsd/fcd_file.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;0.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;1.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;2.00&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;fcd-export xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;http://sumo.dlr.de/xsd/fcd_file.xsd&quot;&gt;
+    &lt;timestep time=&quot;0.00&quot;/&gt;
+    &lt;timestep time=&quot;1.00&quot;/&gt;
+    &lt;timestep time=&quot;2.00&quot;/&gt;
 ...
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;97.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;98.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;99.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;100.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;always_left.0&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;5.10&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;498.35&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;90.00&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;DEFAULT_VEHTYPE&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;5.10&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;1fi_0&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;always_right.0&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;501.65&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;5.10&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;DEFAULT_VEHTYPE&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;5.10&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;3fi_0&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;horizontal.0&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;994.90&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;501.65&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;270.00&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;DEFAULT_VEHTYPE&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;5.10&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;2fi_0&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/timestep&gt;</span>
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;101.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;always_left.0&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;7.02&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;498.35&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;90.00&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;DEFAULT_VEHTYPE&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;1.92&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;7.02&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;1fi_0&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;always_right.0&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;501.65&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;7.46&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;DEFAULT_VEHTYPE&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;2.36&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;7.46&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;3fi_0&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;horizontal.0&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;993.58&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;501.65&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;270.00&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;DEFAULT_VEHTYPE&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;1.32&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;6.42&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;2fi_0&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/timestep&gt;</span>
-<span class="w">    </span><span class="nt">&lt;timestep</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;102.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;always_left.0&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;10.66&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;498.35&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;90.00&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;DEFAULT_VEHTYPE&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;3.64&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;10.66&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;1fi_0&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;always_right.0&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;501.65&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;11.19&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;DEFAULT_VEHTYPE&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;3.72&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;11.19&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;3fi_0&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;horizontal.0&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;990.38&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;501.65&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;270.00&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;DEFAULT_VEHTYPE&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;3.20&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;9.62&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;2fi_0&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/timestep&gt;</span>
+    &lt;timestep time=&quot;97.00&quot;/&gt;
+    &lt;timestep time=&quot;98.00&quot;/&gt;
+    &lt;timestep time=&quot;99.00&quot;/&gt;
+    &lt;timestep time=&quot;100.00&quot;&gt;
+        &lt;vehicle id=&quot;always_left.0&quot; x=&quot;5.10&quot; y=&quot;498.35&quot; angle=&quot;90.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;0.00&quot; pos=&quot;5.10&quot; lane=&quot;1fi_0&quot; slope=&quot;0.00&quot;/&gt;
+        &lt;vehicle id=&quot;always_right.0&quot; x=&quot;501.65&quot; y=&quot;5.10&quot; angle=&quot;0.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;0.00&quot; pos=&quot;5.10&quot; lane=&quot;3fi_0&quot; slope=&quot;0.00&quot;/&gt;
+        &lt;vehicle id=&quot;horizontal.0&quot; x=&quot;994.90&quot; y=&quot;501.65&quot; angle=&quot;270.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;0.00&quot; pos=&quot;5.10&quot; lane=&quot;2fi_0&quot; slope=&quot;0.00&quot;/&gt;
+    &lt;/timestep&gt;
+    &lt;timestep time=&quot;101.00&quot;&gt;
+        &lt;vehicle id=&quot;always_left.0&quot; x=&quot;7.02&quot; y=&quot;498.35&quot; angle=&quot;90.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;1.92&quot; pos=&quot;7.02&quot; lane=&quot;1fi_0&quot; slope=&quot;0.00&quot;/&gt;
+        &lt;vehicle id=&quot;always_right.0&quot; x=&quot;501.65&quot; y=&quot;7.46&quot; angle=&quot;0.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;2.36&quot; pos=&quot;7.46&quot; lane=&quot;3fi_0&quot; slope=&quot;0.00&quot;/&gt;
+        &lt;vehicle id=&quot;horizontal.0&quot; x=&quot;993.58&quot; y=&quot;501.65&quot; angle=&quot;270.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;1.32&quot; pos=&quot;6.42&quot; lane=&quot;2fi_0&quot; slope=&quot;0.00&quot;/&gt;
+    &lt;/timestep&gt;
+    &lt;timestep time=&quot;102.00&quot;&gt;
+        &lt;vehicle id=&quot;always_left.0&quot; x=&quot;10.66&quot; y=&quot;498.35&quot; angle=&quot;90.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;3.64&quot; pos=&quot;10.66&quot; lane=&quot;1fi_0&quot; slope=&quot;0.00&quot;/&gt;
+        &lt;vehicle id=&quot;always_right.0&quot; x=&quot;501.65&quot; y=&quot;11.19&quot; angle=&quot;0.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;3.72&quot; pos=&quot;11.19&quot; lane=&quot;3fi_0&quot; slope=&quot;0.00&quot;/&gt;
+        &lt;vehicle id=&quot;horizontal.0&quot; x=&quot;990.38&quot; y=&quot;501.65&quot; angle=&quot;270.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;3.20&quot; pos=&quot;9.62&quot; lane=&quot;2fi_0&quot; slope=&quot;0.00&quot;/&gt;
+    &lt;/timestep&gt;
 ...
-</code></pre></div>
-
+</code></pre>
 <p>will be mapped to the CSV</p>
-<div class="codehilite"><pre><span></span><code><span class="nx">timestep_time</span><span class="p">;</span><span class="nx">vehicle_id</span><span class="p">;</span><span class="nx">vehicle_x</span><span class="p">;</span><span class="nx">vehicle_y</span><span class="p">;</span><span class="nx">vehicle_angle</span><span class="p">;</span><span class="nx">vehicle_type</span><span class="p">;</span><span class="nx">vehicle_speed</span><span class="p">;</span><span class="nx">vehicle_pos</span><span class="p">;</span><span class="nx">vehicle_lane</span><span class="p">;</span><span class="nx">vehicle_edge</span><span class="p">;</span><span class="nx">vehicle_slope</span>
-<span class="m m-Double">100.00</span><span class="p">;</span><span class="nx">always_left</span><span class="m m-Double">.0</span><span class="p">;</span><span class="m m-Double">5.10</span><span class="p">;</span><span class="m m-Double">498.35</span><span class="p">;</span><span class="m m-Double">90.00</span><span class="p">;</span><span class="nx">DEFAULT_VEHTYPE</span><span class="p">;</span><span class="m m-Double">0.00</span><span class="p">;</span><span class="m m-Double">5.10</span><span class="p">;</span><span class="mi">1</span><span class="nx">fi_0</span><span class="p">;;</span><span class="m m-Double">0.00</span>
-<span class="m m-Double">100.00</span><span class="p">;</span><span class="nx">always_right</span><span class="m m-Double">.0</span><span class="p">;</span><span class="m m-Double">501.65</span><span class="p">;</span><span class="m m-Double">5.10</span><span class="p">;</span><span class="m m-Double">0.00</span><span class="p">;</span><span class="nx">DEFAULT_VEHTYPE</span><span class="p">;</span><span class="m m-Double">0.00</span><span class="p">;</span><span class="m m-Double">5.10</span><span class="p">;</span><span class="mi">3</span><span class="nx">fi_0</span><span class="p">;;</span><span class="m m-Double">0.00</span>
-<span class="m m-Double">100.00</span><span class="p">;</span><span class="nx">horizontal</span><span class="m m-Double">.0</span><span class="p">;</span><span class="m m-Double">994.90</span><span class="p">;</span><span class="m m-Double">501.65</span><span class="p">;</span><span class="m m-Double">270.00</span><span class="p">;</span><span class="nx">DEFAULT_VEHTYPE</span><span class="p">;</span><span class="m m-Double">0.00</span><span class="p">;</span><span class="m m-Double">5.10</span><span class="p">;</span><span class="mi">2</span><span class="nx">fi_0</span><span class="p">;;</span><span class="m m-Double">0.00</span>
-<span class="m m-Double">101.00</span><span class="p">;</span><span class="nx">always_left</span><span class="m m-Double">.0</span><span class="p">;</span><span class="m m-Double">7.02</span><span class="p">;</span><span class="m m-Double">498.35</span><span class="p">;</span><span class="m m-Double">90.00</span><span class="p">;</span><span class="nx">DEFAULT_VEHTYPE</span><span class="p">;</span><span class="m m-Double">1.92</span><span class="p">;</span><span class="m m-Double">7.02</span><span class="p">;</span><span class="mi">1</span><span class="nx">fi_0</span><span class="p">;;</span><span class="m m-Double">0.00</span>
-<span class="m m-Double">101.00</span><span class="p">;</span><span class="nx">always_right</span><span class="m m-Double">.0</span><span class="p">;</span><span class="m m-Double">501.65</span><span class="p">;</span><span class="m m-Double">7.46</span><span class="p">;</span><span class="m m-Double">0.00</span><span class="p">;</span><span class="nx">DEFAULT_VEHTYPE</span><span class="p">;</span><span class="m m-Double">2.36</span><span class="p">;</span><span class="m m-Double">7.46</span><span class="p">;</span><span class="mi">3</span><span class="nx">fi_0</span><span class="p">;;</span><span class="m m-Double">0.00</span>
-<span class="m m-Double">101.00</span><span class="p">;</span><span class="nx">horizontal</span><span class="m m-Double">.0</span><span class="p">;</span><span class="m m-Double">993.58</span><span class="p">;</span><span class="m m-Double">501.65</span><span class="p">;</span><span class="m m-Double">270.00</span><span class="p">;</span><span class="nx">DEFAULT_VEHTYPE</span><span class="p">;</span><span class="m m-Double">1.32</span><span class="p">;</span><span class="m m-Double">6.42</span><span class="p">;</span><span class="mi">2</span><span class="nx">fi_0</span><span class="p">;;</span><span class="m m-Double">0.00</span>
-<span class="m m-Double">102.00</span><span class="p">;</span><span class="nx">always_left</span><span class="m m-Double">.0</span><span class="p">;</span><span class="m m-Double">10.66</span><span class="p">;</span><span class="m m-Double">498.35</span><span class="p">;</span><span class="m m-Double">90.00</span><span class="p">;</span><span class="nx">DEFAULT_VEHTYPE</span><span class="p">;</span><span class="m m-Double">3.64</span><span class="p">;</span><span class="m m-Double">10.66</span><span class="p">;</span><span class="mi">1</span><span class="nx">fi_0</span><span class="p">;;</span><span class="m m-Double">0.00</span>
-<span class="m m-Double">102.00</span><span class="p">;</span><span class="nx">always_right</span><span class="m m-Double">.0</span><span class="p">;</span><span class="m m-Double">501.65</span><span class="p">;</span><span class="m m-Double">11.19</span><span class="p">;</span><span class="m m-Double">0.00</span><span class="p">;</span><span class="nx">DEFAULT_VEHTYPE</span><span class="p">;</span><span class="m m-Double">3.72</span><span class="p">;</span><span class="m m-Double">11.19</span><span class="p">;</span><span class="mi">3</span><span class="nx">fi_0</span><span class="p">;;</span><span class="m m-Double">0.00</span>
-<span class="m m-Double">102.00</span><span class="p">;</span><span class="nx">horizontal</span><span class="m m-Double">.0</span><span class="p">;</span><span class="m m-Double">990.38</span><span class="p">;</span><span class="m m-Double">501.65</span><span class="p">;</span><span class="m m-Double">270.00</span><span class="p">;</span><span class="nx">DEFAULT_VEHTYPE</span><span class="p">;</span><span class="m m-Double">3.20</span><span class="p">;</span><span class="m m-Double">9.62</span><span class="p">;</span><span class="mi">2</span><span class="nx">fi_0</span><span class="p">;;</span><span class="m m-Double">0.00</span>
-<span class="o">...</span>
-</code></pre></div>
-
+<pre><code class="language-csv">timestep_time;vehicle_id;vehicle_x;vehicle_y;vehicle_angle;vehicle_type;vehicle_speed;vehicle_pos;vehicle_lane;vehicle_edge;vehicle_slope
+100.00;always_left.0;5.10;498.35;90.00;DEFAULT_VEHTYPE;0.00;5.10;1fi_0;;0.00
+100.00;always_right.0;501.65;5.10;0.00;DEFAULT_VEHTYPE;0.00;5.10;3fi_0;;0.00
+100.00;horizontal.0;994.90;501.65;270.00;DEFAULT_VEHTYPE;0.00;5.10;2fi_0;;0.00
+101.00;always_left.0;7.02;498.35;90.00;DEFAULT_VEHTYPE;1.92;7.02;1fi_0;;0.00
+101.00;always_right.0;501.65;7.46;0.00;DEFAULT_VEHTYPE;2.36;7.46;3fi_0;;0.00
+101.00;horizontal.0;993.58;501.65;270.00;DEFAULT_VEHTYPE;1.32;6.42;2fi_0;;0.00
+102.00;always_left.0;10.66;498.35;90.00;DEFAULT_VEHTYPE;3.64;10.66;1fi_0;;0.00
+102.00;always_right.0;501.65;11.19;0.00;DEFAULT_VEHTYPE;3.72;11.19;3fi_0;;0.00
+102.00;horizontal.0;990.38;501.65;270.00;DEFAULT_VEHTYPE;3.20;9.62;2fi_0;;0.00
+...
+</code></pre>
 <p>That means the structure is completely flattened and all lines which do not have the data of the innermost element (the empty "timestep"s at the beginning)
 are omitted. All attributes of the outer elements ("timestep_time" in the example) are repeated in the inner elements.
 The column names are derived from the XML element name in conjunction with the attribute name (which is the same format the python tool xml2csv.py uses)
@@ -366,7 +363,7 @@ that the tabular outputs are equivalent to the XML. Things still needing our att
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

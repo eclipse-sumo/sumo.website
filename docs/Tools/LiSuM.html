@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -273,19 +274,17 @@ LiSuM-Core (the command line version) works with Java 8 as well.</p>
 <li>openjfx (for lisum-gui, Linux only)</li>
 </ul>
 <p>If you downloaded the Windows installer or the Windows zip, LiSuM should already be included and you just need to run:</p>
-<div class="codehilite"><pre><span></span><code>java -jar &quot;%SUMO_HOME%\bin\lisum-gui.jar&quot;
-</code></pre></div>
-
+<pre><code>java -jar &quot;%SUMO_HOME%\bin\lisum-gui.jar&quot;
+</code></pre>
 <p>You can also try to download and run this on Linux but you
 might be better off self-compiling as described below due to Java version mismatches.</p>
 <h3 id="compiling_lisum">Compiling LiSuM<a class="headerlink" href="#compiling_lisum" title="Permanent link">#</a></h3>
 <p>This will require <a href="https://maven.apache.org/">Apache Maven</a> and a source distribution or a git repository clone of SUMO.
 In a command or terminal window execute <code>mvn install</code> in the tools/contributed/traas, and the tools/contributed/lisum folders (in that order).
 For starting lisum-core or lisum-gui, seek the <em>jar</em> file, open a terminal and execute it using the <code>java -jar</code> command, for example:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">java</span><span class="w"> </span><span class="o">-</span><span class="n">jar</span><span class="w"> </span><span class="o">$</span><span class="n">SUMO_HOME</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">contributed</span><span class="o">/</span><span class="n">lisum</span><span class="o">/</span><span class="n">lisum</span><span class="o">-</span><span class="n">core</span><span class="o">/</span><span class="n">target</span><span class="o">/</span><span class="n">lisum</span><span class="o">-</span><span class="n">core</span><span class="o">-</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="n">jar</span><span class="o">-</span><span class="n">with</span><span class="o">-</span><span class="n">dependencies</span><span class="o">.</span><span class="n">jar</span>
-<span class="n">java</span><span class="w"> </span><span class="o">-</span><span class="n">jar</span><span class="w"> </span><span class="o">$</span><span class="n">SUMO_HOME</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">contributed</span><span class="o">/</span><span class="n">lisum</span><span class="o">/</span><span class="n">lisum</span><span class="o">-</span><span class="n">gui</span><span class="o">/</span><span class="n">target</span><span class="o">/</span><span class="n">lisum</span><span class="o">-</span><span class="n">gui</span><span class="o">-</span><span class="mf">1.1</span><span class="o">.</span><span class="n">jar</span>
-</code></pre></div>
-
+<pre><code>java -jar $SUMO_HOME/tools/contributed/lisum/lisum-core/target/lisum-core-1.0.2-jar-with-dependencies.jar
+java -jar $SUMO_HOME/tools/contributed/lisum/lisum-gui/target/lisum-gui-1.1.jar
+</code></pre>
 <h2 id="getting_started">Getting started<a class="headerlink" href="#getting_started" title="Permanent link">#</a></h2>
 <p>When LiSuM is started for the first time, the user is prompted to select a
 directory which is going to be used as the workspace directory. The
@@ -327,37 +326,36 @@ use different naming conventions for their elements, the fields
 system.</p>
 <p><img alt="Classes.PNG" src="../images/Classes.PNG" title="Classes.PNG" /></p>
 <p><strong>Example:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;simulation&gt;</span>
-<span class="w">   </span><span class="nt">&lt;input&gt;</span>
-<span class="w">      </span><span class="nt">&lt;lisa&gt;</span>lisaDirectory<span class="nt">&lt;/lisa&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/input&gt;</span>
+<pre><code class="language-xml">&lt;simulation&gt;
+   &lt;input&gt;
+      &lt;lisa&gt;lisaDirectory&lt;/lisa&gt;
+   &lt;/input&gt;
 
-<span class="w">   </span><span class="nt">&lt;controlUnits&gt;</span>
-<span class="w">      </span><span class="nt">&lt;controlUnit</span><span class="w">  </span><span class="na">lisa=</span><span class="s">&quot;z1_fg1&quot;</span><span class="w"> </span><span class="na">sumo=</span><span class="s">&quot;gneJ1&quot;</span><span class="w"> </span><span class="nt">&gt;</span>
-<span class="w">         </span><span class="nt">&lt;signalGroups&gt;</span>
-<span class="w">            </span><span class="nt">&lt;signalGroup</span><span class="w">  </span><span class="na">lisa=</span><span class="s">&quot;K1&quot;</span><span class="w"> </span><span class="na">sumo=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;signalGroup</span><span class="w">  </span><span class="na">lisa=</span><span class="s">&quot;K2&quot;</span><span class="w"> </span><span class="na">sumo=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;signalGroup</span><span class="w">  </span><span class="na">lisa=</span><span class="s">&quot;K3&quot;</span><span class="w"> </span><span class="na">sumo=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;signalGroup</span><span class="w">  </span><span class="na">lisa=</span><span class="s">&quot;K4&quot;</span><span class="w"> </span><span class="na">sumo=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;/signalGroups&gt;</span>
+   &lt;controlUnits&gt;
+      &lt;controlUnit  lisa=&quot;z1_fg1&quot; sumo=&quot;gneJ1&quot; &gt;
+         &lt;signalGroups&gt;
+            &lt;signalGroup  lisa=&quot;K1&quot; sumo=&quot;0&quot; /&gt;
+            &lt;signalGroup  lisa=&quot;K2&quot; sumo=&quot;1&quot; /&gt;
+            &lt;signalGroup  lisa=&quot;K3&quot; sumo=&quot;2&quot; /&gt;
+            &lt;signalGroup  lisa=&quot;K4&quot; sumo=&quot;3&quot; /&gt;
+         &lt;/signalGroups&gt;
 
-<span class="w">         </span><span class="nt">&lt;detectors&gt;</span>
-<span class="w">            </span><span class="nt">&lt;detector</span><span class="w">  </span><span class="na">lisa=</span><span class="s">&quot;D1&quot;</span><span class="w"> </span><span class="na">sumo=</span><span class="s">&quot;myLoop1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;/detectors&gt;</span>
-<span class="w">      </span><span class="nt">&lt;/controlUnit&gt;</span>
+         &lt;detectors&gt;
+            &lt;detector  lisa=&quot;D1&quot; sumo=&quot;myLoop1&quot; /&gt;
+         &lt;/detectors&gt;
+      &lt;/controlUnit&gt;
 
-<span class="w">      </span><span class="nt">&lt;controlUnit</span><span class="w">  </span><span class="na">lisa=</span><span class="s">&quot;z1_fg2&quot;</span><span class="w"> </span><span class="na">sumo=</span><span class="s">&quot;gneJ2&quot;</span><span class="w"> </span><span class="nt">&gt;</span>
-<span class="w">         </span><span class="nt">&lt;signalGroups&gt;</span>
-<span class="w">            </span><span class="nt">&lt;signalGroup</span><span class="w"> </span><span class="na">lisa=</span><span class="s">&quot;K1&quot;</span><span class="w"> </span><span class="na">sumo=</span><span class="s">&quot;0,1,2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;signalGroup</span><span class="w"> </span><span class="na">lisa=</span><span class="s">&quot;K2&quot;</span><span class="w"> </span><span class="na">sumo=</span><span class="s">&quot;3,4&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;signalGroup</span><span class="w"> </span><span class="na">lisa=</span><span class="s">&quot;K3&quot;</span><span class="w"> </span><span class="na">sumo=</span><span class="s">&quot;5,6,7&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;signalGroup</span><span class="w"> </span><span class="na">lisa=</span><span class="s">&quot;K4&quot;</span><span class="w"> </span><span class="na">sumo=</span><span class="s">&quot;8&quot;</span><span class="w"> </span><span class="na">main=</span><span class="s">&quot;K3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">         </span><span class="nt">&lt;/signalGroups&gt;</span>
-<span class="w">      </span><span class="nt">&lt;/controlUnit&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/controlUnits&gt;</span>
-<span class="nt">&lt;/simulation&gt;</span>
-</code></pre></div>
-
+      &lt;controlUnit  lisa=&quot;z1_fg2&quot; sumo=&quot;gneJ2&quot; &gt;
+         &lt;signalGroups&gt;
+            &lt;signalGroup lisa=&quot;K1&quot; sumo=&quot;0,1,2&quot; /&gt;
+            &lt;signalGroup lisa=&quot;K2&quot; sumo=&quot;3,4&quot; /&gt;
+            &lt;signalGroup lisa=&quot;K3&quot; sumo=&quot;5,6,7&quot;/&gt;
+            &lt;signalGroup lisa=&quot;K4&quot; sumo=&quot;8&quot; main=&quot;K3&quot; /&gt;
+         &lt;/signalGroups&gt;
+      &lt;/controlUnit&gt;
+   &lt;/controlUnits&gt;
+&lt;/simulation&gt;
+</code></pre>
 <p><img alt="LoggingLevels.PNG" src="../images/LoggingLevels.PNG" title="LoggingLevels.PNG" />Logging levels</p>
 <p>The configuration file shown above declares the following:</p>
 <ul>
@@ -454,7 +452,7 @@ your IDE (e.g. Visual Studio on Windows).</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

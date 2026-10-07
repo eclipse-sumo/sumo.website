@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -236,15 +237,14 @@ an additional file.</p>
 on which the detector resides and, optionally, a start position on the
 first lane and an end position on the last lane (these may be negative
 values to indicate a distance from the lane's end).</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">   </span><span class="nt">&lt;laneAreaDetector</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;ID&gt;&quot;</span><span class="w"> </span><span class="na">lanes=</span><span class="s">&quot;&lt;LANE_ID1&gt; &lt;LANE_ID2&gt; ... &lt;LANE_IDN&gt;&quot;</span>
-<span class="w">   </span><span class="na">pos=</span><span class="s">&quot;&lt;START_POSITION_ON_FIRST_LANE&gt;&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;&lt;END_POSITION_ON_LAST_LANE&gt;&quot;</span>
-<span class="w">   </span><span class="na">friendlyPos=</span><span class="s">&quot;&lt;BOOL&gt;&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;&lt;AGGREGATION_TIME&gt;&quot;</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;&lt;OUTPUT_FILE&gt;&quot;</span>
-<span class="w">   </span><span class="na">timeThreshold=</span><span class="s">&quot;&lt;FLOAT&gt;&quot;</span><span class="w"> </span><span class="na">speedThreshold=</span><span class="s">&quot;&lt;FLOAT&gt;&quot;</span><span class="w"> </span><span class="na">jamThreshold=</span><span class="s">&quot;&lt;FLOAT&gt;&quot;</span>
-<span class="w">   </span><span class="na">tl=</span><span class="s">&quot;&lt;TRAFFIC_LIGHT_ID&gt;&quot;</span><span class="w">  </span><span class="na">to=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+   &lt;laneAreaDetector id=&quot;&lt;ID&gt;&quot; lanes=&quot;&lt;LANE_ID1&gt; &lt;LANE_ID2&gt; ... &lt;LANE_IDN&gt;&quot;
+   pos=&quot;&lt;START_POSITION_ON_FIRST_LANE&gt;&quot; endPos=&quot;&lt;END_POSITION_ON_LAST_LANE&gt;&quot;
+   friendlyPos=&quot;&lt;BOOL&gt;&quot; period=&quot;&lt;AGGREGATION_TIME&gt;&quot; file=&quot;&lt;OUTPUT_FILE&gt;&quot;
+   timeThreshold=&quot;&lt;FLOAT&gt;&quot; speedThreshold=&quot;&lt;FLOAT&gt;&quot; jamThreshold=&quot;&lt;FLOAT&gt;&quot;
+   tl=&quot;&lt;TRAFFIC_LIGHT_ID&gt;&quot;  to=&quot;&lt;LANE_ID&gt;&quot;/&gt;
+&lt;/additional&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For this type of specification it is required that the lanes form a continuous sequence, i.e., a link from each lane in the sequence exists to the consecutive lane.</p>
@@ -252,15 +252,14 @@ values to indicate a distance from the lane's end).</p>
 <h2 id="anchoring_lane_and_length">Anchoring lane and length<a class="headerlink" href="#anchoring_lane_and_length" title="Permanent link">#</a></h2>
 <p>Another possible specification allows to give a single anchoring lane
 plus two of the attributes <code>pos</code>, <code>endPos</code>, and <code>length</code> like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">   </span><span class="nt">&lt;laneAreaDetector</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;ID&gt;&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span>
-<span class="w">   </span><span class="na">pos=</span><span class="s">&quot;&lt;START_POSITION_ON_LANE&gt;&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;&lt;END_POSITION_ON_LANE&gt;&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;&lt;DETECTOR_LENGTH&gt;&quot;</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;-</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">two</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">those</span>
-<span class="w">   </span><span class="na">friendlyPos=</span><span class="s">&quot;&lt;BOOL&gt;&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;&lt;AGGREGATION_TIME&gt;&quot;</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;&lt;OUTPUT_FILE&gt;&quot;</span>
-<span class="w">   </span><span class="na">timeThreshold=</span><span class="s">&quot;&lt;FLOAT&gt;&quot;</span><span class="w"> </span><span class="na">speedThreshold=</span><span class="s">&quot;&lt;FLOAT&gt;&quot;</span><span class="w"> </span><span class="na">jamThreshold=</span><span class="s">&quot;&lt;FLOAT&gt;&quot;</span>
-<span class="w">   </span><span class="na">tl=</span><span class="s">&quot;&lt;TRAFFIC_LIGHT_ID&gt;&quot;</span><span class="w">  </span><span class="na">to=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+   &lt;laneAreaDetector id=&quot;&lt;ID&gt;&quot; lane=&quot;&lt;LANE_ID&gt;&quot;
+   pos=&quot;&lt;START_POSITION_ON_LANE&gt;&quot; endPos=&quot;&lt;END_POSITION_ON_LANE&gt;&quot; length=&quot;&lt;DETECTOR_LENGTH&gt;&quot;  // &lt;- only two of those
+   friendlyPos=&quot;&lt;BOOL&gt;&quot; period=&quot;&lt;AGGREGATION_TIME&gt;&quot; file=&quot;&lt;OUTPUT_FILE&gt;&quot;
+   timeThreshold=&quot;&lt;FLOAT&gt;&quot; speedThreshold=&quot;&lt;FLOAT&gt;&quot; jamThreshold=&quot;&lt;FLOAT&gt;&quot;
+   tl=&quot;&lt;TRAFFIC_LIGHT_ID&gt;&quot;  to=&quot;&lt;LANE_ID&gt;&quot;/&gt;
+&lt;/additional&gt;
+</code></pre>
 <p>If start position and end position are given, the detector is assumed to
 lie on a single lane. If one of these is given together with a length,
 the detector is extended to one direction (upstream if the end position
@@ -370,14 +369,13 @@ lanes shorter than 0.1m.</p>
 <h1 id="generated_output">Generated Output<a class="headerlink" href="#generated_output" title="Permanent link">#</a></h1>
 <p>A single data line within the output of a simulated lane area detector
 looks as following (the line is not broken within the output):</p>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;&lt;BEGIN_TIME&gt;&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;&lt;END_TIME&gt;&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;DETECTOR_ID&gt;&quot;</span><span class="w"> </span><span class="na">sampledSeconds=</span><span class="s">&quot;&lt;DATA_SAMPLES&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">    </span><span class="na">nVehEntered=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="na">nVehLeft=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="na">nVehSeen=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="na">meanSpeed=</span><span class="s">&quot;&lt;MEAN_SPEED&gt;&quot;</span><span class="w">  </span><span class="na">meanTimeLoss=</span><span class="s">&quot;&lt;MEAN_TIMELOSS&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">    </span><span class="na">meanOccupancy=</span><span class="s">&quot;&lt;MEAN_OCCUPANCY&gt;&quot;</span><span class="w"> </span><span class="na">maxOccupancy=</span><span class="s">&quot;&lt;MAX_OCCUPANCY&gt;&quot;</span><span class="w"> </span><span class="na">meanMaxJamLengthInVehicles=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="na">meanMaxJamLengthInMeters=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">    </span><span class="na">maxJamLengthInVehicles=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="na">maxJamLengthInMeters=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="na">jamLengthInVehiclesSum=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="na">jamLengthInMetersSum=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">    </span><span class="na">meanHaltingDuration=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="na">maxHaltingDuration=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="na">haltingDurationSum=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="na">meanIntervalHaltingDuration=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="err">\</span>
-<span class="w">    </span><span class="na">maxIntervalHaltingDuration=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="na">intervalHaltingDurationSum=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="na">startedHalts=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="na">meanVehicleNumber=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="na">maxVehicleNumber=</span><span class="s">&quot;&lt;VAL&gt;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml"> &lt;interval begin=&quot;&lt;BEGIN_TIME&gt;&quot; end=&quot;&lt;END_TIME&gt;&quot; id=&quot;&lt;DETECTOR_ID&gt;&quot; sampledSeconds=&quot;&lt;DATA_SAMPLES&gt;&quot; \
+    nVehEntered=&quot;&lt;VAL&gt;&quot; nVehLeft=&quot;&lt;VAL&gt;&quot; nVehSeen=&quot;&lt;VAL&gt;&quot; meanSpeed=&quot;&lt;MEAN_SPEED&gt;&quot;  meanTimeLoss=&quot;&lt;MEAN_TIMELOSS&gt;&quot; \
+    meanOccupancy=&quot;&lt;MEAN_OCCUPANCY&gt;&quot; maxOccupancy=&quot;&lt;MAX_OCCUPANCY&gt;&quot; meanMaxJamLengthInVehicles=&quot;&lt;VAL&gt;&quot; meanMaxJamLengthInMeters=&quot;&lt;VAL&gt;&quot; \
+    maxJamLengthInVehicles=&quot;&lt;VAL&gt;&quot; maxJamLengthInMeters=&quot;&lt;VAL&gt;&quot; jamLengthInVehiclesSum=&quot;&lt;VAL&gt;&quot; jamLengthInMetersSum=&quot;&lt;VAL&gt;&quot; \
+    meanHaltingDuration=&quot;&lt;VAL&gt;&quot; maxHaltingDuration=&quot;&lt;VAL&gt;&quot; haltingDurationSum=&quot;&lt;VAL&gt;&quot; meanIntervalHaltingDuration=&quot;&lt;VAL&gt;&quot; \
+    maxIntervalHaltingDuration=&quot;&lt;VAL&gt;&quot; intervalHaltingDurationSum=&quot;&lt;VAL&gt;&quot; startedHalts=&quot;&lt;VAL&gt;&quot; meanVehicleNumber=&quot;&lt;VAL&gt;&quot; maxVehicleNumber=&quot;&lt;VAL&gt;&quot; /&gt;
+</code></pre>
 <p>To explain this vast amount of measures, a short note about how a lane
 area detector works is needful. A lane area detector takes note about
 each vehicle that enters the area. As long as the vehicle does not leave
@@ -574,7 +572,7 @@ this detector<ul>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

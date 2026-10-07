@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="css/fontawesome.all.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="js/jquery-3.7.0.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -283,13 +284,12 @@ attributes are listed in the attribute table below. A very simple
 configuration file could look like this (a more complete example, which
 serves as a template can be found in the installation directory
 <code>&lt;SUMO_HOME&gt;/tools/simpla</code>):</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicleSelectors</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;pkw&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vTypeMap</span><span class="w"> </span><span class="na">original=</span><span class="s">&quot;simple_pkw&quot;</span><span class="w"> </span><span class="na">leader=</span><span class="s">&quot;simple_pkw_as_platoon_leader&quot;</span><span class="w">  </span><span class="na">follower=</span><span class="s">&quot;simple_pkw_as_platoon_follower&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span>...
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;vehicleSelectors value=&quot;pkw&quot; /&gt;
+    &lt;vTypeMap original=&quot;simple_pkw&quot; leader=&quot;simple_pkw_as_platoon_leader&quot;  follower=&quot;simple_pkw_as_platoon_follower&quot;/&gt;
+    ...
+&lt;/configuration&gt;
+</code></pre>
 <p>The following table summarizes all admissible configuration parameters:</p>
 <table>
 <thead>
@@ -401,17 +401,15 @@ a configuration file <a href="#configuration">as described
 above</a>. Assuming such a file named
 <code>simpla.cfg</code> is located in your working directory, all you have to do is
 importing simpla as a python module:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">simpla</span>
-</code></pre></div>
-
+<pre><code class="language-python">import simpla
+</code></pre>
 <p>and, after <a href="TraCI/Interfacing_TraCI_from_Python.html#first_steps">establishing a
 TraCI-connection</a>
 to SUMO, load your configuration.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">traci</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="n">simpla</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;simpla.cfg&quot;</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code class="language-python">traci.start(...)
+...
+simpla.load(&quot;simpla.cfg&quot;)
+</code></pre>
 <p>The call to <code>simpla.load</code> automatically installs a
 <a href="TraCI/Interfacing_TraCI_from_Python.html#adding_a_steplistener">TraCI-stepListener</a>
 and the platoon management is executed at the end of each call to
@@ -480,29 +478,25 @@ as a
 They are available after starting simpla like <a href="#integrating_simpla_into_your_traci_script">explained above</a>.</p>
 <h2 id="getaverageplatoonlength">getAveragePlatoonLength()<a class="headerlink" href="#getaverageplatoonlength" title="Permanent link">#</a></h2>
 <p>The function computes the average platoon length in terms of vehicles across all currently formed platoons:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">avgLength</span> <span class="o">=</span> <span class="n">simpla</span><span class="o">.</span><span class="n">getAveragePlatoonLength</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-python">avgLength = simpla.getAveragePlatoonLength()
+</code></pre>
 <h2 id="getaverageplatoonspeed">getAveragePlatoonSpeed()<a class="headerlink" href="#getaverageplatoonspeed" title="Permanent link">#</a></h2>
 <p>The function computes the average speed of vehicles across all currently formed platoons:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">avgSpeed</span> <span class="o">=</span> <span class="n">simpla</span><span class="o">.</span><span class="n">getAveragePlatoonSpeed</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-python">avgSpeed = simpla.getAveragePlatoonSpeed()
+</code></pre>
 <h2 id="getplatoonleaderidlist">getPlatoonLeaderIDList()<a class="headerlink" href="#getplatoonleaderidlist" title="Permanent link">#</a></h2>
 <p>This utility function returns the leader vehicles' IDs of all current platoons managed by simpla:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">currentLeaderIDs</span> <span class="o">=</span> <span class="n">simpla</span><span class="o">.</span><span class="n">getPlatoonLeaderIDList</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-python">currentLeaderIDs = simpla.getPlatoonLeaderIDList()
+</code></pre>
 <h2 id="getplatoonidlist_and_getplatooninfo">getPlatoonIDList() and getPlatoonInfo()<a class="headerlink" href="#getplatoonidlist_and_getplatooninfo" title="Permanent link">#</a></h2>
 <p>Platoons can be found by their position on the road network using the edge ID in question.
 The function returns IDs of platoons which currently have at least one member vehicle on the edge given by its <strong>edgeID</strong>.
 The platoon ID can be used to receive updates using getPlatoonInfo even when the platoon has left the edge:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">platoonIDs</span> <span class="o">=</span> <span class="n">simpla</span><span class="o">.</span><span class="n">getPlatoonIDList</span><span class="p">(</span><span class="n">edgeID</span><span class="p">)</span>
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">platoonIDs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">platoonInfo</span> <span class="o">=</span> <span class="n">simpla</span><span class="o">.</span><span class="n">getPlatoonInfo</span><span class="p">(</span><span class="n">platoonIDs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">platoonSize</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">platoonInfo</span><span class="p">[</span><span class="s2">&quot;members&quot;</span><span class="p">])</span>
-</code></pre></div>
-
+<pre><code class="language-python">platoonIDs = simpla.getPlatoonIDList(edgeID)
+if len(platoonIDs) &gt; 0:
+    platoonInfo = simpla.getPlatoonInfo(platoonIDs[0])
+    platoonSize = len(platoonInfo[&quot;members&quot;])
+</code></pre>
 <p>The function getPlatoonInfo returns a dictionary of values regarding the platoon, using the keys from the table below:</p>
 <table>
 <thead>
@@ -529,10 +523,9 @@ The platoon ID can be used to receive updates using getPlatoonInfo even when the
 <p>This utility function allows to check if a given vehicle is part of a platoon in simpla. If the vehicle given by its ID is controlled by
 simpla, the function returns the numerical platoon ID (-1 otherwise). The platoon ID can be used as an input to getPlatoonInfo to
 get information about the platoon structure.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">vehID</span> <span class="o">=</span> <span class="s2">&quot;myExampleVehicle&quot;</span>
-<span class="n">platoonID</span> <span class="o">=</span> <span class="n">simpla</span><span class="o">.</span><span class="n">getPlatoonID</span><span class="p">(</span><span class="n">vehID</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code class="language-python">vehID = &quot;myExampleVehicle&quot;
+platoonID = simpla.getPlatoonID(vehID)
+</code></pre>
 <h1 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h1>
 <p>An example can be downloaded <a href="https://sumo.dlr.de/extractTest.php?path=complex/simpla/basic">from the nightly test suite</a>
 This can be executed by calling <code>python runner.py</code></p>
@@ -543,7 +536,7 @@ This can be executed by calling <code>python runner.py</code></p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -426,9 +427,8 @@ lights, whereas values approaching 0 model near-perfect coordination).
 (The limit case of no-penalty can be achieved by setting <strong>--meso-junction-control false</strong>)</p>
 <p>For an option value of <em>p</em>, The time penalty is computed by scaling the
 expected waiting time for random arrival within the cycle</p>
-<div class="codehilite"><pre><span></span><code>travelTimePenalty = p <span class="gs">* (redTime *</span> redTime + redTime) / (2 * cycleTime)
-</code></pre></div>
-
+<pre><code>travelTimePenalty = p * (redTime * redTime + redTime) / (2 * cycleTime)
+</code></pre>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>When edges ahead of a traffic light are shorter than 15m an <a href="https://github.com/eclipse-sumo/sumo/issues/16014">unrealistic reduction in traffic flow</a> will result from the use of this option and a warning will be given.
@@ -441,20 +441,18 @@ When the flow penalty is set to a value of 1 the minimum headway time is increas
 according to the proportion of green time to cycle time.
 Higher penalty values can be used to reduce the flow even further while lower values increase the maximum flow.
 The latter is useful if the green split is not known exactly (because the traffic light program is guessed heuristically).</p>
-<div class="codehilite"><pre><span></span><code>greenFraction = MIN2(1.0, (cycleTime - redDuration) / cycleTime) / penalty))
+<pre><code>greenFraction = MIN2(1.0, (cycleTime - redDuration) / cycleTime) / penalty))
 headway = defaultHeadway / greenFraction
-</code></pre></div>
-
+</code></pre>
 <p>Note, that the maximum flow cannot exceed the value at permanent green light regardless of penalty value.</p>
 <h3 id="partial_tls_penalties">Partial TLS Penalties<a class="headerlink" href="#partial_tls_penalties" title="Permanent link">#</a></h3>
 <p>The above two options apply to all traffic lights in the network by default.
 By adding the <a href="GenericParameters.html">generic parameter</a> key <code>&lt;param key="meso.tls.control" value="true"/&gt;</code> to a <code>&lt;tlLogic&gt;</code> definition, individual traffic lights can be made exempt from the penalties and instead by treated in full detail (when option <strong>--meso-junction-control</strong> is also set).</p>
 <p>It is also possible to load an additional file where only this option is set:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;meso.tls.control&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/tlLogic&gt;</span>
-</code></pre></div>
-
+<pre><code>    &lt;tlLogic id=&quot;C&quot; programID=&quot;0&quot;&gt;
+        &lt;param key=&quot;meso.tls.control&quot; value=&quot;true&quot;/&gt;
+    &lt;/tlLogic&gt;
+</code></pre>
 <h3 id="penalty_at_uncontrolled_intersections">Penalty at uncontrolled intersections<a class="headerlink" href="#penalty_at_uncontrolled_intersections" title="Permanent link">#</a></h3>
 <p><strong>--meso-minor-penalty</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;TIME&gt;</em></a> can be used to apply a fixed time penalty when passing an unprioritized
 link (this is disabled when --meso-junction-control.limited is set and
@@ -463,15 +461,14 @@ junction control is active for that link)</p>
 <p>Vehicles that reach an <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#impatience">impatience</a> value of 1 (maximum) can pass an intersection regardless of foe traffic with higher priority. The time to reach maximum impatience can be configured with option <strong>--time-to-impatience</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;TIME&gt;</em></a>.</p>
 <h2 id="configuration_by_edge_type">Configuration by edge type<a class="headerlink" href="#configuration_by_edge_type" title="Permanent link">#</a></h2>
 <p>The model parameters described above can be customized for each edge type id by loading the following configuration from an additional file:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">    </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;highway.motorway&quot;</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;meso</span><span class="w"> </span><span class="na">tauff=</span><span class="s">&quot;1.13&quot;</span><span class="w"> </span><span class="na">taufj=</span><span class="s">&quot;1.13&quot;</span><span class="w"> </span><span class="na">taujf=</span><span class="s">&quot;1.73&quot;</span><span class="w"> </span><span class="na">taujj=</span><span class="s">&quot;1.4&quot;</span><span class="w"> </span><span class="na">jamThreshold=</span><span class="s">&quot;-1&quot;</span>
-<span class="w">             </span><span class="na">multiQueue=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">junctionControl=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">tlsPenalty=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">tlsFlowPenalty=</span><span class="s">&quot;0&quot;</span>
-<span class="w">             </span><span class="na">minorPenalty=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">overtaking=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">edgeLength=</span><span class="s">&quot;98&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/type&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+    &lt;type id=&quot;highway.motorway&quot; ...&gt;
+        &lt;meso tauff=&quot;1.13&quot; taufj=&quot;1.13&quot; taujf=&quot;1.73&quot; taujj=&quot;1.4&quot; jamThreshold=&quot;-1&quot;
+             multiQueue=&quot;true&quot; junctionControl=&quot;false&quot; tlsPenalty=&quot;0&quot; tlsFlowPenalty=&quot;0&quot;
+             minorPenalty=&quot;0&quot; overtaking=&quot;false&quot; edgeLength=&quot;98&quot;/&gt;
+    &lt;/type&gt;
+&lt;/additional&gt;
+</code></pre>
 <p>All attributes are optional and default to the value of the option with the corresponding option name. (i.e. tauff ~ <strong>meso-tauff</strong>, tlsPenalty ~ <strong>meso-tls-penalty</strong>, ...).</p>
 <h2 id="multimodal_simulation">Multimodal simulation<a class="headerlink" href="#multimodal_simulation" title="Permanent link">#</a></h2>
 <p>By default, meso is meant to be used for road vehicles (i.e. cars and trucks). To make use of bicycles and edges that do not permit passenger cars, option <strong>--meso-lane-queue</strong> must be set.
@@ -522,7 +519,7 @@ different when running the mesoscopic model as well.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

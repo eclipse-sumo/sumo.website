@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -331,10 +332,9 @@ assigned to a later milestone.</p>
 <li>check presence of RPMs on <a href="https://build.opensuse.org/package/show/science:dlr/sumo_nightly">https://build.opensuse.org/package/show/science:dlr/sumo_nightly</a></li>
 <li>add a new version tag</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">&gt; </span><span class="ge">git tag -a v0_13_7 -m &quot;tagging release 0.13.7, refs #563&quot;</span>
-<span class="k">&gt; </span><span class="ge">git push --tags</span>
-</code></pre></div>
-
+<pre><code>&gt; git tag -a v0_13_7 -m &quot;tagging release 0.13.7, refs #563&quot;
+&gt; git push --tags
+</code></pre>
 <h3 id="release_day">Release day<a class="headerlink" href="#release_day" title="Permanent link">#</a></h3>
 <p>The nightly build should have generated all releasable packages. If not,
 delay the release. (The complete documentation, tests and source
@@ -443,7 +443,7 @@ following things need to be in the S:\daily directory:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

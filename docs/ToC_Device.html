@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="css/fontawesome.all.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="js/jquery-3.7.0.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -248,17 +249,16 @@ equipment
 procedures</a>
 (and use <code>&lt;device name&gt;=toc</code>). The minimal definition required to equip
 one vehicle with a ToC Device has the following form:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span>...
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;v0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.toc.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.toc.automatedType&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&lt;AUTOMATED_VTYPE_ID</span><span class="nt">&gt;</span><span class="w"> </span>/&gt;
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.toc.manualType&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&lt;MANUAL_VTYPE_ID</span><span class="nt">&gt;</span><span class="w"> </span>/&gt;
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
-<span class="w">    </span>....
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    ...
+    &lt;vehicle id=&quot;v0&quot; route=&quot;route0&quot; depart=&quot;0&quot;&gt;
+        &lt;param key=&quot;has.toc.device&quot; value=&quot;true&quot;/&gt;
+        &lt;param key=&quot;device.toc.automatedType&quot; value=&lt;AUTOMATED_VTYPE_ID&gt; /&gt;
+        &lt;param key=&quot;device.toc.manualType&quot; value=&lt;MANUAL_VTYPE_ID&gt; /&gt;
+    &lt;/vehicle&gt;
+    ....
+&lt;/routes&gt;
+</code></pre>
 <p>The following table gives the full list of possible parameters for the
 ToC Device. Each of these parameters must be specified as a child
 element of the form <code>&lt;param key=&lt;PARAMETER NAME&gt; value=&lt;PARAMETER VALUE&gt;</code> of the appropriate demand definition element
@@ -396,9 +396,8 @@ performed during the ToC preparation phase.</p>
 user has to issue a take-over request (TOR) via
 <a href="TraCI/index.html">TraCI</a>. The corresponding command is (here exemplary
 for the python client)</p>
-<div class="codehilite"><pre><span></span><code><span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">setParameter</span><span class="p">(</span><span class="o">&lt;</span><span class="n">VEHICLE_ID</span><span class="o">&gt;</span><span class="p">,</span> <span class="s2">&quot;device.toc.requestToC&quot;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">AVAILABLE_LEAD_TIME</span><span class="o">&gt;</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code class="language-python">traci.vehicle.setParameter(&lt;VEHICLE_ID&gt;, &quot;device.toc.requestToC&quot;, &lt;AVAILABLE_LEAD_TIME&gt;)
+</code></pre>
 <p>If the current driving mode is automated, this will induce a switch to
 the manual vehicle type after the specified (or default) <code>responseTime</code>,
 or, if <code>responseTime &gt; availableLeadTime</code>, an MRM is initiated (and
@@ -441,7 +440,7 @@ State</a>).</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

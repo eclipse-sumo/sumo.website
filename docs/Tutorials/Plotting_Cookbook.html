@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -214,9 +215,8 @@ your simulation over time. You'll need the
 number of vehicles within the simulation for each simulation time step.</p>
 <p>If Your <a href="../Simulation/Output/Summary.html">summary-output</a> is named
 "summary.xml", You may show the number of running vehicles using</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python plot_summary.py -i summary.xml</span>
-</code></pre></div>
-
+<pre><code>python plot_summary.py -i summary.xml
+</code></pre>
 <p>as <code>running</code>, the measurement You want to
 plot, is the default. The following image will be shown:</p>
 <p><img alt="summary_running_mo.png" src="../images/Summary_running_mo.png" title="summary_running_mo.png" /></p>
@@ -229,20 +229,18 @@ single day, we limit the x-axis to [0,86400] (86400: seconds in a day)
 using <strong>--xlim 0,86400</strong> and we also save the figure into the file
 "summary_running_all.png" using <strong>-o summary_running_all.png</strong>. To know what is shown, we replace
 the file names in the legend by the week day types using <strong>-l Mo,Di-Do,Fr,Sa,So</strong>.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python plot_summary.py -i mo\summary.xml,dido\summary.xml,fr\summary.xml,sa\summary.xml,so\summary.xml \</span>
-<span class="n"> -l Mo,Di-Do,Fr,Sa,So -o summary_running_all.png --xlim 0,86400</span>
-</code></pre></div>
-
+<pre><code>python plot_summary.py -i mo\summary.xml,dido\summary.xml,fr\summary.xml,sa\summary.xml,so\summary.xml \
+ -l Mo,Di-Do,Fr,Sa,So -o summary_running_all.png --xlim 0,86400
+</code></pre>
 <p><img alt="summary_running_all.png" src="../images/Summary_running_all.png" title="summary_running_all.png" /></p>
 <p>Ok, now we'll make it professional by adding labels and titles, proper
 ticks, using a different format for the simulation time than seconds,
 etc.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python plot_summary.py -i mo\summary.xml,dido\summary.xml,fr\summary.xml,sa\summary.xml,so\summary.xml \</span>
-<span class="n"> -l Mo,Di-Do,Fr,Sa,So --xlim 0,86400 --ylim 0,10000 -o sumodocs/summary_running.png --yticks 0,10001,2000,14 \</span>
-<span class="n"> --xticks 0,86401,14400,14 --xtime1 --ygrid --ylabel &quot;running vehicles [#]&quot; --xlabel &quot;time&quot; \</span>
-<span class="n"> --title &quot;running vehicles over time&quot; --adjust .14,.1</span>
-</code></pre></div>
-
+<pre><code>python plot_summary.py -i mo\summary.xml,dido\summary.xml,fr\summary.xml,sa\summary.xml,so\summary.xml \
+ -l Mo,Di-Do,Fr,Sa,So --xlim 0,86400 --ylim 0,10000 -o sumodocs/summary_running.png --yticks 0,10001,2000,14 \
+ --xticks 0,86401,14400,14 --xtime1 --ygrid --ylabel &quot;running vehicles [#]&quot; --xlabel &quot;time&quot; \
+ --title &quot;running vehicles over time&quot; --adjust .14,.1
+</code></pre>
 <p><img alt="summary_running.png" src="../images/Summary_running.png" title="summary_running.png" /></p>
 <p>The <a href="../Simulation/Output/Summary.html">summary-output</a> contains
 further measures that can be visualised in the same way, among them
@@ -261,7 +259,7 @@ a complete list.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

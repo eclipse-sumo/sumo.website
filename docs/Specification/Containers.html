@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -255,15 +256,14 @@ sequence of <a href="#transports">transport</a>,
 <a href="#tranships">tranship</a> and
 <a href="#stops">stop</a> elements as described
 below. Each container must have at least one stage in its plan.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;container</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;foo&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;tranship</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;a b&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;transport</span><span class="w"> </span><span class="err">..</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;transport</span><span class="w"> </span><span class="err">..</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;tranship</span><span class="w"> </span><span class="err">..</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="err">..</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/container&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;container id=&quot;foo&quot; depart=&quot;0&quot;&gt;
+    &lt;tranship edges=&quot;a b&quot;/&gt;
+    &lt;transport ../&gt;
+    &lt;transport ../&gt;
+    &lt;tranship ../&gt;
+    &lt;stop ../&gt;
+&lt;/container&gt;
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -488,29 +488,28 @@ Any obstacles, like buildings, will be ignored.</p>
 train station, gets transported by a train, gets unloaded and transhiped
 to a place, where it's stored (stopped) for some time and finally gets
 transported again.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;container</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;container0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;tranship</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2/3to1/3&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;1/3to0/3&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;80&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;55&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;transport</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1/3to0/3&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0/4to1/4&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;train0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;tranship</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;0/4to1/4&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;1/4to2/4&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;30&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;1/4to2/4_0&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;40&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;transport</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1/4to2/4&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;3/4to4/4&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;truck0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/container&gt;</span>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;container id=&quot;container0&quot; depart=&quot;0&quot;&gt;
+        &lt;tranship from=&quot;2/3to1/3&quot; to=&quot;1/3to0/3&quot; departPos=&quot;80&quot; arrivalPos=&quot;55&quot;/&gt;
+        &lt;transport from=&quot;1/3to0/3&quot; to=&quot;0/4to1/4&quot; lines=&quot;train0&quot;/&gt;
+        &lt;tranship from=&quot;0/4to1/4&quot; to=&quot;1/4to2/4&quot; arrivalPos=&quot;30&quot;/&gt;
+        &lt;stop lane=&quot;1/4to2/4_0&quot; duration=&quot;20&quot; startPos=&quot;40&quot;/&gt;
+        &lt;transport from=&quot;1/4to2/4&quot; to=&quot;3/4to4/4&quot; lines=&quot;truck0&quot;/&gt;
+    &lt;/container&gt;
 
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;train0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;50&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;1/4to1/3 1/3to0/3 0/3to0/4 0/4to1/4 1/4to1/3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop0&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;120&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop1&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;180&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
+    &lt;vehicle id=&quot;train0&quot; depart=&quot;50&quot;&gt;
+        &lt;route edges=&quot;1/4to1/3 1/3to0/3 0/3to0/4 0/4to1/4 1/4to1/3&quot;/&gt;
+        &lt;stop containerStop=&quot;containerStop0&quot; until=&quot;120&quot; duration=&quot;10&quot;/&gt;
+        &lt;stop containerStop=&quot;containerStop1&quot; until=&quot;180&quot; duration=&quot;10&quot;/&gt;
+    &lt;/vehicle&gt;
 
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;truck0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;containerTriggered&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;1/4to2/4 2/4to3/4 3/4to4/4&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;30&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;1/4to2/4_0&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">endPos=</span><span class="s">&quot;60&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
+    &lt;vehicle id=&quot;truck0&quot; depart=&quot;containerTriggered&quot;&gt;
+        &lt;route edges=&quot;1/4to2/4 2/4to3/4 3/4to4/4&quot; departPos=&quot;30&quot;/&gt;
+        &lt;stop lane=&quot;1/4to2/4_0&quot; duration=&quot;20&quot; startPos=&quot;40&quot; endPos=&quot;60&quot;/&gt;
+    &lt;/vehicle&gt;
 
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+&lt;/routes&gt;
+</code></pre>
 <h1 id="repeated_containers_containerflows">Repeated containers (containerFlows)<a class="headerlink" href="#repeated_containers_containerflows" title="Permanent link">#</a></h1>
 <p>To define multiple containers with the same plan, the element <code>&lt;containerFlow&gt;</code> can be used.
 It uses the same parameters and child elements as <a href="#containers"><code>&lt;container&gt;</code></a> except for the
@@ -562,20 +561,18 @@ known:</p>
 <p>*: Only one of these attributes is allowed.</p>
 <p>See also <a href="Persons.html#repeated_persons_personflows">personFlows</a></p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;containerFlow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;c&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
-<span class="w">       </span><span class="nt">&lt;tranship</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;end&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/containerFlow&gt;</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;containerFlow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;container&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;80&quot;</span><span class="nt">&gt;</span>
-<span class="w">       </span><span class="nt">&lt;tranship</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2/3to1/3&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;1/3to0/3&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;55&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;transport</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;cs_train0&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;train0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;tranship</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;1/4to2/4&quot;</span><span class="w"> </span><span class="na">arrivalPos=</span><span class="s">&quot;45&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;1/4to2/4_0&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">startPos=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">actType=</span><span class="s">&quot;waiting&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;transport</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;3/4to4/4&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;truck0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/containerFlow&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;containerFlow id=&quot;c&quot; begin=&quot;0&quot; end=&quot;10&quot; period=&quot;2&quot;&gt;
+       &lt;tranship from=&quot;beg&quot; to=&quot;end&quot;/&gt;
+   &lt;/containerFlow&gt;
+</code></pre>
+<pre><code class="language-xml">   &lt;containerFlow id=&quot;container&quot; begin=&quot;0&quot; end=&quot;1&quot; number=&quot;4&quot; departPos=&quot;80&quot;&gt;
+       &lt;tranship from=&quot;2/3to1/3&quot; to=&quot;1/3to0/3&quot; arrivalPos=&quot;55&quot;/&gt;
+       &lt;transport containerStop=&quot;cs_train0&quot; lines=&quot;train0&quot;/&gt;
+       &lt;tranship to=&quot;1/4to2/4&quot; arrivalPos=&quot;45&quot;/&gt;
+       &lt;stop lane=&quot;1/4to2/4_0&quot; duration=&quot;20&quot; startPos=&quot;40&quot; actType=&quot;waiting&quot;/&gt;
+       &lt;transport to=&quot;3/4to4/4&quot; lines=&quot;truck0&quot;/&gt;
+   &lt;/containerFlow&gt;
+</code></pre>
 <h1 id="starting_the_simulation_in_a_vehicle">Starting the simulation in a Vehicle<a class="headerlink" href="#starting_the_simulation_in_a_vehicle" title="Permanent link">#</a></h1>
 <p>It is possible to start the container simulation simultaneously with the start of a vehicle simulation within that vehicle. I.e. the container starts with a transport within the vehicle, when the vehicle is inserted to the simulation. This is possible for a <code>container</code> definition and a <code>containerFlow</code>.
 It is the same as for <code>person</code> and <code>personFlow</code>.</p>
@@ -662,7 +659,7 @@ Instead they have the following attributes</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

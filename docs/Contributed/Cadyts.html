@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -314,18 +315,16 @@ aggregation period (default=900, in Cadyts: -binsize).</p>
 &lt;NETFILE&gt; (-n), the &lt;ROUTEALTERATIVESFILE&gt; (-r), the &lt;REALFLOWSFILE&gt;
 (-d).</p>
 <p>Example for using the cadytsIterate.py:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">cadytsIterate</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="n">NETFILE</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="n">ROUTEALTERNATIVESFILE</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="n">REALFLOWSFILE</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="n">INT</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">sets</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="n">weights</span><span class="w"> </span><span class="n">aggregation</span><span class="w"> </span><span class="n">period</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="o">&lt;</span><span class="n">CADTYS</span><span class="o">-</span><span class="n">MODEL</span><span class="o">-</span><span class="n">PATH</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;</span><span class="n">INT</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">sets</span><span class="w"> </span><span class="n">simulation</span><span class="w"> </span><span class="k">begin</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="o">&lt;</span><span class="n">INT</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">sets</span><span class="w"> </span><span class="n">simulation</span><span class="w"> </span><span class="k">end</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code>    cadytsIterate.py -n &lt;NETFILE&gt; -r &lt;ROUTEALTERNATIVESFILE&gt; -d &lt;REALFLOWSFILE&gt;
+    -a &lt;INT&gt; (sets main weights aggregation period) -c &lt;CADTYS-MODEL-PATH&gt;
+    -b &lt;INT&gt; (sets simulation begin) -e &lt;INT&gt; (sets simulation end)
+</code></pre>
 <p>The &lt;REALFLOWS&gt;-file has to be a XML-file in form of:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;measurements&gt;</span>
-<span class="w">        </span><span class="nt">&lt;singlelink</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;1to21&quot;</span><span class="w"> </span><span class="na">start=</span><span class="s">&quot;25200&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;32400&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;750&quot;</span><span class="w"> </span><span class="na">stddev=</span><span class="s">&quot;8&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;COUNT_VEH&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;singlelink</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;1to22&quot;</span><span class="w"> </span><span class="na">start=</span><span class="s">&quot;25200&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;32400&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;250&quot;</span><span class="w"> </span><span class="na">stddev=</span><span class="s">&quot;8&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;COUNT_VEH&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/measurements&gt;</span>
-</code></pre></div>
-
+<pre><code>    &lt;measurements&gt;
+        &lt;singlelink link=&quot;1to21&quot; start=&quot;25200&quot; end=&quot;32400&quot; value=&quot;750&quot; stddev=&quot;8&quot; type=&quot;COUNT_VEH&quot;/&gt;
+        &lt;singlelink link=&quot;1to22&quot; start=&quot;25200&quot; end=&quot;32400&quot; value=&quot;250&quot; stddev=&quot;8&quot; type=&quot;COUNT_VEH&quot;/&gt;
+    &lt;/measurements&gt;
+</code></pre>
 <p>The definition of each attribute is:</p>
 <p>•   link: edge ID</p>
 <p>•   start: the begin of the interval</p>
@@ -334,16 +333,15 @@ aggregation period (default=900, in Cadyts: -binsize).</p>
 <p>•   stddev: standard deviation of the given data (measurement error); The larger this value is, the less one should believe this value.</p>
 <p>•   type: measurement type (here: COUNT_VEH für counting data)</p>
 <p>The &lt; ROUTEALTERNATIVESFILE&gt; has to be a XML-file in form of:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;route-alternatives&gt;</span>
-<span class="w">        </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;830&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;25208.00&quot;</span><span class="w"> </span><span class="na">departlane=</span><span class="s">&quot;free&quot;</span><span class="w"> </span><span class="na">departspeed=</span><span class="s">&quot;max&quot;</span><span class="w"> </span><span class="na">fromtaz=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">totaz=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;routeDistribution</span><span class="w"> </span><span class="na">last=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
-<span class="w">                </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">cost=</span><span class="s">&quot;154.29&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.57623629&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;91to1 1to21 out&quot;</span><span class="w"> </span><span class="na">exitTimes=</span><span class="s">&quot;25240.19 25337.05 25362.30&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">cost=</span><span class="s">&quot;153.69&quot;</span><span class="w"> </span><span class="na">probability=</span><span class="s">&quot;0.42376371&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;91to1 1to22 out&quot;</span><span class="w"> </span><span class="na">exitTimes=</span><span class="s">&quot;25240.19 25336.44 25361.69&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/routeDistribution&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/vehicle&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/route-alternatives&gt;</span>
-</code></pre></div>
-
+<pre><code>    &lt;route-alternatives&gt;
+        &lt;vehicle id=&quot;830&quot; depart=&quot;25208.00&quot; departlane=&quot;free&quot; departspeed=&quot;max&quot; fromtaz=&quot;1&quot; totaz=&quot;2&quot;&gt;
+            &lt;routeDistribution last=&quot;1&quot;&gt;
+                &lt;route cost=&quot;154.29&quot; probability=&quot;0.57623629&quot; edges=&quot;91to1 1to21 out&quot; exitTimes=&quot;25240.19 25337.05 25362.30&quot;/&gt;
+                &lt;route cost=&quot;153.69&quot; probability=&quot;0.42376371&quot; edges=&quot;91to1 1to22 out&quot; exitTimes=&quot;25240.19 25336.44 25361.69&quot;/&gt;
+            &lt;/routeDistribution&gt;
+        &lt;/vehicle&gt;
+    &lt;/route-alternatives&gt;
+</code></pre>
 <p>An easy way to get a route-alternatives file is to use the duaIterate.py
 or the duarouter application.</p>
                 </main>
@@ -353,7 +351,7 @@ or the duarouter application.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -251,26 +252,24 @@ important thing is the circular shape. Now save the network somewhere
 vehicles and the run configuration.</p>
 <p>First, we edit <code>circles.rou.xml</code> and define a vehicle flow of five
 standard passenger cars. The file contents should look like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">   </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;car&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;passenger&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;3.5&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;2.2&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;1.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;carflow&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;car&quot;</span><span class="w"> </span><span class="na">beg=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;5&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+   &lt;vType id=&quot;car&quot; type=&quot;passenger&quot; length=&quot;5&quot; accel=&quot;3.5&quot; decel=&quot;2.2&quot; sigma=&quot;1.0&quot;/&gt;
+   &lt;flow id=&quot;carflow&quot; type=&quot;car&quot; beg=&quot;0&quot; end=&quot;0&quot; number=&quot;5&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
 <p>For further explanation of how to define flows and vTypes see the
 respective documentation-pages: <a href="../Demand/Shortest_or_Optimal_Path_Routing.html#flow_definitions">Flow Definitions</a>
 and <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#vehicle_types">Vehicle Types</a>.</p>
 <p>To use the route-file and the generated net-file with SUMO, we edit the
 configuration-file <code>circles.sumocfg</code> to tell SUMO where it should look for vehicle
 and net definitions:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">    </span><span class="nt">&lt;input&gt;</span>
-<span class="w">       </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;circles.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;route-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;circles.rou.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/input&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;input&gt;
+       &lt;net-file value=&quot;circles.net.xml&quot;/&gt;
+       &lt;route-files value=&quot;circles.rou.xml&quot;/&gt;
+    &lt;/input&gt;
+&lt;/configuration&gt;
+</code></pre>
 <p>Now let us try to start sumo with the config that we have just created.
 To do so either double-click on the configuration-file <code>circles.sumocfg</code>
 (under Windows, if your installation was done with default settings) or
@@ -300,11 +299,10 @@ Left-click on a different edge and rename it to <code>edge2</code>. Then save yo
 <p>Renaming an edge in netedit</p>
 <p>Now we add the from-edge and the to-edge to the flow in
 <code>circles.rou.xml</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span>...
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;carflow&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;car&quot;</span><span class="w"> </span><span class="na">beg=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;edge1&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;edge2&quot;</span><span class="nt">/&gt;</span>
-<span class="w"> </span>...
-</code></pre></div>
-
+<pre><code class="language-xml"> ...
+    &lt;flow id=&quot;carflow&quot; type=&quot;car&quot; beg=&quot;0&quot; end=&quot;0&quot; number=&quot;5&quot; from=&quot;edge1&quot; to=&quot;edge2&quot;/&gt;
+ ...
+</code></pre>
 <p>Let's try to run SUMO again. The window should now show the network you
 have created before in netedit (see figure below) and you can start the
 simulation by clicking on the play button
@@ -331,26 +329,24 @@ the net, we have to specify them in a separate file (the
 "additionals-file"). Create and open a file <code>circles.add.xml</code> in <code>baseDir</code> and add the following xml-code (see <a href="../Simulation/Rerouter.html#assigning_a_new_destination">Rerouter/Assigning a new
 Destination</a>
 for details):</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additionals&gt;</span>
-<span class="w">    </span><span class="nt">&lt;rerouter</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;rerouter_0&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;edge1&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;1e9&quot;</span><span class="nt">&gt;</span>
-<span class="w">           </span><span class="nt">&lt;destProbReroute</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;edge2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/interval&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/rerouter&gt;</span>
-<span class="w">    </span><span class="nt">&lt;rerouter</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;rerouter_1&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;edge2&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;1e9&quot;</span><span class="nt">&gt;</span>
-<span class="w">           </span><span class="nt">&lt;destProbReroute</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;edge1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/interval&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/rerouter&gt;</span>
-<span class="nt">&lt;/additionals&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additionals&gt;
+    &lt;rerouter id=&quot;rerouter_0&quot; edges=&quot;edge1&quot;&gt;
+        &lt;interval end=&quot;1e9&quot;&gt;
+           &lt;destProbReroute id=&quot;edge2&quot;/&gt;
+        &lt;/interval&gt;
+    &lt;/rerouter&gt;
+    &lt;rerouter id=&quot;rerouter_1&quot; edges=&quot;edge2&quot;&gt;
+        &lt;interval end=&quot;1e9&quot;&gt;
+           &lt;destProbReroute id=&quot;edge1&quot;/&gt;
+        &lt;/interval&gt;
+    &lt;/rerouter&gt;
+&lt;/additionals&gt;
+</code></pre>
 <p>Then we have to tell SUMO to include the rerouters into the simulation
 by adding a line to the config <code>circles.sumocfg</code>. Within the <code>&lt;input&gt;</code> tag
 add a child:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;circles.add.xml&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional-files value=&quot;circles.add.xml&quot;/&gt;
+</code></pre>
 <p>This will add two (destination-)rerouters to our network making the
 vehicles go around the circle until the given end time (i.e., until one
 hundred million seconds have passed). Effectively, each rerouter will
@@ -475,7 +471,7 @@ Now the vehicles are driving in circles until the end time given (3600 seconds).
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

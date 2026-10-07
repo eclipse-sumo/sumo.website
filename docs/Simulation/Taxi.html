@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -285,11 +286,10 @@ based on a configurable dispatch algorithm.</p>
 To attach a Taxi device to a vehicle, the <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#devices">standard device-equipment
 procedures</a> can be applied using <code>&lt;device name&gt;=taxi</code>.</p>
 <p>For instance, a single vehicle can configured as taxi as in the following minimal example:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;v0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">line=</span><span class="s">&quot;taxi&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.taxi.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vehicle&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">    &lt;vehicle id=&quot;v0&quot; route=&quot;route0&quot; depart=&quot;0&quot; line=&quot;taxi&quot;&gt;
+        &lt;param key=&quot;has.taxi.device&quot; value=&quot;true&quot;/&gt;
+    &lt;/vehicle&gt;
+</code></pre>
 <p>The following table gives the full list of possible sumo options for the taxi device (all option names have to be prepended with "--device.taxi." when set from the command line):</p>
 <table>
 <thead>
@@ -349,29 +349,26 @@ procedures</a> can be applied using <code>&lt;device name&gt;=taxi</code>.</p>
 <h1 id="taxi_requests">Taxi Requests<a class="headerlink" href="#taxi_requests" title="Permanent link">#</a></h1>
 <h2 id="direct_ride_hailing">Direct Ride Hailing<a class="headerlink" href="#direct_ride_hailing" title="Permanent link">#</a></h2>
 <p>A person can be defined as taxi customer with the following definition:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;p0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;B2C2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;A0B0&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;taxi&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/person&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">    &lt;person id=&quot;p0&quot; depart=&quot;0.00&quot;&gt;
+        &lt;ride from=&quot;B2C2&quot; to=&quot;A0B0&quot; lines=&quot;taxi&quot;/&gt;
+    &lt;/person&gt;
+</code></pre>
 <h2 id="intermodal_routing">Intermodal Routing<a class="headerlink" href="#intermodal_routing" title="Permanent link">#</a></h2>
 <p>A person can also use a taxi by including it as a <a href="../Specification/Persons.html#persontrips">personTrip</a> mode:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;p0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;personTrip</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;B2C2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;A0B0&quot;</span><span class="w"> </span><span class="na">modes=</span><span class="s">&quot;taxi&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/person&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">    &lt;person id=&quot;p0&quot; depart=&quot;0.00&quot;&gt;
+        &lt;personTrip from=&quot;B2C2&quot; to=&quot;A0B0&quot; modes=&quot;taxi&quot;/&gt;
+    &lt;/person&gt;
+</code></pre>
 <p>Whenever a person enters a taxi during the intermodal route search, a time penalty is applied to account for the expected time loss from waiting for the taxi and embarking. The default value is set 300s and can be configure with option <strong>--persontrip.taxi.waiting-time</strong>. This prevents rapid switching between travel modes.</p>
 <h2 id="groups_of_persons">Groups of Persons<a class="headerlink" href="#groups_of_persons" title="Permanent link">#</a></h2>
 <p>Multiple persons can travel together from the same origin to the same destination as a group using attribute <code>group</code> (if the taxi has sufficient capacity):</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;p0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;B2C2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;A0B0&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;taxi&quot;</span><span class="w"> </span><span class="na">group=</span><span class="s">&quot;g0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/person&gt;</span>
-<span class="w">    </span><span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;p1&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;B2C2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;A0B0&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;taxi&quot;</span><span class="w"> </span><span class="na">group=</span><span class="s">&quot;g0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/person&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">    &lt;person id=&quot;p0&quot; depart=&quot;0.00&quot;&gt;
+        &lt;ride from=&quot;B2C2&quot; to=&quot;A0B0&quot; lines=&quot;taxi&quot; group=&quot;g0&quot;/&gt;
+    &lt;/person&gt;
+    &lt;person id=&quot;p1&quot; depart=&quot;0.00&quot;&gt;
+        &lt;ride from=&quot;B2C2&quot; to=&quot;A0B0&quot; lines=&quot;taxi&quot; group=&quot;g0&quot;/&gt;
+    &lt;/person&gt;
+</code></pre>
 <p>Starting with version SUMO 1.27.0 this grouping also works if reservations are received after a taxi has alrady been dispatched. Persons in the same group will be permitted to join the ride up to the capacity of the vehicle.</p>
 <h2 id="prebooking">Prebooking<a class="headerlink" href="#prebooking" title="Permanent link">#</a></h2>
 <p>Direct ride hailing can be regarded as a spontaneous booking. If the taxi is to be requested before the person is at the pick-up location, prebooking is necessary. This is used by specifying an <code>earliestPickupTime</code> and a <code>reservationTime</code> in the <code>ride</code>. The <code>reservationTime</code> specifies the time at which the reservation is created and made available to the dispatch. It may also be less than the person's depart. The <code>earliestPickupTime</code> specifies the time at which the person is ready to be picked up. Depending on the algorithm used, this may allow a better dispatch to be made. Especially in combination with a custom dispatch algorithm via <a href="#traci">TraCi</a>, the requirements of different use cases can be addressed.</p>
@@ -383,20 +380,19 @@ procedures</a> can be applied using <code>&lt;device name&gt;=taxi</code>.</p>
 <li>If there was previously a <code>walk</code> in which the <code>arrivalPos</code> attribute was defined, then the <code>fromPos</code> attribute must also be defined in the <code>ride</code> with the same value.</li>
 </ul>
 <h3 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;p0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;100.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;B2C2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;A0B0&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;taxi&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;earliestPickupTime&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;100.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;reservationTime&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;50.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/ride&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/person&gt;</span>
-<span class="w">    </span><span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;p1&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0.00&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;B2C2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;B1C1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;B1C1&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;A1B1&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;taxi&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;earliestPickupTime&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;30.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/ride&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/person&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">    &lt;person id=&quot;p0&quot; depart=&quot;100.00&quot;&gt;
+        &lt;ride from=&quot;B2C2&quot; to=&quot;A0B0&quot; lines=&quot;taxi&quot;&gt;
+            &lt;param key=&quot;earliestPickupTime&quot; value=&quot;100.00&quot;/&gt;
+            &lt;param key=&quot;reservationTime&quot; value=&quot;50.00&quot;/&gt;
+        &lt;/ride&gt;
+    &lt;/person&gt;
+    &lt;person id=&quot;p1&quot; depart=&quot;0.00&quot;&gt;
+        &lt;walk from=&quot;B2C2&quot; to=&quot;B1C1&quot;/&gt;
+        &lt;ride from=&quot;B1C1&quot; to=&quot;A1B1&quot; lines=&quot;taxi&quot;&gt;
+            &lt;param key=&quot;earliestPickupTime&quot; value=&quot;30.00&quot;/&gt;
+        &lt;/ride&gt;
+    &lt;/person&gt;
+</code></pre>
 <h3 id="behavior">Behavior:<a class="headerlink" href="#behavior" title="Permanent link">#</a></h3>
 <ul>
 <li>If a person arrives at the departure point earlier than the <code>earliestPickupTime</code>, the person boards as soon as the taxi arrives.</li>
@@ -456,12 +452,11 @@ If a taxi sets this parameter, it can receive tasks from other taxis with the sa
 <p>Option <strong>--device.taxi.dispatch-algorithm.output FILE</strong> is can be set to receive extra outputs from algorithms (i.e. for ride sharing metrics).</p>
 <h1 id="taxi_behavior">Taxi Behavior<a class="headerlink" href="#taxi_behavior" title="Permanent link">#</a></h1>
 <p>By default, taxis will remain in the simulation until all persons have left. To make them leave the simulation at an earlier time, the end time can be defined using a generic parameter in their <code>vType</code> or <code>vehicle</code>-definition:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;taxi&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;taxi&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.taxi.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.taxi.end&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;3600&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vType&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">    &lt;vType id=&quot;taxi&quot; vClass=&quot;taxi&quot;&gt;
+        &lt;param key=&quot;has.taxi.device&quot; value=&quot;true&quot;/&gt;
+        &lt;param key=&quot;device.taxi.end&quot; value=&quot;3600&quot;/&gt;
+    &lt;/vType&gt;
+</code></pre>
 <h2 id="idle_behavior">Idle Behavior<a class="headerlink" href="#idle_behavior" title="Permanent link">#</a></h2>
 <p>By default, vehicles will leave the simulation after reaching the end of their final edge. To avoid this, taxis have an idling behavior configurable with option <strong>--device.taxi.idle-algorithm</strong>:</p>
 <ul>
@@ -484,38 +479,35 @@ If a taxi sets this parameter, it can receive tasks from other taxis with the sa
 If the <a href="GenericParameters.html">generic parameter</a> <code>&lt;param key="parking.ignoreDest" value="1"/&gt;</code> is set in the vehicle or vType, then the "best" according to the rerouting strategy is used (i.e. the stand closest to the current vehicle location).</p>
 <p>The strategy for choosing among the alternative taxi stands follows the description for <a href="Rerouter.html#determining_the_alternative_parking_area">parking search simulation</a> (i.e. with respect to prior knowledge of remaining capacity).</p>
 <p>Example declarations for the rerouter and the taxi vType that references it:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;rerouter</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;rr0&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;B0C0 E2D2&quot;</span><span class="w"> </span><span class="na">vTypes=</span><span class="s">&quot;taxi&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;1:0:0:0&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;parkingAreaReroute</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;pa_0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;parkingAreaReroute</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;pa_1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/interval&gt;</span>
-<span class="nt">&lt;/rerouter&gt;</span>
-</code></pre></div>
-
+<pre><code>&lt;rerouter id=&quot;rr0&quot; edges=&quot;B0C0 E2D2&quot; vTypes=&quot;taxi&quot;&gt;
+        &lt;interval begin=&quot;0&quot; end=&quot;1:0:0:0&quot;&gt;
+            &lt;parkingAreaReroute id=&quot;pa_0&quot;/&gt;
+            &lt;parkingAreaReroute id=&quot;pa_1&quot;/&gt;
+        &lt;/interval&gt;
+&lt;/rerouter&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To avoid warnings, the <code>edges</code> attribute of the rerouter should match the edges which contain taxi stands.</p>
 </div>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;taxi&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;taxi&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.taxi.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.taxi.stands-rerouter&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;rr0&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/vType&gt;</span>
-</code></pre></div>
-
+<pre><code>&lt;vType id=&quot;taxi&quot; vClass=&quot;taxi&quot;&gt;
+        &lt;param key=&quot;has.taxi.device&quot; value=&quot;true&quot;/&gt;
+        &lt;param key=&quot;device.taxi.stands-rerouter&quot; value=&quot;rr0&quot;/&gt;
+&lt;/vType&gt;
+</code></pre>
 <h3 id="taxis_stands_for_rail_taxis">Taxis stands for rail taxis<a class="headerlink" href="#taxis_stands_for_rail_taxis" title="Permanent link">#</a></h3>
 <p>When defining taxi stands for rail taxis, overtaking on a rail track is not possible and thus parking spaces will automatically be filled beginning at the downstream end.
 If the first taxi in the queue of waiting taxis is dispatched, all idling taxis behind it will then automatically advance in the queue to fill up that spot.
 If another vehicle approaches the end of the queue and cannot park (due to lack of free capacity or havin a different destination), the whole queue ahead will exit the parkingArea to allow the rear vehcle to pass.</p>
 <h2 id="customer_stops">Customer Stops<a class="headerlink" href="#customer_stops" title="Permanent link">#</a></h2>
 <p>Taxis will stop to pick-up and drop-off customers. The 'actType' attribute of a stop indicates the purpose ('pickup' / 'dropOff') as well as the ids of the customers and their reservation id. Stop attributes can be configured using <a href="GenericParameters.html">generic parameters</a> in the <code>&lt;vType&gt;</code> or <code>&lt;vehicle&gt;</code> definition of the taxi:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;taxi&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;taxi&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.taxi.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.taxi.pickUpDuration&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.taxi.dropOffDuration&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;60&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;device.taxi.parking&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/vType&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">    &lt;vType id=&quot;taxi&quot; vClass=&quot;taxi&quot;&gt;
+        &lt;param key=&quot;has.taxi.device&quot; value=&quot;true&quot;/&gt;
+        &lt;param key=&quot;device.taxi.pickUpDuration&quot; value=&quot;0&quot;/&gt;
+        &lt;param key=&quot;device.taxi.dropOffDuration&quot; value=&quot;60&quot;/&gt;
+        &lt;param key=&quot;device.taxi.parking&quot; value=&quot;false&quot;/&gt;
+    &lt;/vType&gt;
+</code></pre>
 <ul>
 <li>duration for pick-up stop can be configured with vType/vehicle param "device.taxi.pickupDuration" (default "0")</li>
 <li>duration for drop-off stop can be configured with vType/vehicle param "device.taxi.dropOffDuration" (default "60")</li>
@@ -604,11 +596,10 @@ param "device.taxi.parking" to "false".</p>
 <h1 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link">#</a></h1>
 <p>The Taxi device generates output within a tripinfo-output file in the following
 form:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;tripinfo</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;trip_0&quot;</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;taxi</span><span class="w"> </span><span class="na">customers=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">occupiedDistance=</span><span class="s">&quot;6748.77&quot;</span><span class="w"> </span><span class="na">occupiedTime=</span><span class="s">&quot;595.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/tripinfo&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">    &lt;tripinfo id=&quot;trip_0&quot; ... &gt;
+        &lt;taxi customers=&quot;5&quot; occupiedDistance=&quot;6748.77&quot; occupiedTime=&quot;595.00&quot;/&gt;
+    &lt;/tripinfo&gt;
+</code></pre>
 <h2 id="parameter_retrieval">Parameter Retrieval<a class="headerlink" href="#parameter_retrieval" title="Permanent link">#</a></h2>
 <p>The following parameters can be retrieved via <code>traci.vehicle.getParameter</code> and written via <strong>--fcd-output.params</strong>.
 It is also possible to color vehicles in <a href="../sumo-gui.html#vehicle_visualisation_settings">SUMO-GUI 'by param (numerical)'</a> by setting these keys.</p>
@@ -626,7 +617,7 @@ It is also possible to color vehicles in <a href="../sumo-gui.html#vehicle_visua
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

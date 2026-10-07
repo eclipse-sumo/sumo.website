@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -234,9 +235,8 @@ name without extension, only. So, the following call to
 <a href="../../netconvert.html">netconvert</a> should be used to import the road
 network stored in "my_shape_files.shp", "my_shape_files.shx",
 "my_shape_files.proj", and "my_shape_files.dbf":</p>
-<div class="codehilite"><pre><span></span><code>netconvert --shapefile-prefix my_shape_files
-</code></pre></div>
-
+<pre><code>netconvert --shapefile-prefix my_shape_files
+</code></pre>
 <p><strong>netconvert</strong> supports <a href="https://gdal.org/en/latest/user/virtual_file_systems.html">virtual file systems</a> when
 importing shape files. So if you have your shapes in myshapes.zip and the main file has the name arcview.shp
 you can import them via <code>netconvert --shapefile /vsizip/myshapes.zip/arcview</code> (<strong>--shapefile</strong> is an alias to <strong>--shapefile-prefix</strong>).</p>
@@ -441,11 +441,10 @@ that it contains information about roads shows us, that:</p>
 </ul>
 <p>As a begin, we try to import the road graph. We use the information we
 have found and apply a projection:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert -v --shapefile-prefix tl_2008_36061_edges -o net.net.xml \</span>
-<span class="n">   --shapefile.from-id TNIDF --shapefile.to-id TNIDT --arcview.street-id tlid \</span>
-<span class="n">   --shapefile.use-defaults-on-failure</span>
-</code></pre></div>
-
+<pre><code>netconvert -v --shapefile-prefix tl_2008_36061_edges -o net.net.xml \
+   --shapefile.from-id TNIDF --shapefile.to-id TNIDT --arcview.street-id tlid \
+   --shapefile.use-defaults-on-failure
+</code></pre>
 <p>As a result, we obtain the network shown below.</p>
 <p><img alt="tl_2008_36061_edges.gif" src="../../images/Tl_2008_36061_edges.gif" title="tl_2008_36061_edges.gif" /></p>
 <p><strong>Figure 1.1. The converted network of New York</strong></p>
@@ -499,43 +498,41 @@ have to be translated into XML. The generated file (<em>frida.typ.xml</em>)
 looks like this:</p>
 </li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;types&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- &quot;noch nicht attributiert&quot; (= not yet attributed) --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w">  </span><span class="na">priority=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- &quot;Autobahn&quot; (highway) --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w">  </span><span class="na">priority=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;41.67&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- &quot;Bundesstrasse&quot; (motorway) --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2&quot;</span><span class="w">  </span><span class="na">priority=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;22.22&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- &quot;Hauptstrasse&quot; (main (city) road) --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">priority=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- &quot;Nebenstrasse&quot; (lower priorised (city) road) --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;4&quot;</span><span class="w">  </span><span class="na">priority=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- &quot;Weg&quot; (path) --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">priority=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- &quot;Zone 30&quot; (lower street with a speed limit of 30km/h) --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">priority=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;8.33&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- &quot;Spielstrasse&quot; (a street where children may play (10km/h)) --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;7&quot;</span><span class="w">  </span><span class="na">priority=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;1.39&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- &quot;Fussgaengerzone&quot; (pedestrains zone) --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;8&quot;</span><span class="w">  </span><span class="na">priority=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;0.1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- &quot;gesperrte Strasse&quot; (closed street) --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;9&quot;</span><span class="w">  </span><span class="na">priority=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;0.1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- &quot;sonstige Strasse&quot; (something else) --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;0.1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- &quot;Fussweg&quot; (way for pedestrians) --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;11&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;0.1&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/types&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;types&gt;
+  &lt;!-- &quot;noch nicht attributiert&quot; (= not yet attributed) --&gt;
+  &lt;type id=&quot;0&quot;  priority=&quot;1&quot; numLanes=&quot;1&quot; speed=&quot;13.89&quot;/&gt;
+  &lt;!-- &quot;Autobahn&quot; (highway) --&gt;
+  &lt;type id=&quot;1&quot;  priority=&quot;5&quot; numLanes=&quot;3&quot; speed=&quot;41.67&quot;/&gt;
+  &lt;!-- &quot;Bundesstrasse&quot; (motorway) --&gt;
+  &lt;type id=&quot;2&quot;  priority=&quot;4&quot; numLanes=&quot;1&quot; speed=&quot;22.22&quot;/&gt;
+  &lt;!-- &quot;Hauptstrasse&quot; (main (city) road) --&gt;
+  &lt;type id=&quot;3&quot;  priority=&quot;3&quot; numLanes=&quot;2&quot; speed=&quot;13.89&quot;/&gt;
+  &lt;!-- &quot;Nebenstrasse&quot; (lower priorised (city) road) --&gt;
+  &lt;type id=&quot;4&quot;  priority=&quot;2&quot; numLanes=&quot;1&quot; speed=&quot;13.89&quot;/&gt;
+  &lt;!-- &quot;Weg&quot; (path) --&gt;
+  &lt;type id=&quot;5&quot;  priority=&quot;1&quot; numLanes=&quot;1&quot; speed=&quot;5&quot;/&gt;
+  &lt;!-- &quot;Zone 30&quot; (lower street with a speed limit of 30km/h) --&gt;
+  &lt;type id=&quot;6&quot;  priority=&quot;2&quot; numLanes=&quot;1&quot; speed=&quot;8.33&quot;/&gt;
+  &lt;!-- &quot;Spielstrasse&quot; (a street where children may play (10km/h)) --&gt;
+  &lt;type id=&quot;7&quot;  priority=&quot;1&quot; numLanes=&quot;1&quot; speed=&quot;1.39&quot;/&gt;
+  &lt;!-- &quot;Fussgaengerzone&quot; (pedestrains zone) --&gt;
+  &lt;type id=&quot;8&quot;  priority=&quot;0&quot; numLanes=&quot;1&quot; speed=&quot;0.1&quot;/&gt;
+  &lt;!-- &quot;gesperrte Strasse&quot; (closed street) --&gt;
+  &lt;type id=&quot;9&quot;  priority=&quot;0&quot; numLanes=&quot;1&quot; speed=&quot;0.1&quot;/&gt;
+  &lt;!-- &quot;sonstige Strasse&quot; (something else) --&gt;
+  &lt;type id=&quot;10&quot; priority=&quot;0&quot; numLanes=&quot;1&quot; speed=&quot;0.1&quot;/&gt;
+  &lt;!-- &quot;Fussweg&quot; (way for pedestrians) --&gt;
+  &lt;type id=&quot;11&quot; priority=&quot;0&quot; numLanes=&quot;1&quot; speed=&quot;0.1&quot;/&gt;
+&lt;/types&gt;
+</code></pre>
 <p>The call has to be extended by: <strong>-t frida.typ.xml --arcview.type-id strTypID</strong></p>
 <p>After having applied all those changes, the network was buildable, but
 looked quite messy. After having played with geocoordinate projections,
 this was fixed. So the call (so far) looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nx">netconvert</span><span class="w"> </span><span class="o">--</span><span class="nx">arcview</span><span class="w"> </span><span class="nx">strassen</span><span class="w"> </span><span class="o">-</span><span class="nx">o</span><span class="w"> </span><span class="nx">frida</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">xml</span><span class="w"> </span>\
-<span class="w">  </span><span class="o">--</span><span class="nx">arcview</span><span class="p">.</span><span class="nx">street</span><span class="o">-</span><span class="nx">id</span><span class="w"> </span><span class="nx">strShapeID</span><span class="w"> </span><span class="o">-</span><span class="nx">t</span><span class="w"> </span><span class="nx">frida</span><span class="p">.</span><span class="nx">typ</span><span class="p">.</span><span class="nx">xml</span><span class="w"> </span>\
-<span class="w">  </span><span class="o">--</span><span class="nx">arcview</span><span class="p">.</span><span class="k">type</span><span class="o">-</span><span class="nx">id</span><span class="w"> </span><span class="nx">strTypID</span><span class="w"> </span><span class="o">--</span><span class="nx">use</span><span class="o">-</span><span class="nx">projection</span>
-</code></pre></div>
-
+<pre><code>netconvert --arcview strassen -o frida.net.xml \
+  --arcview.street-id strShapeID -t frida.typ.xml \
+  --arcview.type-id strTypID --use-projection
+</code></pre>
 <h3 id="data_quality">Data Quality<a class="headerlink" href="#data_quality" title="Permanent link">#</a></h3>
 <p>Looking a bit deeper at the network, we had to realise two further
 problems. At first, highway on- and off-ramps are marked as "highway".
@@ -573,7 +570,7 @@ This work is licensed under a <a href="https://creativecommons.org/licenses/by-s
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -215,19 +216,18 @@ the name of the file the output will be written to. Any other file with
 this name will be overwritten, the destination folder must exist.</p>
 <h2 id="generated_output">Generated Output<a class="headerlink" href="#generated_output" title="Permanent link">#</a></h2>
 <p>The generated XML file looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;trajectories</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.dlr.de/xsd/amitran/trajectories.xsd&quot;</span><span class="w"> </span><span class="na">timeStepSize=</span><span class="s">&quot;1000&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;actorConfig</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">vehicleClass=</span><span class="s">&quot;Passenger&quot;</span><span class="w"> </span><span class="na">fuel=</span><span class="s">&quot;Gasoline&quot;</span><span class="w"> </span><span class="na">emissionClass=</span><span class="s">&quot;Euro0&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;DEFAULT_VEHTYPE&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">actorConfig=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">startTime=</span><span class="s">&quot;100000&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;always_left.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;motionState</span><span class="w"> </span><span class="na">vehicle=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;100000&quot;</span><span class="w"> </span><span class="na">acceleration=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">actorConfig=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">startTime=</span><span class="s">&quot;100000&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;always_right.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;motionState</span><span class="w"> </span><span class="na">vehicle=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;100000&quot;</span><span class="w"> </span><span class="na">acceleration=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">actorConfig=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">startTime=</span><span class="s">&quot;100000&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;horizontal.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;motionState</span><span class="w"> </span><span class="na">vehicle=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;100000&quot;</span><span class="w"> </span><span class="na">acceleration=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;motionState</span><span class="w"> </span><span class="na">vehicle=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;144&quot;</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;101000&quot;</span><span class="w"> </span><span class="na">acceleration=</span><span class="s">&quot;1442&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span>...
-<span class="nt">&lt;/trajectories&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;trajectories xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.dlr.de/xsd/amitran/trajectories.xsd&quot; timeStepSize=&quot;1000&quot;&gt;
+    &lt;actorConfig id=&quot;0&quot; vehicleClass=&quot;Passenger&quot; fuel=&quot;Gasoline&quot; emissionClass=&quot;Euro0&quot; ref=&quot;DEFAULT_VEHTYPE&quot;/&gt;
+    &lt;vehicle id=&quot;0&quot; actorConfig=&quot;0&quot; startTime=&quot;100000&quot; ref=&quot;always_left.0&quot;/&gt;
+    &lt;motionState vehicle=&quot;0&quot; speed=&quot;0&quot; time=&quot;100000&quot; acceleration=&quot;0&quot;/&gt;
+    &lt;vehicle id=&quot;1&quot; actorConfig=&quot;0&quot; startTime=&quot;100000&quot; ref=&quot;always_right.0&quot;/&gt;
+    &lt;motionState vehicle=&quot;1&quot; speed=&quot;0&quot; time=&quot;100000&quot; acceleration=&quot;0&quot;/&gt;
+    &lt;vehicle id=&quot;2&quot; actorConfig=&quot;0&quot; startTime=&quot;100000&quot; ref=&quot;horizontal.0&quot;/&gt;
+    &lt;motionState vehicle=&quot;2&quot; speed=&quot;0&quot; time=&quot;100000&quot; acceleration=&quot;0&quot;/&gt;
+    &lt;motionState vehicle=&quot;0&quot; speed=&quot;144&quot; time=&quot;101000&quot; acceleration=&quot;1442&quot;/&gt;
+    ...
+&lt;/trajectories&gt;
+</code></pre>
 <p>The actorConfig elements are in direct correspondence to SUMO's vehicle
 types while the vehicle elements refer directly to SUMO's vehicles. The
 actorConfig for each vehicle will be defined before the vehicle is
@@ -248,7 +248,7 @@ written. The same is true for vehicles and their motionStates.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

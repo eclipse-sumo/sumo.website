@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -267,9 +268,8 @@ indentation and other whitespace usage consistent throughout the
 project. In order to make your code appear same as the original SUMO
 code use the following call to AStyle (or execute
 tools/build_config/checkStyle.py --fix &lt;FILE_NAME&gt; before committing):</p>
-<div class="codehilite"><pre><span></span><code>astyle<span class="w"> </span>--style<span class="o">=</span>java<span class="w"> </span>--unpad-paren<span class="w"> </span>--pad-header<span class="w"> </span>--pad-oper<span class="w"> </span>--add-brackets<span class="w"> </span>--indent-switches<span class="w"> </span>--align-pointer<span class="o">=</span><span class="nb">type</span><span class="w"> </span>-n<span class="w"> </span>&lt;FILE_NAME&gt;
-</code></pre></div>
-
+<pre><code class="language-sh">astyle --style=java --unpad-paren --pad-header --pad-oper --add-brackets --indent-switches --align-pointer=type -n &lt;FILE_NAME&gt;
+</code></pre>
 <p>Still, there are several other things you should keep in mind (The
 <a href="https://google.github.io/styleguide/cppguide.html">Google C++ Style
 Guide</a> is a good read
@@ -398,9 +398,8 @@ Windows users please follow this
 <a href="https://stackoverflow.com/questions/21691202/how-to-create-file-execute-mode-permissions-in-git-on-windows">recipe</a>.
 Executable files should also contain a so called shebang in the first
 line:</p>
-<div class="codehilite"><pre><span></span><code>!#/usr/bin/env python
-</code></pre></div>
-
+<pre><code>!#/usr/bin/env python
+</code></pre>
 <p>If your script needs Python 3 then state python3 there.</p>
 <h2 id="python2_python3_compatibility">Python2 / Python3 compatibility<a class="headerlink" href="#python2_python3_compatibility" title="Permanent link">#</a></h2>
 <p>Our main development focuses on Python 3.7 and later but we strive for
@@ -464,7 +463,7 @@ the $Id$ keyword any longer.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -213,9 +214,8 @@ extended by user attributes, we have set up a small script which
 extracts both, the positions, and the user attributes, and fixes the
 positions on the given network.</p>
 <p>The call is:</p>
-<div class="codehilite"><pre><span></span><code><span class="l">&lt;SUMO_HOME&gt;/tools/import/visum/visum_parseZaehlstelle.py</span> <span class="l">&lt;SUMO-net&gt;</span> <span class="l">&lt;VISUM-net&gt;</span> <span class="l">&lt;output&gt;</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO_HOME&gt;/tools/import/visum/visum_parseZaehlstelle.py &lt;SUMO-net&gt; &lt;VISUM-net&gt; &lt;output&gt;
+</code></pre>
 <p>This means that you have to give both, the converted, and the
 original net to this tool. <em>&lt;output&gt;</em> is the name of the output file to generate. The tool converts the
 "ZAEHLSTELLE" elements into a list of pois, located at the first
@@ -224,9 +224,8 @@ original net to this tool. <em>&lt;output&gt;</em> is the name of the output fil
 <p>This tool imports a Visum-(XML)-route file and converts it into a sumo route file. The network should have matching node and edge ids (i.e. have been imported with <strong>netconvert --visum-file</strong>).
 It is permitted to use a network with modifications (i.e. **--junctions.join).</p>
 <p>Example </p>
-<div class="codehilite"><pre><span></span><code><span class="l">&lt;SUMO_HOME&gt;/tools/import/visum/visum_convertXMLRoutes.py</span> <span class="o">-</span>n <span class="l">&lt;SUMO-net&gt;</span> <span class="o">-</span>r <span class="l">&lt;VISUM-route-file&gt;</span> <span class="o">-</span>o <span class="l">&lt;output-file&gt;</span>
-</code></pre></div>
-
+<pre><code>&lt;SUMO_HOME&gt;/tools/import/visum/visum_convertXMLRoutes.py -n &lt;SUMO-net&gt; -r &lt;VISUM-route-file&gt; -o &lt;output-file&gt;
+</code></pre>
 <p>By default, the volume data in the input route file is interpreted as daily volume. This can be changed by setting option <strong>--scale</strong>.
 For intermodal networks, option <strong>--vclass</strong> can be used to restrict routes to those which are usable by the given class.
 Option <strong>--attributes</strong> permits to set further attributes for the generated flows.</p>
@@ -237,7 +236,7 @@ Option <strong>--attributes</strong> permits to set further attributes for the g
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

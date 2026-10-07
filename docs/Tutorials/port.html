@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -282,9 +283,8 @@ Last edit: 06 October 2026
 <h1 id="create_a_simple_port_simulation">Create a simple port simulation<a class="headerlink" href="#create_a_simple_port_simulation" title="Permanent link">#</a></h1>
 <h2 id="osmwebwizard">osmWebWizard<a class="headerlink" href="#osmwebwizard" title="Permanent link">#</a></h2>
 <p>Open the osmWebWizard.py</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span><span class="w"> </span><span class="o">&lt;</span><span class="n">SUMO_HOME</span><span class="o">&gt;/</span><span class="n">tools</span><span class="o">/</span><span class="n">osmWebWizard</span><span class="o">.</span><span class="n">py</span>
-</code></pre></div>
-
+<pre><code>python &lt;SUMO_HOME&gt;/tools/osmWebWizard.py
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>All files that make up the scenario are created in a subfolder of the working directory with the current timestamp (e.g. <SUMO_HOME>/tools/2021-02-22-10-00-00/). If you edit the network, you can use the script <code>build.bat</code> to rebuild the random demand.</p>
@@ -392,7 +392,7 @@ For more information see <a href="../Simulation/Public_Transport.html#access_lan
 <p>If you want a more complex scenario delete the generated demand, first. :-)</p>
 <p>In this tutorial we simulate one hour with one container ship, one passenger ship, one train and a lot of trucks, cars, containers and passengers. We also need a bus for the passengers, because at this port there is no connection between the passenger terminal and the piers. For the container movements we need some kind of trailer/ stapler to move the container from the train station to the pier.</p>
 <p>Here is the list of all Agents we want to insert:</p>
-<div class="codehilite"><pre><span></span><code>1 passenger ship with:
+<pre><code class="language-text">1 passenger ship with:
     20 passenger cars: arrive per ship and go to the passenger terminal
     20 passenger cars: start at the passenger terminal and go to the ship
     20 pedestrians: arrive per ship and go to the passenger terminal
@@ -409,115 +409,105 @@ For more information see <a href="../Simulation/Public_Transport.html#access_lan
 1 bus: for the passenger transport between passenger terminal and the ship
 
 5 trailer/stapler: for the container transport between the train and the ship
-</code></pre></div>
-
+</code></pre>
 <h3 id="create_a_demand_file">Create a demand file<a class="headerlink" href="#create_a_demand_file" title="Permanent link">#</a></h3>
 <p>First, we need some adaptions to the vTypes to add the necessary capacities to load enough containers and persons. Create a file and add the following definitions for the vTypes:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type_ship&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;ship&quot;</span><span class="w"> </span><span class="na">containerCapacity=</span><span class="s">&quot;25&quot;</span><span class="w"> </span><span class="na">personCapacity=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type_train&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;rail&quot;</span><span class="w"> </span><span class="na">containerCapacity=</span><span class="s">&quot;15&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type_truck_taxi&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;truck&quot;</span><span class="w"> </span><span class="na">containerCapacity=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">personCapacity=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">loadingDuration=</span><span class="s">&quot;30.0&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type_truck&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;truck&quot;</span><span class="w"> </span><span class="na">containerCapacity=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">loadingDuration=</span><span class="s">&quot;30.0&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type_car&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;passenger&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type_bus_taxi&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">personCapacity=</span><span class="s">&quot;20&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;type_passenger&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;pedestrian&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vType id=&quot;type_ship&quot; vClass=&quot;ship&quot; containerCapacity=&quot;25&quot; personCapacity=&quot;20&quot;/&gt;
+&lt;vType id=&quot;type_train&quot; vClass=&quot;rail&quot; containerCapacity=&quot;15&quot;/&gt;
+&lt;vType id=&quot;type_truck_taxi&quot; vClass=&quot;truck&quot; containerCapacity=&quot;1&quot; personCapacity=&quot;1&quot; loadingDuration=&quot;30.0&quot;/&gt;
+&lt;vType id=&quot;type_truck&quot; vClass=&quot;truck&quot; containerCapacity=&quot;1&quot; loadingDuration=&quot;30.0&quot;/&gt;
+&lt;vType id=&quot;type_car&quot; vClass=&quot;passenger&quot;/&gt;
+&lt;vType id=&quot;type_bus_taxi&quot; vClass=&quot;bus&quot; personCapacity=&quot;20&quot;/&gt;
+&lt;vType id=&quot;type_passenger&quot; vClass=&quot;pedestrian&quot;/&gt;
+</code></pre>
 <h4 id="train">Train<a class="headerlink" href="#train" title="Permanent link">#</a></h4>
 <p>Add the trip for the train to the port and back.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;train&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type_train&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">departLane=</span><span class="s">&quot;best&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;149084838#0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-149084838#0&quot;</span><span class="w"> </span><span class="na">via=</span><span class="s">&quot;29497609&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop_trainstation&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;100&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/trip&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;trip id=&quot;train&quot; type=&quot;type_train&quot; depart=&quot;0&quot; departLane=&quot;best&quot; from=&quot;149084838#0&quot; to=&quot;-149084838#0&quot; via=&quot;29497609&quot;&gt;
+    &lt;stop containerStop=&quot;containerStop_trainstation&quot; duration=&quot;100&quot;/&gt;
+&lt;/trip&gt;
+</code></pre>
 <h4 id="ships">Ships<a class="headerlink" href="#ships" title="Permanent link">#</a></h4>
 <p>There are two possible ways to define a ship. Either by defining the complete route or by using the trip definition:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ferry&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">departPos=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">line=</span><span class="s">&quot;ferry&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type_ship&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;0,255,0&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;-127071510.253116 127071510&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_waterway&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;100&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/vehicle&gt;</span>
+<pre><code class="language-xml">&lt;vehicle id=&quot;ferry&quot; depart=&quot;0.00&quot; departPos=&quot;0&quot; line=&quot;ferry&quot; type=&quot;type_ship&quot; color=&quot;0,255,0&quot;&gt;
+    &lt;route edges=&quot;-127071510.253116 127071510&quot;/&gt;
+    &lt;stop busStop=&quot;busStop_waterway&quot; duration=&quot;100&quot;/&gt;
+&lt;/vehicle&gt;
 
-<span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;containership&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type_ship&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">departLane=</span><span class="s">&quot;best&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-5005413&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;5005413.18170&quot;</span><span class="w"> </span><span class="na">via=</span><span class="s">&quot;gneE2&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop_waterway&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;100&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/trip&gt;</span>
-</code></pre></div>
-
+&lt;trip id=&quot;containership&quot; type=&quot;type_ship&quot; depart=&quot;0&quot; departLane=&quot;best&quot; from=&quot;-5005413&quot; to=&quot;5005413.18170&quot; via=&quot;gneE2&quot;&gt;
+    &lt;stop containerStop=&quot;containerStop_waterway&quot; duration=&quot;100&quot;/&gt;
+&lt;/trip&gt;
+</code></pre>
 <h4 id="passenger_cars">Passenger Cars<a class="headerlink" href="#passenger_cars" title="Permanent link">#</a></h4>
 <p>For the passenger cars we use flow definitions:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;passengercartoship&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;200&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type_car&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;39549605&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-128042010&quot;</span><span class="w"> </span><span class="na">via=</span><span class="s">&quot;619566331&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_pier&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;800.00&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/flow&gt;</span>
+<pre><code class="language-xml">&lt;flow id=&quot;passengercartoship&quot; begin=&quot;0&quot; end=&quot;200&quot; number=&quot;20&quot; type=&quot;type_car&quot; from=&quot;39549605&quot; to=&quot;-128042010&quot; via=&quot;619566331&quot;&gt;
+    &lt;stop busStop=&quot;busStop_pier&quot; until=&quot;800.00&quot;/&gt;
+&lt;/flow&gt;
 
-<span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;passengercarfromship&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;730&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;750&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type_car&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-277007518&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;39549605&quot;</span><span class="w"> </span><span class="na">via=</span><span class="s">&quot;-197841302&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+&lt;flow id=&quot;passengercarfromship&quot; begin=&quot;730&quot; end=&quot;750&quot; number=&quot;20&quot; type=&quot;type_car&quot; from=&quot;-277007518&quot; to=&quot;39549605&quot; via=&quot;-197841302&quot;/&gt;
+</code></pre>
 <h4 id="staplers">Staplers<a class="headerlink" href="#staplers" title="Permanent link">#</a></h4>
 <p>Because there are no stapler implemented in SUMO, we use trucks equipped with a taxi device. Here, we give them <code>containerCapacity="1"</code> and <code>loadingDuration="30.0"</code> (the taxi device also needs <code>personCapacity="1"</code> because it does not work properly without it at the moment).</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;stapler&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type_truck_taxi&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;has.taxi.device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;276781727#9&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop_truck_trainstation&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;10.00&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/flow&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;flow id=&quot;stapler&quot; begin=&quot;0&quot; end=&quot;0&quot; number=&quot;5&quot; type=&quot;type_truck_taxi&quot;&gt;
+    &lt;param key=&quot;has.taxi.device&quot; value=&quot;true&quot;/&gt;
+    &lt;route edges=&quot;276781727#9&quot;/&gt;
+    &lt;stop containerStop=&quot;containerStop_truck_trainstation&quot; duration=&quot;10.00&quot;/&gt;
+&lt;/flow&gt;
+</code></pre>
 <h4 id="containers">Containers<a class="headerlink" href="#containers" title="Permanent link">#</a></h4>
 <p>For the containers we use containerFlow definitions:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;containerFlow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;containerfromship&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;triggered&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;15&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;255,0,0&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;transport</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-5005413&quot;</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop_waterway&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;containership&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tranship</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop_pier&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;transport</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop_truck_trainstation&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;taxi&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tranship</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop_trainstation&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;transport</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-149084838#0&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;train&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/containerFlow&gt;</span>
+<pre><code class="language-xml">&lt;containerFlow id=&quot;containerfromship&quot; begin=&quot;triggered&quot; number=&quot;15&quot; color=&quot;255,0,0&quot;&gt;
+   &lt;transport from=&quot;-5005413&quot; containerStop=&quot;containerStop_waterway&quot; lines=&quot;containership&quot;/&gt;
+   &lt;tranship containerStop=&quot;containerStop_pier&quot;/&gt;
+   &lt;transport containerStop=&quot;containerStop_truck_trainstation&quot; lines=&quot;taxi&quot;/&gt;
+   &lt;tranship containerStop=&quot;containerStop_trainstation&quot;/&gt;
+   &lt;transport to=&quot;-149084838#0&quot; lines=&quot;train&quot;/&gt;
+&lt;/containerFlow&gt;
 
-<span class="nt">&lt;containerFlow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;containertoship&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;triggered&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;15&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;255,0,255&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;transport</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;149084838#0&quot;</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop_trainstation&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;train&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;tranship</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop_truck_trainstation&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;transport</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop_pier&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;taxi&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;tranship</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop_waterway&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;transport</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;5005413.18170&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;containership&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/containerFlow&gt;</span>
-</code></pre></div>
-
+&lt;containerFlow id=&quot;containertoship&quot; begin=&quot;triggered&quot; number=&quot;15&quot; color=&quot;255,0,255&quot;&gt;
+    &lt;transport from=&quot;149084838#0&quot; containerStop=&quot;containerStop_trainstation&quot; lines=&quot;train&quot;/&gt;
+    &lt;tranship containerStop=&quot;containerStop_truck_trainstation&quot;/&gt;
+    &lt;transport containerStop=&quot;containerStop_pier&quot; lines=&quot;taxi&quot;/&gt;
+    &lt;tranship containerStop=&quot;containerStop_waterway&quot;/&gt;
+    &lt;transport to=&quot;5005413.18170&quot; lines=&quot;containership&quot;/&gt;
+&lt;/containerFlow&gt;
+</code></pre>
 <h4 id="trucks_and_cars">Trucks and Cars<a class="headerlink" href="#trucks_and_cars" title="Permanent link">#</a></h4>
 <p>For the trucks and cars we use flow definitions:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;passengercartoship&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;200&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type_car&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;39549605&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-128042010&quot;</span><span class="w"> </span><span class="na">via=</span><span class="s">&quot;619566331&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_pier&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;800.00&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/flow&gt;</span>
-<span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;trucktoship&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;200&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type_truck&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;39549605&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-277007500#0&quot;</span><span class="w"> </span><span class="na">via=</span><span class="s">&quot;619566331&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">containerStop=</span><span class="s">&quot;containerStop_pier&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;970.00&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/flow&gt;</span>
-<span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;passengercarfromship&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;730&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;750&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type_car&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-277007518&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;84630550&quot;</span><span class="w"> </span><span class="na">via=</span><span class="s">&quot;-197841302&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;truckfromship&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;870&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;920&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type_truck&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;277007496#0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;84630550&quot;</span><span class="w"> </span><span class="na">via=</span><span class="s">&quot;-197841302&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;flow id=&quot;passengercartoship&quot; begin=&quot;0&quot; end=&quot;200&quot; number=&quot;20&quot; type=&quot;type_car&quot; from=&quot;39549605&quot; to=&quot;-128042010&quot; via=&quot;619566331&quot;&gt;
+    &lt;stop busStop=&quot;busStop_pier&quot; until=&quot;800.00&quot;/&gt;
+&lt;/flow&gt;
+&lt;flow id=&quot;trucktoship&quot; begin=&quot;0&quot; end=&quot;200&quot; number=&quot;20&quot; type=&quot;type_truck&quot; from=&quot;39549605&quot; to=&quot;-277007500#0&quot; via=&quot;619566331&quot;&gt;
+    &lt;stop containerStop=&quot;containerStop_pier&quot; until=&quot;970.00&quot;/&gt;
+&lt;/flow&gt;
+&lt;flow id=&quot;passengercarfromship&quot; begin=&quot;730&quot; end=&quot;750&quot; number=&quot;20&quot; type=&quot;type_car&quot; from=&quot;-277007518&quot; to=&quot;84630550&quot; via=&quot;-197841302&quot;/&gt;
+&lt;flow id=&quot;truckfromship&quot; begin=&quot;870&quot; end=&quot;920&quot; number=&quot;20&quot; type=&quot;type_truck&quot; from=&quot;277007496#0&quot; to=&quot;84630550&quot; via=&quot;-197841302&quot;/&gt;
+</code></pre>
 <h4 id="bus">Bus<a class="headerlink" href="#bus" title="Permanent link">#</a></h4>
 <p>Consider the <code>line</code> attribute for the bus.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;trip</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;type_bus_taxi&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">departLane=</span><span class="s">&quot;best&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-197841302&quot;</span><span class="w"> </span><span class="na">via=</span><span class="s">&quot;-128042010&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;-197841302&quot;</span><span class="w"> </span><span class="na">line=</span><span class="s">&quot;bus&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_busstation_terminal&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;300.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_pier&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;750.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_busstation_terminal&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;900.00&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/trip&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;trip id=&quot;bus&quot; type=&quot;type_bus_taxi&quot; depart=&quot;0&quot; departLane=&quot;best&quot; from=&quot;-197841302&quot; via=&quot;-128042010&quot; to=&quot;-197841302&quot; line=&quot;bus&quot;&gt;
+    &lt;stop busStop=&quot;busStop_busstation_terminal&quot; until=&quot;300.00&quot;/&gt;
+    &lt;stop busStop=&quot;busStop_pier&quot; until=&quot;750.00&quot;/&gt;
+    &lt;stop busStop=&quot;busStop_busstation_terminal&quot; until=&quot;900.00&quot;/&gt;
+&lt;/trip&gt;
+</code></pre>
 <h4 id="persons">Persons<a class="headerlink" href="#persons" title="Permanent link">#</a></h4>
 <p>For the persons we use flow definitions:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;personFlow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;pedestrianfromship&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;triggered&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;0,255,0&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-127071510.253116&quot;</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_waterway&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;ferry&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_waterway&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_pier&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_busstation_terminal&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;bus&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_passenger_terminal&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/personFlow&gt;</span>
+<pre><code class="language-xml">&lt;personFlow id=&quot;pedestrianfromship&quot; begin=&quot;triggered&quot; number=&quot;20&quot; color=&quot;0,255,0&quot;&gt;
+   &lt;ride from=&quot;-127071510.253116&quot; busStop=&quot;busStop_waterway&quot; lines=&quot;ferry&quot;/&gt;
+   &lt;walk busStop=&quot;busStop_waterway&quot;/&gt;
+   &lt;walk busStop=&quot;busStop_pier&quot;/&gt;
+   &lt;ride busStop=&quot;busStop_busstation_terminal&quot; lines=&quot;bus&quot;/&gt;
+   &lt;walk busStop=&quot;busStop_passenger_terminal&quot;/&gt;
+&lt;/personFlow&gt;
 
-<span class="nt">&lt;personFlow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;pedestriantoship&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;200&quot;</span><span class="w"> </span><span class="na">number=</span><span class="s">&quot;20&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;-596327078#2&quot;</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_passenger_terminal&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_busstation_terminal&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_pier&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;bus&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;walk</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStop_waterway&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;ride</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;127071510&quot;</span><span class="w"> </span><span class="na">lines=</span><span class="s">&quot;ferry&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/personFlow&gt;</span>
-</code></pre></div>
-
+&lt;personFlow id=&quot;pedestriantoship&quot; begin=&quot;0&quot; end=&quot;200&quot; number=&quot;20&quot;&gt;
+   &lt;walk from=&quot;-596327078#2&quot; busStop=&quot;busStop_passenger_terminal&quot;/&gt;
+   &lt;walk busStop=&quot;busStop_busstation_terminal&quot;/&gt;
+   &lt;ride busStop=&quot;busStop_pier&quot; lines=&quot;bus&quot;/&gt;
+   &lt;walk busStop=&quot;busStop_waterway&quot;/&gt;
+   &lt;ride to=&quot;127071510&quot; lines=&quot;ferry&quot;/&gt;
+&lt;/personFlow&gt;
+</code></pre>
 <h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h1>
 <p>You can find the Skandinavienkai, Port Lübeck Germany scenario files on <a href="https://github.com/DLR-TS/sumo-scenarios/tree/main/port_tutorials/port_l%C3%BCbeck">Github</a></p>
 <p>And two more simple port scenarios are there as well:</p>
@@ -532,7 +522,7 @@ For more information see <a href="../Simulation/Public_Transport.html#access_lan
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -187,106 +188,106 @@ Last edit: 06 October 2026
                   
                   
 
-<div class="codehilite"><pre><span></span><code><span class="cm">/****************************************************************************/</span>
-<span class="c1">// Eclipse SUMO, Simulation of Urban MObility; see &lt;https://eclipse.dev/sumo&gt;</span>
-<span class="c1">// Copyright (C) &lt;YEAR OF CREATION&gt;-&lt;CURRENT YEAR&gt; German Aerospace Center (DLR) and others.</span>
-<span class="c1">// This program and the accompanying materials are made available under the</span>
-<span class="c1">// terms of the Eclipse Public License 2.0 which is available at</span>
-<span class="c1">// https://www.eclipse.org/legal/epl-2.0/</span>
-<span class="c1">// This Source Code may also be made available under the following Secondary</span>
-<span class="c1">// Licenses when the conditions for such availability set forth in the Eclipse</span>
-<span class="c1">// Public License 2.0 are satisfied: GNU General Public License, version 2</span>
-<span class="c1">// or later which is available at</span>
-<span class="c1">// https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html</span>
-<span class="c1">// SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-or-later</span>
-<span class="cm">/****************************************************************************/</span>
-<span class="c1">/// @file    &lt;FILENAME&gt;</span>
-<span class="c1">/// @author  &lt;AUTHOR&#39;S NAME, ONE SEPARATE LINE FOR EACH AUTHOR&gt;</span>
-<span class="c1">/// @author  &lt;AUTHOR&#39;S NAME 2&gt;</span>
-<span class="c1">/// @author  &lt;AUTHOR&#39;S NAME 3&gt;</span>
-<span class="c1">/// @date    &lt;FILE CREATION DATE&gt;</span>
-<span class="c1">///</span>
-<span class="c1">// &lt;A BRIEF DESCRIPTION OF THE FILE&#39;S CONTENTS&gt;</span>
-<span class="cm">/****************************************************************************/</span>
-<span class="cp">#pragma once</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;config.h&gt;</span><span class="c1"> // you can leave this one out if you don&#39;t need any defines from config.h, especially in libsumo / utils</span>
+<pre><code class="language-cpp">/****************************************************************************/
+// Eclipse SUMO, Simulation of Urban MObility; see &lt;https://eclipse.dev/sumo&gt;
+// Copyright (C) &lt;YEAR OF CREATION&gt;-&lt;CURRENT YEAR&gt; German Aerospace Center (DLR) and others.
+// This program and the accompanying materials are made available under the
+// terms of the Eclipse Public License 2.0 which is available at
+// https://www.eclipse.org/legal/epl-2.0/
+// This Source Code may also be made available under the following Secondary
+// Licenses when the conditions for such availability set forth in the Eclipse
+// Public License 2.0 are satisfied: GNU General Public License, version 2
+// or later which is available at
+// https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+// SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-or-later
+/****************************************************************************/
+/// @file    &lt;FILENAME&gt;
+/// @author  &lt;AUTHOR'S NAME, ONE SEPARATE LINE FOR EACH AUTHOR&gt;
+/// @author  &lt;AUTHOR'S NAME 2&gt;
+/// @author  &lt;AUTHOR'S NAME 3&gt;
+/// @date    &lt;FILE CREATION DATE&gt;
+///
+// &lt;A BRIEF DESCRIPTION OF THE FILE'S CONTENTS&gt;
+/****************************************************************************/
+#pragma once
+#include &lt;config.h&gt; // you can leave this one out if you don't need any defines from config.h, especially in libsumo / utils
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;somewhere/otherClass1.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;myOtherClass2.h&quot;</span>
-
-
-<span class="c1">// ===========================================================================</span>
-<span class="c1">// class declarations</span>
-<span class="c1">// ===========================================================================</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">myOwnClass1</span><span class="p">;</span><span class="w"> </span><span class="c1">// always prefer a declaration over an include</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">myOwnClass2</span><span class="p">;</span>
+#include &lt;somewhere/otherClass1.h&gt;
+#include &quot;myOtherClass2.h&quot;
 
 
-<span class="c1">// ===========================================================================</span>
-<span class="c1">// class definitions</span>
-<span class="c1">// ===========================================================================</span>
+// ===========================================================================
+// class declarations
+// ===========================================================================
+class myOwnClass1; // always prefer a declaration over an include
+class myOwnClass2;
 
-<span class="cm">/**</span>
-<span class="cm"> * @class OwnClass (Can be preceded by GNE, MS, NB, etc. depending on the project)</span>
-<span class="cm"> * brief description of the class</span>
-<span class="cm"> */</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">OwnClass</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ParentClass</span><span class="w">  </span><span class="p">{</span>
 
-<span class="k">public</span><span class="o">:</span>
-<span class="w">     </span><span class="cm">/**</span>
-<span class="cm">      * @class InnerClass</span>
-<span class="cm">      * brief description of the inner class</span>
-<span class="cm">      */</span>
-<span class="w">     </span><span class="k">class</span><span class="w"> </span><span class="nc">InnerClass</span><span class="w"> </span><span class="p">{</span>
+// ===========================================================================
+// class definitions
+// ===========================================================================
 
-<span class="w">     </span><span class="k">public</span><span class="o">:</span>
-<span class="w">         </span><span class="c1">/// @brief Constructor</span>
-<span class="w">         </span><span class="n">InnerClass</span><span class="p">();</span>
+/**
+ * @class OwnClass (Can be preceded by GNE, MS, NB, etc. depending on the project)
+ * brief description of the class
+ */
+class OwnClass : public ParentClass  {
 
-<span class="w">         </span><span class="c1">/// @brief Destructor</span>
-<span class="w">         </span><span class="o">~</span><span class="n">InnerClass</span><span class="p">();</span>
+public:
+     /**
+      * @class InnerClass
+      * brief description of the inner class
+      */
+     class InnerClass {
 
-<span class="w">     </span><span class="k">private</span><span class="o">:</span>
-<span class="w">         </span><span class="c1">/// @brief description of parameter</span>
-<span class="w">         </span><span class="o">&lt;</span><span class="n">parameterType</span><span class="o">&gt;</span><span class="w"> </span><span class="n">myPrivateParameter</span><span class="p">;</span>
-<span class="w">     </span><span class="p">};</span>
+     public:
+         /// @brief Constructor
+         InnerClass();
 
-<span class="w">    </span><span class="cm">/** @brief Constructor</span>
-<span class="cm">     * @param[in] parameter1 each parameter must be documented</span>
-<span class="cm">     * @param[in] parameter2 each parameter must be documented</span>
-<span class="cm">       ...</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="n">OwnClass</span><span class="p">(</span><span class="o">&lt;</span><span class="n">parameterType</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parameter1</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">parameterType</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parameter2</span><span class="p">,...</span><span class="w"> </span><span class="o">&lt;</span><span class="n">parameterType</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parametern</span><span class="p">);</span>
+         /// @brief Destructor
+         ~InnerClass();
 
-<span class="w">    </span><span class="c1">/// @brief Destructor (don&#39;t need documentation)</span>
-<span class="w">    </span><span class="o">~</span><span class="n">OwnClass</span><span class="p">();</span>
+     private:
+         /// @brief description of parameter
+         &lt;parameterType&gt; myPrivateParameter;
+     };
 
-<span class="w">    </span><span class="c1">/// @brief Returns parameter1 (Simple functions should be documented with one line)</span>
-<span class="w">    </span><span class="o">&lt;</span><span class="n">parameterType</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getParameter1</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+    /** @brief Constructor
+     * @param[in] parameter1 each parameter must be documented
+     * @param[in] parameter2 each parameter must be documented
+       ...
+     */
+    OwnClass(&lt;parameterType&gt; parameter1, &lt;parameterType&gt; parameter2,... &lt;parameterType&gt; parametern);
 
-<span class="w">    </span><span class="cm">/** @brief some functions can throw exceptions but don&#39;t use throw declarations</span>
-<span class="cm">     * @param[in] parameter1 description of the parameter</span>
-<span class="cm">     * @throw &lt;exceptionName&gt; description of the situation that provokes an exception</span>
-<span class="cm">     * @return description of the returned value</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">setParameter1</span><span class="p">(</span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parameter1</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+    /// @brief Destructor (don't need documentation)
+    ~OwnClass();
 
-<span class="w">    </span><span class="c1">/// @brief if the class is abstract, should have pure virtual functions (virtual .... = 0;)</span>
-<span class="w">    </span><span class="c1">//  @note: Extra information about a function should be written using @note</span>
-<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">pureVirtualFunction</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+    /// @brief Returns parameter1 (Simple functions should be documented with one line)
+    &lt;parameterType&gt; getParameter1() const;
 
-<span class="k">protected</span><span class="o">:</span>
-<span class="w">    </span><span class="c1">/// @brief description of the parameter</span>
-<span class="w">    </span><span class="o">&lt;</span><span class="n">parameterType</span><span class="o">&gt;</span><span class="w"> </span><span class="n">myProtectedParameter1</span><span class="p">;</span>
+    /** @brief some functions can throw exceptions but don't use throw declarations
+     * @param[in] parameter1 description of the parameter
+     * @throw &lt;exceptionName&gt; description of the situation that provokes an exception
+     * @return description of the returned value
+     */
+    bool setParameter1(&lt;type&gt; parameter1) const;
 
-<span class="k">private</span><span class="o">:</span>
-<span class="w">    </span><span class="c1">/// @brief every private parameter must start with &quot;my&quot;</span>
-<span class="w">    </span><span class="o">&lt;</span><span class="n">parameterType</span><span class="o">&gt;</span><span class="w"> </span><span class="n">myPrivateParameter2</span><span class="p">;</span>
+    /// @brief if the class is abstract, should have pure virtual functions (virtual .... = 0;)
+    //  @note: Extra information about a function should be written using @note
+    virtual void pureVirtualFunction() = 0;
 
-<span class="w">    </span><span class="c1">/// @brief C++ Standard Library classes must be preceded by std::</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">myPrivateParameter3</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
+protected:
+    /// @brief description of the parameter
+    &lt;parameterType&gt; myProtectedParameter1;
+
+private:
+    /// @brief every private parameter must start with &quot;my&quot;
+    &lt;parameterType&gt; myPrivateParameter2;
+
+    /// @brief C++ Standard Library classes must be preceded by std::
+    std::vector&lt;std::string&gt; myPrivateParameter3;
+};
+</code></pre>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -294,7 +295,7 @@ Last edit: 06 October 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

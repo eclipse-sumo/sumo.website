@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -485,9 +486,8 @@ traffic lights</a>.</p>
 </div>
 <p>To convert an existing .net.xml file so that all traffic lights are actuated,
 perform the following call:</p>
-<div class="codehilite"><pre><span></span><code><span class="nx">netconvert</span><span class="w"> </span><span class="o">-</span><span class="nx">s</span><span class="w"> </span><span class="nx">orig</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">xml</span><span class="w"> </span><span class="o">--</span><span class="nx">o</span><span class="w"> </span><span class="nx">new</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">xml</span><span class="w"> </span><span class="o">--</span><span class="nx">tls</span><span class="p">.</span><span class="nx">rebuild</span><span class="w"> </span><span class="o">--</span><span class="nx">tls</span><span class="p">.</span><span class="k">default</span><span class="o">-</span><span class="k">type</span><span class="w"> </span><span class="nx">actuated</span>
-</code></pre></div>
-
+<pre><code>netconvert -s orig.net.xml --o new.net.xml --tls.rebuild --tls.default-type actuated
+</code></pre>
 <h3 id="adapting_fixed_timings_green_split_to_known_traffic">Adapting fixed timings (green split) to known traffic<a class="headerlink" href="#adapting_fixed_timings_green_split_to_known_traffic" title="Permanent link">#</a></h3>
 <p><a href="../Tools/tls.html#tlscycleadaptationpy">tlsCycleAdaptation.py</a>
 can be used to modify green phase durations to accommodate a given
@@ -502,20 +502,19 @@ loaded, the last program will be used. Switching between programs is
 possible via WAUTs and/or TraCI. Also, one can switch between them using
 the GUI context menu. A definition of a traffic light program within an <a href="/docs/sumo.html#format_of_additional_files"><em>additional-file</em></a>
 looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">  </span><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;my_program&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;static&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;31&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;GGggrrrrGGggrrrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;yyggrrrryyggrrrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrGGrrrrrrGGrrrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rryyrrrrrryyrrrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;31&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrrrGGggrrrrGGgg&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrrryyggrrrryygg&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrrrrrGGrrrrrrGG&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;5&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrrrrryyrrrrrryy&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/tlLogic&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;tlLogic id=&quot;0&quot; programID=&quot;my_program&quot; offset=&quot;0&quot; type=&quot;static&quot;&gt;
+    &lt;phase duration=&quot;31&quot; state=&quot;GGggrrrrGGggrrrr&quot;/&gt;
+    &lt;phase duration=&quot;5&quot;  state=&quot;yyggrrrryyggrrrr&quot;/&gt;
+    &lt;phase duration=&quot;6&quot;  state=&quot;rrGGrrrrrrGGrrrr&quot;/&gt;
+    &lt;phase duration=&quot;5&quot;  state=&quot;rryyrrrrrryyrrrr&quot;/&gt;
+    &lt;phase duration=&quot;31&quot; state=&quot;rrrrGGggrrrrGGgg&quot;/&gt;
+    &lt;phase duration=&quot;5&quot;  state=&quot;rrrryyggrrrryygg&quot;/&gt;
+    &lt;phase duration=&quot;6&quot;  state=&quot;rrrrrrGGrrrrrrGG&quot;/&gt;
+    &lt;phase duration=&quot;5&quot;  state=&quot;rrrrrryyrrrrrryy&quot;/&gt;
+  &lt;/tlLogic&gt;
+&lt;/additional&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To get started you can copy the <strong>tlLogic</strong> elements for all traffic lights you wish to edit from a .net.xml file and put them into a new file. Then you only need to change the programID attribute and the program is ready to be modified and loaded</p>
@@ -759,23 +758,22 @@ In the current implementation, detectors for actuation are only used if all conn
 </div>
 <p>Detector activation states can optionally be written to the <a href="Output/Traffic_Lights.html#optional_output">TLS output</a>.</p>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;my_program&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;actuated&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;max-gap&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;3.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;detector-gap&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;passing-time&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;vTypes&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;show-detectors&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;file&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NUL&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;freq&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;300&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;jam-threshold&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;-1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;detector-length&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;build-all-detectors&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;tlLogic id=&quot;0&quot; programID=&quot;my_program&quot; offset=&quot;0&quot; type=&quot;actuated&quot;&gt;
+  &lt;param key=&quot;max-gap&quot; value=&quot;3.0&quot;/&gt;
+  &lt;param key=&quot;detector-gap&quot; value=&quot;2.0&quot;/&gt;
+  &lt;param key=&quot;passing-time&quot; value=&quot;2.0&quot;/&gt;
+  &lt;param key=&quot;vTypes&quot; value=&quot;&quot;/&gt;
+  &lt;param key=&quot;show-detectors&quot; value=&quot;false&quot;/&gt;
+  &lt;param key=&quot;file&quot; value=&quot;NUL&quot;/&gt;
+  &lt;param key=&quot;freq&quot; value=&quot;300&quot;/&gt;
+  &lt;param key=&quot;jam-threshold&quot; value=&quot;-1&quot;/&gt;
+  &lt;param key=&quot;detector-length&quot; value=&quot;0&quot;/&gt;
+  &lt;param key=&quot;build-all-detectors&quot; value=&quot;false&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;31&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;45&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;GGggrrrrGGggrrrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span>...
-<span class="nt">&lt;/tlLogic&gt;</span>
-</code></pre></div>
-
+  &lt;phase duration=&quot;31&quot; minDur=&quot;5&quot; maxDur=&quot;45&quot; state=&quot;GGggrrrrGGggrrrr&quot;/&gt;
+  ...
+&lt;/tlLogic&gt;
+</code></pre>
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">#</a></h3>
 <p>Several optional parameters can be used to control the behavior of actuated traffic lights. The examples values in the previous section are the default values for these parameters and their meaning is given below:</p>
 <ul>
@@ -815,9 +813,8 @@ selecting the corresponding menu entry.</p>
 </ul>
 <h3 id="custom_detectors">Custom Detectors<a class="headerlink" href="#custom_detectors" title="Permanent link">#</a></h3>
 <p>To use custom detectors (i.e. for custom placement or output) additional parameters can be defined where KEY is a lane that is incoming to the traffic light and VALUE is a user-defined inductionLoop (that could also lie on another upstream lane).</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;gneE42_2&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;customDetector1&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;param key=&quot;gneE42_2&quot; value=&quot;customDetector1&quot;/&gt;
+</code></pre>
 <p>By assigning the special value <code>NO_DETECTOR</code>, the detector for a given lane key can be completely disabled.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -829,19 +826,16 @@ selecting the corresponding menu entry.</p>
 </div>
 <p>Custom detector activation states can optionally be written to the <a href="Output/Traffic_Lights.html#optional_output">TLS output</a>.</p>
 <p>To include further detectors in the output and in the <a href="#track_phases">phase tracker dialog</a> (i.e. when a custom logic uses laneArea detectors or multiple detectors on the same lane) the following declaration can be used to list all extra detectors:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;extra-detectors&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;customDetector1 customDetector2 ...&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;param key=&quot;extra-detectors&quot; value=&quot;customDetector1 customDetector2 ...&quot;/&gt;
+</code></pre>
 <h3 id="lane-specific_detector_settings">Lane-specific detector settings<a class="headerlink" href="#lane-specific_detector_settings" title="Permanent link">#</a></h3>
 <p>To define a max-gap value that differs from the default you can use a param with <code>key="max-gap:&lt;LANE_ID&gt;"</code> where LANE_ID is a lane incoming to the traffic light (the detector might lie further upstream).</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;max-gap:gneE42_2&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;param key=&quot;max-gap:gneE42_2&quot; value=&quot;2&quot;/&gt;
+</code></pre>
 <p>In the same way, a custom jam-threshold or detector-length may be set:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;jam-threshold:LANE_ID&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;detector-length:LANE_ID&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2.5&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;param key=&quot;jam-threshold:LANE_ID&quot; value=&quot;5&quot;/&gt;
+   &lt;param key=&quot;detector-length:LANE_ID&quot; value=&quot;2.5&quot;/&gt;
+</code></pre>
 <h3 id="coordination">Coordination<a class="headerlink" href="#coordination" title="Permanent link">#</a></h3>
 <p>Actuated phases (minDur != maxDur) can be coordinated by adding attributes 'earliestEnd' and 'latestEnd'.
 If these values are used, each step in the traffic light plan is assigned a 'timeInCycle' value depending on the value of param 'coordinated' (default 'false').</p>
@@ -856,15 +850,14 @@ If both values are defined and a phase has already started and ended in the
 current cycle, both values will be shifted into the next cycle to avoid having a
 phase run more than once in the same cycle (this only happens when param
 'coordinated' is set to 'true').</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;my_program&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;actuated&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;coordinated&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;cycleTime&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;60&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;tlLogic id=&quot;0&quot; programID=&quot;my_program&quot; offset=&quot;10&quot; type=&quot;actuated&quot;&gt;
+  &lt;param key=&quot;coordinated&quot; value=&quot;true&quot;/&gt;
+  &lt;param key=&quot;cycleTime&quot; value=&quot;60&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;31&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;45&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;GGggrrrrGGggrrrr&quot;</span><span class="w"> </span><span class="na">earliestEnd=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">latestEnd=</span><span class="s">&quot;50&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span>...
-<span class="nt">&lt;/tlLogic&gt;</span>
-</code></pre></div>
-
+  &lt;phase duration=&quot;31&quot; minDur=&quot;5&quot; maxDur=&quot;45&quot; state=&quot;GGggrrrrGGggrrrr&quot; earliestEnd=&quot;10&quot; latestEnd=&quot;50&quot;/&gt;
+  ...
+&lt;/tlLogic&gt;
+</code></pre>
 <h3 id="dynamic_phase_selection_phase_skipping">Dynamic Phase Selection (Phase Skipping)<a class="headerlink" href="#dynamic_phase_selection_phase_skipping" title="Permanent link">#</a></h3>
 <p>When a phase uses attribute 'next' with a list of indices. The next phase is chosen dynamically based on the detector status of all candidate phases according to the following algorithm:</p>
 <ul>
@@ -886,20 +879,19 @@ phase run more than once in the same cycle (this only happens when param
 <p>Examples for this type of traffic light logic can be found in <a href="https://github.com/eclipse-sumo/sumo/blob/main/tests/sumo/tls/actuated/multiNext/dualring_simple"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/tests/sumo/tls/actuated/multiNext/dualring_simple</a>.</p>
 <p>The helper script <a href="../Tools/tls.html#buildtransitionspy">buildTransitions.py</a> can be used to generate such logics from simplified definitions.</p>
 <h4 id="exampe_left-turn_phases_can_be_skipped">Exampe: left-turn phases can be skipped<a class="headerlink" href="#exampe_left-turn_phases_can_be_skipped" title="Permanent link">#</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;actuated&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;P1&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;33&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;GgrrGgrr&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;1 8&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;ygrrygrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rGrrrGrr&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;ryrrryrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;33&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrGgrrGg&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;5 9&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrygrryg&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrrGrrrG&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrryrrry&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;yyrryyrr&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rryyrryy&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/tlLogic&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">    &lt;tlLogic id=&quot;C&quot; type=&quot;actuated&quot; programID=&quot;P1&quot; offset=&quot;0&quot;&gt;
+        &lt;phase duration=&quot;33&quot; state=&quot;GgrrGgrr&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; next=&quot;1 8&quot;/&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;ygrrygrr&quot;/&gt;
+        &lt;phase duration=&quot;6&quot;  state=&quot;rGrrrGrr&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; /&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;ryrrryrr&quot;/&gt;
+        &lt;phase duration=&quot;33&quot; state=&quot;rrGgrrGg&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; next=&quot;5 9&quot;/&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;rrygrryg&quot;/&gt;
+        &lt;phase duration=&quot;6&quot;  state=&quot;rrrGrrrG&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; /&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;rrryrrry&quot; next=&quot;0&quot;/&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;yyrryyrr&quot; next=&quot;4&quot;/&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;rryyrryy&quot;/&gt;
+    &lt;/tlLogic&gt;
+</code></pre>
 <h2 id="type_actuated_with_custom_switching_rules">Type 'actuated' with custom switching rules<a class="headerlink" href="#type_actuated_with_custom_switching_rules" title="Permanent link">#</a></h2>
 <p>By default, all traffic light programs are governed by the same pre-defined rules
 that determine which detectors are used or ignored in each phase. If more
@@ -950,13 +942,12 @@ Otherwise, the rightmost phase in the next-list is used.</p>
 <h3 id="named_expressions">Named Expressions<a class="headerlink" href="#named_expressions" title="Permanent link">#</a></h3>
 <p>To organize expressions, the element <code>&lt;condition&gt;</code> may be used as a child element
 of <code>&lt;tlLogic&gt;</code> to define named expressions that can be referenced in other expressions:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;example&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;actuated&quot;</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;C3&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;z:det5 &gt; 5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;C4&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;C3 and z:det6 &amp;lt; 2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;C5&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;g:3 &gt; 20&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span>...
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;tlLogic id=&quot;example&quot; type=&quot;actuated&quot; ...&gt;
+   &lt;condition id=&quot;C3&quot; value=&quot;z:det5 &gt; 5&quot;/&gt;
+   &lt;condition id=&quot;C4&quot; value=&quot;C3 and z:det6 &amp;lt; 2&quot;/&gt;
+   &lt;condition id=&quot;C5&quot; value=&quot;g:3 &gt; 20&quot;/&gt;
+   ...
+</code></pre>
 <ul>
 <li><strong>id</strong> must be an alphanumeric string without spaces and without the ':'-character</li>
 <li><strong>value</strong> may be any expression which is permitted for 'earlyTarget' or 'finalTarget'</li>
@@ -969,80 +960,76 @@ of <code>&lt;tlLogic&gt;</code> to define named expressions that can be referenc
 <p>The values of (visible) named expressions can optionally be written to the <a href="Output/Traffic_Lights.html#optional_output">TLS output</a>.</p>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h3>
 <h4 id="diverse_logical_conditions">Diverse Logical Conditions<a class="headerlink" href="#diverse_logical_conditions" title="Permanent link">#</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;example&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;actuated&quot;</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;C3&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;z:Det2.0 &gt; 5&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;C4&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;C3 and z:Det0.0 &lt; 2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;C5&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;r:0 &gt; 60&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;1 2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;C3&quot;</span><span class="w"> </span><span class="na">finalTarget=</span><span class="s">&quot;!C4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;(z:D2.0 &gt; 3) and (z:D3.1 &lt;= 4)&quot;</span><span class="w"> </span><span class="na">finalTarget=</span><span class="s">&quot;C5 or (z:Det3.1 = 0)&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/tlLogic&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;tlLogic id=&quot;example&quot; type=&quot;actuated&quot; ...&gt;
+   &lt;condition id=&quot;C3&quot; value=&quot;z:Det2.0 &gt; 5&quot;/&gt;
+   &lt;condition id=&quot;C4&quot; value=&quot;C3 and z:Det0.0 &lt; 2&quot;/&gt;
+   &lt;condition id=&quot;C5&quot; value=&quot;r:0 &gt; 60&quot;/&gt;
+   &lt;phase ... next=&quot;1 2&quot;/&gt;
+   &lt;phase ... earlyTarget=&quot;C3&quot; finalTarget=&quot;!C4&quot;/&gt;
+   &lt;phase ... earlyTarget=&quot;(z:D2.0 &gt; 3) and (z:D3.1 &lt;= 4)&quot; finalTarget=&quot;C5 or (z:Det3.1 = 0)&quot;/&gt;
+&lt;/tlLogic&gt;
+</code></pre>
 <h4 id="default_gap_control_logic">Default Gap Control Logic<a class="headerlink" href="#default_gap_control_logic" title="Permanent link">#</a></h4>
 <p>The default gap control logic, replicated with custom conditions. A complete scenario including network and detector definitions can be downloaded <a href="https://sumo.dlr.de/extractTest.php?path=sumo/basic/tls/actuated/conditions/replicate_default">here</a>:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;actuated&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;P1&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;33&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;GgrrGgrr&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;ygrrygrr&quot;</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;NS&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rGrrrGrr&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;ryrrryrr&quot;</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;NSL&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;33&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrGgrrGg&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrygrryg&quot;</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;EW&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrrGrrrG&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrryrrry&quot;</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;EWL&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;tlLogic id=&quot;C&quot; type=&quot;actuated&quot; programID=&quot;P1&quot; offset=&quot;0&quot;&gt;
+        &lt;phase duration=&quot;33&quot; state=&quot;GgrrGgrr&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; /&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;ygrrygrr&quot; earlyTarget=&quot;NS&quot;/&gt;
+        &lt;phase duration=&quot;6&quot;  state=&quot;rGrrrGrr&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; /&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;ryrrryrr&quot; earlyTarget=&quot;NSL&quot;/&gt;
+        &lt;phase duration=&quot;33&quot; state=&quot;rrGgrrGg&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; /&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;rrygrryg&quot; earlyTarget=&quot;EW&quot;/&gt;
+        &lt;phase duration=&quot;6&quot;  state=&quot;rrrGrrrG&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; /&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;rrryrrry&quot; earlyTarget=&quot;EWL&quot;/&gt;
 
-<span class="w">        </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;NS&quot;</span><span class="w">  </span><span class="na">value=</span><span class="s">&quot;z:D0.0 &gt; 3 and z:D2.0 &gt; 3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;NSL&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;z:D0.1 &gt; 3 and z:D2.1 &gt; 3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;EW&quot;</span><span class="w">  </span><span class="na">value=</span><span class="s">&quot;z:D1.0 &gt; 3 and z:D3.0 &gt; 3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;EWL&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;z:D1.1 &gt; 3 and z:D3.1 &gt; 3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/tlLogic&gt;</span>
-</code></pre></div>
-
+        &lt;condition id=&quot;NS&quot;  value=&quot;z:D0.0 &gt; 3 and z:D2.0 &gt; 3&quot;/&gt;
+        &lt;condition id=&quot;NSL&quot; value=&quot;z:D0.1 &gt; 3 and z:D2.1 &gt; 3&quot;/&gt;
+        &lt;condition id=&quot;EW&quot;  value=&quot;z:D1.0 &gt; 3 and z:D3.0 &gt; 3&quot;/&gt;
+        &lt;condition id=&quot;EWL&quot; value=&quot;z:D1.1 &gt; 3 and z:D3.1 &gt; 3&quot;/&gt;
+    &lt;/tlLogic&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The expression 'z:D0.0' retrieves the detection gap of detector 'C_PI_D0.0' but the prefix 'C_PI_' may be omitted.</p>
 </div>
 <h4 id="default_gap_control_logic_may_skip_left-turn_phases">Default Gap Control Logic, may skip left-turn phases<a class="headerlink" href="#default_gap_control_logic_may_skip_left-turn_phases" title="Permanent link">#</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;actuated&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;P1&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;33&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;GgrrGgrr&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;1 8&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;ygrrygrr&quot;</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;NS&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rGrrrGrr&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;ryrrryrr&quot;</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;NSL&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;33&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrGgrrGg&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;5 9&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrygrryg&quot;</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;EW&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrrGrrrG&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrryrrry&quot;</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;EWL&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;yyrryyrr&quot;</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;NS and NSL&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rryyrryy&quot;</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;EW and EWL&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;tlLogic id=&quot;C&quot; type=&quot;actuated&quot; programID=&quot;P1&quot; offset=&quot;0&quot;&gt;
+  &lt;phase duration=&quot;33&quot; state=&quot;GgrrGgrr&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; next=&quot;1 8&quot;/&gt;
+  &lt;phase duration=&quot;3&quot;  state=&quot;ygrrygrr&quot; earlyTarget=&quot;NS&quot;/&gt;
+  &lt;phase duration=&quot;6&quot;  state=&quot;rGrrrGrr&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; /&gt;
+  &lt;phase duration=&quot;3&quot;  state=&quot;ryrrryrr&quot; earlyTarget=&quot;NSL&quot;/&gt;
+  &lt;phase duration=&quot;33&quot; state=&quot;rrGgrrGg&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; next=&quot;5 9&quot;/&gt;
+  &lt;phase duration=&quot;3&quot;  state=&quot;rrygrryg&quot; earlyTarget=&quot;EW&quot;/&gt;
+  &lt;phase duration=&quot;6&quot;  state=&quot;rrrGrrrG&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; /&gt;
+  &lt;phase duration=&quot;3&quot;  state=&quot;rrryrrry&quot; earlyTarget=&quot;EWL&quot; next=&quot;0&quot;/&gt;
+  &lt;phase duration=&quot;3&quot;  state=&quot;yyrryyrr&quot; earlyTarget=&quot;NS and NSL&quot; next=&quot;4&quot;/&gt;
+  &lt;phase duration=&quot;3&quot;  state=&quot;rryyrryy&quot; earlyTarget=&quot;EW and EWL&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;NS&quot;</span><span class="w">  </span><span class="na">value=</span><span class="s">&quot;z:D0.0 &gt; 3 and z:D2.0 &gt; 3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;NSL&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;z:D0.1 &gt; 3 and z:D2.1 &gt; 3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;EW&quot;</span><span class="w">  </span><span class="na">value=</span><span class="s">&quot;z:D1.0 &gt; 3 and z:D3.0 &gt; 3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;EWL&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;z:D1.1 &gt; 3 and z:D3.1 &gt; 3&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/tlLogic&gt;</span>
-</code></pre></div>
-
+  &lt;condition id=&quot;NS&quot;  value=&quot;z:D0.0 &gt; 3 and z:D2.0 &gt; 3&quot;/&gt;
+  &lt;condition id=&quot;NSL&quot; value=&quot;z:D0.1 &gt; 3 and z:D2.1 &gt; 3&quot;/&gt;
+  &lt;condition id=&quot;EW&quot;  value=&quot;z:D1.0 &gt; 3 and z:D3.0 &gt; 3&quot;/&gt;
+  &lt;condition id=&quot;EWL&quot; value=&quot;z:D1.1 &gt; 3 and z:D3.1 &gt; 3&quot;/&gt;
+&lt;/tlLogic&gt;
+</code></pre>
 <h4 id="bus_prioritization">Bus prioritization<a class="headerlink" href="#bus_prioritization" title="Permanent link">#</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="cm">&lt;!-- detect only buses --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;inductionLoop</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;dBus&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;SC_0&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;-90&quot;</span><span class="w"> </span><span class="na">vTypes=</span><span class="s">&quot;busType&quot;</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;NUL&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">    &lt;!-- detect only buses --&gt;
+    &lt;inductionLoop id=&quot;dBus&quot; lane=&quot;SC_0&quot; pos=&quot;-90&quot; vTypes=&quot;busType&quot; file=&quot;NUL&quot;/&gt;
 
-<span class="w">    </span><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;actuated&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;P1&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;33&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;GgrrGgrr&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;ygrrygrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rGrrrGrr&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;ryrrryrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;33&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrGgrrGg&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrygrryg&quot;</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;EW or NSbus&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrrGrrrG&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrryrrry&quot;</span><span class="nt">/&gt;</span>
+    &lt;tlLogic id=&quot;C&quot; type=&quot;actuated&quot; programID=&quot;P1&quot; offset=&quot;0&quot;&gt;
+        &lt;phase duration=&quot;33&quot; state=&quot;GgrrGgrr&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; /&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;ygrrygrr&quot;/&gt;
+        &lt;phase duration=&quot;6&quot;  state=&quot;rGrrrGrr&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; /&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;ryrrryrr&quot;/&gt;
+        &lt;phase duration=&quot;33&quot; state=&quot;rrGgrrGg&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; /&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;rrygrryg&quot; earlyTarget=&quot;EW or NSbus&quot;/&gt;
+        &lt;phase duration=&quot;6&quot;  state=&quot;rrrGrrrG&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; /&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;rrryrrry&quot;/&gt;
 
-<span class="w">        </span><span class="cm">&lt;!-- the default switching rules (prolong phase depending on observed gaps) --&gt;</span>
-<span class="w">        </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;EW&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;z:D1.0 &gt; 3 and z:D3.0 &gt; 3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="cm">&lt;!-- prioritization for buses coming from the south --&gt;</span>
-<span class="w">        </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;NSbus&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;3 &gt; z:dBus&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/tlLogic&gt;</span>
-</code></pre></div>
-
+        &lt;!-- the default switching rules (prolong phase depending on observed gaps) --&gt;
+        &lt;condition id=&quot;EW&quot; value=&quot;z:D1.0 &gt; 3 and z:D3.0 &gt; 3&quot;/&gt;
+        &lt;!-- prioritization for buses coming from the south --&gt;
+        &lt;condition id=&quot;NSbus&quot; value=&quot;3 &gt; z:dBus&quot;/&gt;
+    &lt;/tlLogic&gt;
+</code></pre>
 <h3 id="overriding_phase_attributes_with_expressions">Overriding Phase Attributes with Expressions<a class="headerlink" href="#overriding_phase_attributes_with_expressions" title="Permanent link">#</a></h3>
 <p>By default, the phase attributes 'minDur', 'maxDur', 'earliestEnd' and 'latestEnd' are defined numerically (or left undefined).
 It may be desirable to redefine these attributes with expressions (i.e. condition ids or condition values) for the following reasons:</p>
@@ -1051,39 +1038,37 @@ It may be desirable to redefine these attributes with expressions (i.e. conditio
 <li>the phase definitions shall be reused for multiple programs and all variability shall be expressed in table of constants (defined via <code>&lt;conditions&gt;</code>s)</li>
 </ul>
 <p>To override these attributes, their value in the <code>&lt;phase&gt;</code> must be defined as <code>-1</code>. For each phase and attribute a corresponding condition must be defined with the <code>id = &lt;ATTRNAME&gt;:&lt;PHASEINDEX&gt;</code> as in the example below:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;actuated&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;P1&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;33&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;GgrrGgrr&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;65&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;NS&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;ygrrygrr&quot;</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;NS&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rGrrrGrr&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;65&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;NSL&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;ryrrryrr&quot;</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;NSL&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;33&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rrGgrrGg&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;-1&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;-1&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;EW&quot;</span><span class="w"> </span><span class="na">earliestEnd=</span><span class="s">&quot;-1&quot;</span><span class="w"> </span><span class="na">latestEnd=</span><span class="s">&quot;-1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrygrryg&quot;</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;EW&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;6&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrrGrrrG&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;65&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;EWL&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;3&quot;</span><span class="w">  </span><span class="na">state=</span><span class="s">&quot;rrryrrry&quot;</span><span class="w"> </span><span class="na">earlyTarget=</span><span class="s">&quot;EWL&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;tlLogic id=&quot;C&quot; type=&quot;actuated&quot; programID=&quot;P1&quot; offset=&quot;0&quot;&gt;
+        &lt;phase duration=&quot;33&quot; state=&quot;GgrrGgrr&quot; minDur=&quot;10&quot; maxDur=&quot;65&quot; name=&quot;NS&quot;/&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;ygrrygrr&quot; earlyTarget=&quot;NS&quot;/&gt;
+        &lt;phase duration=&quot;6&quot;  state=&quot;rGrrrGrr&quot; minDur=&quot;10&quot; maxDur=&quot;65&quot; name=&quot;NSL&quot;/&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;ryrrryrr&quot; earlyTarget=&quot;NSL&quot;/&gt;
+        &lt;phase duration=&quot;33&quot; state=&quot;rrGgrrGg&quot; minDur=&quot;-1&quot; maxDur=&quot;-1&quot; name=&quot;EW&quot; earliestEnd=&quot;-1&quot; latestEnd=&quot;-1&quot;/&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;rrygrryg&quot; earlyTarget=&quot;EW&quot;/&gt;
+        &lt;phase duration=&quot;6&quot;  state=&quot;rrrGrrrG&quot; minDur=&quot;10&quot; maxDur=&quot;65&quot; name=&quot;EWL&quot;/&gt;
+        &lt;phase duration=&quot;3&quot;  state=&quot;rrryrrry&quot; earlyTarget=&quot;EWL&quot;/&gt;
 
-<span class="w">        </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;minDur:4&quot;</span><span class="w">      </span><span class="na">value=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;maxDur:4&quot;</span><span class="w">      </span><span class="na">value=</span><span class="s">&quot;65&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;earliestEnd:4&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;60&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;latestEnd:4&quot;</span><span class="w">   </span><span class="na">value=</span><span class="s">&quot;80&quot;</span><span class="nt">/&gt;</span>
+        &lt;condition id=&quot;minDur:4&quot;      value=&quot;10&quot;/&gt;
+        &lt;condition id=&quot;maxDur:4&quot;      value=&quot;65&quot;/&gt;
+        &lt;condition id=&quot;earliestEnd:4&quot; value=&quot;60&quot;/&gt;
+        &lt;condition id=&quot;latestEnd:4&quot;   value=&quot;80&quot;/&gt;
 
-<span class="w">    </span><span class="nt">&lt;/tlLogic&gt;</span>
-</code></pre></div>
-
+    &lt;/tlLogic&gt;
+</code></pre>
 <h3 id="storing_and_modifying_custom_data">Storing and modifying custom data<a class="headerlink" href="#storing_and_modifying_custom_data" title="Permanent link">#</a></h3>
 <p>The <code>&lt;condition&gt;</code> elements described above can be used to define complex expressions as well as numerical constants that control program operation.
 It may sometimes be useful to store and modify numerical values that persist over consecutive invocations of the control logic. To this end the element <code>&lt;assignment&gt;</code>  may be used as a child element of <code>&lt;tlLogic&gt;</code> to define conditional assignment of new values to <a href="#named_expressions">named expressions</a>:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;example&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;actuated&quot;</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
+<pre><code class="language-xml">&lt;tlLogic id=&quot;example&quot; type=&quot;actuated&quot; ...&gt;
 
-<span class="w">        </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;NS&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;nSw&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+        &lt;condition id=&quot;NS&quot; value=&quot;0&quot;/&gt;
+        &lt;condition id=&quot;nSw&quot; value=&quot;0&quot;/&gt;
 
-<span class="w">        </span><span class="nt">&lt;assignment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;nSw&quot;</span><span class="w"> </span><span class="na">check=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;nSw + 1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;assignment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;NS&quot;</span><span class="w">  </span><span class="na">check=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;assignment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;NS&quot;</span><span class="w">  </span><span class="na">check=</span><span class="s">&quot;z:D0.0 &gt; 3 and z:D2.0 &gt; 3&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span>...
-<span class="nt">&lt;/tlLogic&gt;</span>
-</code></pre></div>
-
+        &lt;assignment id=&quot;nSw&quot; check=&quot;1&quot; value=&quot;nSw + 1&quot;/&gt;
+        &lt;assignment id=&quot;NS&quot;  check=&quot;1&quot; value=&quot;0&quot;/&gt;
+        &lt;assignment id=&quot;NS&quot;  check=&quot;z:D0.0 &gt; 3 and z:D2.0 &gt; 3&quot; value=&quot;1&quot;/&gt;
+   ...
+&lt;/tlLogic&gt;
+</code></pre>
 <ul>
 <li><strong>id</strong> may be any alphanumeric id</li>
 <li><strong>check</strong> may be any expression which is permitted for condition values</li>
@@ -1098,18 +1083,17 @@ It may sometimes be useful to store and modify numerical values that persist ove
 <h3 id="custom_function_definitions">Custom function definitions<a class="headerlink" href="#custom_function_definitions" title="Permanent link">#</a></h3>
 <p>Custom functions are a mechanism that allows to execute multiple assignments with custom arguments.
 They are defined with the <code>&lt;function&gt;</code> element within a <code>&lt;tlLogic&gt;</code> as shown below:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;example&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;actuated&quot;</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
+<pre><code class="language-xml">&lt;tlLogic id=&quot;example&quot; type=&quot;actuated&quot; ...&gt;
 
-<span class="w">  </span><span class="nt">&lt;function</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;FNAME&quot;</span><span class="w"> </span><span class="na">nArgs=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
-<span class="w">     </span><span class="nt">&lt;assignment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;COND1&quot;</span><span class="w"> </span><span class="na">check=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;$1 + $2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">     </span><span class="nt">&lt;assignment</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;$0&quot;</span><span class="w"> </span><span class="na">check=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;COND1 * COND1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/function&gt;</span>
+  &lt;function id=&quot;FNAME&quot; nArgs=&quot;2&quot;&gt;
+     &lt;assignment id=&quot;COND1&quot; check=&quot;1&quot; value=&quot;$1 + $2&quot;/&gt;
+     &lt;assignment id=&quot;$0&quot; check=&quot;1&quot; value=&quot;COND1 * COND1&quot;/&gt;
+  &lt;/function&gt;
 
-<span class="w">  </span><span class="nt">&lt;condition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;COND2&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;FNAME:3,4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span>...
-<span class="nt">&lt;/tlLogic&gt;</span>
-</code></pre></div>
-
+  &lt;condition id=&quot;COND2&quot; value=&quot;FNAME:3,4&quot;/&gt;
+   ...
+&lt;/tlLogic&gt;
+</code></pre>
 <ul>
 <li><strong>id</strong> may be any alphanumeric string</li>
 <li><strong>nArgs</strong> is the number of arguments required by the function</li>
@@ -1126,19 +1110,18 @@ They are defined with the <code>&lt;function&gt;</code> element within a <code>&
 <p>Similar to the control by time gaps between vehicles, a phase
 prolongation can also be triggered by the presence of vehicles with time
 loss. A TLS with this actuation type can be defined as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;my_program&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;delay_based&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;detectorRange&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;minTimeLoss&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;file&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NULL&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;freq&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;300&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;show-detectors&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;extendMaxDur&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="language-xml">&lt;tlLogic id=&quot;0&quot; programID=&quot;my_program&quot; offset=&quot;0&quot; type=&quot;delay_based&quot;&gt;
+  &lt;param key=&quot;detectorRange&quot; value=&quot;100&quot; /&gt;
+  &lt;param key=&quot;minTimeLoss&quot; value=&quot;1&quot; /&gt;
+  &lt;param key=&quot;file&quot; value=&quot;NULL&quot;/&gt;
+  &lt;param key=&quot;freq&quot; value=&quot;300&quot;/&gt;
+  &lt;param key=&quot;show-detectors&quot; value=&quot;false&quot;/&gt;
+  &lt;param key=&quot;extendMaxDur&quot; value=&quot;false&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;31&quot;</span><span class="w"> </span><span class="na">minDur=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">maxDur=</span><span class="s">&quot;45&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;GGggrrrrGGggrrrr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span>...
-<span class="nt">&lt;/tlLogic&gt;</span>
-</code></pre></div>
-
+  &lt;phase duration=&quot;31&quot; minDur=&quot;5&quot; maxDur=&quot;45&quot; state=&quot;GGggrrrrGGggrrrr&quot;/&gt;
+  ...
+&lt;/tlLogic&gt;
+</code></pre>
 <p>Here, the <code>detectorRange</code> specifies the upstream detection range in meters measured
 from the stop line. Per default (if the parameter is left undefined) the
 underlying <a href="Output/Lanearea_Detectors_%28E2%29.html">E2
@@ -1165,9 +1148,8 @@ lane area detectors</a>.</li>
 </ul>
 <h3 id="custom_detectors_1">Custom Detectors<a class="headerlink" href="#custom_detectors_1" title="Permanent link">#</a></h3>
 <p>To use custom detectors (i.e. for custom placement or output) additional parameters can be defined where KEY is a lane that is incoming to the traffic light and VALUE is a user-defined laneAreaDetector.</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;gneE42_2&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;customDetector1&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;param key=&quot;gneE42_2&quot; value=&quot;customDetector1&quot;/&gt;
+</code></pre>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Custom detectors only work when the 'tlLogic' is loaded from an additional file.</p>
@@ -1179,9 +1161,8 @@ Association' commonly used throughout the United States.
 Detailed documentation is at <a href="NEMA.html">NEMA</a>.</p>
 <h3 id="custom_detectors_2">Custom Detectors<a class="headerlink" href="#custom_detectors_2" title="Permanent link">#</a></h3>
 <p>To use custom detectors (i.e. for custom placement or output) additional parameters can be defined where KEY is a lane that is incoming to the traffic light and VALUE is a user-defined laneAreaDetector.</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;gneE42_2&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;customDetector1&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;param key=&quot;gneE42_2&quot; value=&quot;customDetector1&quot;/&gt;
+</code></pre>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Custom detectors only work when the 'tlLogic' is loaded from an additional file.</p>
@@ -1197,16 +1178,14 @@ describe the same tls.</p>
 <p>Assuming the program as defined above is put in a file called
 <em>tls.add.xml</em> it can be loaded in
 <a href="../sumo.html">sumo</a>/<a href="../sumo-gui.html">sumo-gui</a> like this</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sumo -a tls.add.xml ...&lt;other options for network and routes&gt;</span>
-</code></pre></div>
-
+<pre><code>sumo -a tls.add.xml ...&lt;other options for network and routes&gt;
+</code></pre>
 <h2 id="switching_tls_off">Switching TLS 'off'<a class="headerlink" href="#switching_tls_off" title="Permanent link">#</a></h2>
 <p>It is also possible to load a program which switches the tls off by
 giving the <code>programID</code> the value
 "<code>off</code>".</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;static&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;off&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;tlLogic id=&quot;0&quot; type=&quot;static&quot; programID=&quot;off&quot;/&gt;
+</code></pre>
 <p>!!! note: The 'off' program can always be used from <a href="#switching_between_pre-defined_programs">TraCI</a>.</p>
 <p>An alternative way to switch all traffic lights to the 'off' program is to set sumo option <strong>--tls.all-off</strong>.</p>
 <h3 id="default_behavior_when_off">Default behavior when 'off'<a class="headerlink" href="#default_behavior_when_off" title="Permanent link">#</a></h3>
@@ -1247,11 +1226,10 @@ using a graphical user interface.</p>
 the special case that only the offset shall be modified it is also
 possible to specify a new offset for an existing traffic light id and
 programID:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">  </span><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;42&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;tlLogic id=&quot;0&quot; programID=&quot;0&quot; offset=&quot;42&quot;/&gt;
+&lt;/additional&gt;
+</code></pre>
 <h1 id="controlling_multiple_junctions_with_the_same_controller">Controlling multiple Junctions with the same controller<a class="headerlink" href="#controlling_multiple_junctions_with_the_same_controller" title="Permanent link">#</a></h1>
 <p>In SUMO, a traffic light controller can control an arbitrary number of
 junctions simultaneously. This is accomplished by one of the following
@@ -1312,16 +1290,15 @@ from 6:00 till 22:00 the day plan, and already defined programs, named
 describe the switch process, we have to describe the switch at first,
 assuming our simulation runs from monday 0.00 (second 0) to monday 0.00
 (second 604800):</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;WAUT</span><span class="w"> </span><span class="na">refTime=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;myWAUT&quot;</span><span class="w"> </span><span class="na">startProg=</span><span class="s">&quot;weekday_night&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;wautSwitch</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;21600&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;weekday_day&quot;</span><span class="nt">/&gt;</span><span class="w">    </span><span class="cm">&lt;!-- monday, 6.00 --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;wautSwitch</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;79200&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;weekday_night&quot;</span><span class="nt">/&gt;</span><span class="w">  </span><span class="cm">&lt;!-- monday, 22.00 --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;wautSwitch</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;108000&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;weekday_day&quot;</span><span class="nt">/&gt;</span><span class="w">   </span><span class="cm">&lt;!-- tuesday, 6.00 --&gt;</span>
-...<span class="w"> </span>further<span class="w"> </span>weekdays<span class="w"> </span>...
-<span class="w">    </span><span class="nt">&lt;wautSwitch</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;453600&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;weekend_day&quot;</span><span class="nt">/&gt;</span><span class="w">   </span><span class="cm">&lt;!-- saturday, 6.00 --&gt;</span>
-...<span class="w"> </span>the<span class="w"> </span>weekend<span class="w"> </span>days<span class="w"> </span>...
-<span class="nt">&lt;/WAUT&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;WAUT refTime=&quot;0&quot; id=&quot;myWAUT&quot; startProg=&quot;weekday_night&quot;&gt;
+    &lt;wautSwitch time=&quot;21600&quot; to=&quot;weekday_day&quot;/&gt;    &lt;!-- monday, 6.00 --&gt;
+    &lt;wautSwitch time=&quot;79200&quot; to=&quot;weekday_night&quot;/&gt;  &lt;!-- monday, 22.00 --&gt;
+    &lt;wautSwitch time=&quot;108000&quot; to=&quot;weekday_day&quot;/&gt;   &lt;!-- tuesday, 6.00 --&gt;
+... further weekdays ...
+    &lt;wautSwitch time=&quot;453600&quot; to=&quot;weekend_day&quot;/&gt;   &lt;!-- saturday, 6.00 --&gt;
+... the weekend days ...
+&lt;/WAUT&gt;
+</code></pre>
 <p>The fields in WAUT have the following meanings:</p>
 <table>
 <thead>
@@ -1381,9 +1358,8 @@ definition is read. Also, the switch steps must be sorted by their
 execution time.</p>
 <p>Additionally, a definition about which tls shall be switched by the WAUT
 must be given, as following:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;wautJunction</span><span class="w"> </span><span class="na">wautID=</span><span class="s">&quot;myWAUT&quot;</span><span class="w"> </span><span class="na">junctionID=</span><span class="s">&quot;RCAS&quot;</span><span class="w"> </span><span class="err">[</span><span class="na">procedure=</span><span class="s">&quot;Stretch&quot;</span><span class="err">]</span><span class="w"> </span><span class="err">[</span><span class="na">synchron=</span><span class="s">&quot;t&quot;</span><span class="err">]</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;wautJunction wautID=&quot;myWAUT&quot; junctionID=&quot;RCAS&quot; [procedure=&quot;Stretch&quot;] [synchron=&quot;t&quot;]/&gt;
+</code></pre>
 <p>Here, the attributes have the following meaning:</p>
 <table>
 <thead>
@@ -1422,29 +1398,28 @@ this is not done in reality.</p>
 <p>A complete definition within an <a href="/docs/sumo.html#format_of_additional_files"><em>additional-file</em></a> is shown below. It would trigger
 switching between programs <strong>S1</strong> and <strong>S2</strong> for traffic light logic
 <strong>X</strong> with an initial program called <strong>0</strong>.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
+<pre><code class="language-xml">&lt;additional&gt;
 
-<span class="w">  </span><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;X&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;static&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;S1&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;Gr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rG&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/tlLogic&gt;</span>
+  &lt;tlLogic id=&quot;X&quot; type=&quot;static&quot; programID=&quot;S1&quot; offset=&quot;0&quot;&gt;
+    &lt;phase duration=&quot;50&quot; state=&quot;Gr&quot;/&gt;
+    &lt;phase duration=&quot;50&quot; state=&quot;rG&quot;/&gt;
+  &lt;/tlLogic&gt;
 
-<span class="w">  </span><span class="nt">&lt;tlLogic</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;X&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;static&quot;</span><span class="w"> </span><span class="na">programID=</span><span class="s">&quot;S2&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;Gr&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;80&quot;</span><span class="w"> </span><span class="na">state=</span><span class="s">&quot;rG&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/tlLogic&gt;</span>
+  &lt;tlLogic id=&quot;X&quot; type=&quot;static&quot; programID=&quot;S2&quot; offset=&quot;0&quot;&gt;
+    &lt;phase duration=&quot;30&quot; state=&quot;Gr&quot;/&gt;
+    &lt;phase duration=&quot;80&quot; state=&quot;rG&quot;/&gt;
+  &lt;/tlLogic&gt;
 
 
-<span class="w">  </span><span class="nt">&lt;WAUT</span><span class="w"> </span><span class="na">startProg=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">refTime=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;w1&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;wautSwitch</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;S1&quot;</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;300&quot;</span><span class="nt">&gt;&lt;/wautSwitch&gt;</span>
-<span class="w">    </span><span class="nt">&lt;wautSwitch</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;SS&quot;</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;800&quot;</span><span class="nt">&gt;&lt;/wautSwitch&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/WAUT&gt;</span>
+  &lt;WAUT startProg=&quot;0&quot; refTime=&quot;100&quot; id=&quot;w1&quot;&gt;
+    &lt;wautSwitch to=&quot;S1&quot; time=&quot;300&quot;&gt;&lt;/wautSwitch&gt;
+    &lt;wautSwitch to=&quot;SS&quot; time=&quot;800&quot;&gt;&lt;/wautSwitch&gt;
+  &lt;/WAUT&gt;
 
-<span class="w">  </span><span class="nt">&lt;wautJunction</span><span class="w"> </span><span class="na">junctionID=</span><span class="s">&quot;X&quot;</span><span class="w"> </span><span class="na">wautID=</span><span class="s">&quot;w1&quot;</span><span class="nt">&gt;&lt;/wautJunction&gt;</span>
+  &lt;wautJunction junctionID=&quot;X&quot; wautID=&quot;w1&quot;&gt;&lt;/wautJunction&gt;
 
-<span class="nt">&lt;additional&gt;</span>
-</code></pre></div>
-
+&lt;additional&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If a traffic light program called "online" is loaded, this program will interrupt WAUT switching at that traffic light. This can be used to override WAUT behavior via TraCI.</p>
@@ -1566,7 +1541,7 @@ The top row contains the phase index but it is possible to change this so it sho
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

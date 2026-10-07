@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -231,26 +232,23 @@ Currently, these functions are (cf. ScalarVariables in <code>src/fmi/modelDescri
 For example, if we need the current position of a vehicle, we retrieve the (output) value of the <code>vehicle.getPosition</code> scalar variable.
 However, due to the above-mentioned limitation of FMI v2, we first need to set the input parameter value for <code>vehicle.getPosition</code>, which is the vehicle ID.
 For this purpose, we utilize the generic <code>setGetterParameters</code> input scalar variable right before retrieving the output variable, as indicated by the following Python code snippet:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">fmu</span><span class="o">.</span><span class="n">setString</span><span class="p">([</span><span class="n">valueRefs</span><span class="p">[</span><span class="s1">&#39;setGetterParameters&#39;</span><span class="p">]],</span> <span class="p">[</span><span class="s2">&quot;ego&quot;</span><span class="p">])</span>
-<span class="n">resultList</span> <span class="o">=</span> <span class="n">fmu</span><span class="o">.</span><span class="n">getString</span><span class="p">([</span><span class="n">valueRefs</span><span class="p">[</span><span class="s1">&#39;vehicle.getPosition&#39;</span><span class="p">]])</span>
-</code></pre></div>
-
+<pre><code class="language-python">fmu.setString([valueRefs['setGetterParameters']], [&quot;ego&quot;])
+resultList = fmu.getString([valueRefs['vehicle.getPosition']])
+</code></pre>
 <p>Note that <code>setGetterParameters</code>, as its name implies, is a generic catch-all input scalar variable to set the input parameters for the subsequent retrieval of an output scalar variable's value.
 In case of multiple input parameters, e.g., for <code>vehicle.getParameterWithKey</code>, parameter values need to be concatenated to a single string with a space delimiter.
 Similarly, output values are returned as a concatenated string with the same delimiter:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">fmu</span><span class="o">.</span><span class="n">setString</span><span class="p">([</span><span class="n">valueRefs</span><span class="p">[</span><span class="s1">&#39;setGetterParameters&#39;</span><span class="p">]],</span> <span class="p">[</span><span class="s2">&quot;ego meaningOfLife&quot;</span><span class="p">])</span>
-<span class="n">resultList</span> <span class="o">=</span> <span class="n">fmu</span><span class="o">.</span><span class="n">getString</span><span class="p">([</span><span class="n">valueRefs</span><span class="p">[</span><span class="s1">&#39;vehicle.getParameterWithKey&#39;</span><span class="p">]])</span>
-<span class="n">key</span> <span class="o">=</span> <span class="n">resultList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">value</span> <span class="o">=</span> <span class="n">resultList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
-</code></pre></div>
-
+<pre><code class="language-python">fmu.setString([valueRefs['setGetterParameters']], [&quot;ego meaningOfLife&quot;])
+resultList = fmu.getString([valueRefs['vehicle.getParameterWithKey']])
+key = resultList[0].decode('UTF-8').split()[0]
+value = resultList[0].decode('UTF-8').split()[1]
+</code></pre>
 <p>This convention of passing values as concatenated strings stems from the limitation of FMI v2 that vectors and other complex data types are not yet supported.</p>
 <h2 id="interfacing_the_sumo_fmu_with_python">Interfacing the SUMO FMU with Python<a class="headerlink" href="#interfacing_the_sumo_fmu_with_python" title="Permanent link">#</a></h2>
 <p>The <a href="https://fmpy.readthedocs.io/en/latest/">FMPy</a> Python package can be used to simulate as well as validate FMUs and is the recommended way to interface the SUMO FMU with Python.
 Installing FMPy on Linux is done with:</p>
-<div class="codehilite"><pre><span></span><code>python -m pip install fmpy
-</code></pre></div>
-
+<pre><code>python -m pip install fmpy
+</code></pre>
 <p>An easy way to get started with FMPy is to check out the <code>runner.py</code> for the SUMO fmi test suite located in <code>tests/complex/fmi</code> (the code snippets from above can be found here, as well).</p>
                 </main>
           </div>
@@ -259,7 +257,7 @@ Installing FMPy on Linux is done with:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

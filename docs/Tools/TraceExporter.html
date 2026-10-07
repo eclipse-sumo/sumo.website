@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -296,9 +297,8 @@ is located in <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools/. Python must be
 <h1 id="usage_description">Usage Description<a class="headerlink" href="#usage_description" title="Permanent link">#</a></h1>
 <p>You convert a given <a href="../Simulation/Output/FCDOutput.html">fcd output</a>
 into a format using a command like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">traceExporter.py --fcd-input myFCDoutput.xml --omnet-output myOMNETfile.xml</span>
-</code></pre></div>
-
+<pre><code>traceExporter.py --fcd-input myFCDoutput.xml --omnet-output myOMNETfile.xml
+</code></pre>
 <p>In the case given above, a file for <a href="https://www.omnetpp.org/">OMNET</a>
 will be built.</p>
 <p>In the following, the command line options are described.</p>
@@ -549,10 +549,9 @@ input has geo coordinates the bounding box needs to have geo coordinates
 as well). It is currently not possible to give the same output file for
 different filter lines.</p>
 <p>Example filter file:</p>
-<div class="codehilite"><pre><span></span><code><span class="mf">0</span><span class="p">;</span><span class="mf">50</span><span class="p">;</span><span class="mf">500</span><span class="p">,</span><span class="mf">400</span><span class="p">,</span><span class="mf">600</span><span class="p">,</span><span class="mf">500</span><span class="p">;</span><span class="n">out</span><span class="mf">.</span><span class="n">xml</span>
-<span class="mf">50</span><span class="p">;</span><span class="mf">100</span><span class="p">;</span><span class="mf">550</span><span class="p">,</span><span class="mf">450</span><span class="p">,</span><span class="mf">600</span><span class="p">,</span><span class="mf">500</span><span class="p">;</span><span class="n">out2</span><span class="mf">.</span><span class="n">xml</span>
-</code></pre></div>
-
+<pre><code>0;50;500,400,600,500;out.xml
+50;100;550,450,600,500;out2.xml
+</code></pre>
 <h2 id="processing_options">Processing Options<a class="headerlink" href="#processing_options" title="Permanent link">#</a></h2>
 <p>Several options allow to fine-tune the processing.</p>
 <table>
@@ -633,7 +632,7 @@ different filter lines.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -226,14 +227,12 @@ If you are on Windows, you need a separate X-Server (e.g. <a href="https://sourc
 <p>This tutorial demonstrates how to use the SUMO GUI without installing the software on your local machine.</p>
 <h2 id="getting_the_docker_image">Getting the docker image<a class="headerlink" href="#getting_the_docker_image" title="Permanent link">#</a></h2>
 <p>You can either get the latest docker image from the SUMO docker registry by using</p>
-<div class="codehilite"><pre><span></span><code><span class="w">  </span>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/eclipse-sumo/sumo:latest
-</code></pre></div>
-
+<pre><code class="language-shell">  docker pull ghcr.io/eclipse-sumo/sumo:latest
+</code></pre>
 <p>or build your own local version of the image by checking out the <a href="https://github.com/eclipse-sumo/sumo">SUMO repository</a> and executing:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nb">cd</span><span class="w"> </span>build_config/docker
-<span class="w">  </span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>ghcr.io/eclipse-sumo/sumo:latest<span class="w"> </span>-f<span class="w"> </span>Dockerfile.ubuntu.git<span class="w"> </span>.
-</code></pre></div>
-
+<pre><code class="language-shell">  cd build_config/docker
+  docker build -t ghcr.io/eclipse-sumo/sumo:latest -f Dockerfile.ubuntu.git .
+</code></pre>
 <h2 id="starting_the_container">Starting the container<a class="headerlink" href="#starting_the_container" title="Permanent link">#</a></h2>
 <p>This section describes how to start the container.</p>
 <p>It is only necessary to start a single container.
@@ -249,16 +248,15 @@ SUMO does currently not work with Wayland and requires some compatibility with X
 </ul>
 <p>We also need a directory to store our results persistent. In this example we are using <code>~/sumo-projs</code> for this.</p>
 <p>So in total the command for starting the container looks like this:</p>
-<div class="codehilite"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/sumo-projs/
-docker<span class="w"> </span>run<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-e<span class="w"> </span><span class="nv">DISPLAY</span><span class="o">=</span><span class="nv">$DISPLAY</span><span class="w"> </span>-v<span class="w"> </span>/tmp/.X11-unix:/tmp/.X11-unix:rw<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-e<span class="w"> </span><span class="nv">XAUTHORITY</span><span class="o">=</span><span class="nv">$XAUTHORITY</span><span class="w"> </span>-v<span class="w"> </span><span class="nv">$XAUTHORITY</span>:<span class="nv">$XAUTHORITY</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-v<span class="w"> </span>~/sumo-projs/:/sumo-projs<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--workdir<span class="w"> </span>/sumo-projs<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-it<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>ghcr.io/eclipse-sumo/sumo:latest<span class="w"> </span>bash
-</code></pre></div>
-
+<pre><code class="language-shell">mkdir -p ~/sumo-projs/
+docker run \
+    -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+    -e XAUTHORITY=$XAUTHORITY -v $XAUTHORITY:$XAUTHORITY \
+    -v ~/sumo-projs/:/sumo-projs \
+    --workdir /sumo-projs \
+    -it \
+    ghcr.io/eclipse-sumo/sumo:latest bash
+</code></pre>
 <p>You will then have a shell, where you can start the GUI applications.
 E.g. by typing <code>netedit</code> or <code>sumo-gui</code>.</p>
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">#</a></h3>
@@ -266,14 +264,13 @@ E.g. by typing <code>netedit</code> or <code>sumo-gui</code>.</p>
 To then tell the applications in the container to use this X-Server, we add <code>-e DISPLAY=host.docker.internal:0</code> to the command-line.</p>
 <p>We also need a directory to store our results persistent. In this example we are using <code>C:\sumo-projs</code> for this.</p>
 <p>So in total the command for starting the container looks like this:</p>
-<div class="codehilite"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-e<span class="w"> </span><span class="nv">DISPLAY</span><span class="o">=</span>host.docker.internal:0
-<span class="w">    </span>-v<span class="w"> </span>C:<span class="se">\s</span>umo-projs:/sumo-projs<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--workdir<span class="w"> </span>/sumo-projs<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-it<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>ghcr.io/eclipse-sumo/sumo:latest<span class="w"> </span>bash
-</code></pre></div>
-
+<pre><code class="language-shell">docker run \
+    -e DISPLAY=host.docker.internal:0
+    -v C:\sumo-projs:/sumo-projs \
+    --workdir /sumo-projs \
+    -it \
+    ghcr.io/eclipse-sumo/sumo:latest bash
+</code></pre>
 <p>You will then have a shell, where you can start the GUI applications.
 E.g. by typing <code>netedit</code> or <code>sumo-gui</code>.</p>
 <h2 id="creating_and_running_the_simulation">Creating and Running the Simulation<a class="headerlink" href="#creating_and_running_the_simulation" title="Permanent link">#</a></h2>
@@ -287,7 +284,7 @@ E.g. by typing <code>netedit</code> or <code>sumo-gui</code>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

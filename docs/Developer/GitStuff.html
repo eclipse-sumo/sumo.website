@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -219,25 +220,22 @@ Last edit: 06 October 2026
 <p>Occasionally, when adding binary files or files with different line endings to the
 repository, a working copy may enter a state with changes that can not
 be reverted (by stash or checkout).</p>
-<div class="codehilite"><pre><span></span><code><span class="n">warning</span><span class="o">:</span><span class="w"> </span><span class="n">CRLF</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">replaced</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">LF</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">build_config</span><span class="sr">/wix/s</span><span class="n">umo</span><span class="o">.</span><span class="na">wxs</span><span class="o">.</span>
-<span class="n">The</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">its</span><span class="w"> </span><span class="n">original</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="n">endings</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">working</span><span class="w"> </span><span class="n">directory</span><span class="o">.</span>
-</code></pre></div>
-
+<pre><code>warning: CRLF will be replaced by LF in build_config/wix/sumo.wxs.
+The file will have its original line endings in your working directory.
+</code></pre>
 <p>Solution
 (<a href="https://stackoverflow.com/questions/1967370/git-replacing-lf-with-crlf">stackoverflow</a>):</p>
-<div class="codehilite"><pre><span></span><code>git rm --cached -r .
+<pre><code>git rm --cached -r .
 git reset --hard
-</code></pre></div>
-
+</code></pre>
 <h2 id="plot_number_of_issues_over_time">Plot number of issues over time<a class="headerlink" href="#plot_number_of_issues_over_time" title="Permanent link">#</a></h2>
 <p><a href="https://sumo.dlr.de/ghis/">https://sumo.dlr.de/ghis/</a></p>
 <h2 id="git_commit_hooks">Git commit hooks<a class="headerlink" href="#git_commit_hooks" title="Permanent link">#</a></h2>
 <p>We are using <a href="https://pre-commit.com">pre-commit</a>. To enable it for your checkout it should suffice to do
 the following calls in your git repo:</p>
-<div class="codehilite"><pre><span></span><code>pip install pre-commit
+<pre><code>pip install pre-commit
 pre-commit install
-</code></pre></div>
-
+</code></pre>
 <p>It will enable checks for trailing whitespace, LF at the end of every file as well as parsable yaml files
 and a maximum file size of 500kb. Furthermore it will do the <a href="CodeStyle.html">style checks</a> for C++ and Python
 using astyle and autopep8. Every commit which does not pass the tests will fail.
@@ -255,7 +253,7 @@ run <code>pre-commit run --all</code>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

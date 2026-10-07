@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -296,12 +297,11 @@ the position of an induction loop. The network, being a previously built
 SUMO-network, is supplied to the <a href="../dfrouter.html">dfrouter</a> as
 usual using the <strong>--net-file &lt;SUMO_NET_FILE&gt;</strong> (<strong>-n</strong>) option, the list of induction loops using <strong>--detector-files &lt;DETECTOR_FILE&gt;[,&lt;DETECTOR_FILE&gt;]+</strong> (<strong>-d</strong> for
 short). A detector file should look as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;detectors&gt;</span>
-<span class="w">    </span><span class="nt">&lt;detectorDefinition</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;DETECTOR_ID&gt;&quot;</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;&lt;LANE_ID&gt;&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;&lt;POS&gt;&quot;</span><span class="nt">/&gt;</span>
-...<span class="w"> </span>further<span class="w"> </span>detectors<span class="w"> </span>...
-<span class="nt">&lt;/detectors&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;detectors&gt;
+    &lt;detectorDefinition id=&quot;&lt;DETECTOR_ID&gt;&quot; lane=&quot;&lt;LANE_ID&gt;&quot; pos=&quot;&lt;POS&gt;&quot;/&gt;
+... further detectors ...
+&lt;/detectors&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>it is also possible to load <a href="../Simulation/Output/Induction_Loops_Detectors_%28E1%29.html">inductionLoop definitions</a> with option <strong>--detector-files</strong>. This may be more convenient since they can be created with <a href="../Netedit/index.html">netedit</a>.</p>
@@ -355,11 +355,10 @@ real-world detectors to compute flows across the modelled network. The
 flows are given to dfrouter using <strong>--measure-files</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a> (or <strong>-f &lt;DETECTOR_FLOWS&gt;[,&lt;DETECTOR_FLOWS&gt;]+</strong>. They are assumed to be stored
 in CSV-format using ';' as dividing character. The file should look as
 follows:</p>
-<div class="codehilite"><pre><span></span><code>Detector;Time;qPKW;qLKW;vPKW;vLKW
+<pre><code>Detector;Time;qPKW;qLKW;vPKW;vLKW
 myDet1;0;10;2;100;80
 ... further entries ...
-</code></pre></div>
-
+</code></pre>
 <p>This means the first line contains the header with the column names. Their order
 is not of importance, but at least the following columns must be
 included:</p>
@@ -463,20 +462,17 @@ for resolving references</a>.
 Furthermore, <a href="../dfrouter.html">dfrouter</a> currently returns unsorted
 vehicles in its emitters-output. Assuming that
 <a href="../dfrouter.html">dfrouter</a> was called with the options</p>
-<div class="codehilite"><pre><span></span><code><span class="n">dfrouter --net-file net.net.xml --routes-output routes.rou.xml --emitters-output vehicles.rou.xml --measure-files flows.txt</span>
-</code></pre></div>
-
+<pre><code>dfrouter --net-file net.net.xml --routes-output routes.rou.xml --emitters-output vehicles.rou.xml --measure-files flows.txt
+</code></pre>
 <p>sumo must be called in the following way:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sumo --net-file net.net.xml --additional-files routes.rou.xml,vehicles.rou.xml</span>
-</code></pre></div>
-
+<pre><code>sumo --net-file net.net.xml --additional-files routes.rou.xml,vehicles.rou.xml
+</code></pre>
 <p>If you run the tool
 <a href="../Tools/Routes.html#sort_routespy">Tools/Routes#sort_routes.py</a>
 to sort the vehicles, either of the following will work:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sumo --net-file net.net.xml --route-files routes.rou.xml,sorted_vehicles.rou.xml</span>
-<span class="n">sumo --net-file net.net.xml --route-files sorted_vehicles.rou.xml --additional-files routes.rou.xml</span>
-</code></pre></div>
-
+<pre><code>sumo --net-file net.net.xml --route-files routes.rou.xml,sorted_vehicles.rou.xml
+sumo --net-file net.net.xml --route-files sorted_vehicles.rou.xml --additional-files routes.rou.xml
+</code></pre>
 <h1 id="flowrouterpy">flowrouter.py<a class="headerlink" href="#flowrouterpy" title="Permanent link">#</a></h1>
 <p>The <a href="../Tools/Detector.html#flowrouterpy">flowrouter</a> tool <a href="https://doi.org/10.29007/rjj7">improves on dfrouter</a> by dealing better with missing data and finding a set of routes that maximize the total flow (within the limits given by the count data). It provides several options to restrict the set of generated routes and thus allows for calibrating the generated traffic.</p>
 <h1 id="jtcrouterpy">jtcrouter.py<a class="headerlink" href="#jtcrouterpy" title="Permanent link">#</a></h1>
@@ -492,7 +488,7 @@ to sort the vehicles, either of the following will work:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

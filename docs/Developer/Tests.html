@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -271,13 +272,11 @@ and the additional info there.</p>
 - <strong>Text editor:</strong> <code>geany</code> - for viewing and editing files</p>
 <p>Installation commands:</p>
 <p><strong>On macOS:</strong></p>
-<div class="codehilite"><pre><span></span><code>brew install meld geany
-</code></pre></div>
-
+<pre><code>brew install meld geany
+</code></pre>
 <p><strong>On Linux (Debian/Ubuntu):</strong></p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install meld geany
-</code></pre></div>
-
+<pre><code>sudo apt-get install meld geany
+</code></pre>
 <p><strong>On Windows:</strong></p>
 <p>Download and install from
 <a href="https://www.geany.org/">Geany project page</a> by following the provided installation instructions.</p>
@@ -289,11 +288,10 @@ and the additional info there.</p>
 <h2 id="customize_configuration">Customize configuration<a class="headerlink" href="#customize_configuration" title="Permanent link">#</a></h2>
 <p>You need to configure TextTest to use your installed diff viewer and text editor. Create or edit the personal config file
 <code>$HOME/.texttest/config</code> (on Windows: <code>%USERPROFILE%\.texttest\config</code>) and add the following options:</p>
-<div class="codehilite"><pre><span></span><code>   diff_program:meld
+<pre><code>   diff_program:meld
    view_program:geany
    static_collapse_suites:1
-</code></pre></div>
-
+</code></pre>
 <p>The <code>diff_program</code> setting specifies which tool to use for comparing files, and <code>view_program</code> specifies the text editor for viewing files. The <code>static_collapse_suites</code> flag collapses the static test suites on program start.</p>
 <p><strong>Note:</strong> If you do not overwrite the <code>diff_program</code> and <code>view_program</code> lines, TextTest will try to use tkdiff and emacs automatically.</p>
 <h2 id="recommended_python_packages">Recommended python packages<a class="headerlink" href="#recommended_python_packages" title="Permanent link">#</a></h2>
@@ -325,10 +323,9 @@ example application.</p>
   application within it. In our case the resulting file will look as
   this:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>call %~dp0\testEnv.bat %1
+<pre><code>call %~dp0\testEnv.bat %1
 start %TEXTTESTPY% -a polyconvert
-</code></pre></div>
-
+</code></pre>
 <ul>
 <li>add the application to the list of applications that are tested each
 night by<ul>
@@ -337,15 +334,13 @@ night by<ul>
 </ul>
 </li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="n">POLYCONVERT_BINARY</span><span class="o">=</span><span class="s2">&quot;$SUMO_BINDIR/polyconvert&quot;</span>
-</code></pre></div>
-
+<pre><code>export POLYCONVERT_BINARY=&quot;$SUMO_BINDIR/polyconvert&quot;
+</code></pre>
 <ul>
 <li>adding it to <strong>testEnv.bat</strong>; in our case, the following line was added:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>set POLYCONVERT_BINARY=%~dp0\..\bin\polyconvert%1.exe
-</code></pre></div>
-
+<pre><code>set POLYCONVERT_BINARY=%~dp0\..\bin\polyconvert%1.exe
+</code></pre>
 <ul>
 <li>build a test folder for the application, named as the application
   itself (without the ".exe" extension), in our case the folder is
@@ -365,17 +360,16 @@ night by<ul>
 </li>
 </ul>
 <p>The initial file looks as following:</p>
-<div class="codehilite"><pre><span></span><code><span class="nl">import_config_file</span><span class="p">:..</span><span class="o">/</span><span class="n">config_all</span>
-<span class="nc">binary</span><span class="err">:$</span><span class="n">POLYCONVERT_BINARY</span>
-<span class="nl">copy_test_path</span><span class="p">:</span><span class="n">input_net</span><span class="p">.</span><span class="n">net</span><span class="p">.</span><span class="nc">xml</span>
-<span class="o">[</span><span class="n">collate_file</span><span class="o">]</span>
-<span class="nl">config</span><span class="p">:</span><span class="n">config</span><span class="p">.</span><span class="n">cfg</span>
-<span class="nf">log</span><span class="err">:</span><span class="nf">log</span><span class="p">.</span><span class="n">txt</span>
-<span class="o">[</span><span class="n">run_dependent_text</span><span class="o">]</span>
-<span class="k">output</span><span class="err">:</span><span class="n">polyconvert</span><span class="p">.</span><span class="n">exe</span><span class="err">{</span><span class="nf">REPLACE</span><span class="w"> </span><span class="n">polyconvert</span><span class="err">}</span>
-<span class="nl">net</span><span class="p">:</span><span class="n">Version</span>
-</code></pre></div>
-
+<pre><code>import_config_file:../config_all
+binary:$POLYCONVERT_BINARY
+copy_test_path:input_net.net.xml
+[collate_file]
+config:config.cfg
+log:log.txt
+[run_dependent_text]
+output:polyconvert.exe{REPLACE polyconvert}
+net:Version
+</code></pre>
 <ul>
 <li>build a top-level testsuite file; its name is "testsuite", the
 extension is the application's to test name, so in our case it's
@@ -483,7 +477,7 @@ available you should of course prefer Python3.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

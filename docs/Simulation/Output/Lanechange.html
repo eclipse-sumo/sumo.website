@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -226,13 +227,12 @@ the name of the file the output will be written to. Any other file with
 this name will be overwritten, the destination folder must exist.</p>
 <h2 id="generated_output">Generated Output<a class="headerlink" href="#generated_output" title="Permanent link">#</a></h2>
 <p>The generated XML file looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;lanechanges&gt;</span>
-<span class="w">  </span><span class="nt">&lt;change</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;VEHICLE_ID&gt;&quot;</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;&lt;TIME_STAMP&gt;&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;&lt;SOURCE_LANE&gt;&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;&lt;DESTINATION_LANE&gt;&quot;</span><span class="w"> </span><span class="na">reason=</span><span class="s">&quot;&lt;CHANGE_REASON&gt;&quot;</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span>...
+<pre><code class="language-xml">&lt;lanechanges&gt;
+  &lt;change id=&quot;&lt;VEHICLE_ID&gt;&quot; time=&quot;&lt;TIME_STAMP&gt;&quot; from=&quot;&lt;SOURCE_LANE&gt;&quot; to=&quot;&lt;DESTINATION_LANE&gt;&quot; reason=&quot;&lt;CHANGE_REASON&gt;&quot; ... /&gt;
+  ...
 
-<span class="nt">&lt;/lanechanges&gt;</span>
-</code></pre></div>
-
+&lt;/lanechanges&gt;
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -341,14 +341,13 @@ this name will be overwritten, the destination folder must exist.</p>
 <p>If the simulation is performed with the
 <a href="../SublaneModel.html">sublane-model</a>, the options <strong>--lanechange-output.ended</strong> and <strong>--lanechange-output.started</strong>
 can be used to obtain additional output elements:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;lanechanges&gt;</span>
-<span class="w">  </span><span class="nt">&lt;changeStarted</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;VEHICLE_ID&gt;&quot;</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;&lt;TIME_STAMP&gt;&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;&lt;SOURCE_LANE&gt;&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;&lt;DESTINATION_LANE&gt;&quot;</span><span class="w"> </span><span class="na">reason=</span><span class="s">&quot;&lt;CHANGE_REASON&gt;&quot;</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;change</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;VEHICLE_ID&gt;&quot;</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;&lt;TIME_STAMP&gt;&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;&lt;SOURCE_LANE&gt;&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;&lt;DESTINATION_LANE&gt;&quot;</span><span class="w"> </span><span class="na">reason=</span><span class="s">&quot;&lt;CHANGE_REASON&gt;&quot;</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;changeEnded</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;VEHICLE_ID&gt;&quot;</span><span class="w"> </span><span class="na">time=</span><span class="s">&quot;&lt;TIME_STAMP&gt;&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;&lt;SOURCE_LANE&gt;&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;&lt;DESTINATION_LANE&gt;&quot;</span><span class="w"> </span><span class="na">reason=</span><span class="s">&quot;&lt;CHANGE_REASON&gt;&quot;</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">  </span>...
-<span class="nt">&lt;/lanechanges&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;lanechanges&gt;
+  &lt;changeStarted id=&quot;&lt;VEHICLE_ID&gt;&quot; time=&quot;&lt;TIME_STAMP&gt;&quot; from=&quot;&lt;SOURCE_LANE&gt;&quot; to=&quot;&lt;DESTINATION_LANE&gt;&quot; reason=&quot;&lt;CHANGE_REASON&gt;&quot; ... /&gt;
+  &lt;change id=&quot;&lt;VEHICLE_ID&gt;&quot; time=&quot;&lt;TIME_STAMP&gt;&quot; from=&quot;&lt;SOURCE_LANE&gt;&quot; to=&quot;&lt;DESTINATION_LANE&gt;&quot; reason=&quot;&lt;CHANGE_REASON&gt;&quot; ... /&gt;
+  &lt;changeEnded id=&quot;&lt;VEHICLE_ID&gt;&quot; time=&quot;&lt;TIME_STAMP&gt;&quot; from=&quot;&lt;SOURCE_LANE&gt;&quot; to=&quot;&lt;DESTINATION_LANE&gt;&quot; reason=&quot;&lt;CHANGE_REASON&gt;&quot; ... /&gt;
+  ...
+&lt;/lanechanges&gt;
+</code></pre>
 <ul>
 <li>A <code>changeStarted</code>-element is recorded when the vehicle starts to
   perform lateral movements for reasons other than <em>sublane</em>.</li>
@@ -373,7 +372,7 @@ lanechange.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -251,33 +252,28 @@ you can download them from the <a href="../Downloads.html">Download</a> page.</p
 <h1 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">#</a></h1>
 <p>If you run debian or ubuntu, SUMO is part of the regular distribution
 and can be installed like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">sumo</span><span class="w"> </span><span class="n">sumo</span><span class="o">-</span><span class="n">tools</span><span class="w"> </span><span class="n">sumo</span><span class="o">-</span><span class="n">doc</span>
-</code></pre></div>
-
+<pre><code>sudo apt-get install sumo sumo-tools sumo-doc
+</code></pre>
 <p>If you need a more up-to-date ubuntu version, it may be found in a
 separate ppa, which is added like this:</p>
-<div class="codehilite"><pre><span></span><code>sudo add-apt-repository ppa:sumo/stable
+<pre><code>sudo add-apt-repository ppa:sumo/stable
 sudo apt-get update
-</code></pre></div>
-
+</code></pre>
 <p>and then again</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">sumo</span><span class="w"> </span><span class="n">sumo</span><span class="o">-</span><span class="n">tools</span><span class="w"> </span><span class="n">sumo</span><span class="o">-</span><span class="n">doc</span>
-</code></pre></div>
-
+<pre><code>sudo apt-get install sumo sumo-tools sumo-doc
+</code></pre>
 <p>Precompiled binaries for different distributions like openSUSE and
 Fedora can be found at these <a href="https://download.opensuse.org/repositories/home:/behrisch/">repositories for binary Linux versions</a>.
 These repositories contain nightly builds as well. In the case your
 system is not listed here or you need to modify the sources, <a href="Linux_Build.html">you have to build SUMO from sources</a>.</p>
 <p>SUMO's precompiled binary is also available as a Flatpak and is hosted on <a href="https://flathub.org/apps/details/org.eclipse.sumo">Flathub</a>. Any system that supports Flatpak should be able to run SUMO this way. Install Flatpak and add the Flathub repository as <a href="https://flatpak.org/setup/">directed here</a>.</p>
 <p>To install SUMO:</p>
-<div class="codehilite"><pre><span></span><code>flatpak install flathub org.eclipse.sumo
-</code></pre></div>
-
+<pre><code>flatpak install flathub org.eclipse.sumo
+</code></pre>
 <p>There should be a SUMO launcher in your menu.</p>
 <p>To uninstall SUMO:</p>
-<div class="codehilite"><pre><span></span><code>flatpak remove org.eclipse.sumo
-</code></pre></div>
-
+<pre><code>flatpak remove org.eclipse.sumo
+</code></pre>
 <p>Send bug reports regarding SUMO packaged as Flatpak <a href="https://github.com/flathub/org.eclipse.sumo/issues">here</a>.</p>
 <h1 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">#</a></h1>
 <p>SUMO can be easily installed on macOS by using the provided package file:</p>
@@ -286,45 +282,37 @@ system is not listed here or you need to modify the sources, <a href="Linux_Buil
 </ul>
 <p><a href="https://brew.sh">Homebrew</a> is no longer considered a good alternative but may still be used.
 If you did not already install homebrew, you can do so by invoking the following command in a macOS Terminal:</p>
-<div class="codehilite"><pre><span></span><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
-</code></pre></div>
-
+<pre><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+</code></pre>
 <p>Please make sure your homebrew installation is up-to-date:</p>
-<div class="codehilite"><pre><span></span><code>brew update
-</code></pre></div>
-
+<pre><code>brew update
+</code></pre>
 <p>If you want to use sumo-gui and/or netedit, you need to install XQuartz as a requirement:</p>
-<div class="codehilite"><pre><span></span><code>brew install --cask xquartz
-</code></pre></div>
-
+<pre><code>brew install --cask xquartz
+</code></pre>
 <p>It may be necessary to logout and login again or even reboot to activate the XQuartz integration.
 You can then install the latest stable release of SUMO (with minimal requirements: <code>fox</code>, <code>proj</code>, <code>xerces-c</code>) with the following commands:</p>
-<div class="codehilite"><pre><span></span><code>brew tap dlr-ts/sumo
+<pre><code>brew tap dlr-ts/sumo
 brew install sumo
-</code></pre></div>
-
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is possible to install older versions of SUMO using Homebrew. Running <code>brew search sumo</code> will list all available versions (v1.0.1 or newer). To install a specific version (e.g. version 1.9.0), just run <code>brew install sumo@1.9.0</code>.</p>
 </div>
 <p>If you need to compile SUMO with support for other libraries, such as GDAL, you need to provide further command line options <a href="https://github.com/DLR-TS/homebrew-sumo#usage">as described here</a>.
 To finalize your setup, please make sure to set the <strong>SUMO_HOME</strong> environment variable and have it point to the directory of your SUMO installation. Depending on your shell, you may set this variable either in <code>.bashrc</code> or <code>.zshrc</code>. To set this variable in <code>.bashrc</code> you can use the following commands.</p>
-<div class="codehilite"><pre><span></span><code>touch ~/.bashrc; open ~/.bashrc
-</code></pre></div>
-
+<pre><code>touch ~/.bashrc; open ~/.bashrc
+</code></pre>
 <p>Just insert the following new line at the end of the file:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="n">SUMO_HOME</span><span class="o">=/</span><span class="n">your</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">sumo</span>
-</code></pre></div>
-
+<pre><code>export SUMO_HOME=/your/path/to/sumo
+</code></pre>
 <p>where <code>/your/path/to/sumo</code> is the path stated in the caveats section of the <code>brew install sumo</code> command. Restart the Terminal (or run <code>source ~/.bashrc</code>) and test the newly added variable:</p>
-<div class="codehilite"><pre><span></span><code>echo $SUMO_HOME
-</code></pre></div>
-
+<pre><code>echo $SUMO_HOME
+</code></pre>
 <p>After the installation you need to log out/in in order to let X11 start automatically, when calling a gui-based application like <code>sumo-gui</code>. (Alternatively, you may start X11 manually by pressing <em>cmd-space</em> and entering <code>XQuartz</code>).</p>
 <p>Additionally, SUMO provides native <strong>macOS application bundles</strong> for its graphical applications, so they can be added to the macOS dock. There is a separate brew cask that will copy these bundles to the <code>Applications</code> folder:</p>
-<div class="codehilite"><pre><span></span><code>brew install --cask sumo-gui
-</code></pre></div>
-
+<pre><code>brew install --cask sumo-gui
+</code></pre>
 <p>In case this process fails, it can also be manually achieved by copying these application bundles from <code>$SUMO_HOME/build/osx/sumo-gui</code>, <code>$SUMO_HOME/build/osx/netedit</code> and <code>$SUMO_HOME/build/osx/osm-web-wizard</code> to the <code>/Applications</code> folder.</p>
 <p>These application bundles determine the location of your SUMO installation by evaluating your <code>$SUMO_HOME</code> variable setting and start the programs accordingly. Multiple SUMO installations may be used by changing the <code>$SUMO_HOME</code> variable.</p>
 <div class="admonition note">
@@ -372,7 +360,7 @@ For more details check out <a href="../Developer/Docker.html">the documentation 
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -236,27 +237,24 @@ scenario.</p>
 <p>We assume that you have the scenario and a configuration file named
 "myConfig.sumocfg". It may have a different name, of course. You should
 be able to start SUMO using your configuration like this:</p>
-<div class="codehilite"><pre><span></span><code>sumo -c myConfig.sumocfg
-</code></pre></div>
-
+<pre><code>sumo -c myConfig.sumocfg
+</code></pre>
 <p>Now, we use the simulation to get an <a href="../Simulation/Output/FCDOutput.html">fcd
 output</a>, a trace file in a
 SUMO-format. This file will be later converted into a trace file for one
 of the applications supported by
 <a href="../Tools/TraceExporter.html">Tools/TraceExporter</a>. We generate an
 <a href="../Simulation/Output/FCDOutput.html">fcd output</a> as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sumo -c myConfig.sumocfg --fcd-output sumoTrace.xml</span>
-</code></pre></div>
-
+<pre><code>sumo -c myConfig.sumocfg --fcd-output sumoTrace.xml
+</code></pre>
 <p>Through this method, we obtain the file "sumoTrace.xml".</p>
 <h1 id="converting_the_trace">Converting the Trace<a class="headerlink" href="#converting_the_trace" title="Permanent link">#</a></h1>
 <p>We can now convert the vehicular traces in SUMO format into another
 format. For now, let's assume you would like to have a ns2 mobility
 file. We can generate one from the obtained <a href="../Simulation/Output/FCDOutput.html">fcd
 output</a> using:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">traceExporter.py --fcd-input sumoTrace.xml --ns2mobility-output ns2mobility.tcl</span>
-</code></pre></div>
-
+<pre><code>traceExporter.py --fcd-input sumoTrace.xml --ns2mobility-output ns2mobility.tcl
+</code></pre>
 <p>We obtain the file "ns2mobility.tcl", which we can give ns2 as input.</p>
 <h1 id="further_possibilities">Further Possibilities<a class="headerlink" href="#further_possibilities" title="Permanent link">#</a></h1>
 <h2 id="output_options">Output Options<a class="headerlink" href="#output_options" title="Permanent link">#</a></h2>
@@ -270,10 +268,9 @@ options".</p>
 different equipment / penetration rates using the <strong>--penetration</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a>. <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a> will be the amount
 of vehicles that are exported, where 1 is equal to 100 %. This means, if
 You want to have 10 % of vehicles to show up in Your ns2-trace, use:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">traceExporter.py --penetration 0.1 \</span>
-<span class="n"> --fcd-input sumoTrace.xml --ns2-mobilityoutput ns2mobility.tcl</span>
-</code></pre></div>
-
+<pre><code>traceExporter.py --penetration 0.1 \
+ --fcd-input sumoTrace.xml --ns2-mobilityoutput ns2mobility.tcl
+</code></pre>
 <p>The <strong>--seed</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a> allows you to give different random number initialisations for
 choosing the vehicles to export.</p>
 <h2 id="limiting_the_time">Limiting the Time<a class="headerlink" href="#limiting_the_time" title="Permanent link">#</a></h2>
@@ -301,7 +298,7 @@ simulation.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

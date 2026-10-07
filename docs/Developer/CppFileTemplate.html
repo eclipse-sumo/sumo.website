@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -187,81 +188,80 @@ Last edit: 06 October 2026
                   
                   
 
-<div class="codehilite"><pre><span></span><code><span class="cm">/****************************************************************************/</span>
-<span class="c1">// Eclipse SUMO, Simulation of Urban MObility; see &lt;https://eclipse.dev/sumo&gt;</span>
-<span class="c1">// Copyright (C) &lt;YEAR OF CREATION&gt;-&lt;CURRENT YEAR&gt; German Aerospace Center (DLR) and others.</span>
-<span class="c1">// This program and the accompanying materials are made available under the</span>
-<span class="c1">// terms of the Eclipse Public License 2.0 which is available at</span>
-<span class="c1">// https://www.eclipse.org/legal/epl-2.0/</span>
-<span class="c1">// This Source Code may also be made available under the following Secondary</span>
-<span class="c1">// Licenses when the conditions for such availability set forth in the Eclipse</span>
-<span class="c1">// Public License 2.0 are satisfied: GNU General Public License, version 2</span>
-<span class="c1">// or later which is available at</span>
-<span class="c1">// https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html</span>
-<span class="c1">// SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-or-later</span>
-<span class="cm">/****************************************************************************/</span>
-<span class="c1">/// @file    &lt;FILENAME&gt;</span>
-<span class="c1">/// @author  &lt;AUTHOR&#39;S NAME, ONE SEPARATE LINE FOR EACH AUTHOR&gt;</span>
-<span class="c1">/// @author  &lt;AUTHOR&#39;S NAME 2&gt;</span>
-<span class="c1">/// @author  &lt;AUTHOR&#39;S NAME 3&gt;</span>
-<span class="c1">/// @date    &lt;FILE CREATION DATE&gt;</span>
-<span class="c1">///</span>
-<span class="c1">// &lt;A BRIEF DESCRIPTION OF THE FILE&#39;S CONTENTS&gt;</span>
-<span class="cm">/****************************************************************************/</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;config.h&gt;</span>
+<pre><code class="language-cpp">/****************************************************************************/
+// Eclipse SUMO, Simulation of Urban MObility; see &lt;https://eclipse.dev/sumo&gt;
+// Copyright (C) &lt;YEAR OF CREATION&gt;-&lt;CURRENT YEAR&gt; German Aerospace Center (DLR) and others.
+// This program and the accompanying materials are made available under the
+// terms of the Eclipse Public License 2.0 which is available at
+// https://www.eclipse.org/legal/epl-2.0/
+// This Source Code may also be made available under the following Secondary
+// Licenses when the conditions for such availability set forth in the Eclipse
+// Public License 2.0 are satisfied: GNU General Public License, version 2
+// or later which is available at
+// https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+// SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-or-later
+/****************************************************************************/
+/// @file    &lt;FILENAME&gt;
+/// @author  &lt;AUTHOR'S NAME, ONE SEPARATE LINE FOR EACH AUTHOR&gt;
+/// @author  &lt;AUTHOR'S NAME 2&gt;
+/// @author  &lt;AUTHOR'S NAME 3&gt;
+/// @date    &lt;FILE CREATION DATE&gt;
+///
+// &lt;A BRIEF DESCRIPTION OF THE FILE'S CONTENTS&gt;
+/****************************************************************************/
+#include &lt;config.h&gt;
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;StandardLibrary&gt;</span><span class="c1">     // Standard libraries</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;SUMOLibrary&gt;</span><span class="c1">         // SUMO libraries</span>
+#include &lt;StandardLibrary&gt;     // Standard libraries
+#include &lt;SUMOLibrary&gt;         // SUMO libraries
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;myHeaderFile1&quot;</span><span class="c1">       // Header files from the same directory</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;myHeaderFile2&quot;</span>
-
-
-<span class="c1">// ===========================================================================</span>
-<span class="c1">// static member definitions</span>
-<span class="c1">// ===========================================================================</span>
-<span class="o">&lt;</span><span class="n">parameterType</span><span class="o">&gt;</span><span class="w"> </span><span class="n">OwnClass</span><span class="o">::</span><span class="n">myStaticMember</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">    </span><span class="c1">// Define here values of static members</span>
+#include &quot;myHeaderFile1&quot;       // Header files from the same directory
+#include &quot;myHeaderFile2&quot;
 
 
-<span class="c1">// ===========================================================================</span>
-<span class="c1">// member method definitions</span>
-<span class="c1">// ===========================================================================</span>
-<span class="n">OwnClass</span><span class="o">::</span><span class="n">OwnClass</span><span class="p">(</span><span class="o">&lt;</span><span class="n">parameterType</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parameter1</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">parameterType</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parameter2</span><span class="p">,...</span><span class="w"> </span><span class="o">&lt;</span><span class="n">parameterType</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parametern</span><span class="p">)</span><span class="w"> </span><span class="o">:</span>
-<span class="w">    </span><span class="n">parentClass</span><span class="p">(),</span><span class="w">             </span><span class="c1">// Call to parent class (if inherit)</span>
-<span class="w">    </span><span class="n">myParameter1</span><span class="p">(</span><span class="n">parameter1</span><span class="p">),</span><span class="w">  </span><span class="c1">// values of members should be initialized with this method</span>
-<span class="w">    </span><span class="n">myParameter2</span><span class="p">(</span><span class="n">parameter1</span><span class="p">),</span><span class="w">  </span><span class="c1">// keep the order coherent with the order of the members in the header file</span>
-<span class="w">    </span><span class="p">...</span>
-<span class="w">    </span><span class="n">myParametern</span><span class="p">(</span><span class="n">parametern</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// Code of constructor</span>
-<span class="p">}</span>
+// ===========================================================================
+// static member definitions
+// ===========================================================================
+&lt;parameterType&gt; OwnClass::myStaticMember = value;    // Define here values of static members
 
 
-<span class="kt">void</span>
-<span class="n">OwnClass</span><span class="o">::</span><span class="n">function</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// code</span>
-<span class="p">}</span>
+// ===========================================================================
+// member method definitions
+// ===========================================================================
+OwnClass::OwnClass(&lt;parameterType&gt; parameter1, &lt;parameterType&gt; parameter2,... &lt;parameterType&gt; parametern) :
+    parentClass(),             // Call to parent class (if inherit)
+    myParameter1(parameter1),  // values of members should be initialized with this method
+    myParameter2(parameter1),  // keep the order coherent with the order of the members in the header file
+    ...
+    myParametern(parametern) {
+    // Code of constructor
+}
 
 
-<span class="o">&lt;</span><span class="n">parameterType</span><span class="o">&gt;</span>
-<span class="n">OwnClass</span><span class="o">::</span><span class="n">getParameter1</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">myParameter1</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------------------------------------------------------------------------</span>
-<span class="c1">// Class::InnerClass - methods &lt;LEAVE OUT IF METHODS ARE OF ONE CLASS ONLY&gt;</span>
-<span class="c1">// ---------------------------------------------------------------------------</span>
-<span class="n">OwnClass</span><span class="o">::</span><span class="n">InnerClass</span><span class="o">::</span><span class="n">InnerClass</span><span class="p">()</span><span class="w"> </span><span class="o">:</span>
-<span class="w">    </span><span class="n">myPrivateParameter</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// code of constructor</span>
-<span class="p">}</span>
+void
+OwnClass::function() const {
+    // code
+}
 
 
-<span class="n">OwnClass</span><span class="o">::</span><span class="n">InnerClass</span><span class="o">::~</span><span class="n">InnerClass</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+&lt;parameterType&gt;
+OwnClass::getParameter1() const {
+    return myParameter1;
+}
+</code></pre>
+<pre><code class="language-cpp">// ---------------------------------------------------------------------------
+// Class::InnerClass - methods &lt;LEAVE OUT IF METHODS ARE OF ONE CLASS ONLY&gt;
+// ---------------------------------------------------------------------------
+OwnClass::InnerClass::InnerClass() :
+    myPrivateParameter(0) {
+    // code of constructor
+}
 
 
-<span class="cm">/****************************************************************************/</span>
-</code></pre></div>
+OwnClass::InnerClass::~InnerClass() {}
+
+
+/****************************************************************************/
+</code></pre>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -269,7 +269,7 @@ Last edit: 06 October 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

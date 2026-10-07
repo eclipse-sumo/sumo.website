@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -294,46 +295,38 @@ lights. The recommended ways to perform the necessary changes include:</p>
 <h3 id="example_patching_the_type_of_a_node">Example: Patching the type of a node<a class="headerlink" href="#example_patching_the_type_of_a_node" title="Permanent link">#</a></h3>
 <p>prepare a file like this:</p>
 <p>patch.nod.xml :</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;nodes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;id_of_the_node_you_want_to_modify&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;right_before_left&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;nodes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;nodes&gt;
+    &lt;node id=&quot;id_of_the_node_you_want_to_modify&quot; type=&quot;right_before_left&quot;/&gt;
+&lt;nodes&gt;
+</code></pre>
 <p>and patch the network like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --sumo-net-file your.net.xml --node-files patch.nod.xml -o yourpatched.net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --sumo-net-file your.net.xml --node-files patch.nod.xml -o yourpatched.net.xml
+</code></pre>
 <p>or perform the patch during the initial import:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --osm-file yourOSMfile.xml --node-files patch.nod.xml ...&lt;other options&gt;</span>
-</code></pre></div>
-
+<pre><code>netconvert --osm-file yourOSMfile.xml --node-files patch.nod.xml ...&lt;other options&gt;
+</code></pre>
 <h3 id="modifying_an_imported_network_via_plainxml">Modifying an imported network via plain.xml<a class="headerlink" href="#modifying_an_imported_network_via_plainxml" title="Permanent link">#</a></h3>
 <p>Instead of patching individual elements, you can also convert your
 network to plain.xml, modify the plain file and then re-assemble the
 network like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --sumo-net-file your.net.xml --plain-output-prefix yourplain</span>
-</code></pre></div>
-
+<pre><code>netconvert --sumo-net-file your.net.xml --plain-output-prefix yourplain
+</code></pre>
 <p>or during import:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --osm-files yourOSMinput.xml --plain-output-prefix yourplain ... &lt;your other options&gt;</span>
-</code></pre></div>
-
+<pre><code>netconvert --osm-files yourOSMinput.xml --plain-output-prefix yourplain ... &lt;your other options&gt;
+</code></pre>
 <p>This will give you the files:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">yourplain.edg.xml</span>
-<span class="n">yourplain.nod.xml</span>
-<span class="n">yourplain.con.xml</span>
-<span class="n">yourplain.tll.xml</span>
-</code></pre></div>
-
+<pre><code>yourplain.edg.xml
+yourplain.nod.xml
+yourplain.con.xml
+yourplain.tll.xml
+</code></pre>
 <p>You can edit these files and then reassemble the network by loading
 some or all of them:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --edge-files yourplain.edg.xml --node-files yourplain.nod.xml -o new.net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --edge-files yourplain.edg.xml --node-files yourplain.nod.xml -o new.net.xml
+</code></pre>
 <p>or</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --edge-files yourplain.edg.xml --node-files yourplain.nod.xml --connection-files yourplain.con.xml -o new.net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --edge-files yourplain.edg.xml --node-files yourplain.nod.xml --connection-files yourplain.con.xml -o new.net.xml
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When working with networks based on OSM input, the .edg.xml file will contain information on the OSM-type of an edge (i.e. <em>highway.residential</em>. When loading such an .edg.xml file with <a href="../netconvert.html">netconvert</a> you need to supply the option <strong>--ignore-errors.edge-type</strong> or load a type-file to prevent errors of the form <em>Type ... not defined</em>.</p>
@@ -374,7 +367,7 @@ these files along with <em>A.net.xml</em> to recreate <em>B.net.xml</em>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

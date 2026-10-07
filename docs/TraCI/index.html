@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -536,25 +537,23 @@ Especially subscriptions might even turn out to be slower.</p>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h3>
 <p>As an example use-case consider retrieving the x,y position of each
 vehicle during every simulation step (using the python client):</p>
-<div class="codehilite"><pre><span></span><code><span class="k">while</span> <span class="n">traci</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">getMinExpectedNumber</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">veh_id</span> <span class="ow">in</span> <span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">getIDList</span><span class="p">():</span>
-         <span class="n">position</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">getPosition</span><span class="p">(</span><span class="n">veh_id</span><span class="p">)</span>
-    <span class="n">traci</span><span class="o">.</span><span class="n">simulationStep</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-py">while traci.simulation.getMinExpectedNumber() &gt; 0:
+    for veh_id in traci.vehicle.getIDList():
+         position = traci.vehicle.getPosition(veh_id)
+    traci.simulationStep()
+</code></pre>
 <ul>
 <li>This script is able to process about 25000 vehicles per second.</li>
 <li>The same value retrieval can also be sped up to 50000 vehicles per
   second by using
   <a href="Object_Variable_Subscription.html">subscriptions</a>:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">while</span> <span class="n">traci</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">getMinExpectedNumber</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">veh_id</span> <span class="ow">in</span> <span class="n">traci</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">getDepartedIDList</span><span class="p">():</span>
-        <span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">veh_id</span><span class="p">,</span> <span class="p">[</span><span class="n">traci</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">VAR_POSITION</span><span class="p">])</span>
-    <span class="n">positions</span> <span class="o">=</span> <span class="n">traci</span><span class="o">.</span><span class="n">vehicle</span><span class="o">.</span><span class="n">getAllSubscriptionResults</span><span class="p">()</span>
-    <span class="n">traci</span><span class="o">.</span><span class="n">simulationStep</span><span class="p">()</span>
-</code></pre></div>
-
+<pre><code class="language-py">while traci.simulation.getMinExpectedNumber() &gt; 0:
+    for veh_id in traci.simulation.getDepartedIDList():
+        traci.vehicle.subscribe(veh_id, [traci.constants.VAR_POSITION])
+    positions = traci.vehicle.getAllSubscriptionResults()
+    traci.simulationStep()
+</code></pre>
 <p>When using this script on the <a href="../Data/Scenarios.html#bologna">Bologna
 scenario</a> (9000 vehicles, 5000
 simulation steps) the following running times were recorded:</p>
@@ -606,7 +605,7 @@ use <a href="../sumo.html">sumo</a> up to version 0.12.3. See
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="css/fontawesome.all.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="js/jquery-3.7.0.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -219,42 +220,39 @@ trip of a person including mode changes.</p>
 <h1 id="defining_intermodal_demand">Defining intermodal demand<a class="headerlink" href="#defining_intermodal_demand" title="Permanent link">#</a></h1>
 <p>To define intermodal demand use the
 <a href="Specification/Persons.html#persontrips"><code>&lt;personTrip&gt;</code>-element</a>:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">  </span><span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;p0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;personTrip</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;end&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/person&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+  &lt;person id=&quot;p0&quot; depart=&quot;0&quot;&gt;
+    &lt;personTrip from=&quot;beg&quot; to=&quot;end&quot;/&gt;
+  &lt;/person&gt;
+&lt;/routes&gt;
+</code></pre>
 <p>The tool <a href="Tools/Trip.html#randomtripspy">randomTrips.py</a> may be
 used with the option <strong>--persontrips</strong> to generate random intermodal demand.</p>
 <h1 id="defining_available_cars">Defining available cars<a class="headerlink" href="#defining_available_cars" title="Permanent link">#</a></h1>
 <p>To allow usage of a car, either the attribute <code>modes="car"</code> or the vType of the
 available car must be specified for the personTrip:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">  </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;typ0&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;passenger&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;p0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;personTrip</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;end&quot;</span><span class="w"> </span><span class="na">vTypes=</span><span class="s">&quot;typ0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/person&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+  &lt;vType id=&quot;typ0&quot; vClass=&quot;passenger&quot;/&gt;
+  &lt;person id=&quot;p0&quot; depart=&quot;0&quot;&gt;
+      &lt;personTrip from=&quot;beg&quot; to=&quot;end&quot; vTypes=&quot;typ0&quot;/&gt;
+  &lt;/person&gt;
+&lt;/routes&gt;
+</code></pre>
 <h1 id="defining_public_transport">Defining public transport<a class="headerlink" href="#defining_public_transport" title="Permanent link">#</a></h1>
 <p>In order to be included by in the public transport routing, flows (also vehicles or trips) must be defined
 with a <a href="Simulation/Public_Transport.html#public_transport_schedules">public transport schedule</a>.</p>
 <p>An example for a bus line and a person that may uses this line are given below:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;https://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;https://sumo.dlr.de/xsd/routes_file.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">from =</span><span class="w"> </span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to =</span><span class="s">&quot;end&quot;</span><span class="w"> </span><span class="na">line=</span><span class="s">&quot;bus&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="na">period=</span><span class="s">&quot;300&quot;</span><span class="nt">&gt;</span>
-<span class="w">                </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopA&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopB&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;110&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">busStop=</span><span class="s">&quot;busStopC&quot;</span><span class="w"> </span><span class="na">until=</span><span class="s">&quot;210&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/flow&gt;</span>
-<span class="w">    </span><span class="nt">&lt;person</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;p0&quot;</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;personTrip</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;beg&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;end&quot;</span><span class="w"> </span><span class="na">modes=</span><span class="s">&quot;public&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/person&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.dlr.de/xsd/routes_file.xsd&quot;&gt;
+    &lt;flow id=&quot;bus&quot; from = &quot;beg&quot; to =&quot;end&quot; line=&quot;bus&quot; begin=&quot;0&quot; end=&quot;1000&quot; period=&quot;300&quot;&gt;
+                &lt;stop busStop=&quot;busStopA&quot; until=&quot;10&quot;/&gt;
+                &lt;stop busStop=&quot;busStopB&quot; until=&quot;110&quot;/&gt;
+                &lt;stop busStop=&quot;busStopC&quot; until=&quot;210&quot;/&gt;
+    &lt;/flow&gt;
+    &lt;person id=&quot;p0&quot; depart=&quot;0&quot;&gt;
+        &lt;personTrip from=&quot;beg&quot; to=&quot;end&quot; modes=&quot;public&quot;/&gt;
+    &lt;/person&gt;
+&lt;/routes&gt;
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A vehicle/flow/trip must define the <code>line</code> attribute to be considered as public transport. Every vehicle with a line attribute is considered public transport and may be used for routing regardless of its capacity.</p>
@@ -298,7 +296,7 @@ into account:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

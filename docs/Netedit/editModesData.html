@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -263,31 +264,29 @@ Last edit: 06 October 2026
 <p>The precise way to load files and the available features are explained below.</p>
 <h3 id="data_loading">Data loading<a class="headerlink" href="#data_loading" title="Permanent link">#</a></h3>
 <p>The basic data format is as following:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;data&gt;</span>
-<span class="w">    </span><span class="nt">&lt;interval</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;DEFAULT_VEHTYPE&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0.00&quot;</span><span class="w"> </span><span class="na">end=</span><span class="s">&quot;86400.99&quot;</span><span class="nt">&gt;</span><span class="w"> </span>\
-<span class="w">        </span><span class="nt">&lt;tazRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;17&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;3965&quot;</span><span class="nt">/&gt;</span><span class="w"> </span>\
-<span class="w">        </span><span class="nt">&lt;tazRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;17&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;24&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;3100&quot;</span><span class="nt">/&gt;</span><span class="w"> </span>\
-<span class="w">        </span><span class="nt">&lt;tazRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;34&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;3192&quot;</span><span class="nt">/&gt;</span><span class="w"> </span>\
-<span class="w">        </span><span class="nt">&lt;tazRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;22&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;4575&quot;</span><span class="nt">/&gt;</span><span class="w"> </span>\
-<span class="w">        </span><span class="nt">&lt;tazRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;22&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;24&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;3576&quot;</span><span class="nt">/&gt;</span><span class="w"> </span>\
-<span class="w">        </span><span class="nt">&lt;tazRelation</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;23&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;35&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;3267&quot;</span><span class="nt">/&gt;</span><span class="w"> </span>\
+<pre><code class="language-xml">&lt;data&gt;
+    &lt;interval id=&quot;DEFAULT_VEHTYPE&quot; begin=&quot;0.00&quot; end=&quot;86400.99&quot;&gt; \
+        &lt;tazRelation from=&quot;17&quot; to=&quot;20&quot; count=&quot;3965&quot;/&gt; \
+        &lt;tazRelation from=&quot;17&quot; to=&quot;24&quot; count=&quot;3100&quot;/&gt; \
+        &lt;tazRelation from=&quot;20&quot; to=&quot;34&quot; count=&quot;3192&quot;/&gt; \
+        &lt;tazRelation from=&quot;22&quot; to=&quot;20&quot; count=&quot;4575&quot;/&gt; \
+        &lt;tazRelation from=&quot;22&quot; to=&quot;24&quot; count=&quot;3576&quot;/&gt; \
+        &lt;tazRelation from=&quot;23&quot; to=&quot;35&quot; count=&quot;3267&quot;/&gt; \
 
-<span class="w">    </span>...<span class="w"> </span>information<span class="w"> </span>about<span class="w"> </span>further<span class="w"> </span>TAZs<span class="w"> </span>...
-<span class="nt">&lt;/data&gt;</span>
-</code></pre></div>
-
+    ... information about further TAZs ...
+&lt;/data&gt;
+</code></pre>
 <p>Other attributes can also be included in the file, such as color.</p>
 <p>Before loading the data related to TAZ-relations the respective network should be loaded in netedit firstly. After that, the respective TAZ file containing the polygon information about each TAZ needs to be loaded with "Load Additionals" by selecting <em>File-&gt;Additionals and Shapes</em> in netedit. An example of a TAZ file is shown below.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;additional&gt;</span>
-<span class="w">    </span><span class="nt">&lt;taz</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">shape=</span><span class="s">&quot;23356.47,20662.79 22463.50,20524.87 22401.18,21140.95 23162.64,21353.48 23356.47,20662.79&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;51,128,255&quot;</span><span class="nt">&gt;</span><span class="w"> </span>\
-<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Id&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;59&quot;</span><span class="nt">/&gt;</span><span class="w"> </span>\
+<pre><code class="language-xml">&lt;additional&gt;
+    &lt;taz id=&quot;1&quot; shape=&quot;23356.47,20662.79 22463.50,20524.87 22401.18,21140.95 23162.64,21353.48 23356.47,20662.79&quot; color=&quot;51,128,255&quot;&gt; \
+        &lt;param key=&quot;Id&quot; value=&quot;59&quot;/&gt; \
 
-<span class="w">    </span>...<span class="w"> </span>information<span class="w"> </span>about<span class="w"> </span>further<span class="w"> </span>TAZs<span class="w"> </span>...
-<span class="w">    </span><span class="nt">&lt;/taz&gt;</span>
+    ... information about further TAZs ...
+    &lt;/taz&gt;
 
-<span class="nt">&lt;/additional&gt;</span>
-</code></pre></div>
-
+&lt;/additional&gt;
+</code></pre>
 <p>Now, file(s) containing TAZ-Relations can be loaded with "Load Data Elements" by selecting <em>File-&gt;Data Elements</em>. After that, the button "Data" in the tool bar should be pressed. All TAZ-relations will then be shown, and can be further hidden by pressing the icons "Draw TAZRel only from" and "Draw TAZRel only to" under the mode "Data" (see the illustration below).</p>
 <p><img alt="" src="../images/drawRelFromTo.png" /></p>
 <p>After that, if you want to see the relations between all TAZs again, you need to go back to the mode "Network" and then go to the mode "Data" again. By activating the aforementioned two icons, you can see all TAZ-relations.</p>
@@ -338,7 +337,7 @@ Last edit: 06 October 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

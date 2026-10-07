@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -273,10 +274,9 @@ Existing models need to be re-purposed</p>
 <h2 id="bicycles_as_slow_vehicles">Bicycles as slow vehicles<a class="headerlink" href="#bicycles_as_slow_vehicles" title="Permanent link">#</a></h2>
 <p>In this case, vehicles are specified as vehicles with the appropriate
 type:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;bike&quot;</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;bicycle&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;bike&quot;</span><span class="w"> </span><span class="err">...</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;vType id=&quot;bike&quot; vClass=&quot;bicycle&quot;/&gt;
+&lt;vehicle type=&quot;bike&quot; .../&gt;
+</code></pre>
 <p>Note, that that the <code>guiShape="bicycle"</code> along with <a href="../Vehicle_Type_Parameter_Defaults.html">sensible default
 parameters</a> are
 automatically used when specifying <code>vClass="bicycle"</code>. By adapting <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#vehicle_types">vType-parameters for
@@ -353,15 +353,14 @@ can still be used (also together with the option to modify bike lane widths).</p
 </div>
 <h3 id="type-based_generation">Type-based generation<a class="headerlink" href="#type-based_generation" title="Permanent link">#</a></h3>
 <p>When importing edges with defined types, it is also possible to declare that certain types should receive a sidewalk. This can be used to automatically generate bike lanes for residential streets while omitting them for motorways when importing OSM data.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;types&gt;</span>
-<span class="w">   </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;highway.motorway&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;44.44&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;13&quot;</span><span class="w"> </span><span class="na">oneway=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">disallow=</span><span class="s">&quot;pedestrian bicycle&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;highway.unclassified&quot;</span><span class="w">   </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">bikeLaneWidth=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">disallow=</span><span class="s">&quot;bicycle&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;highway.residential&quot;</span><span class="w">    </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">bikeLaneWidth=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">disallow=</span><span class="s">&quot;bicycle&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;highway.living_street&quot;</span><span class="w">  </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;2.78&quot;</span><span class="w">  </span><span class="na">priority=</span><span class="s">&quot;3&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span>...
-<span class="nt">&lt;/types&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;types&gt;
+   &lt;type id=&quot;highway.motorway&quot; numLanes=&quot;3&quot; speed=&quot;44.44&quot; priority=&quot;13&quot; oneway=&quot;true&quot; disallow=&quot;pedestrian bicycle&quot;/&gt;
+   &lt;type id=&quot;highway.unclassified&quot;   numLanes=&quot;1&quot; speed=&quot;13.89&quot; priority=&quot;5&quot; bikeLaneWidth=&quot;1&quot; disallow=&quot;bicycle&quot;/&gt;
+   &lt;type id=&quot;highway.residential&quot;    numLanes=&quot;1&quot; speed=&quot;13.89&quot; priority=&quot;4&quot; bikeLaneWidth=&quot;1&quot; disallow=&quot;bicycle&quot;/&gt;
+   &lt;type id=&quot;highway.living_street&quot;  numLanes=&quot;1&quot; speed=&quot;2.78&quot;  priority=&quot;3&quot;/&gt;
+   ...
+&lt;/types&gt;
+</code></pre>
 <p>A special type file that imports bike lanes based on additional OSM attributes can be found in <a href="https://github.com/eclipse-sumo/sumo/blob/main/data/typemap/osmNetconvertBicycle.typ.xml"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/data/typemap/osmNetconvertBicycle.typ.xml</a>. This is to be preferred for importing bike lanes from OSM as it uses more accurate data.</p>
 <h3 id="heuristic_generation">Heuristic generation<a class="headerlink" href="#heuristic_generation" title="Permanent link">#</a></h3>
 <p>A third option which can be used if no edge types are available is a heuristic based on edge speed. It adds a bike lane for all edges within a given speed range. This is controlled by using the following options:</p>
@@ -462,7 +461,7 @@ The second part can be controlled by <a href="../Netedit/editModesNetwork.html#e
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

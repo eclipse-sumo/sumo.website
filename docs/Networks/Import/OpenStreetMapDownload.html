@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -289,27 +290,23 @@ for the north-east corner of your chosen area. You can get them at <a href="http
 page</a> by pointing your mouse at
 the appropriate map location and observing the coordinates in the status
 bar. The inner city of Berlin lies within the following coordinates:</p>
-<div class="codehilite"><pre><span></span><code>SW-corner: 13.278 52.473
+<pre><code>SW-corner: 13.278 52.473
 NE-corner: 13.471 52.552
-</code></pre></div>
-
+</code></pre>
 <h2 id="download_the_area">Download the area<a class="headerlink" href="#download_the_area" title="Permanent link">#</a></h2>
 <p>Construct an <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URI (web
 address)</a> from
 the geo-coordinates and download the data from that URI. The URI takes
 the following form:</p>
-<div class="codehilite"><pre><span></span><code>https://api.openstreetmap.org/api/0.6/map?bbox=&lt;SW-longitude,SW-latitude,NE-longitude,NE-latitude&gt;
-</code></pre></div>
-
+<pre><code>https://api.openstreetmap.org/api/0.6/map?bbox=&lt;SW-longitude,SW-latitude,NE-longitude,NE-latitude&gt;
+</code></pre>
 <p>for the above example this becomes</p>
-<div class="codehilite"><pre><span></span><code>https://api.openstreetmap.org/api/0.6/map?bbox=13.278,52.473,13.471,52.552
-</code></pre></div>
-
+<pre><code>https://api.openstreetmap.org/api/0.6/map?bbox=13.278,52.473,13.471,52.552
+</code></pre>
 <p>you can download your data by entering the URI in a web-browser or by
 using another program such as <a href="http://wget.addictivecode.org/">wget</a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">wget.exe &quot;https://api.openstreetmap.org/api/0.6/map?bbox=13.278,52.473,13.471,52.552&quot; -O berlin.osm.xml</span>
-</code></pre></div>
-
+<pre><code>wget.exe &quot;https://api.openstreetmap.org/api/0.6/map?bbox=13.278,52.473,13.471,52.552&quot; -O berlin.osm.xml
+</code></pre>
 <p><strong>Important:</strong> the API version number <em>0.6</em> will eventually be outdated.
 Refer to the <a href="https://wiki.openstreetmap.org/wiki/API">openstreetmap API
 page</a> for the latest version.</p>
@@ -326,49 +323,47 @@ download the area.</p>
 query page</a>. Replace
 <em>Berlin</em> by the city name of your choice and click the accompanying
 button "Explore".</p>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="nt">&lt;query</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;relation&quot;</span><span class="nt">&gt;</span>
-<span class="w"> </span><span class="nt">&lt;has-kv</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;boundary&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;administrative&quot;</span><span class="nt">/&gt;</span>
-<span class="w"> </span><span class="nt">&lt;has-kv</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;Berlin&quot;</span><span class="nt">/&gt;</span>
-<span class="w"> </span><span class="nt">&lt;/query&gt;</span>
-<span class="w"> </span><span class="nt">&lt;print</span><span class="w"> </span><span class="na">mode=</span><span class="s">&quot;body&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code> &lt;query type=&quot;relation&quot;&gt;
+ &lt;has-kv k=&quot;boundary&quot; v=&quot;administrative&quot;/&gt;
+ &lt;has-kv k=&quot;name&quot; v=&quot;Berlin&quot;/&gt;
+ &lt;/query&gt;
+ &lt;print mode=&quot;body&quot;/&gt;
+</code></pre>
 <p>This will prompt you to download or open a file containing the answer to
 your query.</p>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="nt">&lt;relation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;62422&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;way&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;36991886&quot;</span><span class="w"> </span><span class="na">role=</span><span class="s">&quot;outer&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span>...
-<span class="w">   </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;way&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;44020341&quot;</span><span class="w"> </span><span class="na">role=</span><span class="s">&quot;outer&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;de:amtlicher_gemeindeschluessel&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;11&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;TMC:cid_58:tabcd_1:LocationCode&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;266&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;type&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;multipolygon&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;boundary&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;administrative&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;admin_level&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;4&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;TMC:cid_58:tabcd_1:Class&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;Area&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;Berlin&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;source&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;https://wiki.openstreetmap.org/wiki/Import/Catalogue/Kreisgrenzen_Deutschland_2005&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;TMC:cid_58:tabcd_1:LCLversion&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;9.00&quot;</span><span class="nt">/&gt;</span>
-<span class="w"> </span><span class="nt">&lt;/relation&gt;</span>
-<span class="w"> </span><span class="nt">&lt;relation</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;119876&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;way&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;33628254&quot;</span><span class="w"> </span><span class="na">role=</span><span class="s">&quot;outer&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;tiger:PLACEFP&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;07304&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;tiger:PLACENS&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;02403860&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;tiger:PLCIDFP&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;1307304&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;wikipedia&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;Berlin,_Georgia&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;type&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;multipolygon&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;place&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;city&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;boundary&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;administrative&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;admin_level&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;8&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;Berlin&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;border_type&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;city&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;created_by&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;polyshp2osm-multipoly&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;source&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;TIGER/Line® 2008 Place Shapefiles (https://www.census.gov/geo/www/tiger/)&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;tiger:reviewed&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;no&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;tag</span><span class="w"> </span><span class="na">k=</span><span class="s">&quot;is_in:country&quot;</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;USA&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span>...
-<span class="w"> </span><span class="nt">&lt;/relation&gt;</span>
-</code></pre></div>
-
+<pre><code> &lt;relation id=&quot;62422&quot;&gt;
+   &lt;member type=&quot;way&quot; ref=&quot;36991886&quot; role=&quot;outer&quot;/&gt;
+   ...
+   &lt;member type=&quot;way&quot; ref=&quot;44020341&quot; role=&quot;outer&quot;/&gt;
+   &lt;tag k=&quot;de:amtlicher_gemeindeschluessel&quot; v=&quot;11&quot;/&gt;
+   &lt;tag k=&quot;TMC:cid_58:tabcd_1:LocationCode&quot; v=&quot;266&quot;/&gt;
+   &lt;tag k=&quot;type&quot; v=&quot;multipolygon&quot;/&gt;
+   &lt;tag k=&quot;boundary&quot; v=&quot;administrative&quot;/&gt;
+   &lt;tag k=&quot;admin_level&quot; v=&quot;4&quot;/&gt;
+   &lt;tag k=&quot;TMC:cid_58:tabcd_1:Class&quot; v=&quot;Area&quot;/&gt;
+   &lt;tag k=&quot;name&quot; v=&quot;Berlin&quot;/&gt;
+   &lt;tag k=&quot;source&quot; v=&quot;https://wiki.openstreetmap.org/wiki/Import/Catalogue/Kreisgrenzen_Deutschland_2005&quot;/&gt;
+   &lt;tag k=&quot;TMC:cid_58:tabcd_1:LCLversion&quot; v=&quot;9.00&quot;/&gt;
+ &lt;/relation&gt;
+ &lt;relation id=&quot;119876&quot;&gt;
+   &lt;member type=&quot;way&quot; ref=&quot;33628254&quot; role=&quot;outer&quot;/&gt;
+   &lt;tag k=&quot;tiger:PLACEFP&quot; v=&quot;07304&quot;/&gt;
+   &lt;tag k=&quot;tiger:PLACENS&quot; v=&quot;02403860&quot;/&gt;
+   &lt;tag k=&quot;tiger:PLCIDFP&quot; v=&quot;1307304&quot;/&gt;
+   &lt;tag k=&quot;wikipedia&quot; v=&quot;Berlin,_Georgia&quot;/&gt;
+   &lt;tag k=&quot;type&quot; v=&quot;multipolygon&quot;/&gt;
+   &lt;tag k=&quot;place&quot; v=&quot;city&quot;/&gt;
+   &lt;tag k=&quot;boundary&quot; v=&quot;administrative&quot;/&gt;
+   &lt;tag k=&quot;admin_level&quot; v=&quot;8&quot;/&gt;
+   &lt;tag k=&quot;name&quot; v=&quot;Berlin&quot;/&gt;
+   &lt;tag k=&quot;border_type&quot; v=&quot;city&quot;/&gt;
+   &lt;tag k=&quot;created_by&quot; v=&quot;polyshp2osm-multipoly&quot;/&gt;
+   &lt;tag k=&quot;source&quot; v=&quot;TIGER/Line® 2008 Place Shapefiles (https://www.census.gov/geo/www/tiger/)&quot;/&gt;
+   &lt;tag k=&quot;tiger:reviewed&quot; v=&quot;no&quot;/&gt;
+   &lt;tag k=&quot;is_in:country&quot; v=&quot;USA&quot;/&gt;
+   ...
+ &lt;/relation&gt;
+</code></pre>
 <p>The important parts of result data are the <code>&lt;relation id="..."&gt;</code> elements.
 This <code>id</code> attribute will be used to download the OSM-data for your
 chosen city.</p>
@@ -387,21 +382,20 @@ add the number 3,600,000,000 to obtain the Id of the area of berlin.
 <p>Using this number we construct another query for an input box on the
 <a href="https://www.overpass-api.de/query_form.html">OSM Overpass API query
 page</a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="nt">&lt;osm-script</span><span class="w"> </span><span class="na">timeout=</span><span class="s">&quot;180&quot;</span><span class="w"> </span><span class="na">element-limit=</span><span class="s">&quot;20000000&quot;</span><span class="nt">&gt;</span>
-<span class="w"> </span><span class="nt">&lt;union&gt;</span>
-<span class="w">   </span><span class="nt">&lt;area-query</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;3600062422&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;recurse</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;node-relation&quot;</span><span class="w"> </span><span class="na">into=</span><span class="s">&quot;rels&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;recurse</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;node-way&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;recurse</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;way-relation&quot;</span><span class="nt">/&gt;</span>
-<span class="w"> </span><span class="nt">&lt;/union&gt;</span>
-<span class="w"> </span><span class="nt">&lt;union&gt;</span>
-<span class="w">   </span><span class="nt">&lt;item/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;recurse</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;way-node&quot;</span><span class="nt">/&gt;</span>
-<span class="w"> </span><span class="nt">&lt;/union&gt;</span>
-<span class="w"> </span><span class="nt">&lt;print</span><span class="w"> </span><span class="na">mode=</span><span class="s">&quot;body&quot;</span><span class="nt">/&gt;</span>
-<span class="w"> </span><span class="nt">&lt;/osm-script&gt;</span>
-</code></pre></div>
-
+<pre><code> &lt;osm-script timeout=&quot;180&quot; element-limit=&quot;20000000&quot;&gt;
+ &lt;union&gt;
+   &lt;area-query ref=&quot;3600062422&quot;/&gt;
+   &lt;recurse type=&quot;node-relation&quot; into=&quot;rels&quot;/&gt;
+   &lt;recurse type=&quot;node-way&quot;/&gt;
+   &lt;recurse type=&quot;way-relation&quot;/&gt;
+ &lt;/union&gt;
+ &lt;union&gt;
+   &lt;item/&gt;
+   &lt;recurse type=&quot;way-node&quot;/&gt;
+ &lt;/union&gt;
+ &lt;print mode=&quot;body&quot;/&gt;
+ &lt;/osm-script&gt;
+</code></pre>
 <p>Replace the number for the <code>&lt;area-query ref="..."&gt;</code> by the number from
 above and click the accompanying button "Download". This will prompt you
 to download or open a file containing the OSM-data for your city.</p>
@@ -418,9 +412,8 @@ about 60GB of RAM!</p>
 <p>The OpenStreetMap-API still limits the size of an area to extract. The
 help script <em>osmGet.py</em> located within <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools allows to
 extract a larger area by splitting the requests. The call is:</p>
-<div class="codehilite"><pre><span></span><code>osmGet.py &lt;PREFIX&gt; &lt;BOUNDING_BOX&gt; &lt;TILES_NUMBER&gt;
-</code></pre></div>
-
+<pre><code>osmGet.py &lt;PREFIX&gt; &lt;BOUNDING_BOX&gt; &lt;TILES_NUMBER&gt;
+</code></pre>
 <p>The bounding box must be given as
 &lt;LAT_MIN&gt;,&lt;LONG_MIN&gt;,&lt;LAT_MAX&gt;,&lt;LONG_MAX&gt;.</p>
 <div class="admonition note">
@@ -439,7 +432,7 @@ Scripts</a>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

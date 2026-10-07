@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -248,20 +249,19 @@ Last edit: 06 October 2026
 </div>
 <h1 id="generated_output">Generated Output<a class="headerlink" href="#generated_output" title="Permanent link">#</a></h1>
 <p>The generated XML file looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;statistics&gt;</span>
-<span class="w">    </span><span class="nt">&lt;performance</span><span class="w"> </span><span class="err">&#39;&#39;ATTRIBUTES&#39;&#39;...</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicles</span><span class="w"> </span><span class="err">&#39;&#39;ATTRIBUTES&#39;&#39;...</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;teleports</span><span class="w"> </span><span class="err">&#39;&#39;ATTRIBUTES&#39;&#39;...</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;safety</span><span class="w"> </span><span class="err">&#39;&#39;ATTRIBUTES&#39;&#39;...</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;persons</span><span class="w"> </span><span class="err">&#39;&#39;ATTRIBUTES&#39;&#39;...</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;personTeleports</span><span class="w"> </span><span class="err">&#39;&#39;ATTRIBUTES&#39;&#39;...</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicleTripStatistics</span><span class="w"> </span><span class="err">&#39;&#39;ATTRIBUTES&#39;&#39;...</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;pedestrianStatistics</span><span class="w"> </span><span class="err">&#39;&#39;ATTRIBUTES&#39;&#39;...</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;rideStatistics</span><span class="w"> </span><span class="err">&#39;&#39;ATTRIBUTES&#39;&#39;...</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;transportStatistics</span><span class="w"> </span><span class="err">&#39;&#39;ATTRIBUTES&#39;&#39;...</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/statistics&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;statistics&gt;
+    &lt;performance ''ATTRIBUTES''.../&gt;
+    &lt;vehicles ''ATTRIBUTES''.../&gt;
+    &lt;teleports ''ATTRIBUTES''.../&gt;
+    &lt;safety ''ATTRIBUTES''.../&gt;
+    &lt;persons ''ATTRIBUTES''.../&gt;
+    &lt;personTeleports ''ATTRIBUTES''.../&gt;
+    &lt;vehicleTripStatistics ''ATTRIBUTES''.../&gt;
+    &lt;pedestrianStatistics ''ATTRIBUTES''.../&gt;
+    &lt;rideStatistics ''ATTRIBUTES''.../&gt;
+    &lt;transportStatistics ''ATTRIBUTES''.../&gt;
+&lt;/statistics&gt;
+</code></pre>
 <p>The following output attributes are generated:</p>
 <h2 id="performance">performance<a class="headerlink" href="#performance" title="Permanent link">#</a></h2>
 <table>
@@ -670,10 +670,10 @@ To include statistics for these vehicles, the options <strong>--tripinfo-output.
 The general idea is to add up the travel time (duration) and the time that was spent waiting for departure (departDelay) for all vehicles that were defined in the input.</p>
 <p>To simplify comparison between simulations that have the same number of vehicles, the attributes 'totalTravelTime' and 'totalDepartDelay' are provided.</p>
 <p>An alternative way to compute the sum of travel time and delays is to multiply the averages:</p>
-<div class="codehilite"><pre><span></span><code>totalTravelTimeAndDelay =
-     vehicles.inserted <span class="gs">* (vehicleTripStatistics.duration + vehicleTripStatistics.departDelay)</span>
-<span class="gs">   + vehicles.waiting *</span> vehicleTripStatistics.departDelayWaiting
-</code></pre></div>
+<pre><code>totalTravelTimeAndDelay =
+     vehicles.inserted * (vehicleTripStatistics.duration + vehicleTripStatistics.departDelay)
+   + vehicles.waiting * vehicleTripStatistics.departDelayWaiting
+</code></pre>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -681,7 +681,7 @@ The general idea is to add up the travel time (duration) and the time that was s
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

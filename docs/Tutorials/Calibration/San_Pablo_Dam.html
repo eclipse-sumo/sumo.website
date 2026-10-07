@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -280,25 +281,24 @@ If desired, they may be set to the default parameter values before
 performing the calibration (see the end of runner.py).</p>
 <h1 id="simulation_settings">Simulation Settings<a class="headerlink" href="#simulation_settings" title="Permanent link">#</a></h1>
 <p>Our configuration looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">    </span><span class="nt">&lt;input&gt;</span>
-<span class="w">        </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;spd-road.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;spd-road.rou.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;additional-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;input_vss.add.xml,input_det.add.xml,input_types.add.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/input&gt;</span>
-<span class="w">    </span><span class="nt">&lt;time&gt;</span>
-<span class="w">        </span><span class="nt">&lt;begin</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;24420&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/time&gt;</span>
-<span class="w">        </span><span class="nt">&lt;processing&gt;</span>
-<span class="w">        </span><span class="nt">&lt;time-to-teleport</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/processing&gt;</span>
-<span class="w">    </span><span class="nt">&lt;report&gt;</span>
-<span class="w">        </span><span class="nt">&lt;no-duration-log</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;no-step-log</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/report&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;input&gt;
+        &lt;net-file value=&quot;spd-road.net.xml&quot;/&gt;
+        &lt;route-files value=&quot;spd-road.rou.xml&quot;/&gt;
+        &lt;additional-files value=&quot;input_vss.add.xml,input_det.add.xml,input_types.add.xml&quot;/&gt;
+    &lt;/input&gt;
+    &lt;time&gt;
+        &lt;begin value=&quot;24420&quot;/&gt;
+    &lt;/time&gt;
+        &lt;processing&gt;
+        &lt;time-to-teleport value=&quot;0&quot;/&gt;
+    &lt;/processing&gt;
+    &lt;report&gt;
+        &lt;no-duration-log value=&quot;true&quot;/&gt;
+        &lt;no-step-log value=&quot;true&quot;/&gt;
+    &lt;/report&gt;
+&lt;/configuration&gt;
+</code></pre>
 <p>This means: we load the network from "spd-road.net.xml", routes from
 "spd-road.rou.xml", and three additional files, "input_vss.add.xml"
 including the variable speed sign, "input_det.add.xml" containing
@@ -332,9 +332,8 @@ complicated:</p>
 </ol>
 <h1 id="execution">Execution<a class="headerlink" href="#execution" title="Permanent link">#</a></h1>
 <p>In order to perform the calibration, you need to call only:</p>
-<div class="codehilite"><pre><span></span><code>python runner.py
-</code></pre></div>
-
+<pre><code>python runner.py
+</code></pre>
 <p>This is what it is doing:</p>
 <ul>
 <li>
@@ -356,11 +355,10 @@ complicated:</p>
 <li>Starts the calibration</li>
 </ul>
 <p>For each calibration step, the following output should appear:</p>
-<div class="codehilite"><pre><span></span><code># simulation with: vMax:22.000 aMax:2.000 bMax:2.000 lCar:5.000 sigA:0.500 tTau:1.500
+<pre><code># simulation with: vMax:22.000 aMax:2.000 bMax:2.000 lCar:5.000 sigA:0.500 tTau:1.500
 Loading configuration... done.
 #### yields rmse: 212.6411
-</code></pre></div>
-
+</code></pre>
 <p>Of course, the values differ between the steps. 80 iterations need about
 ten minutes to be executed.</p>
 <p>"runner.py" generates a file named "results.csv" which includes for each
@@ -381,7 +379,7 @@ available at <a href="https://elib.dlr.de/6646/">[2]</a></p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

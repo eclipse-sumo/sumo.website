@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../../js/jquery-3.7.0.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -229,9 +230,8 @@ to files, and printing the help screen.</p>
 <p>Each application has exactly one instance of the <strong>OptionsCont</strong>
 (options container) - class. A reference to this class may be obtained
 using</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">static</span><span class="w"> </span><span class="nt">OptionsCont</span><span class="w"> </span><span class="o">&amp;</span><span class="nt">OptionsCont</span><span class="p">::</span><span class="nd">getOptions</span><span class="o">();</span>
-</code></pre></div>
-
+<pre><code>static OptionsCont &amp;OptionsCont::getOptions();
+</code></pre>
 <p>Before an application starts registering its options, it must let
 OptionsCont know itself. It is needed due to the fact that OptionsCont
 is responsible for printing a basic information about the application
@@ -239,16 +239,15 @@ and because it also generates the help screen which includes the
 application's name, possibly example calls, etc. Due to this, the first
 touch of the options sub system for each application looks similar to
 the following which is borrowed from netconvert_main.cpp:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="n">OptionsCont</span><span class="w"> </span><span class="o">&amp;</span><span class="n">oc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OptionsCont</span><span class="o">::</span><span class="n">getOptions</span><span class="p">();</span>
-<span class="w">   </span><span class="c1">// give some application descriptions</span>
-<span class="w">   </span><span class="n">oc</span><span class="p">.</span><span class="n">setApplicationDescription</span><span class="p">(</span><span class="s">&quot;Road network importer / builder for the road traffic simulation SUMO.&quot;</span><span class="p">);</span>
-<span class="cp">#ifdef WIN32</span>
-<span class="w">   </span><span class="n">oc</span><span class="p">.</span><span class="n">setApplicationName</span><span class="p">(</span><span class="s">&quot;netconvert.exe&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;SUMO netconvert Version &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">string</span><span class="p">)</span><span class="n">VERSION_STRING</span><span class="p">);</span>
-<span class="cp">#else</span>
-<span class="w">   </span><span class="n">oc</span><span class="p">.</span><span class="n">setApplicationName</span><span class="p">(</span><span class="s">&quot;sumo-netconvert&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;SUMO netconvert Version &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">string</span><span class="p">)</span><span class="n">VERSION_STRING</span><span class="p">);</span>
-<span class="cp">#endif</span>
-</code></pre></div>
-
+<pre><code>   OptionsCont &amp;oc = OptionsCont::getOptions();
+   // give some application descriptions
+   oc.setApplicationDescription(&quot;Road network importer / builder for the road traffic simulation SUMO.&quot;);
+#ifdef WIN32
+   oc.setApplicationName(&quot;netconvert.exe&quot;, &quot;SUMO netconvert Version &quot; + (string)VERSION_STRING);
+#else
+   oc.setApplicationName(&quot;sumo-netconvert&quot;, &quot;SUMO netconvert Version &quot; + (string)VERSION_STRING);
+#endif
+</code></pre>
 <p>The ifdef-block is used to differ between the supported OSes
 (Windows/Linux) where the SUMO-applications are named slightly
 different.</p>
@@ -261,19 +260,16 @@ and their default values (if existing) must be inserted into this
 container. This mostly done within a dedicated method or function.</p>
 <p>To insert an application option into the container, use one of the
 following polymorphs:</p>
-<div class="codehilite"><pre><span></span><code><span class="nb nb-Type">void</span><span class="w"> </span><span class="n">doRegister</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name1</span><span class="p">,</span><span class="w"> </span><span class="n">Option</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="p">);</span>
-</code></pre></div>
-
+<pre><code>void doRegister(const std::string &amp;name1, Option *v);
+</code></pre>
 <p>or</p>
-<div class="codehilite"><pre><span></span><code><span class="nb nb-Type">void</span><span class="w"> </span><span class="n">doRegister</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name1</span><span class="p">,</span><span class="w"> </span><span class="nb">char</span><span class="w"> </span><span class="n">abbr</span><span class="p">,</span><span class="w"> </span><span class="n">Option</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="p">);</span>
-</code></pre></div>
-
+<pre><code>void doRegister(const std::string &amp;name1, char abbr, Option *v);
+</code></pre>
 <p>The parameter "name1" is the name (or one of the possible names, better
 to say) of the inserted option. The character "abbr" within the second
 call is the possible one-char abbreviation of the name.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Caution</span><span class="o">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="n">after</span><span class="w"> </span><span class="n">adding</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">abbreviation</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="n">different</span><span class="w"> </span><span class="n">options</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">defined</span><span class="o">.</span>
-</code></pre></div>
-
+<pre><code>Caution: The behavior after adding the same abbreviation for two different options is not defined.
+</code></pre>
 <p>The third parameter is an option that shall be assigned to the name(s).
 Remark that the <strong>OptionsCont</strong> takes the responsibility for this option
 - it will be deleted when the <strong>OptionsCont</strong> is deleted. The option
@@ -303,18 +299,16 @@ The parametrised constructor is used to supply default values for
 options, in the other case, no value is known to the system at first. An
 example: settings the "verbose"-switch as following, lets the
 application run quiet as default:</p>
-<div class="codehilite"><pre><span></span><code>oc.doRegister(&quot;verbose&quot;, &#39;v&#39;, new Option_Bool(false));
-</code></pre></div>
-
+<pre><code>oc.doRegister(&quot;verbose&quot;, 'v', new Option_Bool(false));
+</code></pre>
 <h4 id="adding_synonyms">Adding Synonyms<a class="headerlink" href="#adding_synonyms" title="Permanent link">#</a></h4>
 <p>One can also add synonyms for options. If you want to implement the
 option "<strong>name-of-vehicle-that-shall-halt</strong>", but you wish to have a
 shorter name, too, use the following to make the same option accessible
 using both "<strong>name-of-vehicle-that-shall-halt</strong>" and "<strong>v2h</strong>":</p>
-<div class="codehilite"><pre><span></span><code>oc.doRegister(&quot;name-of-vehicle-that-shall-halt&quot;, new Option_String());
+<pre><code>oc.doRegister(&quot;name-of-vehicle-that-shall-halt&quot;, new Option_String());
 oc.addSynonyme(&quot;name-of-vehicle-that-shall-halt&quot;, &quot;v2h&quot;);
-</code></pre></div>
-
+</code></pre>
 <h2 id="retrieving_options">Retrieving Options<a class="headerlink" href="#retrieving_options" title="Permanent link">#</a></h2>
 <p>If no default value was supplied for an option, you should ask the
 <strong>OptionsCont</strong> whether it has been set. Access to values of unset
@@ -322,24 +316,21 @@ options causes exceptions. This may sound hard, but as it's only the
 developer who accesses the options container in fact, it's the best way
 to assure security of the code. One can determine whether an option is
 set using</p>
-<div class="codehilite"><pre><span></span><code><span class="nb nb-Type">bool</span><span class="w"> </span><span class="n">OptionsCont</span><span class="p">::</span><span class="n">isSet</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
-</code></pre></div>
-
+<pre><code>bool OptionsCont::isSet(const std::string &amp;name) const;
+</code></pre>
 <p>If one has to know whether an option still stores the default value or
 a value was supplied by the user, he/she may call</p>
-<div class="codehilite"><pre><span></span><code><span class="nb nb-Type">bool</span><span class="w"> </span><span class="n">OptionsCont</span><span class="p">::</span><span class="n">isDefault</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
-</code></pre></div>
-
+<pre><code>bool OptionsCont::isDefault(const std::string &amp;name) const;
+</code></pre>
 <p>Dependent on the type of an option, one can retrieve its value using
 the following methods from OptionsCont:</p>
-<div class="codehilite"><pre><span></span><code><span class="nb nb-Type">int</span><span class="w"> </span><span class="n">OptionsCont</span><span class="p">::</span><span class="n">getInt</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
-<span class="n">long</span><span class="w"> </span><span class="n">OptionsCont</span><span class="p">::</span><span class="n">getLong</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
-<span class="n">std</span><span class="p">::</span><span class="n">string</span><span class="w"> </span><span class="n">OptionsCont</span><span class="p">::</span><span class="n">getString</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
-<span class="nb nb-Type">float</span><span class="w"> </span><span class="n">OptionsCont</span><span class="p">::</span><span class="n">getFloat</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">IntVector</span><span class="w"> </span><span class="o">&amp;</span><span class="n">OptionsCont</span><span class="p">::</span><span class="n">getIntVector</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">StringVector</span><span class="w"> </span><span class="o">&amp;</span><span class="n">OptionsCont</span><span class="p">::</span><span class="n">getStringVector</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
-</code></pre></div>
-
+<pre><code>int OptionsCont::getInt(const std::string &amp;name) const;
+long OptionsCont::getLong(const std::string &amp;name) const;
+std::string OptionsCont::getString(const std::string &amp;name) const;
+float OptionsCont::getFloat(const std::string &amp;name) const;
+const IntVector &amp;OptionsCont::getIntVector(const std::string &amp;name) const;
+const StringVector &amp;OptionsCont::getStringVector(const std::string &amp;name) const;
+</code></pre>
 <p>Using an improper method yields an exception.</p>
 <p>You may have noticed, that there is one method to retrieve a certain
 value less than types available. The type <strong>Option_FileName</strong> returns a
@@ -359,7 +350,7 @@ option's usage.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

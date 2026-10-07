@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -358,16 +359,14 @@ file is optional - you should run <a href="../netconvert.html">netconvert</a> to
 build the network. If you only use edges and nodes, stored in
 "MyEdges.edg.xml" and "MyNodes.nod.xml" respectively, the call should
 look like:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --node-files=MyNodes.nod.xml --edge-files=MyEdges.edg.xml \</span>
-<span class="n">  --output-file=MySUMONet.net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --node-files=MyNodes.nod.xml --edge-files=MyEdges.edg.xml \
+  --output-file=MySUMONet.net.xml
+</code></pre>
 <p>If you also use connections and types the call is:</p>
-<div class="codehilite"><pre><span></span><code><span class="nx">netconvert</span><span class="w"> </span><span class="o">--</span><span class="nx">node</span><span class="o">-</span><span class="nx">files</span><span class="p">=</span><span class="nx">MyNodes</span><span class="p">.</span><span class="nx">nod</span><span class="p">.</span><span class="nx">xml</span><span class="w"> </span><span class="o">--</span><span class="nx">edge</span><span class="o">-</span><span class="nx">files</span><span class="p">=</span><span class="nx">MyEdges</span><span class="p">.</span><span class="nx">edg</span><span class="p">.</span><span class="nx">xml</span><span class="w"> </span>\
-<span class="w">  </span><span class="o">--</span><span class="nx">connection</span><span class="o">-</span><span class="nx">files</span><span class="p">=</span><span class="nx">MyConnections</span><span class="p">.</span><span class="nx">con</span><span class="p">.</span><span class="nx">xml</span><span class="w"> </span><span class="o">--</span><span class="k">type</span><span class="o">-</span><span class="nx">files</span><span class="p">=</span><span class="nx">MyTypes</span><span class="p">.</span><span class="nx">typ</span><span class="p">.</span><span class="nx">xml</span><span class="w"> </span>\
-<span class="w">  </span><span class="o">--</span><span class="nx">output</span><span class="o">-</span><span class="nx">file</span><span class="p">=</span><span class="nx">MySUMONet</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --node-files=MyNodes.nod.xml --edge-files=MyEdges.edg.xml \
+  --connection-files=MyConnections.con.xml --type-files=MyTypes.typ.xml \
+  --output-file=MySUMONet.net.xml
+</code></pre>
 <p>The options used here, including their abbreviations, are documented on
 the <a href="../netconvert.html#input">netconvert manual page</a>.</p>
 <p>Maybe your edge definitions are incomplete or buggy. If you still want
@@ -424,9 +423,8 @@ available as XML Schema Definitions:</p>
 <p>Within the nodes-files, normally having the extension ".nod.xml" (see
 <a href="../Other/File_Extensions.html">Known Extensions</a>), every node is
 described in a single line which looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;STRING&gt;&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;&lt;FLOAT&gt;&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;&lt;FLOAT&gt;&quot;</span><span class="w"> </span><span class="err">[</span><span class="na">type=</span><span class="s">&quot;&lt;TYPE&gt;&quot;</span><span class="err">]</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;node id=&quot;&lt;STRING&gt;&quot; x=&quot;&lt;FLOAT&gt;&quot; y=&quot;&lt;FLOAT&gt;&quot; [type=&quot;&lt;TYPE&gt;&quot;]/&gt;
+</code></pre>
 <p>the straight brackets ('[' and ']')
 indicate that the parameter is optional. Each of these attributes has a
 certain meaning and value range:</p>
@@ -525,23 +523,22 @@ definitions into an opening and a closing "tag". A complete file should
 like the example below, which is the node file "cross3l.nod.xml" for the
 examples "<strong><em>&lt;SUMO_HOME&gt;</em></strong>/data/examples/netbuild/types/cross_usingtypes/" and
 "<strong><em>&lt;SUMO_HOME&gt;</em></strong>/data/examples/netbuild/types/cross_notypes/" example.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;nodes&gt;</span><span class="w"> </span><span class="cm">&lt;!-- The opening tag --&gt;</span>
+<pre><code class="language-xml">&lt;nodes&gt; &lt;!-- The opening tag --&gt;
 
-<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;traffic_light&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- def. of node &quot;0&quot; --&gt;</span>
+  &lt;node id=&quot;0&quot; x=&quot;0.0&quot; y=&quot;0.0&quot; type=&quot;traffic_light&quot;/&gt; &lt;!-- def. of node &quot;0&quot; --&gt;
 
-<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-500.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;priority&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- def. of node &quot;1&quot; --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;+500.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;priority&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- def. of node &quot;2&quot; --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;-500.0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;priority&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- def. of node &quot;3&quot; --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;+500.0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;priority&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- def. of node &quot;4&quot; --&gt;</span>
+  &lt;node id=&quot;1&quot; x=&quot;-500.0&quot; y=&quot;0.0&quot; type=&quot;priority&quot;/&gt; &lt;!-- def. of node &quot;1&quot; --&gt;
+  &lt;node id=&quot;2&quot; x=&quot;+500.0&quot; y=&quot;0.0&quot; type=&quot;priority&quot;/&gt; &lt;!-- def. of node &quot;2&quot; --&gt;
+  &lt;node id=&quot;3&quot; x=&quot;0.0&quot; y=&quot;-500.0&quot; type=&quot;priority&quot;/&gt; &lt;!-- def. of node &quot;3&quot; --&gt;
+  &lt;node id=&quot;4&quot; x=&quot;0.0&quot; y=&quot;+500.0&quot; type=&quot;priority&quot;/&gt; &lt;!-- def. of node &quot;4&quot; --&gt;
 
-<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;m1&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-250.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;priority&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- def. of node &quot;m1&quot; --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;m2&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;+250.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;priority&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- def. of node &quot;m2&quot; --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;m3&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;-250.0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;priority&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- def. of node &quot;m3&quot; --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;m4&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;+250.0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;priority&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- def. of node &quot;m4&quot; --&gt;</span>
+  &lt;node id=&quot;m1&quot; x=&quot;-250.0&quot; y=&quot;0.0&quot; type=&quot;priority&quot;/&gt; &lt;!-- def. of node &quot;m1&quot; --&gt;
+  &lt;node id=&quot;m2&quot; x=&quot;+250.0&quot; y=&quot;0.0&quot; type=&quot;priority&quot;/&gt; &lt;!-- def. of node &quot;m2&quot; --&gt;
+  &lt;node id=&quot;m3&quot; x=&quot;0.0&quot; y=&quot;-250.0&quot; type=&quot;priority&quot;/&gt; &lt;!-- def. of node &quot;m3&quot; --&gt;
+  &lt;node id=&quot;m4&quot; x=&quot;0.0&quot; y=&quot;+250.0&quot; type=&quot;priority&quot;/&gt; &lt;!-- def. of node &quot;m4&quot; --&gt;
 
-<span class="nt">&lt;/nodes&gt;</span><span class="w"> </span><span class="cm">&lt;!-- The closing tag --&gt;</span>
-</code></pre></div>
-
+&lt;/nodes&gt; &lt;!-- The closing tag --&gt;
+</code></pre>
 <p>As you may notice, only the first node named "0", which is the node in
 the middle of the network, is a traffic light controlled junction. All
 other nodes are uncontrolled. You may also notice, that each of both
@@ -731,12 +728,11 @@ joinable node clusters works like this:</p>
 </ol>
 <h3 id="specifying_and_excluding_explicit_joins">Specifying and excluding explicit joins<a class="headerlink" href="#specifying_and_excluding_explicit_joins" title="Permanent link">#</a></h3>
 <p>More fine grained control over joining can be achieved by using elements <code>&lt;join&gt;</code> and <code>&lt;joinExclude&gt;</code> within a nodes-file</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;nodes&gt;</span>
-<span class="w">  </span><span class="nt">&lt;join</span><span class="w"> </span><span class="na">nodes=</span><span class="s">&quot;id0 id23 id24&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;joinExclude</span><span class="w"> </span><span class="na">nodes=</span><span class="s">&quot;id13 id17&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/nodes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;nodes&gt;
+  &lt;join nodes=&quot;id0 id23 id24&quot;/&gt;
+  &lt;joinExclude nodes=&quot;id13 id17&quot;/&gt;
+&lt;/nodes&gt;
+</code></pre>
 <p>This will cause the nodes <em>id0</em>,<em>id23</em> and <em>id24</em> to be joined into a
 single junction. It will also prevent the nodes <em>id13</em> and <em>id17</em> from
 being joined. The <strong>joinExclude</strong>-tag is only useful together with the
@@ -976,27 +972,26 @@ this edge into the junction not wait.</p>
 closing tag and for the example
 "<strong><em>&lt;SUMO_HOME&gt;</em></strong>/data/examples/netbuild/types/cross_notypes/" the whole edges-file
 looks like this ("cross3l.edg.xml"):</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;edges&gt;</span>
+<pre><code class="language-xml">&lt;edges&gt;
 
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1fi&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;m1&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;11.11&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1si&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;m1&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1o&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;11.11&quot;</span><span class="nt">/&gt;</span>
+  &lt;edge id=&quot;1fi&quot; from=&quot;1&quot; to=&quot;m1&quot; priority=&quot;2&quot; numLanes=&quot;2&quot; speed=&quot;11.11&quot;/&gt;
+  &lt;edge id=&quot;1si&quot; from=&quot;m1&quot; to=&quot;0&quot; priority=&quot;3&quot; numLanes=&quot;3&quot; speed=&quot;13.89&quot;/&gt;
+  &lt;edge id=&quot;1o&quot; from=&quot;0&quot; to=&quot;1&quot; priority=&quot;1&quot; numLanes=&quot;1&quot; speed=&quot;11.11&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2fi&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;m2&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;11.11&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2si&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;m2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2o&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;11.11&quot;</span><span class="nt">/&gt;</span>
+  &lt;edge id=&quot;2fi&quot; from=&quot;2&quot; to=&quot;m2&quot; priority=&quot;2&quot; numLanes=&quot;2&quot; speed=&quot;11.11&quot;/&gt;
+  &lt;edge id=&quot;2si&quot; from=&quot;m2&quot; to=&quot;0&quot; priority=&quot;3&quot; numLanes=&quot;3&quot; speed=&quot;13.89&quot;/&gt;
+  &lt;edge id=&quot;2o&quot; from=&quot;0&quot; to=&quot;2&quot; priority=&quot;1&quot; numLanes=&quot;1&quot; speed=&quot;11.11&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3fi&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;m3&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;11.11&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3si&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;m3&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3o&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;11.11&quot;</span><span class="nt">/&gt;</span>
+  &lt;edge id=&quot;3fi&quot; from=&quot;3&quot; to=&quot;m3&quot; priority=&quot;2&quot; numLanes=&quot;2&quot; speed=&quot;11.11&quot;/&gt;
+  &lt;edge id=&quot;3si&quot; from=&quot;m3&quot; to=&quot;0&quot; priority=&quot;3&quot; numLanes=&quot;3&quot; speed=&quot;13.89&quot;/&gt;
+  &lt;edge id=&quot;3o&quot; from=&quot;0&quot; to=&quot;3&quot; priority=&quot;1&quot; numLanes=&quot;1&quot; speed=&quot;11.11&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;4fi&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;m4&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;11.11&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;4si&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;m4&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;4o&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;11.11&quot;</span><span class="nt">/&gt;</span>
+  &lt;edge id=&quot;4fi&quot; from=&quot;4&quot; to=&quot;m4&quot; priority=&quot;2&quot; numLanes=&quot;2&quot; speed=&quot;11.11&quot;/&gt;
+  &lt;edge id=&quot;4si&quot; from=&quot;m4&quot; to=&quot;0&quot; priority=&quot;3&quot; numLanes=&quot;3&quot; speed=&quot;13.89&quot;/&gt;
+  &lt;edge id=&quot;4o&quot; from=&quot;0&quot; to=&quot;4&quot; priority=&quot;1&quot; numLanes=&quot;1&quot; speed=&quot;11.11&quot;/&gt;
 
-<span class="nt">&lt;/edges&gt;</span>
-</code></pre></div>
-
+&lt;/edges&gt;
+</code></pre>
 <p>Within this example, we have used explicit definitions of edges. An
 example for using types is described in the chapter <a href="#type_descriptions">Type Descriptions</a>.</p>
 <div class="admonition caution">
@@ -1035,22 +1030,20 @@ together with vehicle classes allowed/forbidden on them into these
 edge's lanes. Assume you want to allow only buses to use the leftmost
 lane of edge "2si" from the example above. Simply change this edge's
 definition into:</p>
-<div class="codehilite"><pre><span></span><code>...<span class="w"> </span>previous<span class="w"> </span>definitions<span class="w"> </span>...
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2si&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;m2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;lane</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">allow=</span><span class="s">&quot;bus&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/edge&gt;</span>
-...<span class="w"> </span>further<span class="w"> </span>definitions<span class="w"> </span>...
-</code></pre></div>
-
+<pre><code class="language-xml">... previous definitions ...
+  &lt;edge id=&quot;2si&quot; from=&quot;m2&quot; to=&quot;0&quot; priority=&quot;3&quot; numLanes=&quot;3&quot; speed=&quot;13.89&quot;&gt;
+    &lt;lane index=&quot;2&quot; allow=&quot;bus&quot;/&gt;
+  &lt;/edge&gt;
+... further definitions ...
+</code></pre>
 <p>If you would like to disallow passenger cars and taxis, the following
 snippet would do it:</p>
-<div class="codehilite"><pre><span></span><code>...<span class="w"> </span>previous<span class="w"> </span>definitions<span class="w"> </span>...
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2si&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;m2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;lane</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">disallow=</span><span class="s">&quot;passenger taxi&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/edge&gt;</span>
-...<span class="w"> </span>further<span class="w"> </span>definitions<span class="w"> </span>...
-</code></pre></div>
-
+<pre><code class="language-xml">... previous definitions ...
+  &lt;edge id=&quot;2si&quot; from=&quot;m2&quot; to=&quot;0&quot; priority=&quot;3&quot; numLanes=&quot;3&quot; speed=&quot;13.89&quot;&gt;
+    &lt;lane index=&quot;2&quot; disallow=&quot;passenger taxi&quot;/&gt;
+  &lt;/edge&gt;
+... further definitions ...
+</code></pre>
 <p>The definition of a lane contains the following optional attributes:</p>
 <table>
 <thead>
@@ -1126,15 +1119,14 @@ and their usage.</p>
 <h2 id="stop_offsets">Stop Offsets<a class="headerlink" href="#stop_offsets" title="Permanent link">#</a></h2>
 <p>Each edge or lane may carry a <code>stopOffset</code> child element to specify an additional
 stopping offset for vehicles of certain classes. This can be used to define a <a href="https://en.wikipedia.org/wiki/Advanced_stop_line">bike box</a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;ID&gt;&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;stopOffset</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;&lt;distance in m.&gt;&quot;</span><span class="w"> </span><span class="na">vClasses=</span><span class="s">&quot;&lt;space-separated list of vClasses&gt;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;lane</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;&lt;ID&gt;&quot;</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;&lt;INDEX&gt;&quot;</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;stopOffset</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;&lt;distance in m.&gt;&quot;</span><span class="w"> </span><span class="na">exceptions=</span><span class="s">&quot;&lt;space-separated list of vClasses&gt;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/lane&gt;</span>
-<span class="w">    </span>...
-<span class="nt">&lt;/edge&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;edge id=&quot;&lt;ID&gt;&quot;&gt;
+    &lt;stopOffset value=&quot;&lt;distance in m.&gt;&quot; vClasses=&quot;&lt;space-separated list of vClasses&gt;&quot; /&gt;
+    &lt;lane id=&quot;&lt;ID&gt;&quot; index=&quot;&lt;INDEX&gt;&quot; ... &gt;
+        &lt;stopOffset value=&quot;&lt;distance in m.&gt;&quot; exceptions=&quot;&lt;space-separated list of vClasses&gt;&quot; /&gt;
+    &lt;/lane&gt;
+    ...
+&lt;/edge&gt;
+</code></pre>
 <p>Defining this element for an edge will affect all lanes of the edge that
 do not hold an own <code>stopOffset</code> element. Note that there is the possibility to
 define either all vehicle classes, that are affected by the stop offset
@@ -1177,13 +1169,12 @@ Though, in some cases, it is more comfortable to set up a single edge
 and change the number of its lanes or the speed along its length.</p>
 <p>This is possible using "split" - a subelement of an XML-edge definition
 after 02.09.2009. A split may be given as following:</p>
-<div class="codehilite"><pre><span></span><code>...<span class="w"> </span>previous<span class="w"> </span>definitions<span class="w"> </span>...
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2si&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;m2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;split</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">lanes=</span><span class="s">&quot;0 1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/edge&gt;</span>
-...<span class="w"> </span>further<span class="w"> </span>definitions<span class="w"> </span>...
-</code></pre></div>
-
+<pre><code class="language-xml">... previous definitions ...
+    &lt;edge id=&quot;2si&quot; from=&quot;m2&quot; to=&quot;0&quot; priority=&quot;3&quot; numLanes=&quot;3&quot; speed=&quot;13.89&quot;&gt;
+      &lt;split pos=&quot;30&quot; lanes=&quot;0 1&quot; speed=&quot;10&quot;/&gt;
+    &lt;/edge&gt;
+... further definitions ...
+</code></pre>
 <p>What happens here is the following: 30meters from its begin
 (<code>pos="30"</code>) the edge is split, inserting a
 node named &lt;EDGE_ID&gt;.&lt;POSITION&gt;. Until this node, the edge includes all
@@ -1194,14 +1185,13 @@ the second edge contains only two lanes with a maximum speed of 10m/s.</p>
 <p>The most common usage example is the other way round: lanes must be
 added, not removed along a road. The following snippet shows the by
 example:</p>
-<div class="codehilite"><pre><span></span><code>...<span class="w"> </span>previous<span class="w"> </span>definitions<span class="w"> </span>...
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2si&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;m2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.89&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;split</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">lanes=</span><span class="s">&quot;0 1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;split</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">lanes=</span><span class="s">&quot;0 1 2&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/edge&gt;</span>
-...<span class="w"> </span>further<span class="w"> </span>definitions<span class="w"> </span>...
-</code></pre></div>
-
+<pre><code class="language-xml">... previous definitions ...
+  &lt;edge id=&quot;2si&quot; from=&quot;m2&quot; to=&quot;0&quot; priority=&quot;3&quot; numLanes=&quot;3&quot; speed=&quot;13.89&quot;&gt;
+    &lt;split pos=&quot;0&quot; lanes=&quot;0 1&quot;/&gt;
+    &lt;split pos=&quot;30&quot; lanes=&quot;0 1 2&quot;/&gt;
+  &lt;/edge&gt;
+... further definitions ...
+</code></pre>
 <p>There are several things to note:</p>
 <ul>
 <li>In the road definition, we use the maximum lane number (3)</li>
@@ -1214,16 +1204,14 @@ example:</p>
 <p>It is also possible to add a common split in both directions of a road.
 With the example below, one new node is created which splits the forward
 and backward edge:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;123&quot;</span><span class="nt">&gt;</span>
-<span class="w">       </span><span class="nt">&lt;split</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;newNode&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;150&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/edge&gt;</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;-123&quot;</span><span class="nt">&gt;</span>
-<span class="w">       </span><span class="nt">&lt;split</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;newNode&quot;</span><span class="w"> </span><span class="na">pos=</span><span class="s">&quot;-150&quot;</span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/edge&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">   &lt;edge id=&quot;123&quot;&gt;
+       &lt;split id=&quot;newNode&quot; pos=&quot;150&quot;/&gt;
+   &lt;/edge&gt;
+</code></pre>
+<pre><code class="language-xml">   &lt;edge id=&quot;-123&quot;&gt;
+       &lt;split id=&quot;newNode&quot; pos=&quot;-150&quot;/&gt;
+   &lt;/edge&gt;
+</code></pre>
 <p>The definition of a split uses the following attributes:</p>
 <table>
 <thead>
@@ -1281,14 +1269,13 @@ and backward edge:</p>
 computation and disables turn-arounds for edges entering the roundabout
 from outside. A roundabout is specified within an <em>.edg.xml</em>-file in the
 following way:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;edges&gt;</span>
-<span class="w">  </span>...<span class="w">   </span><span class="cm">&lt;!--Edge Definitions --&gt;</span>
+<pre><code class="language-xml">&lt;edges&gt;
+  ...   &lt;!--Edge Definitions --&gt;
 
-<span class="w">  </span><span class="nt">&lt;roundabout</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;&lt;EDGE_ID&gt; &lt;EDGE_ID&gt; [&lt;EDGE_ID&gt;..]&quot;</span><span class="nt">/&gt;</span>
+  &lt;roundabout edges=&quot;&lt;EDGE_ID&gt; &lt;EDGE_ID&gt; [&lt;EDGE_ID&gt;..]&quot;/&gt;
 
-<span class="nt">&lt;/edges&gt;</span>
-</code></pre></div>
-
+&lt;/edges&gt;
+</code></pre>
 <p>Manual specification of roundabouts is a useful supplement for the
 existing roundabout heuristic (activated via option <strong>--roundabouts.guess</strong>). Guessed
 roundabouts are written as part of the <em>plain-xml</em> output (option <strong>--plain-output-prefix</strong>).
@@ -1300,29 +1287,27 @@ This output can then be customized by the user and fed back into
 the adjacency information for opposite direction lanes must be defined.
 This can be done explicitly by using the <code>&lt;neigh&gt;</code> element in an <em>.edg.xml</em> file
 as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;edges&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;X&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;Y&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;neigh</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;b_0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/edge&gt;</span>
+<pre><code class="language-xml">&lt;edges&gt;
+  &lt;edge id=&quot;a&quot; from=&quot;X&quot; to=&quot;Y&quot; numLanes=&quot;2&quot;&gt;
+      &lt;neigh lane=&quot;b_0&quot;/&gt;
+  &lt;/edge&gt;
 
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;b&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;Y&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;X&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;neigh</span><span class="w"> </span><span class="na">lane=</span><span class="s">&quot;a_1&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/edge&gt;</span>
-<span class="nt">&lt;/edges&gt;</span>
-</code></pre></div>
-
+  &lt;edge id=&quot;b&quot; from=&quot;Y&quot; to=&quot;X&quot;&gt;
+      &lt;neigh lane=&quot;a_1&quot;/&gt;
+  &lt;/edge&gt;
+&lt;/edges&gt;
+</code></pre>
 <p>In the above input the inner-most lanes of edges <em>a</em> and <em>b</em> are
 declared as adjacent.</p>
 <h2 id="deleting_edges_or_lanes">Deleting edges or lanes<a class="headerlink" href="#deleting_edges_or_lanes" title="Permanent link">#</a></h2>
 <p>In order to delete an edge or lane which comes from a different source
 or a preprocessed net one can give the edge id and the optional index in
 the following way:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;edges&gt;</span>
-<span class="w">  </span><span class="nt">&lt;delete</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- deletes the edge &quot;a&quot; --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;delete</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="na">index=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- deletes the first lane of edge &quot;a&quot; --&gt;</span>
-<span class="nt">&lt;/edges&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;edges&gt;
+  &lt;delete id=&quot;a&quot;/&gt; &lt;!-- deletes the edge &quot;a&quot; --&gt;
+  &lt;delete id=&quot;a&quot; index=&quot;0&quot;/&gt; &lt;!-- deletes the first lane of edge &quot;a&quot; --&gt;
+&lt;/edges&gt;
+</code></pre>
 <p>It is also possible to remove all edges of a specific type (see below)
 by giving the attribute remove="true" to the type.</p>
 <h1 id="type_descriptions">Type Descriptions<a class="headerlink" href="#type_descriptions" title="Permanent link">#</a></h1>
@@ -1367,37 +1352,35 @@ themselves. The information about the nodes the edge starts and ends at
 is not given within the types' descriptions. They can only be set within
 the edge's attributes. Here's an example on referencing types in edge
 definitions:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;edges&gt;</span>
+<pre><code class="language-xml">&lt;edges&gt;
 
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1fi&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;m1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;b&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1si&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;m1&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1o&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;c&quot;</span><span class="nt">/&gt;</span>
+  &lt;edge id=&quot;1fi&quot; from=&quot;1&quot; to=&quot;m1&quot; type=&quot;b&quot;/&gt;
+  &lt;edge id=&quot;1si&quot; from=&quot;m1&quot; to=&quot;0&quot; type=&quot;a&quot;/&gt;
+  &lt;edge id=&quot;1o&quot; from=&quot;0&quot; to=&quot;1&quot; type=&quot;c&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2fi&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;m2&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;b&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2si&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;m2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2o&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;c&quot;</span><span class="nt">/&gt;</span>
+  &lt;edge id=&quot;2fi&quot; from=&quot;2&quot; to=&quot;m2&quot; type=&quot;b&quot;/&gt;
+  &lt;edge id=&quot;2si&quot; from=&quot;m2&quot; to=&quot;0&quot; type=&quot;a&quot;/&gt;
+  &lt;edge id=&quot;2o&quot; from=&quot;0&quot; to=&quot;2&quot; type=&quot;c&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3fi&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;m3&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;b&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3si&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;m3&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3o&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;c&quot;</span><span class="nt">/&gt;</span>
+  &lt;edge id=&quot;3fi&quot; from=&quot;3&quot; to=&quot;m3&quot; type=&quot;b&quot;/&gt;
+  &lt;edge id=&quot;3si&quot; from=&quot;m3&quot; to=&quot;0&quot; type=&quot;a&quot;/&gt;
+  &lt;edge id=&quot;3o&quot; from=&quot;0&quot; to=&quot;3&quot; type=&quot;c&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;4fi&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;m4&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;b&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;4si&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;m4&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;4o&quot;</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;c&quot;</span><span class="nt">/&gt;</span>
+  &lt;edge id=&quot;4fi&quot; from=&quot;4&quot; to=&quot;m4&quot; type=&quot;b&quot;/&gt;
+  &lt;edge id=&quot;4si&quot; from=&quot;m4&quot; to=&quot;0&quot; type=&quot;a&quot;/&gt;
+  &lt;edge id=&quot;4o&quot; from=&quot;0&quot; to=&quot;4&quot; type=&quot;c&quot;/&gt;
 
-<span class="nt">&lt;/edges&gt;</span>
-</code></pre></div>
-
+&lt;/edges&gt;
+</code></pre>
 <p>The according types file looks like this (see <a href="../SUMO_edge_type_file.html">SUMO edge type file</a>):</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;types&gt;</span>
+<pre><code class="language-xml">&lt;types&gt;
 
-<span class="w">  </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;13.889&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;b&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;11.111&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;c&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;11.111&quot;</span><span class="nt">/&gt;</span>
+  &lt;type id=&quot;a&quot; priority=&quot;3&quot; numLanes=&quot;3&quot; speed=&quot;13.889&quot;/&gt;
+  &lt;type id=&quot;b&quot; priority=&quot;2&quot; numLanes=&quot;2&quot; speed=&quot;11.111&quot;/&gt;
+  &lt;type id=&quot;c&quot; priority=&quot;1&quot; numLanes=&quot;1&quot; speed=&quot;11.111&quot;/&gt;
 
-<span class="nt">&lt;/types&gt;</span>
-</code></pre></div>
-
+&lt;/types&gt;
+</code></pre>
 <p>As you can see, we have joined the edges into three classes "a", "b",
 and "c" and have generated a description for each of these classes.
 Doing this, the generated net is similar to the one generated using the
@@ -1406,11 +1389,10 @@ settings described above (example
 <h2 id="vehicle-class_specific_speed_limits">vehicle-class specific speed limits<a class="headerlink" href="#vehicle-class_specific_speed_limits" title="Permanent link">#</a></h2>
 <p>Using <code>&lt;type&gt;</code> definitions it is possible to implement vClass specific speed
 limits:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">numLanes=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;38.89&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;restriction</span><span class="w"> </span><span class="na">vClass=</span><span class="s">&quot;truck&quot;</span><span class="w"> </span><span class="na">speed=</span><span class="s">&quot;27.89&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/type&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;type id=&quot;a&quot; priority=&quot;3&quot; numLanes=&quot;3&quot; speed=&quot;38.89&quot;&gt;
+   &lt;restriction vClass=&quot;truck&quot; speed=&quot;27.89&quot;/&gt;
+&lt;/type&gt;
+</code></pre>
 <p>the value of <em>vClass</em> must be a single class from <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#abstract_vehicle_class">the list of possible vehicle classes</a>.</p>
 <p>An example use of vehicle-class specific speed limits would be trucks on
 German motorways which are not permitted to exceed 100km/h even where
@@ -1478,9 +1460,8 @@ also which lanes shall be used on both sides.</p>
 <h3 id="edge-to-edge_connectivity">Edge-to-Edge connectivity<a class="headerlink" href="#edge-to-edge_connectivity" title="Permanent link">#</a></h3>
 <p>If you only want to describe which edges may be reached from a certain
 edge, the definition is:</p>
-<div class="codehilite"><pre><span></span><code>&lt;connection from=&quot;&lt;FROM_EDGE_ID&gt;&quot; to=&quot;&lt;T0_EDGE_ID&gt;&quot;/&gt;
-</code></pre></div>
-
+<pre><code>&lt;connection from=&quot;&lt;FROM_EDGE_ID&gt;&quot; to=&quot;&lt;T0_EDGE_ID&gt;&quot;/&gt;
+</code></pre>
 <p>This tells <a href="../netconvert.html">netconvert</a> not only that vehicles shall be
 allowed to drive from the edge named <em>&lt;FROM_EDGE_ID&gt;</em> to the edge named
 <em>&lt;TO_EDGE_ID&gt;</em>, but also prohibits all movements to other edges from
@@ -1512,9 +1493,8 @@ compute which lanes shall be used if any of the connected edges has more
 than one lane. To obtain more control, additional attributes may be given as described below.</p>
 <h3 id="lane-to-lane_connectivity">Lane-to-Lane connectivity<a class="headerlink" href="#lane-to-lane_connectivity" title="Permanent link">#</a></h3>
 <p>To declare connections fully (and avoid any kind of guessing), use the following:</p>
-<div class="codehilite"><pre><span></span><code>&lt;connection from=&quot;&lt;FROM_EDGE_ID&gt;&quot; to=&quot;&lt;T0_EDGE_ID&gt;&quot; fromLane=&quot;&lt;INT_1&gt;&quot; toLane=&quot;&lt;INT_2&gt;&quot;/&gt;
-</code></pre></div>
-
+<pre><code>&lt;connection from=&quot;&lt;FROM_EDGE_ID&gt;&quot; to=&quot;&lt;T0_EDGE_ID&gt;&quot; fromLane=&quot;&lt;INT_1&gt;&quot; toLane=&quot;&lt;INT_2&gt;&quot;/&gt;
+</code></pre>
 <p>Here, a connection from the edge's "<em>&lt;FROM_EDGE_ID&gt;</em>" lane with the number <em>&lt;INT_1&gt;</em> is build to the lane <em>&lt;INT_2&gt;</em> of the edge "<em>&lt;TO_EDGE_ID&gt;</em>". Lanes are counted from the right (outer) to the left (inner) side of the road beginning with 0. This style must be used when further connection attributes (such as permissions) shall be declared.</p>
 <table>
 <thead>
@@ -1640,9 +1620,8 @@ than one lane. To obtain more control, additional attributes may be given as des
 <p><a href="../netconvert.html">netconvert</a> may be used to patch existing sumo networks (<em>.net.xml</em> files) and changing connections is one of the supported use cases.
 If you only wish to <strong>remove</strong> a connection it may be convenient to use
 the following xml definition: </p>
-<div class="codehilite"><pre><span></span><code>&lt;delete from=&quot;&lt;FROM_EDGE_ID&gt;&quot; to=&quot;&lt;T0_EDGE_ID&gt;&quot;/&gt;
-</code></pre></div>
-
+<pre><code>&lt;delete from=&quot;&lt;FROM_EDGE_ID&gt;&quot; to=&quot;&lt;T0_EDGE_ID&gt;&quot;/&gt;
+</code></pre>
 <p>The attributes are the same as for the
 simple connection element:</p>
 <table>
@@ -1688,9 +1667,8 @@ simple connection element:</p>
 </ol>
 <p>It may be convenient to trigger re-guessing of connections for selected edges (i.e. after loading and edge-patch to change lane numbers).
 For this, the following definition may be used:</p>
-<div class="codehilite"><pre><span></span><code>&lt;connection from=&quot;&lt;FROM_EDGE_ID&gt;&quot; reset=&quot;true&quot;/&gt;
-</code></pre></div>
-
+<pre><code>&lt;connection from=&quot;&lt;FROM_EDGE_ID&gt;&quot; reset=&quot;true&quot;/&gt;
+</code></pre>
 <p>This will trigger all connections from edge with id <code>FROM_EDGE_ID</code> to be removed and re-guessed.</p>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h3>
 <p>There are two examples within the distribution. Both use the nodes and
@@ -1708,17 +1686,16 @@ edges. To do this we built a connections file where we say that the
 horizontal edges ("1si" and "2si") have only connections to the edges
 right to them and the edge in straight direction. The file looks like
 this:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;connections&gt;</span>
+<pre><code class="language-xml">&lt;connections&gt;
 
-<span class="w">  </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1si&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;3o&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1si&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;2o&quot;</span><span class="nt">/&gt;</span>
+  &lt;connection from=&quot;1si&quot; to=&quot;3o&quot;/&gt;
+  &lt;connection from=&quot;1si&quot; to=&quot;2o&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2si&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;4o&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2si&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;1o&quot;</span><span class="nt">/&gt;</span>
+  &lt;connection from=&quot;2si&quot; to=&quot;4o&quot;/&gt;
+  &lt;connection from=&quot;2si&quot; to=&quot;1o&quot;/&gt;
 
-<span class="nt">&lt;/connections&gt;</span>
-</code></pre></div>
-
+&lt;/connections&gt;
+</code></pre>
 <p>As you may see in the next picture, the horizontal edges within the
 result network contain no left-moving connections.</p>
 <p><img alt="cross3l_edge2edge_conns.gif" src="../images/Cross3l_edge2edge_conns.gif" title="Network with explicit edge-2-edge connections" />
@@ -1728,17 +1705,16 @@ Network with explicit edge-2-edge connections</p>
 additionally describe which lanes shall be connected. The according
 connections file says that the connections going straight shall be start
 at the second lane of the incoming edges:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;connections&gt;</span>
+<pre><code class="language-xml">&lt;connections&gt;
 
-<span class="w">  </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1si&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;3o&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1si&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;2o&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+  &lt;connection from=&quot;1si&quot; to=&quot;3o&quot; fromLane=&quot;0&quot; toLane=&quot;0&quot;/&gt;
+  &lt;connection from=&quot;1si&quot; to=&quot;2o&quot; fromLane=&quot;2&quot; toLane=&quot;0&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2si&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;4o&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2si&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;1o&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+  &lt;connection from=&quot;2si&quot; to=&quot;4o&quot; fromLane=&quot;0&quot; toLane=&quot;0&quot;/&gt;
+  &lt;connection from=&quot;2si&quot; to=&quot;1o&quot; fromLane=&quot;2&quot; toLane=&quot;0&quot;/&gt;
 
-<span class="nt">&lt;/connections&gt;</span>
-</code></pre></div>
-
+&lt;/connections&gt;
+</code></pre>
 <p>The built network looks like this:</p>
 <p><img alt="cross3l_lane2lane_conns.gif" src="../images/Cross3l_lane2lane_conns.gif" title="Network with explicit lane-2-lane connections" />
 Network with explicit lane-2-lane connections</p>
@@ -1753,34 +1729,33 @@ between two edges wait for another stream. Let's take another look at
 right-moving vehicles may drive. The following definition within the
 connections file lets vehicles on vertical edges moving right wait for
 those which move straight on horizontal edges:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;connections&gt;</span>
+<pre><code class="language-xml">&lt;connections&gt;
 
-<span class="w">  </span><span class="cm">&lt;!-- The next four connection definitions are same as in</span>
-<span class="cm">      &quot;Network with explicit edge-2-edge connections&quot; --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1si&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;3o&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1si&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;2o&quot;</span><span class="nt">/&gt;</span>
+  &lt;!-- The next four connection definitions are same as in
+      &quot;Network with explicit edge-2-edge connections&quot; --&gt;
+  &lt;connection from=&quot;1si&quot; to=&quot;3o&quot;/&gt;
+  &lt;connection from=&quot;1si&quot; to=&quot;2o&quot;/&gt;
 
-<span class="w">  </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2si&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;4o&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2si&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;1o&quot;</span><span class="nt">/&gt;</span>
+  &lt;connection from=&quot;2si&quot; to=&quot;4o&quot;/&gt;
+  &lt;connection from=&quot;2si&quot; to=&quot;1o&quot;/&gt;
 
-<span class="w">  </span><span class="cm">&lt;!-- now, let&#39;s prohibit the vertical connections by the horizontal --&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- prohibit moving right from top to left by straight from right to left --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;prohibition</span><span class="w"> </span><span class="na">prohibitor=</span><span class="s">&quot;2si-&gt;1o&quot;</span><span class="w"> </span><span class="na">prohibited=</span><span class="s">&quot;4si-&gt;1o&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- prohibit moving straight from top to bottom by straight from right to left --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;prohibition</span><span class="w"> </span><span class="na">prohibitor=</span><span class="s">&quot;2si-&gt;1o&quot;</span><span class="w"> </span><span class="na">prohibited=</span><span class="s">&quot;4si-&gt;3o&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- prohibit moving left from top to right by straight from right to left --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;prohibition</span><span class="w"> </span><span class="na">prohibitor=</span><span class="s">&quot;2si-&gt;1o&quot;</span><span class="w"> </span><span class="na">prohibited=</span><span class="s">&quot;4si-&gt;2o&quot;</span><span class="nt">/&gt;</span>
+  &lt;!-- now, let's prohibit the vertical connections by the horizontal --&gt;
+  &lt;!-- prohibit moving right from top to left by straight from right to left --&gt;
+  &lt;prohibition prohibitor=&quot;2si-&gt;1o&quot; prohibited=&quot;4si-&gt;1o&quot;/&gt;
+  &lt;!-- prohibit moving straight from top to bottom by straight from right to left --&gt;
+  &lt;prohibition prohibitor=&quot;2si-&gt;1o&quot; prohibited=&quot;4si-&gt;3o&quot;/&gt;
+  &lt;!-- prohibit moving left from top to right by straight from right to left --&gt;
+  &lt;prohibition prohibitor=&quot;2si-&gt;1o&quot; prohibited=&quot;4si-&gt;2o&quot;/&gt;
 
-<span class="w">  </span><span class="cm">&lt;!-- prohibit moving right from bottom to right by straight from left to right --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;prohibition</span><span class="w"> </span><span class="na">prohibitor=</span><span class="s">&quot;1si-&gt;2o&quot;</span><span class="w"> </span><span class="na">prohibited=</span><span class="s">&quot;3si-&gt;2o&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- prohibit moving straight from bottom to top by straight from left to right --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;prohibition</span><span class="w"> </span><span class="na">prohibitor=</span><span class="s">&quot;1si-&gt;2o&quot;</span><span class="w"> </span><span class="na">prohibited=</span><span class="s">&quot;3si-&gt;4o&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- prohibit moving left from bottom to right by straight from left to right --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;prohibition</span><span class="w"> </span><span class="na">prohibitor=</span><span class="s">&quot;1si-&gt;2o&quot;</span><span class="w"> </span><span class="na">prohibited=</span><span class="s">&quot;3si-&gt;1o&quot;</span><span class="nt">/&gt;</span>
+  &lt;!-- prohibit moving right from bottom to right by straight from left to right --&gt;
+  &lt;prohibition prohibitor=&quot;1si-&gt;2o&quot; prohibited=&quot;3si-&gt;2o&quot;/&gt;
+  &lt;!-- prohibit moving straight from bottom to top by straight from left to right --&gt;
+  &lt;prohibition prohibitor=&quot;1si-&gt;2o&quot; prohibited=&quot;3si-&gt;4o&quot;/&gt;
+  &lt;!-- prohibit moving left from bottom to right by straight from left to right --&gt;
+  &lt;prohibition prohibitor=&quot;1si-&gt;2o&quot; prohibited=&quot;3si-&gt;1o&quot;/&gt;
 
-<span class="nt">&lt;/connections&gt;</span>
-</code></pre></div>
-
+&lt;/connections&gt;
+</code></pre>
 <p>As one may see, it was necessary to prohibit all connections from a
 vertical edge by the counter-clockwise straight connection on a
 horizontal edge because otherwise the vehicles on the horizontal edge
@@ -1798,12 +1773,11 @@ edge will cause a priority order to be established among them, allowing
 for a collision-free simulation. By default, the right-most lane will
 have the right of way but this can be customized by using attribute
 <em>pass</em> as shown below:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;connections&gt;</span>
-<span class="w">  </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;WC&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;CE&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;connection</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;WC&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;CE&quot;</span><span class="w"> </span><span class="na">fromLane=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">toLane=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">pass=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/connections&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;connections&gt;
+  &lt;connection from=&quot;WC&quot; to=&quot;CE&quot; fromLane=&quot;0&quot; toLane=&quot;0&quot;/&gt;
+  &lt;connection from=&quot;WC&quot; to=&quot;CE&quot; fromLane=&quot;1&quot; toLane=&quot;0&quot; pass=&quot;true&quot;/&gt;
+&lt;/connections&gt;
+</code></pre>
 <h1 id="traffic_light_program_definition">Traffic Light Program Definition<a class="headerlink" href="#traffic_light_program_definition" title="Permanent link">#</a></h1>
 <table>
 <thead>
@@ -1911,9 +1885,8 @@ which control multiple intersections.</p>
 intersections can be specified explicitly. This is done using  elements
 within a
 <a href="#connection_descriptions"><em>connection-file</em></a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;crossing</span><span class="w"> </span><span class="na">node=</span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;edge1 edge2&quot;</span><span class="w"> </span><span class="na">priority=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;crossing node=&quot;C&quot; edges=&quot;edge1 edge2&quot; priority=&quot;true&quot;/&gt;
+</code></pre>
 <p>The attributes are described in the following.</p>
 <table>
 <thead>
@@ -1984,9 +1957,8 @@ multiple side walks and pedestrian crossings (typically one in each
 corner of an intersection). The shape of a walking area can be specified
 explicitly. This is done using <code>walkingArea</code> element within a
 <a href="#connection_descriptions"><em>connection-file</em></a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;walkingArea</span><span class="w"> </span><span class="na">node=</span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;SC&quot;</span><span class="w"> </span><span class="na">shape=</span><span class="s">&quot;115.88,88.57 120.38,88.57 120.38,86.87 120.37,83.87 119.86,80.83 118.46,78.53 115.46,78.50 113.74,78.55 113.73,83.05&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;walkingArea node=&quot;C&quot; edges=&quot;SC&quot; shape=&quot;115.88,88.57 120.38,88.57 120.38,86.87 120.37,83.87 119.86,80.83 118.46,78.53 115.46,78.50 113.74,78.55 113.73,83.05&quot;/&gt;
+</code></pre>
 <p>The attributes are described in the following.</p>
 <table>
 <thead>
@@ -2026,7 +1998,7 @@ explicitly. This is done using <code>walkingArea</code> element within a
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

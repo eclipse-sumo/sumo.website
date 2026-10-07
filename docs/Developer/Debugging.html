@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -231,42 +232,38 @@ encapsulation by preprocessor directives. This is done by placing a
 <code>#define DEBUG_THIS_CODE</code> at the beginning of a source (preferably just
 below any other <code>#include</code> or <code>#define</code> macros). The debugging code
 (e.g. some output to <code>std::cout</code>) should then be surrounded by</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#ifdef DEBUG_THIS_CODE</span>
-<span class="w">    </span><span class="p">...</span>
-<span class="cp">#endif</span>
-</code></pre></div>
-
+<pre><code>#ifdef DEBUG_THIS_CODE
+    ...
+#endif
+</code></pre>
 <p>Thus, it can be switched on and off by (un)commenting the
 <code>#define DEBUG_THIS_CODE</code> line.</p>
 <p>Sometimes it is useful to combine this with a condition for more
 specific debugging output. For instance, if only output for the vehicle
 with ID 'my_new_ferrari' is needed while looping through all vehicles,
 you should insert a corresponding debug condition</p>
-<div class="codehilite"><pre><span></span><code><span class="gh">#</span>define DEBUG_COND (veh.getID() == &quot;my_new_ferrari&quot;)
-</code></pre></div>
-
+<pre><code>#define DEBUG_COND (veh.getID() == &quot;my_new_ferrari&quot;)
+</code></pre>
 <p>(at the same location as the <code>#define DEBUG_THIS_CODE</code>) and encapsulate
 the debug code further as</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#ifdef DEBUG_THIS_CODE</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">DEBUG_COND</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="p">...</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="cp">#endif</span>
-</code></pre></div>
-
+<pre><code>#ifdef DEBUG_THIS_CODE
+    if DEBUG_COND {
+        ...
+    }
+#endif
+</code></pre>
 <p>Note that this presupposes that <code>veh</code> is a reference to the current
 vehicle, which is being looped over. It is worth mentioning that you can
 also define debug conditions with arguments to become a bit more
 flexible. For example:</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#define DEBUG_COND(x) (x != 0 &amp;&amp; x-&gt;getID() == &quot;my_new_ferrari&quot;)</span>
-<span class="w">    </span><span class="p">...</span>
-<span class="cp">#ifdef DEBUG_THIS_CODE</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">DEBUG_COND</span><span class="p">(</span><span class="n">veh_pointer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="p">...</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="cp">#endif</span>
-</code></pre></div>
-
+<pre><code>#define DEBUG_COND(x) (x != 0 &amp;&amp; x-&gt;getID() == &quot;my_new_ferrari&quot;)
+    ...
+#ifdef DEBUG_THIS_CODE
+    if DEBUG_COND(veh_pointer) {
+        ...
+    }
+#endif
+</code></pre>
 <p>Debugging macros already exist at several locations (see some of these
 before implementing your own):</p>
 <ul>
@@ -296,7 +293,7 @@ corresponding macro is activated).</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

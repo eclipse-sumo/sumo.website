@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -241,9 +242,8 @@ MS-Windows):</p>
 <p>SUMO requires configuration files and data files for proper execution.
 These files can be created and edited with a text editor.</p>
 <p>On Windows you can open a basic text editor in the following way:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Start</span><span class="o">-&gt;</span><span class="n">Windows</span><span class="w"> </span><span class="n">Accessories</span><span class="o">-&gt;</span><span class="n">Notepad</span>
-</code></pre></div>
-
+<pre><code>Start-&gt;Windows Accessories-&gt;Notepad
+</code></pre>
 <p>Or by pressing the <code>Win</code> + <code>R</code> keys and entering <code>notepad</code></p>
 <p>Notepad is a very basic text editor. You can increase your comfort and
 productivity by switching to an editor with more features. Consider
@@ -282,9 +282,8 @@ terminal (like <strong>xterm</strong>).</p>
 followed by program options. Since this can be automated it is
 potentially more comfortable for repetitive tasks than using a GUI.
 Commands look like this</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --node-files=hello.nod.xml --edge-files=hello.edg.xml --output-file=hello.net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --node-files=hello.nod.xml --edge-files=hello.edg.xml --output-file=hello.net.xml
+</code></pre>
 <p>Here <em>netconvert</em> is the name of the program and the rest of the command
 sets options for this program.</p>
 <p>A command line execution (in this case a very basic <em>sumo</em> simulation) is shown in the following gif:</p>
@@ -306,9 +305,8 @@ makes sure that you can execute SUMO-programs.</p>
     directory)</li>
 <li>enter a command such as</li>
 </ol>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --node-files=hello.nod.xml --edge-files=hello.edg.xml --output-file=hello.net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --node-files=hello.nod.xml --edge-files=hello.edg.xml --output-file=hello.net.xml
+</code></pre>
 <p>and press <code>enter</code></p>
 <h2 id="sumo_home">SUMO_HOME<a class="headerlink" href="#sumo_home" title="Permanent link">#</a></h2>
 <p>Many <a href="../Tools/index.html">tools</a> require the environment variable
@@ -350,9 +348,8 @@ your <code>PATH</code> variable and the <code>SUMO_HOME</code> variable.</p>
 <h4 id="temporary_solution">Temporary Solution<a class="headerlink" href="#temporary_solution" title="Permanent link">#</a></h4>
 <p>To set an environment variable temporarily, you can use the following
 command in your terminal:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="n">SUMO_HOME</span><span class="o">=</span><span class="s2">&quot;/your/path/to/sumo/&quot;</span>
-</code></pre></div>
-
+<pre><code>export SUMO_HOME=&quot;/your/path/to/sumo/&quot;
+</code></pre>
 <p>This sets the environment variable to be used by any program or script
 you start in your current shell session. This does not affect any other
 shell session and only works until you end the session.</p>
@@ -381,48 +378,39 @@ the command line with your current user account.</p>
 <p>When using the sumo version that comes with your package manager (i.e.
 apt) the SUMO_HOME variable must be set to the base path of the tools
 folder. On Ubuntu this is</p>
-<div class="codehilite"><pre><span></span><code>/usr/share/sumo
-</code></pre></div>
-
+<pre><code>/usr/share/sumo
+</code></pre>
 <h3 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">#</a></h3>
 <p>First you need to determine which shell (<strong>bash</strong> or <strong>zsh</strong>) you are currently working with. In a terminal, type <code>ps -p $$</code>  (this should let you see under CMD which shell you are using). The default shell in macOS Catalina is <strong>zsh</strong>.</p>
 <h4 id="for_zsh">for ZSH<a class="headerlink" href="#for_zsh" title="Permanent link">#</a></h4>
 <p>In a Terminal, execute the following steps:</p>
-<div class="codehilite"><pre><span></span><code>open ~/.zshrc
-</code></pre></div>
-
+<pre><code>open ~/.zshrc
+</code></pre>
 <p>This will open the <em>.zshrc</em> file in TextEdit. Add the following line to that document:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="n">SUMO_HOME</span><span class="o">=</span><span class="s2">&quot;/your/path/to/sumo&quot;</span>
-</code></pre></div>
-
+<pre><code>export SUMO_HOME=&quot;/your/path/to/sumo&quot;
+</code></pre>
 <p>Make sure to replace <code>/your/path/to/sumo</code> with your <strong><em>actual</em></strong> path to sumo.
 Save that document in TextEdit. Now you need to apply the changes by entering:</p>
-<div class="codehilite"><pre><span></span><code>source ~/.zshrc
-</code></pre></div>
-
+<pre><code>source ~/.zshrc
+</code></pre>
 <p>in the terminal. You are done! To test if the environment variable was set correctly, you can print it into the terminal:</p>
-<div class="codehilite"><pre><span></span><code>echo $SUMO_HOME
-</code></pre></div>
-
+<pre><code>echo $SUMO_HOME
+</code></pre>
 <p>and you should be able to get the recently added path there.</p>
 <h4 id="for_bash">for Bash<a class="headerlink" href="#for_bash" title="Permanent link">#</a></h4>
 <p>In a Terminal, execute the following steps:</p>
-<div class="codehilite"><pre><span></span><code>open ~/.bash_profile
-</code></pre></div>
-
+<pre><code>open ~/.bash_profile
+</code></pre>
 <p>This will open the <em>.bash_profile</em> file in TextEdit. Add the following line to that document:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="n">SUMO_HOME</span><span class="o">=</span><span class="s2">&quot;/your/path/to/sumo&quot;</span>
-</code></pre></div>
-
+<pre><code>export SUMO_HOME=&quot;/your/path/to/sumo&quot;
+</code></pre>
 <p>Make sure to replace <code>/your/path/to/sumo</code> with your <strong><em>actual</em></strong> path to sumo.
 Save that document in TextEdit. Now you need to apply the changes by entering:</p>
-<div class="codehilite"><pre><span></span><code>source ~/.bash_profile
-</code></pre></div>
-
+<pre><code>source ~/.bash_profile
+</code></pre>
 <p>in the terminal. You are done! To test if the environment variable was set correctly, you can print it into the terminal:</p>
-<div class="codehilite"><pre><span></span><code>echo $SUMO_HOME
-</code></pre></div>
-
+<pre><code>echo $SUMO_HOME
+</code></pre>
 <p>and you should be able to get the recently added path there.</p>
 <h1 id="tips_for_using_the_command-line">Tips for using the Command-Line<a class="headerlink" href="#tips_for_using_the_command-line" title="Permanent link">#</a></h1>
 <h2 id="copy_and_paste">Copy and Paste<a class="headerlink" href="#copy_and_paste" title="Permanent link">#</a></h2>
@@ -444,7 +432,7 @@ or simply hit <em>enter</em> to execute them again.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

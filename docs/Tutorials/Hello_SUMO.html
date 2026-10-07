@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -229,13 +230,12 @@ only one edge, in the section on
 <p>All nodes have a location (x- and y-coordinate, describing distance to
 the origin in meters) and an id for future reference. Thus our simple
 node file looks as follows</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;nodes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-250.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;+250.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;+251.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/nodes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;nodes&gt;
+    &lt;node id=&quot;1&quot; x=&quot;-250.0&quot; y=&quot;0.0&quot; /&gt;
+    &lt;node id=&quot;2&quot; x=&quot;+250.0&quot; y=&quot;0.0&quot; /&gt;
+    &lt;node id=&quot;3&quot; x=&quot;+251.0&quot; y=&quot;0.0&quot; /&gt;
+&lt;/nodes&gt;
+</code></pre>
 <p>You can edit a file with a text editor of your choice and save this for
 instance as <code>hello.nod.xml</code> where <code>.nod.xml</code> is the default suffix for
 Sumo node files.</p>
@@ -245,19 +245,17 @@ sounds. We have a source node id, a target node id, and an edge id for
 future reference. Edges are directed, thus every vehicle traveling this
 edge will start at the node given in <code>from</code>
 and end at the node given in <code>to</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;edges&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1to2&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;edge</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;out&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/edges&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;edges&gt;
+    &lt;edge from=&quot;1&quot; id=&quot;1to2&quot; to=&quot;2&quot; /&gt;
+    &lt;edge from=&quot;2&quot; id=&quot;out&quot; to=&quot;3&quot; /&gt;
+&lt;/edges&gt;
+</code></pre>
 <p>Save this data into a file called <code>hello.edg.xml</code>. Now that we have
 nodes and edges, we can call the first SUMO tool to create a network.
 Make sure <a href="../netconvert.html">netconvert</a> is somewhere in your
 <code>PATH</code> and call</p>
-<div class="codehilite"><pre><span></span><code><span class="n">netconvert --node-files=hello.nod.xml --edge-files=hello.edg.xml --output-file=hello.net.xml</span>
-</code></pre></div>
-
+<pre><code>netconvert --node-files=hello.nod.xml --edge-files=hello.edg.xml --output-file=hello.net.xml
+</code></pre>
 <p>This will generate our network called <code>hello.net.xml</code>.</p>
 <h2 id="routes">Routes<a class="headerlink" href="#routes" title="Permanent link">#</a></h2>
 <p>Now that we have a net, we still need a car. In <a href="../sumo.html">sumo</a>
@@ -273,58 +271,52 @@ entries before and giving it a departure time as in the following
 vehicle and its type. See "<a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html">Definition of Vehicles, Vehicle Types, and
 Routes</a>"
 for further information.</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;routes&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vType</span><span class="w"> </span><span class="na">accel=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">decel=</span><span class="s">&quot;5.0&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;Car&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;2.0&quot;</span><span class="w"> </span><span class="na">maxSpeed=</span><span class="s">&quot;100.0&quot;</span><span class="w"> </span><span class="na">sigma=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;route</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">edges=</span><span class="s">&quot;1to2 out&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;vehicle</span><span class="w"> </span><span class="na">depart=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;veh0&quot;</span><span class="w"> </span><span class="na">route=</span><span class="s">&quot;route0&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;Car&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/routes&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vType accel=&quot;1.0&quot; decel=&quot;5.0&quot; id=&quot;Car&quot; length=&quot;2.0&quot; maxSpeed=&quot;100.0&quot; sigma=&quot;0.0&quot; /&gt;
+    &lt;route id=&quot;route0&quot; edges=&quot;1to2 out&quot;/&gt;
+    &lt;vehicle depart=&quot;1&quot; id=&quot;veh0&quot; route=&quot;route0&quot; type=&quot;Car&quot; /&gt;
+&lt;/routes&gt;
+</code></pre>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
 <p>Now we glue everything together into a configuration file</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">    </span><span class="nt">&lt;input&gt;</span>
-<span class="w">        </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;hello.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;hello.rou.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/input&gt;</span>
-<span class="w">    </span><span class="nt">&lt;time&gt;</span>
-<span class="w">        </span><span class="nt">&lt;begin</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;end</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/time&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;input&gt;
+        &lt;net-file value=&quot;hello.net.xml&quot;/&gt;
+        &lt;route-files value=&quot;hello.rou.xml&quot;/&gt;
+    &lt;/input&gt;
+    &lt;time&gt;
+        &lt;begin value=&quot;0&quot;/&gt;
+        &lt;end value=&quot;10000&quot;/&gt;
+    &lt;/time&gt;
+&lt;/configuration&gt;
+</code></pre>
 <p>Saving this to <code>hello.sumocfg</code> we can start the simulation by either</p>
-<div class="codehilite"><pre><span></span><code>sumo -c hello.sumocfg
-</code></pre></div>
-
+<pre><code>sumo -c hello.sumocfg
+</code></pre>
 <p>or with GUI by</p>
-<div class="codehilite"><pre><span></span><code>sumo-gui -c hello.sumocfg
-</code></pre></div>
-
+<pre><code>sumo-gui -c hello.sumocfg
+</code></pre>
 <p>When simulating with GUI it's useful to add a gui-settings file, so you
 don't have to change the settings after starting the program. To do so,
 alter <code>hello.sumocfg</code> to look like this</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">    </span><span class="nt">&lt;input&gt;</span>
-<span class="w">        </span><span class="nt">&lt;net-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;hello.net.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;route-files</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;hello.rou.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;gui-settings-file</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;hello.settings.xml&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/input&gt;</span>
-<span class="w">    </span><span class="nt">&lt;time&gt;</span>
-<span class="w">        </span><span class="nt">&lt;begin</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;end</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/time&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;input&gt;
+        &lt;net-file value=&quot;hello.net.xml&quot;/&gt;
+        &lt;route-files value=&quot;hello.rou.xml&quot;/&gt;
+        &lt;gui-settings-file value=&quot;hello.settings.xml&quot;/&gt;
+    &lt;/input&gt;
+    &lt;time&gt;
+        &lt;begin value=&quot;0&quot;/&gt;
+        &lt;end value=&quot;10000&quot;/&gt;
+    &lt;/time&gt;
+&lt;/configuration&gt;
+</code></pre>
 <p>After that create a file with the viewsettings</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">&lt;viewsettings&gt;</span>
-<span class="w">    </span><span class="nt">&lt;viewport</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;250&quot;</span><span class="w"> </span><span class="na">zoom=</span><span class="s">&quot;100&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;delay</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/viewsettings&gt;</span>
-</code></pre></div>
-
+<pre><code class="language-xml">&lt;viewsettings&gt;
+    &lt;viewport y=&quot;0&quot; x=&quot;250&quot; zoom=&quot;100&quot;/&gt;
+    &lt;delay value=&quot;100&quot;/&gt;
+&lt;/viewsettings&gt;
+</code></pre>
 <p>Save this as the name you included in the config file, in this example
 this would be <code>hello.settings.xml</code>.</p>
 <p>Here we used viewport to set the camera position and we used delay to
@@ -347,7 +339,7 @@ Routes</a>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

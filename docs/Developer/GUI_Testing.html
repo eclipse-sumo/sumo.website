@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 06 October 2026
+Last edit: 07 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ Last edit: 06 October 2026
         <link href="../css/fontawesome.all.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/highlightjs-11.12.0-github.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,8 +35,9 @@ Last edit: 06 October 2026
 
         <script src="../js/jquery-3.7.0.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="../js/highlight-11.12.0.min.js"></script>
+        <!-- -->
+        <script>hljs.highlightAll();</script> 
 
       <script>
         // DARK MODE
@@ -234,18 +235,17 @@ Last edit: 06 October 2026
 layer of test functions in tests/netedit/neteditTestFunctions.py. All of
 them reside in the relevant test directory in a test.py script that
 starts always with the same header:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
+<pre><code class="language-py">import os
+import sys
 
-<span class="n">testRoot</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;SUMO_HOME&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">),</span> <span class="s1">&#39;tests&#39;</span><span class="p">)</span>
-<span class="n">neteditTestRoot</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;TEXTTEST_HOME&#39;</span><span class="p">,</span> <span class="n">testRoot</span><span class="p">),</span> <span class="s1">&#39;netedit&#39;</span><span class="p">)</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neteditTestRoot</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">neteditTestFunctions</span> <span class="k">as</span> <span class="nn">netedit</span>
+testRoot = os.path.join(os.environ.get('SUMO_HOME', '.'), 'tests')
+neteditTestRoot = os.path.join(os.environ.get('TEXTTEST_HOME', testRoot), 'netedit')
+sys.path.append(neteditTestRoot)
+import neteditTestFunctions as netedit
 
-<span class="c1"># Open netedit</span>
-<span class="n">neteditProcess</span><span class="p">,</span> <span class="n">match</span> <span class="o">=</span> <span class="n">netedit</span><span class="o">.</span><span class="n">setupAndStart</span><span class="p">(</span><span class="n">neteditTestRoot</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;--new&#39;</span><span class="p">])</span>
-</code></pre></div>
-
+# Open netedit
+neteditProcess, match = netedit.setupAndStart(neteditTestRoot, ['--new'])
+</code></pre>
 <p>This code will find the directory with the netedit tests using the
 TEXTTEST_HOME variable and SUMO_HOME as a fallback. This enables the
 start of the tests even outside of TextTest by simply running the
@@ -258,7 +258,7 @@ this makes copying and moving tests harder.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 06 October 2026</i></small>
+            <br><small><i>This page was last edited on: 07 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
