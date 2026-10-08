@@ -169,7 +169,7 @@ Last edit: 07 October 2026
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary toc-scroll toc">
         <ul class="nav flex-column bs-sidenav">
             <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
-            <li class="nav-item main"><a href="#git_main_nightly_development_builds">Git Main (nightly development builds)</a></li>
+            <li class="nav-item main"><a href="#version_1280_08102026">Version 1.28.0 (08.10.2026)</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#bugfixes" class="nav-link">• Bugfixes</a>
                 </li>
@@ -246,7 +246,7 @@ Last edit: 07 October 2026
                   
                   
 
-<h2 id="git_main_nightly_development_builds">Git Main (<a href="https://sumo.dlr.de/docs/Downloads.php#nightly_snapshots">nightly development builds</a>)<a class="headerlink" href="#git_main_nightly_development_builds" title="Permanent link">#</a></h2>
+<h2 id="version_1280_08102026">Version 1.28.0 (08.10.2026)<a class="headerlink" href="#version_1280_08102026" title="Permanent link">#</a></h2>
 <h3 id="bugfixes">Bugfixes<a class="headerlink" href="#bugfixes" title="Permanent link">#</a></h3>
 <ul>
 <li>sumo<ul>
@@ -278,10 +278,12 @@ Last edit: 07 October 2026
 </ul>
 <ul>
 <li>sumo-gui<ul>
+<li>Configuring language settings is working again <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18229" title="GitHub Issue eclipse-sumo/sumo #18229">#18229</a> (regression in 1.27.1)</li>
 <li>Fixed crash when coloring by insertion backlog <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18215" title="GitHub Issue eclipse-sumo/sumo #18215">#18215</a></li>
 <li>Fixed crash when trying to render a long partial vehicle that has already left the simulation (sublane) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18271" title="GitHub Issue eclipse-sumo/sumo #18271">#18271</a></li>
 <li>No longer creating an invalid file when attempting to save a snapshot in an invalid format <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/14763" title="GitHub Issue eclipse-sumo/sumo #14763">#14763</a></li>
 <li>Fixed crash when using "Reload" or "Quick-Reload" after network loading failed <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18320" title="GitHub Issue eclipse-sumo/sumo #18320">#18320</a></li>
+<li>Translations did not work in the windows release <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18229" title="GitHub Issue eclipse-sumo/sumo #18229">#18229</a> (regression in 1.27.0)</li>
 </ul>
 </li>
 </ul>
@@ -342,7 +344,7 @@ Last edit: 07 October 2026
 <li>gtfs2pt.py: fixed invalid cache-reuse when called twice with different input networks <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18291" title="GitHub Issue eclipse-sumo/sumo #18291">#18291</a></li>
 <li>csv2xml.py: fixed problem when converting plain.nod.csv <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18176" title="GitHub Issue eclipse-sumo/sumo #18176">#18176</a></li>
 <li>route2poly.py: now handles rou.alt.xml files <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18327" title="GitHub Issue eclipse-sumo/sumo #18327">#18327</a></li>
-<li>plotting tools: fixed error when Matplotlib version string contains non-integer components <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18294" title="GitHub Issue eclipse-sumo/sumo #18294">#18294</a>  </li>
+<li>plotting tools: fixed error when Matplotlib version string contains non-integer components <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18294" title="GitHub Issue eclipse-sumo/sumo #18294">#18294</a></li>
 </ul>
 </li>
 </ul>
@@ -363,6 +365,7 @@ Last edit: 07 October 2026
 <li>meandata values for net, emissions and noise can now be merged into a single line or table row <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18254" title="GitHub Issue eclipse-sumo/sumo #18254">#18254</a></li>
 <li>Added laneChangeModel parameters <code>lcCooperativeMinSpeed</code> and <code>lcCooperativeHelpThreshold</code> which make cooperative yielding dependent on ego speed and also on the speed difference between ego and the blocked vehicle which requires help <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17717" title="GitHub Issue eclipse-sumo/sumo #17717">#17717</a></li>
 <li>Rerouters now support <code>viaProbReroute</code> for rerouting vehicles but keeping it's destination. This can be combined with closingReroute for fine-grained control over detours <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18316" title="GitHub Issue eclipse-sumo/sumo #18316">#18316</a></li>
+<li>Stop attribute 'duration' now accepts a <a href="Simulation/Randomness.html#specifying_distributed_input_values">distribution string</a> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17647" title="GitHub Issue eclipse-sumo/sumo #17647">#17647</a></li>
 </ul>
 </li>
 </ul>
@@ -379,7 +382,7 @@ Last edit: 07 October 2026
 <li>added 'show edge parameter' to the lane context menu</li>
 <li>added 'delete' item in every context menu <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/15050" title="GitHub Issue eclipse-sumo/sumo #15050">#15050</a></li>
 <li>Connection mode now allows to hide connections not originating from the current source edge to reduce clutter <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16677" title="GitHub Issue eclipse-sumo/sumo #16677">#16677</a></li>
-<li>Connection mode now also allows to toggle the 'show connections in inspect mode' toogle (for better discoverability of this feature) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16677" title="GitHub Issue eclipse-sumo/sumo #16677">#16677</a></li>
+<li>Connection mode now also allows to toggle the 'show connections in inspect mode' toggle (for better discoverability of this feature) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16677" title="GitHub Issue eclipse-sumo/sumo #16677">#16677</a></li>
 <li>Connection mode now allows to inspect any connection via clicking <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16677" title="GitHub Issue eclipse-sumo/sumo #16677">#16677</a></li>
 <li>Added Checkbox to enable/disable filled drawing of walking areas <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17981" title="GitHub Issue eclipse-sumo/sumo #17981">#17981</a></li>
 <li>In additional mode, during access creation, a dotted contour is drawn around viable access lanes <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17091" title="GitHub Issue eclipse-sumo/sumo #17091">#17091</a></li>
@@ -393,12 +396,15 @@ Last edit: 07 October 2026
 <li>in meso, the edge context menu now permits to inspect lane attributes (i.e. to check lane permissions) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18265" title="GitHub Issue eclipse-sumo/sumo #18265">#18265</a></li>
 <li>Added a context menu to the Message Window (also affects netedit) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/10453" title="GitHub Issue eclipse-sumo/sumo #10453">#10453</a></li>
 <li>When coloring roads with a brighter color, turning arrow colors are adjusted automatically for contrast <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/12062" title="GitHub Issue eclipse-sumo/sumo #12062">#12062</a></li>
+<li>The coordinate display in the bottom bar now supports pasting lat,lon coordinates. The view dialog also supports lon and lat entry <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/11534" title="GitHub Issue eclipse-sumo/sumo #11534">#11534</a></li>
+<li>Improved consistency of <em>show tooltip</em> buttons when multiple views are open <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/12420" title="GitHub Issue eclipse-sumo/sumo #12420">#12420</a></li>
 </ul>
 </li>
 </ul>
 <ul>
 <li>duarouter<ul>
-<li>vTypeDistribution can now reference an existing vType using attribute <code>refId</code> without creating a new type (similar to routeDistributions) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18178" title="GitHub Issue eclipse-sumo/sumo #18178">#18178</a>  </li>
+<li>vTypeDistribution can now reference an existing vType using attribute <code>refId</code> without creating a new type (similar to routeDistributions) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18178" title="GitHub Issue eclipse-sumo/sumo #18178">#18178</a></li>
+<li>It is now possible to repair routes with stops after removing parts of a network (including busStops) with options <strong>--repair --ignore-errors</strong> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18133" title="GitHub Issue eclipse-sumo/sumo #18133">#18133</a></li>
 </ul>
 </li>
 </ul>
@@ -420,7 +426,7 @@ Last edit: 07 October 2026
 <li>Refactored data structure to reduce running time by 5-9% <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18207" title="GitHub Issue eclipse-sumo/sumo #18207">#18207</a></li>
 <li>Now supports traffic light type 'actuated' <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/8735" title="GitHub Issue eclipse-sumo/sumo #8735">#8735</a></li>
 <li>Added inductionLoop attribute <code>mesoTLS</code>. Detectors with this attribute can be used as custom detectors for actuated traffic lights (i.e. to register vehicles of a specific type) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18245" title="GitHub Issue eclipse-sumo/sumo #18245">#18245</a></li>
-<li>Option <strong>--queue-output</strong> is now supported. Queue lengths are measured per segment queue based on vehicle entry order and, when <strong>--meso-interpolate-pos</strong> is set, on interpolated positions <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18212" title="GitHub Issue eclipse-sumo/sumo #18212">#18212</a>  - </li>
+<li>Option <strong>--queue-output</strong> is now supported. Queue lengths are measured per segment queue based on vehicle entry order and, when <strong>--meso-interpolate-pos</strong> is set, on interpolated positions <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18212" title="GitHub Issue eclipse-sumo/sumo #18212">#18212</a>  -</li>
 <li>Added warning when loading a network with multi-modal edges where a risk of miscalculating capacity exists <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/4113" title="GitHub Issue eclipse-sumo/sumo #4113">#4113</a></li>
 </ul>
 </li>
@@ -435,13 +441,14 @@ Last edit: 07 October 2026
 <ul>
 <li>tools<ul>
 <li>instantOutToEdgeData.py: added option <strong>--poi-output</strong> to visualize extra values and aid in debugging <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18166" title="GitHub Issue eclipse-sumo/sumo #18166">#18166</a></li>
-<li>edgeDataFromFlow.py: added option <strong>--turn-output</strong> to write edgeRelations for detectors that have a unique sucessor edge <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17955" title="GitHub Issue eclipse-sumo/sumo #17955">#17955</a></li>
+<li>edgeDataFromFlow.py: added option <strong>--turn-output</strong> to write edgeRelations for detectors that have a unique successor edge <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17955" title="GitHub Issue eclipse-sumo/sumo #17955">#17955</a></li>
 <li>edgeDataFromFlow.py: added option <strong>--skip-incomplete</strong> to exclude data from incomplete cross-sections <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18182" title="GitHub Issue eclipse-sumo/sumo #18182">#18182</a></li>
 <li>flow2POI.poi: added <a href="Tools/Detector.html#flow2poipy">new tool</a> for visualizing detector flow <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18193" title="GitHub Issue eclipse-sumo/sumo #18193">#18193</a></li>
 <li>randomTrips.py: Now warns when routing personTrips with mode public and without pt input <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18006" title="GitHub Issue eclipse-sumo/sumo #18006">#18006</a></li>
 <li>randomTrips.py: Added option <strong>--return-to-origin</strong> which can be used with <strong>--intermediate</strong> to model return trips. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/14817" title="GitHub Issue eclipse-sumo/sumo #14817">#14817</a></li>
 <li>gtfs2pt.py now interprets extended gtfs trip modes. The default interpretation of mode 109 was changed to 'train' as this is by far the more common case. Special cases such as Berlin and Hamburg where 109 is mapped as 'light_rail' in OSM can be handled by setting the new option <strong>--sbahn-is-light-rail</strong> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18292" title="GitHub Issue eclipse-sumo/sumo #18292">#18292</a></li>
 <li>gtfs2pt.py: Added option <strong>--write-arrival</strong> to include scheduled arrival times in the output <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18306" title="GitHub Issue eclipse-sumo/sumo #18306">#18306</a></li>
+<li>gtfs2pt.py: Now supporting extended route_types <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17817" title="GitHub Issue eclipse-sumo/sumo #17817">#17817</a></li>
 <li>diffMerge.py: <a href="Tools/Net.html#diffmergepy">new tool</a> for helping to merge conflicts when trying to integrate two sets of network changes <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18096" title="GitHub Issue eclipse-sumo/sumo #18096">#18096</a></li>
 <li>flowConservation.py: <a href="Tools/Detector.html#flowconservationpy">new tool</a> to sanity check edgeData around junctions <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18183" title="GitHub Issue eclipse-sumo/sumo #18183">#18183</a></li>
 <li>filterDistricts.py: added option <strong>--min-connections</strong> to filter out sources with to few outgoing edges and sinks with to few incoming edges <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/10618" title="GitHub Issue eclipse-sumo/sumo #10618">#10618</a></li>

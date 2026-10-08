@@ -197,6 +197,7 @@ Last edit: 07 October 2026
                 </li>
             <li class="nav-item main"><a href="#departure_and_arrival_attributes">Departure and arrival attributes</a></li>
             <li class="nav-item main"><a href="#lateral_variation">Lateral Variation</a></li>
+            <li class="nav-item main"><a href="#specifying_distributed_input_values">Specifying Distributed Input values</a></li>
             <li class="nav-item main"><a href="#further_sources_of_randomness">Further sources of randomness</a></li>
             <li class="nav-item main"><a href="#reproducibility">Reproducibility</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
@@ -342,6 +343,19 @@ arrival value (i.e. after rerouting). The attribute <code>departPosLat</code> al
 The lateral offset at departure will only affect simulation behavior when using the <a href="SublaneModel.html">sublane model</a> though it will be visible without this model too.</p>
 <h1 id="lateral_variation">Lateral Variation<a class="headerlink" href="#lateral_variation" title="Permanent link">#</a></h1>
 <p>When setting the lane change mode attribute <code>lcSigma</code> to a positive value, Vehicles will exhibit some random lateral drift.</p>
+<h1 id="specifying_distributed_input_values">Specifying Distributed Input values<a class="headerlink" href="#specifying_distributed_input_values" title="Permanent link">#</a></h1>
+<p>Several attributes and options support a syntax where they can be defined either as constants ("3.14") or as distribution strings. The following distributions are supported:</p>
+<ul>
+<li>'norm(a,b)': normal distribution with expected value <em>a</em> and standard deviation <em>b</em></li>
+<li>'normc(a,b,c,d)': normal distribution with expected value <em>a</em> and standard deviation <em>b</em> that truncates it's results to the range [c, d]</li>
+</ul>
+<p>Distribution strings are supported in the following locations:</p>
+<ul>
+<li><code>&lt;vType&gt;</code> attribute <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#speed_distributions">'speedFactor'</a></li>
+<li><code>&lt;stop&gt;</code> attribute <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#stops_and_waypoints">'duration'</a></li>
+<li><a href="../netgenerate.html">netgenerate</a> options <strong>--perturb-x</strong>, <strong>--perturb-y</strong> and <strong>--perturb-z</strong></li>
+<li>all options and <a href="GenericParameters.html">Generic Parameter keys</a> for configuring <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#devices">devices</a></li>
+</ul>
 <h1 id="further_sources_of_randomness">Further sources of randomness<a class="headerlink" href="#further_sources_of_randomness" title="Permanent link">#</a></h1>
 <ul>
 <li>The tool <a href="../Tools/Trip.html#randomtripspy">randomTrips.py</a> allows generating traffic between random edges. It also supports randomizing arrival rates.</li>
@@ -360,7 +374,6 @@ The lateral offset at departure will only affect simulation behavior when using 
 <h3 id="platform_differences">Platform differences<a class="headerlink" href="#platform_differences" title="Permanent link">#</a></h3>
 <ul>
 <li><strong>Differences in generated networks by platform</strong>: When importing network data with geo-coordinates, the transformation to x,y (Cartesian) coordinates are performed by the <a href="https://proj.org/">Proj</a>. This library has differences from one version to the next and different platforms usually provide different library versions. The same problem may also manifest when using TraCI-functions for coordinate transformations.</li>
-<li><strong>Non-deterministic vehicle routing with options --device.rerouting.threads --weights.random-factor</strong> (Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/10292" title="GitHub Issue eclipse-sumo/sumo #10292">#10292</a>)</li>
 <li><strong>Different Simulation behavior due to using the <code>log</code> function</strong>. Observed differences for the EIDM-Model (Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/8921" title="GitHub Issue eclipse-sumo/sumo #8921">#8921</a>) and also for Simulations with the DriverState-device. Could in principe also affect the Wiedemann-Model and the ToC-device.</li>
 </ul>
                 </main>
