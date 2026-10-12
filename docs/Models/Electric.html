@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -255,7 +255,7 @@ network) and a new output option <strong>--battery-output</strong> <a href="/doc
 <h1 id="defining_electric_vehicles">Defining Electric Vehicles<a class="headerlink" href="#defining_electric_vehicles" title="Permanent link">#</a></h1>
 <p>Different aspects of electric vehicles are modeled separately. This page puts the focus
 on modeling the battery and how it is charged and discharged. The actual energy consumption values themselves
-are part of the emission modelling because SUMO can use different models for that.</p>
+are part of the emission modeling because SUMO can use different models for that.</p>
 <p>To track the charging status of a vehicle, it must be equipped with a battery
 device. This may be done using the option <strong>--device.battery.explicit &lt;vehID1,vehID2,...&gt;</strong> or simply setting <strong>--device.battery.probability 1</strong> to equip
 all vehicles. Alternatively, the device may be specified using <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#devices">Generic
@@ -263,7 +263,7 @@ vehicle parameters</a>.</p>
 <p>Additional properties of the vehicle and its electrical components must
 then be defined via <a href="../Simulation/GenericParameters.html">parameters of the vehicle or its
 type</a>.
-Note, that some parameters are specific to the battery device and thus carry the <code>device.battery</code> prefix. These can be defined either in the <code>&lt;vType&gt;</code> or the <code>&lt;vehicle</code>. 
+Note, that some parameters are specific to the battery device and thus carry the <code>device.battery</code> prefix. These can be defined either in the <code>&lt;vType&gt;</code> or the <code>&lt;vehicle</code>.
 Other parameters are more general and also used by other models (i.e. emission models) and thus carry no prefix. All of the later must be defined in the <code>&lt;vType&gt;</code>.</p>
 <p>These values have the following meanings (the defaults are from the Kia below):</p>
 <table>
@@ -431,7 +431,7 @@ the <a href="../Simulation/Stationfinder.html">stationfinder device</a> can be c
 <h1 id="charging_stations">Charging Stations<a class="headerlink" href="#charging_stations" title="Permanent link">#</a></h1>
 <p>A charging station is a surface defined on a lane in which the vehicles
 equipped with a battery are charged. The basic structure and parameters
-of bus stops were used for the implementation of charging stations. 
+of bus stops were used for the implementation of charging stations.
 A charging station can be converted to a gas station by setting the <strong>chargeType</strong> attribute to <code>fuel</code>. Then electric vehicles cannot charge there anymore.</p>
 <table>
 <thead>
@@ -927,7 +927,7 @@ remainingRange = float(traci.vehicle.getParameter(vehID, &quot;device.battery.ch
 </code></pre>
 <p>To compute the remaining range on departure, the value of <code>mWh</code> (meters per Watt-hour) should be calibrated from a prior simulation.</p>
 <h2 id="reducing_the_power_of_a_charging_station">Reducing the power of a charging station<a class="headerlink" href="#reducing_the_power_of_a_charging_station" title="Permanent link">#</a></h2>
-<p>If too many consumers connect to the eletrical grid, it may not be able to supply the nominal power of the charging station. A temporary
+<p>If too many consumers connect to the electrical grid, it may not be able to supply the nominal power of the charging station. A temporary
 power drop of 20% can be modeled using the following sample code:</p>
 <pre><code class="language-python">prevPower = traci.chargingstation.getPower(chargingStationID) # remember for restoring the full power later
 traci.chargingstation.setPower(chargingStationID, prevPower * 0.8)
@@ -974,7 +974,7 @@ Heidelberg
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

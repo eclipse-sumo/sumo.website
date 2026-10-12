@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -322,7 +322,7 @@ Last edit: 07 October 2026
                     <a href="#intersection_flow_diagram" class="nav-link">• Intersection Flow Diagram</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#visulizing_fcd-data_as_moving_pois" class="nav-link">• Visulizing FCD-Data as moving POIs</a>
+                    <a href="#visualizing_fcd-data_as_moving_pois" class="nav-link">• Visualizing FCD-Data as moving POIs</a>
                 </li>
             <li class="nav-item main"><a href="#outdated">Outdated</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
@@ -544,7 +544,7 @@ permitted for the x and y attribute.</p>
 <p class="admonition-title">Note</p>
 <p>The tool <a href="Railways.html#plotstopspy">plotStops.py</a> simplifies plotting such schedules</p>
 </div>
-<p>In this type of plot time is on the y-axis running from top to bottom. Input is route file of a <a href="../Simulation/Public_Transport.html#public_transport_schedules">public transport schedule</a> where each vehicle is modelled individually.
+<p>In this type of plot time is on the y-axis running from top to bottom. Input is route file of a <a href="../Simulation/Public_Transport.html#public_transport_schedules">public transport schedule</a> where each vehicle is modeled individually.
 A similar plot could also be generated from <a href="../Simulation/Output/StopOutput.html">stop-output</a> by using attribute <code>started</code> or <code>ended</code> (or <code>started,ended</code>) instead of <code>until</code>.</p>
 <p>Call to generate the plot:</p>
 <pre><code>python tools/visualization/plotXMLAttributes.py route.rou.xml -x busStop -y until --ytime1 --legend --xticks-file stoplist.txt --invert-yaxis --marker o
@@ -948,7 +948,7 @@ are part of the net.</p>
 <a href="../Simulation/Output/Summary.html">summary-files</a> and plots a
 selected measure (attribute of the read
 <a href="../Simulation/Output/Summary.html">summary-files</a>). The measure is
-visualised as a time line along the simulation time.</p>
+visualized as a time line along the simulation time.</p>
 <table>
 <thead>
 <tr>
@@ -995,7 +995,7 @@ visualised as a time line along the simulation time.</p>
 <a href="../Simulation/Output/TripInfo.html">tripinfo-files</a> and plots a
 selected measure (attribute of the read
 <a href="../Simulation/Output/TripInfo.html">tripinfo-files</a>). The measure is
-visualised as vertical bars that represent the numbers of occurrences of
+visualized as vertical bars that represent the numbers of occurrences of
 the measure (vehicles) that fall into a bin.</p>
 <table>
 <thead>
@@ -1056,7 +1056,7 @@ the measure (vehicles) that fall into a bin.</p>
 </table>
 <h2 id="plot_csv_timelinepy">plot_csv_timeline.py<a class="headerlink" href="#plot_csv_timelinepy" title="Permanent link">#</a></h2>
 <p>plot_csv_timeline.py reads a .csv file and plots columns selected
-using the <strong>--columns</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;INT&gt;</em></a>[,<a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;INT&gt;</em></a>]* option. The values are visualised as lines.</p>
+using the <strong>--columns</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;INT&gt;</em></a>[,<a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;INT&gt;</em></a>]* option. The values are visualized as lines.</p>
 <table>
 <thead>
 <tr>
@@ -1097,7 +1097,7 @@ using the <strong>--columns</strong> <a href="/docs/Basics/Notation.html#referen
 <h2 id="plot_csv_piepy">plot_csv_pie.py<a class="headerlink" href="#plot_csv_piepy" title="Permanent link">#</a></h2>
 <p>plot_csv_pie.py reads a .csv file that is assumed to contain a name in
 the first and an according value in the second column. The read
-name/value-pairs are visualised as a pie chart.</p>
+name/value-pairs are visualized as a pie chart.</p>
 <table>
 <thead>
 <tr>
@@ -1154,7 +1154,7 @@ name/value-pairs are visualised as a pie chart.</p>
 <h2 id="plot_csv_barspy">plot_csv_bars.py<a class="headerlink" href="#plot_csv_barspy" title="Permanent link">#</a></h2>
 <p>plot_csv_bars.py reads a .csv file that is assumed to contain a name
 in the first and an according value in the second column. The read
-name/value-pairs are visualised as a bar chart.</p>
+name/value-pairs are visualized as a bar chart.</p>
 <table>
 <thead>
 <tr>
@@ -1422,7 +1422,7 @@ the weight file can be shown. It can be useful to adapt the simulation step leng
 <li>Set color edge legend (optional):</li>
 </ul>
 <p><img width="188" height="262" alt="3" src="https://github.com/user-attachments/assets/ba57342b-6b2c-432f-a8a9-41631bf6dafe" /></p>
-<p>Regarding "Recalibrate Rainbow" it is done with use of the data read in the current step. So, it may be needed to run some steps to get data sometimes before klicking "Recalibrate Rainbow". Moreover, the result may be different if data in another step are used. Alternatively, you can (1) set min and max next to the icon "Recalibrate Rainbow" directly or (2) set the interval threshold for each interval manuelly.</p>
+<p>Regarding "Recalibrate Rainbow" it is done with use of the data read in the current step. So, it may be needed to run some steps to get data sometimes before klicking "Recalibrate Rainbow". Moreover, the result may be different if data in another step are used. Alternatively, you can (1) set min and max next to the icon "Recalibrate Rainbow" directly or (2) set the interval threshold for each interval manually.</p>
 <h2 id="intersection_flow_diagram">Intersection Flow Diagram<a class="headerlink" href="#intersection_flow_diagram" title="Permanent link">#</a></h2>
 <p>To visualize the flow on an intersection with line widths according to the amount of traffic, the tool <a href="Routes.html#route2polypy">route2poly.py</a> can be used.</p>
 <ol>
@@ -1439,7 +1439,7 @@ the weight file can be shown. It can be useful to adapt the simulation step leng
 </li>
 </ol>
 <p><img src="../images/Route2poly_intersectionFlow.png" width="400px"/></p>
-<h2 id="visulizing_fcd-data_as_moving_pois">Visulizing FCD-Data as moving POIs<a class="headerlink" href="#visulizing_fcd-data_as_moving_pois" title="Permanent link">#</a></h2>
+<h2 id="visualizing_fcd-data_as_moving_pois">Visualizing FCD-Data as moving POIs<a class="headerlink" href="#visualizing_fcd-data_as_moving_pois" title="Permanent link">#</a></h2>
 <p>The tool <code>fcdReplay.py</code> can be used to replay an <a href="../Simulation/Output/FCDOutput.html">fcd-output file</a> in <a href="../sumo-gui.html">sumo-gui</a>.</p>
 <p>Example uses:</p>
 <pre><code>python  tools/fcdReplay.py -k example.sumocfg -f fcd.xml
@@ -1482,7 +1482,7 @@ the weight file can be shown. It can be useful to adapt the simulation step leng
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -211,7 +211,7 @@ Last edit: 07 October 2026
                   
 
 <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h1>
-<p>SUMO allows modelling access restrictions via a predefined set of
+<p>SUMO allows modeling access restrictions via a predefined set of
 so-called vehicle classes. Each vehicle has a vehicle class and each
 simulation lane allows a set of vehicle classes. Vehicles may only drive
 on lanes that allows its vehicle class.</p>
@@ -271,7 +271,7 @@ options for <a href="Pedestrians.html#building_a_network_for_pedestrian_simulati
 intersections</a>
 should be used.</p>
 <h1 id="custom_access_restrictions">Custom access restrictions<a class="headerlink" href="#custom_access_restrictions" title="Permanent link">#</a></h1>
-<p>The default vehicle classes (including the values <code>custom1</code> and <code>custom2</code>) can handle most requirements for modelling network access restrictions.
+<p>The default vehicle classes (including the values <code>custom1</code> and <code>custom2</code>) can handle most requirements for modeling network access restrictions.
 However, in some domains such as shipping (draught, beam) and railroads (axle weight, grade), it may be necessary to provide for fine grained numerical access models.</p>
 <p>For this, <a href="../duarouter.html">duarouter</a> provides the option <strong>--restriction-params</strong> to set list of edge and vehicle type <a href="GenericParameters.html">generic parameters</a> names.</p>
 <ul>
@@ -279,7 +279,7 @@ However, in some domains such as shipping (draught, beam) and railroads (axle we
 <li>If a <code>&lt;vType&gt;</code> does not define a restriction param its value is initialized to <em>0</em>.</li>
 <li>If an <code>&lt;edge&gt;</code> does not define a restriction param its value is initialized to <em>1e40</em>.</li>
 </ul>
-<p>Restrictions on ship draught could be modelled in the following manner:</p>
+<p>Restrictions on ship draught could be modeled in the following manner:</p>
 <p><code>duarouter --restriction-params draught -n net.net.xml -r routes.rou.xml</code></p>
 <p>where <em>net.net.xml</em> has an edge defined as</p>
 <pre><code class="language-xml">&lt;edge id=&quot;E&quot; from=&quot;beg&quot; to=&quot;end&quot; priority=&quot;-1&quot;&gt;
@@ -303,7 +303,7 @@ However, in some domains such as shipping (draught, beam) and railroads (axle we
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

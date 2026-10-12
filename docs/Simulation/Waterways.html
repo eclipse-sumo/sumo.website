@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -170,7 +170,7 @@ Last edit: 07 October 2026
         <ul class="nav flex-column bs-sidenav">
             <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
             <li class="nav-item main"><a href="#waterway_simulation">Waterway Simulation</a></li>
-            <li class="nav-item main"><a href="#approaches_to_ship_modelling">Approaches to ship modelling</a></li>
+            <li class="nav-item main"><a href="#approaches_to_ship_modeling">Approaches to ship modeling</a></li>
             <li class="nav-item main"><a href="#building_a_network_for_waterway_simulation">Building a network for waterway simulation</a></li>
             <li class="nav-item main"><a href="#overtaking">Overtaking</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
@@ -218,7 +218,7 @@ Last edit: 07 October 2026
 <p class="admonition-title">Caution</p>
 <p>The simulation of waterways is a developing subject and still carries some difficulties. These are discussed below.</p>
 </div>
-<h1 id="approaches_to_ship_modelling">Approaches to ship modelling<a class="headerlink" href="#approaches_to_ship_modelling" title="Permanent link">#</a></h1>
+<h1 id="approaches_to_ship_modeling">Approaches to ship modeling<a class="headerlink" href="#approaches_to_ship_modeling" title="Permanent link">#</a></h1>
 <p>Currently, no exclusive movement model for ships is implemented. Instead
 the existing models for vehicle movement need to be re-purposed. By
 setting <code>guiShape="ship"</code>, vehicles are drawn in a more appropriate shape.</p>
@@ -229,7 +229,7 @@ setting <code>guiShape="ship"</code>, vehicles are drawn in a more appropriate s
 They can also be explicitly specified by setting <code>allow="ship"</code>.</p>
 <h1 id="overtaking">Overtaking<a class="headerlink" href="#overtaking" title="Permanent link">#</a></h1>
 <p>To allow overtaking, it is recommended to build a network that enables <a href="OppositeDirectionDriving.html">opposite direction driving</a>.</p>
-<p>If a linear body of water is wide enough to accommodate more than two ships, it can either be modelled by</p>
+<p>If a linear body of water is wide enough to accommodate more than two ships, it can either be modeled by</p>
 <ul>
 <li>defining multiple lanes per direction</li>
 <li>defining a single wide lane per direction and enabling the <a href="SublaneModel.html#sublane-model">sublane model</a></li>
@@ -238,8 +238,8 @@ They can also be explicitly specified by setting <code>allow="ship"</code>.</p>
 <ul>
 <li>Since the right-of-way rules for ships are more complex than those
   for road vehicles, waterway intersections are set to <code>uncontrolled</code> by default.</li>
-<li>Reversing direction of ships is <a href="https://github.com/eclipse-sumo/sumo/issues/15510">currently not modelled</a></li>
-<li>All movements must be modelled by edges. Freely navigating a large body of water is not possible (unless <a href="../TraCI/index.html">TraCI</a> is used).</li>
+<li>Reversing direction of ships is <a href="https://github.com/eclipse-sumo/sumo/issues/15510">currently not modeled</a></li>
+<li>All movements must be modeled by edges. Freely navigating a large body of water is not possible (unless <a href="../TraCI/index.html">TraCI</a> is used).</li>
 </ul>
                 </main>
           </div>
@@ -248,7 +248,7 @@ They can also be explicitly specified by setting <code>allow="ship"</code>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

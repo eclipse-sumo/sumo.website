@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -406,7 +406,7 @@ section is composed by the original lane section's
 <p>Geometry in OpenDRIVE takes the form of parametric curves (arcs, spirals and splines). These are all sampled with a configurable precision (<strong>--opendrive.curve-resolution</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a>) to produce polylines in the .net.xml. Junction shapes are not encoded in OpenDRIVE. They are generated based on points where the shapes of normal roads and connecting roads meet.</p>
 <h2 id="handling_of_traffic_light_signaling">Handling of traffic light signaling<a class="headerlink" href="#handling_of_traffic_light_signaling" title="Permanent link">#</a></h2>
 <p>OpenDRIVE considers traffic lights by the physical aspect of the signals, their position and the lanes they control. Optionally, signals can be grouped in a <code>&lt;controller&gt;</code> element.
-The car signals are imported into SUMO by default and organised into one traffic light per intersection. If the option <strong>--opendrive.signal-groups</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a> is set to true, netconvert will try to build the same signal groups in SUMO
+The car signals are imported into SUMO by default and organized into one traffic light per intersection. If the option <strong>--opendrive.signal-groups</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a> is set to true, netconvert will try to build the same signal groups in SUMO
 as given by the OpenDRIVE <code>&lt;controller&gt;</code> items. <strong>This can generate invalid SUMO signal programs (minor "g" vs. major green "G", see <a href="../../Simulation/Traffic_Lights.html#signal_state_definitions">signal state</a>) or fail due to complex signal group settings.</strong> Currently, signals for cyclists and pedestrians are not imported.</p>
 <h2 id="referencing_original_ids">Referencing original IDs<a class="headerlink" href="#referencing_original_ids" title="Permanent link">#</a></h2>
 <p>When using the option <strong>--output.original-names</strong>, each lane will receive a <code>&lt;param origID="EDGE_ID LANE_INDEX"/&gt;</code> which can be used with
@@ -426,7 +426,7 @@ will be written with geo-coordinate as well.</p>
 <h1 id="supported_versions_and_features">Supported Versions and Features<a class="headerlink" href="#supported_versions_and_features" title="Permanent link">#</a></h1>
 <p><a href="../../netconvert.html">netconvert</a> aims to support as many features as possible across OpenDRIVE versions.
 Version 1.4 should generally be supported.
-You can check the feature support per version (and request new featuers) in our issue tracker:</p>
+You can check the feature support per version (and request new features) in our issue tracker:</p>
 <ul>
 <li><a href="https://github.com/eclipse-sumo/sumo/issues/6694">OpenDrive 1.4 features</a></li>
 <li><a href="https://github.com/eclipse-sumo/sumo/issues/6695">OpenDrive 1.5 features</a></li>
@@ -439,7 +439,7 @@ You can check the feature support per version (and request new featuers) in our 
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

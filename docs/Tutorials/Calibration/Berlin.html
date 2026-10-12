@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -171,12 +171,12 @@ Last edit: 07 October 2026
             <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
             <li class="nav-item main"><a href="#validation_of_a_small_inner-urban_scenario_simulated_within_the_sumo-package">Validation of a small inner-urban scenario simulated within the SUMO-package</a></li>
             <li class="nav-item main"><a href="#the_study_area">The study area</a></li>
-            <li class="nav-item main"><a href="#modelling_within_the_sumo-package">Modelling within the SUMO-Package</a></li>
+            <li class="nav-item main"><a href="#modeling_within_the_sumo-package">Modeling within the SUMO-Package</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#traffic_net_modelling" class="nav-link">• Traffic Net Modelling</a>
+                    <a href="#traffic_net_modeling" class="nav-link">• Traffic Net Modeling</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#traffic_demand_modelling" class="nav-link">• Traffic Demand Modelling</a>
+                    <a href="#traffic_demand_modeling" class="nav-link">• Traffic Demand Modeling</a>
                 </li>
             <li class="nav-item main"><a href="#results">Results</a></li>
             <li class="nav-item main"><a href="#summary_and_outlook">Summary and Outlook</a></li>
@@ -218,12 +218,12 @@ Last edit: 07 October 2026
                   
 
 <h2 id="validation_of_a_small_inner-urban_scenario_simulated_within_the_sumo-package">Validation of a small inner-urban scenario simulated within the SUMO-package<a class="headerlink" href="#validation_of_a_small_inner-urban_scenario_simulated_within_the_sumo-package" title="Permanent link">#</a></h2>
-<p>This article describes how a detailed traffic scenario was modelled
+<p>This article describes how a detailed traffic scenario was modeled
 using the SUMO simulation package and demonstrates how the simulation
 results match measurements made from real world traffic.</p>
 <h2 id="the_study_area">The study area<a class="headerlink" href="#the_study_area" title="Permanent link">#</a></h2>
 <p>The UTRaLab (Urban Traffic Research Laboratory) is a test track with a
-length of 1.2 kilometres along a small river called “Ernst-Ruska-Ufer”
+length of 1.2 kilometers along a small river called “Ernst-Ruska-Ufer”
 in Berlin [1]. It is a multilane road with about 30.000 vehicles
 using it each day between the federal motorway on workdays. Along with other
 measurement technology, the UTRaLab is equipped with 45 double induction
@@ -231,24 +231,24 @@ loops, that supply vehicle data classified into 5+1 vehicle types
 according to TLS[2]. An Overview about the test track and the position
 of the induction loops is given in Fig. 1.</p>
 <p><img alt="Berlin.png" src="../../images/Berlin.png" /></p>
-<h2 id="modelling_within_the_sumo-package">Modelling within the SUMO-Package<a class="headerlink" href="#modelling_within_the_sumo-package" title="Permanent link">#</a></h2>
-<p>Preparing a traffic simulation includes modelling the road network as
-well as modelling the traffic demand within the traffic network.</p>
-<h3 id="traffic_net_modelling">Traffic Net Modelling<a class="headerlink" href="#traffic_net_modelling" title="Permanent link">#</a></h3>
+<h2 id="modeling_within_the_sumo-package">Modeling within the SUMO-Package<a class="headerlink" href="#modeling_within_the_sumo-package" title="Permanent link">#</a></h2>
+<p>Preparing a traffic simulation includes modeling the road network as
+well as modeling the traffic demand within the traffic network.</p>
+<h3 id="traffic_net_modeling">Traffic Net Modeling<a class="headerlink" href="#traffic_net_modeling" title="Permanent link">#</a></h3>
 <p>The simulation net includes the section between
 “Wegedornstraße” and “Adlergestell”. It represents the exact number of
 lanes, turn lanes and links to all side roads. Within the considered
 section, there are two traffic lights, one at the junction “Altglienicker
-Brücke” and one at the junction “Am Studio”. Both are modelled with
+Brücke” and one at the junction “Am Studio”. Both are modeled with
 fixed time schedules according to the time of day. The main
-challenge in modelling was a spill-back into the study area caused
+challenge in modeling was a spill-back into the study area caused
 outside at the junction Adlergestell. As there was no sensor data
 available to model the bottleneck itself, Variable Speed Signs (VSS)
 [3] were placed in the model at the outbound of the junction
 “Altglienicker Brücke” towards Adlergestell. The VSS supplies all
 vehicles crossing with a new maximum speed, derived from the single
 value data from the detectors.</p>
-<h3 id="traffic_demand_modelling">Traffic Demand Modelling<a class="headerlink" href="#traffic_demand_modelling" title="Permanent link">#</a></h3>
+<h3 id="traffic_demand_modeling">Traffic Demand Modeling<a class="headerlink" href="#traffic_demand_modeling" title="Permanent link">#</a></h3>
 <p>While looking for a work day, outside of the holiday seasons, where considerable congestion occurred, Tuesday the 11 of January 2011 was chosen. The traffic data from this day
 was aggregated to intervals of one minute. This minor simplification
 enabled the use of the module dfrouter [4]. After defining the
@@ -325,7 +325,7 @@ sensors and from the simulation are compared.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

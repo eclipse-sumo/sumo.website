@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -367,6 +367,10 @@ movement, then the following value is generated additionally:</p>
 </table>
 <p>If the vehicle leaves the detector because it arrived, changed lanes or
 teleported a leave event without occupancy is generated.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The timing values are of sub-step resolution, computed by interpolating from the last two simulation steps. This interpolation takes into account <strong>--step-method</strong>.</p>
+</div>
 <h2 id="visualisation">Visualisation<a class="headerlink" href="#visualisation" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -408,7 +412,7 @@ teleported a leave event without occupancy is generated.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

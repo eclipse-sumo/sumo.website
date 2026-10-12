@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -169,7 +169,7 @@ Last edit: 07 October 2026
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary toc-scroll toc">
         <ul class="nav flex-column bs-sidenav">
             <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
-            <li class="nav-item main"><a href="#organising">Organising</a></li>
+            <li class="nav-item main"><a href="#organizing">Organizing</a></li>
             <li class="nav-item main"><a href="#update">Update</a></li>
         </ul>
     </div>
@@ -208,11 +208,11 @@ Last edit: 07 October 2026
                   
 
 <p>Publications are stored in an extended
-<a href="https://sourceforge.net/apps/trac/sumo/browser/trunk/sumo/docs/sumo.bib">bibtex-file</a>
+<a href="https://github.com/eclipse-sumo/sumo/blob/main/docs/sumo.bib">bibtex-file</a>
 generated using <a href="https://www.jabref.org/">JabRef</a>.</p>
-<h1 id="organising">Organising<a class="headerlink" href="#organising" title="Permanent link">#</a></h1>
+<h1 id="organizing">Organizing<a class="headerlink" href="#organizing" title="Permanent link">#</a></h1>
 <p><a href="https://www.jabref.org/">JabRef</a> allows not only to enter your
-references, but also to group them. We use the following way to organise
+references, but also to group them. We use the following way to organize
 the references:</p>
 <ul>
 <li><strong>sumo</strong>: All that cite SUMO; in fact, there are some other
@@ -230,28 +230,28 @@ SUMO or papers on theory.</li>
 <li>... further topics ...</li>
 </ul>
 </li>
-<li><strong>organisation</strong>: a classification by organisation<ul>
+<li><strong>organization</strong>: a classification by organization<ul>
 <li><strong>DLR/TS/VM</strong>: the traffic management group at the Institute of
   Transportation Systems at the German Aerospace Center</li>
-<li>... further organisations ...</li>
+<li>... further organizations ...</li>
 </ul>
 </li>
 </ul>
 <p>When adding a new entry, please complete its description, first. Then,
 right-click on the entry in the list and assign it to the groups it
-belongs to - at least organisation and topics.</p>
+belongs to - at least organization and topics.</p>
 <h1 id="update">Update<a class="headerlink" href="#update" title="Permanent link">#</a></h1>
-<p>Although the publications can be edited manually using JabRef, there is an automated approach to add 
-new entries from the search engine <a href="https://www.semanticscholar.org/">Semantic Scholar</a>. The script 
-<strong>SUMO_HOME/tools/build_config/bibtexUpdate.py</strong> can be used to query the most cited articles which 
+<p>Although the publications can be edited manually using JabRef, there is an automated approach to add
+new entries from the search engine <a href="https://www.semanticscholar.org/">Semantic Scholar</a>. The script
+<strong>SUMO_HOME/tools/build_config/bibtexUpdate.py</strong> can be used to query the most cited articles which
 refer to one of the SUMO reference publications. The script is called like this:</p>
 <pre><code>python tools/build_config/bibtexUpdate.py --bibtex-input docs/sumo.bib --bibtex-output docs/sumo.bib --cited-works &quot;b1914c912dea62703856d89fe3724675a6139b71&quot; &quot;0e62ded610aeb17cc65f9f7159477e48248a98a2&quot; --min-citations 100 --exclude-media &quot;SUMO Conference Proceedings&quot; &quot;International Conference on Simulation of Urban Mobility&quot; &quot;arXiv.org&quot;
 </code></pre>
-<p>The example call takes the current version of the bibtex file and overwrites it. 
-It queries the works citing the SUMO reference publications given by their Semantic Scholar hashes 
-in <strong>--cited-works</strong> and includes only those with at least <strong>--min-citations</strong>. Publications can be excluded from the 
+<p>The example call takes the current version of the bibtex file and overwrites it.
+It queries the works citing the SUMO reference publications given by their Semantic Scholar hashes
+in <strong>--cited-works</strong> and includes only those with at least <strong>--min-citations</strong>. Publications can be excluded from the
 search result if contained in journals/conferences named in <strong>--exclude-media</strong>.</p>
-<p>The script can be executed within Github using the <strong>bibtex</strong> workflow which then generates a pull request with the updated 
+<p>The script can be executed within Github using the <strong>bibtex</strong> workflow which then generates a pull request with the updated
 bibtex file.</p>
                 </main>
           </div>
@@ -260,7 +260,7 @@ bibtex file.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

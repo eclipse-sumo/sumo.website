@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -363,10 +363,10 @@ Last edit: 07 October 2026
                   
 
 <h1 id="high_level_overview">High level Overview<a class="headerlink" href="#high_level_overview" title="Permanent link">#</a></h1>
-<p>The purpose of traffic light modelling in SUMO is threefold:</p>
+<p>The purpose of traffic light modeling in SUMO is threefold:</p>
 <ol>
-<li>provide comfortable ways to set up plausible traffic signals for a whole city </li>
-<li>provide functionality to replicate an existing traffic light with high fidelity </li>
+<li>provide comfortable ways to set up plausible traffic signals for a whole city</li>
+<li>provide functionality to replicate an existing traffic light with high fidelity</li>
 <li>provide functionality to simulate any conceivable traffic light algorithm for research purposes</li>
 </ol>
 <p>The first aim is supported by a deep pool of heuristics that construct traffic lights and programs.
@@ -639,7 +639,7 @@ attribute of the <code>&lt;connection&gt;</code> elements in the <em>.net.xml</e
 <tr>
 <td>g</td>
 <td><span style="color:#00B300; background:#00B300">FOO</span></td>
-<td>'green light' for a signal, no priority - vehicles may pass the junction if no vehicle uses a higher priorised foe stream, otherwise they decelerate for letting it pass. They always decelerate on approach until they are within the configured <a href="../Networks/PlainXML.html#explicitly_setting_which_edge_lane_is_connected_to_which">visibility distance</a></td>
+<td>'green light' for a signal, no priority - vehicles may pass the junction if no vehicle uses a higher prioritized foe stream, otherwise they decelerate for letting it pass. They always decelerate on approach until they are within the configured <a href="../Networks/PlainXML.html#explicitly_setting_which_edge_lane_is_connected_to_which">visibility distance</a></td>
 </tr>
 <tr>
 <td>G</td>
@@ -649,7 +649,7 @@ attribute of the <code>&lt;connection&gt;</code> elements in the <em>.net.xml</e
 <tr>
 <td>s</td>
 <td><span style="color:#800080; background:#800080">FOO</span></td>
-<td>'green right-turn arrow' requires stopping - vehicles may pass the junction if no vehicle uses a higher priorised foe stream. They always stop before passing. This is only generated for junction type <em>traffic_light_right_on_red</em>.</td>
+<td>'green right-turn arrow' requires stopping - vehicles may pass the junction if no vehicle uses a higher prioritized foe stream. They always stop before passing. This is only generated for junction type <em>traffic_light_right_on_red</em>.</td>
 </tr>
 <tr>
 <td>u</td>
@@ -878,7 +878,7 @@ phase run more than once in the same cycle (this only happens when param
 </ul>
 <p>Examples for this type of traffic light logic can be found in <a href="https://github.com/eclipse-sumo/sumo/blob/main/tests/sumo/tls/actuated/multiNext/dualring_simple"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/tests/sumo/tls/actuated/multiNext/dualring_simple</a>.</p>
 <p>The helper script <a href="../Tools/tls.html#buildtransitionspy">buildTransitions.py</a> can be used to generate such logics from simplified definitions.</p>
-<h4 id="exampe_left-turn_phases_can_be_skipped">Exampe: left-turn phases can be skipped<a class="headerlink" href="#exampe_left-turn_phases_can_be_skipped" title="Permanent link">#</a></h4>
+<h4 id="example_left-turn_phases_can_be_skipped">Example: left-turn phases can be skipped<a class="headerlink" href="#example_left-turn_phases_can_be_skipped" title="Permanent link">#</a></h4>
 <pre><code class="language-xml">    &lt;tlLogic id=&quot;C&quot; type=&quot;actuated&quot; programID=&quot;P1&quot; offset=&quot;0&quot;&gt;
         &lt;phase duration=&quot;33&quot; state=&quot;GgrrGgrr&quot; minDur=&quot;5&quot; maxDur=&quot;60&quot; next=&quot;1 8&quot;/&gt;
         &lt;phase duration=&quot;3&quot;  state=&quot;ygrrygrr&quot;/&gt;
@@ -1541,7 +1541,7 @@ The top row contains the phase index but it is possible to change this so it sho
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

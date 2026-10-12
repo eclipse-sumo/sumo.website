@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -231,7 +231,7 @@ Last edit: 07 October 2026
 
 <h1 id="motorway_simulation">Motorway Simulation<a class="headerlink" href="#motorway_simulation" title="Permanent link">#</a></h1>
 <p>This page describes simulations of motorways in SUMO. It aims to collect
-best practices when modelling motorway networks and traffic.</p>
+best practices when modeling motorway networks and traffic.</p>
 <h1 id="building_a_network_for_motorway_simulation">Building a network for motorway simulation<a class="headerlink" href="#building_a_network_for_motorway_simulation" title="Permanent link">#</a></h1>
 <p>Networks can be imported from any supported data source or created from
 scratch with <a href="../Netedit/index.html">netedit</a>. Depending on the level of
@@ -242,7 +242,7 @@ detail special processing may be necessary</p>
 heuristically</a>.
 This basically adds acceleration lanes at on-ramps and deceleration lanes at
 off-ramps by increasing the lane count of one or more edges.</p>
-<p>Ramps usually merge into the main road via an acceleration lane. This acceleration lane opens up where the ramp enters the motorway and is modelled as a dead-end lane (no outgoing connection). This forces on-ramp vehicles to change lanes in order to continue their route.</p>
+<p>Ramps usually merge into the main road via an acceleration lane. This acceleration lane opens up where the ramp enters the motorway and is modeled as a dead-end lane (no outgoing connection). This forces on-ramp vehicles to change lanes in order to continue their route.</p>
 <p>It may be useful to make acceleration lanes in SUMO somewhat longer than in reality.
 This compensates for the cautious default behavior of SUMO drivers: Vehicles on the acceleration lane will decelerate when approaching the end of that lane since they cannot anticipate with certainty whether their lanechange will be successful. In contrast, human drivers are better at predicting the future and may accelerate up to the end of the acceleration lane (and then change into the anticipated gap at the last moment)</p>
 <h3 id="reduction_in_the_number_of_lanes">Reduction in the number of lanes<a class="headerlink" href="#reduction_in_the_number_of_lanes" title="Permanent link">#</a></h3>
@@ -275,10 +275,10 @@ Connectivity at on-off-ramp</p>
 <h2 id="vehicle_class_specific_speed_limits">Vehicle class specific speed limits<a class="headerlink" href="#vehicle_class_specific_speed_limits" title="Permanent link">#</a></h2>
 <p>In some jurisdictions, certain vehicle classes have specific speed
 limits (i.e. Trucks which may not drive faster than 90km/h on German
-motorways). This should be modelled as described here:
+motorways). This should be modeled as described here:
 <a href="../Networks/PlainXML.html#vehicle-class_specific_speed_limits">Networks/PlainXML#vehicle-class_specific_speed_limits</a></p>
 <h2 id="lane-changing_prohibitions">Lane-changing prohibitions<a class="headerlink" href="#lane-changing_prohibitions" title="Permanent link">#</a></h2>
-<p>Lane-changing prohibitions can be modelled using the lane attributes 'changeLeft' and 'changeRight' with a list of vehicle classes that may change.
+<p>Lane-changing prohibitions can be modeled using the lane attributes 'changeLeft' and 'changeRight' with a list of vehicle classes that may change.
 To disable changing right for normal passenger traffic, set 'changeRight="authority"`.</p>
 <h1 id="defining_motorway_traffic">Defining Motorway Traffic<a class="headerlink" href="#defining_motorway_traffic" title="Permanent link">#</a></h1>
 <h2 id="speed_distributions">Speed Distributions<a class="headerlink" href="#speed_distributions" title="Permanent link">#</a></h2>
@@ -300,7 +300,7 @@ FAQ</a></p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

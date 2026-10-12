@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -224,13 +224,13 @@ Last edit: 07 October 2026
 <p>When analyzing the movement of crowds in urban areas — such as at train stations or during the arrival and departure phases of major events — it is essential to consider traffic-related aspects.
 Factors like the frequency and capacity of trains, the positioning of train doors, and the interaction between cars and pedestrians at intersections significantly influence the dynamics of pedestrians.
 To investigate such scenarios holistically, including both traffic and pedestrian dynamics, basic functionalities of <em>JuPedSim</em> have been integrated into <em>Eclipse SUMO</em>.</p>
-<p>The Juelich Pedestrian Simulator (<a href="https://www.jupedsim.org/">JuPedSim</a>) is an open-source tool for simulating pedestrian dynamics offering different models for the interaction of pedestrians with their neighbors in a 2D environment. The simulations results provide valuable insights into crowd dynamics usually evaluated by the occurrence of jam, local densities and speed. </p>
-<p>For the interaction of pedestrians with their surroundings (neighbors, obstacles, walls, ...) several microscopic <a href="https://www.jupedsim.org/stable/pedestrian_models/">models</a> are available in JuPedSim. These microscopic models allow to reproduce phenomena in large crowds such as arching in front of bottlenecks and lane formation in bi-directional streams. </p>
+<p>The Juelich Pedestrian Simulator (<a href="https://www.jupedsim.org/">JuPedSim</a>) is an open-source tool for simulating pedestrian dynamics offering different models for the interaction of pedestrians with their neighbors in a 2D environment. The simulations results provide valuable insights into crowd dynamics usually evaluated by the occurrence of jam, local densities and speed.</p>
+<p>For the interaction of pedestrians with their surroundings (neighbors, obstacles, walls, ...) several microscopic <a href="https://www.jupedsim.org/stable/pedestrian_models/">models</a> are available in JuPedSim. These microscopic models allow to reproduce phenomena in large crowds such as arching in front of bottlenecks and lane formation in bi-directional streams.</p>
 <p><img alt="" src="images/JuPedSim_arching.gif" /></p>
 <p><em>Example of a simulation with JuPedSim for a bottleneck scenario. Arching occurs.</em></p>
-<p>The movement of the agents is restricted to 2D space which is referred to as <em>walkable area</em>. The <a href="https://www.jupedsim.org/stable/concepts/geometry.html">walkable area</a> is a closed polygon with holes respresenting obstacles such as trees, pillars or stalls. Agents can move in all directions within the area. This results in a high computational effort, which increases with the number of agents (and thus neighbors) and the size of the walkable area, as wayfinding becomes more complex. Due to its underlying model, JuPedSim operates with a higher temporal resolution than SUMO - typically 0.01 seconds — which makes it the runtime-limiting factor in coupled simulation scenarios.</p>
+<p>The movement of the agents is restricted to 2D space which is referred to as <em>walkable area</em>. The <a href="https://www.jupedsim.org/stable/concepts/geometry.html">walkable area</a> is a closed polygon with holes representing obstacles such as trees, pillars or stalls. Agents can move in all directions within the area. This results in a high computational effort, which increases with the number of agents (and thus neighbors) and the size of the walkable area, as wayfinding becomes more complex. Due to its underlying model, JuPedSim operates with a higher temporal resolution than SUMO - typically 0.01 seconds — which makes it the runtime-limiting factor in coupled simulation scenarios.</p>
 <p>For <a href="https://www.jupedsim.org/stable/concepts/routing.html">route planning</a> a journey must be defined for each agent. The journey can be a composition of various stages, e.g. exits as a final goal, waypoints that must be passed or waiting positions that are organized as queues or sets. Journeys can be shared by several agents but also multiple journeys can be defined within one simulation scenario.</p>
-<p>JuPedSim is provided as a Python package with a C++ core behind and a C-API that is used by SUMO. The <em>SUMO-JuPedSim</em> simulation loop starts with <em>JuPedSim</em> independently updating pedestrian positions </p>
+<p>JuPedSim is provided as a Python package with a C++ core behind and a C-API that is used by SUMO. The <em>SUMO-JuPedSim</em> simulation loop starts with <em>JuPedSim</em> independently updating pedestrian positions</p>
 <h2 id="what_is_it_for">What is it for?<a class="headerlink" href="#what_is_it_for" title="Permanent link">#</a></h2>
 <p>The integration is particularly useful in scenarios where crowd and traffic dynamics interact, such as:</p>
 <ul>
@@ -294,7 +294,7 @@ To support this, an advanced <em>JuPedSim</em> model for waiting is being develo
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

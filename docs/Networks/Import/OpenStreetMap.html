@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -519,7 +519,7 @@ In this case the calls look like this:</p>
 osmBuild.py --oldapi-prefix &lt;NAME --tiles &lt;INT&gt; [--vehicle-classes (all|road|passenger),ramps,tls] [--type-file &lt;TYEPMAP_FILE&gt;]
 </code></pre>
 <h1 id="elevation_data">Elevation Data<a class="headerlink" href="#elevation_data" title="Permanent link">#</a></h1>
-<p>Incooperating z-coordinates in networks is still experimental so please
+<p>Incorporating z-coordinates in networks is still experimental so please
 report anything odd.</p>
 <h2 id="srtm">SRTM<a class="headerlink" href="#srtm" title="Permanent link">#</a></h2>
 <p>When using option <strong>--osm.elevation</strong>, z-data is imported from <a href="https://wiki.openstreetmap.org/wiki/Key:ele">tags with <code>key="ele"</code>
@@ -644,7 +644,7 @@ the option</p>
 However, this often causes the removal of railways or waterways which is
 not desirable for multi-modal scenarios.</p>
 <h2 id="shared_space_for_trams_and_road_vehicles">Shared Space for Trams and Road Vehicles<a class="headerlink" href="#shared_space_for_trams_and_road_vehicles" title="Permanent link">#</a></h2>
-<p>In the OSM database, shared space for tram and road vehicles is often modelled with distinct elements that occupy the same space. When imported directly, this would allow those modes of traffic to ignore each other due to running on different edges.
+<p>In the OSM database, shared space for tram and road vehicles is often modeled with distinct elements that occupy the same space. When imported directly, this would allow those modes of traffic to ignore each other due to running on different edges.
 To fix this, the option <strong>--edges.join-tram-dist FLOAT</strong> may be used. When this option is set (values between 1 and 2 are recommended), overlapping OSM elements will be converted to road lanes with shared permissions (indicated by a dark purple in <a href="../../sumo-gui.html#default_coloring">sumo-gui</a>).</p>
 <h2 id="further_wayedge_attributes">Further way/edge attributes<a class="headerlink" href="#further_wayedge_attributes" title="Permanent link">#</a></h2>
 <p>When setting option <strong>--output.street-names</strong>, the 'name' attribute of every edge will be set to the street name defined in the OSM data.</p>
@@ -679,7 +679,7 @@ deletes the nodes.</p>
 can be used to filter out unwanted features from an OSM-file. The
 following command keeps motorways and motorway links while filtering out
 everything else:</p>
-<pre><code>java -jar osmosis.jar --read-xml file=&quot;orginal.osm.xml&quot; --way-key-value \
+<pre><code>java -jar osmosis.jar --read-xml file=&quot;original.osm.xml&quot; --way-key-value \
     keyValueList=&quot;highway.motorway,highway.motorway_link&quot; \
     --used-node --write-xml file=&quot;filtered.osm.xml&quot;
 </code></pre>
@@ -840,11 +840,11 @@ For a <a href="../../Simulation/Pedestrians.html#building_a_network_for_pedestri
 <h2 id="sidewalks_from_typemap">Sidewalks from typemap<a class="headerlink" href="#sidewalks_from_typemap" title="Permanent link">#</a></h2>
 <p>By adding a typemap such as {{ SUMO_HOME }}/data/osmNetconvertPedestrians.typ.xml, sidewalks of a pre-configured width a added to a specific set of road types and all non-sidewalk lanes are forbidden for pedestrians.</p>
 <p>OSM-sidewalk data will only be considered if it explicitly disables sidewalks on an edge.
-This ensures good sidewalk coverage but may lead to double-sidewalks if OSM modellers have added the "sidewalks" as parallel foot paths edges.</p>
+This ensures good sidewalk coverage but may lead to double-sidewalks if OSM modelers have added the "sidewalks" as parallel foot paths edges.</p>
 <h2 id="sidewalks_from_osm">Sidewalks from OSM<a class="headerlink" href="#sidewalks_from_osm" title="Permanent link">#</a></h2>
 <p>By setting option <strong>--osm.sidewalks</strong>, all sidewalk data from OSM will be loaded. When combined with a typemap such as {{ SUMO_HOME }}/data/osmNetconvertPedestrians.typ.xml, the typemap will only be used to configure sidewalk widths but no extra sidewalks will be added.</p>
 <p>When <strong>--osm.sidewalks</strong> is set, by setting option <strong>--osm.crossings</strong> the "highway=crossing" tags will be loaded and crossings will be generated.</p>
-<p>This definition style prevents double-sidewalks but may lead to missing sidewalks wherever OSM modellers did not add sidewalk information.</p>
+<p>This definition style prevents double-sidewalks but may lead to missing sidewalks wherever OSM modelers did not add sidewalk information.</p>
 <p><a href="../../Tutorials/OSMWebWizard.html">osmWebWizard</a> uses this style beginning with version 1.11.0.</p>
 <h1 id="importing_osm_data_via_python_overpass_api">Importing OSM Data via Python/ Overpass API<a class="headerlink" href="#importing_osm_data_via_python_overpass_api" title="Permanent link">#</a></h1>
 <p>Another way to get OSM data is to query via the Overpass API, e.g. with
@@ -895,7 +895,7 @@ can be found on the website <a href="https://overpass-turbo.eu/">https://overpas
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -172,12 +172,21 @@ Last edit: 07 October 2026
             <li class="nav-item main"><a href="#introduction">Introduction</a></li>
             <li class="nav-item main"><a href="#setup">Setup</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#windows" class="nav-link">• Windows</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#viewer_and_editor" class="nav-link">• Viewer and editor</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
                     <a href="#customize_configuration" class="nav-link">• Customize configuration</a>
                 </li>
+            <li class="nav-item main"><a href="#running_the_tests">Running the Tests</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#recommended_python_packages" class="nav-link">• Recommended python packages</a>
                 </li>
-            <li class="nav-item main"><a href="#running_the_tests">Running the Tests</a></li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#starting_the_test_runner" class="nav-link">• Starting the test runner</a>
+                </li>
             <li class="nav-item main"><a href="#adding_a_test_to_an_existing_application">Adding a Test to an existing Application</a></li>
             <li class="nav-item main"><a href="#adding_an_application_test_suite">Adding an Application Test Suite</a></li>
             <li class="nav-item main"><a href="#example_of_use">Example of use</a></li>
@@ -253,31 +262,25 @@ results change.</p>
 with the results on this <a href="https://sumo.dlr.de/daily/">summary webpage</a>.</p>
 <h1 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">#</a></h1>
 <p>We use <a href="https://texttest.org/">TextTest</a> 4.x as our testing environment which
-is Python based and currently available for Python 3. To install
-it on Linux / MacOS, you can open a terminal and type:</p>
-<p><code>pip3 install texttest</code></p>
-<p>For a "naked" python installation, the following may be needed to allow TextTest to work:</p>
-<p><code>pip3 install gobject PyGObject psutil</code></p>
+is based on the Python GTK bindings so it needs some prerequisites
+which cannot be installed with pip.</p>
+<p><strong>On Linux (Debian/Ubuntu):</strong></p>
+<pre><code>sudo apt-get install meld geany python3-gi python3-gi-cairo pipx
+</code></pre>
+<p><strong>On macOS:</strong></p>
+<pre><code>brew install meld geany python py3cairo pygobject3 gtk+3 adwaita-icon-theme
+</code></pre>
+<p>Then to install it on Linux / MacOS, you can open a terminal and type:</p>
+<p><code>pipx install --system-site-packages texttest</code></p>
+<h2 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">#</a></h2>
 <p>For Windows you should download and run the installer from the
 <a href="https://sourceforge.net/projects/texttest/">SourceForge project page</a>.</p>
-<p>It might not pull in all the dependencies, so in some cases you need
-to follow the <a href="https://texttest.sourceforge.net/index.php?page=documentation_trunk&amp;n=install_texttest">TextTest installation
-instructions</a>
-and the additional info there.</p>
-<p>For macOS the following command should install all dependencies:</p>
-<p><code>brew install python py3cairo pygobject3 gtk+3 adwaita-icon-theme</code></p>
-<p>You will need to install a diff viewer and text editor for viewing and comparing test results. These tools are required on all operating systems.</p>
+<h2 id="viewer_and_editor">Viewer and editor<a class="headerlink" href="#viewer_and_editor" title="Permanent link">#</a></h2>
+<p>The commands above also install a diff viewer and text editor for viewing and comparing test results
+on Linux and macOS. For Windows the meld diff tool comes bundled with the installer.</p>
 <p><strong>Recommended tools</strong> (preferred by SUMO developers):
 - <strong>Diff viewer:</strong> <code>meld</code> - for comparing file differences
 - <strong>Text editor:</strong> <code>geany</code> - for viewing and editing files</p>
-<p>Installation commands:</p>
-<p><strong>On macOS:</strong></p>
-<pre><code>brew install meld geany
-</code></pre>
-<p><strong>On Linux (Debian/Ubuntu):</strong></p>
-<pre><code>sudo apt-get install meld geany
-</code></pre>
-<p><strong>On Windows:</strong></p>
 <p>Download and install from
 <a href="https://www.geany.org/">Geany project page</a> by following the provided installation instructions.</p>
 <p>After installing these tools, you need to configure TextTest to use them by creating or editing <code>$HOME/.texttest/config</code> (see <a href="#customize_configuration">Customize configuration</a> section below).</p>
@@ -294,11 +297,15 @@ and the additional info there.</p>
 </code></pre>
 <p>The <code>diff_program</code> setting specifies which tool to use for comparing files, and <code>view_program</code> specifies the text editor for viewing files. The <code>static_collapse_suites</code> flag collapses the static test suites on program start.</p>
 <p><strong>Note:</strong> If you do not overwrite the <code>diff_program</code> and <code>view_program</code> lines, TextTest will try to use tkdiff and emacs automatically.</p>
+<p>If you encounter problems during the texttest installation check also the <a href="https://texttest.sourceforge.net/index.php?page=documentation_trunk&amp;n=install_texttest">TextTest installation
+instructions</a>
+and the additional info there.</p>
+<h1 id="running_the_tests">Running the Tests<a class="headerlink" href="#running_the_tests" title="Permanent link">#</a></h1>
 <h2 id="recommended_python_packages">Recommended python packages<a class="headerlink" href="#recommended_python_packages" title="Permanent link">#</a></h2>
 <p>There are several packages being used by the tools under test. So if you want to run
 the "tools" and/or "complex" tests please do</p>
 <p><code>pip3 install -r $SUMO_HOME/tools/requirements.txt -r $SUMO_HOME/tools/req_dev.txt</code></p>
-<h1 id="running_the_tests">Running the Tests<a class="headerlink" href="#running_the_tests" title="Permanent link">#</a></h1>
+<h2 id="starting_the_test_runner">Starting the test runner<a class="headerlink" href="#starting_the_test_runner" title="Permanent link">#</a></h2>
 <p>Within the  <code>$SUMO_HOME/tests</code> folder you can find batch files for Windows and shell files for Linux &amp; macOS which start
 <a href="https://texttest.org/">TextTest</a> with our test suites. <code>runAllTests.bat</code> (Windows) or <code>runTests.sh</code> (Linux, macOS)
 starts TextTest for testing all applications located in the folder,
@@ -318,15 +325,6 @@ following steps. For the examples below we'll use "polyconvert" as the
 example application.</p>
 <ul>
 <li>go to <code>$SUMO_HOME/tests</code></li>
-<li>copy one of the <strong>run...Tests.bat</strong>-files and rename it properly
-  (<strong>runPolyconvertTests.bat</strong> in our case); change the name of the
-  application within it. In our case the resulting file will look as
-  this:</li>
-</ul>
-<pre><code>call %~dp0\testEnv.bat %1
-start %TEXTTESTPY% -a polyconvert
-</code></pre>
-<ul>
 <li>add the application to the list of applications that are tested each
 night by<ul>
 <li>adding it to <strong>runTests.sh</strong>; in our case, the following line
@@ -477,7 +475,7 @@ available you should of course prefer Python3.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

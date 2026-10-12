@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -237,7 +237,7 @@ of as the maximum speed of the engine.</p>
 <p>The <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#vehicle_types"><code>&lt;vType&gt;-attribute desiredMaxSpeed</code></a>
 models the (mean) desired maximum speed that the vehicles drivers of that type wish to use. The actual desired maximum speed of an individual vehicle is computed by multiplying the <code>maxDesiredSpeed</code> of its type with the <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#speed_distributions">individual speedFactor</a> of that vehicle.
 The individual desired max speed serves as another upper bound on speed next to the <code>maxSpeed</code> and the road speed limit.</p>
-<p>The main use of this property is to model speed distributions for vehicles that are not limited by the legal road speed limit (i.e. pedestrians and bicycles). In contrast, regular cars are typically restrained by the speed limit and so their speed distribution is modelled by multiplying their individual speedFactor with the speedLimit. Thus, different <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#abstract_vehicle_class">vClasses</a> have different default values for <code>desiredMaxSpeed</code>:</p>
+<p>The main use of this property is to model speed distributions for vehicles that are not limited by the legal road speed limit (i.e. pedestrians and bicycles). In contrast, regular cars are typically restrained by the speed limit and so their speed distribution is modeled by multiplying their individual speedFactor with the speedLimit. Thus, different <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#abstract_vehicle_class">vClasses</a> have different default values for <code>desiredMaxSpeed</code>:</p>
 <ul>
 <li><code>pedestrian</code>: 1.39 (5km/h)</li>
 <li><code>bicycle</code>: 5.56 (20km/h)</li>
@@ -343,7 +343,7 @@ modify the speed limit of an edge.</p>
 <p><a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#devices">Vehicle devices</a> are a way to customize vehicle behavior or create additional output. The following devices can impact vehicle speed:</p>
 <ul>
 <li><a href="GLOSA.html">glosa</a> : slow down and speed up to smooth speed near traffic lights</li>
-<li><a href="../Driver_State.html">driverstate</a> : random changes to speed based on modelled perception errors with regard to car-following gap and speed difference</li>
+<li><a href="../Driver_State.html">driverstate</a> : random changes to speed based on modeled perception errors with regard to car-following gap and speed difference</li>
 </ul>
 <h1 id="traci">TraCI<a class="headerlink" href="#traci" title="Permanent link">#</a></h1>
 <p>Vehicles can forced to adapt their speed using <a href="../TraCI/Change_Vehicle_State.html">TraCI commands</a>. When using the command
@@ -356,7 +356,7 @@ modify the speed limit of an edge.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

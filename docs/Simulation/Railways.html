@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -541,18 +541,18 @@ Signaling</a>.</p>
 Stops are either loaded from the input (i.e. OSM) or with option <strong>--ptstop-files</strong>.</p>
 <p>For each public transport stop, at most two signals will be added:</p>
 <ul>
-<li>a signal at the end of the stop edge </li>
+<li>a signal at the end of the stop edge</li>
 <li>a signal at the start of the stop edge or the next upstream edge that is at least 200m upstream of the stop edge end (unless the node happens to be a switch)</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>By default, this operationg may declare railway switches as rail signals. The switches and signals will continue to work normally but there will be no overlap (Durchrutschweg)</p>
+<p>By default, this operation may declare railway switches as rail signals. The switches and signals will continue to work normally but there will be no overlap (Durchrutschweg)</p>
 </div>
 <p>By also setting option <strong>--railway.signal.guess.by-stops.split</strong> the edges will be split in order create suitable rail_signal nodes near the stop location. This also ensures that switches remain uncontrolled.</p>
 <p>The minimum distance of 200m between the two signals can be customized with option <strong>--osm.stop-outout.length.train</strong>.</p>
 <h3 id="placement">Placement<a class="headerlink" href="#placement" title="Permanent link">#</a></h3>
 <p>In mainline rail operations, a rail signal is located upstream of a conflict point (i.e. a switch) by 50 to 200 meters and even more on high-speed lines. This means it will often be necessary to split an edge so that a new node is created at the exact location where a rail signal is needed (whenever a missing rail signal is added manually). This splitting can be accomplished in <a href="../Netedit/neteditPopupFunctions.html#split_edge_here">netedit</a> or by loading <a href="../Networks/PlainXML.html#road_segment_refining">split definitions</a> in netconvert patch file.</p>
-<p>An altenative is to define, the switch itself as type <code>rail_signal</code> and to move the stop line upstream with <a href="../Networks/PlainXML.html#edge_descriptions">edge attribute <code>endOffset</code></a>. This has several implications:</p>
+<p>An alternative is to define, the switch itself as type <code>rail_signal</code> and to move the stop line upstream with <a href="../Networks/PlainXML.html#edge_descriptions">edge attribute <code>endOffset</code></a>. This has several implications:</p>
 <ul>
 <li>it preserves existing network topology and route validity because no new nodes or edges are introduced</li>
 <li>it requires simulation with <a href="Intersections.html#internal_links">internal links</a> because vehicles will spend significant time on the greatly enlarged junction (switch) interior.</li>
@@ -619,10 +619,10 @@ Alternatively, any other car following model may be used and configured with app
 Each attribute is interpreted as a table column where the rows defines the traction and resistance for the corresponding speed.
 The speeds must be given in m/s whereas the traction and resistance forces are in kN. Intermediate values are obtained by linear interpolation.</p>
 <p>Example:</p>
-<pre><code class="language-xml">    &lt;vType id=&quot;0&quot; vClass=&quot;rail&quot; carFollowModel=&quot;Rail&quot; trainType=&quot;custom&quot;
-           speedTable=&quot;0 2.78 5.56 8.33 11.11 13.89 16.67 19.44 22.22 25 27.78 30.56 33.33&quot;
-           tractionTable=&quot;300 300 263 179 135 108 90 77 67.5 60 54 49 45&quot;
-           resistanceTable=&quot;2 4 8.5 14 22 31 41.5 54 68 83.5 111 120 140&quot;/&gt;
+<pre><code class="language-xml">&lt;vType id=&quot;0&quot; vClass=&quot;rail&quot; carFollowModel=&quot;Rail&quot; trainType=&quot;custom&quot;
+        speedTable=&quot;0 2.78 5.56 8.33 11.11 13.89 16.67 19.44 22.22 25 27.78 30.56 33.33&quot;
+        tractionTable=&quot;300 300 263 179 135 108 90 77 67.5 60 54 49 45&quot;
+        resistanceTable=&quot;2 4 8.5 14 22 31 41.5 54 68 83.5 111 120 140&quot;/&gt;
 </code></pre>
 <h2 id="custom_dynamics_model_with_parameterized_curves">Custom dynamics model with parameterized curves<a class="headerlink" href="#custom_dynamics_model_with_parameterized_curves" title="Permanent link">#</a></h2>
 <p>The vType attributes <code>maxPower</code> and <code>maxTraction</code> can be used to specify the traction curve for a given speed (in m/s) according to the formula:</p>
@@ -630,8 +630,8 @@ The speeds must be given in m/s whereas the traction and resistance forces are i
 <p>The vType attributes <code>resCoef_quadratic</code>, <code>resCoef_linear</code> and <code>resCoef_constant</code> can be used to specify the resistance curve for a given speed (in m/s) according to the formula:</p>
 <p><code>resistance_kN =  resCoef_quadratic * speed * speed + resCoef_linear * speed + resCoef_constant</code></p>
 <p>Example:</p>
-<pre><code class="language-xml">   &lt;vType id=&quot;0&quot; vClass=&quot;rail&quot; carFollowModel=&quot;Rail&quot; trainType=&quot;custom&quot; maxPower=&quot;2350&quot; maxTraction=&quot;150&quot;
-        resCoef_quadratic=&quot;0.00028&quot; resCoef_linear=&quot;0.00003&quot; resCoef_constant=&quot;1.670&quot;/&gt;
+<pre><code class="language-xml">&lt;vType id=&quot;0&quot; vClass=&quot;rail&quot; carFollowModel=&quot;Rail&quot; trainType=&quot;custom&quot; maxPower=&quot;2350&quot; maxTraction=&quot;150&quot;
+    resCoef_quadratic=&quot;0.00028&quot; resCoef_linear=&quot;0.00003&quot; resCoef_constant=&quot;1.670&quot;/&gt;
 </code></pre>
 <h2 id="curve_resistance">Curve Resistance<a class="headerlink" href="#curve_resistance" title="Permanent link">#</a></h2>
 <p>Resistance computation for curves is disabled by default because a give network model may not be accurate enough to allow computing sensible values (i.e. abstract networks with sharp 45 degree switches).
@@ -641,7 +641,7 @@ The formula is computed from vType attributes as follows:</p>
 </code></pre>
 <p>For a curve radius below attribute <code>roeckl_sharp_radius</code>, the values <code>roeckl_numerator_sharp</code> and <code>roeckl_offset_sharp</code> are used instead.
 All defaults are given below. They are tailored to mainline rail on a gauge of 1,435mmm</p>
-<p>By default, curvature will be integrated over at least <em>100m</em>. If the geometry data of the network is very sparse it may be nessary to set a larger value using vType attribute <code>curveIntegration</code>.</p>
+<p>By default, curvature will be integrated over at least <em>100m</em>. If the geometry data of the network is very sparse it may be necessary to set a larger value using vType attribute <code>curveIntegration</code>.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>For rail networks with lower gauge and very shape turns (or rolling stock with short wheel base), the values should be adapted. Attempting to compute resistance for a radius below the offset value will raise a warning.</p>
@@ -685,16 +685,16 @@ All defaults are given below. They are tailored to mainline rail on a gauge of 1
 </tbody>
 </table>
 <h2 id="effects_of_train_length">Effects of train length<a class="headerlink" href="#effects_of_train_length" title="Permanent link">#</a></h2>
-<p>The length of a train has several imporant effects on a railway simulation:</p>
+<p>The length of a train has several important effects on a railway simulation:</p>
 <ul>
 <li><strong>block occupancy</strong>: A longer train takes up more space and takes longer to completely pass a signal block which impacts capacity</li>
-<li><strong>speed limits</strong>: The maximum permitted speed for a train is the mimimum of all edges that it occupies (Whereas for road vehicles, only the speed at the front edge is considered).</li>
+<li><strong>speed limits</strong>: The maximum permitted speed for a train is the minimum of all edges that it occupies (Whereas for road vehicles, only the speed at the front edge is considered).</li>
 <li><strong>reversal after a swich</strong>: In order to turn a "sharp corner" at a switch, a train must completely pass the switch and the reverse. The route of train must contain enough edges on the facing side (with one entering track) to let the whole length of the train pass the switch before reversal is possible.</li>
 <li><strong>stopping after reversal</strong>: After reversal, the front and the rear of the train exchange their positions. This may cause the head of the train to skip past a stop edge and cause this stop to be skipped if the route does not go far enough past the stop (it is therefore recommended to always stop <em>before</em> the reversal).</li>
 </ul>
 <h2 id="train_schedules">Train Schedules<a class="headerlink" href="#train_schedules" title="Permanent link">#</a></h2>
 <p>Train schedules are defined in the same way as for any other type of <a href="Public_Transport.html#public_transport_schedules">public transport</a>.
-For long-distance trains that pass stations or other operation control points without scheduled stops, it may be useful to add <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#waypoints">waypoints</a> to their route. This faciliates computing intermediate edges between stops and results in additional data points for <a href="Output/StopOutput.html">stop-output</a>.</p>
+For long-distance trains that pass stations or other operation control points without scheduled stops, it may be useful to add <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#waypoints">waypoints</a> to their route. This facilitates computing intermediate edges between stops and results in additional data points for <a href="Output/StopOutput.html">stop-output</a>.</p>
 <p><img src="../images/schedule_until.png" width="500px"/></p>
 <p>Generated by <a href="../Tools/Visualization.html#public_transport_schedule">plotXMLAttributes.py</a>.</p>
 <h2 id="train_interaction">Train Interaction<a class="headerlink" href="#train_interaction" title="Permanent link">#</a></h2>
@@ -983,7 +983,7 @@ Such abstract networks can make it easier so see all tracks and switches on a si
 <h1 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link">#</a></h1>
 <p>Rail simulation provides optional outputs related to driveways (Fahrstraßen)</p>
 <h2 id="railsignal-block-output">railsignal-block-output<a class="headerlink" href="#railsignal-block-output" title="Permanent link">#</a></h2>
-<p>By setting option <strong>--railsignal-block-output FILE</strong>, an output file that contains informations for every drivway / signaling block is written.</p>
+<p>By setting option <strong>--railsignal-block-output FILE</strong>, an output file that contains information for every driveway / signaling block is written.</p>
 <table>
 <thead>
 <tr>
@@ -1139,12 +1139,15 @@ used. The attribute <code>source</code> must be set to the ID of the junction th
 <h1 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">#</a></h1>
 <ul>
 <li>Individual rail cars / coupling / uncoupling cannot currently be modeled</li>
-<li>Distant signals (Vorsignale) are not modelled. Instead trains act as if always having full visibility onto the next main signal</li>
-<li>Delay of railroad switches is not modelled</li>
-<li>Overlap (Durchrutschweg) after a rail signal (which guarantees safety if a red signal is violated), is currently not modelled by the rail signal safety assessment</li>
+<li>Distant signals (Vorsignale) are not modeled. Instead trains act as if always having full visibility onto the next main signal</li>
+<li>Trains immediately accelerate once their next signal shows green (proceed)</li>
+<li>Braking curves assume constant deceleration, Trains drive at maximum physically safe speed.</li>
+<li>Driver effects during braking (staying below a mandatory braking curve to avoid forced braking) are not modeled</li>
+<li>Delay of railroad switches is not modeled</li>
+<li>Overlap (Durchrutschweg) after a rail signal (which guarantees safety if a red signal is violated), is currently not modeled by the rail signal safety assessment</li>
 <li>Axle counters are assumed after every signal and every railway switch and correspondingly, partial driveways (Teilfahrstraßen) are used in the most efficient manner</li>
-<li>Stretching and shorting of long trains is not modelled</li>
-<li>Operational restrictions on reversing trains (Shunting) are not modelled. Trains may reverse according to their defined route and move at normal speeds / acceleration in either direction (subject to rail signal safety rules).</li>
+<li>Stretching and shortening of long trains is not modeled</li>
+<li>Operational restrictions on reversing trains (Shunting) are not modeled. Trains may reverse according to their defined route and move at normal speeds / acceleration in either direction (subject to rail signal safety rules).</li>
 </ul>
                 </main>
           </div>
@@ -1153,7 +1156,7 @@ used. The attribute <code>source</code> must be set to the ID of the junction th
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

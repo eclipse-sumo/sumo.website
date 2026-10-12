@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -322,13 +322,13 @@ det2;52.432373;13.496142
 </code></pre>
 <h1 id="flow2poipy">flow2POI.py<a class="headerlink" href="#flow2poipy" title="Permanent link">#</a></h1>
 <p>This script converts <a href="../Demand/Routes_from_Observation_Points.html#computing_flows">detector flow files</a> to <a href="../Simulation/Shapes.html#poi_point_of_interest_definitions">POIs</a>.
-The total traffic count will be written into tye <code>type</code> attribute of the poi for streamlined visualization of localized flow values.
+The total traffic count will be written into the <code>type</code> attribute of the poi for streamlined visualization of localized flow values.
 Aggregated traffic values (i.e. hourly) will be written as <code>&lt;param</code>&gt; elements of the respective POI which makes it easy to show the respective value using gui-setting <em>Show poi text param</em>.</p>
 <pre><code>&lt;SUMO_HOME&gt;/tools/detector/flow2POI.py -d input_detectors.add.xml -f input_flows.txt -o pois.add.xml -i 60
 </code></pre>
 <h1 id="flowconservationpy">flowConservation.py<a class="headerlink" href="#flowconservationpy" title="Permanent link">#</a></h1>
-<p>This script reads a network and an <a href="../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures.html#edge-based_network_states">edgeData file</a> to find data that violates conservation of flow at each junction where enough data is available to determine this.  The algorithm looks upstream and downstream to estimate missing values (i.e. if only incoming flow is available from traffic light detectors). By setting option <strong>--symmetry-threshold</strong> missing values can estimated from the reverse direction for edges with traffic below the given threshold. </p>
-<pre><code>&lt;SUMO_HOME&gt;/tools/detector/flowConservation.py -n net.net.xml -e input_edgedata.xml 
+<p>This script reads a network and an <a href="../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures.html#edge-based_network_states">edgeData file</a> to find data that violates conservation of flow at each junction where enough data is available to determine this.  The algorithm looks upstream and downstream to estimate missing values (i.e. if only incoming flow is available from traffic light detectors). By setting option <strong>--symmetry-threshold</strong> missing values can estimated from the reverse direction for edges with traffic below the given threshold.</p>
+<pre><code>&lt;SUMO_HOME&gt;/tools/detector/flowConservation.py -n net.net.xml -e input_edgedata.xml
 </code></pre>
                 </main>
           </div>
@@ -337,7 +337,7 @@ Aggregated traffic values (i.e. hourly) will be written as <code>&lt;param</code
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

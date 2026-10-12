@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -255,12 +255,12 @@ Last edit: 07 October 2026
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#simulation_modemodel_micro_or_meso_sublane" class="nav-link">• Simulation mode/model: micro or meso? sublane?</a>
                 </li>
-            <li class="nav-item main"><a href="#changing_the_appearancevisualisation_of_the_simulation">Changing the appearance/visualisation of the simulation</a></li>
+            <li class="nav-item main"><a href="#changing_the_appearancevisualization_of_the_simulation">Changing the appearance/visualization of the simulation</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#common_visualization_settings" class="nav-link">• Common Visualization Settings</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#vehicle_visualisation_settings" class="nav-link">• Vehicle Visualisation Settings</a>
+                    <a href="#vehicle_visualization_settings" class="nav-link">• Vehicle Visualization Settings</a>
                 </li>
                 <li class="nav-item" style="text-indent: 25px;">
                     <a href="#vehicle_shape_schemes" class="nav-link">&rarr; Vehicle shape schemes</a>
@@ -278,7 +278,7 @@ Last edit: 07 October 2026
                     <a href="#textual_annotations" class="nav-link">&rarr; Textual annotations</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#edgelane_visualisation_settings" class="nav-link">• Edge/Lane Visualisation Settings</a>
+                    <a href="#edgelane_visualization_settings" class="nav-link">• Edge/Lane Visualization Settings</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#loading_shapes_and_pois" class="nav-link">• Loading Shapes and POIs</a>
@@ -612,7 +612,7 @@ junction:myJunction
 as a group in <a href="Netedit/index.html">netedit</a>.</p>
 <h3 id="loading_a_selection_automatically">Loading a selection automatically<a class="headerlink" href="#loading_a_selection_automatically" title="Permanent link">#</a></h3>
 <p>By setting option <strong>--selection-file FILE</strong> a selection file as described above can be given to <strong>sumo-gui</strong> at startup.
-Any objects that are loaded at the start of the simulation will be selected immediately. 
+Any objects that are loaded at the start of the simulation will be selected immediately.
 Any persons, vehicles or containers that were not loaded will be selected once they are loaded at a later simulation time.</p>
 <h2 id="locating_objects">Locating Objects<a class="headerlink" href="#locating_objects" title="Permanent link">#</a></h2>
 <p>All simulation objects can be located based on their ID by using the
@@ -816,7 +816,7 @@ This will color each edge according to the travel time from the point of origin.
 The following coloring options are useful in this regard:</p>
 <ul>
 <li>Recalibrate Rainbow: Configure colors to the data range of encountered travel times</li>
-<li>'hide below threshold' (0): color unreachable edges grey as their value is set to -1. (must be activated before using 'Recalibrate Rainbow')</li>
+<li>'hide below threshold' (0): color unreachable edges gray as their value is set to -1. (must be activated before using 'Recalibrate Rainbow')</li>
 <li>'show edge color value': show the actual travel times for each edge</li>
 <li>disable 'constant text size' for 'show edge color value': avoid cluttering the display when zoomed out</li>
 </ul>
@@ -830,7 +830,7 @@ The following coloring options are useful in this regard:</p>
 <li>If specific models are used, e.g. sublane and IDM, the respective information can be seen by right-clicking
   a road user (vehicle, pedestrian,train...) and further choosing "Show Parameter".</li>
 </ul>
-<h1 id="changing_the_appearancevisualisation_of_the_simulation">Changing the appearance/visualisation of the simulation<a class="headerlink" href="#changing_the_appearancevisualisation_of_the_simulation" title="Permanent link">#</a></h1>
+<h1 id="changing_the_appearancevisualization_of_the_simulation">Changing the appearance/visualization of the simulation<a class="headerlink" href="#changing_the_appearancevisualization_of_the_simulation" title="Permanent link">#</a></h1>
 <p>The View Settings menu allows to change and customize the simulations'
 appearance and visualization. To open the visualization settings use
 <img alt="icon_colorwheel.png" src="images/icon_colorwheel.png" title="Colorwheel" /> in the
@@ -875,7 +875,7 @@ value/range<ul>
 </ul>
 </li>
 </ul>
-<h2 id="vehicle_visualisation_settings">Vehicle Visualisation Settings<a class="headerlink" href="#vehicle_visualisation_settings" title="Permanent link">#</a></h2>
+<h2 id="vehicle_visualization_settings">Vehicle Visualization Settings<a class="headerlink" href="#vehicle_visualization_settings" title="Permanent link">#</a></h2>
 <h3 id="vehicle_shape_schemes">Vehicle shape schemes<a class="headerlink" href="#vehicle_shape_schemes" title="Permanent link">#</a></h3>
 <table>
 <thead>
@@ -1122,7 +1122,7 @@ It is also possible to scale the size of the vehicle according its attributes.</
 <li><strong>Vehicle text param</strong>: Renders any <a href="Simulation/GenericParameters.html">Generic Parameter</a> set on the vehicle. This also supports any <a href="TraCI/Vehicle_Value_Retrieval.html#device_and_lanechangemodel_parameter_retrieval_0x7e">virtual parameters accessible via TraCI</a></li>
 </ul>
 <p>Each text can be configured with regard to its size color and background color. By activating the option <em>Only for selected</em>, The textual annotation is limited to vehicles with the <a href="#selecting_objects"><em>selected</em></a> status.</p>
-<h2 id="edgelane_visualisation_settings">Edge/Lane Visualisation Settings<a class="headerlink" href="#edgelane_visualisation_settings" title="Permanent link">#</a></h2>
+<h2 id="edgelane_visualization_settings">Edge/Lane Visualization Settings<a class="headerlink" href="#edgelane_visualization_settings" title="Permanent link">#</a></h2>
 <p><strong>Table 2.1 Lane coloring schemes</strong></p>
 <table>
 <thead>
@@ -1136,7 +1136,7 @@ It is also possible to scale the size of the vehicle according its attributes.</
 <tr>
 <td>uniform</td>
 <td>-</td>
-<td>All road edges are drawn using the same color. Bicycle lanes are drawn in brown, sidewalks in grey and prohibited lanes (allowing no vehicle classes) are transparent.</td>
+<td>All road edges are drawn using the same color. Bicycle lanes are drawn in brown, sidewalks in gray and prohibited lanes (allowing no vehicle classes) are transparent.</td>
 </tr>
 <tr>
 <td>by selection (lane-/streetwise)</td>
@@ -1583,7 +1583,7 @@ be loaded by pressing the "Load Decals" button.</p>
 </div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>When loading an image with an assocciated <a href="https://en.wikipedia.org/wiki/World_file">world file</a>, that file must be encoded in WGS84 (lon,lat).</p>
+<p>When loading an image with an associated <a href="https://en.wikipedia.org/wiki/World_file">world file</a>, that file must be encoded in WGS84 (lon,lat).</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1593,7 +1593,7 @@ be loaded by pressing the "Load Decals" button.</p>
 <p>All image files in the visualization support transparency. For vehicles,
 pois and polygons, this transparency can be set dynamically by changing
 the color via <a href="TraCI/index.html">TraCI</a> and setting the alpha-channel.</p>
-<p>All objects that have their color set (via input files or visualisation
+<p>All objects that have their color set (via input files or visualization
 settings) support (Red,Green,Blue,Alpha) color values.</p>
 <h2 id="3d-specific_settings">3D-specific Settings<a class="headerlink" href="#3d-specific_settings" title="Permanent link">#</a></h2>
 <p>The scene is illuminated by a directional light source ("the sun"). The light color originates from the grayscale range can be varied through the 3D-specific Visualization Settings. The <strong>sun brightness</strong> value ranges from 0 (=black) to 255 (=white) and represents the grayscale diffuse light. The ambient light value is half of the diffuse light.</p>
@@ -1625,7 +1625,7 @@ or by using the command-line <code>sumo-gui -c example.sumocfg</code>.</p>
 configuration:
 <a href="https://sumo.dlr.de/xsd/sumoConfiguration.xsd">sumoConfiguration.xsd</a>.</p>
 <h1 id="gui-settings_files">GUI-settings Files<a class="headerlink" href="#gui-settings_files" title="Permanent link">#</a></h1>
-<p>All the settings configured in the <em>View Settings</em> dialog can be saved to a file and re-used for a new simulation. We refer to such files as gui-settings files. Such a file can also include information about breakpoints, tls trackers, screenshots, simulation delay and background images.
+<p>All the settings configured in the <em>View Settings</em> dialog can be saved to a file and reused for a new simulation. We refer to such files as gui-settings files. Such a file can also include information about breakpoints, tls trackers, screenshots, simulation delay and background images.
 The easiest way to obtain a gui-settings file is via the <em>View Settings</em>-Dialog
 <img alt="icon_colorwheel.png" src="images/icon_colorwheel.png" title="Open viewsettings editor" />. Simply modify the settings and
 save <img alt="icon_save.png" src="images/icon_save.png" title="Save" />.</p>
@@ -1933,7 +1933,7 @@ highlighted.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

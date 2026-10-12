@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -700,12 +700,12 @@ It is even possible to <a href="../Netedit/elementsNetwork.html#junctions">undo 
 The new junction will get the id <em>cluster_id0_id1</em>. If there are more nodes in the cluster than given by <strong>--max-join-ids</strong> (default 4)
 the id will be abbreviated to something like <em>cluster_id0_id1_id2_id3_<a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5" title="GitHub Issue eclipse-sumo/sumo #5">#5</a>more</em> (for a 9 node cluster).</p>
 <h3 id="reasons_for_joining_node_clusters">Reasons for joining node clusters<a class="headerlink" href="#reasons_for_joining_node_clusters" title="Permanent link">#</a></h3>
-<p>Within an intersection, special rules of traffic do apply. When modelling an intersection by a cluster of nodes, the edges within the cluster are regular roads where these rules cannot be applied.
+<p>Within an intersection, special rules of traffic do apply. When modeling an intersection by a cluster of nodes, the edges within the cluster are regular roads where these rules cannot be applied.
 - To prevent jamming cross-traffic, vehicles should only enter an intersection space if they are not prevented from leaving by a downstream jam
 - Vehicles that turn left from opposite directions may turn ahead of each other (without intersecting trajectories). In an unjoined cluster long vehicles easily block each other when turning left from opposite directions.</p>
 <p>Further Issues:
 - Trajectories of left-turning traffic are invalid in an unjoined cluster. Instead of cutting the corner in a smooth curve, the trajectory would consist of two mostly straight legs with a sharp turn in the middle.
-- Proper modelling of left-turn dynamics requires extra traffic light signals within the cluster to reflect the changing priorities on the second leg of a left turn (which is also the first leg of a straight movement).
+- Proper modeling of left-turn dynamics requires extra traffic light signals within the cluster to reflect the changing priorities on the second leg of a left turn (which is also the first leg of a straight movement).
 - Automatically generated traffic light plans work much better at a single intersection</p>
 <h3 id="algorithm_for_joining_node_clusters">Algorithm for joining node clusters<a class="headerlink" href="#algorithm_for_joining_node_clusters" title="Permanent link">#</a></h3>
 <p>You can control the joining algorithm by supplying the option <strong>--junctions.join-dist</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a> which sets a
@@ -721,7 +721,7 @@ joinable node clusters works like this:</p>
     outside) are removed</li>
 <li>clusters which are to complex are simplified or filtered out (a warning with an
     explanation is issued for each case)<ul>
-<li>if a cluster has parallel incoming edges (in the same direction of travel) it is filtered out. The threshold for being considered parallel can be controlled with option <strong>--junctions.join.parallel-threshold</strong> (default 30 degrees).    </li>
+<li>if a cluster has parallel incoming edges (in the same direction of travel) it is filtered out. The threshold for being considered parallel can be controlled with option <strong>--junctions.join.parallel-threshold</strong> (default 30 degrees).</li>
 </ul>
 </li>
 <li>each cluster is turned into a joined node</li>
@@ -759,7 +759,7 @@ The supported attributes for element <code>&lt;join&gt;</code> are described bel
 <td>Whether all connections at the created node should be re-guessed</td>
 </tr>
 <tr>
-<td><any <a href="#node_descriptions">node node attriutes</a>></td>
+<td><any <a href="#node_descriptions">node node attributes</a>></td>
 <td>Sets attributes on the new node (i.e. its <code>id</code> or <code>type</code>)</td>
 <td></td>
 </tr>
@@ -1014,7 +1014,7 @@ semantics:</p>
 <ul>
 <li>neither <em>allow</em> nor <em>disallow</em> given: no access restrictions.</li>
 <li><em>allow</em> given: Allow only the list of specified vehicle classes
-(i.e. <code>allow="bus bicycle"</code> allows only busses and bicycles)</li>
+(i.e. <code>allow="bus bicycle"</code> allows only buses and bicycles)</li>
 <li><em>disallow</em> given: Allow all classes except the list of specified
 ones (i.e.  allows everything but pedestrians)<ul>
 <li>the special value <em>all</em> may be used to disallow everything (<code>disallow="all"</code>) to
@@ -1448,7 +1448,7 @@ If you leave some connections unspecified
 information based on heuristics.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is possible to connect two incoming lanes to the same outgoing lane. In many cases (i.e. motorway on-ramps) this should be avoided because the expected vehicle behavior is to change the lane as soon as possible rather than driving to the end of the lane). Netconvert will generate these "double connections" when a bicycle lane ends and bikes must move onto the road. SUMO vehicles are aware of the conflicts set up this way and <a href="../Simulation/Motorways.html#combined_on-off-ramps">this can sometimes be a useful tool for network modelling</a>.</p>
+<p>It is possible to connect two incoming lanes to the same outgoing lane. In many cases (i.e. motorway on-ramps) this should be avoided because the expected vehicle behavior is to change the lane as soon as possible rather than driving to the end of the lane). netconvert will generate these "double connections" when a bicycle lane ends and bikes must move onto the road. SUMO vehicles are aware of the conflicts set up this way and <a href="../Simulation/Motorways.html#combined_on-off-ramps">this can sometimes be a useful tool for network modeling</a>.</p>
 </div>
 <h2 id="explicitly_setting_which_edge_lane_is_connected_to_which">Explicitly setting which Edge / Lane is connected to which<a class="headerlink" href="#explicitly_setting_which_edge_lane_is_connected_to_which" title="Permanent link">#</a></h2>
 <p>Though guessed if not given, definitions of connections between edges or
@@ -1619,7 +1619,7 @@ than one lane. To obtain more control, additional attributes may be given as des
 <h3 id="deleting_connections">Deleting connections<a class="headerlink" href="#deleting_connections" title="Permanent link">#</a></h3>
 <p><a href="../netconvert.html">netconvert</a> may be used to patch existing sumo networks (<em>.net.xml</em> files) and changing connections is one of the supported use cases.
 If you only wish to <strong>remove</strong> a connection it may be convenient to use
-the following xml definition: </p>
+the following xml definition:</p>
 <pre><code>&lt;delete from=&quot;&lt;FROM_EDGE_ID&gt;&quot; to=&quot;&lt;T0_EDGE_ID&gt;&quot;/&gt;
 </code></pre>
 <p>The attributes are the same as for the
@@ -1761,7 +1761,7 @@ vertical edge by the counter-clockwise straight connection on a
 horizontal edge because otherwise the vehicles on the horizontal edge
 want to wait due to right-before-left - rule. The network looks like
 this:</p>
-<p><img alt="cross3l_prohibitions.gif" src="../images/Cross3l_prohibitions.gif" title="Network with explicite prohibitions" />
+<p><img alt="cross3l_prohibitions.gif" src="../images/Cross3l_prohibitions.gif" title="Network with explicit prohibitions" />
 Network with explicit prohibitions</p>
 <p>The syntax of a prohibition-tag is: <code>&lt;prohibition prohibitor="&lt;PROHIBITING_FROM_EDGE_ID&gt;-&gt;&lt;PROHIBITING_TO_EDGE_ID&gt;" prohibited="&lt;PROHIBITED_FROM_EDGE_ID&gt;-&gt;&lt;PROHIBITED_TO_EDGE_ID&gt;"/&gt;</code>.
 This means we define two connections (edge-to-edge), the prohibiting one
@@ -1998,7 +1998,7 @@ explicitly. This is done using <code>walkingArea</code> element within a
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

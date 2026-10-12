@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -369,7 +369,7 @@ procedures</a> can be applied using <code>&lt;device name&gt;=taxi</code>.</p>
         &lt;ride from=&quot;B2C2&quot; to=&quot;A0B0&quot; lines=&quot;taxi&quot; group=&quot;g0&quot;/&gt;
     &lt;/person&gt;
 </code></pre>
-<p>Starting with version SUMO 1.27.0 this grouping also works if reservations are received after a taxi has alrady been dispatched. Persons in the same group will be permitted to join the ride up to the capacity of the vehicle.</p>
+<p>Starting with version SUMO 1.27.0 this grouping also works if reservations are received after a taxi has already been dispatched. Persons in the same group will be permitted to join the ride up to the capacity of the vehicle.</p>
 <h2 id="prebooking">Prebooking<a class="headerlink" href="#prebooking" title="Permanent link">#</a></h2>
 <p>Direct ride hailing can be regarded as a spontaneous booking. If the taxi is to be requested before the person is at the pick-up location, prebooking is necessary. This is used by specifying an <code>earliestPickupTime</code> and a <code>reservationTime</code> in the <code>ride</code>. The <code>reservationTime</code> specifies the time at which the reservation is created and made available to the dispatch. It may also be less than the person's depart. The <code>earliestPickupTime</code> specifies the time at which the person is ready to be picked up. Depending on the algorithm used, this may allow a better dispatch to be made. Especially in combination with a custom dispatch algorithm via <a href="#traci">TraCi</a>, the requirements of different use cases can be addressed.</p>
 <h3 id="application">Application:<a class="headerlink" href="#application" title="Permanent link">#</a></h3>
@@ -447,7 +447,7 @@ algorithms are available</p>
 <p>The option <strong>--device.taxi.dispatch-algorithm.params KEY1:VALUE1[,KEY2:VALUE]</strong> supports key:value-pair <code>routingMode:0</code> which makes taxis use empty-network traveltimes when estimating pickup duration (or loaded traveltimes when available). By default taxis will use <a href="../Demand/Automatic_Routing.html#edge_weights">current traveltimes (smoothed)</a> instead.</p>
 <h2 id="swapping_tasks_after_dispatch">Swapping tasks after dispatch<a class="headerlink" href="#swapping_tasks_after_dispatch" title="Permanent link">#</a></h2>
 <p>Taxis can be configured with <code>&lt;param key="device.taxi.swapGroup" value="&lt;GROUPNAME&gt;"/&gt;</code> in their <code>vType</code> or <code>&lt;vehicle&gt;</code>-definition (setting <code>&lt;GROUPNAME&gt;</code> to an arbitrary non-empty string).
-If a taxi sets this parameter, it can receive tasks from other taxis with the same <code>swapGroup</code> value upon entering the idle state. This is doen if the other taxi has not yet picked up any passengers and the idle taxi is closer to the pickup location.</p>
+If a taxi sets this parameter, it can receive tasks from other taxis with the same <code>swapGroup</code> value upon entering the idle state. This is done if the other taxi has not yet picked up any passengers and the idle taxi is closer to the pickup location.</p>
 <h2 id="algorithm-output">Algorithm-Output<a class="headerlink" href="#algorithm-output" title="Permanent link">#</a></h2>
 <p>Option <strong>--device.taxi.dispatch-algorithm.output FILE</strong> is can be set to receive extra outputs from algorithms (i.e. for ride sharing metrics).</p>
 <h1 id="taxi_behavior">Taxi Behavior<a class="headerlink" href="#taxi_behavior" title="Permanent link">#</a></h1>
@@ -498,7 +498,7 @@ If the <a href="GenericParameters.html">generic parameter</a> <code>&lt;param ke
 <h3 id="taxis_stands_for_rail_taxis">Taxis stands for rail taxis<a class="headerlink" href="#taxis_stands_for_rail_taxis" title="Permanent link">#</a></h3>
 <p>When defining taxi stands for rail taxis, overtaking on a rail track is not possible and thus parking spaces will automatically be filled beginning at the downstream end.
 If the first taxi in the queue of waiting taxis is dispatched, all idling taxis behind it will then automatically advance in the queue to fill up that spot.
-If another vehicle approaches the end of the queue and cannot park (due to lack of free capacity or havin a different destination), the whole queue ahead will exit the parkingArea to allow the rear vehcle to pass.</p>
+If another vehicle approaches the end of the queue and cannot park (due to lack of free capacity or having a different destination), the whole queue ahead will exit the parkingArea to allow the rear vehicle to pass.</p>
 <h2 id="customer_stops">Customer Stops<a class="headerlink" href="#customer_stops" title="Permanent link">#</a></h2>
 <p>Taxis will stop to pick-up and drop-off customers. The 'actType' attribute of a stop indicates the purpose ('pickup' / 'dropOff') as well as the ids of the customers and their reservation id. Stop attributes can be configured using <a href="GenericParameters.html">generic parameters</a> in the <code>&lt;vType&gt;</code> or <code>&lt;vehicle&gt;</code> definition of the taxi:</p>
 <pre><code class="language-xml">    &lt;vType id=&quot;taxi&quot; vClass=&quot;taxi&quot;&gt;
@@ -586,10 +586,10 @@ param "device.taxi.parking" to "false".</p>
 <li>new reservations mentions include all previous unique reservation ids once or twice, all customers that are mentioned once are already picked up: reset current route and stops, use the single-occurrence ids as as drop-of</li>
 </ul>
 <h2 id="controlling_idle_taxis">Controlling Idle Taxis<a class="headerlink" href="#controlling_idle_taxis" title="Permanent link">#</a></h2>
-<p>The default idle algorithm ("stop") aims to ensure that the taxi doesn't exit the simulation (which were to happen if it ever drives past the final edge of it's route). To this end, it makes the taxi stop where it is or uses an existing stop on the route of the taxi and sets it to <code>triggered="person"</code> (which effectively makes the taxi wait indefinitely until the next dispatch).</p>
-<p>In oder to send an idle taxi to another destination, the following things need to happend in order:</p>
+<p>The default idle algorithm ("stop") aims to ensure that the taxi doesn't exit the simulation (which were to happen if it ever drives past the final edge of its route). To this end, it makes the taxi stop where it is or uses an existing stop on the route of the taxi and sets it to <code>triggered="person"</code> (which effectively makes the taxi wait indefinitely until the next dispatch).</p>
+<p>In order to send an idle taxi to another destination, the following things need to happen in order:</p>
 <ol>
-<li>The taxi needs to extend it's route (i.e. with <code>vehicle.changeTarget</code> or <code>vehicle.setRoute</code>)</li>
+<li>The taxi needs to extend its route (i.e. with <code>vehicle.changeTarget</code> or <code>vehicle.setRoute</code>)</li>
 <li>The current stop must be aborted with <code>vehicle.resume</code></li>
 <li>A new stop must be added (i.e. with <code>vehicle.setStop</code>.</li>
 </ol>
@@ -617,7 +617,7 @@ It is also possible to color vehicles in <a href="../sumo-gui.html#vehicle_visua
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

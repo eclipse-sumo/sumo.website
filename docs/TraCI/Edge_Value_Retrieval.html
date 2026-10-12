@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -333,6 +333,18 @@ value is also shown in the table.</p>
 <td><a href="https://sumo.dlr.de/pydoc/traci/_edge.html#EdgeDomain.getLastStepMeanSpeed">getLastStepMeanSpeed</a></td>
 </tr>
 <tr>
+<td>maximum speed (0x41)</td>
+<td>double</td>
+<td>Returns the maximum speed of the first lane of the given edge [m/s]</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_edge.html#EdgeDomain.getMaxSpeed">getMaxSpeed</a></td>
+</tr>
+<tr>
+<td>mean friction (0x3d)</td>
+<td>double</td>
+<td>Returns the mean friction value of all lanes of the given edge</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci/_edge.html#EdgeDomain.getMeanFriction">getMeanFriction</a></td>
+</tr>
+<tr>
 <td>last step vehicle ids (0x12)</td>
 <td>stringList</td>
 <td>Returns the list of ids of vehicles that were on the named edge in the last simulation step. The order is from rightmost to leftmost lane and downstream for each lane.</td>
@@ -446,7 +458,7 @@ value is also shown in the table.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -170,7 +170,7 @@ Last edit: 07 October 2026
         <ul class="nav flex-column bs-sidenav">
             <p style="margin-top:5px; color:#777777;" class="text-center">Contents</p>
             <li class="nav-item main"><a href="#bicycle_simulation">Bicycle Simulation</a></li>
-            <li class="nav-item main"><a href="#approaches_to_bicycle_modelling">Approaches to bicycle modelling</a></li>
+            <li class="nav-item main"><a href="#approaches_to_bicycle_modeling">Approaches to bicycle modeling</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#bicycles_as_slow_vehicles" class="nav-link">• Bicycles as slow vehicles</a>
                 </li>
@@ -268,7 +268,7 @@ be take in comparison to a plain vehicular simulation.</p>
 <p class="admonition-title">Caution</p>
 <p>The simulation of bicycles is a developing subject and still carries some difficulties. These are discussed below.</p>
 </div>
-<h1 id="approaches_to_bicycle_modelling">Approaches to bicycle modelling<a class="headerlink" href="#approaches_to_bicycle_modelling" title="Permanent link">#</a></h1>
+<h1 id="approaches_to_bicycle_modeling">Approaches to bicycle modeling<a class="headerlink" href="#approaches_to_bicycle_modeling" title="Permanent link">#</a></h1>
 <p>Currently, no exclusive movement model for bicycles is implemented.
 Existing models need to be re-purposed</p>
 <h2 id="bicycles_as_slow_vehicles">Bicycles as slow vehicles<a class="headerlink" href="#bicycles_as_slow_vehicles" title="Permanent link">#</a></h2>
@@ -281,7 +281,7 @@ type:</p>
 parameters</a> are
 automatically used when specifying <code>vClass="bicycle"</code>. By adapting <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#vehicle_types">vType-parameters for
 acceleration,deceleration,maximumSpeed,etc..</a>
-different cyclist types can be modelled.</p>
+different cyclist types can be modeled.</p>
 <h2 id="useful_model_parameters">Useful Model Parameters<a class="headerlink" href="#useful_model_parameters" title="Permanent link">#</a></h2>
 <p>Once the vClass "bicycle" is chosen, the following parameters, which can still be customized, are set for bicycle:</p>
 <ul>
@@ -302,10 +302,10 @@ different cyclist types can be modelled.</p>
 <li>lcTurnAlignmentDistance = 20. (distance to a location where bicycles start to keeping right/left of their lane for preparing to make turns)</li>
 <li>jmCrossingGap = 4 (Minimum distance to pedestrians that are walking towards the conflict point with a bike - lower than the default of 10 for cars)</li>
 <li>jmSigmaMinor = 0. (no imperfection while passing a minor link)</li>
-<li>jmStoplineGap = 0.5 (Stopping distance in front of prioritary / TL-controlled stop line)</li>
+<li>jmStoplineGap = 0.5 (Stopping distance in front of priority / TL-controlled stop line)</li>
 </ul>
 <h3 id="speed_limits">Speed limits<a class="headerlink" href="#speed_limits" title="Permanent link">#</a></h3>
-<p>Bicycles are usually not limited by the road speed limit but rather by individual preferences. This cannot easily be modelled by vType attribute <code>maxSpeed</code> because it is not subject the the randomly chosen personal <code>speedFactor</code> (unless <code>carFollowModel="KraussPS"</code> is set). Instead, bicycle speed is limited by <code>desiredMaxSpeed</code> (multiplied by the individual speedFactor). For this reason, the <code>desiredMaxSpeed &lt; maxSpeed</code> by default.</p>
+<p>Bicycles are usually not limited by the road speed limit but rather by individual preferences. This cannot easily be modeled by vType attribute <code>maxSpeed</code> because it is not subject the the randomly chosen personal <code>speedFactor</code> (unless <code>carFollowModel="KraussPS"</code> is set). Instead, bicycle speed is limited by <code>desiredMaxSpeed</code> (multiplied by the individual speedFactor). For this reason, the <code>desiredMaxSpeed &lt; maxSpeed</code> by default.</p>
 <p>To model the effect of slopes on bicycle speed (only with <code>carFollowModel="KraussPS"</code>), it is necessary that the <code>desiredMaxSpeed</code> is above the "power limit" (<code>maxSpeed</code>).
 The slope-dependent speed is scaled according to <code>maxSpeed * speedFactor</code> which results in the follow behavior:</p>
 <ul>
@@ -461,7 +461,7 @@ The second part can be controlled by <a href="../Netedit/editModesNetwork.html#e
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -425,10 +425,10 @@ This tool is meant to generate rerouter definitions for automated and dynamic <a
 <p>For every siding that is found an new rerouter element is created. Since trains that can be overtaken may elect to wait at downstream siding, each rerouter may have more than one <code>&lt;overtakingReroute&gt;</code>-definition. This permits a runtime choice of using the current or a later siding (which may again present another choice).</p>
 <h1 id="patchrailconflictspy">patchRailConflicts.py<a class="headerlink" href="#patchrailconflictspy" title="Permanent link">#</a></h1>
 <p>This tool modifies junction types, edge offsets and connection attributes in a network to ensure that conflicts between different tracks are guarded by rail signals. It's main use is for patching tram networks where real-world data on signal infrastructure is often lacking.
-The tool works by identifiyng conflict junctions (i.e. switches and crossings) and change their type <code>rail_signal</code> and optionally shifting the waiting position to be somewhat ahead of the conflict.</p>
+The tool works by identifying conflict junctions (i.e. switches and crossings) and change their type <code>rail_signal</code> and optionally shifting the waiting position to be somewhat ahead of the conflict.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>When using this tool for convential rail operations, option <strong>--split-offset</strong> should be set to ensure that signals are created well in advance of switches and crossings to account for overrun distance (<em>Durchrutschweg</em>).</p>
+<p>When using this tool for conventional rail operations, option <strong>--split-offset</strong> should be set to ensure that signals are created well in advance of switches and crossings to account for overrun distance (<em>Durchrutschweg</em>).</p>
 </div>
 <p>Example call</p>
 <pre><code>&lt;SUMO_HOME&gt;/tools/net/patchRailConflicts.py -n input_net.net.xml -o output_net.net.xml
@@ -459,7 +459,7 @@ opposite directions. For found sidings
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

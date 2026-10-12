@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 07 October 2026
+Last edit: 12 October 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -430,21 +430,21 @@ a hybrid of multiple schematic pieces being oriented in a roughly geodetical man
 <pre><code>python tools/net/remap_additionals.py --orig-net input_net.net.xml --target-net input_net2.net.xml -a input_additional.add.xml -o out.add.xml
 </code></pre>
 <h1 id="remap_renamedpy">remap_renamed.py<a class="headerlink" href="#remap_renamedpy" title="Permanent link">#</a></h1>
-<p>Remap infrastructure, vehicles, routes or a selection file from one network to another if the new network has an <code>origId</code> param on every lane that reflects the edge id of the original network. A supported use case is converting the origial network with option <strong>--numerical-ids</strong> and then transforming other scenario file so that it can be used with the new network.</p>
+<p>Remap infrastructure, vehicles, routes or a selection file from one network to another if the new network has an <code>origId</code> param on every lane that reflects the edge id of the original network. A supported use case is converting the original network with option <strong>--numerical-ids</strong> and then transforming other scenario file so that it can be used with the new network.</p>
 <p>Example calls:</p>
 <pre><code>python tools/net/remap_additionals.py -n input_net2.net.xml -r input_routes.rou.xml -o out.rou.xml
 python tools/net/remap_additionals.py -n input_net2.net.xml -a input_additionals.add.xml -o out.add.xml
 python tools/net/remap_additionals.py -n input_net2.net.xml -s input_selection.txt -o selection.txt
 </code></pre>
 <h1 id="remap_networkpy">remap_network.py<a class="headerlink" href="#remap_networkpy" title="Permanent link">#</a></h1>
-<p>Compute correspondence between two networks with somewhat similar geometry (but different splits, joins, ids etc). The output is a csv-file with an 1-to-n mapping of original edge to zero or more target edges. 
+<p>Compute correspondence between two networks with somewhat similar geometry (but different splits, joins, ids etc). The output is a csv-file with an 1-to-n mapping of original edge to zero or more target edges.
 For each target edge, the common length in m as well as the fraction of the target edge being covered by the original edge are listed. Output on the quality of the mapping is written to <strong>--success-output</strong>.</p>
 <p>Example call:</p>
 <pre><code>python tools/net/remap_network.py --orig-net net.net.xml --target-net net2.net.xml -o out.csv --success-output success.txt
 </code></pre>
 <h1 id="generatestationedgespy">generateStationEdges.py<a class="headerlink" href="#generatestationedgespy" title="Permanent link">#</a></h1>
 <p>Generate pedestrian edges for every public transport stop to serve as access
-edge in otherwise pure railway networks. If a single edge is generated for all stops with the same name (option <strong>--join</strong>), persons starting on such an edge can automatically pick the stop (plattform) that best suits their journey.</p>
+edge in otherwise pure railway networks. If a single edge is generated for all stops with the same name (option <strong>--join</strong>), persons starting on such an edge can automatically pick the stop (platform) that best suits their journey.</p>
 <p>Example call:</p>
 <pre><code>python tools/net/generateStationEdges.py --net-file net.net.xml --stop-file stops.add.xml -o net2 --join --build
 </code></pre>
@@ -457,7 +457,7 @@ If option <strong>--join</strong> is set, a single pedestrian edge will be gener
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 07 October 2026</i></small>
+            <br><small><i>This page was last edited on: 12 October 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
