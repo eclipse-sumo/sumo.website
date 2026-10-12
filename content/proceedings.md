@@ -19,14 +19,14 @@ Read more information about the SUMO Conference Proceedings (SCP) Series [here](
 
 <div class="d-flex row align-items-center">
     <div class="col-lg-8 mb-4 mb-lg-0">
-      <p><a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/182"><strong>Vol. 6 (2025): SUMO User Conference 2025</strong></a></p>
-      <strong>DOI:</strong> <a href="https://doi.org/10.52825/scp.v6i">https://doi.org/10.52825/scp.v6i</a>
+      <p><a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/205"><strong>Vol. 7 (2026): SUMO User Conference 2026</strong></a></p>
+      <strong>DOI:</strong> <a href="https://doi.org/10.52825/scp.v7i">https://doi.org/10.52825/scp.v7i</a>
       <br>
-      <strong>Published:</strong> July 15, 2025
+      <strong>Published:</strong> October 12, 2026
     </div>
     <div class="col-lg-4">
-    <a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/182">
-      <img src="../images/cover_2025.png" style="max-width:150px;" alt="Conference artwork" class="img-responsive cover-image"/>
+    <a href="https://www.tib-op.org/ojs/index.php/scp/issue/view/205">
+      <img src="../images/cover_2026.png" style="max-width:150px;" alt="Conference artwork" class="img-responsive cover-image"/>
     </a>
     </div>
 </div>
@@ -36,6 +36,12 @@ Read more information about the SUMO Conference Proceedings (SCP) Series [here](
 
 
 ## Past Volumes / Proceedings
+
+[**Vol. 6 (2025): SUMO User Conference 2025**](https://www.tib-op.org/ojs/index.php/scp/issue/view/182)
+- **DOI**: <https://doi.org/10.52825/scp.v6i>
+- **Published**: July 15, 2025
+
+<br>
 
 [**Vol. 5 (2024): SUMO User Conference 2024**](https://www.tib-op.org/ojs/index.php/scp/issue/view/29)
 - **DOI**: <https://doi.org/10.52825/scp.v5i>
