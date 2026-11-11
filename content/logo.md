@@ -24,6 +24,18 @@ draft: false
 </div>
 </div>
 
+## Conference logo
+
+<div class="container py-5 row text-center">
+<div class="col-md-12 mb-4 mb-md-0">
+<img src="../images/logos/sumo/SUMO_Conference_2027_logo.svg" title="SUMO logo" alt="SUMO logo" style="height:120px; margin-bottom:10px;">
+<br>
+<a href="../images/logos/sumo/SUMO_Conference_2027_logo.png" download><i class="fa-solid fa-download"></i> PNG</a>
+<br>
+<a href="../images/logos/sumo/SUMO_Conference_2027_logo.svg" download><i class="fa-solid fa-download"></i> SVG</a>
+</div>
+</div>
+
 # Application icons
 
 <div class="container py-5 row text-center">
