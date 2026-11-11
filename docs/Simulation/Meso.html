@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 12 October 2026
+Last edit: 11 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -272,7 +272,7 @@ uses the same input data as the main <a href="../sumo.html">sumo</a> model. It
 computes vehicle movements with queues and runs up to 100 times faster
 than the microscopic model of <a href="../sumo.html">sumo</a>. Additionally, due
 to using a coarser model for intersections and lane-changing it is more
-tolerant of network modelling errors than <a href="../sumo.html">sumo</a>.</p>
+tolerant of network modeling errors than <a href="../sumo.html">sumo</a>.</p>
 <ul>
 <li><strong>Purpose:</strong> Simulates a defined scenario</li>
 <li><strong>System:</strong> portable (Linux/Windows is tested); runs on command line</li>
@@ -400,8 +400,12 @@ The following parameters are used by the model:</p>
 <p>Lateral movement is not modelled explicitly. Vehicles may overtake each
 other (swap their position) if the option <strong>--meso-overtaking</strong> is enabled. This is a
 randomized process depending on vehicle speeds and density.</p>
+<p>When using option <strong>--meso-lane-queue</strong>, every lane is a separate queue and vehicles enter the shortest queue that they may use.
+Only on the last segment of an edge do they restrict their choice to the queues of the lanes that lead to their next edge.
+Thus, a spill-back from a turning lane (e.g. from a jammed off-ramp) blocks all queues on the upstream segments.
+With option <strong>--meso-lookahead</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a>, vehicles already restrict their choice to the queues of the lanes that lead along their route on all segments that end within the given distance (in m) of a turn, also when the turn is on one of the following edges.</p>
 <h2 id="junction_model">Junction Model<a class="headerlink" href="#junction_model" title="Permanent link">#</a></h2>
-<p>There are 3 basic options for modelling junction control</p>
+<p>There are 3 basic options for modeling junction control</p>
 <ol>
 <li>
 <p><strong>--meso-junction-control false</strong> (the default): No junction control takes place. This should only be
@@ -465,7 +469,7 @@ junction control is active for that link)</p>
     &lt;type id=&quot;highway.motorway&quot; ...&gt;
         &lt;meso tauff=&quot;1.13&quot; taufj=&quot;1.13&quot; taujf=&quot;1.73&quot; taujj=&quot;1.4&quot; jamThreshold=&quot;-1&quot;
              multiQueue=&quot;true&quot; junctionControl=&quot;false&quot; tlsPenalty=&quot;0&quot; tlsFlowPenalty=&quot;0&quot;
-             minorPenalty=&quot;0&quot; overtaking=&quot;false&quot; edgeLength=&quot;98&quot;/&gt;
+             minorPenalty=&quot;0&quot; overtaking=&quot;false&quot; edgeLength=&quot;98&quot; lookahead=&quot;0&quot;/&gt;
     &lt;/type&gt;
 &lt;/additional&gt;
 </code></pre>
@@ -519,7 +523,7 @@ different when running the mesoscopic model as well.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 12 October 2026</i></small>
+            <br><small><i>This page was last edited on: 11 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

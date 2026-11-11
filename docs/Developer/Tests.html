@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 12 October 2026
+Last edit: 11 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -188,6 +188,9 @@ Last edit: 12 October 2026
                     <a href="#starting_the_test_runner" class="nav-link">• Starting the test runner</a>
                 </li>
             <li class="nav-item main"><a href="#adding_a_test_to_an_existing_application">Adding a Test to an existing Application</a></li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#test_size" class="nav-link">• Test size</a>
+                </li>
             <li class="nav-item main"><a href="#adding_an_application_test_suite">Adding an Application Test Suite</a></li>
             <li class="nav-item main"><a href="#example_of_use">Example of use</a></li>
             <li class="nav-item main"><a href="#organization_of_tests">Organization of Tests</a></li>
@@ -319,6 +322,26 @@ the copied input files, run the test once and save the expected results.
 Note, that input files may be picked up along the folder hierarchy so
 you may have to copy additional files to your test folder manually if
 these inherited input files must be changed as well.</p>
+<h2 id="test_size">Test size<a class="headerlink" href="#test_size" title="Permanent link">#</a></h2>
+<p>Tests should be as small as possible for the given use case. Tests with more than 50kb should only be used if strictly necessary. The following things may be helpful:</p>
+<ul>
+<li>avoid duplicate files by putting shared files into a parent folder in the directory structure</li>
+<li>sumo<ul>
+<li>avoid large output files (i.e. <strong>--fcd-output</strong>) by limiting the duration of the test or the output window (<strong>--device.fcd.begin</strong>)</li>
+<li>restrict the list of written attributes (many outputs have corresponding options)</li>
+</ul>
+</li>
+<li>duarouter<ul>
+<li>use <strong>--alternatives-output NUL</strong> if that output is not needed</li>
+</ul>
+</li>
+<li>netconvert<ul>
+<li>use <strong>--no-internal-links</strong> if internal links are not relevant for the feature under test</li>
+<li>gzip large input files (i.e. osm.xml.gz)</li>
+<li>reduce OSM input files if a smaller boundary will do: <code>osmconvert osm.xml -b=13.596785,52.501895,13.683731,52.534760 --out-osm --complete-ways | gzip &gt; osm.xml.gz</code></li>
+</ul>
+</li>
+</ul>
 <h1 id="adding_an_application_test_suite">Adding an Application Test Suite<a class="headerlink" href="#adding_an_application_test_suite" title="Permanent link">#</a></h1>
 <p>To add a test suite for a new application, you have to perform the
 following steps. For the examples below we'll use "polyconvert" as the
@@ -475,7 +498,7 @@ available you should of course prefer Python3.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 12 October 2026</i></small>
+            <br><small><i>This page was last edited on: 11 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

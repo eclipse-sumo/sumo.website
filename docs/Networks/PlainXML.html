@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 12 October 2026
+Last edit: 11 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -223,6 +223,9 @@ Last edit: 12 October 2026
                 </li>
                 <li class="nav-item" style="text-indent: 25px;">
                     <a href="#connections_after_joining_nodes" class="nav-link">&rarr; Connections after joining nodes</a>
+                </li>
+                <li class="nav-item" style="text-indent: 25px;">
+                    <a href="#exporting_joins" class="nav-link">&rarr; Exporting joins</a>
                 </li>
             <li class="nav-item main"><a href="#edge_descriptions">Edge Descriptions</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
@@ -778,6 +781,8 @@ The supported attributes for element <code>&lt;join&gt;</code> are described bel
 <p class="admonition-title">Note</p>
 </div>
 <p>Re-guessing loaded connections is useful when joining junctions while merging networks.</p>
+<h3 id="exporting_joins">Exporting joins<a class="headerlink" href="#exporting_joins" title="Permanent link">#</a></h3>
+<p>To document joins (i.e. to facilitate debugging join or to store semantic patches), netconvert provides the option <strong>--junctions.join-output FILENAME</strong>. This will write a file with <code>&lt;join&gt;</code> <a href="#specifying_and_excluding_explicit_joins">elements</a> that are suitable for loading with option <strong>--nodes-file</strong>.</p>
 <h1 id="edge_descriptions">Edge Descriptions<a class="headerlink" href="#edge_descriptions" title="Permanent link">#</a></h1>
 <table>
 <thead>
@@ -1998,7 +2003,7 @@ explicitly. This is done using <code>walkingArea</code> element within a
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 12 October 2026</i></small>
+            <br><small><i>This page was last edited on: 11 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

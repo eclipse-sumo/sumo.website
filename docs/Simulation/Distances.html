@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 12 October 2026
+Last edit: 11 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -228,10 +228,10 @@ Last edit: 12 October 2026
 <li>x,y,z: coordinates in meters (Cartesian coordinates)</li>
 <li>lon,lat,z: geo-coordinates + <a href="../Networks/Elevation.html">elevation</a> in meters (typically WGS84) if the network is <a href="../Geo-Coordinates.html">geo-referenced</a></li>
 <li>edgeID, laneIndex, lanePosition: The lanePosition is the driving distance from the start of the edge (road) in meters</li>
-<li>linear coordinates / distance along a specific road or railway route (also known as kilometrage/mileage/chainage)  </li>
+<li>linear coordinates / distance along a specific road or railway route (also known as kilometrage/mileage/chainage)</li>
 </ol>
 <p>For the simulation behavior of the vehicles, only coordinate system 3 is used
-whereas the other systems are for visualization and output. </p>
+whereas the other systems are for visualization and output.</p>
 <h1 id="converting_between_coordinates">Converting between coordinates<a class="headerlink" href="#converting_between_coordinates" title="Permanent link">#</a></h1>
 <ul>
 <li>Several outputs can be configured to switch their output from coordinate systems 1 to system 2. Relevant options are <strong>--fcd-output.geo</strong>, <strong>--emission-output.geo</strong> and <strong>--device.ssm.geo</strong>, <strong>--fcd-output.utm</strong>.</li>
@@ -263,7 +263,7 @@ When the distance metric decreases along the forward direction of the edge, this
 between its start and end positions (x,y).</p>
 <p>However, lengths of edges and lanes can be different from the euclidean
 distance (referred to as a <strong>length-geometry-mismatch</strong>) and there are several reasons why this occurs.</p>
-<p><a href="../sumo-gui.html#edgelane_visualisation_settings">sumo-gui</a> and <a href="../Netedit/index.html">netedit</a> can be configured to color lanes by ''by given length/geometrical length'' which highlights the mismatch between both distance values.</p>
+<p><a href="../sumo-gui.html#edgelane_visualization_settings">sumo-gui</a> and <a href="../Netedit/index.html">netedit</a> can be configured to color lanes by ''by given length/geometrical length'' which highlights the mismatch between both distance values.</p>
 <h2 id="short_lanes">Short Lanes<a class="headerlink" href="#short_lanes" title="Permanent link">#</a></h2>
 <p>Lanes with a geometrical length of 0 have an assigned minimum length of 0.1m.</p>
 <h2 id="lane_curvature">Lane curvature<a class="headerlink" href="#lane_curvature" title="Permanent link">#</a></h2>
@@ -300,7 +300,7 @@ geometrical lengths are reduced. To keep the driving-lengths at their realistic 
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 12 October 2026</i></small>
+            <br><small><i>This page was last edited on: 11 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

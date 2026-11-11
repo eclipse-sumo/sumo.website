@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 12 October 2026
+Last edit: 11 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -172,6 +172,9 @@ Last edit: 12 October 2026
             <li class="nav-item main"><a href="#maxspeed">maxSpeed</a></li>
             <li class="nav-item main"><a href="#desiredmaxspeed">desiredMaxSpeed</a></li>
             <li class="nav-item main"><a href="#edgelane_speed_and_speedfactor">edge/lane speed and speedFactor</a></li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#distinction_between_maxspeed_and_desiredmaxspeed" class="nav-link">• Distinction between maxSpeed and desiredMaxSpeed</a>
+                </li>
             <li class="nav-item main"><a href="#car_following_model">Car Following Model</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#acceleration_and_deceleration" class="nav-link">• Acceleration and Deceleration</a>
@@ -262,11 +265,13 @@ by default.</p>
 <p>When vehicles are driving freely (unconstrained by other vehicles) they will accelerate until reaching the speed</p>
 <pre><code>min(maxSpeed, speedFactor * desiredMaxSpeed,  speedFactor * speedLimit)
 </code></pre>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Legacy behavior can be achieved by setting option <strong>--default.speeddev 0</strong></p>
-</div>
 <p>Since version 0.24.0 it is also possible to define <a href="../Networks/PlainXML.html#vehicle-class_specific_speed_limits">vClass-specific speed limits for every edge</a>.</p>
+<h2 id="distinction_between_maxspeed_and_desiredmaxspeed">Distinction between maxSpeed and desiredMaxSpeed<a class="headerlink" href="#distinction_between_maxspeed_and_desiredmaxspeed" title="Permanent link">#</a></h2>
+<p>The value of <code>maxSpeed</code> is intended to model the technical limit of a vehicle and therefore sets a hard upper bound (Which can only be exceed downhill by carFollowModel 'KraussPS' and 'Rail').
+On most roads, cars are assumed to be unconstrained by the <code>maxSpeed</code> and instead adapt to the road speed limit (with same variation guided by their individual <code>speedFactor</code>. To reflect this, <code>maxSpeed</code> of passenger cars defaults to 55.55m/s(200km) (though some vClasses have a different default)[../Vehicle_Type_Parameter_Defaults.md].
+For cars, the value of <code>desiredMaxSpeed</code> could be used to set an individual upper bound that is lower than the road speed (i.e. on some German motorways where there is no speedLimit).
+By default, the <code>desiredMaxSpeed</code> of cars is set to 1e4m/s to ensure that they are controlled only by <code>speedLimit</code> and <code>speedFactor</code> unless the user explicitly defines something else.</p>
+<p>For pedestrians there exists no speed limit and for bicycles it does not apply in all places. In order to obtain an individual variation in maximum peed, the <code>desiredMaxSpeed</code> of pedestrians defaults to 1.39m/s (5km/h) and that of bicycles to 5.5km/s (20km/h). To avoid unwanted influence by the fixed <code>maxSpeed</code> setting, their maxSpeed are set to high values.</p>
 <h1 id="car_following_model">Car Following Model<a class="headerlink" href="#car_following_model" title="Permanent link">#</a></h1>
 <p>The <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#car-following_models">car following model</a>
 of a vehicle defines its speed in relation the vehicle ahead. The
@@ -356,7 +361,7 @@ modify the speed limit of an edge.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 12 October 2026</i></small>
+            <br><small><i>This page was last edited on: 11 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

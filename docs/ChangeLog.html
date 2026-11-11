@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 12 October 2026
+Last edit: 11 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -258,8 +258,206 @@ Last edit: 12 October 2026
 
 <h2 id="git_main_nightly_development_builds">Git Main (<a href="https://sumo.dlr.de/docs/Downloads.php#nightly_snapshots">nightly development builds</a>)<a class="headerlink" href="#git_main_nightly_development_builds" title="Permanent link">#</a></h2>
 <h3 id="bugfixes">Bugfixes<a class="headerlink" href="#bugfixes" title="Permanent link">#</a></h3>
+<ul>
+<li>sumo<ul>
+<li>Fixed invalid routes after delayed departure from a TAZ when using the rerouting device <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18408" title="GitHub Issue eclipse-sumo/sumo #18408">#18408</a></li>
+<li>Fixed deadlock on a short lane when using the sublane model <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18379" title="GitHub Issue eclipse-sumo/sumo #18379">#18379</a> (regression in 1.24.0)</li>
+<li>Fixed lane-changing deadlock with carFollowModel IDM <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17483" title="GitHub Issue eclipse-sumo/sumo #17483">#17483</a></li>
+<li>device.rerouting.threshold.factor and device.rerouting.threshold.constant now apply to insertion rerouting if a complete route was loaded <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18354" title="GitHub Issue eclipse-sumo/sumo #18354">#18354</a></li>
+<li>No longer skipping rerouting for some vehicles depending on their insertion time <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18435" title="GitHub Issue eclipse-sumo/sumo #18435">#18435</a></li>
+<li>Fixed crash when person departs on a forbidden edge <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18511" title="GitHub Issue eclipse-sumo/sumo #18511">#18511</a></li>
+<li>If the arrivalPos is ignored during rerouting, a warning is given <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18512" title="GitHub Issue eclipse-sumo/sumo #18512">#18512</a></li>
+<li>Vehicles that teleport across an edge no longer count as entered/left in edgeData output <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18524" title="GitHub Issue eclipse-sumo/sumo #18524">#18524</a></li>
+<li>Fixed railway issues:<ul>
+<li>Fixed invalid predecessor lane used when inserting long train on short edge <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18345" title="GitHub Issue eclipse-sumo/sumo #18345">#18345</a></li>
+<li>Fixed failure to reverse train near route end <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18385" title="GitHub Issue eclipse-sumo/sumo #18385">#18385</a></li>
+<li>Fixed invalid error "Warning: Invalid approach information to rail signal 'junction ..." <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17810" title="GitHub Issue eclipse-sumo/sumo #17810">#17810</a></li>
+<li>Fixed unsafe entry into occupied single track section <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18395" title="GitHub Issue eclipse-sumo/sumo #18395">#18395</a></li>
+<li>Fixed deadlock due to invalid conflict <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18394" title="GitHub Issue eclipse-sumo/sumo #18394">#18394</a></li>
+<li>Fixed deadlock caused by insertion into a siding <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18415" title="GitHub Issue eclipse-sumo/sumo #18415">#18415</a></li>
+<li>Fixed problems when loading deadlock-output in order to avoid it from re-occurring <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18432" title="GitHub Issue eclipse-sumo/sumo #18432">#18432</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17826" title="GitHub Issue eclipse-sumo/sumo #17826">#17826</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18422" title="GitHub Issue eclipse-sumo/sumo #18422">#18422</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17922" title="GitHub Issue eclipse-sumo/sumo #17922">#17922</a></li>
+<li>Fixed failure to reach stop before reversal <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18466" title="GitHub Issue eclipse-sumo/sumo #18466">#18466</a></li>
+<li>Fixed failure to detect railSignal deadlock <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18467" title="GitHub Issue eclipse-sumo/sumo #18467">#18467</a></li>
+</ul>
+</li>
+<li>Fixed issues that caused divergence when loading state:<ul>
+<li>initialization of CCH-router when vTypeDistributions are loaded from state <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18365" title="GitHub Issue eclipse-sumo/sumo #18365">#18365</a></li>
+<li>rerouting device: vehicles that have not departed repeat no longer perform extra rerouting after loading state <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18366" title="GitHub Issue eclipse-sumo/sumo #18366">#18366</a></li>
+<li>Fixed initialization of static traffic lights <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18410" title="GitHub Issue eclipse-sumo/sumo #18410">#18410</a></li>
+<li>Fixed corner case with empty-string departLane <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18398" title="GitHub Issue eclipse-sumo/sumo #18398">#18398</a></li>
+<li>vehicle on turnaround now restores its further lanes when loading state <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18404" title="GitHub Issue eclipse-sumo/sumo #18404">#18404</a></li>
+<li>Now restoring internal link approach state <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18406" title="GitHub Issue eclipse-sumo/sumo #18406">#18406</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>netedit  <ul>
+<li>When called from sumo-gui with <kbd>Ctrl</kbd> + <kbd>T</kbd>, traffic demand loading now honors checkbox <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18347" title="GitHub Issue eclipse-sumo/sumo #18347">#18347</a> (regression in 1.26.0)</li>
+<li>Setting no-internal-links=false in the options menu (F10) to add internal lanes to a network takes effect again <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18356" title="GitHub Issue eclipse-sumo/sumo #18356">#18356</a> (regression in 1.27.0)</li>
+<li>Fixed invalid prompt to save network after activating "show connections" in inspect mode <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18350" title="GitHub Issue eclipse-sumo/sumo #18350">#18350</a> (regression in 1.27.1)</li>
+<li>Fixed invalid activation of "save individual files" dropdown-button in a brand new network <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18484" title="GitHub Issue eclipse-sumo/sumo #18484">#18484</a> (regression in 1.28.0)</li>
+<li>When calling sumo-gui with <kbd>Ctrl</kbd> + <kbd>T</kbd>, traffic demand loading now honors the checkbox <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18377" title="GitHub Issue eclipse-sumo/sumo #18377">#18377</a></li>
+<li>The "save network" button now activates after recomputing a network with volatile options (SHIFT+F5) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18173" title="GitHub Issue eclipse-sumo/sumo #18173">#18173</a></li>
+<li>Fixed superfluous empty meanData file in saved sumocfg <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17975" title="GitHub Issue eclipse-sumo/sumo #17975">#17975</a></li>
+<li>Fixed invalid sumocfg when netedit is saving plain-xml <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16217" title="GitHub Issue eclipse-sumo/sumo #16217">#16217</a></li>
+<li>Fixed invalid loading of demand elements on reload when started from within sumo-gui <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/16137" title="GitHub Issue eclipse-sumo/sumo #16137">#16137</a></li>
+<li>Reloading now creates a new network when started with option <strong>--new</strong> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/14354" title="GitHub Issue eclipse-sumo/sumo #14354">#14354</a></li>
+<li>Fixed inconsistent icon transparency <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/15044" title="GitHub Issue eclipse-sumo/sumo #15044">#15044</a></li>
+<li>Fixed centering the view in a new network <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/13872" title="GitHub Issue eclipse-sumo/sumo #13872">#13872</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>sumo-gui<ul>
+<li>Fixed invalid error on reloading polygon file if SUMO_HOME is not set <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/13584" title="GitHub Issue eclipse-sumo/sumo #13584">#13584</a></li>
+<li>Fixed missing underline in object ids for warnings during network loading <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18351" title="GitHub Issue eclipse-sumo/sumo #18351">#18351</a></li>
+<li>Fixed inconsistent image transparency <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/10380" title="GitHub Issue eclipse-sumo/sumo #10380">#10380</a></li>
+<li>Fixed crash when attempting to open a new 3D view while simulation is running <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/6307" title="GitHub Issue eclipse-sumo/sumo #6307">#6307</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>netconvert<ul>
+<li>Fixed insufficient geo-precision in parquet output <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18390" title="GitHub Issue eclipse-sumo/sumo #18390">#18390</a></li>
+<li>Options <strong>--railway.topology.repair.stop-turn</strong> now takes effect during initial network import <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18452" title="GitHub Issue eclipse-sumo/sumo #18452">#18452</a></li>
+<li>OSM: fixed missing public transport stops <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18454" title="GitHub Issue eclipse-sumo/sumo #18454">#18454</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>meso<ul>
+<li>Fixed extreme slow-down when running simulation with option <strong>--time-to-teleport.disconnected</strong> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18357" title="GitHub Issue eclipse-sumo/sumo #18357">#18357</a> (regression in 1.28.0)</li>
+<li>Fixed invalid junction effects by overtaken vehicle <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18402" title="GitHub Issue eclipse-sumo/sumo #18402">#18402</a></li>
+<li>state-saving:<ul>
+<li>multiple issues where state was not properly restored <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18362" title="GitHub Issue eclipse-sumo/sumo #18362">#18362</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18363" title="GitHub Issue eclipse-sumo/sumo #18363">#18363</a> (regression in 1.28.0)</li>
+<li>now restoring tripinfo timeLoss <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18398" title="GitHub Issue eclipse-sumo/sumo #18398">#18398</a></li>
+<li>meso-ltm specific state is now restored <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18364" title="GitHub Issue eclipse-sumo/sumo #18364">#18364</a></li>
+<li>Now restoring detector state for actuated traffic lights <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18409" title="GitHub Issue eclipse-sumo/sumo #18409">#18409</a>  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>netconvert<ul>
+<li>Fixed invalid track direction when processing OSM data with option <strong>--railway.topology.repair</strong> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18349" title="GitHub Issue eclipse-sumo/sumo #18349">#18349</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>duarouter<ul>
+<li>Fixed invalid abort of train routing when running with <strong>--ignore-errors</strong> (also affects sumo) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18335" title="GitHub Issue eclipse-sumo/sumo #18335">#18335</a></li>
+<li>Fixed crash during railway routing (also affects sumo) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18340" title="GitHub Issue eclipse-sumo/sumo #18340">#18340</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18442" title="GitHub Issue eclipse-sumo/sumo #18442">#18442</a></li>
+<li>Fixed invalid route output with <strong>--bulk-routing</strong> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18355" title="GitHub Issue eclipse-sumo/sumo #18355">#18355</a></li>
+<li>stop arrival times in named route are now shifted by vehicle departure <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18483" title="GitHub Issue eclipse-sumo/sumo #18483">#18483</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>traci<ul>
+<li>Fixed a crash in <code>vehicle.moveToXY</code> when keeping a route whose lanes prohibit the vehicle class.</li>
+<li>some retrieved laneChangeModel parameters (for querying internal model state) with floating point values are no longer rounded to ints <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18463" title="GitHub Issue eclipse-sumo/sumo #18463">#18463</a> (regression in 1.27.0)</li>
+<li>Fixed crash in <code>traci.simulation.loadState</code> with meso <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18389" title="GitHub Issue eclipse-sumo/sumo #18389">#18389</a> (regression in 1.28.0)</li>
+<li>Fixed invalid event time after adding a stop with default duration in meso <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18392" title="GitHub Issue eclipse-sumo/sumo #18392">#18392</a></li>
+<li>Fixed libsumo crash when using <code>vehicle.moveToXY</code> and repeatedly restarting the simulation <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18457" title="GitHub Issue eclipse-sumo/sumo #18457">#18457</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>tools<ul>
+<li>gtfs2pt.py: fixed crash <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18446" title="GitHub Issue eclipse-sumo/sumo #18446">#18446</a> (regression in 1.27.1)</li>
+<li>gtfs2pt.py: option <strong>--write-arrival</strong> now takes into account minimum stop duration in a sub-net <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18491" title="GitHub Issue eclipse-sumo/sumo #18491">#18491</a></li>
+<li>gtfs2pt.py: option <strong>--min-stops</strong> is now working in all use cases <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18494" title="GitHub Issue eclipse-sumo/sumo #18494">#18494</a></li>
+<li>gtfs2pt.py: Change default of option <strong>--distance-penalty</strong> from 2 to 1.2 to avoid unrealistic detours <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18341" title="GitHub Issue eclipse-sumo/sumo #18341">#18341</a></li>
+<li>plotStops.py: fixed invalid timing for named routes <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18450" title="GitHub Issue eclipse-sumo/sumo #18450">#18450</a></li>
+<li>scheduleStats.py: fixed invalid statistics key if tripId is not used <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18485" title="GitHub Issue eclipse-sumo/sumo #18485">#18485</a></li>
+<li>scheduleStats.py: fixed crash when there are no matches <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18486" title="GitHub Issue eclipse-sumo/sumo #18486">#18486</a></li>
+</ul>
+</li>
+</ul>
 <h3 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">#</a></h3>
+<ul>
+<li>sumo<ul>
+<li>When setting option <strong>--vehroute-output.cost</strong>, the initial route cost is now included <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18378" title="GitHub Issue eclipse-sumo/sumo #18378">#18378</a></li>
+<li>Improved speed of computing safety interlocks when loading new train routes <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18387" title="GitHub Issue eclipse-sumo/sumo #18387">#18387</a></li>
+<li>The JuPedSim coupling has been redone, giving direct access to the JuPedSim Python module <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18128" title="GitHub Issue eclipse-sumo/sumo #18128">#18128</a><ul>
+<li>Make sure you have an active python environment with the jupedsim module installed, when running the model.</li>
+</ul>
+</li>
+<li>Added simulation option category 'persons' <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/6374" title="GitHub Issue eclipse-sumo/sumo #6374">#6374</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>sumo-gui<ul>
+<li>Converted some buttons into checkboxes in the locate dialog <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/9925" title="GitHub Issue eclipse-sumo/sumo #9925">#9925</a></li>
+<li>Status line icons now indicate whether micro or meso is running and which pedestrian model is active <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/9228" title="GitHub Issue eclipse-sumo/sumo #9228">#9228</a></li>
+<li>Added exit help text to Full Screen Mode <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/7610" title="GitHub Issue eclipse-sumo/sumo #7610">#7610</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>meso<ul>
+<li>vType-specific timeToTeleport now takes effect <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18359" title="GitHub Issue eclipse-sumo/sumo #18359">#18359</a></li>
+<li>Added option <strong>--meso-lookahead</strong> and meso edge type attribute <code>lookahead</code> to permit route-specific queue choice when simulating with option <strong>--meso-lane-queue</strong>. This avoids unrealistic jam-propagation if some turns are blocked <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18299" title="GitHub Issue eclipse-sumo/sumo #18299">#18299</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>netconvert<ul>
+<li>Added options for setting default actuated tls params <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/10836" title="GitHub Issue eclipse-sumo/sumo #10836">#10836</a></li>
+<li>OSM: default typemap now imports railway=narrow_gauge <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18447" title="GitHub Issue eclipse-sumo/sumo #18447">#18447</a></li>
+<li>OSM: now importing ETCS2 block signals. When setting option <strong>--osm.etcs-moving-block</strong> the corresponding tracks default to moving-block behavior. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18492" title="GitHub Issue eclipse-sumo/sumo #18492">#18492</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>duarouter<ul>
+<li>Now issues a warning if options <strong>--begin</strong> and <strong>--end</strong> exclude all loaded traffic (also applies to marouter) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/12743" title="GitHub Issue eclipse-sumo/sumo #12743">#12743</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>TraCI<ul>
+<li>Added function <code>traci.edge.getMaxSpeed</code> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/14489" title="GitHub Issue eclipse-sumo/sumo #14489">#14489</a></li>
+<li>When changing lane permissions, the internal lanes connected to that lane will automatically be updated (also affects rerouters) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18264" title="GitHub Issue eclipse-sumo/sumo #18264">#18264</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>tools<ul>
+<li>gtfs2pt.py: now runs much faster due to better caching <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18333" title="GitHub Issue eclipse-sumo/sumo #18333">#18333</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18339" title="GitHub Issue eclipse-sumo/sumo #18339">#18339</a></li>
+<li>gtfs2pt.py: always use stop before reversal to avoid skipping <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18393" title="GitHub Issue eclipse-sumo/sumo #18393">#18393</a></li>
+<li>gtfs2pt.py: The new option <strong>--coupling remove</strong> can be used to avoid duplicate vehicles for trips that travel as a coupled train <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18451" title="GitHub Issue eclipse-sumo/sumo #18451">#18451</a></li>
+<li>gtfs2pt.py: Option <strong>--parking-threshold</strong> now also applies to stop beyond the given duration as computed from known arrival/departure times as well as from estimated arrival times <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18460" title="GitHub Issue eclipse-sumo/sumo #18460">#18460</a>, <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18490" title="GitHub Issue eclipse-sumo/sumo #18490">#18490</a>  </li>
+<li>patchRailPriorities.py: Added option <strong>--add-signals</strong> which adds signals to all identified sidings that lack them <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18458" title="GitHub Issue eclipse-sumo/sumo #18458">#18458</a></li>
+<li>patchRailPriorities.py: Added option <strong>--routing-threads</strong> to speed up siding search (new option also available for createOvertakingReroutes.py) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18455" title="GitHub Issue eclipse-sumo/sumo #18455">#18455</a></li>
+<li>sumolib: added helper function <code>net.getNearestLane</code> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/9004" title="GitHub Issue eclipse-sumo/sumo #9004">#9004</a></li>
+<li>tripInfoByTAZ.py: option <strong>--output</strong> now writes <code>&lt;tazRelation&gt;</code> elements which can be loaded by other tools instead of <code>&lt;odInfo&gt;</code> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18479" title="GitHub Issue eclipse-sumo/sumo #18479">#18479</a></li>
+<li>route_departOffset.py: now handles human readable times <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18481" title="GitHub Issue eclipse-sumo/sumo #18481">#18481</a></li>
+<li>route_departOffset.py: Added option <strong>--cumulative</strong> to allow shifting by a cumulative offset (i.e. to enforce a minimum spacing between departures) <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18487" title="GitHub Issue eclipse-sumo/sumo #18487">#18487</a></li>
+<li>route_departOffset.py: Now permits negative and random offset <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/10374" title="GitHub Issue eclipse-sumo/sumo #10374">#10374</a></li>
+</ul>
+</li>
+</ul>
 <h3 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">#</a></h3>
+<ul>
+<li>Fixed VISSIM import documentation language <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/6082" title="GitHub Issue eclipse-sumo/sumo #6082">#6082</a></li>
+<li>Fixed gprof/profiling build so that it generates profiling output again with newer compilers <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18386" title="GitHub Issue eclipse-sumo/sumo #18386">#18386</a></li>
+<li>SUMOLibraries should now be downloaded as a released zip instead of doing git clone <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18331" title="GitHub Issue eclipse-sumo/sumo #18331">#18331</a></li>
+<li>Fixed divergent behavior on macOS arm64 vs Linux x86_64 due to inconsistent compiler defaults <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18344" title="GitHub Issue eclipse-sumo/sumo #18344">#18344</a></li>
+<li>Added <a href="TraCI/API_Versions.html">documentation for TraCI API versions</a> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17430" title="GitHub Issue eclipse-sumo/sumo #17430">#17430</a></li>
+<li>gtfs2pt.py: using an optional internal java map-matching library are no longer supported <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17937" title="GitHub Issue eclipse-sumo/sumo #17937">#17937</a></li>
+<li>Removed undocumented cmake option COMPILER_DEFINITIONS due to a name clash, use CMAKE_CXX_FLAGS_INIT instead</li>
+<li>Python wheels for libsumo and eclipse-sumo are now consistently built without support for OSG and ffmpeg and have their libraries in the external sumo-data wheel. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17459" title="GitHub Issue eclipse-sumo/sumo #17459">#17459</a></li>
+<li>SUMO compilation now requires CMake 3.8 and a C++17 enabled compiler <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18430" title="GitHub Issue eclipse-sumo/sumo #18430">#18430</a><ul>
+<li>Dropped support for ubuntu 16.04 and Debian 9</li>
+</ul>
+</li>
+<li>Wheels for Python 3.15 have been added</li>
+</ul>
 <h2 id="version_1280_08102026">Version 1.28.0 (08.10.2026)<a class="headerlink" href="#version_1280_08102026" title="Permanent link">#</a></h2>
 <p><a href="https://sumo.dlr.de/docs/Downloads.php">Downloads</a></p>
 <h3 id="bugfixes_1">Bugfixes<a class="headerlink" href="#bugfixes_1" title="Permanent link">#</a></h3>
@@ -388,7 +586,7 @@ Last edit: 12 October 2026
 <li>netedit<ul>
 <li>Added visualization toggle switch for showing start and end symbols (S, E) for polygons <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17911" title="GitHub Issue eclipse-sumo/sumo #17911">#17911</a></li>
 <li>edgeData / laneData attribute <code>aggregate</code> now permits the special value <code>taz</code> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17342" title="GitHub Issue eclipse-sumo/sumo #17342">#17342</a></li>
-<li>data mode: Dragging the mouse will <kbd>CTRL</kbd> is held, now moves the view <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17139" title="GitHub Issue eclipse-sumo/sumo #17139">#17139</a></li>
+<li>data mode: Dragging the mouse will <kbd>Ctrl</kbd> is held, now moves the view <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/17139" title="GitHub Issue eclipse-sumo/sumo #17139">#17139</a></li>
 <li>Polygons now support attribute "height" <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18140" title="GitHub Issue eclipse-sumo/sumo #18140">#18140</a></li>
 <li>allow setting options that are only applied during "compute with volatile" <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18174" title="GitHub Issue eclipse-sumo/sumo #18174">#18174</a></li>
 <li>vTypeDistributions now show up in type-combobox in vehicle mode <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18149" title="GitHub Issue eclipse-sumo/sumo #18149">#18149</a></li>
@@ -1166,7 +1364,7 @@ Last edit: 12 October 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 12 October 2026</i></small>
+            <br><small><i>This page was last edited on: 11 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

@@ -149,22 +149,22 @@
 </span><span id="L-18"><a href="#L-18"><span class="linenos"> 18</span></a><span class="c1"># @author  Jakob Erdmann</span>
 </span><span id="L-19"><a href="#L-19"><span class="linenos"> 19</span></a><span class="c1"># @date    2011-11-28</span>
 </span><span id="L-20"><a href="#L-20"><span class="linenos"> 20</span></a>
-</span><span id="L-21"><a href="#L-21"><span class="linenos"> 21</span></a><span class="kn">from</span> <span class="nn">sumolib.net.lane</span> <span class="kn">import</span> <span class="n">get_allowed</span>
+</span><span id="L-21"><a href="#L-21"><span class="linenos"> 21</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">sumolib.net.lane</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_allowed</span>
 </span><span id="L-22"><a href="#L-22"><span class="linenos"> 22</span></a>
 </span><span id="L-23"><a href="#L-23"><span class="linenos"> 23</span></a>
-</span><span id="L-24"><a href="#L-24"><span class="linenos"> 24</span></a><span class="k">class</span> <span class="nc">Connection</span><span class="p">:</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos"> 24</span></a><span class="k">class</span><span class="w"> </span><span class="nc">Connection</span><span class="p">:</span>
 </span><span id="L-25"><a href="#L-25"><span class="linenos"> 25</span></a>    <span class="c1"># constants as defined in sumo/src/utils/xml/SUMOXMLDefinitions.cpp</span>
-</span><span id="L-26"><a href="#L-26"><span class="linenos"> 26</span></a>    <span class="n">LINKDIR_STRAIGHT</span> <span class="o">=</span> <span class="s2">&quot;s&quot;</span>
-</span><span id="L-27"><a href="#L-27"><span class="linenos"> 27</span></a>    <span class="n">LINKDIR_TURN</span> <span class="o">=</span> <span class="s2">&quot;t&quot;</span>
-</span><span id="L-28"><a href="#L-28"><span class="linenos"> 28</span></a>    <span class="n">LINKDIR_TURN_LEFTHAND</span> <span class="o">=</span> <span class="s2">&quot;T&quot;</span>
-</span><span id="L-29"><a href="#L-29"><span class="linenos"> 29</span></a>    <span class="n">LINKDIR_LEFT</span> <span class="o">=</span> <span class="s2">&quot;l&quot;</span>
-</span><span id="L-30"><a href="#L-30"><span class="linenos"> 30</span></a>    <span class="n">LINKDIR_RIGHT</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span>
-</span><span id="L-31"><a href="#L-31"><span class="linenos"> 31</span></a>    <span class="n">LINKDIR_PARTLEFT</span> <span class="o">=</span> <span class="s2">&quot;L&quot;</span>
-</span><span id="L-32"><a href="#L-32"><span class="linenos"> 32</span></a>    <span class="n">LINKDIR_PARTRIGHT</span> <span class="o">=</span> <span class="s2">&quot;R&quot;</span>
+</span><span id="L-26"><a href="#L-26"><span class="linenos"> 26</span></a>    <span class="n">LINKDIR_STRAIGHT</span> <span class="o">=</span> <span class="s2">"s"</span>
+</span><span id="L-27"><a href="#L-27"><span class="linenos"> 27</span></a>    <span class="n">LINKDIR_TURN</span> <span class="o">=</span> <span class="s2">"t"</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos"> 28</span></a>    <span class="n">LINKDIR_TURN_LEFTHAND</span> <span class="o">=</span> <span class="s2">"T"</span>
+</span><span id="L-29"><a href="#L-29"><span class="linenos"> 29</span></a>    <span class="n">LINKDIR_LEFT</span> <span class="o">=</span> <span class="s2">"l"</span>
+</span><span id="L-30"><a href="#L-30"><span class="linenos"> 30</span></a>    <span class="n">LINKDIR_RIGHT</span> <span class="o">=</span> <span class="s2">"r"</span>
+</span><span id="L-31"><a href="#L-31"><span class="linenos"> 31</span></a>    <span class="n">LINKDIR_PARTLEFT</span> <span class="o">=</span> <span class="s2">"L"</span>
+</span><span id="L-32"><a href="#L-32"><span class="linenos"> 32</span></a>    <span class="n">LINKDIR_PARTRIGHT</span> <span class="o">=</span> <span class="s2">"R"</span>
 </span><span id="L-33"><a href="#L-33"><span class="linenos"> 33</span></a>
-</span><span id="L-34"><a href="#L-34"><span class="linenos"> 34</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;edge connection for a sumo network&quot;&quot;&quot;</span>
+</span><span id="L-34"><a href="#L-34"><span class="linenos"> 34</span></a><span class="w">    </span><span class="sd">"""edge connection for a sumo network"""</span>
 </span><span id="L-35"><a href="#L-35"><span class="linenos"> 35</span></a>
-</span><span id="L-36"><a href="#L-36"><span class="linenos"> 36</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fromEdge</span><span class="p">,</span> <span class="n">toEdge</span><span class="p">,</span> <span class="n">fromLane</span><span class="p">,</span> <span class="n">toLane</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span>
+</span><span id="L-36"><a href="#L-36"><span class="linenos"> 36</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fromEdge</span><span class="p">,</span> <span class="n">toEdge</span><span class="p">,</span> <span class="n">fromLane</span><span class="p">,</span> <span class="n">toLane</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span>
 </span><span id="L-37"><a href="#L-37"><span class="linenos"> 37</span></a>                 <span class="n">tls</span><span class="p">,</span> <span class="n">tllink</span><span class="p">,</span> <span class="n">tllink2</span><span class="p">,</span> <span class="n">allow</span><span class="p">,</span> <span class="n">disallow</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">viaLaneID</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 </span><span id="L-38"><a href="#L-38"><span class="linenos"> 38</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_from</span> <span class="o">=</span> <span class="n">fromEdge</span>
 </span><span id="L-39"><a href="#L-39"><span class="linenos"> 39</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_to</span> <span class="o">=</span> <span class="n">toEdge</span>
@@ -179,65 +179,65 @@
 </span><span id="L-48"><a href="#L-48"><span class="linenos"> 48</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_allowed</span> <span class="o">=</span> <span class="n">get_allowed</span><span class="p">(</span><span class="n">allow</span><span class="p">,</span> <span class="n">disallow</span><span class="p">)</span>
 </span><span id="L-49"><a href="#L-49"><span class="linenos"> 49</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_params</span> <span class="o">=</span> <span class="p">{}</span>
 </span><span id="L-50"><a href="#L-50"><span class="linenos"> 50</span></a>
-</span><span id="L-51"><a href="#L-51"><span class="linenos"> 51</span></a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-52"><a href="#L-52"><span class="linenos"> 52</span></a>        <span class="k">return</span> <span class="s1">&#39;&lt;connection from=&quot;</span><span class="si">%s</span><span class="s1">&quot; to=&quot;</span><span class="si">%s</span><span class="s1">&quot; fromLane=&quot;</span><span class="si">%s</span><span class="s1">&quot; toLane=&quot;</span><span class="si">%s</span><span class="s1">&quot; </span><span class="si">%s%s</span><span class="s1">direction=&quot;</span><span class="si">%s</span><span class="s1">&quot;&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span>
+</span><span id="L-51"><a href="#L-51"><span class="linenos"> 51</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-52"><a href="#L-52"><span class="linenos"> 52</span></a>        <span class="k">return</span> <span class="s1">'&lt;connection from="</span><span class="si">%s</span><span class="s1">" to="</span><span class="si">%s</span><span class="s1">" fromLane="</span><span class="si">%s</span><span class="s1">" toLane="</span><span class="si">%s</span><span class="s1">" </span><span class="si">%s%s</span><span class="s1">direction="</span><span class="si">%s</span><span class="s1">"&gt;'</span> <span class="o">%</span> <span class="p">(</span>
 </span><span id="L-53"><a href="#L-53"><span class="linenos"> 53</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_from</span><span class="o">.</span><span class="n">getID</span><span class="p">(),</span>
 </span><span id="L-54"><a href="#L-54"><span class="linenos"> 54</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_to</span><span class="o">.</span><span class="n">getID</span><span class="p">(),</span>
 </span><span id="L-55"><a href="#L-55"><span class="linenos"> 55</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_fromLane</span><span class="o">.</span><span class="n">getIndex</span><span class="p">(),</span>
 </span><span id="L-56"><a href="#L-56"><span class="linenos"> 56</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_toLane</span><span class="o">.</span><span class="n">getIndex</span><span class="p">(),</span>
-</span><span id="L-57"><a href="#L-57"><span class="linenos"> 57</span></a>            <span class="p">(</span><span class="s1">&#39;&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tls</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="k">else</span> <span class="s1">&#39;tl=&quot;</span><span class="si">%s</span><span class="s1">&quot; linkIndex=&quot;</span><span class="si">%s</span><span class="s1">&quot; &#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_tls</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink</span><span class="p">)),</span>
-</span><span id="L-58"><a href="#L-58"><span class="linenos"> 58</span></a>            <span class="p">(</span><span class="s1">&#39;&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink2</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39; linkIndex2=&quot;</span><span class="si">%s</span><span class="s1">&quot; &#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink2</span><span class="p">),</span>
+</span><span id="L-57"><a href="#L-57"><span class="linenos"> 57</span></a>            <span class="p">(</span><span class="s1">''</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tls</span> <span class="o">==</span> <span class="s1">''</span> <span class="k">else</span> <span class="s1">'tl="</span><span class="si">%s</span><span class="s1">" linkIndex="</span><span class="si">%s</span><span class="s1">" '</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_tls</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink</span><span class="p">)),</span>
+</span><span id="L-58"><a href="#L-58"><span class="linenos"> 58</span></a>            <span class="p">(</span><span class="s1">''</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink2</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">' linkIndex2="</span><span class="si">%s</span><span class="s1">" '</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink2</span><span class="p">),</span>
 </span><span id="L-59"><a href="#L-59"><span class="linenos"> 59</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_direction</span><span class="p">)</span>
 </span><span id="L-60"><a href="#L-60"><span class="linenos"> 60</span></a>
-</span><span id="L-61"><a href="#L-61"><span class="linenos"> 61</span></a>    <span class="k">def</span> <span class="nf">allows</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vClass</span><span class="p">):</span>
-</span><span id="L-62"><a href="#L-62"><span class="linenos"> 62</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;true if this connection allows the given vehicle class&quot;&quot;&quot;</span>
-</span><span id="L-63"><a href="#L-63"><span class="linenos"> 63</span></a>        <span class="k">if</span> <span class="n">vClass</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">vClass</span> <span class="o">==</span> <span class="s2">&quot;ignoring&quot;</span><span class="p">:</span>
+</span><span id="L-61"><a href="#L-61"><span class="linenos"> 61</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">allows</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vClass</span><span class="p">):</span>
+</span><span id="L-62"><a href="#L-62"><span class="linenos"> 62</span></a><span class="w">        </span><span class="sd">"""true if this connection allows the given vehicle class"""</span>
+</span><span id="L-63"><a href="#L-63"><span class="linenos"> 63</span></a>        <span class="k">if</span> <span class="n">vClass</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">vClass</span> <span class="o">==</span> <span class="s2">"ignoring"</span><span class="p">:</span>
 </span><span id="L-64"><a href="#L-64"><span class="linenos"> 64</span></a>            <span class="k">return</span> <span class="kc">True</span>
 </span><span id="L-65"><a href="#L-65"><span class="linenos"> 65</span></a>        <span class="k">return</span> <span class="n">vClass</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allowed</span>
 </span><span id="L-66"><a href="#L-66"><span class="linenos"> 66</span></a>
-</span><span id="L-67"><a href="#L-67"><span class="linenos"> 67</span></a>    <span class="k">def</span> <span class="nf">setParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+</span><span id="L-67"><a href="#L-67"><span class="linenos"> 67</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">setParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 </span><span id="L-68"><a href="#L-68"><span class="linenos"> 68</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 </span><span id="L-69"><a href="#L-69"><span class="linenos"> 69</span></a>
-</span><span id="L-70"><a href="#L-70"><span class="linenos"> 70</span></a>    <span class="k">def</span> <span class="nf">getParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="L-70"><a href="#L-70"><span class="linenos"> 70</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 </span><span id="L-71"><a href="#L-71"><span class="linenos"> 71</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
 </span><span id="L-72"><a href="#L-72"><span class="linenos"> 72</span></a>
-</span><span id="L-73"><a href="#L-73"><span class="linenos"> 73</span></a>    <span class="k">def</span> <span class="nf">getParams</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-73"><a href="#L-73"><span class="linenos"> 73</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getParams</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="L-74"><a href="#L-74"><span class="linenos"> 74</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_params</span>
 </span><span id="L-75"><a href="#L-75"><span class="linenos"> 75</span></a>
-</span><span id="L-76"><a href="#L-76"><span class="linenos"> 76</span></a>    <span class="k">def</span> <span class="nf">getFrom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-76"><a href="#L-76"><span class="linenos"> 76</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getFrom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="L-77"><a href="#L-77"><span class="linenos"> 77</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fromLane</span><span class="o">.</span><span class="n">getEdge</span><span class="p">()</span>
 </span><span id="L-78"><a href="#L-78"><span class="linenos"> 78</span></a>
-</span><span id="L-79"><a href="#L-79"><span class="linenos"> 79</span></a>    <span class="k">def</span> <span class="nf">getTo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-79"><a href="#L-79"><span class="linenos"> 79</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getTo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="L-80"><a href="#L-80"><span class="linenos"> 80</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toLane</span><span class="o">.</span><span class="n">getEdge</span><span class="p">()</span>
 </span><span id="L-81"><a href="#L-81"><span class="linenos"> 81</span></a>
-</span><span id="L-82"><a href="#L-82"><span class="linenos"> 82</span></a>    <span class="k">def</span> <span class="nf">getFromLane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-82"><a href="#L-82"><span class="linenos"> 82</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getFromLane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="L-83"><a href="#L-83"><span class="linenos"> 83</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fromLane</span>
 </span><span id="L-84"><a href="#L-84"><span class="linenos"> 84</span></a>
-</span><span id="L-85"><a href="#L-85"><span class="linenos"> 85</span></a>    <span class="k">def</span> <span class="nf">getToLane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-85"><a href="#L-85"><span class="linenos"> 85</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getToLane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="L-86"><a href="#L-86"><span class="linenos"> 86</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toLane</span>
 </span><span id="L-87"><a href="#L-87"><span class="linenos"> 87</span></a>
-</span><span id="L-88"><a href="#L-88"><span class="linenos"> 88</span></a>    <span class="k">def</span> <span class="nf">getViaLaneID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-88"><a href="#L-88"><span class="linenos"> 88</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getViaLaneID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="L-89"><a href="#L-89"><span class="linenos"> 89</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_via</span>
 </span><span id="L-90"><a href="#L-90"><span class="linenos"> 90</span></a>
-</span><span id="L-91"><a href="#L-91"><span class="linenos"> 91</span></a>    <span class="k">def</span> <span class="nf">getDirection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-91"><a href="#L-91"><span class="linenos"> 91</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getDirection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="L-92"><a href="#L-92"><span class="linenos"> 92</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direction</span>
 </span><span id="L-93"><a href="#L-93"><span class="linenos"> 93</span></a>
-</span><span id="L-94"><a href="#L-94"><span class="linenos"> 94</span></a>    <span class="k">def</span> <span class="nf">getTLSID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-94"><a href="#L-94"><span class="linenos"> 94</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getTLSID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="L-95"><a href="#L-95"><span class="linenos"> 95</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tls</span>
 </span><span id="L-96"><a href="#L-96"><span class="linenos"> 96</span></a>
-</span><span id="L-97"><a href="#L-97"><span class="linenos"> 97</span></a>    <span class="k">def</span> <span class="nf">getTLLinkIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-97"><a href="#L-97"><span class="linenos"> 97</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getTLLinkIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="L-98"><a href="#L-98"><span class="linenos"> 98</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink</span>
 </span><span id="L-99"><a href="#L-99"><span class="linenos"> 99</span></a>
-</span><span id="L-100"><a href="#L-100"><span class="linenos">100</span></a>    <span class="k">def</span> <span class="nf">getTLLinkIndex2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-100"><a href="#L-100"><span class="linenos">100</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getTLLinkIndex2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="L-101"><a href="#L-101"><span class="linenos">101</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink2</span>
 </span><span id="L-102"><a href="#L-102"><span class="linenos">102</span></a>
-</span><span id="L-103"><a href="#L-103"><span class="linenos">103</span></a>    <span class="k">def</span> <span class="nf">getJunctionIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-103"><a href="#L-103"><span class="linenos">103</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getJunctionIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="L-104"><a href="#L-104"><span class="linenos">104</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_from</span><span class="o">.</span><span class="n">getToNode</span><span class="p">()</span><span class="o">.</span><span class="n">getLinkIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 </span><span id="L-105"><a href="#L-105"><span class="linenos">105</span></a>
-</span><span id="L-106"><a href="#L-106"><span class="linenos">106</span></a>    <span class="k">def</span> <span class="nf">getJunction</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-106"><a href="#L-106"><span class="linenos">106</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getJunction</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="L-107"><a href="#L-107"><span class="linenos">107</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_from</span><span class="o">.</span><span class="n">getToNode</span><span class="p">()</span>
 </span><span id="L-108"><a href="#L-108"><span class="linenos">108</span></a>
-</span><span id="L-109"><a href="#L-109"><span class="linenos">109</span></a>    <span class="k">def</span> <span class="nf">getState</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-109"><a href="#L-109"><span class="linenos">109</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getState</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="L-110"><a href="#L-110"><span class="linenos">110</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span>
 </span></pre></div>
 
@@ -254,19 +254,19 @@
 
     </div>
     <a class="headerlink" href="#Connection"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection-25"><a href="#Connection-25"><span class="linenos"> 25</span></a><span class="k">class</span> <span class="nc">Connection</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection-25"><a href="#Connection-25"><span class="linenos"> 25</span></a><span class="k">class</span><span class="w"> </span><span class="nc">Connection</span><span class="p">:</span>
 </span><span id="Connection-26"><a href="#Connection-26"><span class="linenos"> 26</span></a>    <span class="c1"># constants as defined in sumo/src/utils/xml/SUMOXMLDefinitions.cpp</span>
-</span><span id="Connection-27"><a href="#Connection-27"><span class="linenos"> 27</span></a>    <span class="n">LINKDIR_STRAIGHT</span> <span class="o">=</span> <span class="s2">&quot;s&quot;</span>
-</span><span id="Connection-28"><a href="#Connection-28"><span class="linenos"> 28</span></a>    <span class="n">LINKDIR_TURN</span> <span class="o">=</span> <span class="s2">&quot;t&quot;</span>
-</span><span id="Connection-29"><a href="#Connection-29"><span class="linenos"> 29</span></a>    <span class="n">LINKDIR_TURN_LEFTHAND</span> <span class="o">=</span> <span class="s2">&quot;T&quot;</span>
-</span><span id="Connection-30"><a href="#Connection-30"><span class="linenos"> 30</span></a>    <span class="n">LINKDIR_LEFT</span> <span class="o">=</span> <span class="s2">&quot;l&quot;</span>
-</span><span id="Connection-31"><a href="#Connection-31"><span class="linenos"> 31</span></a>    <span class="n">LINKDIR_RIGHT</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span>
-</span><span id="Connection-32"><a href="#Connection-32"><span class="linenos"> 32</span></a>    <span class="n">LINKDIR_PARTLEFT</span> <span class="o">=</span> <span class="s2">&quot;L&quot;</span>
-</span><span id="Connection-33"><a href="#Connection-33"><span class="linenos"> 33</span></a>    <span class="n">LINKDIR_PARTRIGHT</span> <span class="o">=</span> <span class="s2">&quot;R&quot;</span>
+</span><span id="Connection-27"><a href="#Connection-27"><span class="linenos"> 27</span></a>    <span class="n">LINKDIR_STRAIGHT</span> <span class="o">=</span> <span class="s2">"s"</span>
+</span><span id="Connection-28"><a href="#Connection-28"><span class="linenos"> 28</span></a>    <span class="n">LINKDIR_TURN</span> <span class="o">=</span> <span class="s2">"t"</span>
+</span><span id="Connection-29"><a href="#Connection-29"><span class="linenos"> 29</span></a>    <span class="n">LINKDIR_TURN_LEFTHAND</span> <span class="o">=</span> <span class="s2">"T"</span>
+</span><span id="Connection-30"><a href="#Connection-30"><span class="linenos"> 30</span></a>    <span class="n">LINKDIR_LEFT</span> <span class="o">=</span> <span class="s2">"l"</span>
+</span><span id="Connection-31"><a href="#Connection-31"><span class="linenos"> 31</span></a>    <span class="n">LINKDIR_RIGHT</span> <span class="o">=</span> <span class="s2">"r"</span>
+</span><span id="Connection-32"><a href="#Connection-32"><span class="linenos"> 32</span></a>    <span class="n">LINKDIR_PARTLEFT</span> <span class="o">=</span> <span class="s2">"L"</span>
+</span><span id="Connection-33"><a href="#Connection-33"><span class="linenos"> 33</span></a>    <span class="n">LINKDIR_PARTRIGHT</span> <span class="o">=</span> <span class="s2">"R"</span>
 </span><span id="Connection-34"><a href="#Connection-34"><span class="linenos"> 34</span></a>
-</span><span id="Connection-35"><a href="#Connection-35"><span class="linenos"> 35</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;edge connection for a sumo network&quot;&quot;&quot;</span>
+</span><span id="Connection-35"><a href="#Connection-35"><span class="linenos"> 35</span></a><span class="w">    </span><span class="sd">"""edge connection for a sumo network"""</span>
 </span><span id="Connection-36"><a href="#Connection-36"><span class="linenos"> 36</span></a>
-</span><span id="Connection-37"><a href="#Connection-37"><span class="linenos"> 37</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fromEdge</span><span class="p">,</span> <span class="n">toEdge</span><span class="p">,</span> <span class="n">fromLane</span><span class="p">,</span> <span class="n">toLane</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span>
+</span><span id="Connection-37"><a href="#Connection-37"><span class="linenos"> 37</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fromEdge</span><span class="p">,</span> <span class="n">toEdge</span><span class="p">,</span> <span class="n">fromLane</span><span class="p">,</span> <span class="n">toLane</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span>
 </span><span id="Connection-38"><a href="#Connection-38"><span class="linenos"> 38</span></a>                 <span class="n">tls</span><span class="p">,</span> <span class="n">tllink</span><span class="p">,</span> <span class="n">tllink2</span><span class="p">,</span> <span class="n">allow</span><span class="p">,</span> <span class="n">disallow</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">viaLaneID</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 </span><span id="Connection-39"><a href="#Connection-39"><span class="linenos"> 39</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_from</span> <span class="o">=</span> <span class="n">fromEdge</span>
 </span><span id="Connection-40"><a href="#Connection-40"><span class="linenos"> 40</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_to</span> <span class="o">=</span> <span class="n">toEdge</span>
@@ -281,65 +281,65 @@
 </span><span id="Connection-49"><a href="#Connection-49"><span class="linenos"> 49</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_allowed</span> <span class="o">=</span> <span class="n">get_allowed</span><span class="p">(</span><span class="n">allow</span><span class="p">,</span> <span class="n">disallow</span><span class="p">)</span>
 </span><span id="Connection-50"><a href="#Connection-50"><span class="linenos"> 50</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_params</span> <span class="o">=</span> <span class="p">{}</span>
 </span><span id="Connection-51"><a href="#Connection-51"><span class="linenos"> 51</span></a>
-</span><span id="Connection-52"><a href="#Connection-52"><span class="linenos"> 52</span></a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Connection-53"><a href="#Connection-53"><span class="linenos"> 53</span></a>        <span class="k">return</span> <span class="s1">&#39;&lt;connection from=&quot;</span><span class="si">%s</span><span class="s1">&quot; to=&quot;</span><span class="si">%s</span><span class="s1">&quot; fromLane=&quot;</span><span class="si">%s</span><span class="s1">&quot; toLane=&quot;</span><span class="si">%s</span><span class="s1">&quot; </span><span class="si">%s%s</span><span class="s1">direction=&quot;</span><span class="si">%s</span><span class="s1">&quot;&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span>
+</span><span id="Connection-52"><a href="#Connection-52"><span class="linenos"> 52</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Connection-53"><a href="#Connection-53"><span class="linenos"> 53</span></a>        <span class="k">return</span> <span class="s1">'&lt;connection from="</span><span class="si">%s</span><span class="s1">" to="</span><span class="si">%s</span><span class="s1">" fromLane="</span><span class="si">%s</span><span class="s1">" toLane="</span><span class="si">%s</span><span class="s1">" </span><span class="si">%s%s</span><span class="s1">direction="</span><span class="si">%s</span><span class="s1">"&gt;'</span> <span class="o">%</span> <span class="p">(</span>
 </span><span id="Connection-54"><a href="#Connection-54"><span class="linenos"> 54</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_from</span><span class="o">.</span><span class="n">getID</span><span class="p">(),</span>
 </span><span id="Connection-55"><a href="#Connection-55"><span class="linenos"> 55</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_to</span><span class="o">.</span><span class="n">getID</span><span class="p">(),</span>
 </span><span id="Connection-56"><a href="#Connection-56"><span class="linenos"> 56</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_fromLane</span><span class="o">.</span><span class="n">getIndex</span><span class="p">(),</span>
 </span><span id="Connection-57"><a href="#Connection-57"><span class="linenos"> 57</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_toLane</span><span class="o">.</span><span class="n">getIndex</span><span class="p">(),</span>
-</span><span id="Connection-58"><a href="#Connection-58"><span class="linenos"> 58</span></a>            <span class="p">(</span><span class="s1">&#39;&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tls</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="k">else</span> <span class="s1">&#39;tl=&quot;</span><span class="si">%s</span><span class="s1">&quot; linkIndex=&quot;</span><span class="si">%s</span><span class="s1">&quot; &#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_tls</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink</span><span class="p">)),</span>
-</span><span id="Connection-59"><a href="#Connection-59"><span class="linenos"> 59</span></a>            <span class="p">(</span><span class="s1">&#39;&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink2</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39; linkIndex2=&quot;</span><span class="si">%s</span><span class="s1">&quot; &#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink2</span><span class="p">),</span>
+</span><span id="Connection-58"><a href="#Connection-58"><span class="linenos"> 58</span></a>            <span class="p">(</span><span class="s1">''</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tls</span> <span class="o">==</span> <span class="s1">''</span> <span class="k">else</span> <span class="s1">'tl="</span><span class="si">%s</span><span class="s1">" linkIndex="</span><span class="si">%s</span><span class="s1">" '</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_tls</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink</span><span class="p">)),</span>
+</span><span id="Connection-59"><a href="#Connection-59"><span class="linenos"> 59</span></a>            <span class="p">(</span><span class="s1">''</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink2</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">' linkIndex2="</span><span class="si">%s</span><span class="s1">" '</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink2</span><span class="p">),</span>
 </span><span id="Connection-60"><a href="#Connection-60"><span class="linenos"> 60</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_direction</span><span class="p">)</span>
 </span><span id="Connection-61"><a href="#Connection-61"><span class="linenos"> 61</span></a>
-</span><span id="Connection-62"><a href="#Connection-62"><span class="linenos"> 62</span></a>    <span class="k">def</span> <span class="nf">allows</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vClass</span><span class="p">):</span>
-</span><span id="Connection-63"><a href="#Connection-63"><span class="linenos"> 63</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;true if this connection allows the given vehicle class&quot;&quot;&quot;</span>
-</span><span id="Connection-64"><a href="#Connection-64"><span class="linenos"> 64</span></a>        <span class="k">if</span> <span class="n">vClass</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">vClass</span> <span class="o">==</span> <span class="s2">&quot;ignoring&quot;</span><span class="p">:</span>
+</span><span id="Connection-62"><a href="#Connection-62"><span class="linenos"> 62</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">allows</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vClass</span><span class="p">):</span>
+</span><span id="Connection-63"><a href="#Connection-63"><span class="linenos"> 63</span></a><span class="w">        </span><span class="sd">"""true if this connection allows the given vehicle class"""</span>
+</span><span id="Connection-64"><a href="#Connection-64"><span class="linenos"> 64</span></a>        <span class="k">if</span> <span class="n">vClass</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">vClass</span> <span class="o">==</span> <span class="s2">"ignoring"</span><span class="p">:</span>
 </span><span id="Connection-65"><a href="#Connection-65"><span class="linenos"> 65</span></a>            <span class="k">return</span> <span class="kc">True</span>
 </span><span id="Connection-66"><a href="#Connection-66"><span class="linenos"> 66</span></a>        <span class="k">return</span> <span class="n">vClass</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allowed</span>
 </span><span id="Connection-67"><a href="#Connection-67"><span class="linenos"> 67</span></a>
-</span><span id="Connection-68"><a href="#Connection-68"><span class="linenos"> 68</span></a>    <span class="k">def</span> <span class="nf">setParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+</span><span id="Connection-68"><a href="#Connection-68"><span class="linenos"> 68</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">setParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 </span><span id="Connection-69"><a href="#Connection-69"><span class="linenos"> 69</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 </span><span id="Connection-70"><a href="#Connection-70"><span class="linenos"> 70</span></a>
-</span><span id="Connection-71"><a href="#Connection-71"><span class="linenos"> 71</span></a>    <span class="k">def</span> <span class="nf">getParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="Connection-71"><a href="#Connection-71"><span class="linenos"> 71</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 </span><span id="Connection-72"><a href="#Connection-72"><span class="linenos"> 72</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
 </span><span id="Connection-73"><a href="#Connection-73"><span class="linenos"> 73</span></a>
-</span><span id="Connection-74"><a href="#Connection-74"><span class="linenos"> 74</span></a>    <span class="k">def</span> <span class="nf">getParams</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Connection-74"><a href="#Connection-74"><span class="linenos"> 74</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getParams</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection-75"><a href="#Connection-75"><span class="linenos"> 75</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_params</span>
 </span><span id="Connection-76"><a href="#Connection-76"><span class="linenos"> 76</span></a>
-</span><span id="Connection-77"><a href="#Connection-77"><span class="linenos"> 77</span></a>    <span class="k">def</span> <span class="nf">getFrom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Connection-77"><a href="#Connection-77"><span class="linenos"> 77</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getFrom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection-78"><a href="#Connection-78"><span class="linenos"> 78</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fromLane</span><span class="o">.</span><span class="n">getEdge</span><span class="p">()</span>
 </span><span id="Connection-79"><a href="#Connection-79"><span class="linenos"> 79</span></a>
-</span><span id="Connection-80"><a href="#Connection-80"><span class="linenos"> 80</span></a>    <span class="k">def</span> <span class="nf">getTo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Connection-80"><a href="#Connection-80"><span class="linenos"> 80</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getTo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection-81"><a href="#Connection-81"><span class="linenos"> 81</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toLane</span><span class="o">.</span><span class="n">getEdge</span><span class="p">()</span>
 </span><span id="Connection-82"><a href="#Connection-82"><span class="linenos"> 82</span></a>
-</span><span id="Connection-83"><a href="#Connection-83"><span class="linenos"> 83</span></a>    <span class="k">def</span> <span class="nf">getFromLane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Connection-83"><a href="#Connection-83"><span class="linenos"> 83</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getFromLane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection-84"><a href="#Connection-84"><span class="linenos"> 84</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fromLane</span>
 </span><span id="Connection-85"><a href="#Connection-85"><span class="linenos"> 85</span></a>
-</span><span id="Connection-86"><a href="#Connection-86"><span class="linenos"> 86</span></a>    <span class="k">def</span> <span class="nf">getToLane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Connection-86"><a href="#Connection-86"><span class="linenos"> 86</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getToLane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection-87"><a href="#Connection-87"><span class="linenos"> 87</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toLane</span>
 </span><span id="Connection-88"><a href="#Connection-88"><span class="linenos"> 88</span></a>
-</span><span id="Connection-89"><a href="#Connection-89"><span class="linenos"> 89</span></a>    <span class="k">def</span> <span class="nf">getViaLaneID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Connection-89"><a href="#Connection-89"><span class="linenos"> 89</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getViaLaneID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection-90"><a href="#Connection-90"><span class="linenos"> 90</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_via</span>
 </span><span id="Connection-91"><a href="#Connection-91"><span class="linenos"> 91</span></a>
-</span><span id="Connection-92"><a href="#Connection-92"><span class="linenos"> 92</span></a>    <span class="k">def</span> <span class="nf">getDirection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Connection-92"><a href="#Connection-92"><span class="linenos"> 92</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getDirection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection-93"><a href="#Connection-93"><span class="linenos"> 93</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direction</span>
 </span><span id="Connection-94"><a href="#Connection-94"><span class="linenos"> 94</span></a>
-</span><span id="Connection-95"><a href="#Connection-95"><span class="linenos"> 95</span></a>    <span class="k">def</span> <span class="nf">getTLSID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Connection-95"><a href="#Connection-95"><span class="linenos"> 95</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getTLSID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection-96"><a href="#Connection-96"><span class="linenos"> 96</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tls</span>
 </span><span id="Connection-97"><a href="#Connection-97"><span class="linenos"> 97</span></a>
-</span><span id="Connection-98"><a href="#Connection-98"><span class="linenos"> 98</span></a>    <span class="k">def</span> <span class="nf">getTLLinkIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Connection-98"><a href="#Connection-98"><span class="linenos"> 98</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getTLLinkIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection-99"><a href="#Connection-99"><span class="linenos"> 99</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink</span>
 </span><span id="Connection-100"><a href="#Connection-100"><span class="linenos">100</span></a>
-</span><span id="Connection-101"><a href="#Connection-101"><span class="linenos">101</span></a>    <span class="k">def</span> <span class="nf">getTLLinkIndex2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Connection-101"><a href="#Connection-101"><span class="linenos">101</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getTLLinkIndex2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection-102"><a href="#Connection-102"><span class="linenos">102</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink2</span>
 </span><span id="Connection-103"><a href="#Connection-103"><span class="linenos">103</span></a>
-</span><span id="Connection-104"><a href="#Connection-104"><span class="linenos">104</span></a>    <span class="k">def</span> <span class="nf">getJunctionIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Connection-104"><a href="#Connection-104"><span class="linenos">104</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getJunctionIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection-105"><a href="#Connection-105"><span class="linenos">105</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_from</span><span class="o">.</span><span class="n">getToNode</span><span class="p">()</span><span class="o">.</span><span class="n">getLinkIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 </span><span id="Connection-106"><a href="#Connection-106"><span class="linenos">106</span></a>
-</span><span id="Connection-107"><a href="#Connection-107"><span class="linenos">107</span></a>    <span class="k">def</span> <span class="nf">getJunction</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Connection-107"><a href="#Connection-107"><span class="linenos">107</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getJunction</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection-108"><a href="#Connection-108"><span class="linenos">108</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_from</span><span class="o">.</span><span class="n">getToNode</span><span class="p">()</span>
 </span><span id="Connection-109"><a href="#Connection-109"><span class="linenos">109</span></a>
-</span><span id="Connection-110"><a href="#Connection-110"><span class="linenos">110</span></a>    <span class="k">def</span> <span class="nf">getState</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Connection-110"><a href="#Connection-110"><span class="linenos">110</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getState</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection-111"><a href="#Connection-111"><span class="linenos">111</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span>
 </span></pre></div>
 
@@ -356,7 +356,7 @@
 
     </div>
     <a class="headerlink" href="#Connection.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.__init__-37"><a href="#Connection.__init__-37"><span class="linenos">37</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fromEdge</span><span class="p">,</span> <span class="n">toEdge</span><span class="p">,</span> <span class="n">fromLane</span><span class="p">,</span> <span class="n">toLane</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.__init__-37"><a href="#Connection.__init__-37"><span class="linenos">37</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fromEdge</span><span class="p">,</span> <span class="n">toEdge</span><span class="p">,</span> <span class="n">fromLane</span><span class="p">,</span> <span class="n">toLane</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span>
 </span><span id="Connection.__init__-38"><a href="#Connection.__init__-38"><span class="linenos">38</span></a>                 <span class="n">tls</span><span class="p">,</span> <span class="n">tllink</span><span class="p">,</span> <span class="n">tllink2</span><span class="p">,</span> <span class="n">allow</span><span class="p">,</span> <span class="n">disallow</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">viaLaneID</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 </span><span id="Connection.__init__-39"><a href="#Connection.__init__-39"><span class="linenos">39</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_from</span> <span class="o">=</span> <span class="n">fromEdge</span>
 </span><span id="Connection.__init__-40"><a href="#Connection.__init__-40"><span class="linenos">40</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_to</span> <span class="o">=</span> <span class="n">toEdge</span>
@@ -473,9 +473,9 @@
 
     </div>
     <a class="headerlink" href="#Connection.allows"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.allows-62"><a href="#Connection.allows-62"><span class="linenos">62</span></a>    <span class="k">def</span> <span class="nf">allows</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vClass</span><span class="p">):</span>
-</span><span id="Connection.allows-63"><a href="#Connection.allows-63"><span class="linenos">63</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;true if this connection allows the given vehicle class&quot;&quot;&quot;</span>
-</span><span id="Connection.allows-64"><a href="#Connection.allows-64"><span class="linenos">64</span></a>        <span class="k">if</span> <span class="n">vClass</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">vClass</span> <span class="o">==</span> <span class="s2">&quot;ignoring&quot;</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.allows-62"><a href="#Connection.allows-62"><span class="linenos">62</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">allows</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vClass</span><span class="p">):</span>
+</span><span id="Connection.allows-63"><a href="#Connection.allows-63"><span class="linenos">63</span></a><span class="w">        </span><span class="sd">"""true if this connection allows the given vehicle class"""</span>
+</span><span id="Connection.allows-64"><a href="#Connection.allows-64"><span class="linenos">64</span></a>        <span class="k">if</span> <span class="n">vClass</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">vClass</span> <span class="o">==</span> <span class="s2">"ignoring"</span><span class="p">:</span>
 </span><span id="Connection.allows-65"><a href="#Connection.allows-65"><span class="linenos">65</span></a>            <span class="k">return</span> <span class="kc">True</span>
 </span><span id="Connection.allows-66"><a href="#Connection.allows-66"><span class="linenos">66</span></a>        <span class="k">return</span> <span class="n">vClass</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allowed</span>
 </span></pre></div>
@@ -497,7 +497,7 @@
 
     </div>
     <a class="headerlink" href="#Connection.setParam"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.setParam-68"><a href="#Connection.setParam-68"><span class="linenos">68</span></a>    <span class="k">def</span> <span class="nf">setParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.setParam-68"><a href="#Connection.setParam-68"><span class="linenos">68</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">setParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 </span><span id="Connection.setParam-69"><a href="#Connection.setParam-69"><span class="linenos">69</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 </span></pre></div>
 
@@ -516,7 +516,7 @@
 
     </div>
     <a class="headerlink" href="#Connection.getParam"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getParam-71"><a href="#Connection.getParam-71"><span class="linenos">71</span></a>    <span class="k">def</span> <span class="nf">getParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getParam-71"><a href="#Connection.getParam-71"><span class="linenos">71</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 </span><span id="Connection.getParam-72"><a href="#Connection.getParam-72"><span class="linenos">72</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
 </span></pre></div>
 
@@ -535,7 +535,7 @@
 
     </div>
     <a class="headerlink" href="#Connection.getParams"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getParams-74"><a href="#Connection.getParams-74"><span class="linenos">74</span></a>    <span class="k">def</span> <span class="nf">getParams</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getParams-74"><a href="#Connection.getParams-74"><span class="linenos">74</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getParams</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection.getParams-75"><a href="#Connection.getParams-75"><span class="linenos">75</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_params</span>
 </span></pre></div>
 
@@ -554,7 +554,7 @@
 
     </div>
     <a class="headerlink" href="#Connection.getFrom"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getFrom-77"><a href="#Connection.getFrom-77"><span class="linenos">77</span></a>    <span class="k">def</span> <span class="nf">getFrom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getFrom-77"><a href="#Connection.getFrom-77"><span class="linenos">77</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getFrom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection.getFrom-78"><a href="#Connection.getFrom-78"><span class="linenos">78</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fromLane</span><span class="o">.</span><span class="n">getEdge</span><span class="p">()</span>
 </span></pre></div>
 
@@ -573,7 +573,7 @@
 
     </div>
     <a class="headerlink" href="#Connection.getTo"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getTo-80"><a href="#Connection.getTo-80"><span class="linenos">80</span></a>    <span class="k">def</span> <span class="nf">getTo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getTo-80"><a href="#Connection.getTo-80"><span class="linenos">80</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getTo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection.getTo-81"><a href="#Connection.getTo-81"><span class="linenos">81</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toLane</span><span class="o">.</span><span class="n">getEdge</span><span class="p">()</span>
 </span></pre></div>
 
@@ -592,7 +592,7 @@
 
     </div>
     <a class="headerlink" href="#Connection.getFromLane"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getFromLane-83"><a href="#Connection.getFromLane-83"><span class="linenos">83</span></a>    <span class="k">def</span> <span class="nf">getFromLane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getFromLane-83"><a href="#Connection.getFromLane-83"><span class="linenos">83</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getFromLane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection.getFromLane-84"><a href="#Connection.getFromLane-84"><span class="linenos">84</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fromLane</span>
 </span></pre></div>
 
@@ -611,7 +611,7 @@
 
     </div>
     <a class="headerlink" href="#Connection.getToLane"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getToLane-86"><a href="#Connection.getToLane-86"><span class="linenos">86</span></a>    <span class="k">def</span> <span class="nf">getToLane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getToLane-86"><a href="#Connection.getToLane-86"><span class="linenos">86</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getToLane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection.getToLane-87"><a href="#Connection.getToLane-87"><span class="linenos">87</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toLane</span>
 </span></pre></div>
 
@@ -630,7 +630,7 @@
 
     </div>
     <a class="headerlink" href="#Connection.getViaLaneID"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getViaLaneID-89"><a href="#Connection.getViaLaneID-89"><span class="linenos">89</span></a>    <span class="k">def</span> <span class="nf">getViaLaneID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getViaLaneID-89"><a href="#Connection.getViaLaneID-89"><span class="linenos">89</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getViaLaneID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection.getViaLaneID-90"><a href="#Connection.getViaLaneID-90"><span class="linenos">90</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_via</span>
 </span></pre></div>
 
@@ -649,7 +649,7 @@
 
     </div>
     <a class="headerlink" href="#Connection.getDirection"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getDirection-92"><a href="#Connection.getDirection-92"><span class="linenos">92</span></a>    <span class="k">def</span> <span class="nf">getDirection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getDirection-92"><a href="#Connection.getDirection-92"><span class="linenos">92</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getDirection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection.getDirection-93"><a href="#Connection.getDirection-93"><span class="linenos">93</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direction</span>
 </span></pre></div>
 
@@ -668,7 +668,7 @@
 
     </div>
     <a class="headerlink" href="#Connection.getTLSID"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getTLSID-95"><a href="#Connection.getTLSID-95"><span class="linenos">95</span></a>    <span class="k">def</span> <span class="nf">getTLSID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getTLSID-95"><a href="#Connection.getTLSID-95"><span class="linenos">95</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getTLSID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection.getTLSID-96"><a href="#Connection.getTLSID-96"><span class="linenos">96</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tls</span>
 </span></pre></div>
 
@@ -687,7 +687,7 @@
 
     </div>
     <a class="headerlink" href="#Connection.getTLLinkIndex"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getTLLinkIndex-98"><a href="#Connection.getTLLinkIndex-98"><span class="linenos">98</span></a>    <span class="k">def</span> <span class="nf">getTLLinkIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getTLLinkIndex-98"><a href="#Connection.getTLLinkIndex-98"><span class="linenos">98</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getTLLinkIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection.getTLLinkIndex-99"><a href="#Connection.getTLLinkIndex-99"><span class="linenos">99</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink</span>
 </span></pre></div>
 
@@ -706,7 +706,7 @@
 
     </div>
     <a class="headerlink" href="#Connection.getTLLinkIndex2"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getTLLinkIndex2-101"><a href="#Connection.getTLLinkIndex2-101"><span class="linenos">101</span></a>    <span class="k">def</span> <span class="nf">getTLLinkIndex2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getTLLinkIndex2-101"><a href="#Connection.getTLLinkIndex2-101"><span class="linenos">101</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getTLLinkIndex2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection.getTLLinkIndex2-102"><a href="#Connection.getTLLinkIndex2-102"><span class="linenos">102</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tlLink2</span>
 </span></pre></div>
 
@@ -725,7 +725,7 @@
 
     </div>
     <a class="headerlink" href="#Connection.getJunctionIndex"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getJunctionIndex-104"><a href="#Connection.getJunctionIndex-104"><span class="linenos">104</span></a>    <span class="k">def</span> <span class="nf">getJunctionIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getJunctionIndex-104"><a href="#Connection.getJunctionIndex-104"><span class="linenos">104</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getJunctionIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection.getJunctionIndex-105"><a href="#Connection.getJunctionIndex-105"><span class="linenos">105</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_from</span><span class="o">.</span><span class="n">getToNode</span><span class="p">()</span><span class="o">.</span><span class="n">getLinkIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 </span></pre></div>
 
@@ -744,7 +744,7 @@
 
     </div>
     <a class="headerlink" href="#Connection.getJunction"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getJunction-107"><a href="#Connection.getJunction-107"><span class="linenos">107</span></a>    <span class="k">def</span> <span class="nf">getJunction</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getJunction-107"><a href="#Connection.getJunction-107"><span class="linenos">107</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getJunction</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection.getJunction-108"><a href="#Connection.getJunction-108"><span class="linenos">108</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_from</span><span class="o">.</span><span class="n">getToNode</span><span class="p">()</span>
 </span></pre></div>
 
@@ -763,7 +763,7 @@
 
     </div>
     <a class="headerlink" href="#Connection.getState"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getState-110"><a href="#Connection.getState-110"><span class="linenos">110</span></a>    <span class="k">def</span> <span class="nf">getState</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Connection.getState-110"><a href="#Connection.getState-110"><span class="linenos">110</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getState</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="Connection.getState-111"><a href="#Connection.getState-111"><span class="linenos">111</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span>
 </span></pre></div>
 

@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 12 October 2026
+Last edit: 11 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -400,6 +400,11 @@ edges are affected.</p>
 interval [c,d[.</p>
 <pre><code>python tools/route/route_departOffset.py --input-file &lt;route-file&gt; --output-file shifted.rou.xml --depart-interval 3600,7200,0,500
 </code></pre>
+<p>Negative values for <strong>--depart-offset</strong> are allowed and clamp departures to 0. The option
+<strong>--random-depart-offset MIN,MAX</strong> shifts every departure by a uniformly random value from
+[MIN,MAX[; use <strong>--seed</strong> to make the sequence reproducible.</p>
+<pre><code>python tools/route/route_departOffset.py --input-file &lt;route-file&gt; --output-file shifted.rou.xml --random-depart-offset -1800,900 --seed 42
+</code></pre>
 <h1 id="route_1htoday">route_1htoDay<a class="headerlink" href="#route_1htoday" title="Permanent link">#</a></h1>
 <p>Uses "route_departOffset.py" for building 24 route files which describe a whole day assuming the given route files describes an hour.</p>
 <pre><code>python tools/route/route_1htoDay.py &lt;route-file&gt;
@@ -654,7 +659,7 @@ Departure pois will be red and arrival pois will be blue and their visual size r
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 12 October 2026</i></small>
+            <br><small><i>This page was last edited on: 11 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

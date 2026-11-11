@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 12 October 2026
+Last edit: 11 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -174,6 +174,9 @@ Last edit: 12 October 2026
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#context" class="nav-link">• Context</a>
                 </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#osm_web_wizard" class="nav-link">• OSM Web Wizard</a>
+                </li>
             <li class="nav-item main"><a href="#using_translations">Using translations</a></li>
             <li class="nav-item main"><a href="#testing_translations">Testing translations</a></li>
             <li class="nav-item main"><a href="#new_language">New language</a></li>
@@ -253,14 +256,27 @@ Below is the list of context identifiers currently in use:</p>
 <li>Simulation</li>
 <li>Labels</li>
 </ul>
+<h2 id="osm_web_wizard">OSM Web Wizard<a class="headerlink" href="#osm_web_wizard" title="Permanent link">#</a></h2>
+<p>The strings of the web interface of the OSM Web Wizard (<code>tools/webWizard</code>) end up in the separate
+translation files <code>data/po/&lt;lang&gt;_osmWebWizard.po</code>. In <code>index.html</code> an element with the attribute <code>data-i18n</code> gets its
+(direct) text content translated and the attribute <code>data-i18n-attrs</code> lists the attributes to translate
+(e.g. <code>&lt;input type="button" value="Search" data-i18n-attrs="value"/&gt;</code>). In the JavaScript code the
+functions <code>TL</code> and <code>TLF</code> work like their C++ counterparts. Strings of dynamically created elements which are marked
+with <code>data-i18n</code> should be wrapped in <code>N_</code> (marks the string for translation without translating it).
+The progress messages sent by <code>osmWebWizard.py</code> belong to the same files: they are wrapped in <code>self.TL</code> / <code>builder.TL</code>
+(or <code>N_</code>) and translated on the server into the language selected in the web interface.
+The translations are delivered to the browser by <code>osmWebWizard.py</code>. The languages offered in the language selection
+of the web interface are listed in <code>LANGUAGES</code> in <code>tools/webWizard/lib.js</code>, and should match the ones available in sumo-gui / netedit. By default the language of the browser is used
+(if it is in this list). For testing you can use <code>osmWebWizard.py --language es</code>.</p>
 <h1 id="using_translations">Using translations<a class="headerlink" href="#using_translations" title="Permanent link">#</a></h1>
 <p>Translations are enabled by default. The needed gettext tools and
 internationalization library are probably already installed on Linux.
 If not use the equivalent of <code>sudo apt install gettext</code> on your system.
 It is also a good idea to do <code>sudo apt install locales-all</code> to make sure all the needed locales are on your system.
 For Windows we have everything in the SUMOLibraries.</p>
-<p>The translation strings are split into three files for each language residing in <code>$SUMO_HOME/data/po</code>,
-one for GUI stuff, one for the command line applications and one for the python tools.
+<p>The translation strings are split into four files for each language residing in <code>$SUMO_HOME/data/po</code>,
+one for GUI stuff, one for the command line applications, one for the python tools and one for the
+web interface of the <a href="../Tutorials/OSMWebWizard.html">OSM Web Wizard</a>.
 While it is possible to edit these files directly, it is discouraged to avoid merge conflicts with the
 Weblate translations. These files still need to be compiled to be usable. Currently this is done manually
 by calling <code>tools/build_config/i18n.py</code>. This script also does a full scan of the <code>src</code> dir and checks for new
@@ -298,7 +314,7 @@ print the obsolete translations and optionally remove them completely from the <
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 12 October 2026</i></small>
+            <br><small><i>This page was last edited on: 11 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

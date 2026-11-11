@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 12 October 2026
+Last edit: 11 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -231,7 +231,7 @@ Last edit: 12 October 2026
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#kilometrage_mileage_chainage" class="nav-link">• Kilometrage (Mileage, Chainage)</a>
                 </li>
-            <li class="nav-item main"><a href="#modelling_trains">Modelling Trains</a></li>
+            <li class="nav-item main"><a href="#modeling_trains">Modeling Trains</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#custom_dynamics_model_with_tabular_data" class="nav-link">• Custom dynamics model with tabular data</a>
                 </li>
@@ -284,7 +284,7 @@ Last edit: 12 October 2026
                     <a href="#tram_behavior" class="nav-link">• Tram Behavior</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#tram_network_modelling" class="nav-link">• Tram Network modelling</a>
+                    <a href="#tram_network_modeling" class="nav-link">• Tram Network modeling</a>
                 </li>
             <li class="nav-item main"><a href="#deadlocks">Deadlocks</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
@@ -369,7 +369,7 @@ Last edit: 12 October 2026
 intermodal simulation scenario with trains, additional steps have to be
 taken in comparison to a plain vehicular simulation.</p>
 <h1 id="building_a_network_for_train_simulation">Building a network for train simulation<a class="headerlink" href="#building_a_network_for_train_simulation" title="Permanent link">#</a></h1>
-<p>The following section describes network modelling and import for conventional rail operations. <a href="#tram_network_modelling">Special consideration for tram simulations are found below</a>.</p>
+<p>The following section describes network modeling and import for conventional rail operations. <a href="#tram_network_modeling">Special consideration for tram simulations are found below</a>.</p>
 <h2 id="railways">Railways<a class="headerlink" href="#railways" title="Permanent link">#</a></h2>
 <p>Railways can be imported from all the input formats supported by <a href="../netconvert.html#import">netconvert</a>.
 When importing from <a href="../Networks/Import/OpenStreetMap.html">OSM</a>, railways will already configured for the appropriate <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#abstract_vehicle_class">vehicle classes</a> (i.e. <code>rail</code>)
@@ -433,7 +433,7 @@ will restrict its usage to one direction at a time.</p>
 <h3 id="working_with_bidirectional_tracks_in_netedit">Working with bidirectional tracks in <a href="../Netedit/index.html">netedit</a><a class="headerlink" href="#working_with_bidirectional_tracks_in_netedit" title="Permanent link">#</a></h3>
 <ul>
 <li>To show both edges that constitute a bidirectional track, activate
-  edge visualization option <em>spread bidirectional railways/roads</em> (see <a href="../sumo-gui.html#edgelane_visualisation_settings">visualization settings</a>). Both edges will be
+  edge visualization option <em>spread bidirectional railways/roads</em> (see <a href="../sumo-gui.html#edgelane_visualization_settings">visualization settings</a>). Both edges will be
   drawn narrower and with a side-offset to make them both visible
   without overlap.<ul>
 <li>this is highly recommended when using connection mode to define connections among bidirectional tracks as it's otherwise hard to distinguish the affected edges</li>
@@ -596,7 +596,7 @@ Time values are in seconds.</p>
 <p>Edges can be configured to take part in a <a href="https://en.wikipedia.org/wiki/Linear_referencing">linear
 referencing scheme</a> by setting their <a href="Distances.html#defining_and_using_linear_coordinates"><code>distance</code>-attribute</a>.
 The linear coordinates of a vehicle can be included in <a href="Output/FCDOutput.html#further_options">fcd-output</a> using option <strong>--fcd-output.distance</strong>.</p>
-<h1 id="modelling_trains">Modelling Trains<a class="headerlink" href="#modelling_trains" title="Permanent link">#</a></h1>
+<h1 id="modeling_trains">Modeling Trains<a class="headerlink" href="#modeling_trains" title="Permanent link">#</a></h1>
 <p>There is a dedicated carFollowMode for trains which can be activated by
 setting <code>carFollowModel="Rail" trainType="&lt;TYPE&gt;"</code> in the <code>&lt;vType&gt;</code> definition. Allowed values for trainType are</p>
 <ul>
@@ -851,7 +851,7 @@ To make use of this, the following elements can be loaded from an additional fil
 <h2 id="tram_behavior">Tram Behavior<a class="headerlink" href="#tram_behavior" title="Permanent link">#</a></h2>
 <p>Operationally, there are many similarities between tram and conventional/heavy rail operations with regard to track networks and signaling at conflict points.
 The main difference is that trams are not separated by blocks when following each other. To reflect this in sumo, rail signals on tram tracks are automatically put into <a href="#moving_block_mode">moving block mode</a> (This is configured with option <strong>--railsignal.moving-block.default-classes</strong>). Tram rail signals are still needed to regulate bidirectional access to single-track sections and they can be used to guard crossing and merging conflicts. However, fewer rail signals are needed compared to a conventional rail simulation because block length is not a critical efficiency factor in one-directional operations.</p>
-<h2 id="tram_network_modelling">Tram Network modelling<a class="headerlink" href="#tram_network_modelling" title="Permanent link">#</a></h2>
+<h2 id="tram_network_modeling">Tram Network modeling<a class="headerlink" href="#tram_network_modeling" title="Permanent link">#</a></h2>
 <p>In many parts of the world, OSM data does not provide information of signaling infrastructure for tram networks. To achieve smooth operations at conflict points without rail signals, <a href="../netconvert.html">netconvert</a> sets merging conflicts to junction type 'zipper'. The vehicle classes eligible for this behavior are configured with netconvert option <strong>--railway.signal.permit-unsignalized</strong> (default <em>tram,cable_car</em>).</p>
 <p>For many tram networks (i.e. with single track sections), this type of conflict handling is not sufficient and rail signals must be added. This can be done manually with netedit or with the tool
 <a href="../Tools/Railways.html#patchrailconflictspy">patchRailConflicts.py</a>.</p>
@@ -965,7 +965,7 @@ The parameter <code>carriageImages</code> accepts a comma-separated list of imag
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Street coloring mode <a href="../sumo-gui.html#edgelane_visualisation_settings"><em>by insertion backlog</em></a> helps to identify the tracks on which insertion is currently blocked.</p>
+<p>Street coloring mode <a href="../sumo-gui.html#edgelane_visualization_settings"><em>by insertion backlog</em></a> helps to identify the tracks on which insertion is currently blocked.</p>
 </div>
 <h2 id="abstract_networks">Abstract Networks<a class="headerlink" href="#abstract_networks" title="Permanent link">#</a></h2>
 <p>Road networks are most often modelled according to their actual layout in <a href="../Geo-Coordinates.html">cartesian space</a>. Such networks have all distances and angles in the same proportions as those of geographical map.</p>
@@ -1156,7 +1156,7 @@ used. The attribute <code>source</code> must be set to the ID of the junction th
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 12 October 2026</i></small>
+            <br><small><i>This page was last edited on: 11 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

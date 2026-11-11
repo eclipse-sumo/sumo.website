@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 12 October 2026
+Last edit: 11 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -181,6 +181,12 @@ Last edit: 12 October 2026
                     <a href="#valgrind" class="nav-link">• valgrind</a>
                 </li>
             <li class="nav-item main"><a href="#python_profiling">Python profiling</a></li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#individual_methods_or_code_sections" class="nav-link">• Individual methods or code sections</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#all_lines_of_a_function" class="nav-link">• All Lines of a function</a>
+                </li>
         </ul>
     </div>
 
@@ -261,7 +267,39 @@ because most of the time the tooling (except for the visual part) is already ins
 <h2 id="valgrind">valgrind<a class="headerlink" href="#valgrind" title="Permanent link">#</a></h2>
 <p>TBD</p>
 <h1 id="python_profiling">Python profiling<a class="headerlink" href="#python_profiling" title="Permanent link">#</a></h1>
-<p>TBD</p>
+<h2 id="individual_methods_or_code_sections">Individual methods or code sections<a class="headerlink" href="#individual_methods_or_code_sections" title="Permanent link">#</a></h2>
+<pre><code>from sumolib.miscutils import Benchmarker, benchmark, benchmark_cumulative
+
+# timing for each invocation of this code section
+with Benchmarker(True, &quot;info text&quot;):
+    your_method()
+    your_method2()
+
+@benchmark
+def method3():
+    ...
+# individual timing for each call of the function
+method3()
+
+@benchmark_cumulative
+def method4():
+    ...
+
+# cumulative timing for all calls of the function
+for i in range(10):
+    method4()
+</code></pre>
+<h2 id="all_lines_of_a_function">All Lines of a function<a class="headerlink" href="#all_lines_of_a_function" title="Permanent link">#</a></h2>
+<p>requisite: <code>pip install line_profiler</code></p>
+<pre><code>from line_profiler import profile
+
+@profile
+def your_method():
+  ...
+</code></pre>
+<p>This generates statistics on every line of <code>your_method</code> accumulated over all invocations (number of executions, total time, relative time).</p>
+<p>call
+<code>kernprof -l script.py &gt; profiling_info.txt</code></p>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -269,7 +307,7 @@ because most of the time the tooling (except for the visual part) is already ins
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 12 October 2026</i></small>
+            <br><small><i>This page was last edited on: 11 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

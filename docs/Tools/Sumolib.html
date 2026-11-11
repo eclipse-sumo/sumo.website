@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 12 October 2026
+Last edit: 11 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -188,6 +188,9 @@ Last edit: 12 October 2026
                     <a href="#locate_nearby_edges_based_on_the_geo-coordinate" class="nav-link">• locate nearby edges based on the geo-coordinate</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#locate_the_nearest_lane" class="nav-link">• locate the nearest lane</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
                     <a href="#parse_all_edges_in_a_route_file" class="nav-link">• parse all edges in a route file</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
@@ -321,6 +324,21 @@ if len(edges) &gt; 0:
     distancesAndEdges = sorted([(dist, edge) for edge, dist in edges], key=lambda x:x[0])
     dist, closestEdge = distancesAndEdges[0]
 </code></pre>
+<h2 id="locate_the_nearest_lane">locate the nearest lane<a class="headerlink" href="#locate_the_nearest_lane" title="Permanent link">#</a></h2>
+<p><code>getNearestLane</code> returns the nearest lane, the position along it, and the
+distance to it in meters. Only lanes at a distance less than the search
+radius are considered; it returns <code>None</code> if no lane matches.</p>
+<pre><code class="language-python">result = net.getNearestLane(x, y, r=100, vClass=&quot;passenger&quot;)
+if result is not None:
+    lane, lanePos, dist = result
+</code></pre>
+<p>Omit <code>vClass</code> to consider all vehicle classes. To pass longitude and latitude
+instead of network coordinates, use <code>isGeo=True</code> (requires <code>pyproj</code> and a
+network with a geo-projection). The radius remains in meters:</p>
+<pre><code class="language-python">result = net.getNearestLane(lon, lat, r=100, vClass=&quot;passenger&quot;, isGeo=True)
+</code></pre>
+<p>Matching uses the actual lane shapes without extending them to junction
+centers. To include internal lanes, load the network with <code>withInternal=True</code>.</p>
 <h2 id="parse_all_edges_in_a_route_file">parse all edges in a route file<a class="headerlink" href="#parse_all_edges_in_a_route_file" title="Permanent link">#</a></h2>
 <pre><code class="language-python">for route in sumolib.xml.parse_fast(&quot;myRoutes.rou.xml&quot;, 'route', ['edges']):
     edge_ids = route.edges.split()
@@ -360,8 +378,9 @@ lon, lat = net.convertXY2LonLat(x, y, True)
 # from lane position to network coordinates
 x,y = sumolib.geomhelper.positionAtShapeOffset(net.getLane(laneID).getShape(), lanePos)
 # from network coordinates to lane position
-lane, d = net.getNeighboringLanes(x, y, radius)[0] (see &quot;locate nearby edges based on the geo-coordinate&quot; above)
-lanePos, dist = sumolib.geomhelper.polygonOffsetAndDistanceToPoint((x,y), lane.getShape())
+result = net.getNearestLane(x, y, radius)
+if result is not None:
+    lane, lanePos, dist = result
 </code></pre>
 <p>see also
 <a href="../TraCI/Interfacing_TraCI_from_Python.html#coordinate_transformations">TraCI/Interfacing_TraCI_from_Python#coordinate_transformations</a></p>
@@ -387,7 +406,7 @@ examples for sumolib use.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 12 October 2026</i></small>
+            <br><small><i>This page was last edited on: 11 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

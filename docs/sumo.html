@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 12 October 2026
+Last edit: 11 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -1144,7 +1144,7 @@ configuration:
 </tr>
 <tr>
 <td><strong>--pedestrian.model</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&gt;</em></a></td>
-<td>Select among pedestrian models ['nonInteracting', 'striping', 'jupedsim', 'remote']; <em>default:</em> <strong>striping</strong></td>
+<td>Select among pedestrian models ['nonInteracting', 'striping', 'jupedsim']; <em>default:</em> <strong>striping</strong></td>
 </tr>
 <tr>
 <td><strong>--pedestrian.timegap-crossing</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a></td>
@@ -1557,7 +1557,7 @@ configuration:
 </tr>
 <tr>
 <td><strong>--phemlight-year</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;INT&gt;</em></a></td>
-<td>Enable fleet age modelling with the given reference year in PHEMlight5; <em>default:</em> <strong>0</strong></td>
+<td>Enable fleet age modeling with the given reference year in PHEMlight5; <em>default:</em> <strong>0</strong></td>
 </tr>
 <tr>
 <td><strong>--phemlight-temperature</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a></td>
@@ -2411,6 +2411,10 @@ configuration:
 <td>Enable separate queues for every lane; <em>default:</em> <strong>false</strong></td>
 </tr>
 <tr>
+<td><strong>--meso-lookahead</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Choose lane queues by the route of the vehicle at all turns up to FLOAT m ahead; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
 <td><strong>--meso-ignore-lanes-by-vclass</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;STRING&lbrack; &rbrack;&gt;</em></a></td>
 <td>Do not build queues (or reduce capacity) for lanes allowing only the given vclasses; <em>default:</em> <strong>pedestrian,bicycle</strong></td>
 </tr>
@@ -2482,7 +2486,7 @@ configuration:
 <tbody>
 <tr>
 <td><strong>-g</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a><br> <strong>--gui-settings-file</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FILE&gt;</em></a></td>
-<td>Load visualisation settings from FILE</td>
+<td>Load visualization settings from FILE</td>
 </tr>
 <tr>
 <td><strong>-Q</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a><br> <strong>--quit-on-end</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;BOOL&gt;</em></a></td>
@@ -2634,7 +2638,7 @@ they may be grouped into multiple files as convenient.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 12 October 2026</i></small>
+            <br><small><i>This page was last edited on: 11 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

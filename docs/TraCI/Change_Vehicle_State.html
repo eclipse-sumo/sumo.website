@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 12 October 2026
+Last edit: 11 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -1609,7 +1609,7 @@ controlled vehicle (moveToXY).</p>
 <tbody>
 <tr>
 <td style="text-align: center;">value type <em>compound</em></td>
-<td style="text-align: center;">number of elements (always=14)</td>
+<td style="text-align: center;">number of elements (14 or 18)</td>
 <td style="text-align: center;">value type <em>string</em></td>
 <td style="text-align: center;">route ID (must exist)</td>
 <td style="text-align: center;">value type <em>string</em></td>
@@ -1641,6 +1641,11 @@ controlled vehicle (moveToXY).</p>
 </tr>
 </tbody>
 </table>
+<p>The compound may optionally contain four additional elements after the person
+number: depart position lat (string), arrival position lat (string), speed
+factor (double) and insertion checks (string). They correspond to the vehicle
+attributes <code>departPosLat</code>, <code>arrivalPosLat</code>, <code>speedFactor</code> and
+<code>insertionChecks</code> and are omitted when empty (or -1 for the speed factor).</p>
 <p>If an empty routeID is given, the vehicle will be placed on an route
 that consists of a single arbitrary edge (with suitable vClass
 permissions). This can be used to simply the initialization of remote
@@ -1698,7 +1703,7 @@ controlled vehicle (moveToXY).</p>
 <tbody>
 <tr>
 <td style="text-align: center;">value type <em>compound</em></td>
-<td 0_1_2_3_4_5="0,1,2,3,4,5" style="text-align: center;">number of items in</td>
+<td 0_1_2_3_4_5 style="text-align: center;">number of items in</td>
 <td style="text-align: center;">value type <em>color</em></td>
 <td style="text-align: center;">color</td>
 <td style="text-align: center;">value type <em>double</em></td>
@@ -1848,7 +1853,7 @@ be inserted instantly by calling the function <em>vehicle.moveTo</em> or
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 12 October 2026</i></small>
+            <br><small><i>This page was last edited on: 11 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
