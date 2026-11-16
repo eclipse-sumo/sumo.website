@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 11 November 2026
+Last edit: 13 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -203,6 +203,12 @@ Last edit: 11 November 2026
                 <li class="nav-item" style="text-indent: 25px;">
                     <a href="#save_the_selected_taz_relations" class="nav-link">&rarr; Save the selected TAZ relations</a>
                 </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#meandata_mode" class="nav-link">• MeanData mode</a>
+                </li>
+                <li class="nav-item" style="text-indent: 25px;">
+                    <a href="#loading_and_saving_meandata_definitions" class="nav-link">&rarr; Loading and saving MeanData definitions</a>
+                </li>
         </ul>
     </div>
 
@@ -330,6 +336,34 @@ Last edit: 11 November 2026
 <h3 id="save_the_selected_taz_relations">Save the selected TAZ relations<a class="headerlink" href="#save_the_selected_taz_relations" title="Permanent link">#</a></h3>
 <p>The selected TAZ relations after the "Reduce" action and the respective attributes can be easily saved in XML format (see the illustration below).</p>
 <p><img alt="" src="../images/saveSelected.png" /></p>
+<h2 id="meandata_mode">MeanData mode<a class="headerlink" href="#meandata_mode" title="Permanent link">#</a></h2>
+<p><a href="../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures.html">Edge- and lane-based traffic measure definitions (<code>&lt;edgeData&gt;</code> and <code>&lt;laneData&gt;</code>)</a> can be created and edited directly inside the <strong>Data</strong> supermode (<code>F4</code>) by switching to <strong>MeanData mode</strong> (toolbar button or shortcut <code>M</code>). Unlike <code>edgeData</code> / <code>edgeRelation</code> / <code>tazRelation</code> demand elements, MeanData definitions describe simulation output detectors rather than spatial canvas objects and are managed entirely through the left-hand <strong>MeanData</strong> frame:</p>
+<ol>
+<li><strong>MeanData Type:</strong> Select either <code>edgeData</code> or <code>laneData</code> in the combo box.</li>
+<li><strong>MeanData Editor:</strong><ul>
+<li><strong>Create MeanData:</strong> Creates a new <code>&lt;edgeData&gt;</code> or <code>&lt;laneData&gt;</code> definition with an automatically generated unique <code>id</code> and selects it for editing.</li>
+<li><strong>Delete MeanData:</strong> Deletes the currently selected MeanData definition.</li>
+<li><strong>Copy MeanData:</strong> Duplicates the currently selected MeanData definition under a new unique <code>id</code>.</li>
+</ul>
+</li>
+<li><strong>Current MeanData:</strong> Selects an existing <code>&lt;edgeData&gt;</code> or <code>&lt;laneData&gt;</code> element by <code>id</code> so its attributes can be edited below.</li>
+<li><strong>Attributes Editor:</strong> Edits the attributes of the selected MeanData element, including:<ul>
+<li><code>id</code> and output <code>file</code></li>
+<li><code>type</code> (<code>default</code> traffic measures, <code>emissions</code>, <code>harmonoise</code>, or <code>amitran</code>)</li>
+<li><code>period</code>, <code>begin</code>, and <code>end</code></li>
+<li><code>excludeEmpty</code>, <code>withInternal</code>, <code>maxTraveltime</code>, <code>minSamples</code>, and <code>haltingSpeedThreshold</code></li>
+<li><code>vTypes</code>, <code>trackVehicles</code>, <code>detectPersons</code>, <code>writeAttributes</code>, <code>edges</code>, <code>edgesFile</code>, and <code>aggregate</code> (<code>false</code>, <code>true</code>, or <code>taz</code>)</li>
+</ul>
+</li>
+</ol>
+<h3 id="loading_and_saving_meandata_definitions">Loading and saving MeanData definitions<a class="headerlink" href="#loading_and_saving_meandata_definitions" title="Permanent link">#</a></h3>
+<p>MeanData definitions are stored as additional files (default suffix <code>.dat.add.xml</code>) and can be managed from <strong>File -&gt; MeanData Elements</strong>:</p>
+<ul>
+<li><strong>Load MeanDatas...</strong>: Load <code>&lt;edgeData&gt;</code> / <code>&lt;laneData&gt;</code> definitions from an existing XML file.</li>
+<li><strong>Save MeanDatas</strong>: Save modified MeanData definitions back to their target file.</li>
+<li><strong>Save MeanDatas unified as...</strong> (<code>Ctrl+Shift+M</code>): Save all defined MeanData elements into a single chosen additional file.</li>
+<li><strong>Reload MeanDatas</strong>: Reload MeanData definitions from disk.</li>
+</ul>
                 </main>
           </div>
           <button onclick="goTopFunction()" id="goToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -337,7 +371,7 @@ Last edit: 11 November 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 11 November 2026</i></small>
+            <br><small><i>This page was last edited on: 13 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

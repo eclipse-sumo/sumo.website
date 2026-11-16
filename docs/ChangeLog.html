@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 11 November 2026
+Last edit: 13 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -289,6 +289,8 @@ Last edit: 11 November 2026
 <li>Now restoring internal link approach state <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18406" title="GitHub Issue eclipse-sumo/sumo #18406">#18406</a></li>
 </ul>
 </li>
+<li>Fixed NEMA lagging left turns never being served in coordinated mode: a coordinated phase followed by another phase on its side of the barrier was treated as a barrier phase. Barrier phases are now taken from the ring order, in free mode too. <a href="Simulation/NEMA.html#leading_and_lagging_left_turns">documentation</a> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18453" title="GitHub Issue eclipse-sumo/sumo #18453">#18453</a></li>
+<li>NEMA controller type TS2 now finds the cycle zero (start of the first coordinated phase) in coordinated plans with a lagging left turn <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18453" title="GitHub Issue eclipse-sumo/sumo #18453">#18453</a></li>
 </ul>
 </li>
 </ul>
@@ -357,7 +359,8 @@ Last edit: 11 November 2026
 </ul>
 <ul>
 <li>traci<ul>
-<li>Fixed a crash in <code>vehicle.moveToXY</code> when keeping a route whose lanes prohibit the vehicle class.</li>
+<li>Fixed simulation failure when replacing a person stage with a negative index. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18508" title="GitHub Issue eclipse-sumo/sumo #18508">#18508</a></li>
+<li>Fixed a crash in <code>vehicle.moveToXY</code> when keeping a route whose lanes prohibit the vehicle class. <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18497" title="GitHub Issue eclipse-sumo/sumo #18497">#18497</a></li>
 <li>some retrieved laneChangeModel parameters (for querying internal model state) with floating point values are no longer rounded to ints <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18463" title="GitHub Issue eclipse-sumo/sumo #18463">#18463</a> (regression in 1.27.0)</li>
 <li>Fixed crash in <code>traci.simulation.loadState</code> with meso <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18389" title="GitHub Issue eclipse-sumo/sumo #18389">#18389</a> (regression in 1.28.0)</li>
 <li>Fixed invalid event time after adding a stop with default duration in meso <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18392" title="GitHub Issue eclipse-sumo/sumo #18392">#18392</a></li>
@@ -387,6 +390,7 @@ Last edit: 11 November 2026
 </ul>
 </li>
 <li>Added simulation option category 'persons' <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/6374" title="GitHub Issue eclipse-sumo/sumo #6374">#6374</a></li>
+<li>NEMA controller: new parameter <em>reservicePhases</em> serves a coordinated phase again in the same cycle when its lagging left turn gaps out. <a href="Simulation/NEMA.html#leading_and_lagging_left_turns">documentation</a> <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/18453" title="GitHub Issue eclipse-sumo/sumo #18453">#18453</a></li>
 </ul>
 </li>
 </ul>
@@ -1364,7 +1368,7 @@ Last edit: 11 November 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 11 November 2026</i></small>
+            <br><small><i>This page was last edited on: 13 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
