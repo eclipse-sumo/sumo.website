@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 13 November 2026
+Last edit: 19 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -689,7 +689,7 @@ All defaults are given below. They are tailored to mainline rail on a gauge of 1
 <ul>
 <li><strong>block occupancy</strong>: A longer train takes up more space and takes longer to completely pass a signal block which impacts capacity</li>
 <li><strong>speed limits</strong>: The maximum permitted speed for a train is the minimum of all edges that it occupies (Whereas for road vehicles, only the speed at the front edge is considered).</li>
-<li><strong>reversal after a swich</strong>: In order to turn a "sharp corner" at a switch, a train must completely pass the switch and the reverse. The route of train must contain enough edges on the facing side (with one entering track) to let the whole length of the train pass the switch before reversal is possible.</li>
+<li><strong>reversal after a switch</strong>: In order to turn a "sharp corner" at a switch, a train must completely pass the switch and the reverse. The route of train must contain enough edges on the facing side (with one entering track) to let the whole length of the train pass the switch before reversal is possible.</li>
 <li><strong>stopping after reversal</strong>: After reversal, the front and the rear of the train exchange their positions. This may cause the head of the train to skip past a stop edge and cause this stop to be skipped if the route does not go far enough past the stop (it is therefore recommended to always stop <em>before</em> the reversal).</li>
 </ul>
 <h2 id="train_schedules">Train Schedules<a class="headerlink" href="#train_schedules" title="Permanent link">#</a></h2>
@@ -855,7 +855,7 @@ The main difference is that trams are not separated by blocks when following eac
 <p>In many parts of the world, OSM data does not provide information of signaling infrastructure for tram networks. To achieve smooth operations at conflict points without rail signals, <a href="../netconvert.html">netconvert</a> sets merging conflicts to junction type 'zipper'. The vehicle classes eligible for this behavior are configured with netconvert option <strong>--railway.signal.permit-unsignalized</strong> (default <em>tram,cable_car</em>).</p>
 <p>For many tram networks (i.e. with single track sections), this type of conflict handling is not sufficient and rail signals must be added. This can be done manually with netedit or with the tool
 <a href="../Tools/Railways.html#patchrailconflictspy">patchRailConflicts.py</a>.</p>
-<p>To simplify tram simulations where rail signals have been added selectively and some conflicts are regulared with zipper junctions, sumo option <strong>--railsignal.moving-block.max-dist</strong> (default <em>200</em>) can be used. Rail signal in moving block mode will disregard conflicts at junction type <code>zipper</code> if they are beyond the configured maximum distance.</p>
+<p>To simplify tram simulations where rail signals have been added selectively and some conflicts are regulated with zipper junctions, sumo option <strong>--railsignal.moving-block.max-dist</strong> (default <em>200</em>) can be used. Rail signal in moving block mode will disregard conflicts at junction type <code>zipper</code> if they are beyond the configured maximum distance.</p>
 <h1 id="deadlocks">Deadlocks<a class="headerlink" href="#deadlocks" title="Permanent link">#</a></h1>
 <p>If the graph of relationships between trains that wait for another train ever forms a circle, then no train can ever advance and the simulation is in a state of deadlock.
 The default behavior of rail signals is to anticipate most such problems and prevent a train from passing a signal if that movement would form a deadlock.
@@ -1156,7 +1156,7 @@ used. The attribute <code>source</code> must be set to the ID of the junction th
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 13 November 2026</i></small>
+            <br><small><i>This page was last edited on: 19 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

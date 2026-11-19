@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 13 November 2026
+Last edit: 19 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -225,7 +225,7 @@ there more frequently. The focus is more on demand preparation and
 calibration and not so much on network tweaking.
 <img alt="netedit_select_highway.png" src="../images/netedit_select_highway.png" title="netedit_select_highway.png" /></p>
 <p>Selected edges (blue) are of minor priority and will be discarded</p>
-<p>A <a href="https://www.youtube.com/watch?v=ccc2mnGX_Mg">video tutorial</a> and <a href="https://sumo.dlr.de/daily/sumo2025_tutorial.zip">example files</a> can also be found amond the <a href="index.html#sumo_user_conference_tutorials">SUMO Conference Tutorials</a>.</p>
+<p>A <a href="https://www.youtube.com/watch?v=ccc2mnGX_Mg">video tutorial</a> and <a href="https://sumo.dlr.de/daily/sumo2025_tutorial.zip">example files</a> can also be found among the <a href="index.html#sumo_user_conference_tutorials">SUMO Conference Tutorials</a>.</p>
 <h2 id="network">Network<a class="headerlink" href="#network" title="Permanent link">#</a></h2>
 <p>Assuming you are already familiar with network extraction from your
 favorite mapping source, you can open your net with
@@ -245,12 +245,12 @@ and then click the 'Reduce' button.</p>
    <a href="../Tools/Detector.html#edgedatafromflowpy">edgeDataFromFlow.py tool</a></li>
 </ol>
 <p>The corresponding commands could look like this:</p>
-<pre><code>python $SUMO_HOME/tools/detector/mapDetectors.py -n motorway.net.xml.gz --detector-file detectors.csv --output-file detectorss.add.xml --id-column detector_name --max-radius 100.0
-python $SUMO_HOME/tools/detector/edgeDataFromFlow.py --detector-file detectorss.add.xml --detector-flow-file detector_data.csv --output-file edgedata.xml --id-column detector_name --time-column time --flow-columns count
+<pre><code>python $SUMO_HOME/tools/detector/mapDetectors.py -n motorway.net.xml.gz --detector-file detectors.csv --output-file detectors.add.xml --id-column detector_name --max-radius 100.0
+python $SUMO_HOME/tools/detector/edgeDataFromFlow.py --detector-file detectors.add.xml --detector-flow-file detector_data.csv --output-file edgedata.xml --id-column detector_name --time-column time --flow-columns count
 </code></pre>
 <p>The above command assumes that time stamps are in minutes of the day and data is aggregated per hour.</p>
 <p>If the timestamps are absolute dates and in a different aggregation period, the command to obtain hourly counts could like this:</p>
-<pre><code>python $SUMO_HOME/tools/detector/edgeDataFromFlow.py --detector-file detectorss.add.xml --detector-flow-file detector_data.csv --output-file edgedata.xml --id-column detector_name --time-column time --flow-columns count --time-scale 1 --time-format %Y-%m-%dT%H:%M:%SZ --time-offset 2025-11-24T00:00:00Z --end 86400.0 --interval 3600.0
+<pre><code>python $SUMO_HOME/tools/detector/edgeDataFromFlow.py --detector-file detectors.add.xml --detector-flow-file detector_data.csv --output-file edgedata.xml --id-column detector_name --time-column time --flow-columns count --time-scale 1 --time-format %Y-%m-%dT%H:%M:%SZ --time-offset 2025-11-24T00:00:00Z --end 86400.0 --interval 3600.0
 </code></pre>
 <h2 id="determining_the_routes">Determining the routes<a class="headerlink" href="#determining_the_routes" title="Permanent link">#</a></h2>
 <p>The <a href="../Demand/Routes_from_Observation_Points.html#choosing_the_right_tool">recommended all-purpose tool</a> for importing traffic from counting data is <a href="../Tools/Turns.html#routesamplerpy">routeSampler.py</a>.
@@ -311,7 +311,7 @@ execution call is as following:</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 13 November 2026</i></small>
+            <br><small><i>This page was last edited on: 19 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

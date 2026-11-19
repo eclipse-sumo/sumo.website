@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 13 November 2026
+Last edit: 19 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -619,7 +619,7 @@ Last edit: 13 November 2026
 <li>Persons are no longer listed before their departure in <em>traci.person.getIDList()</em> Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5674" title="GitHub Issue eclipse-sumo/sumo #5674">#5674</a> (regression in 1.1.0)</li>
 <li>Fixed crash when using parallel rerouting with TraCI. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5553" title="GitHub Issue eclipse-sumo/sumo #5553">#5553</a></li>
 <li>Function <em>traci.vehicle.setStop</em> now correctly updates an existing stop when setting a new <em>until</em>-value. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5712" title="GitHub Issue eclipse-sumo/sumo #5712">#5712</a></li>
-<li>TraaS function <em>SumoTraciConection.close()</em> now cleanly disconnects from the SUMO server. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/4962" title="GitHub Issue eclipse-sumo/sumo #4962">#4962</a></li>
+<li>TraaS function <em>SumoTraciConnection.close()</em> now cleanly disconnects from the SUMO server. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/4962" title="GitHub Issue eclipse-sumo/sumo #4962">#4962</a></li>
 <li>Fixed several issues with position conversions when the edge has a length different from the geometrical distance. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5780" title="GitHub Issue eclipse-sumo/sumo #5780">#5780</a></li>
 <li>Libsumo now supports getAllSubscriptionResults</li>
 <li>Function <em>traci.vehicle.moveTo</em> can now move vehicles onto internal lanes. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5932" title="GitHub Issue eclipse-sumo/sumo #5932">#5932</a></li>
@@ -651,7 +651,7 @@ Last edit: 13 November 2026
 <li>Saved states now include lane ids and only the lanes with traffic on them. This reduces state file size and also permits loading state files with a modified network. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5872" title="GitHub Issue eclipse-sumo/sumo #5872">#5872</a></li>
 <li>Initial "pseudo routes" (consisting of start and end edge only) are only written optionally. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5639" title="GitHub Issue eclipse-sumo/sumo #5639">#5639</a></li>
 <li>Traffic lights with type delay_based now use a default detection range of 100m (instead of using the whole lane length). This greatly improves efficiency by avoiding interference from far-away upstream junctions. The default range can be set using the new option <strong>--tls.delay_based.detector-range</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a>. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5897" title="GitHub Issue eclipse-sumo/sumo #5897">#5897</a></li>
-<li>Added battery model parameter "recuperationEfficencyByDecel" to vary the recuperation efficiency based on the deceleration level. Thanks to Sagaama Insaf for the contribution. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5675" title="GitHub Issue eclipse-sumo/sumo #5675">#5675</a></li>
+<li>Added battery model parameter "recuperationEfficiencyByDecel" to vary the recuperation efficiency based on the deceleration level. Thanks to Sagaama Insaf for the contribution. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5675" title="GitHub Issue eclipse-sumo/sumo #5675">#5675</a></li>
 </ul>
 </li>
 </ul>
@@ -903,7 +903,7 @@ Last edit: 13 November 2026
 <li>Fixed <em>vehicle.setStop</em> in TraaS client library. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5105" title="GitHub Issue eclipse-sumo/sumo #5105">#5105</a></li>
 <li>Fixed crash when calling <em>simulation.getDistance</em> to compute the driving distance between unconnected parts of the network Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5114" title="GitHub Issue eclipse-sumo/sumo #5114">#5114</a></li>
 <li>Fixed invalid driving distance result when calling <em>simulation.getDistanceRoad</em> and one of the edges is an internal edges after an internal junction. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5114" title="GitHub Issue eclipse-sumo/sumo #5114">#5114</a></li>
-<li>TraaS functions <em>Trafficlight.setPhaseDuraton, Trafficlight.getPhaseDuration, Trafficlight.getNextSwitch, Trafficlight.setCompleteRedYellowGreenDefinition, Vehicle.setAdaptedTraveltime, Vehicle.getAdaptedTraveltime, Lanearea.getLastStepHaltingNumber</em> and <em>Lanearea.getLastStepVehicleIDs</em> are now working (regression due to protocol change in 1.0.0).</li>
+<li>TraaS functions <em>Trafficlight.setPhaseDuration, Trafficlight.getPhaseDuration, Trafficlight.getNextSwitch, Trafficlight.setCompleteRedYellowGreenDefinition, Vehicle.setAdaptedTraveltime, Vehicle.getAdaptedTraveltime, Lanearea.getLastStepHaltingNumber</em> and <em>Lanearea.getLastStepVehicleIDs</em> are now working (regression due to protocol change in 1.0.0).</li>
 <li>Fixed C++ client function <em>vehicle.getStopState</em> (regression due to protocol change in 1.0.0)</li>
 <li>Fixed estimation of speed and acceleration after using moveToXY. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5250" title="GitHub Issue eclipse-sumo/sumo #5250">#5250</a></li>
 <li><em>traci.vehicle.getLaneChangeState</em> now returns correct information while controlling the vehicle with moveToXY in sublane simulation. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5255" title="GitHub Issue eclipse-sumo/sumo #5255">#5255</a></li>
@@ -932,7 +932,7 @@ Last edit: 13 November 2026
 <li>Person <a href="../Specification/Persons.html#rides">rides</a> now allow the special value <em>ANY</em> for the <em>lines</em> attribute. When this is set, persons may enter any vehicle that will stop at the destination <em>busStop</em> of the ride.</li>
 <li>Option <strong>--weights.random-factor</strong> <a href="/docs/Basics/Notation.html#referenced_data_types"><em>&lt;FLOAT&gt;</em></a> now also applies when routing persons. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/1353" title="GitHub Issue eclipse-sumo/sumo #1353">#1353</a></li>
 <li>Added output of harmonic mean speed to induction loops, which approximates the space mean speed. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/4919" title="GitHub Issue eclipse-sumo/sumo #4919">#4919</a></li>
-<li>Added controlability of reaction time (actionStepLength) to DriverState Model. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5355" title="GitHub Issue eclipse-sumo/sumo #5355">#5355</a></li>
+<li>Added controllability of reaction time (actionStepLength) to DriverState Model. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5355" title="GitHub Issue eclipse-sumo/sumo #5355">#5355</a></li>
 <li><code>&lt;edgeData&gt;</code>-output now supports attribute <code>detectPersons="walk"</code> which can be used to record pedestrian traffic instead of vehicular traffic. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5252" title="GitHub Issue eclipse-sumo/sumo #5252">#5252</a></li>
 <li>Railway simulation improvements:<ul>
 <li>When a railSignal is placed on a short edge at the incoming network fringe, the signal will regulate train insertion for all trains longer than the insertion edge. Issue <a class="gh-link gh-issue" href="https://github.com/eclipse-sumo/sumo/issues/5135" title="GitHub Issue eclipse-sumo/sumo #5135">#5135</a></li>
@@ -1071,16 +1071,16 @@ Last edit: 13 November 2026
 <ul>
 <li>TraCI<ul>
 <li>TraCI Version is now 20</li>
-<li>Function <em>trafficlight.setCompleteRedYellowGreeenDefinition</em> now
+<li>Function <em>trafficlight.setCompleteRedYellowGreenDefinition</em> now
   expects the 5th component <em>next</em> to be a list of integers when
   defining phases. Function
-  '<em>'trafficlight.getCompleteRedYellowGreeenDefinition</em> now
+  '<em>'trafficlight.getCompleteRedYellowGreenDefinition</em> now
   returns a list of integers as the 5th component (next) when
   defining phases. Custom clients must be patched to handle this.</li>
-<li>Function <em>trafficlight.setCompleteRedYellowGreeenDefinition</em> now
+<li>Function <em>trafficlight.setCompleteRedYellowGreenDefinition</em> now
   accepts <em>name</em> as an optional 6th component when defining
   phases. Function
-  '<em>'trafficlight.getCompleteRedYellowGreeenDefinition</em> now
+  '<em>'trafficlight.getCompleteRedYellowGreenDefinition</em> now
   returns <em>name</em> as the 6th component when defining phases. Custom
   clients must be patched to handle this.</li>
 <li>TraaS function <em>Simulation.findRoute</em> now returns SumoStage
@@ -1108,7 +1108,7 @@ Last edit: 13 November 2026
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 13 November 2026</i></small>
+            <br><small><i>This page was last edited on: 19 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

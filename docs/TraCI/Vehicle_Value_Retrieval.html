@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 13 November 2026
+Last edit: 19 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -1284,7 +1284,7 @@ from the given speed.</p>
 </tr>
 </tbody>
 </table>
-<p>The stopIndex must be in range [-numberOfPassedStops, numberORemaingStops - 1].
+<p>The stopIndex must be in range [-numberOfPassedStops, numberORemainingStops - 1].
 The customParam is interpreted as a boolean and determines whether an attribute values or a user defined parameter is returned.</p>
 <h2 id="device_and_lanechangemodel_parameter_retrieval_0x7e">Device and LaneChangeModel Parameter Retrieval 0x7e<a class="headerlink" href="#device_and_lanechangemodel_parameter_retrieval_0x7e" title="Permanent link">#</a></h2>
 <p>Vehicles supports retrieval of device parameters using the <a href="GenericParameters.html#get_parameter">generic
@@ -1334,6 +1334,12 @@ call</a>.</p>
 <li>device.taxi.occupiedTime</li>
 <li>device.taxi.occupiedDistance</li>
 <li>device.taxi.currentCustomers</li>
+<li>device.tripinfo.depart</li>
+<li>device.tripinfo.departPos</li>
+<li>device.tripinfo.departSpeed</li>
+<li>device.tripinfo.departDelay</li>
+<li>device.tripinfo.duration</li>
+<li>device.tripinfo.rerouteNo</li>
 <li>device.tripinfo.waitingTime (total waiting time)</li>
 <li>device.tripinfo.waitingCount</li>
 <li>device.tripinfo.stopTime (total stopping time)</li>
@@ -1406,7 +1412,7 @@ call</a>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 13 November 2026</i></small>
+            <br><small><i>This page was last edited on: 19 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

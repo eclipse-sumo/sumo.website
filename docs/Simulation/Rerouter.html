@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 13 November 2026
+Last edit: 19 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -926,7 +926,7 @@ of the new parkingArea will be set as new arrivalPos.</p>
 </tbody>
 </table>
 <p>Requirements for the siding:
-- one of the edges of the saiding must have a rail_signal at it's end
+- one of the edges of the siding must have a rail_signal at it's end
 - the siding must be long enough to accommodate the train being overtaken ahead of the rail signal</p>
 <p>Definitions for <code>&lt;overtakingReroute&gt;</code> can be created with the tool <a href="../Tools/Railways.html#createovertakingreroutespy">createOvertakingReroutes.py</a>.</p>
 <h3 id="computing_the_time_saved_by_an_overtaking_maneuver">Computing the time saved by an overtaking maneuver<a class="headerlink" href="#computing_the_time_saved_by_an_overtaking_maneuver" title="Permanent link">#</a></h3>
@@ -1051,7 +1051,7 @@ along their route (other vehicles are not affected directly).</p>
 <p>When the departure edge for a vehicle is closed, vehicles will ignore this for
 'soft' closing. For a 'hard' closing the simulation will raise an error. If <strong>--ignore-route-errors</strong> is set, the vehicle will be discarded with a warning.</p>
 <h2 id="skipping_stops_and_optimizing_reached_stops">Skipping stops and optimizing reached stops<a class="headerlink" href="#skipping_stops_and_optimizing_reached_stops" title="Permanent link">#</a></h2>
-<p>When a vehicle reroutes that has one or more remainign stops on it's route, The default behavior is to find a route that reaches all stops. If some stops are unreachable, rerouting fails and the vehicle must wait at the closed edge until the closing ends.
+<p>When a vehicle reroutes that has one or more remaining stops on it's route, The default behavior is to find a route that reaches all stops. If some stops are unreachable, rerouting fails and the vehicle must wait at the closed edge until the closing ends.
 By setting attribute <code>priority</code> in the <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#stops_and_waypoints">stop definitions</a> of the vehicle, an algorithm that optimizes reachable stops is activated:</p>
 <ul>
 <li>stops with priority &gt;= 0 are skipped if they cannot be reached anymore</li>
@@ -1067,7 +1067,7 @@ By setting attribute <code>priority</code> in the <a href="../Definition_of_Vehi
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 13 November 2026</i></small>
+            <br><small><i>This page was last edited on: 19 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

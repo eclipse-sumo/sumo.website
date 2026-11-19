@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 13 November 2026
+Last edit: 19 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -172,7 +172,7 @@ Last edit: 13 November 2026
             <li class="nav-item main"><a href="#command_0xa2_get_traffic_lights_variable">Command 0xa2: Get Traffic Lights Variable</a></li>
             <li class="nav-item main"><a href="#response_0xb2_traffic_lights_variable">Response 0xb2: Traffic Lights Variable</a></li>
                 <li class="nav-item" style="text-indent: 5px;">
-                    <a href="#structure_of_compound_object_traffic_light_program_both_0x25_and_0x2b" class="nav-link">• Structure of compound object traffic light program (both 0x25 and 0x2b)</a>
+                    <a href="#structure_of_compound_object_traffic_light_program_0x2b" class="nav-link">• Structure of compound object traffic light program (0x2b)</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#structure_of_compound_object_controlled_links" class="nav-link">• Structure of compound object controlled links</a>
@@ -371,84 +371,63 @@ and just implemented as a retrieval function because it needs a return value.</p
 </tbody>
 </table>
 <p>The respond to a <strong>"Command Get Traffic Lights Variable"</strong>.</p>
-<h3 id="structure_of_compound_object_traffic_light_program_both_0x25_and_0x2b">Structure of compound object traffic light program (both 0x25 and 0x2b)<a class="headerlink" href="#structure_of_compound_object_traffic_light_program_both_0x25_and_0x2b" title="Permanent link">#</a></h3>
+<h3 id="structure_of_compound_object_traffic_light_program_0x2b">Structure of compound object traffic light program (0x2b)<a class="headerlink" href="#structure_of_compound_object_traffic_light_program_0x2b" title="Permanent link">#</a></h3>
 <p>If you request a complete traffic light program, the compound object is
 structured as following. Attention, each part is preceded by a byte
 which represents its data type, except "length".</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">integer</th>
-<th style="text-align: center;">type + integer</th>
-<th style="text-align: center;">logic</th>
-<th style="text-align: center;">...</th>
-<th style="text-align: center;">logic</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Length</td>
-<td style="text-align: center;">Number of logics</td>
-<td style="text-align: center;">logic 1</td>
-<td style="text-align: center;">...</td>
-<td style="text-align: center;">logic n</td>
-</tr>
-</tbody>
-</table>
+<p>The outer compound contains one element for each program.</p>
 <p>where <strong>logic</strong> is described by:</p>
+<p>Each logic is a compound with five elements:</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">type + string</th>
+<th style="text-align: center;">type + integer</th>
 <th style="text-align: center;">type + integer</th>
 <th style="text-align: center;">type + compound</th>
-<th style="text-align: center;">type + integer</th>
-<th style="text-align: center;">type + integer</th>
-<th style="text-align: center;">phase</th>
-<th style="text-align: center;">...</th>
-<th style="text-align: center;">phase</th>
+<th style="text-align: center;">type + compound</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">SubID</td>
+<td style="text-align: center;">Program ID</td>
 <td style="text-align: center;">Type</td>
-<td style="text-align: center;">SubParameter</td>
 <td style="text-align: center;">Current phase index</td>
-<td style="text-align: center;">Number of phases</td>
-<td style="text-align: center;">Phase 1</td>
-<td style="text-align: center;">...</td>
-<td style="text-align: center;">Phase n</td>
+<td style="text-align: center;">Phases</td>
+<td style="text-align: center;">Parameters</td>
 </tr>
 </tbody>
 </table>
-<p>Type and SubParameter aren't currently implemented therefore they are 0.</p>
+<p>The offset is not part of the returned program. It is only used when
+<a href="Change_Traffic_Lights_State.html">setting a program</a> and can be supplied as an
+optional sixth element there.</p>
+<p>The parameters compound contains string lists of two entries: key and value.</p>
 <p>where <strong>phase</strong> is described by:</p>
+<p>Each phase is a compound with six elements:</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">type + double</th>
+<th style="text-align: center;">type + string</th>
 <th style="text-align: center;">type + double</th>
 <th style="text-align: center;">type + double</th>
+<th style="text-align: center;">type + compound</th>
 <th style="text-align: center;">type + string</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">Duration (in seconds)</td>
-<td style="text-align: center;">MinDuration (in seconds)</td>
-<td style="text-align: center;">MaxDuration (in seconds)</td>
-<td style="text-align: center;">Phase definition</td>
+<td style="text-align: center;">Duration (seconds)</td>
+<td style="text-align: center;">State</td>
+<td style="text-align: center;">MinDuration (seconds)</td>
+<td style="text-align: center;">MaxDuration (seconds)</td>
+<td style="text-align: center;">Next phase indices (typed integers)</td>
+<td style="text-align: center;">Name</td>
 </tr>
 </tbody>
 </table>
 <p>MinDuration and MaxDuration are only relevant in the context of actuated
-traffic lights. The phase definition differs for 0x25 and 0x2b. The
-first (0x25) contains the old, deprecated definition which uses three
-strings that describe the tl's state, the first green y/n, the second
-for brake y/n, the third for yellow y/n. The second (0x2b) contains a
-single string representing the lights. Note, that the first (0x25) is
-also reversed.</p>
+traffic lights. The state is a string representing the lights.</p>
 <h3 id="structure_of_compound_object_controlled_links">Structure of compound object controlled links<a class="headerlink" href="#structure_of_compound_object_controlled_links" title="Permanent link">#</a></h3>
 <p>If you request the list of links, the compound object is structured as
 following. Attention, each part is preceded by a byte which represents
@@ -649,7 +628,7 @@ parameter retrieval call</a>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 13 November 2026</i></small>
+            <br><small><i>This page was last edited on: 19 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>

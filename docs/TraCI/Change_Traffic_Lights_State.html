@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 13 November 2026
+Last edit: 19 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -381,69 +381,39 @@ given is also shown in the table.</p>
 </tbody>
 </table>
 <h3 id="complete_program_definition_0x2c">complete program definition (0x2c)<a class="headerlink" href="#complete_program_definition_0x2c" title="Permanent link">#</a></h3>
+<p>The value is a compound with five elements. An optional sixth element may be
+inserted after the current phase index and before the phases:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">byte</th>
-<th style="text-align: center;">integer</th>
-<th style="text-align: center;">byte</th>
-<th style="text-align: center;">string</th>
-<th style="text-align: center;">byte</th>
-<th style="text-align: center;">integer</th>
-<th style="text-align: center;">byte</th>
-<th style="text-align: center;">compound</th>
-<th style="text-align: center;">byte</th>
-<th style="text-align: center;">integer</th>
-<th style="text-align: center;">byte</th>
-<th style="text-align: center;">integer</th>
-<th style="text-align: center;">&lt;phases&gt;</th>
+<th style="text-align: center;">type + string</th>
+<th style="text-align: center;">type + integer</th>
+<th style="text-align: center;">type + integer</th>
+<th style="text-align: center;">type + double (optional)</th>
+<th style="text-align: center;">type + compound</th>
+<th style="text-align: center;">type + compound</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">value type <em>compound</em></td>
-<td style="text-align: center;">item number</td>
-<td style="text-align: center;">value type <em>string</em></td>
-<td style="text-align: center;">program ID</td>
-<td style="text-align: center;">value type <em>integer</em></td>
-<td style="text-align: center;">Type (always 0)</td>
-<td style="text-align: center;">value type <em>compound</em></td>
-<td style="text-align: center;">Compound Length (always 0!)</td>
-<td style="text-align: center;">value type <em>integer</em></td>
-<td style="text-align: center;">Phase Index</td>
-<td style="text-align: center;">value type <em>integer</em></td>
-<td style="text-align: center;">Phase Number</td>
+<td style="text-align: center;">Program ID</td>
+<td style="text-align: center;">Type</td>
+<td style="text-align: center;">Current phase index</td>
+<td style="text-align: center;">Offset (seconds)</td>
 <td style="text-align: center;">Phases</td>
+<td style="text-align: center;">Parameters</td>
 </tr>
 </tbody>
 </table>
-<p>with Phases:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">byte</th>
-<th style="text-align: center;">double</th>
-<th style="text-align: center;">byte</th>
-<th style="text-align: center;">double</th>
-<th style="text-align: center;">byte</th>
-<th style="text-align: center;">double</th>
-<th style="text-align: center;">byte</th>
-<th style="text-align: center;">string</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">value type double</td>
-<td style="text-align: center;">Duration in seconds</td>
-<td style="text-align: center;">value type <em>double</em></td>
-<td style="text-align: center;">unused</td>
-<td style="text-align: center;">value type <em>double</em></td>
-<td style="text-align: center;">unused</td>
-<td style="text-align: center;">value type <em>string</em></td>
-<td style="text-align: center;">State (light/priority-tuple)</td>
-</tr>
-</tbody>
-</table>
+<p>Clients omit the optional offset element when the offset is zero and send it
+only for non-zero offsets. The server accepts both five and six elements.</p>
+<p>Phases and parameters use the same structure as the
+<a href="Traffic_Lights_Value_Retrieval.html#structure_of_compound_object_traffic_light_program_0x2b">complete program retrieval</a>.
+The offset defaults to zero in the clients and is used when creating a new program.
+For static programs, a non-zero offset shifts the program in the same way as the <code>offset</code> attribute of a
+<code>tlLogic</code>: it determines the position within the cycle and therefore the current phase
+as well as the time of the next switch. For actuated, NEMA and delay-based programs the
+offset is stored and passed to the controller unchanged.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For more information about what value should be put in each of the fields mentioned above, see <a href="../Tutorials/TraCI4Traffic_Lights.html#appendix">Tutorials/TraCI4Traffic_Lights#Appendix</a>. Remember that you can check which integer value is associated with particular value type <a href="Protocol.html#data_types">here</a>.</p>
@@ -506,7 +476,7 @@ parameter setting call</a>.</p>
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 13 November 2026</i></small>
+            <br><small><i>This page was last edited on: 19 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
