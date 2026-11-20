@@ -1,7 +1,7 @@
 <!--
 MkDocs version : 1.6.1
 Build Date UTC : 01 January 1970 00:00:00
-Last edit: 19 November 2026
+Last edit: 20 November 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -190,6 +190,9 @@ Last edit: 19 November 2026
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#how_do_code_contributions_work" class="nav-link">• How do code contributions work?</a>
+                </li>
+                <li class="nav-item" style="text-indent: 5px;">
+                    <a href="#what_commits_should_i_put_into_a_pull_request" class="nav-link">• What commits should I put into a pull request?</a>
                 </li>
                 <li class="nav-item" style="text-indent: 5px;">
                     <a href="#how_do_i_contribute_to_the_documentation" class="nav-link">• How do I contribute to the documentation?</a>
@@ -660,7 +663,7 @@ Last edit: 19 November 2026
 <li>Modify the files in the created sumo clone directory</li>
 <li>From within this directory Commit your changes with</li>
 </ul>
-<pre><code>git add src
+<pre><code>git add src tests
 git commit -m &quot;your change message&quot; -s
 </code></pre>
 <div class="admonition caution">
@@ -678,7 +681,18 @@ git commit -m &quot;your change message&quot; -s
 <li>(If you wish to keep your fork consider adding a topic branch to your local copy and push it before submitting the pull request.)</li>
 <li>More info may be found at
   <a href="https://wiki.eclipse.org/Development_Resources/Contributing_via_Git">https://wiki.eclipse.org/Development_Resources/Contributing_via_Git</a></li>
+<li>see the next question for structuring pull requests</li>
 </ul>
+<h3 id="what_commits_should_i_put_into_a_pull_request">What commits should I put into a pull request?<a class="headerlink" href="#what_commits_should_i_put_into_a_pull_request" title="Permanent link">#</a></h3>
+<p>In order to facilitate PR review please try to structure pull requests that modify application behavior in the following manner:</p>
+<ul>
+<li>one commit that <a href="Developer/Tests.html#adding_a_test_to_an_existing_application">adds a new test</a></li>
+<li>one commit that modifies source code</li>
+<li>one commit that <a href="Developer/Tests.html#running_the_tests">updates the results of all affected tests</a></li>
+</ul>
+<p>If you wish to change multiple aspects of an application (i.e. fix two different
+bugs), please do a distinct pull request with the above structure for each individual change.</p>
+<p>If those changes are connected to a common topic, <a href="https://github.com/eclipse-sumo/sumo/issues/new">create a new issue</a> and reference the pull requests along with a description </p>
 <h3 id="how_do_i_contribute_to_the_documentation">How do I contribute to the documentation?<a class="headerlink" href="#how_do_i_contribute_to_the_documentation" title="Permanent link">#</a></h3>
 <p>The documentation is part of the code repository so the same rules as in the previous question apply.
 If you just want to have a simple typo fixed you can always drop us a line at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#109;&#111;&#64;&#100;&#108;&#114;&#46;&#100;&#101;">&#115;&#117;&#109;&#111;&#64;&#100;&#108;&#114;&#46;&#100;&#101;</a> or at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#109;&#111;&#45;&#100;&#101;&#118;&#64;&#101;&#99;&#108;&#105;&#112;&#115;&#101;&#46;&#111;&#114;&#103;">&#115;&#117;&#109;&#111;&#45;&#100;&#101;&#118;&#64;&#101;&#99;&#108;&#105;&#112;&#115;&#101;&#46;&#111;&#114;&#103;</a>.</p>
@@ -1689,7 +1703,7 @@ As a work-around you can <a href="https://askubuntu.com/questions/1399383/how-to
 
         <footer class="col-md-12">
           
-            <br><small><i>This page was last edited on: 19 November 2026</i></small>
+            <br><small><i>This page was last edited on: 20 November 2026</i></small>
           
           <hr>
             <p>Copyright &copy; 2001-2026 German Aerospace Center (DLR) and others.</p>
