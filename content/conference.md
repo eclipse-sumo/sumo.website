@@ -105,7 +105,7 @@ You can read our *[Publication Ethics and Publication Malpractice Statement](../
 For papers:
 - Optional title and abstract submission deadline: **Sunday, January 17, 2027.**
 - Paper submission deadline: **Sunday, February 21, 2027.**
-- Notification of acceptance/rejection: **Mid April 2027.**
+- Notification of acceptance/rejection: **Mid-April 2027.**
 - Camera-ready paper deadline: **Sunday, May 16, 2027.**
 
 For posters:
