@@ -176,7 +176,7 @@ Germany
 
 # Logo
 
-Authors are welcome to use the conference logo in their presentations, posters and related materials. The logo is available for download here: [Conference logo](../logo#conference-logo) 
+Authors are welcome to use the conference logo in their presentations, posters and related materials. The logo is available for download here: [Conference logo]({{< relref "/logo#conference-logo" >}})
 
 # Contact
 
